@@ -3,7 +3,9 @@ date: 2015-09-24
 title: 'Getting Started with Git'
 template: post
 thumbnail: '../thumbnails/git.png'
+toc: true
 slug: getting-started-with-git
+disqus: archInstall.sadanand
 categories:
   - Workflow
 tags:
@@ -20,6 +22,9 @@ Git is a difficult subject to tackle for self-taught web developers who didn't l
 #### Prerequisites
 
 - Ability to create and upload a website.
+
+
+$a^2 = \sum a_i$
 
 #### Goals
 
