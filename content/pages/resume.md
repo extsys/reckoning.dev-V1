@@ -1,26 +1,24 @@
 ---
-title: Tania Rascia
+title: Sadanand Singh
 slug: resume
 template: page
 ---
 
-### Full-Stack Developer
+### Research Scientist
 
 Highly motivated and versatile full-stack developer and technical writer who is passionate about writing clean, efficient code and maintaining modern standards and security.
 
-- [taniarascia.com](https://www.taniarascia.com)
-- [me@taniarascia.com](mailto:me@taniarascia.com)
-- [630-615-8863](tel:630-615-8863)
-- Chicago, IL
+- [datasciencevision.com](https://datasciencevision.com)
+- [me@taniarascia.com](mailto:me@datasciencevision.com)
+- San Francisco, CA
 
 ## Technical Skills
 
-- **Languages** - JavaScript (ES6+), PHP, HTML5, CSS3, Bash
-- **Concepts** - RESTful API Design/Integration, MVC Architecture, CI/CD, Agile, ADA Compliance
-- **Tools/Environment** - Node.js, Git, Webpack, Jenkins, Chrome DevTools, Jira, AWS, CLI, Sass
-- **Frameworks/Libraries** - React, jQuery, Semantic UI, Material, Bootstrap, Jest
-- **Data** - SQL (MySQL, PostgreSQL) GraphQL, JSON
-- **Testing** - Unit, integration, and end-to-end testing
+- **Languages** - Python, C++/C, R, JavaScript, Bash
+- **Concepts** - Deep Learning, Machine Learning, Computer Vision, Numerical Optimization
+- **Tools/Environment** - PyTorch, Tensorflow, Keras, Git, Webpack
+- **Frameworks/Libraries** - React, jQuery, Bootstrap, SciKit-Learn, Pandas
+- **Data** - PostgreSQL, Mongodb, GraphQL, JSON
 
 ## Experience
 
@@ -57,28 +55,18 @@ Highly motivated and versatile full-stack developer and technical writer who is 
 - Established company conventions/standards and documented development processes
 - Designed and developed 15+ restaurant websites, such as Cafe Ba-Ba-Reeba!, Shaw’s Crab House, Krispy Kreme PNW, Tokio Pub, Beatrix, M Burger, and Stripburger
 
-## Open Source Projects
-
-- [Chip8.js](https://github.com/taniarascia/chip8) - Node.js emulator
-- [Laconia](https://github.com/taniarascia/laconia) - MVC web framework
-- [Primitive](https://github.com/taniarascia/primitive) - Sass boilerplate/CSS framework
-- [New Moon](https://github.com/taniarascia/new-moon) - Optimized dark theme
-
-## Speaking
-
-#### An Introduction to React
-
-**JavaScript Chicago** - _2019 | Chicago, IL_
-
-#### Developing a WordPress Theme From Scratch
-
-**WordCamp Chicago** - _2017 | Chicago, IL_
 
 ## Education
 
-#### B.A. in Professional Studies
+#### PhD in Chemical Engineering
 
-**Robert Morris University** - _2007 - 2010 | Chicago, IL_
+**University of Wisconsin - Madison** - _2008 - 2013 | Madison, WI_
+
+**Advisor:** [Prof. Juan de Pablo](https://ime.uchicago.edu/de_pablo_lab/people/juan_de_pablo/) **Thesis:** *Energy landscapes of proteins and glassy materials*
+
+#### B.Tech in Chemical Engineering
+
+**Indian Institute of Technology Kanpur** - _2004 - 2008 | Kanpur, UP, India_
 
 # Accomplishments
 

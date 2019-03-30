@@ -34,12 +34,12 @@ class Navigation extends Component {
     return (
       <ThemeContext.Consumer>
         {theme => (
-          <nav className={scrolled ? 'nav scroll' : 'nav'}>
+          <nav className={scrolled ? "nav scroll" : "nav"}>
             <div className="nav-container">
               <div className="brand">
                 <Link to="/">
-                  <img src={floppy} className="favicon" />{' '}
-                  <span className="text">Tania Rascia</span>
+                  <img src={floppy} className="favicon" />{" "}
+                  <span className="text">Sadanand Singh</span>
                 </Link>
               </div>
               <div className="links">
@@ -50,7 +50,10 @@ class Navigation extends Component {
                 ))}
               </div>
               <div className="cta">
-                <button className="dark-switcher" onClick={theme.toggleDark}>
+                <button
+                  className="dark-switcher"
+                  onClick={theme.toggleDark}
+                >
                   {theme.dark ? (
                     <span>
                       <img src={sun} className="theme-icon" />
@@ -61,15 +64,20 @@ class Navigation extends Component {
                     </span>
                   )}
                 </button>
-                <a className="donate-button" href="https://ko-fi.com/taniarascia" target="_blank">
-                  <span className="text">Donate</span> <img src={coffee} className="coffee-icon" />
+                <a
+                  className="donate-button"
+                  href="https://ko-fi.com/sadanandsingh"
+                  target="_blank"
+                >
+                  <span className="text">Donate</span>{" "}
+                  <img src={coffee} className="coffee-icon" />
                 </a>
               </div>
             </div>
           </nav>
         )}
       </ThemeContext.Consumer>
-    )
+    );
   }
 }
 

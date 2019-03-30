@@ -19,22 +19,26 @@ class Index extends Component {
 
     return (
       <Layout>
-        <Helmet title={`${config.siteTitle} – Developer, designer, writer`} />
+        <Helmet title={`${config.siteTitle} – Introduction`} />
         <SEO />
         <div className="container">
           <div className="lead">
             <h1>
-              Hi, I'm Tania. I build <strong className="pink">open source projects</strong> and
-              write the <strong className="pink">missing instruction manuals</strong> of the web.
+              Hi, I'm Sadanand Singh. I build{" "}
+              <strong className="pink">AI models </strong> in medical
+              imaging and enjoy working with{" "}
+              <strong className="pink">Algorithms, Python and C++</strong>.
             </h1>
             <p>
-              I'm a <strong>developer, designer,</strong> and <strong>writer</strong>. I created
-              this site to document everything I learn, and share a bit of myself with the world. My
-              site is <strong>free</strong> and has no ads, affiliate links, or sponsored posts.
+              I'm a <strong>scientist, programmer,</strong> and{" "}
+              <strong>writer</strong>. I created this site to document
+              everything I learn, and share a bit of myself with the world.
+              My site is <strong>free</strong> and has no ads, affiliate
+              links, or sponsored posts.
             </p>
             <a
               className="twitter-follow-button"
-              href="https://twitter.com/taniarascia"
+              href="https://twitter.com/sadanandsingh"
               data-size="large"
               data-show-screen-name="false"
             >
@@ -61,7 +65,7 @@ class Index extends Component {
 
           <section className="section">
             <h2>
-              Published Articles{' '}
+              Published Articles{" "}
               <Link className="view-all" to="/publications">
                 View all
               </Link>
@@ -73,26 +77,29 @@ class Index extends Component {
             <h2>Other People's Opinions</h2>
             <blockquote className="quotation">
               <p>
-                You write extremely clear, concise tutorials that have the best ratio of learning to
-                bullshit that I've encountered so far. It's no exaggeration to say that I wouldn't
-                currently have a job in development without this site. So thanks for ruining my
-                life, Tania.
+                Hi Sadanand, Excellent post. Thank you for taking time and
+                explaining in a neat matter. I am bit confused in here. In
+                classification problem we have total 3 classes, so by
+                default SVM takes care and divide it into 3 classes ? And
+                also it is mentioned that "SVM by definition is well suited
+                for binary classification. In order to perform multi-class
+                classification, the problem needs to be transformed into a
+                set of binary classification problems."
               </p>
-              <cite>— Craig</cite>
+              <cite>— KK</cite>
             </blockquote>
             <blockquote className="quotation">
               <p>
-                You taught me more than any class could have, and it took me a fraction of the time
-                because of how clearly you write and teach.
+                Great write up. I implemented much of this on an Up-Squared
+                (http://www.up-board.org/ups... . It runs great. Not a lot
+                of wasted CPU cycles, other than conky. I am liking Plasma
+                and Arch.
               </p>
-              <cite>— Evan</cite>
+              <cite>— Vincent Flesouras</cite>
             </blockquote>
             <blockquote className="quotation">
-              <p>
-                Not to get too dramatic, but I find your site to be an unspeakably beautiful
-                lifeboat in an overwhelming sea of technical jargon and shite.
-              </p>
-              <cite>— Lori</cite>
+              <p>Great article, very useful thank you!</p>
+              <cite>— Fivos Delemis</cite>
             </blockquote>
           </section>
 
@@ -103,7 +110,7 @@ class Index extends Component {
           </section>
         </div>
       </Layout>
-    )
+    );
   }
 }
 

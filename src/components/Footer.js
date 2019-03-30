@@ -5,13 +5,17 @@ class Footer extends Component {
     return (
       <footer className="footer container">
         <small>
-          Made by <strong>Tania Rascia</strong> /{' '}
-          <a href="https://github.com/taniarascia/taniarascia.com" target="_blank">
+          Made by <strong>Sadanand singh</strong> / Theme by{" "}
+          <a href="https://www.taniarascia.com/">Tania Rascia</a> /{" "}
+          <a
+            href="https://github.com/sadanand-singh/datasciencevision.com"
+            target="_blank"
+          >
             View source
           </a>
         </small>
       </footer>
-    )
+    );
   }
 }
 

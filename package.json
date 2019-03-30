@@ -1,9 +1,9 @@
 {
-  "name": "taniarascia",
-  "description": "Tania Rascia's personal theme for Gatsby.",
+  "name": "sadanandsingh",
+  "description": "Sadanand Singh's Notes",
   "version": "1.0.0",
-  "author": "Tania Rascia <me@taniarascia.com>",
-  "repository": "git@github.com:taniarascia/taniarascia.com",
+  "author": "Sadanand Singh <me@datasciencevision.com>",
+  "repository": "git@github.com:sadanand-singh/datasciencevision.com",
   "dependencies": {
     "disqus-react": "^1.0.5",
     "gatsby": "2.3.4",
