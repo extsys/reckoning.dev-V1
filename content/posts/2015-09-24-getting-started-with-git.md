@@ -26,6 +26,8 @@ Git is a difficult subject to tackle for self-taught web developers who didn't l
 
 $a^2 = \sum a_i$
 
+![](https://res.cloudinary.com/sadanandsingh/image/upload/v1546230615/chrome_jx6pit.png)
+
 #### Goals
 
 - Learn what Git is and how it can be useful.
