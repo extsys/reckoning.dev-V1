@@ -11,18 +11,18 @@ class Contact extends Component {
         <p>You can find me around the web:</p>
         <ul>
           <li>
-            <strong>Email</strong>: <a href="mailto:me@taniarascia.com">me@taniarascia.com</a>
+            <strong>Email</strong>: <a href="mailto:me@datasciencevision.com">me@datasciencevision.com</a>
           </li>
           <li>
             <strong>GitHub</strong>:{' '}
-            <a target="_blank" href="https://github.com/taniarascia">
-              taniarascia
+            <a target="_blank" href="https://github.com/sadanand-singh">
+              sadanand-singh
             </a>
           </li>
           <li>
             <strong>Twitter</strong>:{' '}
-            <a target="_blank" href="https://twitter.com/taniarascia">
-              taniarascia
+            <a target="_blank" href="https://twitter.com/sadanandsingh">
+              sadanandsingh
             </a>
           </li>
         </ul>

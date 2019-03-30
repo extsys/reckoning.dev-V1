@@ -6,10 +6,11 @@ template: page
 
 ### Research Scientist
 
-Highly motivated and versatile full-stack developer and technical writer who is passionate about writing clean, efficient code and maintaining modern standards and security.
+More than 6 years of experience with deep learning, machine learning, numerical modeling and scientific computing in production environments.Proficient in Python, C++ and C
 
 - [datasciencevision.com](https://datasciencevision.com)
 - [me@taniarascia.com](mailto:me@datasciencevision.com)
+- [LinkedIn Profile](https://www.linkedin.com/in/sadanandsingh/)
 - San Francisco, CA
 
 ## Technical Skills
@@ -22,38 +23,36 @@ Highly motivated and versatile full-stack developer and technical writer who is 
 
 ## Experience
 
-#### Front End Software Engineer
+#### Research Scientist
 
-**Dais Technology, Inc** - _2018 - Present | Chicago, IL_
+**WHITERABBIT.AI** - _2018 - Present | Sunnyvale, CA_
 
-- Developed software for insurance companies in React with custom backend APIs
-- Created an internal user management system for organization admins
-- Worked with design team to create beautiful user interfaces and intuitive user experiences
+- AI research scientist in a medical imaging startup
+- Developed [Pytorch](https://pytorch.org/) based high level API for training deep learning models in medical imaging
 
-#### Technical Writer - JavaScript
+#### Staff Engineer - Machine Learning
 
-**DigitalOcean** - _2017 - 2019 | Remote_
+**SAMSUNG** - _March 2018 - Aug 2018 | San Jose, CA_
 
-- Wrote the Understanding the DOM tutorial series, covering how to manipulate and traverse the DOM
-- Wrote the How to Code in JavaScript tutorial series, covering fundamentals, syntax, and concepts
-- Shaped the curriculum of JavaScript content by collaborating with the in-house team
+- Deep learning research on anomaly detection
+- Machine learning solutions for extremely imbalanced data in manufacturing
 
-#### Web Developer
+#### Research Scientist
 
-**RateYourSeats.com** - _2018 | Chicago, IL_
+**KLA TENCOR** - _2017 - 2018 | Milpitas, CA_
 
-- Integrated Amazon SES and S3 for efficient object storage and secure email sending
-- Designed an API for the company to be able to access data across the platform
-- Integrated Git version control into the platform to track, manage, and simplify changes
+- Developed deep learning applications in lithography, defect detection and image translation
+- Designed auto-encoder models for learning ellipsometry signals
+- Designed product for defect detection in lithography
 
-#### Web Developer/Designer
+#### RET Design Engineer
 
-**Lettuce Entertain You Enterprises, Inc.** - _2015 - 2017 | Chicago, IL_
+**INTEL** - _2013 - 2017 | Hillsboro, OR_
 
-- Developed, designed, and maintained custom, responsive websites
-- Took ownership of Amazon Web Services infrastructure and Linux system administration
-- Established company conventions/standards and documented development processes
-- Designed and developed 15+ restaurant websites, such as Cafe Ba-Ba-Reeba!, Shaw’s Crab House, Krispy Kreme PNW, Tokio Pub, Beatrix, M Burger, and Stripburger
+- Built efficient machine learning models to identify defects prior to production
+- Designed and built deep learning models for the optimal placement of sub-resolution features on PSM masks
+- Developed models and algorithms to design optical masks to enable lithography of 14nm, 10 nm and 7 nm nodes
+- Designed new python and C++ libraries and APIs for RET data analysis, visualization and debugging
 
 
 ## Education
@@ -70,6 +69,10 @@ Highly motivated and versatile full-stack developer and technical writer who is 
 
 # Accomplishments
 
-- Getting Started With React article featured in official React documentation as React For Beginners. [Source](https://reactjs.org/docs/getting-started.html)
-- Interviewed in the Egghead.io Podcast in Switching Careers and Learning in Public with Joel Hooks. [Source](https://egghead.io/podcasts/switching-careers-and-learning-in-public-with-tania-rascia)
-- Wrote published articles for DigitalOcean, Envato Tuts+, SitePoint, LogRocket, Codrops, and Progress. [Source](https://www.taniarascia.com/publications)
+- Six Intel Achievement Awards
+- 10 publications in the highest profile journals including [Nature Materials](https://www.nature.com/articles/nmat3521) and [Nature Chemistry](https://www.nature.com/articles/nchem.1293)
+- Work on ultra-stable glasses covered in regular media [Source 1](https://phys.org/news/2013-01-reveals-ordinary-glass-extraordinary-properties.html) [Source 2](https://www.redorbit.com/news/science/1113407994/new-type-of-glass-demonstrates-molecular-order-082115/)
+- Work on diabetes protien structure molding highlighted in media [Source](https://cen.acs.org/articles/91/i46/Unfolding-Diabetes.html)
+- Received one of the swiftest promotion in less than 3 years at Intel Corp. 2016
+- International student academic achievement award, UW-Madison, 2012-13
+- Ranked among top 0.5% of 400000+ students in nation-wide IIT entrance examination, 2004
