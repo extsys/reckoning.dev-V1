@@ -116,6 +116,8 @@ exports.createPages = ({ graphql, actions }) => {
                     tags
                     categories
                     template
+                    disqus
+                    toc
                   }
                   fields {
                     slug

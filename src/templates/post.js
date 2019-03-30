@@ -9,12 +9,21 @@ import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import Img from 'gatsby-image'
 import { formatDate, editOnGithub } from '../utils/global'
+import { DiscussionEmbed } from 'disqus-react'
+import 'katex/dist/katex.min.css'
 
 class PostTemplate extends Component {
   render() {
     const { slug } = this.props.pageContext
     const postNode = this.props.data.markdownRemark
     const post = postNode.frontmatter
+
+    const disqusShortname = config.disqusShortname;
+    const disqusConfig = {
+      identifier: post.disqus,
+      title: post.title
+    };
+
     let thumbnail
 
     if (!post.id) {
@@ -33,13 +42,14 @@ class PostTemplate extends Component {
     const githubLink = editOnGithub(post)
     const twitterUrl = 'https://twitter.com/search?q=' + config.siteUrl + '/' + post.slug + '/'
     const twitterShare =
-      'http://twitter.com/share?text=' +
+      "https://twitter.com/intent/tweet/?text=" +
       encodeURIComponent(post.title) +
-      '&url=' +
+      "&url=" +
       config.siteUrl +
-      '/' +
+      "/" +
       post.slug +
-      '/&via=taniarascia'
+      "/&via=sadanandsingh";
+
 
     return (
       <Layout>
@@ -49,38 +59,64 @@ class PostTemplate extends Component {
         <SEO postPath={slug} postNode={postNode} postSEO />
         <article className="single container">
           <header className="single-header">
-            {thumbnail ? <Img fixed={post.thumbnail.childImageSharp.fixed} /> : <div />}
+            {thumbnail ? (
+              <Img fixed={post.thumbnail.childImageSharp.fixed} />
+            ) : (
+              <div />
+            )}
             <div className="flex">
               <h1>{post.title}</h1>
               <div className="post-meta">
                 <time className="date">{date}</time>/
                 <a className="twitter-link" href={twitterShare}>
-                  Share
+                  Share on Twitter
                 </a>
                 /
-                <a className="github-link" href={githubLink} target="_blank">
+                <a
+                  className="github-link"
+                  href={githubLink}
+                  target="_blank"
+                >
                   Edit on Github ✏️
                 </a>
               </div>
               <PostTags tags={post.tags} />
             </div>
           </header>
-          <div className="post" dangerouslySetInnerHTML={{ __html: postNode.html }} />
+          {post.toc == true && (
+            <div
+              className="post"
+              dangerouslySetInnerHTML={{ __html: postNode.tableOfContents }}
+            />
+          )}
+          <div
+            className="post"
+            dangerouslySetInnerHTML={{ __html: postNode.html }}
+          />
           <div>
-            {' '}
-            <a href={twitterShare}>Share on Twitter</a> |{' '}
-            <a href={twitterUrl}>Discuss on Twitter</a> |{' '}
+            {" "}
+            <a href={twitterShare}>
+              Share on Twitter
+            </a>{" "}
+            | <a href={twitterUrl}>Discuss on Twitter</a> |{" "}
             <a href={githubLink} target="_blank">
               Edit on Github ✏️
             </a>
           </div>
           <h3>Stay in touch</h3>
-          <p>Like the posts you see here? Sign up to get notified about new ones.</p>
+          <p>
+            Like the posts you see here? Sign up to get notified about new
+            ones.
+          </p>
           <NewsletterForm />
+          <DiscussionEmbed
+            shortname={disqusShortname}
+            config={disqusConfig}
+          />
         </article>
         <UserInfo config={config} />
       </Layout>
-    )
+    );
   }
 }
 
@@ -88,34 +124,33 @@ export default PostTemplate
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
-  query BlogPostBySlug($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
-      timeToRead
-      excerpt
-      frontmatter {
-        title
-        thumbnail {
-          childImageSharp {
-            fixed(width: 150, height: 150) {
-              ...GatsbyImageSharpFixed
-            }
-          }
-        }
-        slug
-        date
-        categories
-        tags
-        template
-      }
-      fields {
-        nextTitle
-        nextSlug
-        prevTitle
-        prevSlug
-        slug
-        date
-      }
-    }
-  }
-`
+         query BlogPostBySlug($slug: String!) {
+           markdownRemark(fields: { slug: { eq: $slug } }) {
+             html
+             tableOfContents
+             timeToRead
+             excerpt
+             frontmatter {
+               title
+               toc
+               disqus
+               thumbnail {
+                 childImageSharp {
+                   fixed(width: 150, height: 150) {
+                     ...GatsbyImageSharpFixed
+                   }
+                 }
+               }
+               slug
+               date
+               categories
+               tags
+               template
+             }
+             fields {
+               slug
+               date
+             }
+           }
+         }
+       `;

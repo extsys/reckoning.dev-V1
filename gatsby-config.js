@@ -40,6 +40,11 @@ module.exports = {
     {
       resolve: 'gatsby-transformer-remark',
       options: {
+        excerpt_separator: `<!-- end -->`,
+        tableOfContents: {
+          heading: null,
+          maxDepth: 2,
+        },
         plugins: [
           {
             resolve: 'gatsby-remark-images',
@@ -57,6 +62,20 @@ module.exports = {
               removeAccents: true,
             },
           },
+          {
+            resolve: `gatsby-remark-katex`,
+            options: {
+              // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
+              strict: `ignore`,
+              delimiters: [
+                { left: "\\\\begin{equation*}", right: "\\\\end{equation*}", display: true },
+                { left: "$$", right: "$$", display: true },
+                { left: "\\\[", right: "\\\]", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\\(", right: "\\\)", display: false }
+              ]
+            }
+          }
         ],
       },
     },
