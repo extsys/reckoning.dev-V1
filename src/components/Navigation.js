@@ -5,6 +5,7 @@ import sun from '../images/sun.svg'
 import moon from '../images/moon.svg'
 import coffee from '../images/coffee.svg'
 import ThemeContext from '../context/ThemeContext'
+import Search from "./Search"
 
 class Navigation extends Component {
   state = {
@@ -30,6 +31,13 @@ class Navigation extends Component {
   render() {
     const { scrolled } = this.state
     const { menuLinks } = this.props
+    const searchIndices = [
+      { name: `Posts`, title: `Blog Posts`, hitComp: `PostHit` },
+      { name: `Pages`, title: `Pages`, hitComp: `PageHit` }
+    ];
+    const divStyle = {
+      'padding-top': '25px'
+    };
 
     return (
       <ThemeContext.Consumer>
@@ -64,14 +72,9 @@ class Navigation extends Component {
                     </span>
                   )}
                 </button>
-                <a
-                  className="donate-button"
-                  href="https://ko-fi.com/sadanandsingh"
-                  target="_blank"
-                >
-                  <span className="text">Donate</span>{" "}
-                  <img src={coffee} className="coffee-icon" />
-                </a>
+              </div>
+              <div style={divStyle}>
+                <Search collapse indices={searchIndices} />
               </div>
             </div>
           </nav>
