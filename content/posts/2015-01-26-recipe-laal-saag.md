@@ -8,7 +8,7 @@ tags:
 categories:
     - "Food"
 template: post
-thumbnail: '../../thumbnails/saag.jpg'
+thumbnail: '../thumbnails/saag.jpg'
 toc: false
 ---
 

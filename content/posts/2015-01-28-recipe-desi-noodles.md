@@ -8,7 +8,7 @@ tags:
 categories:
     - "Food"
 template: post
-thumbnail: '../../thumbnails/vermicelli.jpg'
+thumbnail: '../thumbnails/vermicelli.jpg'
 toc: false
 ---
 
