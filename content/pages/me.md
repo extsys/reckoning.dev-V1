@@ -36,7 +36,7 @@ A non-exhaustive list.
 ## Currently Using
 
 - **Laptop:** MacBook Pro 2017
-- **Desktop:** [See my build](/my-desktop-build)
+- **Desktop:** [See my build](/mydlsetup/#workstation-hadware)
 - **Hosting:** [Netlify](https://netlify.com), [AWS](https://aws.amazon.com)
 - **Editor:** [Visual Studio Code](https://code.visualstudio.com/)
 - **Static Site Generator:** [Gatsby](https://gatsbyjs.org)
