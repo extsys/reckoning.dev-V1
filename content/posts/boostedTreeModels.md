@@ -7,6 +7,7 @@ tags:
     - "Python"
 categories:
     - "MachineLearning"
+    - Popular
 slug: "boosted-trees"
 template: post
 thumbnail: '../thumbnails/boost.png'

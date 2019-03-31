@@ -6,6 +6,7 @@ tags:
     - "Python"
 categories:
     - "MachineLearning"
+    - Popular
 slug: "svmp-python"
 template: post
 thumbnail: '../thumbnails/svm.png'

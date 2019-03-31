@@ -3,12 +3,12 @@ title: "Pseudo Facebook Data - Plots in Python"
 slug: "onevariableeda"
 date: 2015-12-09
 tags:
-    - "Machine Learning"
+    - "MachineLearning"
     - "EDA"
     - "Python"
-    - "Data Science"
+    - "DataScience"
 categories:
-    - "Data Science"
+    - "DataScience"
 template: post
 thumbnail: '../thumbnails/notebook.png'
 toc: false

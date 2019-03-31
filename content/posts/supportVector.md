@@ -7,6 +7,7 @@ tags:
     - "MachineLearning"
 categories:
     - "MachineLearning"
+    - Popular
 template: post
 thumbnail: '../thumbnails/svm.png'
 toc: false

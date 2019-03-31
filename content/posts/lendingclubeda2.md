@@ -3,12 +3,12 @@ title: "EDA of Lending Club Data - II"
 slug: "lc-eda-2"
 date: 2016-05-20
 tags:
-    - "Machine Learning"
+    - "MachineLearning"
     - "EDA"
     - "Python"
-    - "Data Science"
+    - "DataScience"
 categories:
-    - "Data Science"
+    - "DataScience"
 template: post
 thumbnail: '../thumbnails/lc.png'
 toc: false

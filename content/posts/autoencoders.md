@@ -8,6 +8,7 @@ tags:
     - DataScience
 categories:
     - MachineLearning
+    - Popular
 slug: autoencoders
 template: post
 thumbnail: '../thumbnails/keras.jpg'

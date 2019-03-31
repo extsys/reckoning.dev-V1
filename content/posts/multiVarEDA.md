@@ -3,12 +3,12 @@ title: "Exploring Multiple Variables in EDA"
 slug: "python-plots-multi-vars"
 date: 2015-12-18
 tags:
-    - "Machine Learning"
+    - "MachineLearning"
     - "EDA"
     - "Python"
-    - "Data Science"
+    - "DataScience"
 categories:
-    - "Data Science"
+    - "DataScience"
 template: post
 thumbnail: '../thumbnails/notebook.png'
 toc: false

@@ -3,12 +3,12 @@ title: "Pseudo Facebook Data - Exploring Two Variables"
 slug: "python-plots-two-vars"
 date: 2015-12-13
 tags:
-    - "Machine Learning"
+    - "MachineLearning"
     - "EDA"
     - "Python"
-    - "Data Science"
+    - "DataScience"
 categories:
-    - "Data Science"
+    - "DataScience"
 template: post
 thumbnail: '../thumbnails/notebook.png'
 toc: false

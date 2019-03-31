@@ -5,9 +5,9 @@ date: 2015-12-08
 tags:
     - "EDA"
     - "Python"
-    - "Data Science"
+    - "DataScience"
 categories:
-    - "Data Science"
+    - "DataScience"
 template: post
 thumbnail: '../thumbnails/notebook.png'
 toc: false

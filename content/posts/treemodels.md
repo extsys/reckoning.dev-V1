@@ -7,6 +7,7 @@ tags:
     - "Python"
 categories:
     - "MachineLearning"
+    - Popular
 slug: "tree-based-models"
 template: post
 thumbnail: '../thumbnails/tree.png'
