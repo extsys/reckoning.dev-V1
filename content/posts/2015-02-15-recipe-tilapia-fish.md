@@ -1,6 +1,6 @@
 ---
 title: "Tilapia Fish Recipe"
-slug: "TilapiaFish"
+slug: "recipe-tilapia-fish"
 date: 2015-02-15
 tags:
     - "Food"

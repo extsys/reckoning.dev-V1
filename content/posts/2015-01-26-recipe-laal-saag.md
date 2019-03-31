@@ -1,6 +1,6 @@
 ---
 title: "Lal Saag Recipe"
-slug: "LaalSaagRecipe"
+slug: "recipe-laal-saag"
 date: 2015-01-26
 tags:
     - "Food"

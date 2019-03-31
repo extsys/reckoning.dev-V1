@@ -1,6 +1,6 @@
 ---
 title: "Carrot Halwa Recipe"
-slug: "CarrotHalwaRecipe"
+slug: "recipe-carrot-halwa"
 date: 2015-08-08
 tags:
     - "Food"

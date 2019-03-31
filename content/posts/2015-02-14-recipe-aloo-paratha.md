@@ -1,6 +1,6 @@
 ---
 title: "Aloo Paratha Recipe"
-slug: "AlooParatha"
+slug: "recipe-aloo-paratha"
 date: 2015-02-14
 tags:
     - "Food"

@@ -1,6 +1,6 @@
 ---
 title: "Indian Vermicelli Recipe"
-slug: "DesiNoodlesRecipe"
+slug: "recipe-desi-noodles"
 date: 2015-01-28
 tags:
     - "Food"

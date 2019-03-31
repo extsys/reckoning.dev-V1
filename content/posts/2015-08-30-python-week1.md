@@ -1,6 +1,6 @@
 ---
 title: "Python Tutorial - Week 1"
-slug: "Python-week1"
+slug: "python-week1"
 date: 2015-08-30
 tags:
     - "Programming"

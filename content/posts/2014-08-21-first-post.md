@@ -5,7 +5,7 @@ categories:
     - "News"
 tags:
     - "Introduction"
-slug: "FirstPost"
+slug: first-post
 template: post
 thumbnail: '../thumbnails/intro.jpg'
 toc: false

@@ -1,6 +1,6 @@
 ---
 title: "Palak Paneer Recipe"
-slug: "PalakPaneerRecipe"
+slug: "recipe-palak-paneer"
 date: 2015-03-22
 tags:
     - "Food"
