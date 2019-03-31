@@ -67,7 +67,6 @@ module.exports = {
               maxWidth: 850
             }
           },
-          "gatsby-remark-prismjs",
           "gatsby-remark-copy-linked-files",
           {
             resolve: `gatsby-remark-autolink-headers`,
@@ -77,6 +76,28 @@ module.exports = {
               removeAccents: true
             }
           },
+          {
+            resolve: "gatsby-remark-embed-youtube",
+            options: {
+              width: 800,
+              height: 400
+            }
+          },
+          {
+            resolve: "gatsby-remark-embed-gist",
+            options: {
+              // Optional:
+
+              // the github handler whose gists are to be accessed
+              username: "sadanand-singh",
+
+              // a flag indicating whether the github default gist css should be included or not
+              // default: true
+              includeDefaultCss: true
+            }
+          },
+          "gatsby-remark-prismjs",
+          "gatsby-remark-responsive-iframe",
           {
             resolve: `gatsby-remark-katex`,
             options: {

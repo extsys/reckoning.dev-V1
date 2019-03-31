@@ -9,7 +9,6 @@ import SEO from '../components/SEO'
 import config from '../../data/SiteConfig'
 import Img from 'gatsby-image'
 import { formatDate, editOnGithub } from '../utils/global'
-import { DiscussionEmbed } from 'disqus-react'
 import 'katex/dist/katex.min.css'
 
 class PostTemplate extends Component {
@@ -17,12 +16,6 @@ class PostTemplate extends Component {
     const { slug } = this.props.pageContext
     const postNode = this.props.data.markdownRemark
     const post = postNode.frontmatter
-
-    const disqusShortname = config.disqusShortname;
-    const disqusConfig = {
-      identifier: post.disqus,
-      title: post.title
-    };
 
     let thumbnail
 
@@ -109,10 +102,6 @@ class PostTemplate extends Component {
             ones.
           </p>
           <NewsletterForm />
-          <DiscussionEmbed
-            shortname={disqusShortname}
-            config={disqusConfig}
-          />
         </article>
         <UserInfo config={config} />
       </Layout>
@@ -133,7 +122,6 @@ export const pageQuery = graphql`
              frontmatter {
                title
                toc
-               disqus
                thumbnail {
                  childImageSharp {
                    fixed(width: 150, height: 150) {

@@ -6,7 +6,6 @@
   "repository": "git@github.com:sadanand-singh/datasciencevision.com",
   "dependencies": {
     "algoliasearch": "^3.32.1",
-    "disqus-react": "^1.0.5",
     "dotenv": "^7.0.0",
     "gatsby": "2.3.4",
     "gatsby-image": "2.0.35",
@@ -25,9 +24,12 @@
     "gatsby-plugin-typography": "^2.2.10",
     "gatsby-remark-autolink-headers": "2.0.16",
     "gatsby-remark-copy-linked-files": "2.0.11",
+    "gatsby-remark-embed-gist": "^1.1.7",
+    "gatsby-remark-embed-youtube": "0.0.7",
     "gatsby-remark-images": "3.0.10",
     "gatsby-remark-katex": "^3.0.4",
     "gatsby-remark-prismjs": "3.2.6",
+    "gatsby-remark-responsive-iframe": "^2.1.1",
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-transformer-remark": "2.3.8",
     "gatsby-transformer-sharp": "2.1.17",
@@ -42,6 +44,7 @@
     "react-instantsearch-dom": "^5.4.0",
     "react-typography": "^0.16.19",
     "sharp": "^0.22.0",
+    "styled-components": "^4.2.0",
     "styled-icons": "^7.8.0",
     "typography": "^0.16.19",
     "url-join": "^4.0.0"
