@@ -1,8 +1,5 @@
 const urljoin = require('url-join')
 const config = require('./data/SiteConfig')
-const queries = require("./src/utils/algolia");
-
-require("dotenv").config();
 
 module.exports = {
   pathPrefix: config.pathPrefix === "" ? "/" : config.pathPrefix,
@@ -16,19 +13,10 @@ module.exports = {
       image_url: `${urljoin(
         config.siteUrl,
         config.pathPrefix
-      )}/logos/logo-512.png`
+      )}/logos/logo-1024.png`
     }
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-algolia`,
-      options: {
-        appId: process.env.GATSBY_ALGOLIA_APP_ID,
-        apiKey: process.env.ALGOLIA_ADMIN_KEY,
-        queries,
-        chunkSize: 10000 // default: 1000
-      }
-    },
     "gatsby-plugin-sass",
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-twitter",
