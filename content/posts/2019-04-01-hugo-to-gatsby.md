@@ -20,6 +20,8 @@ I had quite a bit of fun with Hugo. I developed my own theme of Bootstrap4 from 
 
 After few weeks of trial and learning, I have been able to transfer all of my content from before to Gatsby. You might observe this link to be much faster and aesthetically pleasing.
 
+![](https://res.cloudinary.com/sadanandsingh/image/upload/v1554162618/gatsby-performance_udgdar.png)
+
 There are hundreds of articles on how to get started with gatsby, best ones of their website itself. Hence, I am not going to bore you with YAGT (Yet Another Guide/Tutorial). Here, I just want to highlight the features that I really liked about Gatsby and how I went about transforming this website.
 
 ##Why Gatsby?
