@@ -71,19 +71,6 @@ module.exports = {
               height: 400
             }
           },
-          {
-            resolve: "gatsby-remark-embed-gist",
-            options: {
-              // Optional:
-
-              // the github handler whose gists are to be accessed
-              username: "sadanand-singh",
-
-              // a flag indicating whether the github default gist css should be included or not
-              // default: true
-              includeDefaultCss: true
-            }
-          },
           "gatsby-remark-prismjs",
           "gatsby-remark-responsive-iframe",
           {
@@ -153,7 +140,7 @@ module.exports = {
         setup(ref) {
           const ret = ref.query.site.siteMetadata.rssMetadata;
           ret.allMarkdownRemark = ref.query.allMarkdownRemark;
-          ret.generator = "Tania Rascia";
+          ret.generator = "Sadanand Singh";
           return ret;
         },
         query: `

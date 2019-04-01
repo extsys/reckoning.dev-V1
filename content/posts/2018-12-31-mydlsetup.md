@@ -10,7 +10,7 @@ categories:
 slug: "mydlsetup"
 template: post
 thumbnail: '../thumbnails/gpu.png'
-toc: false
+toc: true
 jupyter: false
 bokeh: false
 ---
@@ -315,11 +315,9 @@ machines - [VS Code Settings Sync](https://marketplace.visualstudio.com/items?it
 This enables you to save your settings and extensions as a private git gist. Please follow the above
 link to set this up properly and use it.
 
-Overall my details setup can be found at the following gist.
+Overall my details setup can be found at this [gist](https://gist.github.com/sadanand-singh/8fc2a9ba799c479004bcfbc41b263551/).
 
 [code]: https://code.visualstudio.com/
-
-`gist:sadanand-singh/8fc2a9ba799c479004bcfbc41b263551#settings.json`
 
 So this is a summary of my full setup. Its pretty easy to get started and maintain! Let me know your
 preferences in the comments below. And with that, lets all celebrate a Happy New Year!!

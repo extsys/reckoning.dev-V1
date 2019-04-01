@@ -129,15 +129,11 @@ When the data is not normally distributed a non-linear transformation (e.g., log
 
 Linear regression assumes that there is little or no multicollinearity in the data.  Multicollinearity occurs when the independent variables are highly correlated with each other. It can be tested with three primary criteria:
 
-1. **Correlation matrix** – when computing the matrix of Pearson’s Bivariate Correlation among all independent variables the correlation coefficients need to be smaller than 1.
+- **Correlation matrix** – when computing the matrix of Pearson’s Bivariate Correlation among all independent variables the correlation coefficients need to be smaller than 1.
 
-2. **Tolerance** – the tolerance measures the influence of one independent variable on all other independent variables; the tolerance is calculated with an initial linear regression analysis.  Tolerance is defined as $T = 1 – R^2$ for these first step regression analysis.  With $T < 0.1$ there might be multicollinearity in the data and with $T < 0.01$ there certainly is.
-Here, $R^2$ is coefficient of determination and is calculated as:
-$$R^2 = \frac{\sum \big ( \hat{y}_i - \bar{y} \big)^2 }{\sum \big ( y_i - \bar{y} \big)^2}$
-where, $\bar{y}$ is the average response.
+- **Tolerance** – the tolerance measures the influence of one independent variable on all other independent variables; the tolerance is calculated with an initial linear regression analysis.  Tolerance is defined as $T = 1 – R^2$ for these first step regression analysis.  With $T < 0.1$ there might be multicollinearity in the data and with $T < 0.01$ there certainly is. Here, $R^2$ is coefficient of determination and is calculated as: $$R^2 = \frac{\sum \big ( \hat{y}_i - \bar{y} \big)^2 }{\sum \big ( y_i - \bar{y} \big)^2}$$ where, $\bar{y}$ is the average response.
 
-3. **Variance Inflation Factor (VIF)** – the [variance inflation factor][vif] of the linear regression is defined as $VIF = 1/T$. $VIF > 10$ is an indication of presence of multicollinearity; while $VIF > 100$ indicates certainty of presence of multicollinearity.
-If multicollinearity is found in the data, centering the data (that is deducting the mean of the variable from each score) might help to solve the problem.  However, the simplest way to address the problem is to remove independent variables with high VIF values.
+- **Variance Inflation Factor (VIF)** – the [variance inflation factor][vif] of the linear regression is defined as $VIF = 1/T$. $VIF > 10$ is an indication of presence of multicollinearity; while $VIF > 100$ indicates certainty of presence of multicollinearity. If multicollinearity is found in the data, centering the data (that is deducting the mean of the variable from each score) might help to solve the problem.  However, the simplest way to address the problem is to remove independent variables with high VIF values.
 
 A list of more detailed tests can be found at [Wikipedia](https://en.wikipedia.org/wiki/Multicollinearity).
 
