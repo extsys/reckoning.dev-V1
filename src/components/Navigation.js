@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
-import camera from '../images/camera.svg'
+import folder from '../images/folder.svg'
 import sun from '../images/sun.svg'
 import moon from '../images/moon.svg'
 import coffee from '../images/coffee.svg'
@@ -38,7 +38,7 @@ class Navigation extends Component {
             <div className="nav-container">
               <div className="brand">
                 <Link to="/">
-                  <img src={camera} className="favicon" />{" "}
+                  <img src={folder} className="favicon" />{" "}
                   <span className="text">Sadanand Singh</span>
                 </Link>
               </div>

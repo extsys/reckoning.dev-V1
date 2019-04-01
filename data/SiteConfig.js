@@ -2,7 +2,7 @@ const config = {
   siteTitle: "Sadanand's Notes",
   siteTitleShort: "Sadanand Singh",
   siteTitleAlt: "Sadanand Singh",
-  siteLogo: "/logos/logo-1024.png",
+  siteLogo: "/logos/logo-512.png",
   siteUrl: "https://datasciencevision.com/",
   repo: "https://github.com/sadanand-singh/datasciencevision.com",
   pathPrefix: "",
