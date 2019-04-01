@@ -15,7 +15,7 @@ jupyter: false
 bokeh: false
 ---
 
-As a researcher, I have to keep myself up-to-date with latest research in my field. Given the pace with which deep learning research is moving currently, it has become quite a gargantuan task lately. Large quantity also brings a lot of noise with it. While, whether certain works should really be published, is a matter of discussion for another day! As a researcher it has become quite impossible to read each and every one of papers that show up on [Arxiv](https://arxiv.org/) in the my field of deep learning, computer vision and pattern recognition.
+As a researcher, I have to keep myself up-to-date with latest research in my field. Given the pace with which deep learning research is moving currently, it has become quite a gargantuan task lately. Large quantity also brings a lot of noise with it. While, whether certain works should really be published is a matter of discussion for another day! As a researcher it has become quite impossible to read each and every one of papers that show up on [Arxiv](https://arxiv.org/) in the my field of deep learning, computer vision and pattern recognition.
 
 During my PhD, I was able to track all papers I read simply by organizing them in topic-wise folders and sub-folders for read vs unread. That is simply not an option today. I will simply loose my brain or just give up reading. This led me to start looking into proper tools (or tool sets) that could enable me manage this in a sane manner. Some of my required features (in order of importance) were:
 
@@ -35,7 +35,7 @@ This is the era of machine learning. My first thought - can't we apply ML to fin
 
 > This project is a web interface that attempts to tame the overwhelming flood of papers on Arxiv. It allows researchers to keep track of recent papers, search for papers, sort papers by similarity to any paper, see recent popular papers, to add papers to a personal library, and to get personalized recommendations of (new or old) Arxiv papers. This code is currently running live at [www.arxiv-sanity.com](www.arxiv-sanity.com), where it's serving 25,000+ Arxiv papers from Machine Learning (cs.[CV|AI|CL|LG|NE]/stat.ML) over the last ~3 years.
 
-To summarize: this lets me filter arxiv papers based on tags relevant to me. Then, using SVM models based on my choices, recommends new and past papers. Additionally, you can get popular (based all user's library), trending (based on twitter), popular among friends papers as well. Talking of friends, if you want me to follow it there, please add me to your friend list as "sadanand.singh".
+To summarize: this lets me filter arxiv papers based on tags relevant to me. Then, using SVM models based on my choices, recommends new and past papers. Additionally, you can get popular (based all user's library), trending (based on twitter), popular among friends papers as well. Talking of friends, if you want me to follow there, please add me to your friend list as "sadanand.singh".
 
 Now, I have started using this website weekly, I add papers to library and recommendations keep improving. Other source of my relevant papers is twitter! Follow right people and you get a minefield of information.
 
@@ -46,7 +46,7 @@ I instantly fell in love with zotero. It works on all desktop platforms - Linux 
 
 ![](https://res.cloudinary.com/sadanandsingh/image/upload/v1554089530/zotero-preferences_n3euc1.png)
 
-> Neither Dropbox or Google Drive proper native webdav support. In case, you are considering Zotero, please consider signing up for a [free pCloud account](https://pcloud.com). I promise you, you are not going to regret it. I loved it so much that I signed up for their lifetime 2 TB account!
+> Neither Dropbox or Google Drive provide native webdav support. In case, you are considering Zotero, please consider signing up for a [free pCloud account](https://pcloud.com). I promise you, you are not going to regret it. I loved it so much that I signed up for their lifetime 2 TB account!
 
 One very interesting feature of zotero is [colored tagging](https://www.zotero.org/support/collections_and_tags#colored_tags). Once you have created a tag, you can right click on it and assign it a color and shortcut numeric key. I use this heavily for rating papers in my library. For example, I can just press 1 to assign a paper a 5-star rating. Below is a screenshot of it:
 
@@ -59,4 +59,4 @@ On my iPad, I use an app called [PDF Expert](https://itunes.apple.com/app/pdf-ex
 ##Annotating PDFs
 Last thing remaining on my feature list was pdf annotations. On linux, I use [foxit reader](https://www.foxitsoftware.com/pdf-reader/). It has right tools for annotations and saving them right in the pdf files. On my mac though, I did not like the look and feel of foxit reader on OSX. I ended up going with [PDF Expert for Mac](https://pdfexpert.com/). Although, its  a paid software, I really love their smoothness and features.
 
-Finally, you can also share my library with my colleagues using the [Zotero Groups](https://www.zotero.org/groups/) feature. This enables you to share you library, and discover other people's library in the team.
+Finally, you can also share any library with your colleagues using the [Zotero Groups](https://www.zotero.org/groups/) feature. This enables you to share you library, and discover other people's library in the team.
