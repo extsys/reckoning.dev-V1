@@ -9,7 +9,7 @@ template: page
 More than 6 years of experience with deep learning, machine learning, numerical modeling and scientific computing in production environments.Proficient in Python, C++ and C
 
 - [datasciencevision.com](https://datasciencevision.com)
-- [me@taniarascia.com](mailto:me@datasciencevision.com)
+- [me@datasciencevision.com](mailto:me@datasciencevision.com)
 - [LinkedIn Profile](https://www.linkedin.com/in/sadanandsingh/)
 - San Francisco, CA
 
