@@ -10,6 +10,8 @@ categories:
 template: post
 thumbnail: '../thumbnails/puzzle.png'
 toc: false
+jupyter: false
+bokeh: false
 ---
 
 As promised in the intro post, here is the first puzzle!

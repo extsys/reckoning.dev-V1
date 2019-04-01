@@ -10,14 +10,14 @@ slug: "interactive-data-visuals"
 template: post
 thumbnail: '../thumbnails/bokeh.png'
 toc: false
+jupyter: false
+bokeh: true
 ---
 
 There are two types of data visualizations: _exploratory_ and _explanatory_.
 Explanatory analysis is what happens when you have something specific you want
 to show an audience. The aim of **explanatory** visualizations is to tell
 stories - they’re carefully constructed to surface key findings.
-
-> Please refer to the ipython notebook at the end of the post for a preview of working examples.
 
 Exploratory analysis, on the other hand, is what you do to get familiar with
 the data. You may start out with a hypothesis or question, or you may just
@@ -515,3 +515,8 @@ If you have any question regarding any type of plot, feel free to leave a
 comment below!
 
 [tutorial]: https://mybinder.org/v2/gh/bokeh/bokeh-notebooks/master?filepath=tutorial%2F00%20-%20Introduction%20and%20Setup.ipynb
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.1/bokeh.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.1/bokeh-widgets.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.1/bokeh-tables.min.js"></script>
+<script src="/interactivePlots_min.js"></script>

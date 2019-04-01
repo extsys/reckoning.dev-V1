@@ -10,6 +10,8 @@ categories:
 template: post
 thumbnail: '../thumbnails/programming.png'
 toc: false
+jupyter: false
+bokeh: false
 ---
 
 

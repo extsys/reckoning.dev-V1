@@ -12,6 +12,8 @@ categories:
 template: post
 thumbnail: '../thumbnails/arch.png'
 toc: false
+jupyter: false
+bokeh: false
 ---
 
 You must be thinking - yet another installation guide! There is no

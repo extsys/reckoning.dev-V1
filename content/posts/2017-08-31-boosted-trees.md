@@ -12,6 +12,8 @@ slug: "boosted-trees"
 template: post
 thumbnail: '../thumbnails/boost.png'
 toc: false
+jupyter: false
+bokeh: false
 ---
 
 In the [previous post](/tree-based-models), we learned about tree based learning methods - basics of tree based models and the use of [bagging](/tree-based-models/#bootstrap-aggregating-bagging) to reduce variance. We also looked at one of the most famous learning algorithms based on the idea of bagging- [random forests](/tree-based-models/#random-forest-models). In this post, we will look into the details of yet another type of tree-based learning algorithms: [boosted trees](https://machinelearningmastery.com/gentle-introduction-gradient-boosting-algorithm-machine-learning/).

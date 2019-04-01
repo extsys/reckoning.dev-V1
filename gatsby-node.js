@@ -117,6 +117,8 @@ exports.createPages = ({ graphql, actions }) => {
                     categories
                     template
                     toc
+                    bokeh
+                    jupyter
                   }
                   fields {
                     slug

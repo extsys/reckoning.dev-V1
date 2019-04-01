@@ -10,6 +10,8 @@ categories:
 template: post
 thumbnail: '../thumbnails/python.png'
 toc: false
+jupyter: true
+bokeh: false
 ---
 
 In the [Week 1](/Python-week1) we got started with Python. Now that we can interact with python, lets dig deeper into it.

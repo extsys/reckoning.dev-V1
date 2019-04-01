@@ -11,6 +11,8 @@ slug: "linear-regression"
 template: post
 thumbnail: '../thumbnails/reg.png'
 toc: false
+jupyter: false
+bokeh: false
 ---
 
 Modeling the relationship between a scalar response (or dependent variable)

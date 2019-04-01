@@ -9,6 +9,8 @@ categories:
 template: post
 thumbnail: '../thumbnails/desktop.png'
 toc: false
+jupyter: false
+bokeh: false
 ---
 
 It has been long due. Just built a new desktop. Here are different parts

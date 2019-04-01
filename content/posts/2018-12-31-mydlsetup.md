@@ -11,6 +11,8 @@ slug: "mydlsetup"
 template: post
 thumbnail: '../thumbnails/gpu.png'
 toc: false
+jupyter: false
+bokeh: false
 ---
 
 Lately, a lot of my friends have been asking about my deep learning workstation setup. In this post

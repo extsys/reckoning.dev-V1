@@ -11,6 +11,8 @@ slug: "svmp-python"
 template: post
 thumbnail: '../thumbnails/svm.png'
 toc: false
+jupyter: false
+bokeh: false
 ---
 
 In the previous post on [Support Vector Machines (SVM)](/svm), we looked at the mathematical details of the algorithm. In this post, I will be discussing the practical implementations of SVM for classification as well as regression.

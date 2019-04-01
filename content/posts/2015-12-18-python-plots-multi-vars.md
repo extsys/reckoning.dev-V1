@@ -12,6 +12,8 @@ categories:
 template: post
 thumbnail: '../thumbnails/notebook.png'
 toc: false
+jupyter: true
+bokeh: false
 ---
 
 In this section, we will continue re-using the data from the previous post based on Pseudo
@@ -304,15 +306,12 @@ at [Facebook](https://facebook.com). You can load the data through the following
             <span class="s1">&#39;n&#39;</span><span class="p">:</span> <span class="s1">&#39;count&#39;</span>
         <span class="p">}</span>
     <span class="p">}</span>
-
     <span class="n">df_group_by_groupCol</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">groupCol</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">group_keys</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">aggregations</span><span class="p">)</span>
-
     <span class="n">df_group_by_groupCol</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">df_group_by_groupCol</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">droplevel</span><span class="p">()</span>
     <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">groupCol</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
         <span class="n">cols</span> <span class="o">=</span> <span class="n">groupCol</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_group_by_groupCol</span><span class="o">.</span><span class="n">columns</span><span class="p">)[</span><span class="nb">len</span><span class="p">(</span><span class="n">groupCol</span><span class="p">):]</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="n">groupCol</span><span class="p">]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">df_group_by_groupCol</span><span class="o">.</span><span class="n">columns</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]</span>
-
     <span class="n">df_group_by_groupCol</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">cols</span>
     <span class="k">return</span> <span class="n">df_group_by_groupCol</span></div>
 </pre></div>

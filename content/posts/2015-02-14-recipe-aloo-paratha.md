@@ -10,6 +10,8 @@ categories:
 template: post
 thumbnail: '../thumbnails/alooparatha.jpg'
 toc: false
+jupyter: false
+bokeh: false
 ---
 
 Today, I share one of my favorite dishes - *Aloo Paratha*. It is a dish

@@ -10,6 +10,8 @@ categories:
 template: post
 thumbnail: '../thumbnails/halwa.jpg'
 toc: false
+jupyter: false
+bokeh: false
 ---
 
 Last month or so has been all silent here. No puzzles, no math, no

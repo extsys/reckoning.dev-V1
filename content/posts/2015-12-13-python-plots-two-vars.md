@@ -12,6 +12,8 @@ categories:
 template: post
 thumbnail: '../thumbnails/notebook.png'
 toc: false
+jupyter: true
+bokeh: false
 ---
 
 In this section, we will be re-using the data from the previous post based on Pseudo
@@ -1902,34 +1904,27 @@ SkqmuWAcAAAAAElFTkSuQmCC
     <span class="c1"># ``gca().set_yscale(&quot;mercator&quot;)`` would be used to select this</span>
     <span class="c1"># scale.</span>
     <span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;sqrt&#39;</span>
-
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span></div>
-<span class="sd">        Any keyword arguments passed to ``set_xscale`` and</span>
-<span class="sd">        ``set_yscale`` will be passed along to the scale&#39;s</span>
-<span class="sd">        constructor.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-
-        <span class="n">mscale</span><span class="o">.</span><span class="n">ScaleBase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-
+    <span class="sd">        Any keyword arguments passed to ``set_xscale`` and</span>
+    <span class="sd">        ``set_yscale`` will be passed along to the scale&#39;s</span>
+    <span class="sd">        constructor.</span>
+    <span class="sd">        &quot;&quot;&quot;</span>
+    <span class="n">mscale</span><span class="o">.</span><span class="n">ScaleBase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
     <span class="k">def</span> <span class="nf">get_transform</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">        Override this method to return a new instance that does the</span>
-<span class="sd">        actual transformation of the data.</span>
-
-<span class="sd">        The SqrtTransform class is defined below as a</span>
-<span class="sd">        nested class of this one.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">SqrtTransform</span><span class="p">()</span>
-
+    <span class="sd">        Override this method to return a new instance that does the</span>
+    <span class="sd">        actual transformation of the data.</span>
+    <span class="sd">        The SqrtTransform class is defined below as a</span>
+    <span class="sd">        nested class of this one.</span>
+    <span class="sd">        &quot;&quot;&quot;</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">SqrtTransform</span><span class="p">()</span>
     <span class="k">def</span> <span class="nf">set_default_locators_and_formatters</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">axis</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        Override to set up the locators and formatters to use with the</span>
 <span class="sd">        scale.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-
         <span class="n">axis</span><span class="o">.</span><span class="n">set_major_locator</span><span class="p">(</span><span class="n">AutoLocator</span><span class="p">())</span>
-
     <span class="k">class</span> <span class="nc">SqrtTransform</span><span class="p">(</span><span class="n">mtransforms</span><span class="o">.</span><span class="n">Transform</span><span class="p">):</span>
         <span class="c1"># There are two value members that must be defined.</span>
         <span class="c1"># ``input_dims`` and ``output_dims`` specify number of input</span>
@@ -1942,17 +1937,14 @@ SkqmuWAcAAAAAElFTkSuQmCC
         <span class="n">input_dims</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="n">output_dims</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="n">is_separable</span> <span class="o">=</span> <span class="kc">True</span>
-
         <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="n">mtransforms</span><span class="o">.</span><span class="n">Transform</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
-
         <span class="k">def</span> <span class="nf">transform_non_affine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
             <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            This transform takes an Nx1 ``numpy`` array and returns a</span>
 <span class="sd">            transformed copy.</span>
 <span class="sd">            &quot;&quot;&quot;</span>
             <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-
         <span class="k">def</span> <span class="nf">inverted</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
             <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">            Override this method so matplotlib knows how to get the</span>
@@ -5258,7 +5250,6 @@ CogxxhhjAmcVEGOMMcYE7v8uEaHP69qoSwAAAABJRU5ErkJggg==
         <div><span class="p">}</span></div>
 <div>
     <span class="p">}</span>
-
     <span class="n">pf_group_by_age</span> <span class="o">=</span> <span class="n">pf</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">groupCol</span><span class="p">,</span> <span class="n">as_index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span><span class="n">aggregations</span><span class="p">)</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;&#39;</span><span class="p">:</span><span class="n">groupCol</span><span class="p">})</span>
     <span class="n">pf_group_by_age</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="n">pf_group_by_age</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">droplevel</span><span class="p">()</span>
     <span class="k">return</span> <span class="n">pf_group_by_age</span>

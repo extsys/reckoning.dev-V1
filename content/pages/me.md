@@ -4,6 +4,12 @@ slug: me
 template: page
 ---
 
+Hi, I'm Sadanand Singh. I build AI models in medical imaging and enjoy working with Algorithms, Python and C++.
+My background is in computational physics, numerical modeling and chemical engineering. I have a PhD in chemical engineering focusing on computational models of nano-materials and bio-molecules.
+
+My active area of research is in applications of deep learning and computer vision in medical imaging. I am specifically interested in designing AI models that are explainable and tractable.
+
+I also have huge interest in computers and programming since childhood. Apart from scientific programming in C/C++/Python, these days I am learning a lot about javascript, django, react and databases.
 
 - [View resume](/resume)
 

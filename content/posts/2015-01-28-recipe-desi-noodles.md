@@ -10,6 +10,8 @@ categories:
 template: post
 thumbnail: '../thumbnails/vermicelli.jpg'
 toc: false
+jupyter: false
+bokeh: false
 ---
 
 This is for all the lazy souls like me - in a mood to eat something

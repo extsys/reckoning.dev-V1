@@ -12,6 +12,8 @@ categories:
 template: post
 thumbnail: '../thumbnails/kde.png'
 toc: false
+jupyter: false
+bokeh: false
 ---
 
 In my last post on

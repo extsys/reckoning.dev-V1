@@ -11,6 +11,8 @@ categories:
 template: post
 thumbnail: '../thumbnails/notebook.png'
 toc: false
+jupyter: true
+bokeh: false
 ---
 
 The data set used here is part of a project from [UD651](https://www.udacity.com/course/data-analysis-with-r--ud651) course on [udacity](https://www.udacity.com/) by [Facebook](https://www.facebook.com).

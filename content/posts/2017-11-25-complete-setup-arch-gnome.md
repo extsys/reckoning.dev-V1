@@ -12,6 +12,8 @@ categories:
 template: post
 thumbnail: '../thumbnails/gnome.png'
 toc: false
+jupyter: false
+bokeh: false
 ---
 
 If you have been following me on this space, you would have known by now, I am very particular about

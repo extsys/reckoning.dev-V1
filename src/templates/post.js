@@ -48,6 +48,18 @@ class PostTemplate extends Component {
       <Layout>
         <Helmet>
           <title>{`${post.title} – ${config.siteTitle}`}</title>
+          {post.bokeh == true && (
+              <link href="//cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.1/bokeh.min.css" rel="stylesheet" type="text/css" />
+          )}
+          {post.bokeh == true && (
+          <link href="//cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.1/bokeh-widgets.min.css" rel="stylesheet" type="text/css" />
+          )}
+          {post.bokeh == true && (
+          <link href="//cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.1/bokeh-tables.min.css" rel="stylesheet" type="text/css" />
+          )}
+          {post.jupyter == true && (
+            <link href="/jupyter.css" rel="stylesheet" type="text/css" />
+          )}
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <article className="single container">
@@ -88,10 +100,8 @@ class PostTemplate extends Component {
           />
           <div>
             {" "}
-            <a href={twitterShare}>
-              Share on Twitter
-            </a>{" "}
-            | <a href={twitterUrl}>Discuss on Twitter</a> |{" "}
+            <a href={twitterShare}>Share on Twitter</a> |{" "}
+            <a href={twitterUrl}>Discuss on Twitter</a> |{" "}
             <a href={githubLink} target="_blank">
               Edit on Github ✏️
             </a>
@@ -122,6 +132,8 @@ export const pageQuery = graphql`
              frontmatter {
                title
                toc
+               bokeh
+               jupyter
                thumbnail {
                  childImageSharp {
                    fixed(width: 150, height: 150) {

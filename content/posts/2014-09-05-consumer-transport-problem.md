@@ -10,6 +10,8 @@ categories:
 template: post
 thumbnail: '../thumbnails/puzzle.png'
 toc: false
+jupyter: false
+bokeh: false
 ---
 
 Here is another puzzle starring a monkey, transportation and money!

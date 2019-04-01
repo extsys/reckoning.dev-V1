@@ -9,6 +9,8 @@ slug: first-post
 template: post
 thumbnail: '../thumbnails/intro.jpg'
 toc: false
+jupyter: false
+bokeh: false
 ---
 
 This is Sadanand Singh. I am a process engineer, a physicist, a

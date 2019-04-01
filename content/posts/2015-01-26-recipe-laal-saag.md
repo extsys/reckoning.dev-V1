@@ -10,6 +10,8 @@ categories:
 template: post
 thumbnail: '../thumbnails/saag.jpg'
 toc: false
+jupyter: false
+bokeh: false
 ---
 
 I have started eating a lot of greens these days. As a kid, I always

@@ -2,16 +2,18 @@
 title: "A Practical Guide to Tree Based Learning Algorithms"
 date: 2017-07-22
 tags:
-    - "MachineLearning"
-    - "Algorithms"
-    - "Python"
+    - MachineLearning
+    - Algorithms
+    - Python
 categories:
-    - "MachineLearning"
+    - MachineLearning
     - Popular
-slug: "tree-based-models"
+slug: tree-based-models
 template: post
 thumbnail: '../thumbnails/tree.png'
 toc: false
+jupyter: false
+bokeh: false
 ---
 
 Tree based learning algorithms are quite [common in data science competitions](https://www.datasciencecentral.com/profiles/blogs/want-to-win-at-kaggle-pay-attention-to-your-ensembles).
