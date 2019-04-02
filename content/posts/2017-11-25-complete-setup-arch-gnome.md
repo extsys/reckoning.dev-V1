@@ -11,7 +11,7 @@ categories:
     - "Popular"
 template: post
 thumbnail: '../thumbnails/gnome.png'
-toc: false
+toc: true
 jupyter: false
 bokeh: false
 ---

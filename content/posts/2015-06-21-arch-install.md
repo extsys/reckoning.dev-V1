@@ -11,7 +11,7 @@ categories:
     - "Computers"
 template: post
 thumbnail: '../thumbnails/arch.png'
-toc: false
+toc: true
 jupyter: false
 bokeh: false
 ---
