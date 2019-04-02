@@ -947,6 +947,6 @@ __Case 2: income = 134675__
 5. Net Tax is: 9163.9074182562981
 6. Total Tax is: 9177.0691654243201
 
-Great! [Next week]({{< relref "pythonTutorialWeek2.md" >}}) we dive into Python further.
+Great! [Next week](/python-tutorial-week2) we dive into Python further.
 
 <br>

@@ -725,10 +725,8 @@ psd
 In the config file change the BROWSERS variables to `google-chrome`. Also, enable the use of
 `overlayfs` to improve sync speed and to use a smaller memory footprint. Do this in the
 `USE_OVERLAYFS="yes"` variable.
-{{< emph info >}}
-Note: USE_OVERLAYFS feature requires a Linux kernel version of 3.18.0 or greater
-to work.
-{{< /emph >}}
+
+> Note: USE_OVERLAYFS feature requires a Linux kernel version of 3.18.0 or greater to work.
 
 In order to use the OVERLAYFS feature, you will also need to give *sudo*
 permissions to psd-helper at the end of the sudoers file, as follows
@@ -942,7 +940,7 @@ yay -S pcloud-drive
 Editors
 -------
 
-My choice of editor is neovim and sublime text. Please [refer to my previous post]({{< relref "sublimetext.md" >}}) for
+My choice of editor is neovim and sublime text. Please [refer to my previous post](/sublimetext) for
 details on setting up Sublime Text 3. Following is the setup required to install it:
 
 ![Editors](https://res.cloudinary.com/sadanandsingh/image/upload/v1544988348/images/gnome3/editors.png)

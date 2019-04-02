@@ -102,7 +102,7 @@ plt.show()
 ## Parameter Tuning
 Similar to any machine learning algorithm, we need to choose/tune hyper-parameters for these models. The important parameters to tune are: C (the penalty parameter or the error term. Remember from our last post, this acts as a regularization parameter for SVM) and $\gamma$ (Kernel coefficient for ‘rbf’, ‘poly’ and ‘sigmoid’ kernels). In above example, we used a default value of $\gamma = \frac{1}{n\_{features}} = 0.5$.
 
-{{< card primary "**Multi-class Classification**" >}}
+###Multi-class Classification
 
 SVM by definition is well suited for binary classification. In order to perform [multi-class classification](https://en.wikipedia.org/wiki/Multiclass_classification), the problem needs to be transformed into a set of binary classification problems.
 
@@ -113,8 +113,6 @@ __One vs. Rest Approach (OvR)__: This strategy involves training a single classi
 __One vs. One Approach (OvO)__: In the one-vs.-one (OvO) strategy, one trains K(K − 1)/2 binary classifiers for a K-way multi-class problem; each receives the samples of a pair of classes from the original training set, and must learn to distinguish these two classes. At prediction time, a voting scheme is applied: all K(K − 1)/2 classifiers are applied to an unseen sample and the class that got the highest number of "+1" predictions gets predicted by the combined classifier. Like OvR, OvO suffers from ambiguities in that some regions of its input space may receive the same number of votes.
 
 In svm.svc implementation, `decision_function_shape` parameter provides the option to choose one of two strategy. Although, by default OvO strategy is chosen for historical reasons, it is always recommended to switch to the OvR approach.
-
-{{< /card >}}
 
 Let us first understand what effects $C$ and $\gamma$ parameters have on SVM models. As seen below, we find that higher the value of $\gamma$, it will try to exact fit the as per training data set i.e. generalization error and cause over-fitting problem. $C$ controls the trade off between smooth decision boundary and classifying the training points correctly.
 
@@ -297,7 +295,7 @@ Output:
 The common hyper-parameters in the case of SVM regressors are: $C$ (the error term), $\epsilon$ (specifies the epsilon-tube within which no penalty is associated in the training loss function with points predicted within a distance epsilon from the actual value) and $\gamma$ (Kernel coefficient for ‘rbf’, ‘poly’ and ‘sigmoid’ kernels). Given our example is extremely simplified, we won't be able to observe any significant impact of any of these parameters. In general, similar to classification case, `GridSearchCV` can be used to tune SVM regression models as well.
 
 # Concluding Remarks
-So that brings us to an end to the different aspects of Support Vector Machine algorithms. In the [first post]({{< relref "supportVector.md" >}}) on the topic, I described the theory and the mathematical formulation of the algorithm. In this post, I discussed the implementation details in Python and ways to tune various hyper-parameters in both classification  and regression cases.
+So that brings us to an end to the different aspects of Support Vector Machine algorithms. In the [first post](/svm) on the topic, I described the theory and the mathematical formulation of the algorithm. In this post, I discussed the implementation details in Python and ways to tune various hyper-parameters in both classification  and regression cases.
 From practical experience, SVMs are great for:
 
 - Small to medium data sets only. Training becomes extremely slow in the case of larger datasets.

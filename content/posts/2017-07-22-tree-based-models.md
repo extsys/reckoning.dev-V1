@@ -109,7 +109,7 @@ response for an observation is given by the mean response of the
 training observations that belong to the same terminal node. In
 contrast, for a classification tree, we predict that each observation
 belongs to the _most commonly occurring_ class of training
-observations in the region to which it belongs (i.e. the [mode response]({{< relref "descriptiveStats.md#mode$) of the training
+observations in the region to which it belongs (i.e. the [mode response](/descriptive-stats/#mode) of the training
 observations). For the purpose of classification, many a times one is
 not only interested in predicting the class, rather also
 in _probabilities_ of being in a given class.
