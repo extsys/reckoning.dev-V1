@@ -25,6 +25,12 @@ class Contact extends Component {
               sadanandsingh
             </a>
           </li>
+          <li>
+            <strong>LinkedIn</strong>:{' '}
+            <a target="_blank" href="https://www.linkedin.com/in/sadanandsingh/">
+              sadanandsingh
+            </a>
+          </li>
         </ul>
       </>
     )

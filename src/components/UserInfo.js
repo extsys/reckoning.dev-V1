@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
 import coffee from '../images/coffee.svg'
+import sadanand from '../../content/images/sadanand.png'
 
 class UserInfo extends Component {
   render() {
     return (
       <aside className="note">
         <div className="container note-container">
+        <div>
           <h2>A note from the author</h2>
           <p>
             Hi! I'm Sadanand. I write free resources for people learning machine learning, deep learning and programming. I aspire to help hundreds of people daily. I turn down
@@ -17,6 +19,10 @@ class UserInfo extends Component {
           <a href="https://ko-fi.com/sadanandsingh" className="donate-button" target="_blank">
             Support me <img src={coffee} className="coffee-icon" />
           </a>
+        </div>
+          <div>
+            <img className="avatar" src={sadanand} />
+          </div>
         </div>
       </aside>
     )

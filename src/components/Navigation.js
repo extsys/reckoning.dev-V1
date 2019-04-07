@@ -3,7 +3,6 @@ import { Link } from 'gatsby'
 import folder from '../images/folder.svg'
 import sun from '../images/sun.svg'
 import moon from '../images/moon.svg'
-import coffee from '../images/coffee.svg'
 import ThemeContext from '../context/ThemeContext'
 
 class Navigation extends Component {
@@ -48,7 +47,9 @@ class Navigation extends Component {
                     {link.name}
                   </Link>
                 ))}
-              </div>
+                <a target="_blank" href="https://github.com/sadanand-singh">
+                  GitHub
+                </a>
               <div className="cta">
                 <button
                   className="dark-switcher"
@@ -64,20 +65,13 @@ class Navigation extends Component {
                     </span>
                   )}
                 </button>
-                <a
-                  className="donate-button"
-                  href="https://ko-fi.com/sadanandsingh"
-                  target="_blank"
-                >
-                  <span className="text">Donate</span>{" "}
-                  <img src={coffee} className="coffee-icon" />
-                </a>
+                </div>
               </div>
             </div>
           </nav>
         )}
       </ThemeContext.Consumer>
-    );
+    )
   }
 }
 

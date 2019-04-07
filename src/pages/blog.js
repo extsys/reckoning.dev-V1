@@ -10,11 +10,29 @@ import _ from 'lodash'
 
 class BlogPage extends Component {
   state = {
+    searchTerm: '',
     posts: this.props.data.posts.edges,
+    filteredPosts: this.props.data.posts.edges,
+  }
+
+  handleChange = event => {
+    this.setState({ searchTerm: event.target.value })
+    this.filterPosts(event.target.value)
+  }
+
+  filterPosts = searchTerm => {
+    const { posts } = this.state
+
+    const filteredPosts = posts.filter(post =>
+      post.node.frontmatter.title.toLowerCase().includes(searchTerm.toLowerCase())
+    )
+
+    this.setState({ filteredPosts })
   }
 
   render() {
-    const { posts } = this.state
+    const { filteredPosts, searchTerm } = this.state
+    const filterCount = filteredPosts.length
     const categories = this.props.data.categories.group.filter(
       category => category.fieldValue !== 'Popular'
     )
@@ -34,7 +52,18 @@ class BlogPage extends Component {
               </Link>
             ))}
           </div>
-          <PostListing excerpt postEdges={posts} />
+          <div className="flex">
+            <input
+              className="search"
+              type="text"
+              name="searchTerm"
+              value={searchTerm}
+              placeholder="Type here to filter posts..."
+              onChange={this.handleChange}
+            />
+            <div className="filter-count">{filterCount}</div>
+          </div>
+          <PostListing postEdges={filteredPosts} />
         </div>
       </Layout>
     )
