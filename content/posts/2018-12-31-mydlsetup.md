@@ -30,7 +30,7 @@ Here are the configurations of my workstation:
 - [Corsair - Vengeance LPX 16 GB (2 x 8 GB) DDR4-3000 Memory](https://www.corsair.com/us/en/Categories/Products/Memory/vengeance-lpx-black/p/CMK16GX4M2B3000C15)
 - [Samsung - 970 Evo 250 GB M.2-2280 Solid State Drive](https://www.samsung.com/us/computing/memory-storage/solid-state-drives/ssd-970-evo-nvme-m-2-250gb-mz-v7e250bw/)
 - [Western Digital - Blue 4 TB 3.5" 5400RPM Internal Hard Drive](https://www.newegg.com/Product/Product.aspx?Item=N82E16822235011)
-- [Nvidia Geforce RTX 2080 Ti](https://www.nvidia.com/en-us/geforce/graphics-cards/rtx-2080-ti/)
+- [Nvidia Geforce GTX 1080 Ti](https://www.nvidia.com/en-us/geforce/products/10series/geforce-gtx-1080-ti/)
 - [Cooler Master - MasterCase Pro 5](http://www.coolermaster.com/case/mid-tower/mastercase-5/)
 - [Corsair RM750i 750w ATX PSU 80 Plus Gold Fully Modular](https://www.corsair.com/us/en/Power/Plug-Type/rmi-series-config/p/CP-9020082-NA)
 - [TP-Link - Archer T9E PCI-Express x1 802.11a/b/g/n/ac Wi-Fi Adapter](https://www.tp-link.com/us/products/details/cat-5519_Archer-T9E.html)
