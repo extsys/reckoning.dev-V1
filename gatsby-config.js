@@ -1,5 +1,5 @@
-const urljoin = require('url-join')
-const config = require('./data/SiteConfig')
+const urljoin = require("url-join");
+const config = require("./data/SiteConfig");
 
 module.exports = {
   pathPrefix: config.pathPrefix === "" ? "/" : config.pathPrefix,
@@ -127,8 +127,8 @@ module.exports = {
             type: "image/png"
           },
           {
-            src: "/logos/logo-1024.png",
-            sizes: "1024x1024",
+            src: "/logos/logo-512.png",
+            sizes: "512x512",
             type: "image/png"
           }
         ]
