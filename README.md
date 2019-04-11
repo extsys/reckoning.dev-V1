@@ -2,7 +2,6 @@
 
 Personal website running on Gatsby, React, and Node.js based on Theme by [Tania Rascia](https://www.taniarascia.com/)
 
-
 ## Installation
 
 Run local server:
@@ -15,7 +14,6 @@ npm run develop
 ```
 
 Navigate to `localhost:8000`.
-
 
 ## License
 
