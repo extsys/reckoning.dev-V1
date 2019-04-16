@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import NewsletterForm from './NewsletterForm'
+import React, { Component } from 'react';
+import NewsletterForm from './NewsletterForm';
 
 class Contact extends Component {
   render() {
@@ -11,30 +11,31 @@ class Contact extends Component {
         <p>You can find me around the web:</p>
         <ul>
           <li>
-            <strong>Email</strong>: <a href="mailto:me@datasciencevision.com">me@datasciencevision.com</a>
+            <strong>Email</strong>:{' '}
+            <a href='mailto:me@datasciencevision.com'>me@datasciencevision.com</a>
           </li>
           <li>
             <strong>GitHub</strong>:{' '}
-            <a target="_blank" href="https://github.com/sadanand-singh">
+            <a target='_blank' href='https://github.com/sadanand-singh'>
               sadanand-singh
             </a>
           </li>
           <li>
             <strong>Twitter</strong>:{' '}
-            <a target="_blank" href="https://twitter.com/sadanandsingh">
+            <a target='_blank' href='https://twitter.com/sadanandsingh'>
               sadanandsingh
             </a>
           </li>
           <li>
             <strong>LinkedIn</strong>:{' '}
-            <a target="_blank" href="https://www.linkedin.com/in/sadanandsingh/">
+            <a target='_blank' href='https://www.linkedin.com/in/sadanandsingh/'>
               sadanandsingh
             </a>
           </li>
         </ul>
       </>
-    )
+    );
   }
 }
 
-export default Contact
+export default Contact;

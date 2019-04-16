@@ -1,18 +1,18 @@
-import React, { Component } from 'react'
-import Helmet from 'react-helmet'
-import { graphql } from 'gatsby'
-import Layout from '../layout'
-import SEO from '../components/SEO'
-import config from '../../data/SiteConfig'
+import React, { Component } from 'react';
+import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
+import Layout from '../layout';
+import SEO from '../components/SEO';
+import config from '../../data/SiteConfig';
 
 class PageTemplate extends Component {
   render() {
-    const { slug } = this.props.pageContext
-    const postNode = this.props.data.markdownRemark
-    const page = postNode.frontmatter
+    const { slug } = this.props.pageContext;
+    const postNode = this.props.data.markdownRemark;
+    const page = postNode.frontmatter;
 
     if (!page.id) {
-      page.id = slug
+      page.id = slug;
     }
 
     return (
@@ -21,20 +21,20 @@ class PageTemplate extends Component {
           <title>{`${page.title} – ${config.siteTitle}`}</title>
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
-        <div className="container">
+        <div className='container'>
           <article>
-            <header className="page-header">
+            <header className='page-header'>
               <h1>{page.title}</h1>
             </header>
-            <div className="page" dangerouslySetInnerHTML={{ __html: postNode.html }} />
+            <div className='page' dangerouslySetInnerHTML={{ __html: postNode.html }} />
           </article>
         </div>
       </Layout>
-    )
+    );
   }
 }
 
-export default PageTemplate
+export default PageTemplate;
 
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
@@ -53,4 +53,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

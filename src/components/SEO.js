@@ -1,22 +1,20 @@
-import React, { Component } from "react";
-import Helmet from "react-helmet";
-import urljoin from "url-join";
-import config from "../../data/SiteConfig";
+import React, { Component } from 'react';
+import Helmet from 'react-helmet';
+import urljoin from 'url-join';
+import config from '../../data/SiteConfig';
 
 class SEO extends Component {
   render() {
     const { postNode, postPath, postSEO } = this.props;
     let title;
     let description;
-    let image = "";
+    let image = '';
     let postURL;
 
     if (postSEO) {
       const postMeta = postNode.frontmatter;
       title = postMeta.title;
-      description = postMeta.description
-        ? postMeta.description
-        : postNode.excerpt;
+      description = postMeta.description ? postMeta.description : postNode.excerpt;
       if (postMeta.thumbnail) {
         image = postMeta.thumbnail.childImageSharp.fixed.src;
       }
@@ -31,25 +29,25 @@ class SEO extends Component {
     const blogURL = urljoin(config.siteUrl, config.pathPrefix);
     const schemaOrgJSONLD = [
       {
-        "@context": "http://schema.org",
-        "@type": "WebSite",
+        '@context': 'http://schema.org',
+        '@type': 'WebSite',
         url: blogURL,
         name: title,
-        alternateName: config.siteTitleAlt ? config.siteTitleAlt : ""
+        alternateName: config.siteTitleAlt ? config.siteTitleAlt : ''
       }
     ];
 
     if (postSEO) {
       schemaOrgJSONLD.push(
         {
-          "@context": "http://schema.org",
-          "@type": "BreadcrumbList",
+          '@context': 'http://schema.org',
+          '@type': 'BreadcrumbList',
           itemListElement: [
             {
-              "@type": "ListItem",
+              '@type': 'ListItem',
               position: 1,
               item: {
-                "@id": postURL,
+                '@id': postURL,
                 name: title,
                 image
               }
@@ -57,14 +55,14 @@ class SEO extends Component {
           ]
         },
         {
-          "@context": "http://schema.org",
-          "@type": "BlogPosting",
+          '@context': 'http://schema.org',
+          '@type': 'BlogPosting',
           url: blogURL,
           name: title,
-          alternateName: config.siteTitleAlt ? config.siteTitleAlt : "",
+          alternateName: config.siteTitleAlt ? config.siteTitleAlt : '',
           headline: title,
           image: {
-            "@type": "ImageObject",
+            '@type': 'ImageObject',
             url: image
           },
           description
@@ -73,24 +71,22 @@ class SEO extends Component {
     }
     return (
       <Helmet>
-        <meta name="description" content={description} />
-        <meta name="image" content={image} />
+        <meta name='description' content={description} />
+        <meta name='image' content={image} />
 
-        <script type="application/ld+json">
-          {JSON.stringify(schemaOrgJSONLD)}
-        </script>
+        <script type='application/ld+json'>{JSON.stringify(schemaOrgJSONLD)}</script>
 
-        <meta property="og:url" content={postSEO ? postURL : blogURL} />
-        {postSEO ? <meta property="og:type" content="article" /> : null}
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:image" content={image} />
+        <meta property='og:url' content={postSEO ? postURL : blogURL} />
+        {postSEO ? <meta property='og:type' content='article' /> : null}
+        <meta property='og:title' content={title} />
+        <meta property='og:description' content={description} />
+        <meta property='og:image' content={image} />
 
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:creator" content={config.userTwitter} />
-        <meta name="twitter:title" content={title} />
-        <meta name="twitter:description" content={description} />
-        <meta name="twitter:image" content={image} />
+        <meta name='twitter:card' content='summary_large_image' />
+        <meta name='twitter:creator' content={config.userTwitter} />
+        <meta name='twitter:title' content={title} />
+        <meta name='twitter:description' content={description} />
+        <meta name='twitter:image' content={image} />
       </Helmet>
     );
   }

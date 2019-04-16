@@ -1,78 +1,75 @@
-import React, { Component } from 'react'
-import { Link } from 'gatsby'
-import folder from '../images/folder.svg'
-import sun from '../images/sun.svg'
-import moon from '../images/moon.svg'
-import ThemeContext from '../context/ThemeContext'
+import React, { Component } from 'react';
+import { Link } from 'gatsby';
+import folder from '../images/folder.svg';
+import sun from '../images/sun.svg';
+import moon from '../images/moon.svg';
+import ThemeContext from '../context/ThemeContext';
 
 class Navigation extends Component {
   state = {
-    scrolled: false,
-  }
+    scrolled: false
+  };
 
   navOnScroll = () => {
     if (window.scrollY > 20) {
-      this.setState({ scrolled: true })
+      this.setState({ scrolled: true });
     } else {
-      this.setState({ scrolled: false })
+      this.setState({ scrolled: false });
     }
-  }
+  };
 
   componentDidMount() {
-    window.addEventListener('scroll', this.navOnScroll)
+    window.addEventListener('scroll', this.navOnScroll);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.navOnScroll)
+    window.removeEventListener('scroll', this.navOnScroll);
   }
 
   render() {
-    const { scrolled } = this.state
-    const { menuLinks } = this.props
+    const { scrolled } = this.state;
+    const { menuLinks } = this.props;
 
     return (
       <ThemeContext.Consumer>
         {theme => (
-          <nav className={scrolled ? "nav scroll" : "nav"}>
-            <div className="nav-container">
-              <div className="brand">
-                <Link to="/">
-                  <img src={folder} className="favicon" />{" "}
-                  <span className="text">Sadanand Singh</span>
+          <nav className={scrolled ? 'nav scroll' : 'nav'}>
+            <div className='nav-container'>
+              <div className='brand'>
+                <Link to='/'>
+                  <img src={folder} className='favicon' />{' '}
+                  <span className='text'>Sadanand Singh</span>
                 </Link>
               </div>
-              <div className="links">
+              <div className='links'>
                 {menuLinks.map(link => (
                   <Link key={link.name} to={link.link}>
                     {link.name}
                   </Link>
                 ))}
-                <a target="_blank" href="https://github.com/sadanand-singh">
+                <a target='_blank' href='https://github.com/sadanand-singh'>
                   GitHub
                 </a>
-              <div className="cta">
-                <button
-                  className="dark-switcher"
-                  onClick={theme.toggleDark}
-                >
-                  {theme.dark ? (
-                    <span>
-                      <img src={sun} className="theme-icon" />
-                    </span>
-                  ) : (
-                    <span>
-                      <img src={moon} className="theme-icon" />
-                    </span>
-                  )}
-                </button>
+                <div className='cta'>
+                  <button className='dark-switcher' onClick={theme.toggleDark}>
+                    {theme.dark ? (
+                      <span>
+                        <img src={sun} className='theme-icon' />
+                      </span>
+                    ) : (
+                      <span>
+                        <img src={moon} className='theme-icon' />
+                      </span>
+                    )}
+                  </button>
                 </div>
               </div>
             </div>
           </nav>
         )}
       </ThemeContext.Consumer>
-    )
+    );
   }
 }
 
-export default Navigation
+export default Navigation;
