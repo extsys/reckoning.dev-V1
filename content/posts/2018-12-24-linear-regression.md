@@ -1,13 +1,13 @@
 ---
-title: "An Overview of Linear Regression Models"
+title: 'An Overview of Linear Regression Models'
 date: 2018-12-24
 tags:
-    - "MachineLearning"
-    - "DataScience"
-    - Python
+  - 'MachineLearning'
+  - 'DataScience'
+  - Python
 categories:
-    - "MachineLearning"
-slug: "linear-regression"
+  - 'MachineLearning'
+slug: 'linear-regression'
 template: post
 thumbnail: '../thumbnails/reg.png'
 toc: false
@@ -22,7 +22,6 @@ relationship can be described by a linear function - referred
 as _linear regression_.
 
 ![](https://res.cloudinary.com/sadanandsingh/image/upload/v1545770785/linear_regression_hbby32.png)
-
 
 # Mathematical formulations
 
@@ -65,12 +64,12 @@ the solution to the weights vector $w$ can be given by,
 
 $$w = \big(\mathbf{X}^T\mathbf{X}\big)^{-1} \mathbf{X}^T y$$
 
-This approach of estimating weights for linear regression is called **Ordinary Least Squares** ([OLS]).
+This approach of estimating weights for linear regression is called **Ordinary Least Squares** ([OLS][ols]).
 
 In the above solution, we made a big assumption that the matrix $\mathbf{X}^T\mathbf{X}$ is invertible. However, in practice,
 this problem is typically solved using [Gaussian Elimination](https://en.wikipedia.org/wiki/Gaussian_elimination), which is roughly an $\mathbf{O}(n^3)$ algorithm. Alternatively, this can be also solved using [stochastic gradient descent][sgd], specially when $n$ is extremely large, as stochastic gradient descent is an [online algorithm][olg] where only a batch of data is required at a time.
 
-[OLS]: https://en.wikipedia.org/wiki/Ordinary_least_squares
+[ols]: https://en.wikipedia.org/wiki/Ordinary_least_squares
 [sgd]: https://en.wikipedia.org/wiki/Stochastic_gradient_descent
 [olg]: https://en.wikipedia.org/wiki/Online_machine_learning
 
@@ -79,12 +78,11 @@ this problem is typically solved using [Gaussian Elimination](https://en.wikiped
 Standard linear regression models with standard estimation techniques make a number of assumptions about the predictor variables ($X$), the response variables ($y$) and their relationship.
 
 The following are the major assumptions made by standard linear regression models with standard estimation techniques
-(e.g. [ordinary least squares][OLS]):
+(e.g. [ordinary least squares][ols]):
 
 ## Linearity
 
-Linear regression needs the relationship between the independent and dependent variables to be linear.  It is also important to check for outliers since linear regression is sensitive to outliers effects.  The linearity assumption can best be tested with scatter plots, the following two examples depict two cases, where no and little linearity is present.
-
+Linear regression needs the relationship between the independent and dependent variables to be linear. It is also important to check for outliers since linear regression is sensitive to outliers effects. The linearity assumption can best be tested with scatter plots, the following two examples depict two cases, where no and little linearity is present.
 
 <div class="row content-justify-between">
     <div class="col-md-6 col-12">
@@ -103,7 +101,7 @@ In the cases like these, one should try some non-linear transformations first to
 
 ## Normality
 
-The linear regression analysis requires all variables to be multivariate normal.  This assumption can best be checked with a histogram or a [Q-Q Plot][qqplot].
+The linear regression analysis requires all variables to be multivariate normal. This assumption can best be checked with a histogram or a [Q-Q Plot][qqplot].
 
 <div class="row content-justify-between">
     <div class="col-md-6 col-12">
@@ -127,25 +125,25 @@ When the data is not normally distributed a non-linear transformation (e.g., log
 
 ## Lack of perfect multicollinearity
 
-Linear regression assumes that there is little or no multicollinearity in the data.  Multicollinearity occurs when the independent variables are highly correlated with each other. It can be tested with three primary criteria:
+Linear regression assumes that there is little or no multicollinearity in the data. Multicollinearity occurs when the independent variables are highly correlated with each other. It can be tested with three primary criteria:
 
 - **Correlation matrix** – when computing the matrix of Pearson’s Bivariate Correlation among all independent variables the correlation coefficients need to be smaller than 1.
 
-- **Tolerance** – the tolerance measures the influence of one independent variable on all other independent variables; the tolerance is calculated with an initial linear regression analysis.  Tolerance is defined as $T = 1 – R^2$ for these first step regression analysis.  With $T < 0.1$ there might be multicollinearity in the data and with $T < 0.01$ there certainly is. Here, $R^2$ is coefficient of determination and is calculated as: $$R^2 = \frac{\sum \big ( \hat{y}_i - \bar{y} \big)^2 }{\sum \big ( y_i - \bar{y} \big)^2}$$ where, $\bar{y}$ is the average response.
+- **Tolerance** – the tolerance measures the influence of one independent variable on all other independent variables; the tolerance is calculated with an initial linear regression analysis. Tolerance is defined as $T = 1 – R^2$ for these first step regression analysis. With $T < 0.1$ there might be multicollinearity in the data and with $T < 0.01$ there certainly is. Here, $R^2$ is coefficient of determination and is calculated as: $$R^2 = \frac{\sum \big ( \hat{y}_i - \bar{y} \big)^2 }{\sum \big ( y_i - \bar{y} \big)^2}$$ where, $\bar{y}$ is the average response.
 
-- **Variance Inflation Factor (VIF)** – the [variance inflation factor][vif] of the linear regression is defined as $VIF = 1/T$. $VIF > 10$ is an indication of presence of multicollinearity; while $VIF > 100$ indicates certainty of presence of multicollinearity. If multicollinearity is found in the data, centering the data (that is deducting the mean of the variable from each score) might help to solve the problem.  However, the simplest way to address the problem is to remove independent variables with high VIF values.
+- **Variance Inflation Factor (VIF)** – the [variance inflation factor][vif] of the linear regression is defined as $VIF = 1/T$. $VIF > 10$ is an indication of presence of multicollinearity; while $VIF > 100$ indicates certainty of presence of multicollinearity. If multicollinearity is found in the data, centering the data (that is deducting the mean of the variable from each score) might help to solve the problem. However, the simplest way to address the problem is to remove independent variables with high VIF values.
 
 A list of more detailed tests can be found at [Wikipedia](https://en.wikipedia.org/wiki/Multicollinearity).
 
 ## No Autocorrelation
 
-Linear regression analysis requires that there is little or no autocorrelation in the data.  Autocorrelation occurs when the residuals are not independent from each other. This assumption may be violated in the context of time series data, panel data, cluster samples, hierarchical data, repeated measures data, longitudinal data, and other data with dependencies. In such cases [generalized least squares][gls] provides a better alternative than the [OLS].
+Linear regression analysis requires that there is little or no autocorrelation in the data. Autocorrelation occurs when the residuals are not independent from each other. This assumption may be violated in the context of time series data, panel data, cluster samples, hierarchical data, repeated measures data, longitudinal data, and other data with dependencies. In such cases [generalized least squares][gls] provides a better alternative than the [OLS].
 
-While a scatter plot allows you to check for autocorrelations, you can test the linear regression model for autocorrelation with the [Durbin-Watson test][dwtest].  Durbin-Watson’s $d$ tests the null hypothesis that the residuals are not linearly auto-correlated.  While $d$ can assume values between 0 and 4, values around 2 indicate no autocorrelation.  As a rule of thumb, values of $1.5 < d < 2.5$ show that there is no auto-correlation in the data. However, the Durbin-Watson test only analyses linear autocorrelation and only between direct neighbors, which are first order effects.
+While a scatter plot allows you to check for autocorrelations, you can test the linear regression model for autocorrelation with the [Durbin-Watson test][dwtest]. Durbin-Watson’s $d$ tests the null hypothesis that the residuals are not linearly auto-correlated. While $d$ can assume values between 0 and 4, values around 2 indicate no autocorrelation. As a rule of thumb, values of $1.5 < d < 2.5$ show that there is no auto-correlation in the data. However, the Durbin-Watson test only analyses linear autocorrelation and only between direct neighbors, which are first order effects.
 
 ## Homoscedasticity
 
-[Homoscedasticity] requires that the error term has the same variance $\sigma^2 = \mathbb{E} \big [ \epsilon_i^2 | X]$ in each observation. The scatter plot is good way to check whether the data are homoscedastic (meaning the residuals are equal across the regression line).  The following scatter plots show examples of data that are not homoscedastic (i.e., heteroscedastic):
+[Homoscedasticity][homoscedasticity] requires that the error term has the same variance $\sigma^2 = \mathbb{E} \big [ \epsilon_i^2 | X]$ in each observation. The scatter plot is good way to check whether the data are homoscedastic (meaning the residuals are equal across the regression line). The following scatter plots show examples of data that are not homoscedastic (i.e., heteroscedastic):
 
 <div class="row content-justify-between">
     <div class="col-md-6 col-12">
@@ -160,7 +158,7 @@ While a scatter plot allows you to check for autocorrelations, you can test the 
 </div>
 </div>
 
-The [Goldfeld-Quandt Test][gqtest] can also be used to test for heteroscedasticity.  The test splits the data into two groups and tests to see if the variances of the residuals are similar across the groups.  If homoscedasticity is present, a non-linear correction might fix the problem.
+The [Goldfeld-Quandt Test][gqtest] can also be used to test for heteroscedasticity. The test splits the data into two groups and tests to see if the variances of the residuals are similar across the groups. If homoscedasticity is present, a non-linear correction might fix the problem.
 
 # Key Regression Metrics
 
@@ -183,7 +181,6 @@ $$ MSE = \frac{1}{N} \sum_{i=1}^N \big ( y_i - \hat{y}_i \big)^2$$
 The effect of the square term in the MSE equation is most apparent with the presence of outliers in our data. While each residual in MAE contributes **proportionally** to the total error, the error grows **quadratically** in MSE. This ultimately means that outliers in our data will contribute to much higher total error in the MSE than they would for the MAE. Similarly, our model will be penalized more for making predictions that differ greatly from the corresponding actual value. This is to say that large differences between actual and predicted are punished more in MSE than in MAE.
 
 > **The Problem of Outliers** <br/><br/> Outliers in the data are a constant source of discussion for the data scientists that try to create models. Do we include the outliers in our model creation or do we ignore them? The answer to this question is dependent on the field of study, the data set on hand and the consequences of having errors in the first place. As we saw above, MAE is used to downplay the role of outliers, while MSE is used to ensure the significance of outliers.<br/><br/> Ultimately, the choice between is MSE and MAE is application-specific and depends on how you want to treat large errors. Both are still viable error metrics, but will describe different nuances about the prediction errors of your model.
-
 
 ## Root Mean Squared Error (RMSE)
 
@@ -233,14 +230,13 @@ $$R^2_{adjusted} = 1 - \frac{(1-R^2)(N-1)}{N-p-1}$$
 
 Here, $N$ is number of samples and $p$ is the number of predictors in the model.
 
-
 # Regularization: Ridge and Lasso Regression
 
 One of the major aspects of training your machine learning model is avoiding over-fitting. The model will have a low accuracy if it is over-fitting. This happens because your model is trying too hard to capture the noise in your training dataset.
 
 There are various ways to overcome the problem of over-fitting. In terms of linear regression, one of the most common ways is via regularization.
 
-In linear regression, as seen above, the fitting procedure involves a loss function, known as **residual sum of squares or RSS**. The coefficients, i.e. the weights $\mathbf w$ are chosen, such that they minimize this loss function. Regularizations' role is to shrink these learned estimates $\mathbf w$ towards zero.
+In linear regression, as seen above, the fitting procedure involves a loss function, known as **residual sum of squares or RSS**. The coefficients, i.e. the weights $\mathbf w$ are chosen, such that they minimize this loss function. Regularization's' role is to shrink these learned estimates $\mathbf w$ towards zero.
 
 Two common ways to implement this are:
 
@@ -316,7 +312,7 @@ Let us define a matrix D as,
 $$D = \begin{bmatrix} 1 & -2 & 1 &  & \\  & 1 & -2 & 1 & \\ \vdots & \vdots & \vdots & \vdots \\  &  & 1 & -2 & 1 \end{bmatrix}$$
 
 Then $D\mathbf x$ is the second-order difference (a discrete form of the second-order
-derivative) of the signal $\mathbf x$.  If $\mathbf x$ is smooth, then $\lVert D \mathbf x \rVert^2$
+derivative) of the signal $\mathbf x$. If $\mathbf x$ is smooth, then $\lVert D \mathbf x \rVert^2$
 is small in value. Hence, we can propose the signal smoothing as a linear regression problem, where $\mathbf y$ is a noisy
 signal, that can be smoothened by $\mathbf x$, if we minimize the following loss function:
 
@@ -328,13 +324,12 @@ Hopefully, this has been able to provide more clarity for linear regression meth
 linear regression models with your data. Given the simplicity of these API, I have omitted any example from this post.
 Please let me know in comments below, if you have any suggestions for improving this article.
 
-
 [qqplot]: https://en.wikipedia.org/wiki/Q%E2%80%93Q_plot
 [kolmogorov]: https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test
 [vif]: https://en.wikipedia.org/wiki/Variance_inflation_factor
 [gls]: https://en.wikipedia.org/wiki/Generalized_least_squares
 [dwtest]: https://en.wikipedia.org/wiki/Durbin%E2%80%93Watson_statistic
-[Homoscedasticity]: https://en.wikipedia.org/wiki/Homoscedasticity
+[homoscedasticity]: https://en.wikipedia.org/wiki/Homoscedasticity
 [gqtest]: https://en.wikipedia.org/wiki/Goldfeld%E2%80%93Quandt_test
 [sklearn-metrics]: https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics
 [blasso]: https://www.stat.ufl.edu/archived/casella/Papers/Lasso.pdf

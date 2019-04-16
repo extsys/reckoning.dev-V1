@@ -1,12 +1,12 @@
 ---
-title: "Python Tutorial - Week 1"
-slug: "python-week1"
+title: 'Python Tutorial - Week 1'
+slug: 'python-week1'
 date: 2015-08-30
 tags:
-    - "Programming"
-    - "Python"
+  - 'Programming'
+  - 'Python'
 categories:
-    - "Tutorials"
+  - 'Tutorials'
 template: post
 thumbnail: '../thumbnails/python.png'
 toc: false
@@ -16,32 +16,26 @@ bokeh: false
 
 [Python](https://docs.python.org/3/library/index.html) is a widely used general-purpose, high-level programming language. Due to its focus on readability, wide-spread popularity and existence of a plethora of libraries (also called modules), it is one of the most preferred programming languages for scientists and engineers.
 
-
-Python for Non-Programmers
-=============================
+# Python for Non-Programmers
 
 In this series of python tutorials, I will provide a set of lectures on various basic topics of python. The prime target audience for this series are scientist in non-programming fields like microbiology, genetics, psychology etc. who have some to none programming experience.
 
-
 Here is a brief list of topics I will cover per week. I will also post exercises at the end of each session, along with the expected outputs. You should plan to complete these exercises within 5-6 days, before the new tutorial is posted. You will be judging your exercises on your own. The goal should be to match your program's output to the expected output.
 
--  **Week 1 :** Working with Python on Windows, Concept of Variables &amp; Math Operations, Displaying Outputs
--  **Week 2 :** User Inputs, Modules, Comments and Basics of Strings
--  **Week 3 :** More on Strings, Lists and Other Containers
--  **Week 4 :** Looping/iterating, if/else Conditions
--  **Week 5 :** Advanced String Operations
--  **Week 6 :** Regular Expressions and Strings
--  **Week 7 :** Reading and Writing Files
--  **Week 8 :** Functions and Writing Scripts
--  **Week 9 :** Interacting with Operating System
--  **Week 10 :** Handling and Plotting Data in Python
--  **Week 11 :** Basic Statistics in Python using Pandas
--  **Week 12 :** Introduction to BioPython
+- **Week 1 :** Working with Python on Windows, Concept of Variables &amp; Math Operations, Displaying Outputs
+- **Week 2 :** User Inputs, Modules, Comments and Basics of Strings
+- **Week 3 :** More on Strings, Lists and Other Containers
+- **Week 4 :** Looping/iterating, if/else Conditions
+- **Week 5 :** Advanced String Operations
+- **Week 6 :** Regular Expressions and Strings
+- **Week 7 :** Reading and Writing Files
+- **Week 8 :** Functions and Writing Scripts
+- **Week 9 :** Interacting with Operating System
+- **Week 10 :** Handling and Plotting Data in Python
+- **Week 11 :** Basic Statistics in Python using Pandas
+- **Week 12 :** Introduction to BioPython
 
-
-
-Week 1. Introduction to Python
---------------------------------
+## Week 1. Introduction to Python
 
 To start working with any programming language, first thing you need is a working installation of that language. Today, we will go through installation of python on Windows machines.
 
@@ -66,7 +60,6 @@ A. Write your code interactively (one command at a time) on the dark screen on t
 
 Lets' try our first program:
 
-
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
@@ -81,7 +74,6 @@ Lets' try our first program:
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -127,7 +119,6 @@ y = x+12-5, then y is a new variable whose value should be equal to 23+12-5.</p>
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -157,7 +148,6 @@ y = x+12-5, then y is a new variable whose value should be equal to 23+12-5.</p>
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -185,7 +175,6 @@ y = x+12-5, then y is a new variable whose value should be equal to 23+12-5.</p>
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -228,7 +217,6 @@ Second, we created another variable called 'y' whose values is equal to mathemat
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -261,21 +249,19 @@ Second, we created another variable called 'y' whose values is equal to mathemat
 Now that we know how to declare and use variables, we will look at first what all we can do with numbers in python.
 Using simple math operations are extremely easy in Python. Here are all the basic math operations that one can do in Python.
 
-
-| Syntax   |           Math          | Operation Name |
-|--------|-----------------------|--------------|
-| `a+b`    | $a + b$                   | Addition       |
-| `a-b`    | $a - b$                   | Subtraction    |
-| `a*b`    | $a \\times b$             | Multiplication |
+| Syntax   | Math                     | Operation Name |
+| -------- | ------------------------ | -------------- |
+| `a+b`    | $a + b$                  | Addition       |
+| `a-b`    | $a - b$                  | Subtraction    |
+| `a*b`    | $a \\times b$            | Multiplication |
 | `a/b`    | $a \\div b$              | Division       |
-| `a**b`   | $a^b$                   | Power/Exponent |
-| `abs(a)` |  $\\lvert a \\rvert$    | Absolute Value |
-| `-a `    |  $-1 \\times a$          | Negation       |
+| `a**b`   | $a^b$                    | Power/Exponent |
+| `abs(a)` | $\\lvert a \\rvert$      | Absolute Value |
+| `-a`     | $-1 \\times a$           | Negation       |
 | `a//b`   | quotient of $a \\div b$  | Quotient       |
-| `a%b`    | Remainder of $a \\div b$ | Remainder         |
+| `a%b`    | Remainder of $a \\div b$ | Remainder      |
 
 Here are some example operation. Please repeat these and observe the use of parenthesis in using the BODMAS principle.
-
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -292,11 +278,8 @@ Here are some example operation. Please repeat these and observe the use of pare
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[6]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>8</pre>
@@ -323,11 +306,8 @@ Here are some example operation. Please repeat these and observe the use of pare
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[7]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>-32.33</pre>
@@ -354,11 +334,8 @@ Here are some example operation. Please repeat these and observe the use of pare
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[8]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>-457.3</pre>
@@ -385,11 +362,8 @@ Here are some example operation. Please repeat these and observe the use of pare
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[9]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>-10.5</pre>
@@ -440,7 +414,6 @@ Here are some example operation. Please repeat these and observe the use of pare
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -470,7 +443,6 @@ b =  6
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -513,7 +485,6 @@ b =  6
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -552,7 +523,6 @@ b =  6
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -593,7 +563,6 @@ b =  6
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -622,11 +591,8 @@ b =  6
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[17]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>1</pre>
@@ -653,11 +619,8 @@ b =  6
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[18]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>2</pre>
@@ -684,11 +647,8 @@ b =  6
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[19]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>0.027777777777777776</pre>
@@ -755,7 +715,6 @@ b =  6
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -782,7 +741,6 @@ b =  6
 </div>
 </div>
 </div>
-
 
 ### print() Function in Python
 
@@ -816,7 +774,6 @@ Now, coming back to the `print()` method, that we have been using throughout thi
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -858,7 +815,6 @@ My Name is  Sadanand Singh and My age is:  29
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -887,7 +843,6 @@ My Name is  Sadanand Singh and My age is:  29
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -914,6 +869,7 @@ My Name is  Sadanand Singh and My age is:  29
 ## Excercise
 
 We will all things we have learned today using the exercise below.</p>
+
 <p>We will follow the tax preparation example:
 
 1. Create a variable to store "income"
@@ -926,10 +882,9 @@ We will all things we have learned today using the exercise below.</p>
 8. First run with an income of 60000
 9. Repeat with an income of 134675
 
-
 Your output should look like the following in two cases.
 
-__Case 1: income = 60000__
+**Case 1: income = 60000**
 
 1. Total Income is: 60000
 2. Tax Rate is: 0.059999999999999998
@@ -938,7 +893,7 @@ __Case 1: income = 60000__
 5. Net Tax is: 1842.4264068711927
 6. Total Tax is: 1853.2737981499038
 
-__Case 2: income = 134675__
+**Case 2: income = 134675**
 
 1. Total Income is: 134675
 2. Tax Rate is: 0.13467499999999999

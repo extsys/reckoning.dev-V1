@@ -1,5 +1,5 @@
 ---
-title: "This Blog is Now Powered by Gastby"
+title: "This Blog is Now Powered by GatsbyJS"
 date: 2019-04-01
 tags:
     - Blog

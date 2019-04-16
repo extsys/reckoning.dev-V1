@@ -1,13 +1,13 @@
 ---
 title: "Moore's Law and Algorithms - Case of Fibonacci Numbers"
-slug: "fibonacci-numbers"
+slug: 'fibonacci-numbers'
 date: 2015-07-12
 tags:
-    - "Algorithms"
-    - "Python"
+  - 'Algorithms'
+  - 'Python'
 categories:
-    - "Algorithms"
-    - "Popular"
+  - 'Algorithms'
+  - 'Popular'
 template: post
 thumbnail: '../thumbnails/fibonacci.png'
 toc: false
@@ -27,7 +27,6 @@ states that:
 
 > "The complexity for minimum component costs has increased at a rate of roughly a factor of two per year. Certainly over the short term this rate can be expected to continue, if not to increase. Over the longer term, the rate of increase is a bit more uncertain, although there is no reason to believe it will not remain nearly constant for at least 10 years."
 
-
 In simple words, [Moore's law](https://en.wikipedia.org/wiki/Moore%27s_law) is the observation that, over the
 history of computing hardware, the number of transistors in a dense
 integrated circuit has doubled approximately every two years. More
@@ -39,14 +38,13 @@ proportional to the speed of computers.
 
 Now, looking at the other side of the coin - speed of algorithms.
 According to Excerpt from [Report to the President and Congress:
-Designing a Digital Future, December 2010 (page
-97)](https://www.whitehouse.gov/sites/default/files/microsites/ostp/pcast-nitrd-report-2010.pdf#97):
+Designing a Digital Future, December 2010 (page 97)](https://www.whitehouse.gov/sites/default/files/microsites/ostp/pcast-nitrd-report-2010.pdf#97):
 
-*Everyone knows Moore’s Law – a prediction made in 1965 by Intel
+_Everyone knows Moore’s Law – a prediction made in 1965 by Intel
 co-­founder Gordon Moore that the density of transistors in integrated
 circuits would continue to double every 1 to 2 years.... in many areas,
 performance gains due to improvements in algorithms have vastly exceeded
-even the dramatic performance gains due to increased processor speed.*
+even the dramatic performance gains due to increased processor speed._
 
 The gain in computing speed due to algorithms have been simply
 phenomenal, unprecedented, to say the least! Being actively involved
@@ -63,7 +61,7 @@ $$F_{n} = \begin{cases} F_{n-2} + F_{n-1} & \text{if } n > 1 \\ 1 & \text{if } n
 
 So, first few Fibonacci numbers are:
 $0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144 \ldots $ These numbers grow
-*almost* as fast as powers of 2: for example, $F_{30}$ is over a
+_almost_ as fast as powers of 2: for example, $F_{30}$ is over a
 million, and $F_{100}$ is 21 digits long! In general,
 $F_n \approx 2^{0.694n}$ Clearly, we need a computing device to
 calculate say $F_{200}$.
@@ -206,7 +204,7 @@ $$F_{2K} = F_K \left [ 2F_{K+1}-F_K \right ]$$
 
 $$F_{2K+1} = {F_{K+1}}^2+{F_K}^2$$
 
-We can implement this using the __Karatsuba multiplication__ as follows:
+We can implement this using the **Karatsuba multiplication** as follows:
 
 ```python
 def fibFast(n):

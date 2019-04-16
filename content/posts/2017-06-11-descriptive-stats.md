@@ -1,12 +1,12 @@
 ---
-title: "An Overview of Descriptive Statistics"
-slug: "descriptive-stats"
+title: 'An Overview of Descriptive Statistics'
+slug: 'descriptive-stats'
 date: 2017-06-11
 tags:
-    - "DataScience"
-    - "EDA"
+  - 'DataScience'
+  - 'EDA'
 categories:
-    - "DataScience"
+  - 'DataScience'
 template: post
 thumbnail: '../thumbnails/stats.png'
 toc: false
@@ -18,10 +18,10 @@ One of the first tasks involved in any data science project is to get to
 understand the data. This can be extremely beneficial for several
 reasons:
 
--   Catch mistakes in data
--   See patterns in data
--   Find violations of statistical assumptions
--   Generate hypotheses etc.
+- Catch mistakes in data
+- See patterns in data
+- Find violations of statistical assumptions
+- Generate hypotheses etc.
 
 We can think of this task as an exercise in **summarization** of the
 data. To summarize the main characteristics of the data, often two
@@ -29,8 +29,8 @@ methods are used: numerical and graphical.
 
 <!-- more -->
 
-The numerical summary of data is done through [*descriptive
-statistics*](https://en.wikipedia.org/wiki/Descriptive_statistics).
+The numerical summary of data is done through [_descriptive
+statistics_](https://en.wikipedia.org/wiki/Descriptive_statistics).
 While the graphical summary of the data is done through
 [*exploratory data analysis (EDA)*](https://en.wikipedia.org/wiki/
 Exploratory_data_analysis). In this post, we will look at both
@@ -45,11 +45,11 @@ Descriptive statistics are statistics that quantitatively describe or
 summarize features of a collection of information. Some measures that
 are commonly used to describe a data set are:
 
--  Measures of Central Tendency or Measure of Location, such as *mean*
--  Measures of Variability or Dispersion, such as *standard deviation*
--  Measure of the shape of the distribution, such as *skewness* or
-   *kurtosis*
--  Relative Standing Measures, such as *z-score*, *Quartiles* etc.
+- Measures of Central Tendency or Measure of Location, such as _mean_
+- Measures of Variability or Dispersion, such as _standard deviation_
+- Measure of the shape of the distribution, such as _skewness_ or
+  _kurtosis_
+- Relative Standing Measures, such as _z-score_, _Quartiles_ etc.
 
 ## Measures of Central Tendency
 
@@ -69,7 +69,7 @@ The arithmetic mean (or **mean** or **average**) is the most
 commonly used and readily understood measure of central tendency. In
 statistics, however, the term average refers to any of the measures
 of central tendency. If we have a data set containing the values
-$a_{1},a_{2},\ldots ,a_{n}$, then the *arithmetic mean*, $A$ is
+$a_{1},a_{2},\ldots ,a_{n}$, then the _arithmetic mean_, $A$ is
 defined by the formula:
 
 $$A = \frac{1}{n}\sum_{i=1}^{n} a_i = \frac{a_1 + a_2 + \ldots + a_n}{n}$$
@@ -107,10 +107,10 @@ observations that are ranked at numbers $\frac{[N]}{2}$ and $\frac{[N + 1]}{2} +
 ###Mean vs Median
 The median and the mean both measure central tendency. But
 unusual values, called [**outliers**][outliers], affect the
-median less than they affect the *mean*. When you have unusual
-values, you can compare the *mean* and the *median* to decide
+median less than they affect the _mean_. When you have unusual
+values, you can compare the _mean_ and the _median_ to decide
 which is the better measure to use. If your data are symmetric,
-the *mean* and *median* are similar.
+the _mean_ and _median_ are similar.
 
 [outliers]: https://en.wikipedia.org/wiki/Outlier
 
@@ -138,7 +138,6 @@ to be sampled.
 [mean]: https://en.wikipedia.org/wiki/Arithmetic_mean
 [median]: https://en.wikipedia.org/wiki/Median'
 [mode]: https://en.wikipedia.org/wiki/Mode_(statistics)
-
 
 For example, a distribution that has more than one mode may identify
 that your sample includes data from two populations. If the data
@@ -174,13 +173,13 @@ diverse. Some common examples of dispersion measures are:
 
 ### Standard Deviation
 
-The *standard deviation* is a measure of how spread out the data are
+The _standard deviation_ is a measure of how spread out the data are
 about the [mean]. The symbol $\sigma$ is often used to represent the
 **standard deviation of a population**, while $s$ is used to
 represent the **standard deviation of a sample**.
 
 If we have a data set containing the values
-$a_{1},a_{2},\ldots ,a_{n}$, then the *standard deviation*, $\sigma$
+$a_{1},a_{2},\ldots ,a_{n}$, then the _standard deviation_, $\sigma$
 is defined by the formula:
 
 $$\sigma = \sqrt{\frac{1}{n}\Big[\big(a_1 - A\big)^2 + \big(a_2 - A\big)^2 + \ldots + \big(a_n - A\big)^2\Big]}, \text{ where } A \text{ is the Mean}$$
@@ -194,7 +193,7 @@ deviations.
 
 ### Interquartile Range (IQR)
 
-The *interquartile range* (IQR) is the distance between the first
+The _interquartile range_ (IQR) is the distance between the first
 quartile ($Q_1$) and the third quartile ($Q_3$). 50% of the data are
 within this range.
 
@@ -212,10 +211,10 @@ The _range_ is the difference between the _largest_ and _smallest_
 data values in the sample. The _range_ represents the interval that
 contains all the data values.
 
-The *range* can be used to understand the amount of *dispersion* in
-the data. A large range value indicates greater *dispersion* in the
-data. A small range value indicates that there is less *dispersion*
-in the data. Because the *range* is calculated using only two data
+The _range_ can be used to understand the amount of _dispersion_ in
+the data. A large range value indicates greater _dispersion_ in the
+data. A small range value indicates that there is less _dispersion_
+in the data. Because the _range_ is calculated using only two data
 values, it is more useful with small data sets.
 
 ## Measure of the Shape of the Distribution
@@ -367,14 +366,13 @@ know the entire population, the t-test is much more widely used.
 
 [student]: https://en.wikipedia.org/wiki/Student%27s_t-test
 
-
 ### Quartiles and Percentiles
 
 A _percentile_ is a measure used in statistics indicating the value below
 which a given percentage of observations in a group of observations fall.
 For example, the 20th percentile is the value (or score) below which 20
 percent of the observations may be found. The term percentile and the
-related term, *percentile rank*, are often used in the reporting of
+related term, _percentile rank_, are often used in the reporting of
 scores from norm-referenced tests. For example, if a score is in
 the 86<sup>th</sup> percentile, it is higher than 86% of the other
 scores. The 25<sup>th</sup> percentile is also known as the first
@@ -385,7 +383,7 @@ quartile ($Q_3$).
 ### Correlations
 
 Often the data that we deal with is multi-dimensional in nature.
-[Correlation] most often refers to the extent to which two variables have
+[correlation] most often refers to the extent to which two variables have
 a linear relationship with each other. Correlations are useful because
 they can indicate a predictive relationship that can be exploited in
 practice.
@@ -395,7 +393,7 @@ the [Pearson product-moment correlation coefficient][corr], or
 **"Pearson's correlation coefficient"**, commonly called simply
 **"the correlation coefficient"**.
 
-[Correlation]: https://en.wikipedia.org/wiki/Correlation_and_dependence
+[correlation]: https://en.wikipedia.org/wiki/Correlation_and_dependence
 [corr]: https://en.wikipedia.org/wiki/Pearson_product-moment_correlation_coefficient
 
 The population correlation coefficient $\rho_{X, Y}$ between two variates
@@ -412,14 +410,14 @@ means [covariance].
 [covariance]: https://en.wikipedia.org/wiki/Covariance
 
 There are additional alternative ways to measures of correlations. Some
-common examples are: [Rank Correlation], [Distance Correlation],
-[polychoric correlation] and [correlation ratio] etc. Each of such
+common examples are: [Rank Correlation][rc], [Distance Correlation][dc],
+[polychoric correlation][pc] and [correlation ratio][cr] etc. Each of such
 measures capture different aspects of the data and should be used with care depending on the situation.
 
-[Rank Correlation]: https://en.wikipedia.org/wiki/Rank_correlation
-[Distance Correlation]: https://en.wikipedia.org/wiki/Distance_correlation
-[polychoric correlation]:  https://en.wikipedia.org/wiki/Polychoric_correlation
-[correlation ratio]: https://en.wikipedia.org/wiki/Correlation_ratio
+[rc]: https://en.wikipedia.org/wiki/Rank_correlation
+[dc]: https://en.wikipedia.org/wiki/Distance_correlation
+[pc]: https://en.wikipedia.org/wiki/Polychoric_correlation
+[cr]: https://en.wikipedia.org/wiki/Correlation_ratio
 
 Most correlation measures are sensitive to the manner in which $X$ and
 $Y$ are sampled. Dependencies tend to be stronger if viewed over a wider
@@ -435,7 +433,7 @@ influenced by one or more additional variables; (d) the relationship
 observed between A and B was a chance error.
 
 Small correlation values do not necessarily indicate that two variables
-are unassociated. For example, Pearson's coefficients will underestimate
+are disassociated. For example, Pearson's coefficients will underestimate
 the association between two variables that show a quadratic relationship.
 You should always examine the scatter plot in the EDA.
 
@@ -448,41 +446,41 @@ correlation coefficients.
 
 # Exploratory Data Analysis (EDA)
 
- [Exploratory data analysis (EDA)][EDA] is an approach to analyzing data sets to
- summarize their main characteristics, often with visual methods. The
- objectives of EDA are to:
+[Exploratory data analysis (EDA)][eda] is an approach to analyzing data sets to
+summarize their main characteristics, often with visual methods. The
+objectives of EDA are to:
 
--  Suggest hypotheses about the causes of observed phenomena
--  Assess assumptions on which statistical inference will be based
--  Support the selection of appropriate statistical tools and techniques
--  Provide a basis for further data collection through surveys or experiments
+- Suggest hypotheses about the causes of observed phenomena
+- Assess assumptions on which statistical inference will be based
+- Support the selection of appropriate statistical tools and techniques
+- Provide a basis for further data collection through surveys or experiments
 
-[EDA]: https://en.wikipedia.org/wiki/Exploratory_data_analysis
+[eda]: https://en.wikipedia.org/wiki/Exploratory_data_analysis
 
-Typical graphical techniques used in [EDA] are:
+Typical graphical techniques used in [EDA][eda] are:
 
--  [Box Plot](https://en.wikipedia.org/wiki/Box_plot)
--  [Histogram](https://en.wikipedia.org/wiki/Histogram)
--  [Multi-Vari Chart](https://en.wikipedia.org/wiki/Exploratory_data_analysis)
--  [Run Chart](https://en.wikipedia.org/wiki/Run_chart)
--  [Pareto Chart](https://en.wikipedia.org/wiki/Pareto_chart)
--  [Scatter Plot](https://en.wikipedia.org/wiki/Scatter_plot)
--  [Stem-and-Leaf Plot](https://en.wikipedia.org/wiki/Stemplot)
--  [Parallel Coordinates](https://en.wikipedia.org/wiki/Parallel_coordinates)
--  [Odd Ratio](https://en.wikipedia.org/wiki/Odds_ratio)
--  [Multidimensional Scaling](https://en.wikipedia.org/wiki/Multidimensional_scaling)
--  [Targeted Projection Pursuit](https://en.wikipedia.org/wiki/Targeted_projection_pursuit)
--  [Principal Component Analysis (PCA)](https://en.wikipedia.org/wiki/Principal_component_analysis)
--  [Multi-linear PCA](https://en.wikipedia.org/wiki/Multilinear_principal_component_analysis)
--  [Dimensionality Reduction](https://en.wikipedia.org/wiki/Dimensionality_reduction)
--  [Nonlinear Dimensionality Reduction (NLDR)](https://en.wikipedia.org/wiki/Nonlinear_dimensionality_reduction)
+- [Box Plot](https://en.wikipedia.org/wiki/Box_plot)
+- [Histogram](https://en.wikipedia.org/wiki/Histogram)
+- [Multi-Vari Chart](https://en.wikipedia.org/wiki/Exploratory_data_analysis)
+- [Run Chart](https://en.wikipedia.org/wiki/Run_chart)
+- [Pareto Chart](https://en.wikipedia.org/wiki/Pareto_chart)
+- [Scatter Plot](https://en.wikipedia.org/wiki/Scatter_plot)
+- [Stem-and-Leaf Plot](https://en.wikipedia.org/wiki/Stemplot)
+- [Parallel Coordinates](https://en.wikipedia.org/wiki/Parallel_coordinates)
+- [Odd Ratio](https://en.wikipedia.org/wiki/Odds_ratio)
+- [Multidimensional Scaling](https://en.wikipedia.org/wiki/Multidimensional_scaling)
+- [Targeted Projection Pursuit](https://en.wikipedia.org/wiki/Targeted_projection_pursuit)
+- [Principal Component Analysis (PCA)](https://en.wikipedia.org/wiki/Principal_component_analysis)
+- [Multi-linear PCA](https://en.wikipedia.org/wiki/Multilinear_principal_component_analysis)
+- [Dimensionality Reduction](https://en.wikipedia.org/wiki/Dimensionality_reduction)
+- [Nonlinear Dimensionality Reduction (NLDR)](https://en.wikipedia.org/wiki/Nonlinear_dimensionality_reduction)
 
-Typical quantitative techniques used in EDA are:
+Typical quantitative techniques used in [EDA][eda] are:
 
--  [Median Polish](https://en.wikipedia.org/wiki/Median_polish)
--  [Trimean](https://en.wikipedia.org/wiki/Trimean)
--  [Ordination](https://en.wikipedia.org/wiki/Ordination_(statistics))
+- [Median Polish](https://en.wikipedia.org/wiki/Median_polish)
+- [Trimean](https://en.wikipedia.org/wiki/Trimean)
+- [Ordination](<https://en.wikipedia.org/wiki/Ordination_(statistics)>)
 
-I have already covered some examples of many of these techniques in my past posts on EDA of  [Single Variable](/onevariableeda) ,  [Two variables](/python-plots-two-vars) and [Multiple Variables](/python-plots-multi-vars).
+I have already covered some examples of many of these techniques in my past posts on EDA of [Single Variable](/onevariableeda) , [Two variables](/python-plots-two-vars) and [Multiple Variables](/python-plots-multi-vars).
 
 I will be going through mathematical details of some of others in future posts.

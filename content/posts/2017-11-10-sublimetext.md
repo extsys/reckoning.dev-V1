@@ -1,11 +1,11 @@
 ---
-title: "Sublime Text Setup"
-slug: "sublimetext"
+title: 'Sublime Text Setup'
+slug: 'sublimetext'
 date: 2017-11-10
 tags:
-    - "Editor"
+  - 'Editor'
 categories:
-    - "Computers"
+  - 'Computers'
 template: post
 thumbnail: '../thumbnails/sublime.png'
 toc: false
@@ -19,9 +19,7 @@ shortcut keys and themes.
 
 > **UPDATE**: This post has been updated with my latest sublime settings.
 
-
-Packages
-========
+# Packages
 
 First thing you will need to install is the [Package
 Control](https://packagecontrol.io). This can be easily done by
@@ -29,30 +27,30 @@ following the directions at their [installation instructions](https://packagecon
 
 Once you have installed the package manager and restarted sublime text,
 now you can install all other packages using the powerful command
-pallet. Hit `ctrl + shift + P` and type *Install*, choose *Package
-Control : Install Package*. Now you can search for any package that you
-wish to install, and then press *Enter* to install it.
+pallet. Hit `ctrl + shift + P` and type _Install_, choose _Package
+Control : Install Package_. Now you can search for any package that you
+wish to install, and then press _Enter_ to install it.
 
 ![Command Pallette](https://res.cloudinary.com/sadanandsingh/image/upload/v1544988652/images/sublime/Settings.png)
 
 Here is a list of packages that I currently use:
 
--   [Alignment](https://github.com/wbond/sublime_alignment)
--   [Bracket Highlighter](https://github.com/facelessuser/BracketHighlighter)
--   [C++11](https://github.com/noct/sublime-cpp11)
--   [Column Select](https://github.com/ehuss/Sublime-Column-Select)
--   [AutoDocString](hhttps://github.com/KristoforMaynard/SublimeAutoDocstring)
--   [FileIcons](https://github.com/braver/FileIcons)
--   [GitGutter](https://github.com/jisaacks/GitGutter)
--   [Jedi](https://github.com/srusskih/SublimeJEDI)
--   [MagicPython](https://github.com/MagicStack/MagicPython)
--   [Markdown Editing](https://github.com/SublimeText-Markdown/MarkdownEditing)
--   [rsub](https://github.com/henrikpersson/rsub)
--   [Sidebar Enhancements](https://github.com/SideBarEnhancements-org/SideBarEnhancements)
--   [sublack](https://github.com/jgirardet/sublack)
--   [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter3)
--   [SublimeLinter flake8](https://github.com/SublimeLinter/SublimeLinter-flake8)
--   [SublimeLinter addon black for flake](https://github.com/kaste/SublimeLinter-addon-black-for-flake)
+- [Alignment](https://github.com/wbond/sublime_alignment)
+- [Bracket Highlighter](https://github.com/facelessuser/BracketHighlighter)
+- [C++11](https://github.com/noct/sublime-cpp11)
+- [Column Select](https://github.com/ehuss/Sublime-Column-Select)
+- [AutoDocString](hhttps://github.com/KristoforMaynard/SublimeAutoDocstring)
+- [FileIcons](https://github.com/braver/FileIcons)
+- [GitGutter](https://github.com/jisaacks/GitGutter)
+- [Jedi](https://github.com/srusskih/SublimeJEDI)
+- [MagicPython](https://github.com/MagicStack/MagicPython)
+- [Markdown Editing](https://github.com/SublimeText-Markdown/MarkdownEditing)
+- [rsub](https://github.com/henrikpersson/rsub)
+- [Sidebar Enhancements](https://github.com/SideBarEnhancements-org/SideBarEnhancements)
+- [sublack](https://github.com/jgirardet/sublack)
+- [SublimeLinter](https://github.com/SublimeLinter/SublimeLinter3)
+- [SublimeLinter flake8](https://github.com/SublimeLinter/SublimeLinter-flake8)
+- [SublimeLinter addon black for flake](https://github.com/kaste/SublimeLinter-addon-black-for-flake)
 
 **Alignment** provides a simple key-binding for aligning multi-line and multiple selections.
 
@@ -64,36 +62,37 @@ as: `[], (), {}, "", '', <tag></tag>`, and even custom brackets.
 **Column Select** plug-in provides an alternate behavior for Sublime keyboard column selection.
 The major differences are:
 
--   Allows reversing direction (go down too far, just go back up).
--   Added PageUp/PageDown, Home/End, and mouse selection.
--   Skip rows that are too short.
--   If you start at the end of a line, then it will stay at the end of
-    each line.
+- Allows reversing direction (go down too far, just go back up).
+- Added PageUp/PageDown, Home/End, and mouse selection.
+- Skip rows that are too short.
+- If you start at the end of a line, then it will stay at the end of
+  each line.
 
 **AutoDocString** makes writing documentation a breeze for python
 code. I typically use google docstring format, so I modify settings as follows:
 
 ```json
 {
-    "style": "google",
-    "extra_class_newlines": false,
+  "style": "google",
+  "extra_class_newlines": false
 }
 ```
 
 **GitGutter** is a handy plug-in to show information about files
 in a git repository. Main Features are:
 
--   Gutter Icons indicating inserted, modified or deleted lines
--   Diff Popup with details about modified lines
--   Status Bar Text with information about file and repository
--   Jumping Between Changes to easily navigate between modified lines
+- Gutter Icons indicating inserted, modified or deleted lines
+- Diff Popup with details about modified lines
+- Status Bar Text with information about file and repository
+- Jumping Between Changes to easily navigate between modified lines
 
 My custom settings are:
+
 ```json
 // GitGutter Settings - User
 {
-    "show_line_annotation": "auto",
-    "diff_popup_default_mode": "diff"
+  "show_line_annotation": "auto",
+  "diff_popup_default_mode": "diff"
 }
 ```
 
@@ -104,9 +103,10 @@ interpreter explicitly.
 
 ```json
 {
-    "python_interpreter": "/Users/sadanand/anaconda3/envs/py3.7-dev/bin/python3",
+  "python_interpreter": "/Users/sadanand/anaconda3/envs/py3.7-dev/bin/python3"
 }
 ```
+
 Please note that autocompletion doesn't work well for the import statements by default in sublime
 text 3. Please follow these
 [instructions](https://packagecontrol.io/packages/Jedi%20-%20Python%20autocompletion)
@@ -119,7 +119,7 @@ and 3.6 syntax features, including type annotations, f-strings and
 regular expressions. It is built from scratch for robustness with an
 extensive test suite.
 
-**sublack** is plugin to run black. [Black] is the uncompromising Python code formatter. Blackened
+**sublack** is plugin to run black. [Black][black] is the uncompromising Python code formatter. Blackened
 code looks the same regardless of the project you're reading. Formatting becomes transparent after
 a while and you can focus on the content instead. I prefer to use a line width of 99. By default
 black likes to convert all strings to double quotes, while I prefer single quotes. Following
@@ -127,68 +127,67 @@ configuration is needed for these modifications:
 
 ![MarkDown](https://res.cloudinary.com/sadanandsingh/image/upload/v1544988652/images/sublime/MarkdownEditing.png)
 
-
-[Black]: https://github.com/ambv/black
+[black]: https://github.com/ambv/black
 
 ```json
 {
-      // ########################
-      // Black specific options #
-      // ########################
+  // ########################
+  // Black specific options #
+  // ########################
 
-      // line length
-      // uses black default, if not modified
-      "black_line_length": 99,
+  // line length
+  // uses black default, if not modified
+  "black_line_length": 99,
 
-      // If --fast given, skip temporary sanity checks.
-      "black_fast": false,
+  // If --fast given, skip temporary sanity checks.
+  "black_fast": false,
 
-      // prevent black from changing single quote to double quotes
-      // default is false
-      // add --black_skip_string_normalization
-      "black_skip_string_normalization": true,
+  // prevent black from changing single quote to double quotes
+  // default is false
+  // add --black_skip_string_normalization
+  "black_skip_string_normalization": true,
 
-      // Don't normalize underscores in numeric literals.
-      "black_skip_numeric_underscore_normalization": false,
+  // Don't normalize underscores in numeric literals.
+  "black_skip_numeric_underscore_normalization": false,
 
-      // force py36 syntax mode
-      "black_py36": null,
+  // force py36 syntax mode
+  "black_py36": null,
 
-      // ##########################
-      // Sublack specific options #
-      // ##########################
+  // ##########################
+  // Sublack specific options #
+  // ##########################
 
-      // full path and command to run black
-      "black_command": "/Users/sadanand/anaconda3/envs/py3.7-dev/bin/black",
+  // full path and command to run black
+  "black_command": "/Users/sadanand/anaconda3/envs/py3.7-dev/bin/black",
 
-      // run black before saving document
-      "black_on_save": true,
+  // run black before saving document
+  "black_on_save": true,
 
-      // set debug mode. default is info.
-      // choices : debug > info > error
-      "black_log": "info",
+  // set debug mode. default is info.
+  // choices : debug > info > error
+  "black_log": "info",
 
-      // default encoding for never saved file, if not specified un  first 2 lines (pep 263):
-      // default is "utf-8". Change this only if you want override default behaviour.
-      "black_default_encoding": "utf-8",
+  // default encoding for never saved file, if not specified un  first 2 lines (pep 263):
+  // default is "utf-8". Change this only if you want override default behaviour.
+  "black_default_encoding": "utf-8",
 
-      // use blackd server instead of black
-      "black_use_blackd": false,
+  // use blackd server instead of black
+  "black_use_blackd": false,
 
-      // blackd server host
-      "black_blackd_host": "localhost",
+  // blackd server host
+  "black_blackd_host": "localhost",
 
-      // blackd server port, default is like black, should be string
-      "black_blackd_port": "45484",
+  // blackd server port, default is like black, should be string
+  "black_blackd_port": "45484",
 
-      // Start blackdserver on start. shuts down at sublimetext exit.
-      "black_blackd_autostart": false,
+  // Start blackdserver on start. shuts down at sublimetext exit.
+  "black_blackd_autostart": false,
 
-      // Use pre-commit if possible
-      "black_use_precommit": false,
+  // Use pre-commit if possible
+  "black_use_precommit": false,
 
-      // Disable formatll command
-      "black_confirm_formatall": false
+  // Disable formatll command
+  "black_confirm_formatall": false
 }
 ```
 
@@ -206,9 +205,9 @@ Sublime Text. The main features are:
 - Provides delete as "move to trash", open with.. and a clipboard.
 - Close, move, open and restore buffers affected by a rename/move command (even on folders).
 - Provides new file/folder, edit, open/run, reveal, find in selected/parent/project, cut, copy,
-paste, paste in parent, rename, move, delete, refresh etc.
+  paste, paste in parent, rename, move, delete, refresh etc.
 - Provides copy paths as URIs, URLs, content as UTF8, content as data:uri base64 ( nice for
-embedding into CSS! ), copy as tags img/a/script/style, duplicate etc.
+  embedding into CSS! ), copy as tags img/a/script/style, duplicate etc.
 - Allows to display "file modified date" and "file size" on status bar.
 
 **FileIcons** is a further enhancement to SidebarEnhancements plugin to provide fancy icons for
@@ -223,15 +222,12 @@ add-on package to make sublack fully compatible with flake linter.
 ```json
 // SublimeLinter Settings - User
 {
-    "linters": {
-        "flake8": {
-            "executable": "/Users/sadanand/anaconda3/envs/py3.7-dev/bin/flake8",
-            "args": [
-                "--max-line-length=99",
-                "--exclude=.git,__pycache__,.direnv,node_modules"
-            ]
-        }
+  "linters": {
+    "flake8": {
+      "executable": "/Users/sadanand/anaconda3/envs/py3.7-dev/bin/flake8",
+      "args": ["--max-line-length=99", "--exclude=.git,__pycache__,.direnv,node_modules"]
     }
+  }
 }
 ```
 
@@ -246,18 +242,13 @@ We can take advantage of them by using the Markdown Editing package and modifyin
   "caret_style": "wide",
   "color_scheme": "Packages/Agila Theme/Markdown/Oceanic Next Markdown.tmTheme",
   "draw_centered": false,
-  "extensions":
-  [
-    "mmd",
-    "md"
-  ],
+  "extensions": ["mmd", "md"],
   "highlight_line": true,
   "line_numbers": true,
   "line_padding_bottom": 2,
   "line_padding_top": 2,
   "mde.auto_increment_ordered_list_number": true,
-  "mde.distraction_free_mode":
-  {
+  "mde.distraction_free_mode": {
     "mde.keep_centered": true
   },
   "mde.keep_centered": false,
@@ -275,51 +266,34 @@ We can take advantage of them by using the Markdown Editing package and modifyin
   "mde.keymap_disable.reference_new_inline_link": false,
   "mde.keymap_disable.reference_new_reference": false,
   "mde.keymap_disable.show_fold_all_sections": false,
-  "mde.lint":
-  {
-    "disable":
-    [
-      "md013"
-    ],
+  "mde.lint": {
+    "disable": ["md013"],
     "md003": "any",
     "md004": "cyclic",
     "md007": 0,
     "md013": 0,
     "md026": ".,;:!",
     "md029": "any",
-    "md030":
-    {
+    "md030": {
       "ol_multi": 1,
       "ol_single": 1,
       "ul_multi": 1,
       "ul_single": 1
     },
-    "mdl":
-    {
-      "additional_arguments":
-      [
-      ],
+    "mdl": {
+      "additional_arguments": [],
       "executable": ""
     }
   },
   "mde.list_indent_auto_switch_bullet": true,
-  "mde.list_indent_bullets":
-  [
-    "*",
-    "-",
-    "+"
-  ],
+  "mde.list_indent_bullets": ["*", "-", "+"],
   "mde.match_header_hashes": false,
   "mde.wikilinks.homepage": "HomePage",
   "mde.wikilinks.markdown_extension": ".md",
-  "mde.wikilinks.templates":
-  {
+  "mde.wikilinks.templates": {
     "default_page": "templates/PageTemplate.md"
   },
-  "rulers":
-  [
-    100
-  ],
+  "rulers": [100],
   "tab_size": 4,
   "translate_tabs_to_spaces": true,
   "trim_trailing_white_space_on_save": false,
@@ -328,89 +302,93 @@ We can take advantage of them by using the Markdown Editing package and modifyin
 }
 ```
 
-Shortcut Keys
-=============
+# Shortcut Keys
 
 Here is a summary of my key map:
 
 ```json
 [
-    { "keys": ["shift+alt+a"], "command": "find_all_under" },
-    { "keys": ["control+v"], "command": "paste_and_indent" },
-    { "keys": ["control+shift+v"], "command": "paste" },
-    { "keys": ["ctrl+alt+;"], "command": "alignment" },
-    { "keys": ["alt+shift+up"], "command": "column_select", "args": {"by": "lines", "forward": false}},
-    { "keys": ["alt+shift+down"], "command": "column_select", "args": {"by": "lines", "forward": true}},
-    { "keys": ["alt+shift+pageup"], "command": "column_select", "args": {"by": "pages", "forward": false}},
-    { "keys": ["alt+shift+pagedown"], "command": "column_select", "args": {"by": "pages", "forward": true}},
-    { "keys": ["alt+shift+home"], "command": "column_select", "args": {"by": "all", "forward": false}},
-    { "keys": ["alt+shift+end"], "command": "column_select", "args": {"by": "all", "forward": true}}
+  { "keys": ["shift+alt+a"], "command": "find_all_under" },
+  { "keys": ["control+v"], "command": "paste_and_indent" },
+  { "keys": ["control+shift+v"], "command": "paste" },
+  { "keys": ["ctrl+alt+;"], "command": "alignment" },
+  {
+    "keys": ["alt+shift+up"],
+    "command": "column_select",
+    "args": { "by": "lines", "forward": false }
+  },
+  {
+    "keys": ["alt+shift+down"],
+    "command": "column_select",
+    "args": { "by": "lines", "forward": true }
+  },
+  {
+    "keys": ["alt+shift+pageup"],
+    "command": "column_select",
+    "args": { "by": "pages", "forward": false }
+  },
+  {
+    "keys": ["alt+shift+pagedown"],
+    "command": "column_select",
+    "args": { "by": "pages", "forward": true }
+  },
+  {
+    "keys": ["alt+shift+home"],
+    "command": "column_select",
+    "args": { "by": "all", "forward": false }
+  },
+  {
+    "keys": ["alt+shift+end"],
+    "command": "column_select",
+    "args": { "by": "all", "forward": true }
+  }
 ]
 ```
 
-Theme and Color Scheme
-======================
+# Theme and Color Scheme
 
-I like a simple and clean UI for my editors. [Guna] provides the perfect minimal theme that is
-adaptive to any color scheme you prefer. I prefer color schemes from the [Agila theme].
+I like a simple and clean UI for my editors. [guna] provides the perfect minimal theme that is
+adaptive to any color scheme you prefer. I prefer color schemes from the [agila theme].
 The settings related to this can be found in my settings below.
 
-[Guna]: https://packagecontrol.io/packages/Guna
-[Agila theme]: https://github.com/arvi/Agila-Theme
+[guna]: https://packagecontrol.io/packages/Guna
+[agila theme]: https://github.com/arvi/Agila-Theme
 
-User Settings / Preferences
-===========================
+# User Settings / Preferences
 
 Here is my complete set of settings for Sublime Text. Please feel free
 to leave comments below for any questions or suggestions.
 
 ```json
 {
-    "always_show_minimap_viewport": true,
-    "auto_complete": true,
-    "bold_folder_labels": true,
-    "caret_extra_width": 1.5,
-    "color_scheme": "Packages/Agila Theme/Agila Oceanic Next.tmTheme",
-    "default_line_ending": "unix",
-    "drag_text": false,
-    "draw_white_space": "all",
-    "enable_tab_scrolling": false,
-    "font_face": "Roboto Mono",
-    "font_options":
-    [
-        "directwrite",
-        "gray_antialias",
-        "subpixel_antialias"
-    ],
-    "font_size": 16,
-    "hot_exit": false,
-    "ignored_packages":
-    [
-        "C++",
-        "Markdown",
-        "Vintage"
-    ],
-    "indent_guide_options":
-    [
-        "draw_normal",
-        "draw_active"
-    ],
-    "line_padding_bottom": 3,
-    "line_padding_top": 3,
-    "overlay_scroll_bars": "enabled",
-    "remember_open_files": false,
-    "rulers":
-    [
-        100
-    ],
-    "scroll_past_end": true,
-    "soda_classic_tabs": true,
-    "soda_folder_icons": true,
-    "tab_completion": false,
-    "tab_size": 4,
-    "theme": "Guna.sublime-theme",
-    "translate_tabs_to_spaces": true,
-    "trim_trailing_white_space_on_save": true,
-    "word_wrap": true
+  "always_show_minimap_viewport": true,
+  "auto_complete": true,
+  "bold_folder_labels": true,
+  "caret_extra_width": 1.5,
+  "color_scheme": "Packages/Agila Theme/Agila Oceanic Next.tmTheme",
+  "default_line_ending": "unix",
+  "drag_text": false,
+  "draw_white_space": "all",
+  "enable_tab_scrolling": false,
+  "font_face": "Roboto Mono",
+  "font_options": ["directwrite", "gray_antialias", "subpixel_antialias"],
+  "font_size": 16,
+  "hot_exit": false,
+  "ignored_packages": ["C++", "Markdown", "Vintage"],
+  "indent_guide_options": ["draw_normal", "draw_active"],
+  "line_padding_bottom": 3,
+  "line_padding_top": 3,
+  "overlay_scroll_bars": "enabled",
+  "remember_open_files": false,
+  "rulers": [100],
+  "scroll_past_end": true,
+  "soda_classic_tabs": true,
+  "soda_folder_icons": true,
+  "tab_completion": false,
+  "tab_size": 4,
+  "theme": "Guna.sublime-theme",
+  "translate_tabs_to_spaces": true,
+  "trim_trailing_white_space_on_save": true,
+  "word_wrap": true
 }
 ```

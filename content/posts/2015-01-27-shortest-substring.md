@@ -1,12 +1,12 @@
 ---
-title: "Shortest Non-repeating Substring"
-slug: "shortest-substring"
+title: 'Shortest Non-repeating Substring'
+slug: 'shortest-substring'
 date: 2015-01-27
 tags:
-    - "Algorithms"
-    - "Python"
+  - 'Algorithms'
+  - 'Python'
 categories:
-    - "Algorithms"
+  - 'Algorithms'
 template: post
 thumbnail: '../thumbnails/programming.png'
 toc: false
@@ -14,32 +14,29 @@ jupyter: false
 bokeh: false
 ---
 
-
 Given an alphanumeric string, find the shortest substring that occurs
 exactly once as a (contiguous) substring in it. Overlapping occurrences
 are counted as distinct. If there are several candidates of the same
 length, you must output all of them in the order of occurrence. The
-*space* is NOT considered as a valid non-repeating substring.
+_space_ is NOT considered as a valid non-repeating substring.
 
 ###Examples
 
 Consider the following cases:
 
-__Case 1:__ If the given string is `asdfsasa`, the answer should be
+**Case 1:** If the given string is `asdfsasa`, the answer should be
 `['d', 'f']`
 
-__Case 2:__ If the given string is `sadanands`,
+**Case 2:** If the given string is `sadanands`,
 
 the answer should be `['sa', 'ad', 'da', 'na', 'nd', 'ds']`
 
-__Case 3:__ If the given string is `wwwwwwww`, the answer should be
+**Case 3:** If the given string is `wwwwwwww`, the answer should be
 `['wwwwwwww']`
 
+# My Solution
 
-My Solution
-===========
-
-Here is my solution in *Python*.
+Here is my solution in _Python_.
 
 It is quite brute force. I am not sure about the order of `find()` and
 `rfind()` built-in methods in _Python_. Assuming these are $O(n)$, my

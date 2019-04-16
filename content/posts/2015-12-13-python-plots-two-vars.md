@@ -1,14 +1,14 @@
 ---
-title: "Pseudo Facebook Data - Exploring Two Variables"
-slug: "python-plots-two-vars"
+title: 'Pseudo Facebook Data - Exploring Two Variables'
+slug: 'python-plots-two-vars'
 date: 2015-12-13
 tags:
-    - "MachineLearning"
-    - "EDA"
-    - "Python"
-    - "DataScience"
+  - 'MachineLearning'
+  - 'EDA'
+  - 'Python'
+  - 'DataScience'
 categories:
-    - "DataScience"
+  - 'DataScience'
 template: post
 thumbnail: '../thumbnails/notebook.png'
 toc: false
@@ -38,11 +38,12 @@ command below.
 
 <span class="n">cats</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;userid&#39;</span><span class="p">,</span> <span class="s1">&#39;dob_day&#39;</span><span class="p">,</span> <span class="s1">&#39;dob_year&#39;</span><span class="p">,</span> <span class="s1">&#39;dob_month&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">pf</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cats</span><span class="p">:</span>
-        <span class="n">pf</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">pf</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cats</span><span class="p">:</span>
+<span class="n">pf</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">pf</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
 
 <span class="c1">#summarize data</span>
 <span class="n">pf</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">percentiles</span><span class="o">=</span><span class="p">[])</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -51,7 +52,6 @@ command below.
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -65,7 +65,6 @@ command below.
 
 <div class="output_area">
 <div class="prompt output_prompt">Out[24]:</div>
-
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -299,6 +298,7 @@ command below.
 <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;friend_count&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">pf</span><span class="p">,</span> <span class="n">fit_reg</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">90</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5000</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -308,11 +308,8 @@ command below.
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[47]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>(0, 5000)</pre>
@@ -322,8 +319,6 @@ command below.
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAY8AAAESCAYAAAAFYll6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -956,11 +951,8 @@ JC3z/wGfpma/H46eEAAAAABJRU5ErkJggg==
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[26]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>count    99003.000000
@@ -1009,11 +1001,8 @@ In order to overcome this, we can set the transparency of the plots using the al
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[27]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>[&lt;matplotlib.lines.Line2D at 0x7f07d45a22e8&gt;]</pre>
@@ -1023,8 +1012,6 @@ In order to overcome this, we can set the transparency of the plots using the al
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAY8AAAESCAYAAAAFYll6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -1886,17 +1873,16 @@ SkqmuWAcAAAAAElFTkSuQmCC
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="k">import</span> <span class="n">transforms</span> <span class="k">as</span> <span class="n">mtransforms</span>
 <span class="kn">from</span> <span class="nn">matplotlib.ticker</span> <span class="k">import</span> <span class="n">AutoLocator</span>
 
-
 <span class="k">class</span> <span class="nc">SqrtScale</span><span class="p">(</span><span class="n">mscale</span><span class="o">.</span><span class="n">ScaleBase</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Scales data using np.sqrt method.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd"> Scales data using np.sqrt method.</span>
 
-<span class="sd">    The scale function:</span>
-<span class="sd">      np.sqrt(x)</span>
+<span class="sd"> The scale function:</span>
+<span class="sd"> np.sqrt(x)</span>
 
-<span class="sd">    The inverse scale function:</span>
-<span class="sd">      x**2</span>
-<span class="sd">    &quot;&quot;&quot;</span>
+<span class="sd"> The inverse scale function:</span>
+<span class="sd"> x\*\*2</span>
+<span class="sd"> &quot;&quot;&quot;</span>
 
 <div>
     <span class="c1"># The scale class must have a member ``name`` that defines the</span>
@@ -1967,8 +1953,9 @@ SkqmuWAcAAAAAElFTkSuQmCC
             <span class="k">return</span> <span class="n">SqrtScale</span><span class="o">.</span><span class="n">SqrtTransform</span><span class="p">()</span></div>
 
 <span class="c1"># Now that the Scale class has been defined, it must be registered so</span>
-<span class="c1"># that ``matplotlib`` can find it.</span>
+<span class="c1"># that `matplotlib` can find it.</span>
 <span class="n">mscale</span><span class="o">.</span><span class="n">register_scale</span><span class="p">(</span><span class="n">SqrtScale</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -1997,11 +1984,8 @@ SkqmuWAcAAAAAElFTkSuQmCC
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[29]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>[&lt;matplotlib.lines.Line2D at 0x7f07d24f5588&gt;]</pre>
@@ -2011,8 +1995,6 @@ SkqmuWAcAAAAAElFTkSuQmCC
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAiAAAAGTCAYAAAARP6laAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -3497,11 +3479,8 @@ TkSuQmCC
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAiAAAAGTCAYAAAARP6laAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -5265,10 +5244,8 @@ CogxxhhjAmcVEGOMMcYE7v8uEaHP69qoSwAAAABJRU5ErkJggg==
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[121]:</div>
-
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -5502,11 +5479,8 @@ CogxxhhjAmcVEGOMMcYE7v8uEaHP69qoSwAAAABJRU5ErkJggg==
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[97]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>&lt;matplotlib.text.Text at 0x7f07d16f9dd8&gt;</pre>
@@ -5516,8 +5490,6 @@ CogxxhhjAmcVEGOMMcYE7v8uEaHP69qoSwAAAABJRU5ErkJggg==
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYQAAAESCAYAAAD9gqKNAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -5954,11 +5926,8 @@ REQABQQREYkoIIiICKCAICIiEQUEEREB4P8BXdvgYva/J4EAAAAASUVORK5CYII=
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[109]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>&lt;matplotlib.text.Text at 0x7f07d091cbe0&gt;</pre>
@@ -5968,8 +5937,6 @@ REQABQQREYkoIIiICKCAICIiEQUEEREB4P8BXdvgYva/J4EAAAAASUVORK5CYII=
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAY8AAAESCAYAAAAFYll6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -7399,11 +7366,8 @@ zQAAAABJRU5ErkJggg==
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[112]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>-0.17121437273281295</pre>
@@ -7444,11 +7408,8 @@ zQAAAABJRU5ErkJggg==
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[119]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>(0, 561.0)</pre>
@@ -7458,8 +7419,6 @@ zQAAAABJRU5ErkJggg==
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYQAAAENCAYAAAAPAhLDAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -8732,11 +8691,8 @@ B1w3ukIX6+B2AAAAAElFTkSuQmCC
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[120]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>0.9479901803455516</pre>
@@ -8791,10 +8747,11 @@ B1w3ukIX6+B2AAAAAElFTkSuQmCC
 <span class="n">ax2</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">13</span><span class="p">,</span> <span class="mi">71</span><span class="p">])</span>
 
 <span class="n">pf11</span> <span class="o">=</span> <span class="n">pf1</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">pf11</span><span class="p">[</span><span class="s1">&#39;ageRounded&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">pf1</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">/</span><span class="mf">5.0</span><span class="p">)</span><span class="o">*</span><span class="mf">5.0</span>
+<span class="n">pf11</span><span class="p">[</span><span class="s1">&#39;ageRounded&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">pf1</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">]</span><span class="o">/</span><span class="mf">5.0</span><span class="p">)</span><span class="o">\*</span><span class="mf">5.0</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;ageRounded&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;friend_count_mean&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">pf11</span><span class="p">,</span> <span class="n">scatter</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">lowess</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ci</span><span class="o">=</span><span class="mi">95</span><span class="p">,</span> <span class="n">line_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;cyan&#39;</span><span class="p">},</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
 <span class="n">pf11</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;ageRounded&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;friend_count_mean&#39;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax3</span><span class="p">)</span>
 <span class="n">ax3</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">([</span><span class="mi">13</span><span class="p">,</span> <span class="mi">71</span><span class="p">])</span>
+
 </pre></div>
 
 </div>
@@ -8804,11 +8761,8 @@ B1w3ukIX6+B2AAAAAElFTkSuQmCC
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[157]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>(13, 71)</pre>
@@ -8818,8 +8772,6 @@ B1w3ukIX6+B2AAAAAElFTkSuQmCC
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAisAAAIpCAYAAABjZngjAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz

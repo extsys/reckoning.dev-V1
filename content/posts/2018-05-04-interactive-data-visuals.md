@@ -1,12 +1,12 @@
 ---
-title: "Interactive Data Visualization in Python Using Bokeh"
+title: 'Interactive Data Visualization in Python Using Bokeh'
 date: 2018-05-04
 tags:
-    - "DataScience"
-    - "Python"
+  - 'DataScience'
+  - 'Python'
 categories:
-    - "DataScience"
-slug: "interactive-data-visuals"
+  - 'DataScience'
+slug: 'interactive-data-visuals'
 template: post
 thumbnail: '../thumbnails/bokeh.png'
 toc: false
@@ -29,17 +29,17 @@ subject matter... they facilitate the user exploring the data, letting them
 unearth their own insights: findings they consider relevant or interesting."
 
 In a previous series of posts on
-[exploratory data analysis (EDA)][EDA] - [EDA 1], [EDA 2], [EDA 3] and
-[EDA 4], we have covered static plotting in python using major libraries
+[exploratory data analysis (EDA)][eda] - [EDA 1][eda1], [EDA 2][eda2], [EDA 3][eda3] and
+[EDA 4][eda4], we have covered static plotting in python using major libraries
 like [matplotlib], [seaborn], [plotnine], and [pandas]. `plotnine` is an implementation of a grammar
 of graphics in Python, based on the [ggplot2] library in R. The grammar allows users to compose
 plots by explicitly mapping data to the visual objects that make up the plot.
 
-[EDA]: https://en.wikipedia.org/wiki/Exploratory_data_analysis
-[EDA 1]: /intro-pandas
-[EDA 2]: /onevariableeda
-[EDA 3]: /python-plots-two-vars
-[EDA 4]: /python-plots-multi-vars
+[eda]: https://en.wikipedia.org/wiki/Exploratory_data_analysis
+[eda1]: /intro-pandas
+[eda2]: /onevariableeda
+[eda3]: /python-plots-two-vars
+[eda4]: /python-plots-multi-vars
 [matplotlib]: https://matplotlib.org/
 [pandas]: https://pandas.pydata.org/
 [seaborn]: https://seaborn.pydata.org/
@@ -71,13 +71,26 @@ be viewed in a browser and are aided by corresponding bokeh javascript and css
 files.
 
 ###Embedding bokeh Plots in Web Pages
-In order to incorporate bokeh figures in a web page, you will first need to include following `css` and `js` files in your page:
+In order to incorporate bokeh figures in a web page, you will first need to include following
+`css` and `js` files in your page:
 
 ```html
 <!-- css -->
-<link href="//cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.1/bokeh.min.css" rel="stylesheet" type="text/css">
-<link href="//cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.1/bokeh-widgets.min.css" rel="stylesheet" type="text/css">
-<link href="//cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.1/bokeh-tables.min.css" rel="stylesheet" type="text/css">
+<link
+  href="//cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.1/bokeh.min.css"
+  rel="stylesheet"
+  type="text/css"
+/>
+<link
+  href="//cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.1/bokeh-widgets.min.css"
+  rel="stylesheet"
+  type="text/css"
+/>
+<link
+  href="//cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.1/bokeh-tables.min.css"
+  rel="stylesheet"
+  type="text/css"
+/>
 
 <!-- java script -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.1/bokeh.min.js"></script>
@@ -108,23 +121,22 @@ The returned `<script>` will look something like:
 
 ```html
 <script type="text/javascript">
-    (function() {
-  var fn = function() {
-    Bokeh.safely(function() {
-      var docs_json = { DOCUMENT DATA HERE };
-      var render_items = [{
-        "docid":"6833819f-9b5b-4904-821e-3f5eec77de9b",
-        "elementid":"9574d123-9332-4b5f-96cc-6323bef37f40",
-        "modelid":"7b328b27-9b14-4f7b-a5d8-0138bc7b0f59"
-      }];
+      (function() {
+    var fn = function() {
+      Bokeh.safely(function() {
+        var docs_json = { DOCUMENT DATA HERE };
+        var render_items = [{
+          "docid":"6833819f-9b5b-4904-821e-3f5eec77de9b",
+          "elementid":"9574d123-9332-4b5f-96cc-6323bef37f40",
+          "modelid":"7b328b27-9b14-4f7b-a5d8-0138bc7b0f59"
+        }];
 
-      Bokeh.embed.embed_items(docs_json, render_items);
-    });
-  };
-  if (document.readyState != "loading") fn();
-  else document.addEventListener("DOMContentLoaded", fn);
-})();
-
+        Bokeh.embed.embed_items(docs_json, render_items);
+      });
+    };
+    if (document.readyState != "loading") fn();
+    else document.addEventListener("DOMContentLoaded", fn);
+  })();
 </script>
 ```
 
@@ -138,7 +150,6 @@ There will be one `<div>` for each of your plots and they should be placed at
 where you want your plot to appear. The `<script>` section should be placed
 in a typical place - the bottom of the `<body>` section for late loading.
 
-
 # Examples
 
 Bokeh has built-in support for various types of interactions (like pan, wheel
@@ -151,21 +162,21 @@ In the following sections, we will look at few major types of interactions that 
 
 Visualization of high dimensional data is a pretty common task in data science
 projects. The two most common algorithms to project high dimensional data to
-2-dimensional space are [t-sne] and [UMAP]. The [scikit-learn][sklearn]
+2-dimensional space are [TSNE][t-sne] and [UMAP]. The [scikit-learn][sklearn]
 and [umap-learn] python libraries provide a neat implementation of
 these algorithms.
 
-In this post, as an example, we will use the [fashion MNIST] data to look at
-its tsne and UMAP embeddings. We can first load the data from the [Pytorch]
-libarary. We will load only the training data and save both images and labels
+In this post, as an example, we will use the [fashion MNIST][f-mnist] data to look at
+its TSNE and UMAP embeddings. We can first load the data from the [pytorch]
+library. We will load only the training data and save both images and labels
 in a [pandas] dataframe.
 
 [t-sne]: https://lvdmaaten.github.io/tsne/
 [umap]: https://arxiv.org/abs/1802.03426
 [sklearn]: https://scikit-learn.org/stable/modules/generated/sklearn.manifold.TSNE.html
 [umap-learn]: https://github.com/lmcinnes/umap
-[fashion MNIST]: https://github.com/zalandoresearch/fashion-mnist
-[Pytorch]: https://pytorch.org/
+[f-mnist]: https://github.com/zalandoresearch/fashion-mnist
+[pytorch]: https://pytorch.org/
 
 ```python
 from torchvision.datasets import FashionMNIST
@@ -286,10 +297,10 @@ example, I want to highlight a different kind of linking. It’s often desired
 to link pan or zooming actions across many plots. All that is needed to enable
 this feature is to share range objects between `figure()` calls.
 
-For this example, we will use the simpler [Boston Housing] dataset. We can
+For this example, we will use the simpler [Boston Housing][bhousing] dataset. We can
 load this data using the [scikit-learn library][sklearn] and save it in a pandas dataframe.
 
-[Boston Housing]: https://www.cs.toronto.edu/~delve/data/boston/bostonDetail.html
+[bhousing]: https://www.cs.toronto.edu/~delve/data/boston/bostonDetail.html
 
 ```python
 from sklearn.datasets import load_boston

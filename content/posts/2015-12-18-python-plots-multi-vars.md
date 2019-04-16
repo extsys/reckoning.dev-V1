@@ -1,14 +1,14 @@
 ---
-title: "Exploring Multiple Variables in EDA"
-slug: "python-plots-multi-vars"
+title: 'Exploring Multiple Variables in EDA'
+slug: 'python-plots-multi-vars'
 date: 2015-12-18
 tags:
-    - "MachineLearning"
-    - "EDA"
-    - "Python"
-    - "DataScience"
+  - 'MachineLearning'
+  - 'EDA'
+  - 'Python'
+  - 'DataScience'
 categories:
-    - "DataScience"
+  - 'DataScience'
 template: post
 thumbnail: '../thumbnails/notebook.png'
 toc: false
@@ -35,11 +35,12 @@ at [Facebook](https://facebook.com). You can load the data through the following
 
 <span class="n">cats</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;userid&#39;</span><span class="p">,</span> <span class="s1">&#39;dob_day&#39;</span><span class="p">,</span> <span class="s1">&#39;dob_year&#39;</span><span class="p">,</span> <span class="s1">&#39;dob_month&#39;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">pf</span><span class="o">.</span><span class="n">columns</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cats</span><span class="p">:</span>
-        <span class="n">pf</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">pf</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">cats</span><span class="p">:</span>
+<span class="n">pf</span><span class="p">[</span><span class="n">col</span><span class="p">]</span> <span class="o">=</span> <span class="n">pf</span><span class="p">[</span><span class="n">col</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
 
 <span class="c1">#summarize data</span>
 <span class="n">pf</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">percentiles</span><span class="o">=</span><span class="p">[])</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -48,7 +49,6 @@ at [Facebook](https://facebook.com). You can load the data through the following
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -62,7 +62,6 @@ at [Facebook](https://facebook.com). You can load the data through the following
 
 <div class="output_area">
 <div class="prompt output_prompt">Out[1]:</div>
-
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -337,10 +336,8 @@ at [Facebook](https://facebook.com). You can load the data through the following
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[3]:</div>
-
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -443,6 +440,7 @@ at [Facebook](https://facebook.com). You can load the data through the following
 <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">tsplot</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="s1">&#39;age&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;friend_count_median&#39;</span><span class="p">,</span> <span class="n">condition</span><span class="o">=</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s1">&#39;unit&#39;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">pf_group_by_age_gender</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Friend Count Median&quot;</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">113</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -452,11 +450,8 @@ at [Facebook](https://facebook.com). You can load the data through the following
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[4]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>(10, 113)</pre>
@@ -466,8 +461,6 @@ at [Facebook](https://facebook.com). You can load the data through the following
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYQAAAESCAYAAAD9gqKNAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -1055,10 +1048,8 @@ HsJCEAgEAgEgLASBQCAQ+BCCIBAIBAJACIJAIBAIfAhBEAgEAgEgBEEgEAgEPoQgCAQCgQCA/w/c
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[5]:</div>
-
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -1143,11 +1134,8 @@ Now lets plot ratio of female to male median friend counts.</p>
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[6]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>&lt;matplotlib.text.Text at 0x7fe86804b4a8&gt;</pre>
@@ -1157,8 +1145,6 @@ Now lets plot ratio of female to male median friend counts.</p>
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYEAAAESCAYAAAAbq2nJAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -1590,11 +1576,8 @@ RCRhCgERkYQpBEREEqYQEBFJmEJARCRhCgERkYT9FyHlmtWuuCq/AAAAAElFTkSuQmCC
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[8]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre> 2013.0    43588
@@ -1656,11 +1639,8 @@ Name: year_joined, dtype: int64</pre>
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[10]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>(2012, 2014]    43658
@@ -1703,10 +1683,8 @@ Name: year_joined, dtype: int64</pre>
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[11]:</div>
-
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -1803,11 +1781,8 @@ Name: year_joined, dtype: int64</pre>
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfkAAAGCCAYAAADjU7rmAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -2534,11 +2509,8 @@ pyTICyGEEOvU/wddeLtCF+CWIQAAAABJRU5ErkJggg==
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfkAAAGCCAYAAADjU7rmAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -3590,11 +3562,8 @@ YoKSJC+EEEJMUP8f9yD/wwdDNBUAAAAASUVORK5CYII=
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[14]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>count    98931.000000
@@ -3634,8 +3603,9 @@ dtype: float64</pre>
 <span class="n">df</span><span class="p">[</span><span class="s1">&#39;friendships_initiated_per_tenure&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int64&#39;</span><span class="p">)</span>
 
 <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;tenure&quot;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s2">&quot;friendships_initiated_per_tenure&quot;</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s2">&quot;year_joined&quot;</span><span class="p">,</span> <span class="n">legend_out</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> \
-               <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">fit_reg</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">scatter_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;alpha&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">})</span>
+ <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">fit_reg</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">scatter_kws</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;alpha&#39;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">})</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">3400</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -3645,11 +3615,8 @@ dtype: float64</pre>
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[15]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>(1, 3400)</pre>
@@ -3659,8 +3626,6 @@ dtype: float64</pre>
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAVUAAAFhCAYAAADA5zmVAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -3965,10 +3930,8 @@ BMiSqjHGBMiSqjHGBMiSqjHGBOj/A7zjbvhr9wFtAAAAAElFTkSuQmCC
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[16]:</div>
-
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -4104,10 +4067,8 @@ BMiSqjHGBMiSqjHGBMiSqjHGBOj/A7zjbvhr9wFtAAAAAElFTkSuQmCC
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[17]:</div>
-
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -4273,11 +4234,8 @@ BMiSqjHGBMiSqjHGBMiSqjHGBOj/A7zjbvhr9wFtAAAAAElFTkSuQmCC
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[18]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>&lt;matplotlib.text.Text at 0x7fe8665c31d0&gt;</pre>
@@ -4287,8 +4245,6 @@ BMiSqjHGBMiSqjHGBMiSqjHGBOj/A7zjbvhr9wFtAAAAAElFTkSuQmCC
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYsAAAEUCAYAAADa0BodAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -4451,11 +4407,8 @@ SUVORK5CYII=
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[19]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>&lt;matplotlib.text.Text at 0x7fe86657a198&gt;</pre>
@@ -4465,8 +4418,6 @@ SUVORK5CYII=
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYsAAAEUCAYAAADa0BodAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -4615,11 +4566,8 @@ LCRJRYaFJKnIsJAkFRkWkqQiw0KSVGRYSJKKDAtJUtH/B9sIIXKnIsBNAAAAAElFTkSuQmCC
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfwAAAGCCAYAAAAFenGiAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -5117,10 +5065,8 @@ KaCCLyIikgIq+CIiIimggi8iIpICKvgiIiIpoIIvIiKSAv8fCFFprtIU3n4AAAAASUVORK5CYII=
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[21]:</div>
-
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -5216,11 +5162,8 @@ KaCCLyIikgIq+CIiIimggi8iIpICKvgiIiIpoIIvIiKSAv8fCFFprtIU3n4AAAAASUVORK5CYII=
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[22]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>&lt;seaborn.axisgrid.FacetGrid at 0x7fe866497a90&gt;</pre>
@@ -5230,8 +5173,6 @@ KaCCLyIikgIq+CIiIimggi8iIpICKvgiIiIpoIIvIiKSAv8fCFFprtIU3n4AAAAASUVORK5CYII=
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAnYAAAJLCAYAAABqsNuKAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -5986,7 +5927,8 @@ a7qaSOIAAAAASUVORK5CYII=
 <span class="n">g</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">map_diag</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">:</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -5995,7 +5937,6 @@ a7qaSOIAAAAASUVORK5CYII=
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -6009,8 +5950,6 @@ a7qaSOIAAAAASUVORK5CYII=
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAl4AAAIhCAYAAACfVbSSAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -7758,7 +7697,8 @@ iqKMEWp4KYqiKIqijBFqeCmKoiiKoowR/x8a5UWL91RutwAAAABJRU5ErkJggg==
 <span class="n">g</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">map_diag</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">:</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -7767,7 +7707,6 @@ iqKMEWp4KYqiKIqijBFqeCmKoiiKoowR/x8a5UWL91RutwAAAABJRU5ErkJggg==
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -7781,8 +7720,6 @@ iqKMEWp4KYqiKIqijBFqeCmKoiiKoowR/x8a5UWL91RutwAAAABJRU5ErkJggg==
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAmQAAAInCAYAAAA23UV+AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -9074,7 +9011,8 @@ wwAAAABJRU5ErkJggg==
 <span class="n">g</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">map_diag</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">:</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -9083,7 +9021,6 @@ wwAAAABJRU5ErkJggg==
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -9097,8 +9034,6 @@ wwAAAABJRU5ErkJggg==
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAmQAAAInCAYAAAA23UV+AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -9918,7 +9853,8 @@ SUVORK5CYII=
 <span class="n">g</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">map_diag</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">ax</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">flat</span><span class="p">:</span>
-    <span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">setp</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">get_xticklabels</span><span class="p">(),</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">90</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -9927,7 +9863,6 @@ SUVORK5CYII=
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -9941,8 +9876,6 @@ SUVORK5CYII=
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAxoAAALbCAYAAAB9g/b3AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -11112,11 +11045,8 @@ jDHGGM/9f3xvymJ63BthAAAAAElFTkSuQmCC
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAa8AAAF1CAYAAABfzmVIAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz

@@ -1,12 +1,12 @@
 ---
-title: "Tilapia Fish Recipe"
-slug: "recipe-tilapia-fish"
+title: 'Tilapia Fish Recipe'
+slug: 'recipe-tilapia-fish'
 date: 2015-02-15
 tags:
-    - "Food"
-    - "Recipe"
+  - 'Food'
+  - 'Recipe'
 categories:
-    - "Food"
+  - 'Food'
 template: post
 thumbnail: '../thumbnails/tilapia.jpg'
 toc: false
@@ -18,7 +18,7 @@ Typically, hunger and laziness come to me as inseparable couples. To
 make things worse, I have been trying to eat healthy.
 
 Nevertheless, here is another recipe that solves all these at once. Its
-my *five minute* Tilapia Fish Recipe.
+my _five minute_ Tilapia Fish Recipe.
 
 Two major ingredients - fish and veggies, of this recipe can be grabbed
 from the frozen section of any supermarket.
@@ -27,26 +27,23 @@ from the frozen section of any supermarket.
 
 <!--TOC-->
 
-
 ![Fried Streamed Veggies](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963331/CookingVeggies_ti4q5u.jpg)
 
-Ingredients
-===========
+# Ingredients
 
--   2 frozen Boneless Tilapia Fish Pieces
--   1 Packet Frozen Steamed Veggies
--   2 tbsp Cooking Oil
--   1/2 tbsp Parsley
--   1 tbsp *Gamram Masala*
--   1 tbsp Cumin Powder
--   1/2 tbsp Turmeric Powder
--   1/2 tbsp Garlic Powder
--   1 tbsp Red Chili Powder
--   1/2 Lime
--   Salt to Taste
+- 2 frozen Boneless Tilapia Fish Pieces
+- 1 Packet Frozen Steamed Veggies
+- 2 tbsp Cooking Oil
+- 1/2 tbsp Parsley
+- 1 tbsp _Gamram Masala_
+- 1 tbsp Cumin Powder
+- 1/2 tbsp Turmeric Powder
+- 1/2 tbsp Garlic Powder
+- 1 tbsp Red Chili Powder
+- 1/2 Lime
+- Salt to Taste
 
-Preparation
-===========
+# Preparation
 
 1.  Thaw and wash fish pieces carefully.
 2.  In a skillet, put a tbsp of oil and add frozen veggies to it.
@@ -66,8 +63,7 @@ lunch/dinner.
 
 ![Tilapia with Veggies](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963334/Tilapia_v0cehs.jpg)
 
-Interesting Facts
-=================
+# Interesting Facts
 
--   More about [Tilapia Fish](https://en.wikipedia.org/wiki/Tilapia)
--   Nutritional Value of [Tilapia Fish](https://nutritiondata.self.com/facts/finfish-and-shellfish-products/9244/2)
+- More about [Tilapia Fish](https://en.wikipedia.org/wiki/Tilapia)
+- Nutritional Value of [Tilapia Fish](https://nutritiondata.self.com/facts/finfish-and-shellfish-products/9244/2)

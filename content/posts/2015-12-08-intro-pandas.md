@@ -1,13 +1,13 @@
 ---
-title: "Reddit Survey: Introduction to Pandas"
-slug: "intro-pandas"
+title: 'Reddit Survey: Introduction to Pandas'
+slug: 'intro-pandas'
 date: 2015-12-08
 tags:
-    - "EDA"
-    - "Python"
-    - "DataScience"
+  - 'EDA'
+  - 'Python'
+  - 'DataScience'
 categories:
-    - "DataScience"
+  - 'DataScience'
 template: post
 thumbnail: '../thumbnails/notebook.png'
 toc: false
@@ -31,6 +31,7 @@ The data from the project corresponds to a survey from [reddit.com](https://redd
 <span class="n">reddit</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://s3.amazonaws.com/udacity-hosted-downloads/ud651/reddit.csv&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">object</span><span class="p">)</span>
 <span class="c1">#summarize data</span>
 <span class="n">reddit</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">percentiles</span><span class="o">=</span><span class="p">[])</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -40,10 +41,8 @@ The data from the project corresponds to a survey from [reddit.com](https://redd
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[45]:</div>
-
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -193,11 +192,8 @@ The data from the project corresponds to a survey from [reddit.com](https://redd
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[46]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>Index([&#39;18-24&#39;, &#39;25-34&#39;, &#39;35-44&#39;, &#39;45-54&#39;, &#39;55-64&#39;, &#39;65 or Above&#39;, &#39;Under 18&#39;], dtype=&#39;object&#39;)</pre>
@@ -232,6 +228,7 @@ The data from the project corresponds to a survey from [reddit.com](https://redd
 
 <span class="n">newOrder</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Under 18&quot;</span><span class="p">,</span> <span class="s2">&quot;18-24&quot;</span><span class="p">,</span> <span class="s2">&quot;25-34&quot;</span><span class="p">,</span> <span class="s2">&quot;35-44&quot;</span><span class="p">,</span> <span class="s2">&quot;45-54&quot;</span><span class="p">,</span> <span class="s2">&quot;55-64&quot;</span><span class="p">,</span> <span class="s2">&quot;65 or Above&quot;</span><span class="p">]</span>
 <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;age.range&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">reddit</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="n">newOrder</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -241,11 +238,8 @@ The data from the project corresponds to a survey from [reddit.com](https://redd
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZIAAAESCAYAAADXMlMiAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -445,11 +439,8 @@ AElFTkSuQmCC
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYkAAAFcCAYAAAA9LkIhAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -703,11 +694,8 @@ XP8fdQsga2ibF5cAAAAASUVORK5CYII=
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYkAAAESCAYAAAAIfCk9AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz

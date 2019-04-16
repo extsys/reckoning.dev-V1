@@ -1,13 +1,13 @@
 ---
-title: "Switching to Hugo from Nikola"
+title: 'Switching to Hugo from Nikola'
 date: 2017-06-23
 tags:
-    - "Blog"
-    - "Hugo"
-    - "golang"
+  - 'Blog'
+  - 'Hugo'
+  - 'golang'
 categories:
-    - "Blog"
-slug: "nikola-to-hugo"
+  - 'Blog'
+slug: 'nikola-to-hugo'
 template: post
 thumbnail: '../thumbnails/hugo.png'
 toc: false
@@ -24,8 +24,7 @@ else - taking notes, making diary, code documentation etc.
 Furthermore, given Nikola tries to support almost everything in a
 static site builder, lately its is becoming more and more bloated.
 
-
-Case in  point, recently it got support for [shortcodes] and although that did
+Case in point, recently it got support for [shortcodes] and although that did
 enable me to write posts in Markdown, but it is so difficult to
 develop them (It does not help to have almost no documentation/guide
 for their development). They are heavily tied to the [plugin] system
@@ -36,31 +35,31 @@ with light support for template based shortcodes.
 [shortcodes]: https://getnikola.com/handbook.html#shortcodes
 [plugin]: https://plugins.getnikola.com
 
-I really have nothing against [Nikola]. However, I did not feel at home - I wanted a light system that focused on markdown and had all the flexibilities that I wanted. My research soon brought me to [Hugo].
+I really have nothing against [Nikola]. However, I did not feel at home - I wanted a light system that focused on markdown and had all the flexibilities that I wanted. My research soon brought me to [Hugo][hugo].
 
-[Hugo]: https://gohugo.io
+[hugo]: https://gohugo.io
 
 <!--TOC-->
 
 # Hugo - the blazing fast site generator
 
-[Hugo] is a light weight, fast and modern static website engine written in [go]. It literally takes just milliseconds to build your entire site. For the given lightness, it is highly flexible as well. You can organize your content however you want with any URL structure, group your content using your own indexes and categories and define your own _metadata_ in any format: `YAML`, `TOML` or `JSON`. I was impressed! Keep in my mind, `python` is still my primary language of programming for scripting and machine learning. And, I have almost no  programming experience with `go`.
+[Hugo][hugo] is a light weight, fast and modern static website engine written in [go]. It literally takes just milliseconds to build your entire site. For the given lightness, it is highly flexible as well. You can organize your content however you want with any URL structure, group your content using your own indexes and categories and define your own _metadata_ in any format: `YAML`, `TOML` or `JSON`. I was impressed! Keep in my mind, `python` is still my primary language of programming for scripting and machine learning. And, I have almost no programming experience with `go`.
 
 [go]: https://golang.org
 
 I chose `YAML` for all the configuration as well as _metadata_. In my next step to make this move, I had to choose the theme for my blog. If you have been following me, I have been using several flavors
-of [Bootswatch] themes. So my first goal was implement my heavily modified version of [bootswatch] theme in Hugo.
+of [bootswatch] themes. So my first goal was implement my heavily modified version of [bootswatch] theme in Hugo.
 
-[Bootswatch]: https://bootswatch.com
+[bootswatch]: https://bootswatch.com
 
 # Bootswatch Theme
 
-Developing a theme from scratch (*Well, the implementation from scratch, as I all I am trying to do is mimic/improvise my current theme from Nikola*) turned out to be a great adventure and learning exercise. It helped me understand the Hugo architecture in great detail. It did help to have some good [documentation] written for developers, not users! Although, Hugo's documentation can surely help itself with some cleaning and some fresher looks!
+Developing a theme from scratch (_Well, the implementation from scratch, as I all I am trying to do is mimic/improvise my current theme from Nikola_) turned out to be a great adventure and learning exercise. It helped me understand the Hugo architecture in great detail. It did help to have some good [documentation] written for developers, not users! Although, Hugo's documentation can surely help itself with some cleaning and some fresher looks!
 
-Hugo uses [go templates] with many extra functions and set of variables provided by Hugo. I personally feel Hugo's template-ing system to be more flexible and easier than [Mako] - the one used by default by Nikola.
+Hugo uses [go templates] with many extra functions and set of variables provided by Hugo. I personally feel Hugo's template-ing system to be more flexible and easier than [mako] - the one used by default by Nikola.
 
 [go templates]: https://golang.org/pkg/text/template/
-[Mako]: https://www.makotemplates.org
+[mako]: https://www.makotemplates.org
 [documentation]: https://gohugo.io/overview/introduction/
 
 I converted almost all of Mako theme from Nikola website to Hugo's format and architecture with additions (copied features and code) from a nice theme called [TranqilPeak](https://themes.gohugo.io/hugo-tranquilpeak-theme/). In particular, I liked their fonts, search feature for taxonomies pages. Copying these features also meant I had to learn a bit of `javascript` and `css`. You can find a working copy of my theme in the `src` branch of [gihub repository](https://github.com/sadanand-singh/sadanand-singh.github.io) of my blog. I plan to release this theme as a standalone theme in near future though.
@@ -87,19 +86,11 @@ Getting home page to work was very simple. Hugo documentation page provides a ve
 I also added following template code in the index.html template to get list of posts with machine learning related tags:
 
 ```html
-{{ $.Scratch.Add "mlposts" slice }}
-{{ $tags := (slice "Machine Learning" "EDA" "Kaggle" "ML" "Deep Learning" "DL" "Data Science") }}
-{{ range .Site.RegularPages }}
-    {{ $page := . }}
-    {{ $has_common_tags := intersect $tags .Params.tags | len | lt 0 }}
-    {{ if $has_common_tags }}
-        {{ $.Scratch.Add "mlposts" $page }}
-    {{ end }}
-{{ end }}
-{{ $cand := .Scratch.Get "mlposts" }}
-{{ range first 10 $cand }}
-    {{ .Render "li"}}
-{{ end }}
+{{ $.Scratch.Add "mlposts" slice }} {{ $tags := (slice "Machine Learning" "EDA" "Kaggle" "ML" "Deep
+Learning" "DL" "Data Science") }} {{ range .Site.RegularPages }} {{ $page := . }} {{
+$has_common_tags := intersect $tags .Params.tags | len | lt 0 }} {{ if $has_common_tags }} {{
+$.Scratch.Add "mlposts" $page }} {{ end }} {{ end }} {{ $cand := .Scratch.Get "mlposts" }} {{ range
+first 10 $cand }} {{ .Render "li"}} {{ end }}
 ```
 
 ## tipue Search
@@ -107,47 +98,49 @@ I also added following template code in the index.html template to get list of p
 Hugo has support for several output formats, including HTML and JSON. For implementing [tipue search](http://www.tipue.com/search/), we need to generate a JSON file with site content. This can be done by adding following to the configuration file:
 
 ```html
-# Output formats
-outputs:
-  home: [ "HTML", "JSON"]
-  page: [ "HTML"]
+# Output formats outputs: home: [ "HTML", "JSON"] page: [ "HTML"]
 ```
 
 and, using the following `index.json` template:
 
 ```html
-{{- $.Scratch.Add "index" slice -}}
-{{- range where .Site.RegularPages "Type" "not in"  (slice "page" "json" "nosearch") -}}
-{{- $.Scratch.Add "index" (dict "url" .Permalink "title" .Title "text" .Plain "tags" (delimit .Params.tags ", ")) -}}
-{{- end -}}
-{"pages": {{- $.Scratch.Get "index" | jsonify -}}}
+{{- $.Scratch.Add "index" slice -}} {{- range where .Site.RegularPages "Type" "not in" (slice
+"page" "json" "nosearch") -}} {{- $.Scratch.Add "index" (dict "url" .Permalink "title" .Title
+"text" .Plain "tags" (delimit .Params.tags ", ")) -}} {{- end -}} {"pages": {{- $.Scratch.Get
+"index" | jsonify -}}}
 ```
 
 Now, include the following `css` in the `<head>` of your pages:
 
 ```html
-<link href="//cdnjs.cloudflare.com/ajax/libs/Tipue-Search/5.0.0/tipuesearch.css" rel="stylesheet" type="text/css">
+<link
+  href="//cdnjs.cloudflare.com/ajax/libs/Tipue-Search/5.0.0/tipuesearch.css"
+  rel="stylesheet"
+  type="text/css"
+/>
 ```
 
-
 The following `modal` code is needed to display the search results,
-preferably at the end of the __body__ of the HTMLpage:
+preferably at the end of the **body** of the HTMLpage:
 
 ```html
 <div id="search-resuts" class="modal fade" role="dialog" style="height: 80%;">
-<div class="modal-dialog">
+  <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">×</button>
         <h4 class="modal-title">Search Results:</h4>
       </div>
-      <div class="modal-body" id="tipue_search_content" style="max-height: 600px; overflow-y: auto;">
-      </div>
+      <div
+        class="modal-body"
+        id="tipue_search_content"
+        style="max-height: 600px; overflow-y: auto;"
+      ></div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
-</div>
+  </div>
 </div>
 ```
 
@@ -155,27 +148,27 @@ Finally, the following `javascript` in the lower end of the **body** of HTML pag
 
 ```html
 <script>
-$(document).ready(function() {
-    var url1 = "https://cdnjs.cloudflare.com/ajax/libs/Tipue-Search/5.0.0/tipuesearch_set.js";
-    var url2 = "https://cdnjs.cloudflare.com/ajax/libs/Tipue-Search/5.0.0/tipuesearch.min.js";
+  $(document).ready(function() {
+    var url1 = 'https://cdnjs.cloudflare.com/ajax/libs/Tipue-Search/5.0.0/tipuesearch_set.js';
+    var url2 = 'https://cdnjs.cloudflare.com/ajax/libs/Tipue-Search/5.0.0/tipuesearch.min.js';
     $.when(
-        $.getScript( url1 ),
-        $.getScript( url2 ),
-        $.Deferred(function( deferred ){
-            $( deferred.resolve );
-        })
+      $.getScript(url1),
+      $.getScript(url2),
+      $.Deferred(function(deferred) {
+        $(deferred.resolve);
+      })
     ).done(function() {
-        $('#tipue_search_input').tipuesearch({
-            'mode': 'json',
-            'contentLocation': '/index.json'
-        });
-        $('#tipue_search_input').keyup(function (e) {
-            if (e.keyCode == 13) {
-                $('#search-results').modal()
-            }
-        });
+      $('#tipue_search_input').tipuesearch({
+        mode: 'json',
+        contentLocation: '/index.json'
+      });
+      $('#tipue_search_input').keyup(function(e) {
+        if (e.keyCode == 13) {
+          $('#search-results').modal();
+        }
+      });
     });
-});
+  });
 </script>
 ```
 
@@ -183,7 +176,7 @@ And, of course you will need a form/input for performing the search:
 
 ```html
 <span class="navbar-form navbar-right">
-    <input type="text" id="tipue_search_input" class="form-control" placeholder="Search">
+  <input type="text" id="tipue_search_input" class="form-control" placeholder="Search" />
 </span>
 ```
 
@@ -199,7 +192,7 @@ Finally, I create a shortcode called _code-block_ to add relevant classes and va
 
 ## jupyter Notebooks as Posts
 
-One of the advantages of  using Nikola is that, it provides native support for writing Blog posts in `jupyter` notebooks.
+One of the advantages of using Nikola is that, it provides native support for writing Blog posts in `jupyter` notebooks.
 
 But, on some Google search, I found this neat [solution](https://sharmamohit.com/post/jupyter-notebooks-in-blog/).
 
@@ -209,7 +202,7 @@ _metadata_ variable `notebook: true` via the following template code:
 
 ```html
 {{ if .Params.notebook }}
-    <link href="{{ $.Site.BaseURL }}css/jupyter.css" rel="stylesheet" type="text/css">
+<link href="{{ $.Site.BaseURL }}css/jupyter.css" rel="stylesheet" type="text/css" />
 {{ end }}
 ```
 
@@ -229,9 +222,12 @@ I added following code in the `<head>` of all of posts:
 
 ```html
 {{ if .Params.hasMath }}
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css"
-    integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0"
-    crossorigin="anonymous">
+<link
+  rel="stylesheet"
+  href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css"
+  integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0"
+  crossorigin="anonymous"
+/>
 {{ end }}
 ```
 
@@ -239,25 +235,27 @@ And the following script at the end of the `<body>` section:
 
 ```html
 {{ if .Params.hasMath }}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js"
-    integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1"
-    crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js"
-    integrity="sha256-ExtbCSBuYA7kq1Pz362ibde9nnsHYPt6JxuxYeZbU+c="
-    crossorigin="anonymous"></script>
-    <script>
-        renderMathInElement(document.body,
-            {
-                delimiters: [
-                    {left: "\\\\begin{equation*}", right: "\\\\end{equation*}", display: true},
-                    {left: "$$", right: "$$", display: true},
-                    {left: "\\\[", right: "\\\]", display: true},
-                    {left: "$", right: "$", display: false},
-                    {left: "\\\(", right: "\\\)", display: false}
-                ]
-            }
-        );
-    </script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js"
+  integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1"
+  crossorigin="anonymous"
+></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js"
+  integrity="sha256-ExtbCSBuYA7kq1Pz362ibde9nnsHYPt6JxuxYeZbU+c="
+  crossorigin="anonymous"
+></script>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [
+      { left: '\\\\begin{equation*}', right: '\\\\end{equation*}', display: true },
+      { left: '$$', right: '$$', display: true },
+      { left: '\\\[', right: '\\\]', display: true },
+      { left: '$', right: '$', display: false },
+      { left: '\\\(', right: '\\\)', display: false }
+    ]
+  });
+</script>
 {{ end }}
 ```
 

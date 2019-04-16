@@ -1,12 +1,12 @@
 ---
-title: "Indian Vermicelli Recipe"
-slug: "recipe-desi-noodles"
+title: 'Indian Vermicelli Recipe'
+slug: 'recipe-desi-noodles'
 date: 2015-01-28
 tags:
-    - "Food"
-    - "Recipe"
+  - 'Food'
+  - 'Recipe'
 categories:
-    - "Food"
+  - 'Food'
 template: post
 thumbnail: '../thumbnails/vermicelli.jpg'
 toc: false
@@ -17,7 +17,7 @@ bokeh: false
 This is for all the lazy souls like me - in a mood to eat something
 tasty, but in no mood to cook for long.
 
-Vermicelli, or also known as *seviyan* in Hindi, is commonly cooked as a
+Vermicelli, or also known as _seviyan_ in Hindi, is commonly cooked as a
 sweet dish in Indian subcontinent. As I try to be away from all things
 sweet, I came across this recipe which uses this in a quite spicy
 flavor.
@@ -27,25 +27,23 @@ less than 12 minutes ( 4 Minutes Preparation + 8 Minutes Cooking).
 
 ![Raw Materials](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963332/desiNoodles_s0ez5g.jpg)
 
-Ingredients
-===========
+# Ingredients
 
--   300 g Vermicelli *Seviyan*
--   1 cup Peas
--   1/2 Medium Onion
--   1 Medium Tomato
--   1 Clove of Garlic
--   4 Curry Leaves
--   1/2 tbsp Turmeric Powder
--   1 tbsp Coriander Powder
--   1 tbsp Mustard Black Seeds
--   1 tbsp Cumin Seeds
--   2 tbsp Olive Oil
--   Salt to taste
--   1/2 cup Peanuts *optional*
+- 300 g Vermicelli _Seviyan_
+- 1 cup Peas
+- 1/2 Medium Onion
+- 1 Medium Tomato
+- 1 Clove of Garlic
+- 4 Curry Leaves
+- 1/2 tbsp Turmeric Powder
+- 1 tbsp Coriander Powder
+- 1 tbsp Mustard Black Seeds
+- 1 tbsp Cumin Seeds
+- 2 tbsp Olive Oil
+- Salt to taste
+- 1/2 cup Peanuts _optional_
 
-Preparation
-===========
+# Preparation
 
 1.  Wash the leaves thoroughly in running water and chop them (about 1
     inch cuts).
@@ -69,12 +67,11 @@ I like adding peanuts to it while frying onions.
 
 ![My Creation Before Entering My Tummy](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963332/desiNoodles_final_tqeyey.jpg)
 
-Interesting Facts
-=================
+# Interesting Facts
 
--   The sweet dish *seviyan* made out of this is also known as *shemai*
-    in Bengali, *sev* in Gujarati, *shavige* in Kannada, *sevalu* or
-    *semiya* in Telugu, and *semiya* in Tamil and Malayalam.
--   The recipe above is also commonly known as *upma* in various parts
-    of India.
--   More about [Vermicelli](https://en.wikipedia.org/wiki/Vermicelli)
+- The sweet dish _seviyan_ made out of this is also known as _shemai_
+  in Bengali, _sev_ in Gujarati, _shavige_ in Kannada, _sevalu_ or
+  _semiya_ in Telugu, and _semiya_ in Tamil and Malayalam.
+- The recipe above is also commonly known as _upma_ in various parts
+  of India.
+- More about [Vermicelli](https://en.wikipedia.org/wiki/Vermicelli)

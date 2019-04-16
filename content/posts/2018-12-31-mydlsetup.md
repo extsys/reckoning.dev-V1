@@ -1,13 +1,13 @@
 ---
-title: "My Deep Learning Workstation Setup"
+title: 'My Deep Learning Workstation Setup'
 date: 2018-12-31
 tags:
-    - "Linux"
-    - "Python"
-    - "Deep Learning"
+  - 'Linux'
+  - 'Python'
+  - 'Deep Learning'
 categories:
-    - "Computers"
-slug: "mydlsetup"
+  - 'Computers'
+slug: 'mydlsetup'
 template: post
 thumbnail: '../thumbnails/gpu.png'
 toc: true
@@ -23,6 +23,7 @@ versions, and modules like pytorch/tensorflow libraries etc.
 ![Gnome Activities](https://res.cloudinary.com/sadanandsingh/image/upload/v1546230616/activities_fsd0wm.png)
 
 # Workstation Hadware
+
 Here are the configurations of my workstation:
 
 - [Intel - Core i7-8700 3.2 GHz 6-Core Processor](http://ark.intel.com/products/88196)
@@ -43,6 +44,7 @@ stability. Although, I have recently upgraded the GPU to 2080 Ti to test mixed p
 this has been a pretty stable and trustworthy build.
 
 # OS Setup
+
 I avoid any rolling release linux distribution (read Arch Linux) on my work machines, since,
 unlike my regular desktop, I want to have a stable development system for my actual work. Also for
 repeatability of models, all packages, libraries and modules need to be fixed. Hence, I prefer
@@ -80,6 +82,7 @@ You can follow the links above to install these using Gnome Tweaks.
 
 If you also want to change the background image of the login screen, you will have to modify the
 following file with the following:
+
 ```terminal
 sudo gedit /usr/share/gnome-shell/theme/ubuntu.css
 # Now replace the lockDialogGroup section with the following.
@@ -95,6 +98,7 @@ sudo gedit /usr/share/gnome-shell/theme/ubuntu.css
 ```
 
 I prefer google chrome as my default web browser, and can be installed using the following ppa.
+
 ```terminal
 # first download and install the key
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -106,6 +110,7 @@ sudo apt-get install google-chrome-stable
 ```
 
 Some commons apps that I use can be installed as follows:
+
 ```terminal
 sudo apt install vim neovim
 sudo apt install gpg curl
@@ -118,6 +123,7 @@ sudo apt install gcc g++
 ![Gnome Search](https://res.cloudinary.com/sadanandsingh/image/upload/v1546230615/searchApps_y1tgmu.png)
 
 ## git setup
+
 First install git using `apt install` and then setup the `$HOME/.gitconfig` file. my gitconfig
 looks something like below:
 
@@ -148,6 +154,7 @@ looks something like below:
 ```
 
 ## Shell and Terminal
+
 I am a big fan of `zsh` using `zprezto`. You can find my settings at [my github repo](https://github.com/sadanand-singh/My-Zprezto) in the _ubuntu_ branch. In particular, I use a
 modified version of the `paradox` theme that comes with [zprezto](https://github.com/sorin-ionescu/prezto).
 In particular, I prefer the look of [bobthefish](https://github.com/oh-my-fish/theme-bobthefish)
@@ -189,6 +196,7 @@ By default, specially on 4K screens, terminal opens in really tiny window. This 
 the terminal preferences.
 
 # Python Setup
+
 Now comimg to the main part of this post - maintainance of python and packages! After a lot of trial
 and error, I have come up with this setup, which is I think is extremely easy to manage and very
 flexible to support needs of a deep learning where one might need to support different versions of
@@ -196,6 +204,7 @@ packages, different frameworks etc.
 
 I use [anaconda](https://www.anaconda.com/) to maintain different environments. First install
 anaconda by downloading the 64-bit script from this website and run it as follows:
+
 ```terminal
 cd Downloads
 bash Anaconda3-*-Linux-x86_64.sh
@@ -203,9 +212,11 @@ bash Anaconda3-*-Linux-x86_64.sh
 # I use the default location for installation $HOME/anaconda3
 # and chose not to install VS Code from this.
 ```
+
 This will add some modification in your bashrc to make `conda` work properly. However, as we are
 using zsh in this setup, we need to copy those contents to our `$HOME/.zshrc` file. The content will
 look something like this:
+
 ```terminal
 # added by Anaconda3 2018.12 installer
 # >>> conda init >>>
@@ -224,37 +235,46 @@ fi
 unset __conda_setup
 # <<< conda init <<<\
 ```
+
 Please make sure to replace `sadanand` by your **USERNAME**.
 
 Next we will create some conda environments for regular use. First we will create a env called
 `py3.7-dev` which will be a simple clone of the base conda environment.
+
 ```terminal
 conda create --name py3.7-dev --clone base
 ```
+
 Now we can activate this new environment and update conda:
+
 ```terminal
 conda activate py3.7-dev
 conda update conda
 conda update anaconda
 ```
+
 Since this environment is going to be my default env, I simply activate this in every new shell by
 adding the above line at the end of my `$HOME/.zshrc` file. The awesome paradox theme will show you
 the currently active env in your prompt in white.
 
 Anaconda by default adds an indicator in your prompt to show the current active env. As our theme
 already does this more elegantly, we can disbale this by the following command:
+
 ```terminal
 conda config --set changeps1 False
 ```
+
 If you wish, you can create new conda environments similarly.
 
 ## Installing relevant packages
+
 Once we are inside our env, we can install packages of interest using conda command, or if only
 available using the pip, then using the pip command. Please ensure that you are using the local
 version of pip by running `which pip` command.
 
 Most of relevant packages like matplotlib, pandas etc. come already installed with base version of
 conda. Here, we will first install jedi, flake8, pytorch, torchvision, and opencv packages.
+
 ```terminal
 conda install jedi
 conda install flake8
@@ -265,21 +285,25 @@ conda install -c menpo opencv
  # install black using pip
  pip install black
 ```
+
 Its as simple as this! If you want pytorch with say `cuda 9` support, you can create a new env that
 is cloned from `base` and simply change the version of pytorch there!
 
 ![Gnome Tweaks](https://res.cloudinary.com/sadanandsingh/image/upload/v1546230614/gnomeTweaks_p0fkkv.png)
 
 ## CUDA installation
+
 I also need the cuda libraries for developing my own pytorch modules written in C. These can be
 easily installed following these steps.
 
 First download the [cuda 10 runfile from nvidia for Ubuntu 18.04](https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda_10.0.130_410.48_linux).
 
 Then run following and follow the prompt for installations:
+
 ```terminal
 sudo sh cuda_10.0.130_410.48_linux.run
 ```
+
 I choose install only the cuda toolkit and cuda samples. Once the installation is complete, you can
 check your installation by going to cuda samples directory and running `make`.
 

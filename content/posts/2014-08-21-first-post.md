@@ -1,10 +1,10 @@
 ---
-title: "Welcome"
-date:  2014-08-21
+title: 'Welcome'
+date: 2014-08-21
 categories:
-    - "News"
+  - 'News'
 tags:
-    - "Introduction"
+  - 'Introduction'
 slug: first-post
 template: post
 thumbnail: '../thumbnails/intro.jpg'
@@ -28,15 +28,15 @@ politics, economics, and society.
 This space is for my personal notes on different subjects. I plan to
 share my thoughts on following topics from time to time.
 
--   Technology
--   Statistics
--   Machine Learning
--   News
--   Economics
--   Education
--   Politics, Society & Education
--   Indian Food
--   Puzzles
+- Technology
+- Statistics
+- Machine Learning
+- News
+- Economics
+- Education
+- Politics, Society & Education
+- Indian Food
+- Puzzles
 
 If you have interests in any of these topics, you are welcome to have a
 peek into my world. Please drop me your views through comments or any of

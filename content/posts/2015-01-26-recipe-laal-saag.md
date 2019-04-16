@@ -1,12 +1,12 @@
 ---
-title: "Lal Saag Recipe"
-slug: "recipe-laal-saag"
+title: 'Lal Saag Recipe'
+slug: 'recipe-laal-saag'
 date: 2015-01-26
 tags:
-    - "Food"
-    - "Recipe"
+  - 'Food'
+  - 'Recipe'
 categories:
-    - "Food"
+  - 'Food'
 template: post
 thumbnail: '../thumbnails/saag.jpg'
 toc: false
@@ -16,7 +16,7 @@ bokeh: false
 
 I have started eating a lot of greens these days. As a kid, I always
 loved a vegetable made by my mom, which was made of red leaves, called
-"*Laal Saag*" in Hindi. I could never find what exactly was the
+"_Laal Saag_" in Hindi. I could never find what exactly was the
 English/American name for those leaves.
 
 Recently, at one of the Korean grocery stores, I came across red
@@ -26,23 +26,20 @@ I used to have back home in India.
 So, here is my super fast and healthy recipe for these red leaves. It
 took me just 10 minutes ( 5 Minutes Preparation + 5 Minutes Cooking).
 
-
 ![Red Amaranth](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963333/redSaag_vyrm11.jpg)
 
-Ingredients
-===========
+# Ingredients
 
--   1 Bunch Red Amaranth Leaves
--   1/2 tbsp Turmeric Powder
--   1 tbsp Coriander Powder
--   1 tbsp *Garam Masala*
--   1 tbsp Mustard Black Seeds
--   1 tbsp Cumin Seeds
--   2 tbsp Olive Oil
--   Salt to taste
+- 1 Bunch Red Amaranth Leaves
+- 1/2 tbsp Turmeric Powder
+- 1 tbsp Coriander Powder
+- 1 tbsp _Garam Masala_
+- 1 tbsp Mustard Black Seeds
+- 1 tbsp Cumin Seeds
+- 2 tbsp Olive Oil
+- Salt to taste
 
-Preparation
-===========
+# Preparation
 
 1.  Wash the leaves thoroughly in running water and chop them (about 1
     inch cuts).
@@ -55,14 +52,12 @@ Preparation
     until things are dry (about 2-3 minutes).
 
 You can serve this with any Indian bread, or with rice and lentils
-(*Daal*).
+(_Daal_).
 
 ![My Creation Before Entering My Tummy](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963333/redSaag_final_ktfqua.jpg)
 
+# Interesting Facts
 
-Interesting Facts
-=================
-
--   Amaranth is also known as "*Chauli*" or "*Chavli*" in Hindi.
--   [Nutritional Value](https://www.fatsecret.com/calories-nutrition/usda/amaranth-leaves) of Amaranth
--   History of [Amaranth](https://en.wikipedia.org/wiki/Amaranth#History)
+- Amaranth is also known as "_Chauli_" or "_Chavli_" in Hindi.
+- [Nutritional Value](https://www.fatsecret.com/calories-nutrition/usda/amaranth-leaves) of Amaranth
+- History of [Amaranth](https://en.wikipedia.org/wiki/Amaranth#History)

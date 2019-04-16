@@ -1,14 +1,14 @@
 ---
-title: "Pseudo Facebook Data - Plots in Python"
-slug: "onevariableeda"
+title: 'Pseudo Facebook Data - Plots in Python'
+slug: 'onevariableeda'
 date: 2015-12-09
 tags:
-    - "MachineLearning"
-    - "EDA"
-    - "Python"
-    - "DataScience"
+  - 'MachineLearning'
+  - 'EDA'
+  - 'Python'
+  - 'DataScience'
 categories:
-    - "DataScience"
+  - 'DataScience'
 template: post
 thumbnail: '../thumbnails/notebook.png'
 toc: false
@@ -38,6 +38,7 @@ The data from the project corresponds to a typical data set at [Facebook](https:
 
 <span class="c1">#summarize data</span>
 <span class="n">pf</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">percentiles</span><span class="o">=</span><span class="p">[])</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -46,7 +47,6 @@ The data from the project corresponds to a typical data set at [Facebook](https:
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -60,7 +60,6 @@ The data from the project corresponds to a typical data set at [Facebook](https:
 
 <div class="output_area">
 <div class="prompt output_prompt">Out[1]:</div>
-
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -293,6 +292,7 @@ The data from the project corresponds to a typical data set at [Facebook](https:
 
 <span class="c1">#summarize data</span>
 <span class="n">pf</span><span class="o">.</span><span class="n">describe</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">percentiles</span><span class="o">=</span><span class="p">[])</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">regex</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -301,7 +301,6 @@ The data from the project corresponds to a typical data set at [Facebook](https:
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -315,7 +314,6 @@ The data from the project corresponds to a typical data set at [Facebook](https:
 
 <div class="output_area">
 <div class="prompt output_prompt">Out[2]:</div>
-
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -549,6 +547,7 @@ We will first look at a histogram of User's Birthdays.</p>
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s2">&quot;dob_day&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">pf</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -558,11 +557,8 @@ We will first look at a histogram of User's Birthdays.</p>
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAY0AAAETCAYAAADKy1riAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -776,11 +772,8 @@ Q0REov1/0v42Du8/k9YAAAAASUVORK5CYII=
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[4]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>&lt;seaborn.axisgrid.FacetGrid at 0x7fffcd441208&gt;</pre>
@@ -790,8 +783,6 @@ Q0REov1/0v42Du8/k9YAAAAASUVORK5CYII=
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAkMAAAIKCAYAAAAgbks/AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -1325,11 +1316,8 @@ iJQ0JUMiIiJS0pQMiYiISEn7/wGAxrgirSE6UwAAAABJRU5ErkJggg==
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[5]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>(0, 1000)</pre>
@@ -1339,8 +1327,6 @@ iJQ0JUMiIiJS0pQMiYiISEn7/wGAxrgirSE6UwAAAABJRU5ErkJggg==
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAETCAYAAAAYm1C6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -1521,11 +1507,8 @@ MTOzLA4QMzPL4gAxM7Ms/x+1PpliY5lYywAAAABJRU5ErkJggg==
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[6]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>(0, 1000)</pre>
@@ -1535,8 +1518,6 @@ MTOzLA4QMzPL4gAxM7Ms/x+1PpliY5lYywAAAABJRU5ErkJggg==
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAagAAADQCAYAAABStPXYAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -1703,11 +1684,8 @@ SUVORK5CYII=
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[164]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>gender
@@ -1765,11 +1743,8 @@ Name: friend_count, dtype: float64</pre>
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[8]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>&lt;matplotlib.text.Text at 0x7fffc9590ef0&gt;</pre>
@@ -1779,8 +1754,6 @@ Name: friend_count, dtype: float64</pre>
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZkAAAEVCAYAAAAy15htAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -2018,11 +1991,8 @@ SjIiIpIZJRkREcnM/wfFpE1mauVlZgAAAABJRU5ErkJggg==
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[9]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>&lt;matplotlib.text.Text at 0x7fffc94f7780&gt;</pre>
@@ -2032,8 +2002,6 @@ SjIiIpIZJRkREcnM/wfFpE1mauVlZgAAAABJRU5ErkJggg==
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAY8AAAEVCAYAAAAYZ2nCAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -2261,11 +2229,8 @@ AABJRU5ErkJggg==
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAAETCAYAAAAYm1C6AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -2410,11 +2375,8 @@ DZMmkIewJElVPIQlSapigEiSqhggkqQqBogkqYoBIkmq8v8BXt68TjQXrYAAAAAASUVORK5CYII=
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYcAAAEXCAYAAABGeIg9AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -2573,6 +2535,7 @@ AAAAAElFTkSuQmCC
 <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">hue</span><span class="o">=</span><span class="s1">&#39;gender&#39;</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mf">6.0</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">600</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="n">legend_out</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">g</span> <span class="o">=</span> <span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">plotDensity</span><span class="p">,</span> <span class="s1">&#39;friend_count&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">add_legend</span><span class="p">()</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">set_axis_labels</span><span class="p">(</span><span class="s1">&#39;Friend Count&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="si">% o</span><span class="s1">f users&#39;</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -2582,11 +2545,8 @@ AAAAAElFTkSuQmCC
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAGoCAYAAAAw313kAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -2908,11 +2868,8 @@ CSEFABERkRBSABAREQkhBQAREZEQ+v8BIjBKkXHZaYMAAAAASUVORK5CYII=
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAgAAAAGsCAYAAACrTh/yAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -3160,11 +3117,8 @@ AElFTkSuQmCC
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[173]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>gender
@@ -3205,11 +3159,8 @@ Name: www_likes, dtype: int64</pre>
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[185]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>(0, 200)</pre>
@@ -3219,8 +3170,6 @@ Name: www_likes, dtype: int64</pre>
 
 <div class="output_area">
 <div class="prompt"></div>
-
-
 
 <div class="output_png output_subarea ">
 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYcAAAESCAYAAAAWtRmOAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
@@ -3349,11 +3298,8 @@ FVEAAAAASUVORK5CYII=
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[186]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>gender
@@ -3407,11 +3353,8 @@ Name: friendships_initiated, dtype: float64</pre>
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[187]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>count    99003.000000
@@ -3446,11 +3389,8 @@ Name: mobile_likes, dtype: float64</pre>
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[201]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>True     63947
@@ -3480,11 +3420,8 @@ Name: mobile_likes, dtype: int64</pre>
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt output_prompt">Out[200]:</div>
-
-
 
 <div class="output_text output_subarea output_execute_result">
 <pre>1    63947
@@ -3523,7 +3460,6 @@ Name: mobile_check_in, dtype: int64</pre>
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>

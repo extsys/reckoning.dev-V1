@@ -1,12 +1,12 @@
 ---
-title: "Puzzle 1: Train Speed Problem"
-slug: "train-speed-problem"
+title: 'Puzzle 1: Train Speed Problem'
+slug: 'train-speed-problem'
 date: 2014-08-23
 tags:
-    - "Puzzles"
-    - "Algebra"
+  - 'Puzzles'
+  - 'Algebra'
 categories:
-    - "Puzzles"
+  - 'Puzzles'
 template: post
 thumbnail: '../thumbnails/puzzle.png'
 toc: false

@@ -1,12 +1,12 @@
 ---
-title: "Perfect Reference Management using Zotero and pCloud"
+title: 'Perfect Reference Management using Zotero and pCloud'
 date: 2019-03-31
 tags:
-    - DeepLearning
-    - Research
-    - References
+  - DeepLearning
+  - Research
+  - References
 categories:
-    - DeepLearning
+  - DeepLearning
 slug: zotero-reference-manager
 template: post
 thumbnail: '../thumbnails/zotero.png'
@@ -57,6 +57,6 @@ Another feature of zotero that I use it its plugins. Specifically, I use a plugi
 On my iPad, I use an app called [PDF Expert](https://itunes.apple.com/app/pdf-expert-fill-forms-annotate/id393316844?mt=8). This allows me to view my pCloud folder holding my pdfs from Zotfile, as well as read and annotate PDFs quite elegantly.
 
 ##Annotating PDFs
-Last thing remaining on my feature list was pdf annotations. On linux, I use [foxit reader](https://www.foxitsoftware.com/pdf-reader/). It has right tools for annotations and saving them right in the pdf files. On my mac though, I did not like the look and feel of foxit reader on OSX. I ended up going with [PDF Expert for Mac](https://pdfexpert.com/). Although, its  a paid software, I really love their smoothness and features.
+Last thing remaining on my feature list was pdf annotations. On linux, I use [foxit reader](https://www.foxitsoftware.com/pdf-reader/). It has right tools for annotations and saving them right in the pdf files. On my mac though, I did not like the look and feel of foxit reader on OSX. I ended up going with [PDF Expert for Mac](https://pdfexpert.com/). Although, its a paid software, I really love their smoothness and features.
 
 Finally, you can also share any library with your colleagues using the [Zotero Groups](https://www.zotero.org/groups/) feature. This enables you to share you library, and discover other people's library in the team.

@@ -1,14 +1,14 @@
 ---
-title: "My Arch Linux Setup with GNOME 3"
-slug: "complete-setup-arch-gnome"
+title: 'My Arch Linux Setup with GNOME 3'
+slug: 'complete-setup-arch-gnome'
 date: 2017-11-25
 tags:
-    - "Linux"
-    - "Arch Linux"
-    - "Gnone 3"
+  - 'Linux'
+  - 'Arch Linux'
+  - 'Gnone 3'
 categories:
-    - "Computers"
-    - "Popular"
+  - 'Computers'
+  - 'Popular'
 template: post
 thumbnail: '../thumbnails/gnome.png'
 toc: true
@@ -18,7 +18,7 @@ bokeh: false
 
 If you have been following me on this space, you would have known by now, I am very particular about
 my computers, its operating systems, looks, softwares etc. Before you start getting any wrong ideas,
-my love for [Arch Linux] is still going strong. However, I have moved on to [Gnome 3] as my choice
+my love for [Arch Linux][arch-linux] is still going strong. However, I have moved on to [Gnome 3][gnome3] as my choice
 desktop. This post is an updated version of my [previous post](/arch-install)
 with the latest configuration of my machine. I have also update my
 GPU to 1080 Ti to be able to run some computer vision models at reasonable speeds. I use this desktop
@@ -30,42 +30,38 @@ In this post, we will do a complete installation of Arch Linux with Gnome 3 as t
 environment. Our setup will also involve encryption of the root partition that will be formatted in
 [btrfs].
 
-> I do not wish to repeat [Arch Installation Guide][arch guide] here. <br/> <br/> Do not forget about [Arch Wiki], the best documentation in the world! Most of the content in this post has been compiled from the [Arch wiki] and my personal experiences.
+> I do not wish to repeat [Arch Installation Guide][arch guide] here. <br/> <br/> Do not forget about [Arch Wiki][arch-wiki], the best documentation in the world! Most of the content in this post has been compiled from the [Arch Wiki][arch-wiki] and my personal experiences.
 
-[Arch wiki]: https://wiki.archlinux.org/
+[arch-wiki]: https://wiki.archlinux.org/
 [arch guide]: https://wiki.archlinux.org/index.php/installation_guide
-
-[Arch Linux]: https://www.archlinux.org
-[Gnome 3]: https://www.gnome.org/gnome-3/
+[arch-linux]: https://www.archlinux.org
+[gnome3]: https://www.gnome.org/gnome-3/
 [btrfs]: https://en.wikipedia.org/wiki/Btrfs
 
-
-System Details
-==============
+# System Details
 
 For reference, my installation system is a slightly upgraded form of
 [my original desktop](/my-desktop):
 
--   i7 4790 3.6 GHz (Haswell)
--   ASRock Z97 Extreme6 LGA 1150 Intel Z97 HDMI SATA USB 3.0
--   ADATA XPG V1.0 DDR3 1866 4x4 GB RAM
--   OCZ Vertex 460A Series 2.5" 240 GB
--   WD Blue 1TB 3.5" 7200 RPM, 64MB Cache
--   WD Blue 3TB 3.5" 7200 RPM, 64MB Cache
--   Ultra LSP V2 650 Watt PSU
--   Cooler Master - MasterCase Pro 5
--   Asus BW-12B1ST/BLK/G/AS Blue Ray Burner
--   Samsung U28E590D 28-Inch UHD LED-Lit 4K Monitor
--   Nvidia GeForce GTX 1080 Ti GPU
+- i7 4790 3.6 GHz (Haswell)
+- ASRock Z97 Extreme6 LGA 1150 Intel Z97 HDMI SATA USB 3.0
+- ADATA XPG V1.0 DDR3 1866 4x4 GB RAM
+- OCZ Vertex 460A Series 2.5" 240 GB
+- WD Blue 1TB 3.5" 7200 RPM, 64MB Cache
+- WD Blue 3TB 3.5" 7200 RPM, 64MB Cache
+- Ultra LSP V2 650 Watt PSU
+- Cooler Master - MasterCase Pro 5
+- Asus BW-12B1ST/BLK/G/AS Blue Ray Burner
+- Samsung U28E590D 28-Inch UHD LED-Lit 4K Monitor
+- Nvidia GeForce GTX 1080 Ti GPU
 
-Base Installation
-=================
+# Base Installation
 
 Before beginning this guide, I would assume that you have a bootable USB of the latest Arch Linux
 Installer. If not, please follow the
 [Arch wiki guide](https://wiki.archlinux.org/index.php/USB_flash_installation_media).
 Once you login into the installer USB, You will be logged in as the root user, and presented with
-a **zsh** shell. I will assume you have an __Ethernet__ connection and hence will be connected to
+a **zsh** shell. I will assume you have an **Ethernet** connection and hence will be connected to
 Internet by default. If you have to rely on wifi, please refer to the
 [Wireless Network Configuration](https://wiki.archlinux.org/index.php/Wireless_network_configuration)
 wiki page for the detailed setup. **You must have Internet connection at this stage before
@@ -95,8 +91,7 @@ setfont ter-132n
 
 We are all set to get started with the actual installation process.
 
-Partitioning Hard Drives
--------------------------
+## Partitioning Hard Drives
 
 First find the hard drive that you will be using as the main/root disk.
 
@@ -166,8 +161,7 @@ Repeat the above procedure for `/dev/sdb` and `/dev/sdc`, but create
 just one partition with all values as default. At the end we will have
 three partitions: `/dev/sda1`, `/dev/sda2`, `/dev/sdb1` and `/dev/sdc1`.
 
-Setup Disk Encryption
----------------------
+## Setup Disk Encryption
 
 Our /boot partition will be on `/dev/sda1`, while the main installation will be on `/dev/sda2`. In
 this setup, we will be enabling full encryption on `/dev/sda2` only.
@@ -226,9 +220,7 @@ umount /mnt
 
 We will be later using this KEYFILE in our boot loader setup.
 
-
-Format HDDs
------------
+## Format HDDs
 
 At this point, we have following drives ready to format: `/dev/sda1`, `/dev/mapper/root`,
 `/dev/sdb1` and `/dev/sdc1`. I plan to format `/dev/sda1` with [vfat], `/dev/mapper/root` with
@@ -257,7 +249,6 @@ umount /mnt
 Now, once the sub-volumes have been created, we will mount them in
 appropriate locations with optimal flags.
 
-
 ```terminal
 SSD_MOUNTS="rw,nodev,noatime,nodiratime,compress=lzo,ssd,discard,space_cache"
 HDD_MOUNTS="rw,relatime,attr2,inode64,noquota"
@@ -274,12 +265,10 @@ mkdir -p /mnt/boot
 mount -o $EFI_MOUNTS /dev/sda1 /mnt/boot
 ```
 
-Base System Installation
-------------------------
+## Base System Installation
 
 Now, we will do the actually installation of base packages. At this point, we will also
 **save the current `/etc/resolv.conf` file for future use!**
-
 
 ```terminal
 pacstrap /mnt base base-devel btrfs-progs
@@ -288,8 +277,7 @@ genfstab -U -p /mnt >> /mnt/etc/fstab
 cp /etc/resolv.conf /mnt/etc/resolv.conf
 ```
 
-Initial System Setup
---------------------
+## Initial System Setup
 
 Edit the `/mnt/ect/fstab` file to add following `/tmp` mounts.
 
@@ -325,7 +313,7 @@ echo $HOSTNAME > /etc/hostname
 passwd
 ```
 
-We will also add *hostname* to our `/etc/hosts` file:
+We will also add _hostname_ to our `/etc/hosts` file:
 
 ```terminal
 vim /etc/hosts
@@ -335,7 +323,6 @@ vim /etc/hosts
 127.0.0.1       $HOSTNAME.localdomain   $HOSTNAME
 ...
 ```
-
 
 Now, we need to update the `mkinitcpio.conf` with specific modules needed for encryption and btrfs.
 
@@ -357,8 +344,7 @@ vi /etc/mkinitcpio.conf
 mkinitcpio -p linux
 ```
 
-Boot Manager Setup
-------------------
+## Boot Manager Setup
 
 [systemd-boot] is a simple UEFI boot manager which executes configured EFI images. The default
 entry is selected by a configured pattern (glob) or an on-screen menu. It is included with the
@@ -374,7 +360,7 @@ bootctl install
 
 It will copy the systemd-boot binary to your EFI System Partition
 (`/boot/EFI/systemd/systemd-bootx64.efi` and `/boot/EFI/Boot/BOOTX64.EFI` -
-both of which are identical - on __x64__ systems ) and add `systemd-boot` itself as the default EFI
+both of which are identical - on **x64** systems ) and add `systemd-boot` itself as the default EFI
 application (default boot entry) loaded by the EFI Boot Manager.
 
 Finally to configure out boot loader, we will need the UUID of some of our hard drives. These can
@@ -411,8 +397,7 @@ options ro cryptdevice=UUID=33333333-3333-3333-3333-333333333333:luks-33333333-3
 ...
 ```
 
-Network Setup
--------------
+## Network Setup
 
 At first we will need to figure out the Ethernet controller on which cable is connected. This can be
 achieved by first finding out the kernel module that is being used by the live version on Arch.
@@ -465,6 +450,7 @@ NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.
 FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
 ...
 ```
+
 [Avahi](https://wiki.archlinux.org/index.php/avahi) is a tool that allows programs to publish and
 discover services and hosts running on a local network with no specific configuration. For example
 you can plug into a network and instantly find printers to print to, files to look at
@@ -475,8 +461,7 @@ pacman -S avahi nss-mdns
 systemctl enable avahi-daemon.service
 ```
 
-GUI Installation with nvidia
-----------------------------
+## GUI Installation with nvidia
 
 We will now install the `nvidia` drivers so that our system is ready for any GUI based desktop
 installation after the first boot.
@@ -524,12 +509,12 @@ This can enabled by enabling the DRM kernel mode setting.
 
 First, we will need to add following to MODULES section of the `mkinitcpio.conf` file:
 
--  nvidia
--  nvidia_modeset
--  nvidia_uvm
--  nvidia_drm
+- nvidia
+- nvidia_modeset
+- nvidia_uvm
+- nvidia_drm
 
-We will also need to pass the *nvidia-drm.modeset=1* kernel parameter during the boot.
+We will also need to pass the _nvidia-drm.modeset=1_ kernel parameter during the boot.
 
 ```terminal
 vim /etc/mkinitcpio.conf
@@ -547,9 +532,7 @@ options ro cryptdevice=UUID=:luks- root=UUID= rootfstype=btrfs rootflags=subvol=
 mkinitcpio -p linux
 ```
 
-
-First Boot Installations
-========================
+# First Boot Installations
 
 Now we are ready for the first boot! Run the following command:
 
@@ -558,6 +541,7 @@ exit
 umount -R /mnt
 reboot
 ```
+
 You should get larger fonts with the new terminal now as we are using the nvidia console now.
 It should have automatically unlocked your encrypted root disk, since USB with key is attached to
 the machine.
@@ -579,6 +563,7 @@ ping google.com -c 2
 # rtt min/avg/max/mdev = 0.022/0.022/0.023/0.004 ms
 #
 ```
+
 If you do not get any output from ping, please follow the troubleshooting links at Arch Wiki on
 [setting up network](https://wiki.archlinux.org/index.php/systemd-networkd).
 
@@ -606,8 +591,7 @@ replace `$HOSTNAME` with the hostname of your choice.
 hostnamectl set-hostname $HOSTNAME
 ```
 
-Adding New User
----------------
+## Adding New User
 
 Choose `$USERNAME` per your liking. I chose `ssingh`, so in future commands whenever you see
 `ssingh` please replace it with your `$USERNAME`.
@@ -619,8 +603,7 @@ chfn --full-name "$FULL_NAME" $USERNAME
 passwd $USERNAME
 ```
 
-Gnome 3 Installation and Setup
--------------------------------
+## Gnome 3 Installation and Setup
 
 We can now proceed with the installation of Gnome 3. In the process, we will also install some
 useful applications and fonts. The process very trivial, install few packages and then enable the
@@ -635,8 +618,7 @@ pacman -S unace unrar zip unzip sharutils  uudeview  arj cabextract file-roller
 systemctl enable gdm.service
 ```
 
-Choose pacman Mirrors
-----------------------
+## Choose pacman Mirrors
 
 We will now choose fastest merrors for pacman. The `pacman-contrib` package provides a bash
 script, `/usr/bin/rankmirrors`, which can be used to rank the mirrors according to their connection
@@ -657,17 +639,14 @@ systemctl reboot
 Once, we boot into the new system, we should have a basic gnome 3 desktop waiting for you. In the
 following section, we will be do installation and modifications to the system that I prefer.
 
-Post Installation Setup
-=======================
+# Post Installation Setup
 
 After rebooting, you should get the gdm login screen. Use your username and password to login.
 This should give you a vanilla gnome 3 screen. We will first install few essentials, then modify
 our gnome 3 to look something to my linking. In order to proceed, find the `terminal` program
 by pressing `alt + s` and searching for terminal.
 
-
-Setup AUR
----------
+## Setup AUR
 
 [AUR](https://aur.archlinux.org/) is a community-driven repository for Arch users. This allows you
 to install many popular packages that are otherwise not available through core repositories.
@@ -687,10 +666,9 @@ rm -rf yay
 From now on, we can use `yay` as a replacement for `pacman`. Additionally, we can now also
 install AUR packages.
 
-Web Browsers
-------------
+## Web Browsers
 
-My preferred choice of browsers is *google chrome*.
+My preferred choice of browsers is _google chrome_.
 
 ```terminal
 yay -S google-chrome
@@ -701,9 +679,9 @@ in `tmpfs` and to periodically sync back to the physical disc (HDD/SSD). This is
 an innovative use of `rsync` to maintain synchronization between a `tmpfs` copy and media-bound
 backup of the browser profile(s). These features of [psd] leads to following benefits:
 
--   Transparent user experience
--   Reduced wear to physical drives, and
--   Speed
+- Transparent user experience
+- Reduced wear to physical drives, and
+- Speed
 
 [psd]: https://wiki.archlinux.org/index.php/profile-sync-daemon
 
@@ -713,7 +691,7 @@ To setup. first install the `profile-sync-daemon` package.
 yay -S profile-sync-daemon
 ```
 
-Run *psd* the first time which will create a configuration file at
+Run _psd_ the first time which will create a configuration file at
 `$XDG_CONFIG_HOME/psd/psd.conf` which contains all settings.
 
 ```terminal
@@ -728,7 +706,7 @@ In the config file change the BROWSERS variables to `google-chrome`. Also, enabl
 
 > Note: USE_OVERLAYFS feature requires a Linux kernel version of 3.18.0 or greater to work.
 
-In order to use the OVERLAYFS feature, you will also need to give *sudo*
+In order to use the OVERLAYFS feature, you will also need to give _sudo_
 permissions to psd-helper at the end of the sudoers file, as follows
 (replace `$USERNAME` accordingly):
 
@@ -746,8 +724,7 @@ systemctl --user enable psd.service
 systemctl --user start psd.service
 ```
 
-git Setup
----------
+## git Setup
 
 Setup git global options as below. You will need to add the following content to `$HOME/.gitconfig`
 file.
@@ -778,8 +755,7 @@ file.
     autocorrect = 1
 ```
 
-ssh Setup
----------
+## ssh Setup
 
 To get started first install the `openssh` package.
 
@@ -820,8 +796,7 @@ systemctl enable sshd.socket
 systemctl start sshd.socket
 ```
 
-zsh Setup
----------
+## zsh Setup
 
 During the user creation, we already installed the `zsh` shell. We have
 also activated a basic setup at first login by the user.
@@ -854,8 +829,7 @@ zsh
 
 And we are all setup for using `zsh`!
 
-Gnome 3 Modifications
-----------------------
+## Gnome 3 Modifications
 
 We will modify gnome 3 by changing theme, icons and fonts. First install additional themes, fonts,
 icons etc.
@@ -911,19 +885,18 @@ linking. If you have a high resolution 4K monitor like mw, you can enable the fr
 in the tweaks program. See [this link](https://askubuntu.com/questions/1029436/enable-fractional-scaling-for-ubuntu-18-04)
 for an example.
 
-
-pcloud vs Dropbox
-------------------
+## pcloud vs Dropbox
 
 Recently, [dropbox removed support for most of relevant file systems on linux][dropbox-news]. I was
 already not a fan of their higher prices. It was time to move on to something better.
 Then I found, [pcloud]. This service runs quite well on linux (as well as OSX, I really do not care
 about anything related to Windows!). pcloud has some interesting features:
- - You can purchase space for lifetime!
- - All the data actually reside on a fuse drive, so you hard disk is not used
- - You can pay to have support for built-in encryption.
- - The public folder gets a link, that you can use to host a static website or static contents of
-your webpages.
+
+- You can purchase space for lifetime!
+- All the data actually reside on a fuse drive, so you hard disk is not used
+- You can pay to have support for built-in encryption.
+- The public folder gets a link, that you can use to host a static website or static contents of
+  your webpages.
 
 ![pCloud](https://res.cloudinary.com/sadanandsingh/image/upload/v1544988350/images/gnome3/pcloud.png)
 
@@ -937,8 +910,7 @@ yay -S pcloud-drive
 [dropbox-news]: https://www.dropbox.com/help/desktop-web/system-requirements#desktop
 [pcloud]: https://www.ploud.com/
 
-Editors
--------
+## Editors
 
 My choice of editor is neovim and sublime text. Please [refer to my previous post](/sublimetext) for
 details on setting up Sublime Text 3. Following is the setup required to install it:

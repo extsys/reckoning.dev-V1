@@ -1,12 +1,12 @@
 ---
-title: "Python Tutorial - Week 2"
-slug: "python-tutorial-week2"
+title: 'Python Tutorial - Week 2'
+slug: 'python-tutorial-week2'
 date: 2016-10-03
 tags:
-    - "Programming"
-    - "Python"
+  - 'Programming'
+  - 'Python'
 categories:
-    - "Tutorials"
+  - 'Tutorials'
 template: post
 thumbnail: '../thumbnails/python.png'
 toc: false
@@ -23,7 +23,6 @@ This week we will go over some additional fundamental things common in any progr
 #### User Inputs
 
 There are hardly any programs without any input. Input can come in various ways, for example from a database, another computer, mouse clicks and movements or from the internet. Yet, in most cases the input stems from the keyboard. For this purpose, Python provides the function input(). `input()` has an optional parameter, which is the prompt string, i.e. the text that will be shown when asking for input.
-
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -42,7 +41,6 @@ There are hardly any programs without any input. Input can come in various ways,
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -85,7 +83,6 @@ So, you are already 30 years old, Sadanand!
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -97,6 +94,7 @@ So, you are already 30 years old, Sadanand!
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>age <span class="ansi-blue-fg">=</span> <span class="ansi-cyan-fg">12</span> <span class="ansi-blue-fg">+</span> age
 
 <span class="ansi-red-fg">TypeError</span>: unsupported operand type(s) for +: &#39;int&#39; and &#39;str&#39;</pre>
+
 </div>
 </div>
 
@@ -129,7 +127,6 @@ So, you are already 30 years old, Sadanand!
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -157,7 +154,6 @@ So, you are already 30 years old, Sadanand!
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -187,7 +183,6 @@ So, you are already 30 years old, Sadanand!
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -215,7 +210,6 @@ So, you are already 30 years old, Sadanand!
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -245,7 +239,6 @@ So, you are already 30 years old, Sadanand!
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -273,7 +266,6 @@ So, you are already 30 years old, Sadanand!
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -303,7 +295,6 @@ So, you are already 30 years old, Sadanand!
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -331,7 +322,6 @@ So, you are already 30 years old, Sadanand!
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -361,7 +351,6 @@ So, you are already 30 years old, Sadanand!
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -389,7 +378,6 @@ So, you are already 30 years old, Sadanand!
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -419,7 +407,6 @@ So, you are already 30 years old, Sadanand!
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -448,7 +435,6 @@ So, you are already 30 years old, Sadanand!
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -462,7 +448,6 @@ So, you are already 30 years old, Sadanand!
 </div>
 
 </div>
-
 
 Notice the use of various methods like `eval()`, `int()` and `float()` to get user input in correct formats. In summary, `eval()` is used to get data into various native python formats, e.g. lists, dictionaries etc. _We will look at these in more detail in next few tutorials_. `int()` is used to convert input to integer numbers (numbers without decimals), while `float()` is used to get floating point numbers.
 
@@ -499,7 +484,6 @@ In the following sections below we will see extensive use of such indentation bl
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -516,13 +500,11 @@ In the following sections below we will see extensive use of such indentation bl
 
 </div>
 
-
 In the above code, we see three indentation blocks, first and second "for" loops and the third "if" condition. There is another aspect of structuring in Python, which we haven't mentioned so far, which you can see in the example. Loops and Conditional statements end with a colon ":" - the same is true for functions and other structures introducing blocks. So, we should have said Python structures by colons and indentation.
 
 #### Comments in Python
 
 Python has two ways to annotate/comment Python code. One is by using comments to indicate what some part of the code does. Single-line comments begin with the hash character ("#") and are terminated by the end of line. Here is an example:
-
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -539,7 +521,6 @@ Python has two ways to annotate/comment Python code. One is by using comments to
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -563,7 +544,6 @@ The decision depends in most cases on the value of variables or arithmetic expre
 
 Conditional statements in Python use indentation blocks to _conditionally_ execute certain code. The general form of the if statement in Python looks like this:
 
-
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[12]:</div>
@@ -577,9 +557,10 @@ Conditional statements in Python use indentation blocks to _conditionally_ execu
 <span class="o">...</span>
 
 <span class="k">elif</span> <span class="n">another_condition</span><span class="p">:</span>
-    <span class="n">another_statement_block</span>
+<span class="n">another_statement_block</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="n">else_block</span>
+<span class="n">else_block</span>
+
 </pre></div>
 
 </div>
@@ -588,7 +569,6 @@ Conditional statements in Python use indentation blocks to _conditionally_ execu
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -610,16 +590,17 @@ mathematical comparisons like, "&lt;", "&gt;", "&lt;=", "&gt;=", "=="
 object comparisons like "is" i.e. this is exactly something or not.
 boolean logic operators like "not", "or", "and", "xor" etc.
 
-The following objects are evaluated by Python as __False__:
+The following objects are evaluated by Python as **False**:
 
--  numerical zero values (0, 0L, 0.0, 0.0+0.0j),
--  the Boolean value False,
--  empty strings,
--  empty lists and empty tuples,
--  empty dictionaries.
--  the special value None.
+- numerical zero values (0, 0L, 0.0, 0.0+0.0j),
+- the Boolean value False,
+- empty strings,
+- empty lists and empty tuples,
+- empty dictionaries.
+- the special value None.
 
-All other values are considered to be __True__.
+All other values are considered to be **True**.
+
 <p>Let us try to solve this simple DNA sequence problem:
 **Given the an input DNA sequence, print the sequence if its length is less than equal to 20. Print "Error" if the sequence is empty or its length is larger than 25. If length is between 21 and 25, print the last 5 bases only.**
 
@@ -633,14 +614,15 @@ All other values are considered to be __True__.
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dna</span> <span class="o">=</span> <span class="s2">&quot;ATGCCGATTTATCGGGAACCNNNAATTCCGG&quot;</span>
 
 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">:</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR!&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">25</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:])</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">25</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:])</span>
+<span class="k">else</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR!&quot;</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -649,7 +631,6 @@ All other values are considered to be __True__.
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -672,14 +653,15 @@ All other values are considered to be __True__.
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dna</span> <span class="o">=</span> <span class="s2">&quot;ATGCAATGCN&quot;</span>
 
 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">:</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR!&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">25</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:])</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">25</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:])</span>
+<span class="k">else</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR!&quot;</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -688,7 +670,6 @@ All other values are considered to be __True__.
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -711,14 +692,15 @@ All other values are considered to be __True__.
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dna</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
 
 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">:</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR!&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">25</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:])</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">25</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:])</span>
+<span class="k">else</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR!&quot;</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -727,7 +709,6 @@ All other values are considered to be __True__.
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -750,14 +731,15 @@ All other values are considered to be __True__.
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">dna</span> <span class="o">=</span> <span class="s2">&quot;ATGCCGATTTATCGGGAACCNNN&quot;</span>
 
 <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">20</span><span class="p">:</span>
-    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR!&quot;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">25</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:])</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR!&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR!&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">25</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dna</span><span class="p">[</span><span class="o">-</span><span class="mi">5</span><span class="p">:])</span>
+<span class="k">else</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;ERROR!&quot;</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -766,7 +748,6 @@ All other values are considered to be __True__.
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -796,6 +777,7 @@ In the DNA case, we want to store length of DNA. However, we want length to numb
     <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -804,7 +786,6 @@ In the DNA case, we want to store length of DNA. However, we want length to numb
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -830,6 +811,7 @@ In the DNA case, we want to store length of DNA. However, we want length to numb
     <span class="n">length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">dna</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -838,7 +820,6 @@ In the DNA case, we want to store length of DNA. However, we want length to numb
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -880,7 +861,6 @@ In the DNA case, we want to store length of DNA. However, we want length to numb
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -910,7 +890,6 @@ In the DNA case, we want to store length of DNA. However, we want length to numb
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -942,7 +921,6 @@ These are a type of loop called "Condition-controlled loop". As suggested by the
 Let us consider the following example of DNA sequence:
 **We want to print every base of a given sequence, until we have found 2 `A`'s.**
 
-
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[28]:</div>
@@ -964,7 +942,6 @@ Let us consider the following example of DNA sequence:
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -992,7 +969,6 @@ The loops can be made to exit before its actual completion using the `break` sta
 Consider the following example of DNA sequence.
 **We want to print every base of a given sequence, until we have found 2 `A`'s. However, we want to stop printing as soon as we have found an `N` base.**
 
-
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[29]:</div>
@@ -1017,7 +993,6 @@ Consider the following example of DNA sequence.
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -1040,7 +1015,6 @@ Now, let us consider another case while looping over something. We want to skip 
 Consider the following example wrt to DNA sequencing.
 **Given a sequence of dna, we do NOT want to print the base name if it is 'N'**
 
-
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[30]:</div>
@@ -1061,7 +1035,6 @@ Consider the following example wrt to DNA sequencing.
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -1088,7 +1061,6 @@ A `for` loop is similar to while loop, except it is used to loop over certain el
 Consider the following example:
 **Given a DNA sequence, we want to count the number of all 'A', and 'T bases.**
 
-
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[31]:</div>
@@ -1101,6 +1073,7 @@ Consider the following example:
         <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of A, T bases is:&quot;</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -1109,7 +1082,6 @@ Consider the following example:
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -1131,7 +1103,6 @@ Let us look at somewhat complicated use of `for` loop:
 
 **Given a DNA sequence, we want to count the number of doublets of bases, i.e. no. of times certain bases come twice exactly. If some base occur more than twice, we do not want to count that.**
 
-
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[32]:</div>
@@ -1151,6 +1122,7 @@ Let us look at somewhat complicated use of `for` loop:
     <span class="n">prevBase</span> <span class="o">=</span> <span class="n">base</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Number of paired bases is:&quot;</span><span class="p">,</span> <span class="n">countPairs</span><span class="p">)</span>
+
 </pre></div>
 
 </div>
@@ -1159,7 +1131,6 @@ Let us look at somewhat complicated use of `for` loop:
 
 <div class="output_wrapper">
 <div class="output">
-
 
 <div class="output_area">
 <div class="prompt"></div>
@@ -1203,7 +1174,6 @@ We would like to print a quite cumbersome statement like as follows. This can be
 <div class="output_wrapper">
 <div class="output">
 
-
 <div class="output_area">
 <div class="prompt"></div>
 
@@ -1225,7 +1195,6 @@ Thats it for this week. Next we will look at strings and lists in Python in more
 **Exercise**
 
 Given the following sequence of dna - "ATGGCNCGAATTTAAATCGGGAACCNNN",
-
 
 1. Write a program to count number of all triplets in it.
 2. Write a program that prints all non 'T' bases that come after 'T', but stops when two or more continuous 'T' has been found.

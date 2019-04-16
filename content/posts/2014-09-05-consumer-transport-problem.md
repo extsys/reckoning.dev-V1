@@ -1,12 +1,12 @@
 ---
-title: "Puzzle 2: Consumer Transport Problem"
-slug: "consumer-transport-problem"
+title: 'Puzzle 2: Consumer Transport Problem'
+slug: 'consumer-transport-problem'
 date: 2014-09-05
 tags:
-    - "Puzzles"
-    - "Algebra"
+  - 'Puzzles'
+  - 'Algebra'
 categories:
-    - "Puzzles"
+  - 'Puzzles'
 template: post
 thumbnail: '../thumbnails/puzzle.png'
 toc: false
@@ -16,7 +16,6 @@ bokeh: false
 
 Here is another puzzle starring a monkey, transportation and money!
 Short summary - avoid dealing with fools!
-
 
 **Problem Statement**
 

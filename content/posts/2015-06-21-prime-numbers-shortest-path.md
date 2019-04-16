@@ -1,12 +1,12 @@
 ---
-title: "Two Simple Math Puzzles: Prime Numbers and Shortest Path"
-slug: "prime-numbers-shortest-path"
+title: 'Two Simple Math Puzzles: Prime Numbers and Shortest Path'
+slug: 'prime-numbers-shortest-path'
 date: 2015-06-21
 tags:
-    - "Algorithms"
-    - "Puzzles"
+  - 'Algorithms'
+  - 'Puzzles'
 categories:
-    - "Puzzles"
+  - 'Puzzles'
 template: post
 thumbnail: '../thumbnails/puzzle.png'
 toc: false
@@ -16,9 +16,7 @@ bokeh: false
 
 Here are two math puzzles, solve, comment and enjoy the discussion!
 
-
-Puzzle 1: Prime Numbers
-=======================
+# Puzzle 1: Prime Numbers
 
 Prove that $p^2-1$ is divisible by 24, where $p$ is a prime number with
 $p>3$.
@@ -26,8 +24,7 @@ $p>3$.
 This is a simple one - do not go by the technicality of the problem
 statement.
 
-Solution
----------
+## Solution
 
 $p^2-1 = (p-1)\times (p+1)$ Given, $p$ is a prime number $>3$, $p-1$ and
 $p+1$ are even. We can also write,
@@ -43,8 +40,7 @@ $p+1$ are divisible by 3 as well.
 
 Hence, $p^2-1$ is divisible by $8\times 3 = 24$.
 
-Puzzle 2: Hopping on a Chess Board
-==================================
+# Puzzle 2: Hopping on a Chess Board
 
 On a chess board, basically a $8\times 8$ grid, how many ways one can go
 from the left most bottom corner to the right most upper corner? In
@@ -56,15 +52,14 @@ chess naming conventions, from $a1$ to $h8$.
 
 **Can you find the generic answer for the case of $N\times M$ grid?**
 
-Solution
-----------
+## Solution
 
-> **<u>Correction</u>:** <br/><br/> For an $N\times M$ grid, we need only $N-1$ right and $M-1$ up moves. <br/><br/> __Thank you Devin for pointing this out.__
+> **<u>Correction</u>:** <br/><br/> For an $N\times M$ grid, we need only $N-1$ right and $M-1$ up moves. <br/><br/> **Thank you Devin for pointing this out.**
 
 Given only forward moves are allowed, for any arbitrary grid of
 $N\times M$, a total of $(N-1) + (M-1)$ moves are needed.
 
-Any $N-1$ of these moves can be of type *right* and $M-1$ of type *up*.
+Any $N-1$ of these moves can be of type _right_ and $M-1$ of type _up_.
 In short, this is a combinatorial problem of distributing $N+M-2$
 objects into groups of $N-1$ and $M-1$. This is simply,
 
@@ -75,7 +70,7 @@ number of possible paths are:
 
 $$\text{No. of Paths} = \frac{14!}{7! 7!} =3432$$
 
-Thank you __Rohit__ and __Amber__ for posting quick solutions!
+Thank you **Rohit** and **Amber** for posting quick solutions!
 
-Let me know if you have any other interesting *alternative* solutions to
+Let me know if you have any other interesting _alternative_ solutions to
 these problems.

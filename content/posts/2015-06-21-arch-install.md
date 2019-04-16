@@ -1,14 +1,14 @@
 ---
-title: "Arch Installation Guide"
-slug: "arch-install"
+title: 'Arch Installation Guide'
+slug: 'arch-install'
 date: 2015-06-21
 tags:
-    - "Linux"
-    - "Arch Linux"
-    - "Plasma 5"
-    - "KDE"
+  - 'Linux'
+  - 'Arch Linux'
+  - 'Plasma 5'
+  - 'KDE'
 categories:
-    - "Computers"
+  - 'Computers'
 template: post
 thumbnail: '../thumbnails/arch.png'
 toc: true
@@ -17,17 +17,17 @@ bokeh: false
 ---
 
 You must be thinking - yet another installation guide! There is no
-dearth of *Installation* guides of Arch on web. So why another one?
+dearth of _Installation_ guides of Arch on web. So why another one?
 
 With advancements like BTRFS file system, UEFI motherboards and modern
-*in-development* desktop environment like Plasma 5; traditional
+_in-development_ desktop environment like Plasma 5; traditional
 [Arch Wiki](https://wiki.archlinux.org/index.php/Installation_guide)
 guide and
 [Arch Beginners' Guide](https://wiki.archlinux.org/index.php/Beginners%27_guide)
 can only be of a limited help. After I got [my new desktop](/my-desktop), my goal was to setup it with a
-*modern* setup. I decided to go with Arch Linux with _btrfs_ file system
+_modern_ setup. I decided to go with Arch Linux with _btrfs_ file system
 and Plasma 5 desktop. Coming from OSX, I just love how far _linux_ has
-come in terms of looks - *quite close to OSX!*
+come in terms of looks - _quite close to OSX!_
 
 > Please see [my latest post](/complete-setup-arch-gnome) on installing Arch linux with Gnome 3 for an upto date version of this guide.
 
@@ -41,8 +41,7 @@ I will cover this in two parts. First in this post, I will install the
 base system. Then, in a follow up post, I will discuss details of
 setting up final working Plasma 5 desktop.
 
-Initial Setup
-=============
+# Initial Setup
 
 Download the latest iso from Arch website and create the uefi usb
 installation media. I used my mac to do this on terminal:
@@ -75,8 +74,7 @@ This should give you a list of set UEFI variables. Please look at the
 [Begineers' Guide](https://wiki.archlinux.org/index.php/Beginners%27_guide) in case
 you do not get any list of UEFI variables.
 
-Ethernet/Wifi
--------------
+## Ethernet/Wifi
 
 Ethernet should have started by default on your machine. If you do not
 plan to use wifi during installation, you can skip to the next section.
@@ -92,13 +90,12 @@ wifi-menu
 This is a pretty straight forward tool and will setup wifi for you for
 this installation session.
 
-This will also create a file at */etc/netctl/*. We will use this file
+This will also create a file at _/etc/netctl/_. We will use this file
 later to enable wifi at the first session after installation.
 
-System Updates
---------------
+## System Updates
 
-For editing different configurations, I tend to use *vim*. So we will
+For editing different configurations, I tend to use _vim_. So we will
 update our package cache and install vim.
 
 ```terminal
@@ -106,8 +103,7 @@ pacman -Syy
 pacman -S vim
 ```
 
-Hard Drives
------------
+## Hard Drives
 
 In my desktop, I have three hard drives, one 256 GB solid state drive
 (SDD), one 1 TB HDD and another 3TB HDD. I set up my drives as follows:
@@ -136,7 +132,7 @@ Found invalid MBR and corrupt GPT. What do you want to do? (Using the
 GPT MAY permit recovery of GPT data.)
  1 - Use current GPT
  2 - Create blank GPT
- ```
+```
 
 Then press 2 to create a blank GPT and start fresh
 
@@ -175,9 +171,9 @@ Press w to write to disk
 Press Y to confirm
 ```
 
-Repeat the above procedure for */dev/sdb* and */dev/sdc*, but create
+Repeat the above procedure for _/dev/sdb_ and _/dev/sdc_, but create
 just one partition with all values as default. At the end we will have
-three partitions: */dev/sda1, /dev/sda2, /dev/sdb1* and */dev/sdc1*
+three partitions: _/dev/sda1, /dev/sda2, /dev/sdb1_ and _/dev/sdc1_
 
 Now we will format these partitions.
 
@@ -226,8 +222,7 @@ mkdir -p /mnt/boot
 mount -o $EFI_MOUNTS /dev/sda1 /mnt/boot
 ```
 
-Base Installation
-=================
+# Base Installation
 
 Now, we will do the actually installation of base packages.
 
@@ -243,9 +238,7 @@ tmpfs /tmp tmpfs rw,nodev,nosuid 0 0
 tmpfs /dev/shm tmpfs rw,nodev,nosuid,noexec 0 0
 ```
 
-
 > Copy our current _wifi_ setup file into the new system. This will enable _wifi_ at first boot. Next, _chroot_ into our newly installed system.
-
 
 Finally bind root for installation.
 
@@ -253,8 +246,7 @@ Finally bind root for installation.
 arch-chroot /mnt /bin/bash
 ```
 
-Basic Setup
------------
+## Basic Setup
 
 Here are some basic commands you need to run to get the installation
 started.
@@ -285,7 +277,7 @@ mkinitcpio -p linux
 passwd
 ```
 
-We will also add *hostname* to our /etc/hosts file:
+We will also add _hostname_ to our /etc/hosts file:
 
 ```terminal
 vim /etc/hosts
@@ -295,13 +287,12 @@ vim /etc/hosts
 ...
 ```
 
-Bootloader Setup
-----------------
+## Bootloader Setup
 
 _systemd-boot_, previously called _gummiboot_, is a simple UEFI boot manager
 which executes configured EFI images. The default entry is selected by a
 configured pattern (glob) or an on-screen menu. It is included with the
-*systemd*, which is installed on an Arch systems by default.
+_systemd_, which is installed on an Arch systems by default.
 
 Assuming _/boot_ is your boot drive, first run the following command to
 get started:
@@ -324,7 +315,7 @@ lsblk -no NAME,UUID /dev/sda2
 ```
 
 Now, make sure that the following two files look as follows, where
-$UUID is the value obtained from above command:
+\$UUID is the value obtained from above command:
 
 ```terminal
 vim /boot/loader/loader.conf
@@ -342,12 +333,9 @@ options root=UUID=$UUID rw rootfstype=btrfs rootflags=subvol=ROOT
 ...
 ```
 
-
 > Please note that you will to need manually run `bootctl` command every time `systemd-boot` gets updated.
 
-
-Network Setup
--------------
+## Network Setup
 
 First setup hostname using _systemd_:
 
@@ -419,8 +407,8 @@ $
 ```
 
 Using this name of the device, we need to configure, enable following
-two systemd services: *systemd-networkd.service* and
-*systemd-resolved.service*.
+two systemd services: _systemd-networkd.service_ and
+_systemd-resolved.service_.
 
 For compatibility with resolv.conf, delete or rename the existing file
 and create the following symbolic link:
@@ -430,7 +418,7 @@ ln -s /usr/lib/systemd/resolv.conf /etc/resolv.conf
 ```
 
 Network configurations are stored as \*.network in
-*/etc/systemd/network*. We need to create ours as follows.:
+_/etc/systemd/network_. We need to create ours as follows.:
 
 ```terminal
 vim /etc/systemd/network/wired.network
@@ -456,8 +444,7 @@ systemctl enable systemd-networkd.service
 
 Your network should be ready for first use!
 
-First Boot
-----------
+## First Boot
 
 Now we are ready for the first boot! Run the following command:
 

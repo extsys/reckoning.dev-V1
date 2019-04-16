@@ -1,14 +1,14 @@
 ---
-title: "Plasma 5 Installation on Arch Linux"
-slug: "plasma-install-guide"
+title: 'Plasma 5 Installation on Arch Linux'
+slug: 'plasma-install-guide'
 date: 2015-06-22
 tags:
-    - "Linux"
-    - "Arch Linux"
-    - "Plasma 5"
-    - "KDE"
+  - 'Linux'
+  - 'Arch Linux'
+  - 'Plasma 5'
+  - 'KDE'
 categories:
-    - "Computers"
+  - 'Computers'
 template: post
 thumbnail: '../thumbnails/kde.png'
 toc: true
@@ -29,8 +29,7 @@ root using the password that we set.
 
 Now, we will proceed further to install the Plasma 5 desktop.
 
-Add New User
-============
+# Add New User
 
 Choose `$USERNAME` per your liking. I chose `ssingh`, so in future commands
 whenever you see `ssingh` please replace it with your `$USERNAME`.
@@ -41,8 +40,7 @@ chfn --full-name "$FULL_NAME" $USERNAME
 passwd $USERNAME
 ```
 
-Plasma 5 Desktop
-================
+# Plasma 5 Desktop
 
 Network should be setup at the start. Check the status of network using:
 
@@ -66,7 +64,7 @@ setting up network.
 I will be assuming you have an NVIDIA card for graphics installation.
 
 To setup a graphical desktop, first we need to install some basic X
-related packages, and some *essential* packages (including fonts):
+related packages, and some _essential_ packages (including fonts):
 
 ```terminal
 pacman -S xorg-server xorg-server-utils nvidia nvidia-libgl
@@ -126,8 +124,7 @@ export KWIN_TRIPLE_BUFFER=1
 ...
 ```
 
-> __Do not have both of the above enabled at the same time. Please look at [Arch Wiki](https://wiki.archlinux.org/index.php/NVIDIA/Troubleshooting) for additional details.__
-
+> **Do not have both of the above enabled at the same time. Please look at [Arch Wiki](https://wiki.archlinux.org/index.php/NVIDIA/Troubleshooting) for additional details.**
 
 Now continue installing remaining important packages for the GUI.
 
@@ -170,8 +167,7 @@ systemctl disable dhcpcd.service
 systemctl enable NetworkManager
 ```
 
-Audio Setup
-===========
+# Audio Setup
 
 This is pretty simple. Install following packages and you should be
 done:
@@ -182,8 +178,7 @@ pacman -S libcanberra-gstreamer jack2-dbus kmix
 pacman -S mpv mplayer
 ```
 
-Useful Tips
-===========
+# Useful Tips
 
 This part is optional and you can choose as per your taste. Sync time
 using the `systemd` service:
@@ -218,7 +213,7 @@ rendering:
 ```terminal
 sudo ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf
    /etc/fonts/conf.d
-   ```
+```
 
 If you use vim as your primary editor, you may find
 this [vimrc](https://github.com/amix/vimrc) quite useful.

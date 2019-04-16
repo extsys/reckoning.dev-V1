@@ -1,14 +1,14 @@
 ---
-title: "My Arch Linux Setup with Plasma 5"
-slug: "complete-setup-plasma"
+title: 'My Arch Linux Setup with Plasma 5'
+slug: 'complete-setup-plasma'
 date: 2017-06-05
 tags:
-    - "Linux"
-    - "Arch Linux"
-    - "Plasma 5"
-    - "KDE"
+  - 'Linux'
+  - 'Arch Linux'
+  - 'Plasma 5'
+  - 'KDE'
 categories:
-    - "Computers"
+  - 'Computers'
 template: post
 thumbnail: '../thumbnails/plasma5.png'
 toc: true
@@ -18,10 +18,10 @@ bokeh: false
 
 > Please see [my latest post](/complete-setup-arch-gnome) on installing Arch linux with Gnome 3 for an upto date version of this guide.
 
-[Arch Linux] is a general purpose GNU/Linux distribution that provides
+[Arch Linux][al] is a general purpose GNU/Linux distribution that provides
 most up-to-date software by following the rolling-release model. Arch
 Linux allows you to use updated cutting-edge software and packages as
-soon as the developers released them. [KDE Plasma 5] is the current generation
+soon as the developers released them. [Plasma 5][plasma5] is the current generation
 of the desktop environment created by KDE primarily for Linux systems.
 
 In this post, we will do a complete installation of Arch Linux with
@@ -32,43 +32,34 @@ and a more complete version of my previous posts on
 [Arch Linux](/arch-install) and
 [Plasma 5 Installation](/plasma-installation).
 
-
-
-[Arch Linux]: https://www.archlinux.org
-[KDE Plasma 5]: https://en.wikipedia.org/wiki/KDE_Plasma_5
+[al]: https://www.archlinux.org
+[plasma5]: https://en.wikipedia.org/wiki/KDE_Plasma_5
 [btrfs]: https://en.wikipedia.org/wiki/Btrfs
-
 
 ![My Current Desktop](https://res.cloudinary.com/sadanandsingh/image/upload/v1545501807/project/plasma_install.jpg)
 
-
-System Details
-==============
+# System Details
 
 For reference, my installation system is a slightly upgraded form of
 [my original desktop](/my-desktop):
 
--   i7 4790 3.6 GHz (Haswell)
--   ASRock Z97 Extreme6 LGA 1150 Intel Z97 HDMI SATA USB 3.0
--   ADATA XPG V1.0 DDR3 1866 4x4 GB RAM
--   OCZ Vertex 460A Series 2.5" 240 GB
--   WD Blue 1TB 3.5" 7200 RPM, 64MB Cache
--   WD Blue 3TB 3.5" 7200 RPM, 64MB Cache
--   Ultra LSP V2 650 Watt PSU
--   Cooler Master - MasterCase Pro 5
--   Asus BW-12B1ST/BLK/G/AS Blue Ray Burner
--   Samsung U28E590D 28-Inch UHD LED-Lit 4K Monitor
--   Nvidia GeForce GTX 750 Ti GPU
+- i7 4790 3.6 GHz (Haswell)
+- ASRock Z97 Extreme6 LGA 1150 Intel Z97 HDMI SATA USB 3.0
+- ADATA XPG V1.0 DDR3 1866 4x4 GB RAM
+- OCZ Vertex 460A Series 2.5" 240 GB
+- WD Blue 1TB 3.5" 7200 RPM, 64MB Cache
+- WD Blue 3TB 3.5" 7200 RPM, 64MB Cache
+- Ultra LSP V2 650 Watt PSU
+- Cooler Master - MasterCase Pro 5
+- Asus BW-12B1ST/BLK/G/AS Blue Ray Burner
+- Samsung U28E590D 28-Inch UHD LED-Lit 4K Monitor
+- Nvidia GeForce GTX 750 Ti GPU
 
-Base Installation
-=================
+# Base Installation
 
+> I do not wish to repeat [Arch Installation Guide](https://wiki.archlinux.org/index.php/installation_guide) here. <br/> <br/> Do not forget about [Arch Wiki][a-wiki], the best documentation in the world! Most of the content in this post has been compiled from the [Arch Wiki][a-wiki].
 
-> I do not wish to repeat [Arch Installation Guide](https://wiki.archlinux.org/index.php/installation_guide) here. <br/> <br/> Do not forget about [Arch Wiki], the best documentation in the world! Most of the content in this post has been compiled from the [Arch wiki].
-
-[Arch wiki]: https://wiki.archlinux.org/
-
-
+[a-wiki]: https://wiki.archlinux.org/
 
 Before beginning this guide, I would assume that you have a bootable USB
 of the latest Arch Linux Installer. If not, please follow the [Arch wiki
@@ -76,7 +67,7 @@ guide](https://wiki.archlinux.org/index.php/USB_flash_installation_media)
 to create one for you.
 
 Once you login in the installer disk, You will be logged in on the first
-virtual console as the root user, and presented with a *zsh* shell
+virtual console as the root user, and presented with a _zsh_ shell
 prompt. I will assume you have an Ethernet connection and hence will be
 connected to Internet by default. If you have to rely on wifi, please
 refer to the [Wireless Network Configuration](https://wiki.archlinux.org/index.php/Wireless_network_configuration)
@@ -108,8 +99,7 @@ $ setfont ter-132n
 
 We are all set to get started with the actual installation process.
 
-HDDs Partitioning
------------------
+## HDDs Partitioning
 
 First find the hard drive that you will be using as the main/root disk.
 
@@ -126,14 +116,14 @@ $ cat /proc/partitions
 # 7        0     328616 loop0
 ```
 
-Say, we will be using */dev/sda* as the main disk and */dev/sdb* as
-*/data* and */dev/sdc* as */media* .
+Say, we will be using _/dev/sda_ as the main disk and _/dev/sdb_ as
+_/data_ and _/dev/sdc_ as _/media_ .
 
 Because we are creating an encrypted file system it’s a good idea to
 overwrite it with random data.
 
-We’ll use **badblocks** for this. Another method is to use *dd
-if=/dev/urandom of=/dev/xxx*, the *dd* method is probably the best
+We’ll use **badblocks** for this. Another method is to use _dd
+if=/dev/urandom of=/dev/xxx_, the _dd_ method is probably the best
 method, but is a lot slower. **The following step should take about 20
 minutes on a 240 GB SSD.**
 
@@ -150,7 +140,7 @@ Found invalid MBR and corrupt GPT. What do you want to do? (Using the
 GPT MAY permit recovery of GPT data.)
  1 - Use current GPT
  2 - Create blank GPT
- ```
+```
 
 Then press 2 to create a blank GPT and start fresh
 
@@ -189,16 +179,15 @@ $ Press w to write to disk
 $ Press Y to confirm
 ```
 
-Repeat the above procedure for */dev/sdb* and */dev/sdc*, but create
+Repeat the above procedure for _/dev/sdb_ and _/dev/sdc_, but create
 just one partition with all values as default. At the end we will have
-three partitions: */dev/sda1*, */dev/sda2*, */dev/sdb1* and */dev/sdc1*.
+three partitions: _/dev/sda1_, _/dev/sda2_, _/dev/sdb1_ and _/dev/sdc1_.
 
-Setup Disk Encryption
----------------------
+## Setup Disk Encryption
 
-Our /boot partition will be on */dev/sda1*, while the main installation
-will be on */dev/sda2*. In this setup, we will be enabling full
-encryption on */dev/sda2* only.
+Our /boot partition will be on _/dev/sda1_, while the main installation
+will be on _/dev/sda2_. In this setup, we will be enabling full
+encryption on _/dev/sda2_ only.
 
 In order to enable disk encryption, we will first create a root luks
 volume, open it and then format it.
@@ -258,12 +247,10 @@ $ umount /mnt
 
 We will be later using this KEYFILE in boot loader setup.
 
+## Format HDDs
 
-Format HDDs
------------
-
-At this point, we have following drives ready for format: */dev/sda1*,
-*/dev/mapper/root*, */dev/sdb1* and */dev/sdc1*.
+At this point, we have following drives ready for format: _/dev/sda1_,
+_/dev/mapper/root_, _/dev/sdb1_ and _/dev/sdc1_.
 
 These can be format as follows:
 
@@ -318,8 +305,7 @@ $ mount -o $EFI_MOUNTS /dev/sda1 /mnt/boot
 $ cp /etc/resolv.conf /mnt/etc/resolv.conf
 ```
 
-Base System Installation
-------------------------
+## Base System Installation
 
 Now, we will do the actually installation of base packages.
 
@@ -328,8 +314,7 @@ $ pacstrap /mnt base base-devel btrfs-progs
 $ genfstab -U -p /mnt >> /mnt/etc/fstab
 ```
 
-Initial System Setup
---------------------
+## Initial System Setup
 
 Edit the _/mnt/ect/fstab_ file to add following _/tmp_ mounts.
 
@@ -365,7 +350,7 @@ $ echo $HOSTNAME > /etc/hostname
 $ passwd
 ```
 
-We will also add *hostname* to our `/etc/hosts` file:
+We will also add _hostname_ to our `/etc/hosts` file:
 
 ```terminal
 $ vim /etc/hosts
@@ -394,16 +379,15 @@ $ vi /etc/mkinitcpio.conf
 mkinitcpio -p linux
 ```
 
-Boot Manager Setup
-------------------
+## Boot Manager Setup
 
-*systemd-boot*, previously called *gummiboot*, is a simple UEFI boot
+_systemd-boot_, previously called _gummiboot_, is a simple UEFI boot
 manager which executes configured EFI images. The default entry is
 selected by a configured pattern (glob) or an on-screen menu. It is
-included with the *systemd*, which is installed on an Arch systems by
+included with the _systemd_, which is installed on an Arch systems by
 default.
 
-Assuming */boot* is your boot drive, first run the following command to
+Assuming _/boot_ is your boot drive, first run the following command to
 get started:
 
 ```terminal
@@ -412,12 +396,12 @@ $ bootctl --path=/boot install
 
 It will copy the systemd-boot binary to your EFI System Partition (
 `/boot/EFI/systemd/systemd-bootx64.efi` and `/boot/EFI/Boot/BOOTX64.EFI` -
-both of which are identical - on __x64__ systems ) and add *systemd-boot*
+both of which are identical - on **x64** systems ) and add _systemd-boot_
 itself as the default EFI application (default boot entry) loaded by the
 EFI Boot Manager.
 
 Finally to configure out boot loader, we will need the UUID of some of
-our hard drives. These can be easily done using the *blkid* command.
+our hard drives. These can be easily done using the _blkid_ command.
 
 ```terminal
 $ blkid /dev/sda1 > /boot/loader/entries/arch.conf
@@ -453,8 +437,7 @@ options ro cryptdevice=UUID=33333333-3333-3333-3333-333333333333:luks-33333333-3
 ...
 ```
 
-Network Setup
--------------
+## Network Setup
 
 At first we will need to figure out the Ethernet controller on which
 cable is connected.
@@ -470,12 +453,12 @@ $ networkctl
 #
 ```
 
-In my case, the name of the device is *enp0s25*.
+In my case, the name of the device is _enp0s25_.
 
 Using this name of the device, we need to configure, and enable the
-*systemd-networkd.service* service.
+_systemd-networkd.service_ service.
 
-Note that we will using the *resolv.conf* that we saved from this
+Note that we will using the _resolv.conf_ that we saved from this
 session.
 
 Network configurations are stored as \*.network in
@@ -504,7 +487,7 @@ systemctl enable systemd-networkd.service
 
 Your network should be ready for the first use!
 
-Sync time automatically using the *systemd* service:
+Sync time automatically using the _systemd_ service:
 
 ```terminal
 $ vim /etc/systemd/timesyncd.conf
@@ -550,8 +533,7 @@ fonts on first boot.
 $ pacman -S terminus-font
 ```
 
-First Boot Installations
-========================
+# First Boot Installations
 
 Now we are ready for the first boot! Run the following command:
 
@@ -584,11 +566,10 @@ If you do not get this output, please follow the troubleshooting links
 at Arch Wiki on [setting up
 network](https://wiki.archlinux.org/index.php/systemd-networkd).
 
-Adding New User
----------------
+## Adding New User
 
-Choose `$USERNAME` per your liking. I chose *ssingh*, so in future
-commands whenever you see *ssingh* please replace it with your
+Choose `$USERNAME` per your liking. I chose _ssingh_, so in future
+commands whenever you see _ssingh_ please replace it with your
 `$USERNAME`.
 
 ```terminal
@@ -598,20 +579,19 @@ $ chfn --full-name "$FULL_NAME" $USERNAME
 $ passwd $USERNAME
 ```
 
-GUI Installation with nvidia
-----------------------------
+## GUI Installation with nvidia
 
 I will be assuming you have an `NVIDIA` card for graphics installation.
 
 To setup a graphical desktop, first we need to install some basic X
-related packages, and some *essential* packages (including fonts):
+related packages, and some _essential_ packages (including fonts):
 
 ```terminal
 $ pacman -S xorg-server nvidia nvidia-libgl nvidia-settings mesa
 ```
 
-To avoid the possibility of forgetting to update your *initramfs* after
-an *nvidia* upgrade, you have to use a *pacman* hook like this:
+To avoid the possibility of forgetting to update your _initramfs_ after
+an _nvidia_ upgrade, you have to use a _pacman_ hook like this:
 
 ```terminal
 $ vim /etc/pacman.d/hooks/nvidia.hook
@@ -672,7 +652,6 @@ vim /etc/X11/xorg.conf.d/20-nvidia.conf
 # ------------------------------------------------
 ```
 
-
 Specific for Plasma 5, we will also create the following file to avoid
 any tearing in Plasma.
 
@@ -686,19 +665,19 @@ export KWIN_TRIPLE_BUFFER=1
 
 ###How to Enable Better Resolution During Boot
 
-The kernel compiled in *efifb* module supports high-resolution nvidia
+The kernel compiled in _efifb_ module supports high-resolution nvidia
 console on EFI systems. This can enabled by enabling the DRM kernel mode
 setting.
 
 First, we will need to add following to MODULES section of the
-*mkinitcpio.conf* file:
+_mkinitcpio.conf_ file:
 
--  *nvidia*
--  *nvidia_modeset*
--  *nvidia_uvm*
--  *nvidia_drm*
+- _nvidia_
+- _nvidia_modeset_
+- _nvidia_uvm_
+- _nvidia_drm_
 
-We will also need to pass the *nvidia-drm.modeset=1* kernel parameter during the boot.
+We will also need to pass the _nvidia-drm.modeset=1_ kernel parameter during the boot.
 
 ```terminal
 $ vim /etc/mkinitcpio.conf
@@ -716,9 +695,7 @@ $
 $ mkinitcpio -p linux
 ```
 
-
-Plasma 5 Installation and Setup
--------------------------------
+## Plasma 5 Installation and Setup
 
 We can now proceed with the installation of Plasma 5. In the process, we
 will also install some useful fonts.
@@ -733,7 +710,7 @@ $ pacman -S ark yakuake flite
 ```
 
 We will also need to select proper themes for the Plasma 5 display
-manager *sddm* and then enable its *systemd* service.
+manager _sddm_ and then enable its _systemd_ service.
 
 ```terminal
 $ vim /etc/sddm.conf
@@ -755,13 +732,12 @@ Once, we boot into the new system, we should have a basic Plasma 5
 desktop waiting for you. In the following section, we will be do
 installation and modifications to the system that I prefer.
 
-Post Installation Setup
-=======================
+# Post Installation Setup
 
 Plasma 5 provides a handy network manager applet. However, in order to
 use it properly we will need the NetworkManager service to be enabled.
-This applet allows user specific enabling of *wifi*, *ethernet* or even
-*VPN* connections.
+This applet allows user specific enabling of _wifi_, _ethernet_ or even
+_VPN_ connections.
 
 ```terminal
 $ sudo pacman -S networkmanager
@@ -769,23 +745,22 @@ $ systemctl enable NetworkManager.service
 $ systemctl start NetworkManager.service
 ```
 
-We can also automate the *hostname* setup using the following *systemd*
+We can also automate the _hostname_ setup using the following _systemd_
 command:
 
 ```terminal
 $ hostnamectl set-hostname $HOSTNAME
 ```
 
-Selecting pacman Mirrors
-------------------------
+## Selecting pacman Mirrors
 
-The *pacman* package provides a "bash" script, */usr/bin/rankmirrors*,
+The _pacman_ package provides a "bash" script, _/usr/bin/rankmirrors_,
 which can be used to rank the mirrors according to their connection and
 opening speeds to take advantage of using the fastest local mirror.
 
 We will do this only on the US based mirrors. First make a copy of the
 mirrors list file and then delete all non-US mirrors. We will then
-*rankmirrors* script on the modified list to get the top 6 mirrors for
+_rankmirrors_ script on the modified list to get the top 6 mirrors for
 our regular use.
 
 ```terminal
@@ -798,8 +773,7 @@ $ vim /etc/pacman.d/mirrorlist.us
 $ rankmirrors -n 6 /etc/pacman.d/mirrorlist.us > /etc/pacman.d/mirrorlist
 ```
 
-Setup AUR
----------
+## Setup AUR
 
 [AUR](https://aur.archlinux.org/) is a community-driven repository for
 Arch users. This allows you to install many popular packages that are
@@ -807,10 +781,10 @@ otherwise not available through core repositories.
 
 In order to make all types of installations uniform, I use
 [pacaur](https://github.com/rmarquis/pacaur) as the preferred tool for
-installing all packages. One the biggest advantages of *pacaur* is that
-is uses exactly the same options that regular *pacman* uses.
+installing all packages. One the biggest advantages of _pacaur_ is that
+is uses exactly the same options that regular _pacman_ uses.
 
-In order to install *pacuar*, first install dependencies.
+In order to install _pacuar_, first install dependencies.
 
 ```terminal
 $ sudo pacman -S expac yajl curl gnupg --noconfirm
@@ -823,7 +797,7 @@ $ mkdir ~/temp
 $ cp ~ temp
 ```
 
-Install *cower* first and then *pacaur*:
+Install _cower_ first and then _pacaur_:
 
 ```terminal
 $ gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53
@@ -838,8 +812,7 @@ $ cd ~
 $ rm -r ~/temp
 ```
 
-Audio Setup
------------
+## Audio Setup
 
 This is pretty simple. Install following packages and you should be
 done:
@@ -850,41 +823,40 @@ $ sudo pacaur -S libcanberra-pulse libcanberra-gstreamer
 $ sudo pacaur -S vlc-qt5
 ```
 
-Now start the *pulseaudio* service.
+Now start the _pulseaudio_ service.
 
 ```terminal
 $ systemctl --user enable pulseaudio.socket
 ```
 
-Web Browsers
-------------
+## Web Browsers
 
-My preferred choice of browsers is *google chrome*. However, it is also
-good to have the KDE native *qupzilla*.
+My preferred choice of browsers is _google chrome_. However, it is also
+good to have the KDE native _qupzilla_.
 
 ```terminal
 $ sudo pacaur -S google-chrome qupzilla
 ```
 
-*Profile-sync-daemon (psd)* is a tiny pseudo-daemon designed to manage
-browser profile(s) in *tmpfs* and to periodically sync back to the
+_Profile-sync-daemon (psd)_ is a tiny pseudo-daemon designed to manage
+browser profile(s) in _tmpfs_ and to periodically sync back to the
 physical disc (HDD/SSD). This is accomplished by an innovative use of
-*rsync* to maintain synchronization between a *tmpfs* copy and
-media-bound backup of the browser profile(s). These features of *psd*
+_rsync_ to maintain synchronization between a _tmpfs_ copy and
+media-bound backup of the browser profile(s). These features of _psd_
 leads to following benefits:
 
--   Transparent user experience
--   Reduced wear to physical drives, and
--   Speed
+- Transparent user experience
+- Reduced wear to physical drives, and
+- Speed
 
-To setup. first install the *profile-sync-daemon* package.
+To setup. first install the _profile-sync-daemon_ package.
 
 ```terminal
 sudo pacaur -S profile-sync-daemon
 ```
 
-Run *psd* the first time which will create a configuration file at
-\$XDG\_CONFIG\_HOME/psd/psd.conf which contains all settings.
+Run _psd_ the first time which will create a configuration file at
+\$XDG_CONFIG_HOME/psd/psd.conf which contains all settings.
 
 ```terminal
 $ psd
@@ -892,14 +864,14 @@ $ psd
 # /home/$USERNAME/.config/psd/psd.conf to your liking and run again.
 ```
 
-In the config file change the BROWSERS variables to *google-chrome
-qupzilla*. Also, enable the use of *overlayfs* to improve sync speed
+In the config file change the BROWSERS variables to _google-chrome
+qupzilla_. Also, enable the use of _overlayfs_ to improve sync speed
 and to use a smaller memory footprint. Do this in the
-*USE\_OVERLAYFS="yes"* variable.
+_USE_OVERLAYFS="yes"_ variable.
 
 > Note: USE_OVERLAYFS feature requires a Linux kernel version of 3.18.0 or greater to work.
 
-In order to use the OVERLAYFS feature, you will also need to give *sudo*
+In order to use the OVERLAYFS feature, you will also need to give _sudo_
 permissions to psd-helper as follows (replace `$USERNAME` accordingly):
 
 ```terminal
@@ -915,11 +887,10 @@ Verify the working of configuration using the preview mode of psd:
 psd p
 ```
 
-*Google Chrome* by default uses *kdewallet* to manage passwords, where
-as *Qupzilla* does not. You can change that in its settings.
+_Google Chrome_ by default uses _kdewallet_ to manage passwords, where
+as _Qupzilla_ does not. You can change that in its settings.
 
-git Setup
----------
+## git Setup
 
 Install git and setup some global options as below:
 
@@ -954,16 +925,15 @@ $ vim ~/.gitconfig
 ...
 ```
 
-ssh Setup
----------
+## ssh Setup
 
-To get started first install the *openssh* package.
+To get started first install the _openssh_ package.
 
 ```terminal
 sudo pacaur -S openssh
 ```
 
-The ssh server can be started using the *systemd* service. Before
+The ssh server can be started using the _systemd_ service. Before
 starting the service, however, we want to generate ssh keys and setup
 the server for login based only on keys.
 
@@ -988,26 +958,25 @@ PasswordAuthentication no
 ...
 ```
 
-Furthermore, before enabling the *sshd* service, please also ensure to
+Furthermore, before enabling the _sshd_ service, please also ensure to
 copy your keys to all your relevant other servers and places like
 github.
 
-We can now use *systemd* to start the ssh service.
+We can now use _systemd_ to start the ssh service.
 
 ```terminal
 $ systemctl enable sshd.socket
 $ systemctl start sshd.socket
 ```
 
-zsh Setup
----------
+## zsh Setup
 
-During the user creation, we already installed the *zsh* shell. We have
+During the user creation, we already installed the _zsh_ shell. We have
 also activated a basic setup at first login by the user.
 
 In this section, we will be installing my variation of
 [zprezto](https://github.com/sorin-ionescu/prezto) package to manage
-*zsh* configurations.
+_zsh_ configurations.
 
 First install the main zprezto package:
 
@@ -1032,12 +1001,11 @@ $ git checkout arch
 $ git merge master
 ```
 
-And we are all setup for using *zsh*!
+And we are all setup for using _zsh_!
 
-gpg Setup
----------
+## gpg Setup
 
-We have already installed the *gnupg* package during the *pacaur*
+We have already installed the _gnupg_ package during the _pacaur_
 installation. We will first either import our already existing private
 keys(s) or create one.
 
@@ -1056,7 +1024,7 @@ max-cache-ttl-ssh 10800
 $
 ```
 
-Also, add following to your *.zshrc* or *."bash"rc* file. If you are using
+Also, add following to your _.zshrc_ or _."bash"rc_ file. If you are using
 my zprezto setup, you already have this!
 
 ```terminal
@@ -1097,8 +1065,7 @@ Finally add your ssh key to ssh agent.
 $ ssh-add ~/.ssh/id_ed25519
 ```
 
-User Wallpapers
----------------
+## User Wallpapers
 
 You can store your own wallpapers at the following location. A good
 place to get some good wallpapers are [KaOS
@@ -1109,10 +1076,9 @@ $ mkdir -p $ $HOME/.local/wallpapers
 $ cp SOME_JPEG $HOME/.local/wallpapers/
 ```
 
-_conky_ Setup
---------------
+## _conky_ Setup
 
-First installed the *conky* package with lua and nvidia support:
+First installed the _conky_ package with lua and nvidia support:
 
 ```terminal
 $ paci conky-lua-nv
@@ -1191,8 +1157,7 @@ ${goto -80}${voffset -35}${font Pompiere:size=11}${color 3eafe8}//${color4} GPU:
 ]];
 ```
 
-Software Installations
-----------------------
+## Software Installations
 
 Here is a running list of other common softwares that I install.
 
@@ -1215,7 +1180,7 @@ $
 $ echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/dev/x86_64" | sudo tee -a /etc/pacman.conf
 ```
 
-Now we can install *sublime-text* as:
+Now we can install _sublime-text_ as:
 
 ```terminal
 $ paci sublime-text/sublime-text
