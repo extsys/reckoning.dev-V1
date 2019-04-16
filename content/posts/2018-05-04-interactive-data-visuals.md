@@ -284,6 +284,7 @@ will highlight the corresponding points in other!
     <div class="bk-plotdiv" id="70a9bff7-7337-40c4-8cdc-df05cca05bbc"></div>
   </div>
 </div>
+<br/>
 
 Also notice the trick used in the right plot of UMAP embeddings to move
 legends outside the plot area. Commonly, `circle()` has an option
@@ -446,6 +447,7 @@ show(p477)
 </div>
 </div>
 
+<br/>
 You can choose the Day of Week in the Selection dropdown menu at the top and
 see how the plot updates itself. For this example, I have restricted to
 showing only 50 entries for each day to keep the `js` file small.
@@ -490,6 +492,7 @@ This makes it easy to use as well as quite customizable.
   </div>
 </div>
 
+<br/>
 To illustrate making of histogram plots, we can take a look at the overall
 distribution of house prices. We will first calculate the histograms
 using `numpy` and then plot it using holoviews.
@@ -516,6 +519,7 @@ We get an interactive histogram plot with a single line of code!
   </div>
 </div>
 
+<br/>
 Similar to the box plot, we customized it by getting the corresponding bokeh
 figure. We have touched only the simplest of plots using holoviews. If you
 look at their web page, you can make pretty complex interactive figures quite

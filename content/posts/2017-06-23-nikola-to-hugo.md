@@ -85,12 +85,20 @@ Getting home page to work was very simple. Hugo documentation page provides a ve
 
 I also added following template code in the index.html template to get list of posts with machine learning related tags:
 
-```html
-{{ $.Scratch.Add "mlposts" slice }} {{ $tags := (slice "Machine Learning" "EDA" "Kaggle" "ML" "Deep
-Learning" "DL" "Data Science") }} {{ range .Site.RegularPages }} {{ $page := . }} {{
-$has_common_tags := intersect $tags .Params.tags | len | lt 0 }} {{ if $has_common_tags }} {{
-$.Scratch.Add "mlposts" $page }} {{ end }} {{ end }} {{ $cand := .Scratch.Get "mlposts" }} {{ range
-first 10 $cand }} {{ .Render "li"}} {{ end }}
+```js
+{{ $.Scratch.Add "mlposts" slice }}
+{{ $tags := (slice "Machine Learning" "EDA" "Kaggle" "ML" "Deep Learning" "DL" "Data Science") }}
+{{ range .Site.RegularPages }}
+  {{ $page := . }}
+  {{ $has_common_tags := intersect $tags .Params.tags | len | lt 0 }}
+  {{ if $has_common_tags }}
+    {{ $.Scratch.Add "mlposts" $page }}
+  {{ end }}
+{{ end }}
+{{ $cand := .Scratch.Get "mlposts" }}
+{{ range first 10 $cand }}
+  {{ .Render "li"}}
+{{ end }}
 ```
 
 ## tipue Search
@@ -103,11 +111,12 @@ Hugo has support for several output formats, including HTML and JSON. For implem
 
 and, using the following `index.json` template:
 
-```html
-{{- $.Scratch.Add "index" slice -}} {{- range where .Site.RegularPages "Type" "not in" (slice
-"page" "json" "nosearch") -}} {{- $.Scratch.Add "index" (dict "url" .Permalink "title" .Title
-"text" .Plain "tags" (delimit .Params.tags ", ")) -}} {{- end -}} {"pages": {{- $.Scratch.Get
-"index" | jsonify -}}}
+```js
+{{- $.Scratch.Add "index" slice -}}
+{{- range where .Site.RegularPages "Type" "not in" (slice "page" "json" "nosearch") -}}
+  {{- $.Scratch.Add "index" (dict "url" .Permalink "title" .Title "text" .Plain "tags" (delimit .Params.tags ", ")) -}}
+{{- end -}}
+{"pages": {{- $.Scratch.Get"index" | jsonify -}}}
 ```
 
 Now, include the following `css` in the `<head>` of your pages:
