@@ -3,6 +3,9 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { formatDate } from '../utils/global';
 
+const divStyle = {
+  'text-align': 'right'
+};
 class PostListing extends Component {
   getPostList() {
     const { postEdges } = this.props;
@@ -39,12 +42,11 @@ class PostListing extends Component {
                 {thumbnail ? <Img fixed={thumbnail} /> : <div />}
                 <div>
                   <h2>{post.title}</h2>
-                  {!simple ? (
-                    <div className='excerpt'>
+                  {
+                    <div className='excerpt' style={divStyle}>
                       <strong>{date}</strong>
                     </div>
-                  ) : null}
-                  {!simple ? <div className='excerpt'>{post.excerpt}</div> : null}
+                  }
                 </div>
               </div>
             </Link>
