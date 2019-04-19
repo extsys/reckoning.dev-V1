@@ -10,9 +10,6 @@ categories:
 slug: 'nikola-to-hugo'
 template: post
 thumbnail: '../thumbnails/hugo.png'
-toc: false
-jupyter: false
-bokeh: false
 ---
 
 I have been using [Nikola] to build this Blog. Its a great static site

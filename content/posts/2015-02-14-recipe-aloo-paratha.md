@@ -9,9 +9,6 @@ categories:
   - 'Food'
 template: post
 thumbnail: '../thumbnails/alooparatha.jpg'
-toc: false
-jupyter: false
-bokeh: false
 ---
 
 Today, I share one of my favorite dishes - _Aloo Paratha_. It is a dish

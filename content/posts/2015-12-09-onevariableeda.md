@@ -11,9 +11,7 @@ categories:
   - 'DataScience'
 template: post
 thumbnail: '../thumbnails/notebook.png'
-toc: false
 jupyter: true
-bokeh: false
 ---
 
 In this post, we will learn about EDA of single variables using simple plots like [histograms], [frequency plots] and [box plots].

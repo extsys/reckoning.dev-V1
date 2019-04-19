@@ -9,8 +9,6 @@ categories:
 slug: 'interactive-data-visuals'
 template: post
 thumbnail: '../thumbnails/bokeh.png'
-toc: false
-jupyter: false
 bokeh: true
 ---
 

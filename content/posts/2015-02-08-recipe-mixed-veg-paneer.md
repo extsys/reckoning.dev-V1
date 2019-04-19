@@ -9,9 +9,6 @@ categories:
   - 'Food'
 template: post
 thumbnail: '../thumbnails/paneer.jpg'
-toc: false
-jupyter: false
-bokeh: false
 ---
 
 I am quite found of _Paneer_. However, cooking it can be a hassle.

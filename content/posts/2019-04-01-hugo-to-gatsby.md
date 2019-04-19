@@ -9,9 +9,6 @@ categories:
 slug: hugo-to-gatsby
 template: post
 thumbnail: '../thumbnails/gatsby.png'
-toc: false
-jupyter: false
-bokeh: false
 ---
 
 I started this blog using [pelican](https://blog.getpelican.com/) in 2014. Since then, I moved to [Nikola](https://getnikola.com/), and then to [Hugo](https://gohugo.io/). I covered my move from Nikola to Hugo in [a post](/nikola-to-hugo) back in 2017. The main reason for these moves have been my constant quest for learning something new and making this platform simple and aesthetically pleasing. Lately, I have been learning a lot about javascript and react in particular. Naturally, my next question was, could I use react in my blog as well? And that brought me to - [Gatsby](https://www.gatsbyjs.org/)!

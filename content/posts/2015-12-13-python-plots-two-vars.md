@@ -11,9 +11,7 @@ categories:
   - 'DataScience'
 template: post
 thumbnail: '../thumbnails/notebook.png'
-toc: false
 jupyter: true
-bokeh: false
 ---
 
 In this section, we will be re-using the data from the previous post based on Pseudo

@@ -9,9 +9,6 @@ categories:
   - 'Food'
 template: post
 thumbnail: '../thumbnails/palak.jpg'
-toc: false
-jupyter: false
-bokeh: false
 ---
 
 Last month or so has been all silent here. No puzzles, no math, no

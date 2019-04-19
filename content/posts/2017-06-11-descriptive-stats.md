@@ -9,9 +9,6 @@ categories:
   - 'DataScience'
 template: post
 thumbnail: '../thumbnails/stats.png'
-toc: false
-jupyter: false
-bokeh: false
 ---
 
 One of the first tasks involved in any data science project is to get to

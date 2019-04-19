@@ -11,9 +11,6 @@ categories:
   - 'Computers'
 template: post
 thumbnail: '../thumbnails/arch.png'
-toc: true
-jupyter: false
-bokeh: false
 ---
 
 You must be thinking - yet another installation guide! There is no

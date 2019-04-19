@@ -11,9 +11,6 @@ categories:
 slug: autoencoders
 template: post
 thumbnail: '../thumbnails/keras.jpg'
-toc: false
-jupyter: false
-bokeh: false
 ---
 
 Usually in a conventional neural network, one tries to predict a target vector

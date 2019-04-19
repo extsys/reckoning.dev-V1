@@ -11,9 +11,6 @@ categories:
 slug: tree-based-models
 template: post
 thumbnail: '../thumbnails/tree.png'
-toc: false
-jupyter: false
-bokeh: false
 ---
 
 Tree based learning algorithms are quite [common in data science competitions](https://www.datasciencecentral.com/profiles/blogs/want-to-win-at-kaggle-pay-attention-to-your-ensembles).

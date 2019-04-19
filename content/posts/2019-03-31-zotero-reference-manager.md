@@ -10,9 +10,6 @@ categories:
 slug: zotero-reference-manager
 template: post
 thumbnail: '../thumbnails/zotero.png'
-toc: false
-jupyter: false
-bokeh: false
 ---
 
 As a researcher, I have to keep myself up-to-date with latest research in my field. Given the pace with which deep learning research is moving currently, it has become quite a gargantuan task lately. Large quantity also brings a lot of noise with it. While, whether certain works should really be published is a matter of discussion for another day! As a researcher it has become quite impossible to read each and every one of papers that show up on [Arxiv](https://arxiv.org/) in the my field of deep learning, computer vision and pattern recognition.

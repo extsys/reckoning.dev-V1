@@ -10,9 +10,6 @@ categories:
   - 'Popular'
 template: post
 thumbnail: '../thumbnails/fibonacci.png'
-toc: false
-jupyter: false
-bokeh: false
 ---
 
 The world of computers is moving fast. While going through some

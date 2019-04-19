@@ -9,9 +9,6 @@ categories:
   - 'Food'
 template: post
 thumbnail: '../thumbnails/tilapia.jpg'
-toc: false
-jupyter: false
-bokeh: false
 ---
 
 Typically, hunger and laziness come to me as inseparable couples. To

@@ -12,8 +12,6 @@ categories:
 template: post
 thumbnail: '../thumbnails/plasma5.png'
 toc: true
-jupyter: false
-bokeh: false
 ---
 
 > Please see [my latest post](/complete-setup-arch-gnome) on installing Arch linux with Gnome 3 for an upto date version of this guide.

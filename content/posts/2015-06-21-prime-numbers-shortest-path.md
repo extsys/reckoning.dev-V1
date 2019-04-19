@@ -9,9 +9,6 @@ categories:
   - 'Puzzles'
 template: post
 thumbnail: '../thumbnails/puzzle.png'
-toc: false
-jupyter: false
-bokeh: false
 ---
 
 Here are two math puzzles, solve, comment and enjoy the discussion!

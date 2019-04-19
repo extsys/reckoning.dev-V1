@@ -8,9 +8,6 @@ categories:
   - 'Computers'
 template: post
 thumbnail: '../thumbnails/sublime.png'
-toc: false
-jupyter: false
-bokeh: false
 ---
 
 I have been using [Sublime text](https://www.sublimetext.com/) as my primary editor for some time

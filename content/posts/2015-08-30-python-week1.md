@@ -9,9 +9,7 @@ categories:
   - 'Tutorials'
 template: post
 thumbnail: '../thumbnails/python.png'
-toc: false
 jupyter: true
-bokeh: false
 ---
 
 [Python](https://docs.python.org/3/library/index.html) is a widely used general-purpose, high-level programming language. Due to its focus on readability, wide-spread popularity and existence of a plethora of libraries (also called modules), it is one of the most preferred programming languages for scientists and engineers.

@@ -49,28 +49,28 @@ class PostTemplate extends Component {
       <Layout>
         <Helmet>
           <title>{`${post.title} – ${config.siteTitle}`}</title>
-          {post.bokeh == true && (
+          {post.bokeh === true && (
             <link
               href='//cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.1/bokeh.min.css'
               rel='stylesheet'
               type='text/css'
             />
           )}
-          {post.bokeh == true && (
+          {post.bokeh === true && (
             <link
               href='//cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.1/bokeh-widgets.min.css'
               rel='stylesheet'
               type='text/css'
             />
           )}
-          {post.bokeh == true && (
+          {post.bokeh === true && (
             <link
               href='//cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.1/bokeh-tables.min.css'
               rel='stylesheet'
               type='text/css'
             />
           )}
-          {post.jupyter == true && <link href='/jupyter.css' rel='stylesheet' type='text/css' />}
+          {post.jupyter === true && <link href='/jupyter.css' rel='stylesheet' type='text/css' />}
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <article className='single container'>
@@ -91,7 +91,7 @@ class PostTemplate extends Component {
               <PostTags tags={post.tags} />
             </div>
           </header>
-          {post.toc == true && (
+          {post.toc === true && (
             <div className='post' dangerouslySetInnerHTML={{ __html: postNode.tableOfContents }} />
           )}
           <div className='post' dangerouslySetInnerHTML={{ __html: postNode.html }} />

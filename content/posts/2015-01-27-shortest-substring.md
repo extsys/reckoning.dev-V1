@@ -9,9 +9,6 @@ categories:
   - 'Algorithms'
 template: post
 thumbnail: '../thumbnails/programming.png'
-toc: false
-jupyter: false
-bokeh: false
 ---
 
 Given an alphanumeric string, find the shortest substring that occurs
