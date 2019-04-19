@@ -42,11 +42,16 @@ class PostListing extends Component {
                 {thumbnail ? <Img fixed={thumbnail} /> : <div />}
                 <div>
                   <h2>{post.title}</h2>
-                  {
+                  {simple ? (
                     <div className='excerpt' style={divStyle}>
                       <strong>{date}</strong>
                     </div>
-                  }
+                  ) : (
+                    <div className='excerpt'>
+                      <strong>{date}</strong>
+                    </div>
+                  )}
+                  {!simple ? <div className='excerpt'>{post.excerpt}</div> : null}
                 </div>
               </div>
             </Link>
