@@ -4,8 +4,6 @@ const moment = require('moment');
 const siteConfig = require('./data/SiteConfig');
 const _ = require(`lodash`);
 
-const postNodes = [];
-
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   let slug;
@@ -38,8 +36,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
           name: 'date',
           value: date.toISOString()
         });
-
-        postNodes.push(node);
       }
     }
     createNodeField({ node, name: 'slug', value: slug });
