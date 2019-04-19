@@ -40,7 +40,7 @@ $dark-border: darken($background, 3%);
     }
   }
 
-  :not(pre)>code {
+  :not(pre) > code {
     background: rgba(255, 255, 255, 0.1);
     color: $foreground;
   }
@@ -114,7 +114,6 @@ $dark-border: darken($background, 3%);
 
     a {
       .each {
-
         h2 {
           color: #ccc;
         }
@@ -232,7 +231,8 @@ $dark-border: darken($background, 3%);
     &:hover {
       border: 2px solid #888;
     }
-    &:active, &:focus {
+    &:active,
+    &:focus {
       border: 2px solid $primary-color;
     }
   }
@@ -279,17 +279,17 @@ $dark-border: darken($background, 3%);
     }
   }
 
-  a.patreon-button {
+  a.link-button {
     background: transparent !important;
-    border: 2px solid #e85b46;
-    color: #e85b46;
+    border: 2px solid rgb(51, 153, 102);
+    color: rgb(51, 153, 102);
 
     &:hover,
     &:focus,
     &:active {
-      border: 2px solid lighten(#e85b46, 15%);
+      border: 2px solid lighten(rgb(51, 153, 102), 15%);
       background: transparent;
-      color: lighten(#e85b46, 15%);
+      color: lighten(rgb(51, 153, 102), 15%);
     }
   }
 

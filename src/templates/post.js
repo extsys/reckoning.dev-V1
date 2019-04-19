@@ -105,16 +105,16 @@ class PostTemplate extends Component {
                 padding: 0
               }}
             >
-              <div className='None'>
+              <div>
                 {prev && (
-                  <Link to={prev.fields.slug} className='donate-button' rel='prev'>
+                  <Link to={prev.fields.slug} className='link-button' rel='prev'>
                     ← Prev
                   </Link>
                 )}
               </div>
               <div>
                 {next && (
-                  <Link to={next.fields.slug} className='donate-button' rel='next'>
+                  <Link to={next.fields.slug} className='link-button' rel='next'>
                     Next →
                   </Link>
                 )}
