@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'gatsby';
 import folder from '../images/folder.svg';
+import github from '../images/github.svg';
 import sun from '../images/sun.svg';
 import moon from '../images/moon.svg';
 import ThemeContext from '../context/ThemeContext';
@@ -48,7 +49,7 @@ class Navigation extends Component {
                   </Link>
                 ))}
                 <a target='_blank' href='https://github.com/sadanand-singh'>
-                  GitHub
+                  <img src={github} className='favicon' />
                 </a>
                 <div className='cta'>
                   <button className='dark-switcher' onClick={theme.toggleDark}>
