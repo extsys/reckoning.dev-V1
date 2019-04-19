@@ -16,6 +16,8 @@ class PostTemplate extends Component {
     const { slug } = this.props.pageContext;
     const postNode = this.props.data.markdownRemark;
     const post = postNode.frontmatter;
+    const prev = this.props.pageContext.prev;
+    const next = this.props.pageContext.next;
 
     let thumbnail;
 
@@ -104,18 +106,18 @@ class PostTemplate extends Component {
               }}
             >
               <div className='None'>
-                {
-                  <Link to={postNode.fields.nextSlug} className='donate-button' rel='prev'>
+                {prev && (
+                  <Link to={prev.fields.slug} className='donate-button' rel='prev'>
                     ← Prev
                   </Link>
-                }
+                )}
               </div>
               <div>
-                {
-                  <Link to={postNode.fields.prevSlug} className='donate-button' rel='next'>
+                {next && (
+                  <Link to={next.fields.slug} className='donate-button' rel='next'>
                     Next →
                   </Link>
-                }
+                )}
               </div>
             </div>
             <br />
@@ -167,10 +169,6 @@ export const pageQuery = graphql`
         template
       }
       fields {
-        nextTitle
-        nextSlug
-        prevTitle
-        prevSlug
         slug
         date
       }

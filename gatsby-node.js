@@ -2,52 +2,9 @@ const path = require('path');
 const kebabCase = require('lodash.kebabcase');
 const moment = require('moment');
 const siteConfig = require('./data/SiteConfig');
+const _ = require(`lodash`);
 
 const postNodes = [];
-
-function addSiblingNodes(createNodeField) {
-  postNodes.sort(({ frontmatter: { date: date1 } }, { frontmatter: { date: date2 } }) => {
-    const dateA = moment(date1, siteConfig.dateFromFormat);
-    const dateB = moment(date2, siteConfig.dateFromFormat);
-
-    if (dateA.isBefore(dateB)) return 1;
-    if (dateB.isBefore(dateA)) return -1;
-
-    return 0;
-  });
-
-  for (let i = 0; i < postNodes.length; i += 1) {
-    const nextID = i + 1 < postNodes.length ? i + 1 : 0;
-    const prevID = i - 1 >= 0 ? i - 1 : postNodes.length - 1;
-    const currNode = postNodes[i];
-    const nextNode = postNodes[nextID];
-    const prevNode = postNodes[prevID];
-
-    createNodeField({
-      node: currNode,
-      name: 'nextTitle',
-      value: nextNode.frontmatter.title
-    });
-
-    createNodeField({
-      node: currNode,
-      name: 'nextSlug',
-      value: nextNode.fields.slug
-    });
-
-    createNodeField({
-      node: currNode,
-      name: 'prevTitle',
-      value: prevNode.frontmatter.title
-    });
-
-    createNodeField({
-      node: currNode,
-      name: 'prevSlug',
-      value: prevNode.fields.slug
-    });
-  }
-}
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
@@ -89,14 +46,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 };
 
-exports.setFieldsOnGraphQLNodeType = ({ type, actions }) => {
-  const { name } = type;
-  const { createNodeField } = actions;
-  if (name === 'MarkdownRemark') {
-    addSiblingNodes(createNodeField);
-  }
-};
-
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;
 
@@ -110,7 +59,10 @@ exports.createPages = ({ graphql, actions }) => {
       graphql(
         `
           {
-            allMarkdownRemark {
+            allMarkdownRemark(
+              sort: { order: DESC, fields: [frontmatter___date, fields___slug] }
+              limit: 10000
+            ) {
               edges {
                 node {
                   frontmatter {
@@ -138,6 +90,30 @@ exports.createPages = ({ graphql, actions }) => {
         const tagSet = new Set();
         const categorySet = new Set();
 
+        const blogPosts = _.filter(result.data.allMarkdownRemark.edges, edge => {
+          if (edge.node.frontmatter.template === 'post') {
+            return edge;
+          }
+          return undefined;
+        });
+
+        // Create blog-post pages.
+        blogPosts.forEach((edge, index) => {
+          let next = index === 0 ? null : blogPosts[index - 1].node;
+
+          const prev = index === blogPosts.length - 1 ? null : blogPosts[index + 1].node;
+
+          createPage({
+            path: edge.node.fields.slug,
+            component: postPage,
+            context: {
+              slug: edge.node.fields.slug,
+              prev,
+              next
+            }
+          });
+        });
+
         result.data.allMarkdownRemark.edges.forEach(edge => {
           if (edge.node.frontmatter.tags) {
             edge.node.frontmatter.tags.forEach(tag => {
@@ -148,16 +124,6 @@ exports.createPages = ({ graphql, actions }) => {
           if (edge.node.frontmatter.categories) {
             edge.node.frontmatter.categories.forEach(category => {
               categorySet.add(category);
-            });
-          }
-
-          if (edge.node.frontmatter.template === 'post') {
-            createPage({
-              path: edge.node.fields.slug,
-              component: postPage,
-              context: {
-                slug: edge.node.fields.slug
-              }
             });
           }
 
