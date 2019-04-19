@@ -31,7 +31,6 @@ table {
 }
 
 @include small-breakpoint {
-
   p,
   ol,
   ul,
@@ -108,7 +107,6 @@ h5 {
 }
 
 @include small-breakpoint {
-
   h1,
   h2,
   h3,
@@ -166,7 +164,7 @@ ul {
     list-style-type: none;
     margin-bottom: 0.3rem;
     padding-left: 1.5rem;
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
 }
 
@@ -195,7 +193,6 @@ a {
 .post,
 .page {
   a:not(.button):not(.anchor):not(.gatsby-resp-image-link) {
-
     &:hover,
     &:active,
     &:focus {
