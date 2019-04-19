@@ -20,12 +20,12 @@ const projects = [
   {
     title: 'Zprezto',
     source: 'https://github.com/sadanand-singh/My-Zprezto',
-    description: 'https://github.com/sadanand-singh/My-Zprezto'
+    description: 'Personal Modifications for Zprezto and zsh'
   },
   {
     title: 'Blog',
     source: 'https://github.com/sadanand-singh/datasciencevision.com',
-    description: 'This blog in gatsby using theme from https://www.taniarascia.com/.'
+    description: 'Source code for this blog in gatsbyJS!'
   }
 ];
 
