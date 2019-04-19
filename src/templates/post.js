@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Layout from '../layout';
 import UserInfo from '../components/UserInfo';
 import PostTags from '../components/PostTags';
@@ -94,6 +94,33 @@ class PostTemplate extends Component {
           )}
           <div className='post' dangerouslySetInnerHTML={{ __html: postNode.html }} />
           <div>
+            <div
+              style={{
+                display: `flex`,
+                flexWrap: `wrap`,
+                justifyContent: `space-between`,
+                listStyle: `none`,
+                padding: 0
+              }}
+            >
+              <div className='None'>
+                {
+                  <Link to={postNode.fields.nextSlug} className='donate-button' rel='prev'>
+                    ← Prev
+                  </Link>
+                }
+              </div>
+              <div>
+                {
+                  <Link to={postNode.fields.prevSlug} className='donate-button' rel='next'>
+                    Next →
+                  </Link>
+                }
+              </div>
+            </div>
+            <br />
+          </div>
+          <div>
             {' '}
             <a href={twitterShare}>Share on Twitter</a> |{' '}
             <a href={twitterUrl}>Discuss on Twitter</a> |{' '}
@@ -140,6 +167,10 @@ export const pageQuery = graphql`
         template
       }
       fields {
+        nextTitle
+        nextSlug
+        prevTitle
+        prevSlug
         slug
         date
       }

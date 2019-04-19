@@ -81,10 +81,11 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
           name: 'date',
           value: date.toISOString()
         });
+
+        postNodes.push(node);
       }
     }
     createNodeField({ node, name: 'slug', value: slug });
-    postNodes.push(node);
   }
 };
 
