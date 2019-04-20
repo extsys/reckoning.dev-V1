@@ -281,15 +281,15 @@ $dark-border: darken($background, 3%);
 
   a.link-button {
     background: transparent !important;
-    border: 2px solid rgb(51, 153, 102);
-    color: rgb(51, 153, 102);
+    border: 2px solid rgb(127, 140, 141);
+    color: rgb(127, 140, 141);
 
     &:hover,
     &:focus,
     &:active {
-      border: 2px solid lighten(rgb(51, 153, 102), 15%);
+      border: 2px solid lighten(rgb(127, 140, 141), 15%);
       background: transparent;
-      color: lighten(rgb(51, 153, 102), 15%);
+      color: lighten(rgb(127, 140, 141), 15%);
     }
   }
 

@@ -96,16 +96,16 @@ a.link-button {
   display: inline-flex;
   align-items: center;
   border-radius: $border-radius;
-  border: 2px solid rgb(51, 153, 102);
-  background: lighten(rgb(51, 153, 102), 32%);
+  border: 2px solid rgb(127, 140, 141);
+  background: lighten(rgb(127, 140, 141), 32%);
   padding: 0.75rem 1rem;
   color: #333;
 
   &:hover,
   &:focus,
   &:active {
-    background: lighten(rgb(51, 153, 102), 26%);
-    border: 2px solid darken(rgb(51, 153, 102), 10%);
+    background: lighten(rgb(127, 140, 141), 26%);
+    border: 2px solid darken(rgb(127, 140, 141), 10%);
     color: #111;
   }
 }
