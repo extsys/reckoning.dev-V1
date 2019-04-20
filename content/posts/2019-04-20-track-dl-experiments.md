@@ -30,7 +30,36 @@ also want to divide our data into training and testing sets. For this problem, I
 in the testing data set. I use the following python code to achieve this:
 
 ```python
+import glob
+import random
+from PIL import Image
 
+cats = glob.glob('/home/sadanand/Downloads/PetImages/Cat/*.*')
+random.shuffle(cats)
+
+dogs = glob.glob('/home/sadanand/Downloads/PetImages/Dog/*.*')
+random.shuffle(dogs)
+
+train_cats, test_cats = cats[:10000], cats[10000:]
+train_dogs, test_dogs = dogs[:10000], dogs[10000:]
+
+def write_data(data, mode, animal):
+    for d in data:
+        d_fname_base = d.split('/')[-1].split('.')[0]
+        d_fname = f'/data/data/cats-and-dogs/{mode}/{animal}/{d_fname_base}.png'
+        try:
+            im = Image.open(d)
+        except IOError:
+            print(f'skipping image {d}')
+            continue
+        rgb_im = im.convert('RGB')
+        rgb_im.save(d_fname)
+
+write_data(train_cats, 'train', 'cat')
+write_data(test_cats, 'test', 'cat')
+
+write_data(train_dogs, 'train', 'dog')
+write_data(test_dogs, 'test', 'dog')
 ```
 
 Now that we have the data, We can take a look into the code format that I use for training
@@ -39,9 +68,40 @@ code new research ideas pretty quickly. However, it lacks any high level API lik
 [Keras](https://keras.io/). I use this pretty handy template to code my models, which I started from
 [this github repository](https://github.com/victoresque/pytorch-template). The main idea in this
 template is about segregating logic for models, data loaders, training process and its different
-components.
+components. You can clone my code from [this github repository][cats-dogs-github]. This repository
+also has an "mnist" branch to get you started quickly. The file structure of the codebase is as follows:
+
+```terminal
+.
+├── LICENSE
+├── README.md
+├── base
+│   ├── __init__.py
+│   ├── base_data_loader.py
+│   ├── base_model.py
+│   └── base_trainer.py
+├── config.json
+├── data
+├── data_loader
+│   └── data_loaders.py
+├── model
+│   ├── loss.py
+│   ├── metric.py
+│   └── model.py
+├── saved
+├── test.py
+├── train.py
+├── trainer
+│   ├── __init__.py
+│   └── trainer.py
+└── utils
+    ├── __init__.py
+    ├── logger.py
+    └── util.py
+```
 
 [comet]: https://www.comet.ml/
+[cats-dogs-github]: https://github.com/sadanand-singh/comet-cats-and-dogs
 
 The original codebase for this template uses tensorboard to log experiments. However, I find
 tensorboard to be very rudimentary for the purpose of tracking of experiments. During my search
@@ -51,7 +111,7 @@ I fell in love with this instantly! It has some interesting features:
 - Tracking of code, git sha key (if run from a git repository)
 - Tracking of hyperparameters / config file
 - Graph definition visualization per experiment
-- A tabular view Metrics
+- Tabular view of metrics
 - Plots of metrics and losses in both training and testing modes
 - comparison of two experiments
 - grouping experiments across projects
@@ -70,8 +130,18 @@ api_key=YOUR-API-KEY
 ```
 
 If you use my codebase as a starting point, now you should get automatic comet tracking for your
-experiments, as long as you have `comet: true` in your settings file. The experiment is saved under
-the project named based on the `name` parameter in your settings.
+experiments, as long as you have `comet: true` in your `config.json` file. The experiment is saved under
+the project named based on the `name` parameter in your `config.json`.
 
-Coming back to the problem of cats vs fogs problem, I did following set of experiments to compare
-them in comet:
+[vgg]: https://arxiv.org/abs/1409.1556
+
+Coming back to the problem of cats vs dogs problem, I explored the problem using transfer
+learning. Specifically, I have used an imagenet pretrained [VGG16 model with Batch Norm][vgg]
+(which available in the `torchvision.models` module).
+
+I performed the following set of experiments to compare them in comet:
+
+- Use features from pretrained VGG16-BN model and train two new fully connected layers.
+- Same as above with higher learning rate.
+- Same as above with Adam optimizer (with different learning rates).
+- Find best model among above and retrain the last conv block of the original VGG16 model.
