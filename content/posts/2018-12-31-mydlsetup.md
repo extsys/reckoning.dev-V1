@@ -4,7 +4,7 @@ date: 2018-12-31
 tags:
   - 'Linux'
   - 'Python'
-  - 'Deep Learning'
+  - 'DeepLearning'
 categories:
   - 'Computers'
 slug: 'mydlsetup'
