@@ -12,7 +12,7 @@ template: post
 thumbnail: '../thumbnails/celeb.png'
 ---
 
-If you follow deep learning even lightly, likely you would have came across
+If you follow deep learning even lightly, likely you would have come across
 [generative adversarial networks][gan], widely known as GANs. In this article, We will explore
 different tricks to achieve better and faster training of such models in [Pytorch][pytorch].
 
