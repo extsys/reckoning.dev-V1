@@ -49,7 +49,7 @@ visualizations are easier when they are interactive!
 
 <!--TOC-->
 
-# Python Libraries
+## Python Libraries
 
 Although there are few libraries in python that can help us make interactive
 plots, I find [bokeh] and [holoviews] to be the only ones that can cover most
@@ -68,7 +68,8 @@ provide high level APIs for making plots. All of these interactive plots can
 be viewed in a browser and are aided by corresponding bokeh javascript and css
 files.
 
-###Embedding bokeh Plots in Web Pages
+### Embedding bokeh Plots in Web Pages
+
 In order to incorporate bokeh figures in a web page, you will first need to include following
 `css` and `js` files in your page:
 
@@ -148,7 +149,7 @@ There will be one `<div>` for each of your plots and they should be placed at
 where you want your plot to appear. The `<script>` section should be placed
 in a typical place - the bottom of the `<body>` section for late loading.
 
-# Examples
+## Examples
 
 Bokeh has built-in support for various types of interactions (like pan, wheel
 zoom, box zoom, reset and save etc.) on all plots. Additionally, all of such
@@ -450,7 +451,7 @@ You can choose the Day of Week in the Selection dropdown menu at the top and
 see how the plot updates itself. For this example, I have restricted to
 showing only 50 entries for each day to keep the `js` file small.
 
-# High level bokeh plots using holoviews Library
+## High level bokeh plots using holoviews Library
 
 By now you might have noticed, bokeh provides only low level APIs for
 plotting. Theoretically this enables to us plot any kind of complex plots.

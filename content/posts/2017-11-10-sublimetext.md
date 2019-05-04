@@ -16,7 +16,7 @@ shortcut keys and themes.
 
 > **UPDATE**: This post has been updated with my latest sublime settings.
 
-# Packages
+## Packages
 
 First thing you will need to install is the [Package
 Control](https://packagecontrol.io). This can be easily done by
@@ -299,7 +299,7 @@ We can take advantage of them by using the Markdown Editing package and modifyin
 }
 ```
 
-# Shortcut Keys
+## Shortcut Keys
 
 Here is a summary of my key map:
 
@@ -342,7 +342,7 @@ Here is a summary of my key map:
 ]
 ```
 
-# Theme and Color Scheme
+## Theme and Color Scheme
 
 I like a simple and clean UI for my editors. [guna] provides the perfect minimal theme that is
 adaptive to any color scheme you prefer. I prefer color schemes from the [agila theme].
@@ -351,7 +351,7 @@ The settings related to this can be found in my settings below.
 [guna]: https://packagecontrol.io/packages/Guna
 [agila theme]: https://github.com/arvi/Agila-Theme
 
-# User Settings / Preferences
+## User Settings / Preferences
 
 Here is my complete set of settings for Sublime Text. Please feel free
 to leave comments below for any questions or suggestions.

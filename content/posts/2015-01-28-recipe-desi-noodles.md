@@ -24,7 +24,7 @@ less than 12 minutes ( 4 Minutes Preparation + 8 Minutes Cooking).
 
 ![Raw Materials](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963332/desiNoodles_s0ez5g.jpg)
 
-# Ingredients
+## Ingredients
 
 - 300 g Vermicelli _Seviyan_
 - 1 cup Peas
@@ -40,31 +40,31 @@ less than 12 minutes ( 4 Minutes Preparation + 8 Minutes Cooking).
 - Salt to taste
 - 1/2 cup Peanuts _optional_
 
-# Preparation
+## Preparation
 
-1.  Wash the leaves thoroughly in running water and chop them (about 1
-    inch cuts).
-2.  Heat a deep pan on Medium for about 1 minute and then pour olive oil
-    into it.
-3.  After about 30 seconds, Add mustard seeds and cumin seeds after
-    another 30 seconds.
-4.  Once Seeds start to pop, add garlic and cut onions.
-5.  Fry the onions until oil starts to separate (about 1-2 minutes)
-6.  Add spices, curry leaves, peas and tomatoes.
-7.  After about a minute, add noodles.
-8.  After another minute or so, add salt, and keep stirring
-    occasionally.
-9.  Once the noodles have become light golden brown in color, add 1/2
-    cup of water (about 2-3 minutes).
-10. Keep stirring, so that noodles do not stick with each other, for
-    about another 2 minutes
+1. Wash the leaves thoroughly in running water and chop them (about 1
+   inch cuts).
+2. Heat a deep pan on Medium for about 1 minute and then pour olive oil
+   into it.
+3. After about 30 seconds, Add mustard seeds and cumin seeds after
+   another 30 seconds.
+4. Once Seeds start to pop, add garlic and cut onions.
+5. Fry the onions until oil starts to separate (about 1-2 minutes)
+6. Add spices, curry leaves, peas and tomatoes.
+7. After about a minute, add noodles.
+8. After another minute or so, add salt, and keep stirring
+   occasionally.
+9. Once the noodles have become light golden brown in color, add 1/2
+   cup of water (about 2-3 minutes).
+   10.Keep stirring, so that noodles do not stick with each other, for
+   about another 2 minutes
 
 Let it cool before serving. You can use some ketchup or sauce with it.
 I like adding peanuts to it while frying onions.
 
 ![My Creation Before Entering My Tummy](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963332/desiNoodles_final_tqeyey.jpg)
 
-# Interesting Facts
+## Interesting Facts
 
 - The sweet dish _seviyan_ made out of this is also known as _shemai_
   in Bengali, _sev_ in Gujarati, _shavige_ in Kannada, _sevalu_ or

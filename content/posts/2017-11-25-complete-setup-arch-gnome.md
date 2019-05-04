@@ -36,7 +36,7 @@ environment. Our setup will also involve encryption of the root partition that w
 [gnome3]: https://www.gnome.org/gnome-3/
 [btrfs]: https://en.wikipedia.org/wiki/Btrfs
 
-# System Details
+## System Details
 
 For reference, my installation system is a slightly upgraded form of
 [my original desktop](/my-desktop):
@@ -53,7 +53,7 @@ For reference, my installation system is a slightly upgraded form of
 - Samsung U28E590D 28-Inch UHD LED-Lit 4K Monitor
 - Nvidia GeForce GTX 1080 Ti GPU
 
-# Base Installation
+## Base Installation
 
 Before beginning this guide, I would assume that you have a bootable USB of the latest Arch Linux
 Installer. If not, please follow the
@@ -530,7 +530,7 @@ options ro cryptdevice=UUID=:luks- root=UUID= rootfstype=btrfs rootflags=subvol=
 mkinitcpio -p linux
 ```
 
-# First Boot Installations
+## First Boot Installations
 
 Now we are ready for the first boot! Run the following command:
 
@@ -637,7 +637,7 @@ systemctl reboot
 Once, we boot into the new system, we should have a basic gnome 3 desktop waiting for you. In the
 following section, we will be do installation and modifications to the system that I prefer.
 
-# Post Installation Setup
+## Post Installation Setup
 
 After rebooting, you should get the gdm login screen. Use your username and password to login.
 This should give you a vanilla gnome 3 screen. We will first install few essentials, then modify

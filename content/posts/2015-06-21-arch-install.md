@@ -38,7 +38,7 @@ I will cover this in two parts. First in this post, I will install the
 base system. Then, in a follow up post, I will discuss details of
 setting up final working Plasma 5 desktop.
 
-# Initial Setup
+## Initial Setup
 
 Download the latest iso from Arch website and create the uefi usb
 installation media. I used my mac to do this on terminal:
@@ -71,7 +71,7 @@ This should give you a list of set UEFI variables. Please look at the
 [Begineers' Guide](https://wiki.archlinux.org/index.php/Beginners%27_guide) in case
 you do not get any list of UEFI variables.
 
-## Ethernet/Wifi
+### Ethernet/Wifi
 
 Ethernet should have started by default on your machine. If you do not
 plan to use wifi during installation, you can skip to the next section.
@@ -90,7 +90,7 @@ this installation session.
 This will also create a file at _/etc/netctl/_. We will use this file
 later to enable wifi at the first session after installation.
 
-## System Updates
+### System Updates
 
 For editing different configurations, I tend to use _vim_. So we will
 update our package cache and install vim.
@@ -100,7 +100,7 @@ pacman -Syy
 pacman -S vim
 ```
 
-## Hard Drives
+### Hard Drives
 
 In my desktop, I have three hard drives, one 256 GB solid state drive
 (SDD), one 1 TB HDD and another 3TB HDD. I set up my drives as follows:
@@ -219,7 +219,7 @@ mkdir -p /mnt/boot
 mount -o $EFI_MOUNTS /dev/sda1 /mnt/boot
 ```
 
-# Base Installation
+### Base Installation
 
 Now, we will do the actually installation of base packages.
 
@@ -243,7 +243,7 @@ Finally bind root for installation.
 arch-chroot /mnt /bin/bash
 ```
 
-## Basic Setup
+### Basic Setup
 
 Here are some basic commands you need to run to get the installation
 started.
@@ -284,7 +284,7 @@ vim /etc/hosts
 ...
 ```
 
-## Bootloader Setup
+### Bootloader Setup
 
 _systemd-boot_, previously called _gummiboot_, is a simple UEFI boot manager
 which executes configured EFI images. The default entry is selected by a
@@ -332,7 +332,7 @@ options root=UUID=$UUID rw rootfstype=btrfs rootflags=subvol=ROOT
 
 > Please note that you will to need manually run `bootctl` command every time `systemd-boot` gets updated.
 
-## Network Setup
+### Network Setup
 
 First setup hostname using _systemd_:
 
@@ -441,7 +441,7 @@ systemctl enable systemd-networkd.service
 
 Your network should be ready for first use!
 
-## First Boot
+### First Boot
 
 Now we are ready for the first boot! Run the following command:
 

@@ -37,7 +37,7 @@ involves producing multiple trees that are combined to yield a single
 consensus prediction and often resulting in dramatic improvements in
 prediction accuracy.
 
-# Decision Trees
+## Decision Trees
 
 Decision tree is a supervised learning algorithm. It works for both
 categorical and continuous input (features) and output (predicted)
@@ -54,11 +54,11 @@ Let us first understand decision trees by an example. We will then analyze the p
 Classification and Regression Trees or [CART](https://en.wikipedia.org/wiki/Predictive_analytics#Classification_and_regression_trees_.28CART.29) for short is a term introduced by [Leo Breiman](https://en.wikipedia.org/wiki/Leo_Breiman) to refer to Decision Tree algorithms that can used for classification or regression predictive modeling problems. CART is one of the most common algorithms used for generating decision trees.
 It is used in the scikit-learn implementation of decision trees - [sklearn.tree.DecisionTreeClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html) and [sklearn.tree.DecisionTreeRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html) for classification and regression, respectively.
 
-# CART Model
+## CART Model
 
 CART model involves selecting input variables and split points on those variables until a suitable tree is constructed. The selection of which input variable to use and the specific split or cut-point is chosen using a greedy algorithm to minimize a cost function. Tree construction ends using a predefined stopping criterion, such as a minimum number of training instances assigned to each leaf node of the tree.
 
-###Other Decision Tree Algorithms
+### Other Decision Tree Algorithms
 
 - [ID3](https://en.wikipedia.org/wiki/ID3_algorithm) Iterative Dichotomiser 3
 - [C4.5](https://en.wikipedia.org/wiki/C4.5_algorithm) successor of ID3
@@ -140,7 +140,7 @@ $S = -\sum_{k=1}^{K} \hat{p}_{mk} \log\big(\hat{p}_{mk}\big)$
 
 Similar to $G$, a small value of $S$ indicates that a node contains predominantly observations from a single class.
 
-# Common Parameters/Concepts
+## Common Parameters/Concepts
 
 Now, that we understand decision tree mathematically, let us summarize
 some of the most common terms used in decision trees and tree-based
@@ -159,7 +159,7 @@ in tuning models based on these methods.
 - **Maximum number of terminal nodes** Also referred as _number of leaves_. Can be defined in place of max_depth. Since binary trees are created, a depth of $n$ would produce a maximum of $2^n$ leaves.
 - **Maximum features to consider for split** The number of features to consider (selected randomly) while searching for a best split. A typical value is the square root of total number of available features. A higher typically leads to over-fitting but is dependent on the problem as well.
 
-# Example of Classification Tree
+## Example of Classification Tree
 
 For demonstrating different tree based models, I will be using the
 [US Income dataset available at Kaggle](https://www.kaggle.com/johnolafenwa/us-census-data). You should be able to download the data from [Kaggle.com](https://www.kaggle.com/johnolafenwa/us-census-data). Let us first look at all the different features available in this data set.
@@ -594,7 +594,7 @@ plot_confusion_matrix(cfm, classes=["<=50K", ">50K"], normalize=True)
 
 With optimization, we find an increase in the prediction accuracy of both classes.
 
-# Limitations of Decision Trees
+## Limitations of Decision Trees
 
 Even though decision tree models have numerous advantages,
 
@@ -615,7 +615,7 @@ Most of these limitations can be easily overcome by using several improvements o
 
 > **Tree Pruning** <br/><br/> Since decision trees have a very high tendency to over-fit the data, a smaller tree with fewer splits (that is, fewer regions $R_1, \ldots, R_J$) might lead to lower variance and better interpretation at the cost of a little bias. One possible alternative to the process described above is to build the tree only so long as the decrease in the node impurity measure, $Q_m$ due to each split exceeds some (high) threshold. However, due to greedy nature of the splitting algorithm, it is too short-sighted since a seemingly worthless split early on in the tree might be followed by a very good split i.e., a split that leads to a large reduction in $Q_m$ later on.<br/><br/> Therefore, a better strategy is to grow a very large tree $T_0$, and then prune it back in order to obtain a subtree. There can be several strategies to pruning, Cost complexity pruning, also known as weakest link pruning in one way to do this effectively. Rather than considering every possible subtree, a sequence of trees indexed by a non-negative tuning parameter $\alpha$ is considered. For each value of $\alpha$ there corresponds a subtree $T \subset T_0$ such that $$\sum_{m=1}^{|T|}\sum_{i:x_i \in R_m}\big(y_i-\hat{y}_{R_m}\big)^2 + \alpha |T|$$ is as small as possible. Here $|T|$ indicates the number of terminal nodes of the tree $T$, $R_m$ is the rectangle (i.e. the subset of predictor space) corresponding to the $m^{th}$ terminal node, and $\hat{y}_{R_m}$ is the predicted response associated with $R_m$, i.e., the mean (or mode in the case of classification trees) of the training observations in $R_m$. <br/><br/>The tuning parameter $\alpha$ controls a trade-off between the subtree’s complexity and its fit to the training data. When $\alpha = 0$, then the subtree $T$ will simply equal $T_0$. As $\alpha$ increases, there is a price to pay for having a tree with many terminal nodes, and so the above equation will tend to be minimized for a smaller subtree. The pruning parameter $\alpha$ can be selected using some kind of cross validation. <br/><br/> Note that [sklearn.tree](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.tree) decision tree classifier (and regressor) does not currently support pruning.
 
-# Bootstrap Aggregating (Bagging)
+## Bootstrap Aggregating (Bagging)
 
 In statistics, [bootstrapping](<https://en.wikipedia.org/wiki/Bootstrapping_(statistics)>) is any test or metric that relies on [random sampling with replacement](https://en.wikipedia.org/wiki/Random_sampling_with_replacement). We saw above that decision trees suffer from high variance.
 This means that if we split the training data into two parts at random,
@@ -644,7 +644,7 @@ each predictor using the RSS (for bagging regression trees) or the [Gini index](
 
 [sklearn](https://scikit-learn.org/stable/auto_examples/ensemble/plot_forest_importances.html) module's different bagged tree-based learning methods provide direct access to feature importance data as properties once the training has finished.
 
-# Random Forest Models
+## Random Forest Models
 
 Even though bagging provides improvement over regular decision tress in terms of reduction in variance and hence improved prediction, it suffers from subtle drawbacks: **Bagging requires us to make fully grown trees on bootstrapped samples, thus increasing the computational complexity by $B$ times.** Furthermore, since trees in the base of bagging are correlated, the prediction accuracy will get saturated as a function of $B$.
 
@@ -661,7 +661,7 @@ There are three main tuning parameters of random forests:
 - **Number of Trees:** In practice, few hundreds trees is often a good choice.
 - **Number of Predictors Sampled:** Typically, if there are a total of $D$ predictors, $D/3$ predictors in the case of regression and $\sqrt{D}$ predictors in the case of classification make a good choice.
 
-# Example of Random Forest Model
+## Example of Random Forest Model
 
 Using the same income data as above, let us make a simple RandomForest classifier model with 500 trees.
 
@@ -757,7 +757,7 @@ plt.xlabel('Relative Importance')
 
 We can see the answer to be significantly different than the previous random forest model. This is a common issue with this class of models! In the next post, I will be talking about boosted tree that provide a significant improvement in terms of model consistency.
 
-# Limitations of Random Forests
+## Limitations of Random Forests
 
 Apart from generic limitations of bagged trees, some of limitations of random forests are:
 

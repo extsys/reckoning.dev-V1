@@ -36,7 +36,7 @@ and a more complete version of my previous posts on
 
 ![My Current Desktop](https://res.cloudinary.com/sadanandsingh/image/upload/v1545501807/project/plasma_install.jpg)
 
-# System Details
+## System Details
 
 For reference, my installation system is a slightly upgraded form of
 [my original desktop](/my-desktop):
@@ -53,7 +53,7 @@ For reference, my installation system is a slightly upgraded form of
 - Samsung U28E590D 28-Inch UHD LED-Lit 4K Monitor
 - Nvidia GeForce GTX 750 Ti GPU
 
-# Base Installation
+## Base Installation
 
 > I do not wish to repeat [Arch Installation Guide](https://wiki.archlinux.org/index.php/installation_guide) here. <br/> <br/> Do not forget about [Arch Wiki][a-wiki], the best documentation in the world! Most of the content in this post has been compiled from the [Arch Wiki][a-wiki].
 
@@ -78,7 +78,7 @@ mode enabled.
 To verify you have booted in UEFI mode, run:
 
 ```terminal
-$ efivar -l
+efivar -l
 ```
 
 This should give you a list of set UEFI variables. Please look at the
@@ -90,14 +90,14 @@ The very first thing that annoys me in the virtual console is how tiny
 all the fonts are. We will fix that by running the following commands:
 
 ```terminal
-$ pacman -Sy
-$ pacman -S terminus-font
-$ setfont ter-132n
+pacman -Sy
+pacman -S terminus-font
+setfont ter-132n
 ```
 
 We are all set to get started with the actual installation process.
 
-## HDDs Partitioning
+### HDDs Partitioning
 
 First find the hard drive that you will be using as the main/root disk.
 
@@ -126,7 +126,7 @@ method, but is a lot slower. **The following step should take about 20
 minutes on a 240 GB SSD.**
 
 ```terminal
-$ badblocks -c 10240 -s -w -t random -v /dev/sda
+badblocks -c 10240 -s -w -t random -v /dev/sda
 ```
 
 Next, we will create GPT partitions on all disks using _gdisk_ command.
@@ -155,33 +155,33 @@ It might now kick us out of _gdisk_, so get back into it:
 ```terminal
 $ gdisk /dev/sda
 
-$ Command (? for help): m
-$ Command (? for help): n
+Command (? for help): m
+Command (? for help): n
 
-$ Partition number (1-128, default 1):
-$ First sector (34-500118158, default = 2048) or {+-}size{KMGTP}:
-$ Last sector (2048-500118, default = 500118) or {+-}size{KMGTP}: 512M
-$ Current type is 'Linux filesystem'
-$ Hex code or GUID (L to show codes, Enter = 8300): ef00
-$ Changed type of partition to 'EFI System'
+Partition number (1-128, default 1):
+First sector (34-500118158, default = 2048) or {+-}size{KMGTP}:
+Last sector (2048-500118, default = 500118) or {+-}size{KMGTP}: 512M
+Current type is 'Linux filesystem'
+Hex code or GUID (L to show codes, Enter = 8300): ef00
+Changed type of partition to 'EFI System'
 
-$ Partition number (2-128, default 2):
-$ First sector (34-500118, default = 16779264) or {+-}size{KMGTP}:
-$ Last sector (16779264-500118, default = 500118) or {+-}size{KMGTP}:
-$ Current type is 'Linux filesystem'
-$ Hex code or GUID (L to show codes, Enter = 8300):
-$ Changed type of partition to 'Linux filesystem'
+Partition number (2-128, default 2):
+First sector (34-500118, default = 16779264) or {+-}size{KMGTP}:
+Last sector (16779264-500118, default = 500118) or {+-}size{KMGTP}:
+Current type is 'Linux filesystem'
+Hex code or GUID (L to show codes, Enter = 8300):
+Changed type of partition to 'Linux filesystem'
 
-$ Command (? for help): p
-$ Press w to write to disk
-$ Press Y to confirm
+Command (? for help): p
+Press w to write to disk
+Press Y to confirm
 ```
 
 Repeat the above procedure for _/dev/sdb_ and _/dev/sdc_, but create
 just one partition with all values as default. At the end we will have
 three partitions: _/dev/sda1_, _/dev/sda2_, _/dev/sdb1_ and _/dev/sdc1_.
 
-## Setup Disk Encryption
+### Setup Disk Encryption
 
 Our /boot partition will be on _/dev/sda1_, while the main installation
 will be on _/dev/sda2_. In this setup, we will be enabling full
@@ -203,19 +203,19 @@ $ cryptsetup --cipher aes-xts-plain64 --hash sha512 --use-random --verify-passph
 $ cryptsetup luksOpen /dev/sda2 root
 ```
 
-####Automatic Key Login from an USB/SD Card
+#### Automatic Key Login from an USB/SD Card
 
 If you want to automatically login the encrypted disk password from an externally attached USB or SD card, you will first need to create a key file.
 
 ```terminal
-$ dd bs=512 count=4 if=/dev/urandom of=KEYFILE
+dd bs=512 count=4 if=/dev/urandom of=KEYFILE
 ```
 
 Then, add this key to the luks container, so that it can be later used
 to open the encrypted drive.
 
 ```terminal
-$ cryptsetup luksAddKey /dev/sda2 KEYFILE
+cryptsetup luksAddKey /dev/sda2 KEYFILE
 ```
 
 > Note that the KEYFILE here should be kept on a separate USB drive or SD card.
@@ -245,7 +245,7 @@ $ umount /mnt
 
 We will be later using this KEYFILE in boot loader setup.
 
-## Format HDDs
+### Format HDDs
 
 At this point, we have following drives ready for format: _/dev/sda1_,
 _/dev/mapper/root_, _/dev/sdb1_ and _/dev/sdc1_.
@@ -253,66 +253,65 @@ _/dev/mapper/root_, _/dev/sdb1_ and _/dev/sdc1_.
 These can be format as follows:
 
 ```terminal
-$ mkfs.vfat -F32 /dev/sda1
-$ mkfs.btrfs -L arch /dev/mapper/root
-$ mkfs.btrfs -L data /dev/sdb1
-$ mkfs.btrfs -L media /dev/sdc1
+mkfs.vfat -F32 /dev/sda1
+mkfs.btrfs -L arch /dev/mapper/root
+mkfs.btrfs -L data /dev/sdb1
+mkfs.btrfs -L media /dev/sdc1
 ```
 
 Now, we will create _btrfs_ subvolumes and mount them properly for
 installation and final setup.
 
 ```terminal
-$ mount /dev/mapper/root /mnt
-$ btrfs subvolume create /mnt/ROOT
-$ btrfs subvolume create /mnt/home
-$ umount /mnt
+mount /dev/mapper/root /mnt
+btrfs subvolume create /mnt/ROOT
+btrfs subvolume create /mnt/home
+umount /mnt
 
-$ mount /dev/sdb1 /mnt
-$ btrfs subvolume create /mnt/data
-$ umount /mnt
+mount /dev/sdb1 /mnt
+btrfs subvolume create /mnt/data
+umount /mnt
 
-$ mount /dev/sdc1 /mnt
-$ btrfs subvolume create /mnt/media
-$ umount /mnt
+mount /dev/sdc1 /mnt
+btrfs subvolume create /mnt/media
+umount /mnt
 ```
 
 Now, once the sub-volumes have been created, we will mount them in
 appropriate locations with optimal flags.
 
 ```terminal
-$ SSD_MOUNTS="rw,noatime,nodev,compress=lzo,ssd,discard,
-    space_cache,autodefrag,inode_cache"
-$ HDD_MOUNTS="rw,nosuid,nodev,relatime,space_cache"
-$ EFI_MOUNTS="rw,noatime,discard,nodev,nosuid,noexec"
-$ mount -o $SSD_MOUNTS,subvol=ROOT /dev/mapper/root /mnt
-$ mkdir -p /mnt/home
-$ mkdir -p /mnt/data
-$ mkdir -p /mnt/media
-$ mount -o $SSD_MOUNTS,nosuid,subvol=home /dev/mapper/root /mnt/home
-$ mount -o $HDD_MOUNTS,subvol=data /dev/sdb1 /mnt/data
-$ mount -o $HDD_MOUNTS,subvol=media /dev/sdc1 /mnt/media
+SSD_MOUNTS="rw,noatime,nodev,compress=lzo,ssd,discard,space_cache,autodefrag,inode_cache"
+HDD_MOUNTS="rw,nosuid,nodev,relatime,space_cache"
+EFI_MOUNTS="rw,noatime,discard,nodev,nosuid,noexec"
+mount -o $SSD_MOUNTS,subvol=ROOT /dev/mapper/root /mnt
+mkdir -p /mnt/home
+mkdir -p /mnt/data
+mkdir -p /mnt/media
+mount -o $SSD_MOUNTS,nosuid,subvol=home /dev/mapper/root /mnt/home
+mount -o $HDD_MOUNTS,subvol=data /dev/sdb1 /mnt/data
+mount -o $HDD_MOUNTS,subvol=media /dev/sdc1 /mnt/media
 
-$ mkdir -p /mnt/boot
-$ mount -o $EFI_MOUNTS /dev/sda1 /mnt/boot
+mkdir -p /mnt/boot
+mount -o $EFI_MOUNTS /dev/sda1 /mnt/boot
 ```
 
 > Save the current <i>/etc/resolv.conf</i> file for future use!
 
 ```terminal
-$ cp /etc/resolv.conf /mnt/etc/resolv.conf
+cp /etc/resolv.conf /mnt/etc/resolv.conf
 ```
 
-## Base System Installation
+### Base System Installation
 
 Now, we will do the actually installation of base packages.
 
 ```terminal
-$ pacstrap /mnt base base-devel btrfs-progs
-$ genfstab -U -p /mnt >> /mnt/etc/fstab
+pacstrap /mnt base base-devel btrfs-progs
+genfstab -U -p /mnt >> /mnt/etc/fstab
 ```
 
-## Initial System Setup
+### Initial System Setup
 
 Edit the _/mnt/ect/fstab_ file to add following _/tmp_ mounts.
 
@@ -324,10 +323,10 @@ tmpfs /dev/shm tmpfs rw,nodev,nosuid,noexec 0 0
 Finally bind root for installation.
 
 ```terminal
-$ arch-chroot /mnt "bash"
-$ pacman -Syy
-$ pacman -Syu
-$ pacman -S sudo vim
+arch-chroot /mnt "bash"
+pacman -Syy
+pacman -Syu
+pacman -S sudo vim
 $ vim /etc/locale.gen
 
 ...
@@ -336,16 +335,16 @@ en_US.UTF-8 UTF-8
 # en_US ISO-8859-1
 ...
 
-$ locale-gen
-$ echo LANG=en_US.UTF-8 > /etc/locale.conf
-$ export LANG=en_US.UTF-8
-$ ls -l /usr/share/zoneinfo
-$ ln -sf /usr/share/zoneinfo/Zone/SubZone /etc/localtime
-$ hwclock --systohc --utc
-$ sed -i "s/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/" /etc/sudoers
-$ HOSTNAME=euler
-$ echo $HOSTNAME > /etc/hostname
-$ passwd
+locale-gen
+echo LANG=en_US.UTF-8 > /etc/locale.conf
+export LANG=en_US.UTF-8
+ls -l /usr/share/zoneinfo
+ln -sf /usr/share/zoneinfo/Zone/SubZone /etc/localtime
+hwclock --systohc --utc
+sed -i "s/# %wheel ALL=(ALL) ALL/%wheel ALL=(ALL) ALL/" /etc/sudoers
+HOSTNAME=euler
+echo $HOSTNAME > /etc/hostname
+passwd
 ```
 
 We will also add _hostname_ to our `/etc/hosts` file:
@@ -377,7 +376,7 @@ $ vi /etc/mkinitcpio.conf
 mkinitcpio -p linux
 ```
 
-## Boot Manager Setup
+### Boot Manager Setup
 
 _systemd-boot_, previously called _gummiboot_, is a simple UEFI boot
 manager which executes configured EFI images. The default entry is
@@ -389,7 +388,7 @@ Assuming _/boot_ is your boot drive, first run the following command to
 get started:
 
 ```terminal
-$ bootctl --path=/boot install
+bootctl --path=/boot install
 ```
 
 It will copy the systemd-boot binary to your EFI System Partition (
@@ -435,7 +434,7 @@ options ro cryptdevice=UUID=33333333-3333-3333-3333-333333333333:luks-33333333-3
 ...
 ```
 
-## Network Setup
+### Network Setup
 
 At first we will need to figure out the Ethernet controller on which
 cable is connected.
@@ -464,7 +463,6 @@ Network configurations are stored as \*.network in
 
 ```terminal
 $ vim /etc/systemd/network/50-wired.network
-$
 ...
 [Match]
 Name=enp0s25
@@ -489,16 +487,15 @@ Sync time automatically using the _systemd_ service:
 
 ```terminal
 $ vim /etc/systemd/timesyncd.conf
-$
 ...
 [Time]
 NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org
 FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
 ...
-$
+
 $ timedatectl set-ntp true
+
 $ timedatectl status
-$
 ...
       Local time: Tue 2016-09-20 16:40:44 PDT
   Universal time: Tue 2016-09-20 23:40:44 UTC
@@ -508,7 +505,7 @@ $
 NTP synchronized: yes
  RTC in local TZ: no
  ...
-$
+
 ```
 
 [Avahi](https://wiki.archlinux.org/index.php/avahi) is a tool that
@@ -520,25 +517,25 @@ and people to talk to.
 We can easily set it up it as follows:
 
 ```terminal
-$ pacman -S avahi nss-mdns
-$ systemctl enable avahi-daemon.service
+pacman -S avahi nss-mdns
+systemctl enable avahi-daemon.service
 ```
 
 We will also install `terminus-font` on our system to work with proper
 fonts on first boot.
 
 ```terminal
-$ pacman -S terminus-font
+pacman -S terminus-font
 ```
 
-# First Boot Installations
+## First Boot Installations
 
 Now we are ready for the first boot! Run the following command:
 
 ```terminal
-$ exit
-$ umount -R /mnt
-$ reboot
+exit
+umount -R /mnt
+reboot
 ```
 
 After your new system boots, Network should be setup at the start. Check
@@ -564,20 +561,20 @@ If you do not get this output, please follow the troubleshooting links
 at Arch Wiki on [setting up
 network](https://wiki.archlinux.org/index.php/systemd-networkd).
 
-## Adding New User
+### Adding New User
 
 Choose `$USERNAME` per your liking. I chose _ssingh_, so in future
 commands whenever you see _ssingh_ please replace it with your
 `$USERNAME`.
 
 ```terminal
-$ pacman -S zsh
-$ useradd -m -G wheel -s usr/bin/zsh $USERNAME
-$ chfn --full-name "$FULL_NAME" $USERNAME
-$ passwd $USERNAME
+pacman -S zsh
+useradd -m -G wheel -s usr/bin/zsh $USERNAME
+chfn --full-name "$FULL_NAME" $USERNAME
+passwd $USERNAME
 ```
 
-## GUI Installation with nvidia
+### GUI Installation with nvidia
 
 I will be assuming you have an `NVIDIA` card for graphics installation.
 
@@ -585,7 +582,7 @@ To setup a graphical desktop, first we need to install some basic X
 related packages, and some _essential_ packages (including fonts):
 
 ```terminal
-$ pacman -S xorg-server nvidia nvidia-libgl nvidia-settings mesa
+pacman -S xorg-server nvidia nvidia-libgl nvidia-settings mesa
 ```
 
 To avoid the possibility of forgetting to update your _initramfs_ after
@@ -593,7 +590,7 @@ an _nvidia_ upgrade, you have to use a _pacman_ hook like this:
 
 ```terminal
 $ vim /etc/pacman.d/hooks/nvidia.hook
-$
+
 ...
 [Trigger]
 Operation=Install
@@ -607,18 +604,18 @@ Depends=mkinitcpio
 When=PostTransaction
 Exec=/usr/bin/mkinitcpio -p linux
 ...
-$
+
 ```
 
 Nvidia has a daemon that is to be run at boot. To start the _persistence_
 daemon at boot, enable the `nvidia-persistenced.service`.
 
 ```terminal
-$ systemctl enable nvidia-persistenced.service
-$ systemctl start nvidia-persistenced.service
+systemctl enable nvidia-persistenced.service
+systemctl start nvidia-persistenced.service
 ```
 
-###How to Avoid Screen Tearing
+#### How to Avoid Screen Tearing
 
 Tearing can be avoided by forcing a full composition pipeline,
 regardless of the compositor you are using.
@@ -655,13 +652,12 @@ any tearing in Plasma.
 
 ```terminal
 $ vim /etc/profile.d/kwin.sh
-$
 ...
 export KWIN_TRIPLE_BUFFER=1
 ...
 ```
 
-###How to Enable Better Resolution During Boot
+#### How to Enable Better Resolution During Boot
 
 The kernel compiled in _efifb_ module supports high-resolution nvidia
 console on EFI systems. This can enabled by enabling the DRM kernel mode
@@ -693,18 +689,18 @@ $
 $ mkinitcpio -p linux
 ```
 
-## Plasma 5 Installation and Setup
+### Plasma 5 Installation and Setup
 
 We can now proceed with the installation of Plasma 5. In the process, we
 will also install some useful fonts.
 
 ```terminal
-$ pacman -S ttf-hack ttf-anonymous-pro
-$ pacman -S ttf-dejavu ttf-freefont ttf-liberation
-$ pacman -S plasma-meta dolphin kdialog kfind
-$ pacman -S konsole gwenview okular spectacle kio-extras
-$ pacman -S kompare dolphin-plugins kwallet kwalletmanager
-$ pacman -S ark yakuake flite
+pacman -S ttf-hack ttf-anonymous-pro
+pacman -S ttf-dejavu ttf-freefont ttf-liberation
+pacman -S plasma-meta dolphin kdialog kfind
+pacman -S konsole gwenview okular spectacle kio-extras
+pacman -S kompare dolphin-plugins kwallet kwalletmanager
+pacman -S ark yakuake flite
 ```
 
 We will also need to select proper themes for the Plasma 5 display
@@ -730,7 +726,7 @@ Once, we boot into the new system, we should have a basic Plasma 5
 desktop waiting for you. In the following section, we will be do
 installation and modifications to the system that I prefer.
 
-# Post Installation Setup
+## Post Installation Setup
 
 Plasma 5 provides a handy network manager applet. However, in order to
 use it properly we will need the NetworkManager service to be enabled.
@@ -738,19 +734,19 @@ This applet allows user specific enabling of _wifi_, _ethernet_ or even
 _VPN_ connections.
 
 ```terminal
-$ sudo pacman -S networkmanager
-$ systemctl enable NetworkManager.service
-$ systemctl start NetworkManager.service
+sudo pacman -S networkmanager
+systemctl enable NetworkManager.service
+systemctl start NetworkManager.service
 ```
 
 We can also automate the _hostname_ setup using the following _systemd_
 command:
 
 ```terminal
-$ hostnamectl set-hostname $HOSTNAME
+hostnamectl set-hostname $HOSTNAME
 ```
 
-## Selecting pacman Mirrors
+### Selecting pacman Mirrors
 
 The _pacman_ package provides a "bash" script, _/usr/bin/rankmirrors_,
 which can be used to rank the mirrors according to their connection and
@@ -771,7 +767,7 @@ $ vim /etc/pacman.d/mirrorlist.us
 $ rankmirrors -n 6 /etc/pacman.d/mirrorlist.us > /etc/pacman.d/mirrorlist
 ```
 
-## Setup AUR
+### Setup AUR
 
 [AUR](https://aur.archlinux.org/) is a community-driven repository for
 Arch users. This allows you to install many popular packages that are
@@ -785,55 +781,55 @@ is uses exactly the same options that regular _pacman_ uses.
 In order to install _pacuar_, first install dependencies.
 
 ```terminal
-$ sudo pacman -S expac yajl curl gnupg --noconfirm
+sudo pacman -S expac yajl curl gnupg --noconfirm
 ```
 
 Create a temp directory for building packages:
 
 ```terminal
-$ mkdir ~/temp
-$ cp ~ temp
+mkdir ~/temp
+cp ~ temp
 ```
 
 Install _cower_ first and then _pacaur_:
 
 ```terminal
-$ gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53
-$ curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower
-$ makepkg -i PKGBUILD --noconfirm
+gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53
+curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=cower
+makepkg -i PKGBUILD --noconfirm
 
-$ curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur
-$ makepkg -i PKGBUILD --noconfirm
+curl -o PKGBUILD https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=pacaur
+makepkg -i PKGBUILD --noconfirm
 
 # Finally cleanup and remove the temp directory
-$ cd ~
-$ rm -r ~/temp
+cd ~
+rm -r ~/temp
 ```
 
-## Audio Setup
+### Audio Setup
 
 This is pretty simple. Install following packages and you should be
 done:
 
 ```terminal
-$ sudo pacaur -S alsa-utils pulseaudio pulseaudio-alsa mpv
-$ sudo pacaur -S libcanberra-pulse libcanberra-gstreamer
-$ sudo pacaur -S vlc-qt5
+sudo pacaur -S alsa-utils pulseaudio pulseaudio-alsa mpv
+sudo pacaur -S libcanberra-pulse libcanberra-gstreamer
+sudo pacaur -S vlc-qt5
 ```
 
 Now start the _pulseaudio_ service.
 
 ```terminal
-$ systemctl --user enable pulseaudio.socket
+systemctl --user enable pulseaudio.socket
 ```
 
-## Web Browsers
+### Web Browsers
 
 My preferred choice of browsers is _google chrome_. However, it is also
 good to have the KDE native _qupzilla_.
 
 ```terminal
-$ sudo pacaur -S google-chrome qupzilla
+sudo pacaur -S google-chrome qupzilla
 ```
 
 _Profile-sync-daemon (psd)_ is a tiny pseudo-daemon designed to manage
@@ -888,13 +884,13 @@ psd p
 _Google Chrome_ by default uses _kdewallet_ to manage passwords, where
 as _Qupzilla_ does not. You can change that in its settings.
 
-## git Setup
+### git Setup
 
 Install git and setup some global options as below:
 
 ```terminal
 $ sudo pacaur -S git
-$
+
 $ vim ~/.gitconfig
 ...
 [user]
@@ -923,7 +919,7 @@ $ vim ~/.gitconfig
 ...
 ```
 
-## ssh Setup
+### ssh Setup
 
 To get started first install the _openssh_ package.
 
@@ -937,18 +933,19 @@ the server for login based only on keys.
 
 ```terminal
 $ ssh-keygen -t ed25519
-$
+
 # Create a .ssh/config file for rmate usage in sublime text
 $ vim ~/.ssh/config
 ...
 RemoteForward 52698 localhost:52698
 ...
-$
+
 # Create ~/.ssh/authorized_keys file with list of machines that
 # are allowed to login to this machine.
 $ touch ~/.ssh/authorized_keys
-$
+
 # Finally edit the /etc/ssh/sshd_config
+
 # file to disable Password based logins
 $ sudo vim /etc/ssh/sshd_config
 ...
@@ -963,11 +960,11 @@ github.
 We can now use _systemd_ to start the ssh service.
 
 ```terminal
-$ systemctl enable sshd.socket
-$ systemctl start sshd.socket
+systemctl enable sshd.socket
+systemctl start sshd.socket
 ```
 
-## zsh Setup
+### zsh Setup
 
 During the user creation, we already installed the _zsh_ shell. We have
 also activated a basic setup at first login by the user.
@@ -979,29 +976,29 @@ _zsh_ configurations.
 First install the main zprezto package:
 
 ```terminal
-$ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-$
-$ setopt EXTENDED_GLOB
-$ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N);
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+
+setopt EXTENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N);
 do
     ln -sf "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
-$
+
 ```
 
 Now, We will add my version of prezto to the same git repo.
 
 ```terminal
-$ cd ~/.zprezto
-$ git remote add personal git@github.com:sadanand-singh/My-Zprezto.git
-$ git pull personal arch
-$ git checkout arch
-$ git merge master
+cd ~/.zprezto
+git remote add personal git@github.com:sadanand-singh/My-Zprezto.git
+git pull personal arch
+git checkout arch
+git merge master
 ```
 
 And we are all setup for using _zsh_!
 
-## gpg Setup
+### gpg Setup
 
 We have already installed the _gnupg_ package during the _pacaur_
 installation. We will first either import our already existing private
@@ -1019,7 +1016,7 @@ default-cache-ttl-ssh 10800
 default-cache-ttl 10800
 max-cache-ttl-ssh 10800
 ...
-$
+
 ```
 
 Also, add following to your _.zshrc_ or _."bash"rc_ file. If you are using
@@ -1040,57 +1037,58 @@ if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
   export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
 fi
 ...
-$
+
 ```
 
 Now, simply start the following systemd sockets as user:
 
 ```terminal
-$ systemctl --user enable gpg-agent.socket
-$ systemctl --user enable gpg-agent-ssh.socket
-$ systemctl --user enable dirmngr.socket
-$ systemctl --user enable gpg-agent-browser.socket
-$
-$ systemctl --user start gpg-agent.socket
-$ systemctl --user start gpg-agent-ssh.socket
-$ systemctl --user start dirmngr.socket
-$ systemctl --user start gpg-agent-browser.socket
+systemctl --user enable gpg-agent.socket
+systemctl --user enable gpg-agent-ssh.socket
+systemctl --user enable dirmngr.socket
+systemctl --user enable gpg-agent-browser.socket
+
+systemctl --user start gpg-agent.socket
+systemctl --user start gpg-agent-ssh.socket
+systemctl --user start dirmngr.socket
+systemctl --user start gpg-agent-browser.socket
 ```
 
 Finally add your ssh key to ssh agent.
 
 ```terminal
-$ ssh-add ~/.ssh/id_ed25519
+ssh-add ~/.ssh/id_ed25519
 ```
 
-## User Wallpapers
+### User Wallpapers
 
 You can store your own wallpapers at the following location. A good
 place to get some good wallpapers are [KaOS
 Wallpapers](https://github.com/KaOSx/kaos-wallpapers).
 
 ```terminal
-$ mkdir -p $ $HOME/.local/wallpapers
-$ cp SOME_JPEG $HOME/.local/wallpapers/
+mkdir -p $ $HOME/.local/wallpapers
+cp SOME_JPEG $HOME/.local/wallpapers/
 ```
 
-## _conky_ Setup
+### _conky_ Setup
 
 First installed the _conky_ package with lua and nvidia support:
 
 ```terminal
-$ paci conky-lua-nv
+paci conky-lua-nv
 ```
 
 Then, copy your conky configuration at \$HOME/.config/conky/conky.conf.
 
 ```terminal
-$ mkdir -p $HOME/.config/conky
+mkdir -p $HOME/.config/conky
+
 # Generate sample conky config file
-$ conky -C > $HOME/.config/conky/conky.conf
-$
+conky -C > $HOME/.config/conky/conky.conf
+
 # start conky in background
-$ conky &
+conky &
 ```
 
 Here, I have also put my simple configuration file:
@@ -1155,13 +1153,13 @@ ${goto -80}${voffset -35}${font Pompiere:size=11}${color 3eafe8}//${color4} GPU:
 ]];
 ```
 
-## Software Installations
+### Software Installations
 
 Here is a running list of other common softwares that I install.
 
 ```terminal
-$ paci spotify tmux tree dropbox thesilver_searcher
-$ paci digikam imagemagick
+paci spotify tmux tree dropbox thesilver_searcher
+paci digikam imagemagick
 ```
 
 I also add the following repository to install the [Sublime
@@ -1170,18 +1168,18 @@ my previous post <sublimetext> for details on setting up Sublime
 Text.
 
 ```terminal
-$ curl -O https://download.sublimetext.com/sublimehq-pub.gpg
-$ sudo pacman-key --add sublimehq-pub.gpg
-$ sudo pacman-key --lsign-key 8A8F901A
-$ rm sublimehq-pub.gpg
-$
-$ echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/dev/x86_64" | sudo tee -a /etc/pacman.conf
+curl -O https://download.sublimetext.com/sublimehq-pub.gpg
+sudo pacman-key --add sublimehq-pub.gpg
+sudo pacman-key --lsign-key 8A8F901A
+rm sublimehq-pub.gpg
+
+echo -e "\n[sublime-text]\nServer = https://download.sublimetext.com/arch/dev/x86_64" | sudo tee -a /etc/pacman.conf
 ```
 
 Now we can install _sublime-text_ as:
 
 ```terminal
-$ paci sublime-text/sublime-text
+paci sublime-text/sublime-text
 ```
 
 This brings us to the conclusion of this installation guide. Hope many

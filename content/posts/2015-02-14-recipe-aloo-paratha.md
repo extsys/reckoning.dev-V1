@@ -21,9 +21,9 @@ views and inputs in comments below.
 
 ![Aloo Paratha Stuffing](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963330/AlooParathaStuffing_dclifs.jpg)
 
-# Ingredients
+## Ingredients
 
-## For Stuffing
+### For Stuffing
 
 - 2 medium Potatoes
 - 2 tbsp Cooking Oil
@@ -38,7 +38,7 @@ views and inputs in comments below.
 
 ![Aloo Paratha Raw](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963330/AlooParathaRaw_rmp8kg.jpg)
 
-## For Bread
+### For Bread
 
 - 4 cups of Whole Wheat Flour
 - 4-5 tbsp Butter or _Ghee_
@@ -46,32 +46,32 @@ views and inputs in comments below.
 - 1 tbsp _Ajwain_ (Carom Seeds)
 - Salt to taste
 
-# Preparation
+## Preparation
 
-## Stuffing
+### Stuffing
 
-1.  Boil and peel Potatoes.
-2.  Mash boiled Potatoes and mix salt and chili flakes.
-3.  In a skillet heat oil and add _Garam Masala_.
-4.  Once it start to sputter, add cut onions.
-5.  Add rest of spices and fry until golden brown.
-6.  Add mashed Potatoes mix and fry for another 2-3 minutes.
+1. Boil and peel Potatoes.
+2. Mash boiled Potatoes and mix salt and chili flakes.
+3. In a skillet heat oil and add _Garam Masala_.
+4. Once it start to sputter, add cut onions.
+5. Add rest of spices and fry until golden brown.
+6. Add mashed Potatoes mix and fry for another 2-3 minutes.
 
-## Bread (_Paratha_)
+### Bread (_Paratha_)
 
-1.  Knead flour with _Ajwain_, _Kalaunji_ and salt.
-2.  Make small balls
-3.  Make craters in the balls and fill them with the stuffing.
-4.  Roll these into flat circular breads, typical Indian Bread shape.
-5.  Heat these slowly on a skillet on each side.
-6.  Once almost cooked, apply some butter or _Ghee_.
+1. Knead flour with _Ajwain_, _Kalaunji_ and salt.
+2. Make small balls
+3. Make craters in the balls and fill them with the stuffing.
+4. Roll these into flat circular breads, typical Indian Bread shape.
+5. Heat these slowly on a skillet on each side.
+6. Once almost cooked, apply some butter or _Ghee_.
 
 Let it cool before serving. It can be served with Indian spicy pickle
 and yogurt (_Dahi_).
 
 ![Aloo Paratha Yummy](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963330/AlooParatha_rdn84h.jpg)
 
-# Interesting Facts
+## Interesting Facts
 
 - More about [Aloo Paratha](https://en.wikipedia.org/wiki/Aloo_paratha)
 - More about [Ajwain](https://en.wikipedia.org/wiki/Ajwain)

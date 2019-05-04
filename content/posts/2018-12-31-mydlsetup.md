@@ -20,7 +20,7 @@ versions, and modules like pytorch/tensorflow libraries etc.
 
 ![Gnome Activities](https://res.cloudinary.com/sadanandsingh/image/upload/v1546230616/activities_fsd0wm.png)
 
-# Workstation Hadware
+## Workstation Hadware
 
 Here are the configurations of my workstation:
 
@@ -41,7 +41,7 @@ As you can see, its pretty awesome built. One thing I really love about this con
 stability. Although, I have recently upgraded the GPU to 2080 Ti to test mixed precision training,
 this has been a pretty stable and trustworthy build.
 
-# OS Setup
+## OS Setup
 
 I avoid any rolling release linux distribution (read Arch Linux) on my work machines, since,
 unlike my regular desktop, I want to have a stable development system for my actual work. Also for
@@ -193,7 +193,7 @@ sudo apt install fonts-hack-ttf
 By default, specially on 4K screens, terminal opens in really tiny window. This can be modified in
 the terminal preferences.
 
-# Python Setup
+## Python Setup
 
 Now comimg to the main part of this post - maintainance of python and packages! After a lot of trial
 and error, I have come up with this setup, which is I think is extremely easy to manage and very
@@ -305,7 +305,7 @@ sudo sh cuda_10.0.130_410.48_linux.run
 I choose install only the cuda toolkit and cuda samples. Once the installation is complete, you can
 check your installation by going to cuda samples directory and running `make`.
 
-# Editors
+## Editors
 
 I prefer to use `neovim` and `vim` editors on terminal. And Visual Studio Code for my regular
 full-time editing needs! I used to be a big fan of [sublime text](/sublimetext).

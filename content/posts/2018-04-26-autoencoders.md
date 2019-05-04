@@ -27,7 +27,7 @@ with a [tensorflow] back-end.
 
 > Please not that this post has been written using Tensorflow 1.x version of Keras
 
-# Basic Autoencoders
+## Basic Autoencoders
 
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx1PGY44IVn6aV-zTjvOD8IK3xNnv6vMDLHpsA2ignlXE6SrfBrg)
 
@@ -458,7 +458,7 @@ details to appear on the reconstructed images. In order to
 improve these models further, we will likely have to go for deeper and more
 complex convolution network.
 
-# Denoising Autoencoders
+## Denoising Autoencoders
 
 Another common variant of AE networks is the one that learns to remove noise
 from the input. Mathematically, this is achieved by modifying the
@@ -576,7 +576,7 @@ display_reconstructed(x_test_noisy, decoded_imgs, 10)
 
 [lstm]: https://towardsdatascience.com/recurrent-neural-networks-and-lstm-4b601dd822a5
 
-# Variational Autoencoders (VAE)
+## Variational Autoencoders (VAE)
 
 ![](https://res.cloudinary.com/sadanandsingh/image/upload/v1544987535/images/autoencoders/vae.png)
 
@@ -978,7 +978,7 @@ plot_generatedImages(generator)
 
 [kpca]: https://en.wikipedia.org/wiki/Kernel_principal_component_analysis
 
-# Usage of Autoencoders
+## Usage of Autoencoders
 
 Most common uses of Autoenoders are:
 
@@ -1012,7 +1012,7 @@ Most common uses of Autoenoders are:
 
 - **Image/data Generation**: We saw theoretical details of generative nature of VAEs above. See [this blog post by openAI][gen] for a detailed review of image generation.
 
-* **Anamoly detection**: For highly imbalanced data (like [credit card fraud
+- **Anamoly detection**: For highly imbalanced data (like [credit card fraud
   detection][fraud], defects in manufacturing etc.) you may have sufficient data
   for the positive class and very few or no data for the negative class. In such
   situations, you can train an AE on your positive data and learn features and

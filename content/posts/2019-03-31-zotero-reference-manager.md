@@ -26,7 +26,7 @@ During my PhD, I was able to track all papers I read simply by organizing them i
 
 My search brought me to the following set of free (and some paid) tools. In this post, I want to illustrate my sweet setup. I hope this could be of help to a lot of researchers in this field like me.
 
-##Filtering Relevant Papers
+## Filtering Relevant Papers
 
 This is the era of machine learning. My first thought - can't we apply ML to find me relevant papers on ML! That quickly brought me to [Arxiv Sanity](http://www.arxiv-sanity.com/library) by [@karapathy](https://twitter.com/karpathy). Project description of [github](https://github.com/karpathy/arxiv-sanity-preserver) says it all:
 
@@ -36,7 +36,8 @@ To summarize: this lets me filter arxiv papers based on tags relevant to me. The
 
 Now, I have started using this website weekly, I add papers to library and recommendations keep improving. Other source of my relevant papers is twitter! Follow right people and you get a minefield of information.
 
-##Management of Papers: Zotero and pCloud
+## Management of Papers: Zotero and pCloud
+
 Once I have found the right papers, I had to find right tools to manage them. There are commercial solutions for this including readcube, mendeley, papers (now part of readcube). I did not like any of these simply for their business model - high prices, data storage etc. Then I came across an open source offering - [zotero](https://www.zotero.org/).
 
 I instantly fell in love with zotero. It works on all desktop platforms - Linux and OSX. It has two of the most important features that I wanted: tags, central local of storage. However, I soon realized, the free version only supports up to 1 GB of storage. My library is already past 6 GB. To my help, they have support for webdav servers, and my cloud provider - [pCloud](https://pcloud.com) has native support for webdav! It was pretty easy to setup and voila! Please see the below screenshot for my setup.
@@ -53,7 +54,8 @@ Another feature of zotero that I use it its plugins. Specifically, I use a plugi
 
 On my iPad, I use an app called [PDF Expert](https://itunes.apple.com/app/pdf-expert-fill-forms-annotate/id393316844?mt=8). This allows me to view my pCloud folder holding my pdfs from Zotfile, as well as read and annotate PDFs quite elegantly.
 
-##Annotating PDFs
+## Annotating PDFs
+
 Last thing remaining on my feature list was pdf annotations. On linux, I use [foxit reader](https://www.foxitsoftware.com/pdf-reader/). It has right tools for annotations and saving them right in the pdf files. On my mac though, I did not like the look and feel of foxit reader on OSX. I ended up going with [PDF Expert for Mac](https://pdfexpert.com/). Although, its a paid software, I really love their smoothness and features.
 
 Finally, you can also share any library with your colleagues using the [Zotero Groups](https://www.zotero.org/groups/) feature. This enables you to share you library, and discover other people's library in the team.

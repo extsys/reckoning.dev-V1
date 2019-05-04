@@ -38,7 +38,7 @@ I really have nothing against [Nikola]. However, I did not feel at home - I want
 
 <!--TOC-->
 
-# Hugo - the blazing fast site generator
+## Hugo - the blazing fast site generator
 
 [Hugo][hugo] is a light weight, fast and modern static website engine written in [go]. It literally takes just milliseconds to build your entire site. For the given lightness, it is highly flexible as well. You can organize your content however you want with any URL structure, group your content using your own indexes and categories and define your own _metadata_ in any format: `YAML`, `TOML` or `JSON`. I was impressed! Keep in my mind, `python` is still my primary language of programming for scripting and machine learning. And, I have almost no programming experience with `go`.
 
@@ -49,7 +49,7 @@ of [bootswatch] themes. So my first goal was implement my heavily modified versi
 
 [bootswatch]: https://bootswatch.com
 
-# Bootswatch Theme
+## Bootswatch Theme
 
 Developing a theme from scratch (_Well, the implementation from scratch, as I all I am trying to do is mimic/improvise my current theme from Nikola_) turned out to be a great adventure and learning exercise. It helped me understand the Hugo architecture in great detail. It did help to have some good [documentation] written for developers, not users! Although, Hugo's documentation can surely help itself with some cleaning and some fresher looks!
 
@@ -61,7 +61,7 @@ Hugo uses [go templates] with many extra functions and set of variables provided
 
 I converted almost all of Mako theme from Nikola website to Hugo's format and architecture with additions (copied features and code) from a nice theme called [TranqilPeak](https://themes.gohugo.io/hugo-tranquilpeak-theme/). In particular, I liked their fonts, search feature for taxonomies pages. Copying these features also meant I had to learn a bit of `javascript` and `css`. You can find a working copy of my theme in the `src` branch of [gihub repository](https://github.com/sadanand-singh/sadanand-singh.github.io) of my blog. I plan to release this theme as a standalone theme in near future though.
 
-# Shortcodes
+## Shortcodes
 
 Given I am using a [bootstrap] based theme, I like having a lot of its features available to me when I am writing in Markdown. The powerful template based [shortcodes in Hugo](https://gohugo.io/extras/shortcodes/) provide a great way to write custom HTML code inside markdown. I feel Hugo shortcodes are so powerful, you could develop your own grammar of markup language in it! :yum:
 
@@ -72,11 +72,11 @@ panel, label, emphasis, highlighted text, and block quotes. I also liked the fig
 
 I have also some additional shortcodes for code-blocks and math. I will be detailing about them in a bit more detail in the next section. All of my shortcodes are available with the theme in the same [github repo](https://github.com/sadanand-singh/sadanand-singh.github.io).
 
-# Other Caveats and Fixes
+## Other Caveats and Fixes
 
 While converting to Hugo was fun, there were some caveats. The issues I faced were mainly with home page, site search, and `ipython` notebook posts.
 
-## Home Page with Content and Post Lists
+### Home Page with Content and Post Lists
 
 Getting home page to work was very simple. Hugo documentation page provides a very clear details about order in which various templates are looked. For home page, you will need to provide a template for `index.html`. Then Inside the `content` folder, you can put the _metadata_ and the _content_ for the home page in a file named `_index.md`.
 
@@ -98,7 +98,7 @@ I also added following template code in the index.html template to get list of p
 {{ end }}
 ```
 
-## tipue Search
+### tipue Search
 
 Hugo has support for several output formats, including HTML and JSON. For implementing [tipue search](http://www.tipue.com/search/), we need to generate a JSON file with site content. This can be done by adding following to the configuration file:
 
@@ -186,7 +186,7 @@ And, of course you will need a form/input for performing the search:
 </span>
 ```
 
-## Code Highlighting
+### Code Highlighting
 
 Although, by default Hugo provides code highlighting using the [pygments](https://pygments.org), I prefer to use client-side highlighting using [prism.js](https://prismjs.com). I also use the following [plugins](https://prismjs.com/#plugins) of `prism.js` for line numbers, highlighting and cleanup of white space:
 
@@ -196,7 +196,7 @@ Although, by default Hugo provides code highlighting using the [pygments](https:
 
 Finally, I create a shortcode called _code-block_ to add relevant classes and variables around `<code>` and `<pre>` tags so that prism could highlight code correctly.
 
-## jupyter Notebooks as Posts
+### jupyter Notebooks as Posts
 
 One of the advantages of using Nikola is that, it provides native support for writing Blog posts in `jupyter` notebooks.
 
@@ -220,7 +220,7 @@ jupyter nbconvert --to html --template basic *source_file.ipynb*
 
 Finally, create a markdown file for your post to put the contents of this HTML file. Works like charm since markdown supports including raw HTML code!
 
-## Latex Math Equations
+### Latex Math Equations
 
 I used [katex](https://github.com/Khan/KaTeX) for using math in markdown. I was having some issue with the multi-line display math equations, so I created a shortcode called _tex_ to write HTML code explicitly so that `katex` could handle that easily.
 

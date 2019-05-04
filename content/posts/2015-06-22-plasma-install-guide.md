@@ -11,7 +11,6 @@ categories:
   - 'Computers'
 template: post
 thumbnail: '../thumbnails/kde.png'
-toc: true
 ---
 
 In my last post on
@@ -27,7 +26,7 @@ root using the password that we set.
 
 Now, we will proceed further to install the Plasma 5 desktop.
 
-# Add New User
+## Add New User
 
 Choose `$USERNAME` per your liking. I chose `ssingh`, so in future commands
 whenever you see `ssingh` please replace it with your `$USERNAME`.
@@ -38,7 +37,7 @@ chfn --full-name "$FULL_NAME" $USERNAME
 passwd $USERNAME
 ```
 
-# Plasma 5 Desktop
+## Plasma 5 Desktop
 
 Network should be setup at the start. Check the status of network using:
 
@@ -100,7 +99,7 @@ systemctl start nvidia-persistenced.service
 
 <br>
 
-###KWIN FLICKERING ISSUE
+### KWIN FLICKERING ISSUE
 
 To avoid screen tearing in KDE (KWin), add following:
 
@@ -165,7 +164,7 @@ systemctl disable dhcpcd.service
 systemctl enable NetworkManager
 ```
 
-# Audio Setup
+## Audio Setup
 
 This is pretty simple. Install following packages and you should be
 done:
@@ -176,7 +175,7 @@ pacman -S libcanberra-gstreamer jack2-dbus kmix
 pacman -S mpv mplayer
 ```
 
-# Useful Tips
+## Useful Tips
 
 This part is optional and you can choose as per your taste. Sync time
 using the `systemd` service:

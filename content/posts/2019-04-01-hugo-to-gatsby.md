@@ -21,7 +21,8 @@ After few weeks of trial and learning, I have been able to transfer all of my co
 
 There are hundreds of articles on how to get started with gatsby, best ones of their website itself. Hence, I am not going to bore you with YAGT (Yet Another Guide/Tutorial). Here, I just want to highlight the features that I really liked about Gatsby and how I went about transforming this website.
 
-##Why Gatsby?
+## Why Gatsby?
+
 Gatsby utilizes the power of code/data splitting, pre-loading, pre-caching, image optimization, and all sorts of performance enhancements that would be difficult or impossible to do with straight HTML. It runs on Node.js and, even better, uses [React](https://reactjs.org/)! I tested out a few sites that run on Gatsby and yeah - they were fast. I was sold. Few things, I really liked:
 
 - No page reloads - this site is now a SPA (single page app), and clicking on any internal page from within the website doesn't need to load a completely new resource
@@ -31,14 +32,16 @@ Gatsby utilizes the power of code/data splitting, pre-loading, pre-caching, imag
 
 > During my search for Gatsby powered blogs, I came across a blog by [Tania Rascia](https://www.taniarascia.com/migrating-from-wordpress-to-gatsby/). I just fell in love with her minimal and highly functional design. As you will see later, this blog is completely inspired by her work. I have added few features like inclusion of python notebooks, bokeh plots, inline Youtube content etc.
 
-##Hugo, Am I going to miss you?
+## Hugo, Am I going to miss you?
+
 Short Answer - Nah! not really.
 
 Before you get any wrong picture about Hugo, let me very clear, Hugo is really nice library. Concepts are extremely simple. You can quickly build complex components to build really cool websites. The documentation is well written and has a very friendly and active community. If you are interested, you can still look at my [Hugo code base on github](https://github.com/sadanand-singh/Blog).
 
 My main concern was the underlying technology. I have rarely seen people using golang for any web programming. Javascript, and in particular react is just omnipresent! Naturally, I wanted to use a tool that just uses things that I use everywhere else. One of the biggest things highlighted by Hugo is - how first it builds websites. I have no complaints about that, but what I do not understand is, how is that even relevant if you build automatically (eg. using [Netlify](https://www.netlify.com/)). I would rather use a tool that is fast during rendering than the one that is fast only in building!
 
-##The Process
+## The Process
+
 Using, the [codebase of Tania's Blog](https://github.com/taniarascia/taniarascia.com/) as a starting point, it was actually a pretty simple affair to convert. Some of the important steps were:
 
 - As I was already using YAML front-matter in my md files in Hugo, so it was justa matter of removing redundant ones.

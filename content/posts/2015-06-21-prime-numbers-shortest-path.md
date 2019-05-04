@@ -13,7 +13,7 @@ thumbnail: '../thumbnails/puzzle.png'
 
 Here are two math puzzles, solve, comment and enjoy the discussion!
 
-# Puzzle 1: Prime Numbers
+## Puzzle 1: Prime Numbers
 
 Prove that $p^2-1$ is divisible by 24, where $p$ is a prime number with
 $p>3$.
@@ -21,7 +21,7 @@ $p>3$.
 This is a simple one - do not go by the technicality of the problem
 statement.
 
-## Solution
+### Solution
 
 $p^2-1 = (p-1)\times (p+1)$ Given, $p$ is a prime number $>3$, $p-1$ and
 $p+1$ are even. We can also write,
@@ -37,7 +37,7 @@ $p+1$ are divisible by 3 as well.
 
 Hence, $p^2-1$ is divisible by $8\times 3 = 24$.
 
-# Puzzle 2: Hopping on a Chess Board
+## Puzzle 2: Hopping on a Chess Board
 
 On a chess board, basically a $8\times 8$ grid, how many ways one can go
 from the left most bottom corner to the right most upper corner? In
@@ -49,7 +49,7 @@ chess naming conventions, from $a1$ to $h8$.
 
 **Can you find the generic answer for the case of $N\times M$ grid?**
 
-## Solution
+### Solution
 
 > **<u>Correction</u>:** <br/><br/> For an $N\times M$ grid, we need only $N-1$ right and $M-1$ up moves. <br/><br/> **Thank you Devin for pointing this out.**
 

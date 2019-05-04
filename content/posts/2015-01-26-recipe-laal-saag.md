@@ -25,7 +25,7 @@ took me just 10 minutes ( 5 Minutes Preparation + 5 Minutes Cooking).
 
 ![Red Amaranth](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963333/redSaag_vyrm11.jpg)
 
-# Ingredients
+## Ingredients
 
 - 1 Bunch Red Amaranth Leaves
 - 1/2 tbsp Turmeric Powder
@@ -36,24 +36,24 @@ took me just 10 minutes ( 5 Minutes Preparation + 5 Minutes Cooking).
 - 2 tbsp Olive Oil
 - Salt to taste
 
-# Preparation
+## Preparation
 
-1.  Wash the leaves thoroughly in running water and chop them (about 1
-    inch cuts).
-2.  Heat a deep pan on Medium for about 1 minute and then pour olive oil into it.
-3.  After about 30 seconds, Add mustard seeds and cumin seeds after
-    another 30 seconds.
-4.  Once Seeds start to pop, add cut leaves into the pan.
-5.  Add salt, close the lid and keep stirring occasionally.
-6.  Once the leaves have lost water, add all the spices and keep frying
-    until things are dry (about 2-3 minutes).
+1. Wash the leaves thoroughly in running water and chop them (about 1
+   inch cuts).
+2. Heat a deep pan on Medium for about 1 minute and then pour olive oil into it.
+3. After about 30 seconds, Add mustard seeds and cumin seeds after
+   another 30 seconds.
+4. Once Seeds start to pop, add cut leaves into the pan.
+5. Add salt, close the lid and keep stirring occasionally.
+6. Once the leaves have lost water, add all the spices and keep frying
+   until things are dry (about 2-3 minutes).
 
 You can serve this with any Indian bread, or with rice and lentils
 (_Daal_).
 
 ![My Creation Before Entering My Tummy](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963333/redSaag_final_ktfqua.jpg)
 
-# Interesting Facts
+## Interesting Facts
 
 - Amaranth is also known as "_Chauli_" or "_Chavli_" in Hindi.
 - [Nutritional Value](https://www.fatsecret.com/calories-nutrition/usda/amaranth-leaves) of Amaranth

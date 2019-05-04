@@ -29,14 +29,14 @@ methods are used: numerical and graphical.
 The numerical summary of data is done through [_descriptive
 statistics_](https://en.wikipedia.org/wiki/Descriptive_statistics).
 While the graphical summary of the data is done through
-[*exploratory data analysis (EDA)*](https://en.wikipedia.org/wiki/
-Exploratory_data_analysis). In this post, we will look at both
+[_exploratory data analysis (EDA)_](https://en.wikipedia.org/wiki/Exploratory_data_analysis). In
+this post, we will look at both
 of these fundamental data science techniques in more detail using
 some examples.
 
 <!--TOC-->
 
-# Descriptive Statistics
+## Descriptive Statistics
 
 Descriptive statistics are statistics that quantitatively describe or
 summarize features of a collection of information. Some measures that
@@ -48,7 +48,7 @@ are commonly used to describe a data set are:
   _kurtosis_
 - Relative Standing Measures, such as _z-score_, _Quartiles_ etc.
 
-## Measures of Central Tendency
+### Measures of Central Tendency
 
 Central tendency (or measure of central tendency) is a central or
 typical value for a probability distribution. Measures of central
@@ -60,7 +60,7 @@ the [mode].
 [median]: https://en.wikipedia.org/wiki/Median'
 [mode]: https://en.wikipedia.org/wiki/Mode_(statistics)
 
-### Mean
+#### Mean
 
 The arithmetic mean (or **mean** or **average**) is the most
 commonly used and readily understood measure of central tendency. In
@@ -91,7 +91,7 @@ several other types are means also common. Some examples are:
 [hmean]: https://en.wikipedia.org/wiki/Harmonic_mean
 [tmean]: https://en.wikipedia.org/wiki/Truncated_mean
 
-### Median
+#### Median
 
 The median is the midpoint of the data set. This midpoint value is
 the point at which half the observations are above the value and
@@ -101,7 +101,8 @@ the number $\frac{[N + 1]}{2}$ in the ranked order. If the number of
 observations are even, then the median is the average value of the
 observations that are ranked at numbers $\frac{[N]}{2}$ and $\frac{[N + 1]}{2} + 1$.
 
-###Mean vs Median
+#### Mean vs Median
+
 The median and the mean both measure central tendency. But
 unusual values, called [**outliers**][outliers], affect the
 median less than they affect the _mean_. When you have unusual
@@ -119,7 +120,7 @@ equal parts.
 
 [quartiles]: https://en.wikipedia.org/wiki/Quartile
 
-### Mode
+#### Mode
 
 The mode is the value that appears most often in a set of data. The
 mode of a [discrete probability distribution][d_prob_dist] is the
@@ -141,7 +142,7 @@ that your sample includes data from two populations. If the data
 contain two modes, the distribution is bimodal. If the data contain
 more than two modes, the distribution is **multi-modal**.
 
-### Minimum and Maximum
+#### Minimum and Maximum
 
 Many a times looking at the smallest and largest data and their
 relative positioning wrt to other central tendencies are also quite
@@ -153,7 +154,7 @@ is to compare the minimum and maximum. If the maximum value is very
 high, even when you consider the center, the spread, and the shape of
 the data, investigate the cause of the extreme value.
 
-## Measures of Variability or Dispersion
+### Measures of Variability or Dispersion
 
 Dispersion (also called **variability**, **scatter**, or **spread**)
 is the extent to which a distribution is stretched. A measure of
@@ -168,7 +169,7 @@ diverse. Some common examples of dispersion measures are:
 [gini]: https://en.wikipedia.org/wiki/Mean_absolute_difference
 [mad]: https://en.wikipedia.org/wiki/Median_absolute_deviation
 
-### Standard Deviation
+#### Standard Deviation
 
 The _standard deviation_ is a measure of how spread out the data are
 about the [mean]. The symbol $\sigma$ is often used to represent the
@@ -188,7 +189,7 @@ deviation of the mean, 95% of the values fall within two standard
 deviations, and 99.7% of the values fall within three standard
 deviations.
 
-### Interquartile Range (IQR)
+#### Interquartile Range (IQR)
 
 The _interquartile range_ (IQR) is the distance between the first
 quartile ($Q_1$) and the third quartile ($Q_3$). 50% of the data are
@@ -202,7 +203,7 @@ It is also used to build [box plots].
 
 [box plots]: https://en.wikipedia.org/wiki/Box_plot
 
-### Range
+#### Range
 
 The _range_ is the difference between the _largest_ and _smallest_
 data values in the sample. The _range_ represents the interval that
@@ -214,7 +215,7 @@ data. A small range value indicates that there is less _dispersion_
 in the data. Because the _range_ is calculated using only two data
 values, it is more useful with small data sets.
 
-## Measure of the Shape of the Distribution
+### Measure of the Shape of the Distribution
 
 Generally speaking, a [moment] is a specific quantitative measure,
 used in both mechanics and statistics, of the shape of a set of
@@ -234,7 +235,7 @@ We have already seen the use of first and second moments in
 describing statistics. The shape of distributions are further
 described using higher moments as described below.
 
-### Skewness
+#### Skewness
 
 [skewness] is a measure of the asymmetry of the probability
 distribution of a real-valued random variable about its measure of
@@ -295,7 +296,7 @@ results in a dimensionless unit — the [standard deviation][sd]. This
 means that you cannot compare the skewness of different
 distributions with different units using Bowley Skewness.
 
-### Kurtosis
+#### Kurtosis
 
 [Kurtosis] indicates how the peak and tails of a distribution differ
 from the normal distribution. Mathematically, it is the fourth
@@ -327,7 +328,7 @@ equal to 2 have a negative kurtosis value.
 [tdist]: https://en.wikipedia.org/wiki/Student%27s_t-distribution
 [bdist]: https://en.wikipedia.org/wiki/Beta_distribution
 
-## Measures of Relative Standing
+### Measures of Relative Standing
 
 A measure of relative standing is a measure of where a data value stands
 relative to the
@@ -341,7 +342,7 @@ and [percentile].
 [quartile]: https://www.mathsisfun.com/data/quartiles.html
 [percentile]: https://www.mathsisfun.com/data/percentiles.html
 
-### z-scores
+#### z-scores
 
 The _z-score_ (or **standard score**) is the signed number of standard
 deviations by which the value of an observation or data point is above
@@ -363,7 +364,7 @@ know the entire population, the t-test is much more widely used.
 
 [student]: https://en.wikipedia.org/wiki/Student%27s_t-test
 
-### Quartiles and Percentiles
+#### Quartiles and Percentiles
 
 A _percentile_ is a measure used in statistics indicating the value below
 which a given percentage of observations in a group of observations fall.
@@ -377,7 +378,7 @@ quartile ($Q_1$), the 50<sup>th</sup> percentile as the median or second
 quartile ($Q_2$), and the 75<sup>th</sup> percentile as the third
 quartile ($Q_3$).
 
-### Correlations
+#### Correlations
 
 Often the data that we deal with is multi-dimensional in nature.
 [correlation] most often refers to the extent to which two variables have
@@ -441,7 +442,7 @@ be used in interpreting results of correlation analysis when large
 numbers of variables have been examined, resulting in a large number of
 correlation coefficients.
 
-# Exploratory Data Analysis (EDA)
+## Exploratory Data Analysis (EDA)
 
 [Exploratory data analysis (EDA)][eda] is an approach to analyzing data sets to
 summarize their main characteristics, often with visual methods. The

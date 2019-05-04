@@ -17,7 +17,7 @@ are counted as distinct. If there are several candidates of the same
 length, you must output all of them in the order of occurrence. The
 _space_ is NOT considered as a valid non-repeating substring.
 
-###Examples
+## Examples
 
 Consider the following cases:
 
@@ -31,7 +31,7 @@ the answer should be `['sa', 'ad', 'da', 'na', 'nd', 'ds']`
 **Case 3:** If the given string is `wwwwwwww`, the answer should be
 `['wwwwwwww']`
 
-# My Solution
+## My Solution
 
 Here is my solution in _Python_.
 

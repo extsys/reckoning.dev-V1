@@ -23,7 +23,7 @@ in milk and mango puree.
 
 ![Fresh Carrots](https://res.cloudinary.com/sadanandsingh/image/upload/v1545501875/project/organic-carrot.jpg)
 
-# Ingredients
+## Ingredients
 
 - 8-10 organic carrots (for a more authentic taste).
 - Condensed milk (medium size) or 1-2 cup Ricotta cheese
@@ -33,24 +33,24 @@ in milk and mango puree.
 - 3-4 Tablespoon unsalted butter
 - 3-4 whole cardamom or 1/2 teaspoon cardamom powder
 
-# Preparation
+## Preparation
 
-1.  Wash and Peel the carrots and grate them.
-2.  Heat a non-stick pan on medium flame and add 3-4 tablespoon of
-    butter.
-3.  When the butter melts, add the grated carrots and start frying.
-4.  Stir the carrots till all the water from the carrots is lost.
-5.  Add Ricotta cheese with 1-2 cup whole milk or 1 can of Condensed
-    milk and let the carrots cook for 5-7 minutes on low flame.
-    Continuously stir the carrots so as not to burn them.
-6.  When 3/4th of the milk is dried, add chopped nuts and Sugar.
-7.  Turn off the flame after 3-4 minutes, after all the milk is dried.
-8.  Let the halwa cool down.
-9.  Garnish it with nuts and dried milk.
+1. Wash and Peel the carrots and grate them.
+2. Heat a non-stick pan on medium flame and add 3-4 tablespoon of
+   butter.
+3. When the butter melts, add the grated carrots and start frying.
+4. Stir the carrots till all the water from the carrots is lost.
+5. Add Ricotta cheese with 1-2 cup whole milk or 1 can of Condensed
+   milk and let the carrots cook for 5-7 minutes on low flame.
+   Continuously stir the carrots so as not to burn them.
+6. When 3/4th of the milk is dried, add chopped nuts and Sugar.
+7. Turn off the flame after 3-4 minutes, after all the milk is dried.
+8. Let the halwa cool down.
+9. Garnish it with nuts and dried milk.
 
 ![My Creation Before Entering My Tummy](https://res.cloudinary.com/sadanandsingh/image/upload/v1545501946/project/carrot-halwa.jpg)
 
-# Interesting Facts
+## Interesting Facts
 
 - [Nutritional Value](https://www.nutrition-and-you.com/carrots.html)
   of carrots.

@@ -27,7 +27,7 @@ the trouble!
 
 ![Boiling Spinach](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963332/PalakPaneer1_ugytqp.jpg)
 
-# Ingredients
+## Ingredients
 
 - 1 lb _Paneer_ (Indian Cottage Cheese)
 - 1 Bunch Fresh Spinach Leaves
@@ -47,41 +47,41 @@ the trouble!
 
 ![Paneer](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963332/PalakPaneer2_fdmyku.jpg)
 
-# Preparation
+## Preparation
 
-## Spinach Puree
+### Spinach Puree
 
-1.  Wash the leaves thoroughly in running water.
-2.  In a deep pot, bring about 6 cup of water to boiling temperature.
-    Add a pinch of salt and 2 pinch asafoetida (_Heeng_) into the
-    boiling water.
-3.  Add Spinach leaves in boiling water and let it cook for 3 minutes.
-4.  Strain boiled spinach leaves under cold water.
-5.  In a blender, make a puree of leaves along with ginger, garlic and
-    milk or cream.
+1. Wash the leaves thoroughly in running water.
+2. In a deep pot, bring about 6 cup of water to boiling temperature.
+   Add a pinch of salt and 2 pinch asafoetida (_Heeng_) into the
+   boiling water.
+3. Add Spinach leaves in boiling water and let it cook for 3 minutes.
+4. Strain boiled spinach leaves under cold water.
+5. In a blender, make a puree of leaves along with ginger, garlic and
+   milk or cream.
 
 ![Spinach Puree](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963333/PalakPaneer3_ckjnjp.jpg)
 
 ## Curry for _Paneer_
 
-1.  Cut _Paneer_ into small cubes.
-2.  Heat a deep pan on Medium for about 1 minute and then pour olive oil
-    into it.
-3.  After about 30 seconds, Add cumin seeds, bay leaf and minced garlic.
-4.  Once cumin seeds start to pop, add finely cut onions.
-5.  Fry the onions until oil starts to separate (about 1-2 minutes).
-6.  Add finely chopped tomatoes and all the spices except _Garam_
-    _Masala_.
-7.  Once oil start to separate out, add the spinach puree.
-8.  Stir well while cooking. Add salt and _Garam_ _Masala_ after about 2 minutes.
-9.  After about another 2 minutes add _Paneer_ cubes. Cook for another
-    3-4 minutes on low heat.
+1. Cut _Paneer_ into small cubes.
+2. Heat a deep pan on Medium for about 1 minute and then pour olive oil
+   into it.
+3. After about 30 seconds, Add cumin seeds, bay leaf and minced garlic.
+4. Once cumin seeds start to pop, add finely cut onions.
+5. Fry the onions until oil starts to separate (about 1-2 minutes).
+6. Add finely chopped tomatoes and all the spices except _Garam_
+   _Masala_.
+7. Once oil start to separate out, add the spinach puree.
+8. Stir well while cooking. Add salt and _Garam_ _Masala_ after about 2 minutes.
+9. After about another 2 minutes add _Paneer_ cubes. Cook for another
+   3-4 minutes on low heat.
 
 Let it cool before serving. It can be served with Indian Breads or rice.
 
 ![My Creation Before Entering My Tummy](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963332/PalakPaneer_me9asd.jpg)
 
-# Interesting Facts
+## Interesting Facts
 
 - [Nutritional Value](https://nutritiondata.self.com/facts/recipe/1770692/2) of _Paneer_.
 - More about [Paneer](https://en.wikipedia.org/wiki/Paneer)

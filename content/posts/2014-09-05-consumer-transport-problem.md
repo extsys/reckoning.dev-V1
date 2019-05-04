@@ -14,7 +14,7 @@ thumbnail: '../thumbnails/puzzle.png'
 Here is another puzzle starring a monkey, transportation and money!
 Short summary - avoid dealing with fools!
 
-**Problem Statement**
+## Problem Statement
 
 The owner of an apple plantation has a monkey. He wants to transport his
 10000 apples to the market, which is located after the forest. The
@@ -28,7 +28,7 @@ market?
 
 Please give your solutions in the comments below.
 
-**Solution**
+## Solution
 
 If the owner lets the monkey carry apples all the way to the end of the
 forest, in the first trip itself, all of 2000 apples will be lost and

@@ -20,7 +20,7 @@ as _linear regression_.
 
 ![](https://res.cloudinary.com/sadanandsingh/image/upload/v1545770785/linear_regression_hbby32.png)
 
-# Mathematical formulations
+## Mathematical formulations
 
 Linear Regression represents a linear relationship between the input
 variables ($X$) and single output variable($y$). When the input ($X$) is a
@@ -70,14 +70,14 @@ this problem is typically solved using [Gaussian Elimination](https://en.wikiped
 [sgd]: https://en.wikipedia.org/wiki/Stochastic_gradient_descent
 [olg]: https://en.wikipedia.org/wiki/Online_machine_learning
 
-# Key Assumptions
+## Key Assumptions
 
 Standard linear regression models with standard estimation techniques make a number of assumptions about the predictor variables ($X$), the response variables ($y$) and their relationship.
 
 The following are the major assumptions made by standard linear regression models with standard estimation techniques
 (e.g. [ordinary least squares][ols]):
 
-## Linearity
+### Linearity
 
 Linear regression needs the relationship between the independent and dependent variables to be linear. It is also important to check for outliers since linear regression is sensitive to outliers effects. The linearity assumption can best be tested with scatter plots, the following two examples depict two cases, where no and little linearity is present.
 
@@ -96,7 +96,7 @@ Linear regression needs the relationship between the independent and dependent v
 
 In the cases like these, one should try some non-linear transformations first to make the relationship linear.
 
-## Normality
+### Normality
 
 The linear regression analysis requires all variables to be multivariate normal. This assumption can best be checked with a histogram or a [Q-Q Plot][qqplot].
 
@@ -120,7 +120,7 @@ Normality can be also checked with a goodness of fit test, e.g., the [Kolmogorov
 
 When the data is not normally distributed a non-linear transformation (e.g., log-transformation) might fix this issue.
 
-## Lack of perfect multicollinearity
+### Lack of perfect multicollinearity
 
 Linear regression assumes that there is little or no multicollinearity in the data. Multicollinearity occurs when the independent variables are highly correlated with each other. It can be tested with three primary criteria:
 
@@ -132,13 +132,13 @@ Linear regression assumes that there is little or no multicollinearity in the da
 
 A list of more detailed tests can be found at [Wikipedia](https://en.wikipedia.org/wiki/Multicollinearity).
 
-## No Autocorrelation
+### No Autocorrelation
 
 Linear regression analysis requires that there is little or no autocorrelation in the data. Autocorrelation occurs when the residuals are not independent from each other. This assumption may be violated in the context of time series data, panel data, cluster samples, hierarchical data, repeated measures data, longitudinal data, and other data with dependencies. In such cases [generalized least squares][gls] provides a better alternative than the [OLS].
 
 While a scatter plot allows you to check for autocorrelations, you can test the linear regression model for autocorrelation with the [Durbin-Watson test][dwtest]. Durbin-Watson’s $d$ tests the null hypothesis that the residuals are not linearly auto-correlated. While $d$ can assume values between 0 and 4, values around 2 indicate no autocorrelation. As a rule of thumb, values of $1.5 < d < 2.5$ show that there is no auto-correlation in the data. However, the Durbin-Watson test only analyses linear autocorrelation and only between direct neighbors, which are first order effects.
 
-## Homoscedasticity
+### Homoscedasticity
 
 [Homoscedasticity][homoscedasticity] requires that the error term has the same variance $\sigma^2 = \mathbb{E} \big [ \epsilon_i^2 | X]$ in each observation. The scatter plot is good way to check whether the data are homoscedastic (meaning the residuals are equal across the regression line). The following scatter plots show examples of data that are not homoscedastic (i.e., heteroscedastic):
 
@@ -157,11 +157,11 @@ While a scatter plot allows you to check for autocorrelations, you can test the 
 
 The [Goldfeld-Quandt Test][gqtest] can also be used to test for heteroscedasticity. The test splits the data into two groups and tests to see if the variances of the residuals are similar across the groups. If homoscedasticity is present, a non-linear correction might fix the problem.
 
-# Key Regression Metrics
+## Key Regression Metrics
 
 As seen above, **residual sum of squares (RSS)** is one summary statistics to measure goodness of fir for linear regression models. However, RSS is not the only and most optimal metric that one should study.
 
-## Mean Absolute Error
+### Mean Absolute Error
 
 The mean absolute error (MAE) is the simplest regression error metric to understand. In this metric we will calculate the residual for every data point, taking only the absolute value of each so that negative and positive residuals do not cancel out. We then take the average of all these residuals. Effectively, MAE describes the typical magnitude of the residuals.If you are unfamiliar with `mean`, please have look at my previous post on [descriptive statistics](/descriptive-stats).
 
@@ -169,7 +169,7 @@ $$ MAE = \frac{1}{N} \sum_{i=1}^N \big | y_i - \hat{y}_i \big |$$
 
 The MAE is also the most intuitive of the metrics since we're just looking at the absolute difference between the data and the model's predictions. Because we use the absolute value of the residual, the MAE does not indicate whether or not the model under or overshoots actual data. Each residual contributes proportionally to the total amount of error, meaning that larger errors will contribute linearly to the overall error. A small MAE suggests the model is great at prediction, while a large MAE suggests that your model may have trouble in certain areas.
 
-## Mean Square Error
+### Mean Square Error
 
 Mean square error is the average residual sum of squares:
 
@@ -179,14 +179,14 @@ The effect of the square term in the MSE equation is most apparent with the pres
 
 > **The Problem of Outliers** <br/><br/> Outliers in the data are a constant source of discussion for the data scientists that try to create models. Do we include the outliers in our model creation or do we ignore them? The answer to this question is dependent on the field of study, the data set on hand and the consequences of having errors in the first place. As we saw above, MAE is used to downplay the role of outliers, while MSE is used to ensure the significance of outliers.<br/><br/> Ultimately, the choice between is MSE and MAE is application-specific and depends on how you want to treat large errors. Both are still viable error metrics, but will describe different nuances about the prediction errors of your model.
 
-## Root Mean Squared Error (RMSE)
+### Root Mean Squared Error (RMSE)
 
 As the name suggests, it is the square root of the MSE. Because the MSE is squared, its units do not match that of the original output. It is often used to convert the error metric back into similar units, making interpretation easier.
 Since the MSE and RMSE both square the residual, they are similarly affected by outliers. The RMSE is analogous to the standard deviation (MSE to variance) and is a measure of how large your residuals are spread out.
 
 Both MAE and MSE can range from 0 to $+ \infty$, so as both of these measures get higher, it becomes harder to interpret how well your model is performing. Another way we can summarize our collection of residuals is by using percentages so that each prediction is scaled against the value it's supposed to estimate.
 
-## Mean absolute percentage error (MAPE)
+### Mean absolute percentage error (MAPE)
 
 The mean absolute percentage error (MAPE) is the percentage equivalent of MAE. The equation looks just like that of MAE, but with adjustments to convert everything into percentages.
 
@@ -196,7 +196,7 @@ Just as MAE is the average magnitude of error produced by your model, the MAPE i
 
 However for all of its advantages, we are more limited in using MAPE than we are MAE. MAPE is undefined for data points where the value is 0. Similarly, the MAPE can grow unexpectedly large if the actual values are exceptionally small themselves. Finally, the MAPE is biased towards predictions that are systematically less than the actual values themselves. That is to say, MAPE will be lower when the prediction is lower than the actual compared to a prediction that is higher by the same amount.
 
-## Mean Percentage Error (MPE)
+### Mean Percentage Error (MPE)
 
 The mean percentage error (MPE) equation is exactly like that of MAPE. The only difference is that it lacks the absolute value operation.
 
@@ -209,7 +209,7 @@ In addition to these metrics, you can also take a look at some [additional metri
 
 We can also evaluate linear regression models by $R^2$ and Adjusted $R^2$.
 
-## R-squared
+### R-squared
 
 Also called as coefficient of determination, It determines how much of the total variation in Y (dependent variable) is explained by the variation in X (independent variable). Mathematically, it can be written as:
 
@@ -217,7 +217,7 @@ $$R^2 = \frac{\sum \big ( \hat{y}_i - \bar{y} \big)^2 }{\sum \big ( y_i - \bar{y
 
 where, $\bar{y}$ is the average response. The value of R-square is always between 0 and 1, where 0 means that the model does not model explain any variability in the target variable (Y) and 1 meaning it explains full variability in the target variable.
 
-## Adjusted R-squared
+### Adjusted R-squared
 
 A major drawback of $R^2$ is that if new predictors ($X$) are added to our model, $R^2$ only increases or remains constant but it never decreases. We can not judge that by increasing complexity of our model.
 
@@ -227,7 +227,7 @@ $$R^2_{adjusted} = 1 - \frac{(1-R^2)(N-1)}{N-p-1}$$
 
 Here, $N$ is number of samples and $p$ is the number of predictors in the model.
 
-# Regularization: Ridge and Lasso Regression
+## Regularization: Ridge and Lasso Regression
 
 One of the major aspects of training your machine learning model is avoiding over-fitting. The model will have a low accuracy if it is over-fitting. This happens because your model is trying too hard to capture the noise in your training dataset.
 
@@ -262,7 +262,7 @@ regularizing model coefficients:
 
 $$RSS_{elastic} = \sum_{i=1}^N \big ( y_i - w x_i - b \big)^2 + \lambda_1 w^2 + \lambda_2 |w|$$
 
-## A Bayesian Perspective
+### A Bayesian Perspective
 
 Although a complete Bayesian perspective of linear regression is complete post in itself, Here I just want to highlight the similarity of ridge and lasso regression techniques with the Bayesian methods. Effectively, when you are using any of these regularization schemes, you are giving a Bayesian treatment to the model.
 
@@ -270,12 +270,12 @@ In the Bayesian framework, the choice of the regularizer is analogous to the cho
 
 You can read about the Bayesian Lasso in more detail [here][blasso].
 
-# Generalization of Linear Regression
+## Generalization of Linear Regression
 
 Finally, we will look at some of the generalizations of linear regression. These applications should be able to convince
 you the wide application of these methods across different fields.
 
-## Polynomial Regression
+### Polynomial Regression
 
 ![](https://res.cloudinary.com/sadanandsingh/image/upload/v1545780650/poly_regress_srbjmr.png)
 
@@ -294,7 +294,7 @@ This can be solved by the same mathematical tools as the OLS problem. The same s
 also applied here. The equation have been used for a polynomial of degree 2, but cam be easily expanded to higher orders.
 In practice, the choice of order of polynomial is just an additional hyper parameter of the model.
 
-## Signal Smoothing
+### Signal Smoothing
 
 ![](https://res.cloudinary.com/sadanandsingh/image/upload/v1545780346/smooth_rhpllc.png)
 

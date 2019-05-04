@@ -14,7 +14,7 @@ jupyter: true
 
 [Python](https://docs.python.org/3/library/index.html) is a widely used general-purpose, high-level programming language. Due to its focus on readability, wide-spread popularity and existence of a plethora of libraries (also called modules), it is one of the most preferred programming languages for scientists and engineers.
 
-# Python for Non-Programmers
+## Python for Non-Programmers
 
 In this series of python tutorials, I will provide a set of lectures on various basic topics of python. The prime target audience for this series are scientist in non-programming fields like microbiology, genetics, psychology etc. who have some to none programming experience.
 
@@ -33,7 +33,7 @@ Here is a brief list of topics I will cover per week. I will also post exercises
 - **Week 11 :** Basic Statistics in Python using Pandas
 - **Week 12 :** Introduction to BioPython
 
-## Week 1. Introduction to Python
+### Week 1. Introduction to Python
 
 To start working with any programming language, first thing you need is a working installation of that language. Today, we will go through installation of python on Windows machines.
 
@@ -45,7 +45,7 @@ In this week's session, I will be assuming you will be using online python in go
 
 To follow these tutorials, please run any code and observe output that you see in code blocks.
 
-### Installing Python
+#### Installing Python
 
 Go to the following website to get access to [python](https://repl.it/languages/python3).
 
