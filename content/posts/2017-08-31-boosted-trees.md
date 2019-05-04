@@ -8,7 +8,7 @@ tags:
 categories:
   - 'Popular'
   - 'Data Science'
-  - 'Algorithms
+  - 'Algorithms'
 slug: 'boosted-trees'
 template: post
 thumbnail: '../thumbnails/boost.png'
