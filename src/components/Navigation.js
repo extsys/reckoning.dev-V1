@@ -6,7 +6,9 @@ import sun from '../images/sun.svg';
 import moon from '../images/moon.svg';
 import ThemeContext from '../context/ThemeContext';
 
-class Navigation extends Component {
+export default class Navigation extends Component {
+  static contextType = ThemeContext;
+
   state = {
     scrolled: false
   };
@@ -30,47 +32,41 @@ class Navigation extends Component {
   render() {
     const { scrolled } = this.state;
     const { menuLinks } = this.props;
+    const theme = this.context;
 
     return (
-      <ThemeContext.Consumer>
-        {theme => (
-          <nav className={scrolled ? 'nav scroll' : 'nav'}>
-            <div className='nav-container'>
-              <div className='brand'>
-                <Link to='/'>
-                  <img src={folder} className='favicon' />{' '}
-                  <span className='text'>Sadanand Singh</span>
-                </Link>
-              </div>
-              <div className='links'>
-                {menuLinks.map(link => (
-                  <Link key={link.name} to={link.link}>
-                    {link.name}
-                  </Link>
-                ))}
-                <a target='_blank' href='https://github.com/sadanand-singh'>
-                  <img src={github} className='favicon' />
-                </a>
-                <div className='cta'>
-                  <button className='dark-switcher' onClick={theme.toggleDark}>
-                    {theme.dark ? (
-                      <span>
-                        <img src={sun} className='theme-icon' />
-                      </span>
-                    ) : (
-                      <span>
-                        <img src={moon} className='theme-icon' />
-                      </span>
-                    )}
-                  </button>
-                </div>
-              </div>
+      <nav className={scrolled ? 'nav scroll' : 'nav'}>
+        <div className='nav-container'>
+          <div className='brand'>
+            <Link to='/'>
+              <img src={folder} className='favicon' /> <span className='text'>Sadanand Singh</span>
+            </Link>
+          </div>
+          <div className='links'>
+            {menuLinks.map(link => (
+              <Link key={link.name} to={link.link} activeClassName='active'>
+                {link.name}
+              </Link>
+            ))}
+            <a target='_blank' href='https://github.com/sadanand-singh'>
+              <img src={github} className='favicon' />
+            </a>
+            <div className='cta'>
+              <button className='dark-switcher' onClick={theme.toggleDark}>
+                {theme.dark ? (
+                  <span>
+                    <img src={sun} className='theme-icon' />
+                  </span>
+                ) : (
+                  <span>
+                    <img src={moon} className='theme-icon' />
+                  </span>
+                )}
+              </button>
             </div>
-          </nav>
-        )}
-      </ThemeContext.Consumer>
+          </div>
+        </div>
+      </nav>
     );
   }
 }
-
-export default Navigation;

@@ -5,37 +5,63 @@ import Layout from '../layout';
 import PostListing from '../components/PostListing';
 import SEO from '../components/SEO';
 import config from '../../data/SiteConfig';
-import kebabCase from 'lodash.kebabcase';
 import _ from 'lodash';
 
-class BlogPage extends Component {
+export default class BlogPage extends Component {
   state = {
     searchTerm: '',
+    currentCategories: [],
     posts: this.props.data.posts.edges,
     filteredPosts: this.props.data.posts.edges
   };
 
-  handleChange = event => {
-    this.setState({ searchTerm: event.target.value });
-    this.filterPosts(event.target.value);
+  handleChange = async event => {
+    const { name, value } = event.target;
+    await this.setState({ [name]: value });
+    this.filterPosts();
   };
 
-  filterPosts = searchTerm => {
-    const { posts } = this.state;
+  filterPosts = () => {
+    const { posts, searchTerm, currentCategories } = this.state;
 
-    const filteredPosts = posts.filter(post =>
-      post.node.frontmatter.title.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    let filteredPosts = posts.filter(post => {
+      if (post.node.frontmatter.title.toLowerCase().includes(searchTerm.toLowerCase())) {
+        return true;
+      }
+    });
+
+    if (currentCategories.length > 0) {
+      filteredPosts = filteredPosts.filter(post => {
+        if (
+          post.node.frontmatter.categories &&
+          currentCategories.every(cat => post.node.frontmatter.categories.includes(cat))
+        ) {
+          return true;
+        }
+      });
+    }
 
     this.setState({ filteredPosts });
   };
 
+  updateCategories = category => {
+    const { currentCategories } = this.state;
+
+    if (!currentCategories.includes(category)) {
+      this.setState(prevState => ({
+        currentCategories: [...prevState.currentCategories, category]
+      }));
+    } else {
+      this.setState(prevState => ({
+        currentCategories: prevState.currentCategories.filter(cat => category !== cat)
+      }));
+    }
+  };
+
   render() {
-    const { filteredPosts, searchTerm } = this.state;
+    const { filteredPosts, searchTerm, currentCategories } = this.state;
     const filterCount = filteredPosts.length;
-    const categories = this.props.data.categories.group.filter(
-      category => category.fieldValue !== 'Popular'
-    );
+    const categories = this.props.data.categories.group;
 
     return (
       <Layout>
@@ -43,16 +69,25 @@ class BlogPage extends Component {
         <SEO />
         <div className='container'>
           <h1>Articles</h1>
-          <div className='tag-container articles-page-tags'>
-            {categories.map(category => (
-              <Link to={`/categories/${kebabCase(category.fieldValue)}`} key={category.fieldValue}>
-                <span key={category.fieldValue}>
+          <div className='category-container'>
+            {categories.map(category => {
+              const active = currentCategories.includes(category.fieldValue);
+
+              return (
+                <div
+                  className={`category-filter ${active ? 'active' : ''}`}
+                  key={category.fieldValue}
+                  onClick={async () => {
+                    await this.updateCategories(category.fieldValue);
+                    await this.filterPosts();
+                  }}
+                >
                   {category.fieldValue} <strong className='count'>{category.totalCount}</strong>
-                </span>
-              </Link>
-            ))}
+                </div>
+              );
+            })}
           </div>
-          <div className='flex'>
+          <div className='search-container'>
             <input
               className='search'
               type='text'
@@ -70,8 +105,6 @@ class BlogPage extends Component {
   }
 }
 
-export default BlogPage;
-
 export const pageQuery = graphql`
   query BlogQuery {
     posts: allMarkdownRemark(limit: 2000, sort: { fields: [fields___date], order: DESC }) {
@@ -86,6 +119,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             tags
+            categories
             thumbnail {
               childImageSharp {
                 fixed(width: 150, height: 150) {
