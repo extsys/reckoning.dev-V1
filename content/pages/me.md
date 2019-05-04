@@ -13,7 +13,6 @@ I also have huge interest in computers and programming since childhood. Apart fr
 
 - [View resume](/resume)
 
-
 ## Links
 
 A non-exhaustive list.
@@ -24,8 +23,6 @@ A non-exhaustive list.
 - [Deep Hunt](https://deephunt.in/) – A weekly collection of ML news articles, carefully curated by Avinash Hindupur
 - [Data Robot Blog](https://blog.datarobot.com/) – Latest updates on what’s happening in the world of automated ML
 - [Becoming Human](https://becominghuman.ai/) – Latest news and tutorials about AI, ML, and ML, and their implications for humanity
-
-
 
 ## Currently Using
 
