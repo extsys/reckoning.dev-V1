@@ -23,16 +23,22 @@ class Index extends Component {
         <SEO />
         <div className='container'>
           <div className='lead'>
-            <h1>
-              Hi, I'm Sadanand Singh. I build <strong className='pink'>AI models </strong> in
-              medical imaging and enjoy working with{' '}
-              <strong className='pink'>Algorithms, Python and C++</strong>.
-            </h1>
+            <h1>Hi, I'm Sadanand Singh.</h1>
+            <h4>
+              I am a <strong className='pink'>Deep Learning Researcher</strong> in medical imaging
+              and enjoy playing with <strong className='pink'>Algorithms</strong>!
+            </h4>
             <p>
-              I'm a <strong>scientist, programmer,</strong> and <strong>writer</strong>. I created
-              this site to document everything I learn, and share a bit of myself with the world.
-              My site is <strong>free</strong> and has no ads, affiliate links, or sponsored posts.
+              I created this site to document everything I learn, and share a bit of myself with
+              the world. My site is <strong>free</strong> and has no ads, affiliate links, or
+              sponsored posts.
             </p>
+            <div class='quotation-main'>
+              Learn from yesterday, live for today, hope for tomorrow. The important thing is not
+              to stop questioning.
+            </div>
+            <div class='quotation-footer'>— Albert Einstein</div>
+
             <a
               className='twitter-follow-button'
               href='https://twitter.com/sadanandsingh'
