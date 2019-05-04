@@ -8,7 +8,7 @@ tags:
   - 'Plasma 5'
   - 'KDE'
 categories:
-  - 'Computers'
+  - 'Linux'
 template: post
 thumbnail: '../thumbnails/plasma5.png'
 toc: true

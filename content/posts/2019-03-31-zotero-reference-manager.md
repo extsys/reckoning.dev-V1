@@ -6,7 +6,7 @@ tags:
   - Research
   - References
 categories:
-  - DeepLearning
+  - Info
 slug: zotero-reference-manager
 template: post
 thumbnail: '../thumbnails/zotero.png'

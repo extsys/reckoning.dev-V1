@@ -6,7 +6,7 @@ tags:
   - 'Python'
   - 'DeepLearning'
 categories:
-  - 'Computers'
+  - 'Linux'
 slug: 'mydlsetup'
 template: post
 thumbnail: '../thumbnails/gpu.png'

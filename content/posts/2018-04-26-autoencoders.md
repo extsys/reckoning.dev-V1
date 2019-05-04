@@ -6,8 +6,8 @@ tags:
   - Python
   - DataScience
 categories:
-  - DeepLearning
   - Popular
+  - Data Science
 slug: autoencoders
 template: post
 thumbnail: '../thumbnails/keras.jpg'

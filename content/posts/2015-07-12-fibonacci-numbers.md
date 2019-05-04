@@ -6,8 +6,8 @@ tags:
   - 'Algorithms'
   - 'Python'
 categories:
-  - 'Algorithms'
   - 'Popular'
+  - 'Algorithms'
 template: post
 thumbnail: '../thumbnails/fibonacci.png'
 ---

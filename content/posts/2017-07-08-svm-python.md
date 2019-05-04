@@ -5,8 +5,8 @@ tags:
   - 'MachineLearning'
   - 'Python'
 categories:
-  - 'MachineLearning'
-  - Popular
+  - 'Popular'
+  - 'Data Science'
 slug: 'svmp-python'
 template: post
 thumbnail: '../thumbnails/svm.png'

@@ -6,7 +6,7 @@ tags:
   - 'DataScience'
   - Python
 categories:
-  - 'MachineLearning'
+  - 'Data Science'
 slug: 'linear-regression'
 template: post
 thumbnail: '../thumbnails/reg.png'

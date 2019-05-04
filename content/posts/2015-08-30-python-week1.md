@@ -6,7 +6,7 @@ tags:
   - 'Programming'
   - 'Python'
 categories:
-  - 'Tutorials'
+  - 'Data Science'
 template: post
 thumbnail: '../thumbnails/python.png'
 jupyter: true

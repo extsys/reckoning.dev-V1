@@ -7,8 +7,8 @@ tags:
   - 'Arch Linux'
   - 'Gnone 3'
 categories:
-  - 'Computers'
   - 'Popular'
+  - 'Linux'
 template: post
 thumbnail: '../thumbnails/gnome.png'
 toc: true

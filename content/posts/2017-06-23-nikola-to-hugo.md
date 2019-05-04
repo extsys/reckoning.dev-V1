@@ -6,7 +6,7 @@ tags:
   - 'Hugo'
   - 'golang'
 categories:
-  - 'Blog'
+  - 'Info'
 slug: 'nikola-to-hugo'
 template: post
 thumbnail: '../thumbnails/hugo.png'

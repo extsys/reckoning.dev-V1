@@ -5,7 +5,7 @@ date: 2015-02-01
 tags:
   - 'Linux'
 categories:
-  - 'Computers'
+  - 'Linux'
 template: post
 thumbnail: '../thumbnails/desktop.png'
 ---

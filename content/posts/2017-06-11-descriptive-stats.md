@@ -6,7 +6,7 @@ tags:
   - 'DataScience'
   - 'EDA'
 categories:
-  - 'DataScience'
+  - 'Data Science'
 template: post
 thumbnail: '../thumbnails/stats.png'
 ---

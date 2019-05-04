@@ -6,7 +6,7 @@ tags:
   - 'Algorithms'
   - 'Puzzles'
 categories:
-  - 'Puzzles'
+  - 'Algorithms'
 template: post
 thumbnail: '../thumbnails/puzzle.png'
 ---

@@ -6,8 +6,9 @@ tags:
   - 'Algorithms'
   - 'Python'
 categories:
-  - 'MachineLearning'
-  - Popular
+  - 'Popular'
+  - 'Data Science'
+  - 'Algorithms
 slug: 'boosted-trees'
 template: post
 thumbnail: '../thumbnails/boost.png'

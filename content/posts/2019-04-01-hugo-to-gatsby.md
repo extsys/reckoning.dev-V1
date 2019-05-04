@@ -5,7 +5,7 @@ tags:
   - Blog
   - Javascript
 categories:
-  - Blog
+  - Info
 slug: hugo-to-gatsby
 template: post
 thumbnail: '../thumbnails/gatsby.png'

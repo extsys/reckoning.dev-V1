@@ -5,7 +5,7 @@ date: 2017-11-10
 tags:
   - 'Editor'
 categories:
-  - 'Computers'
+  - 'Info'
 template: post
 thumbnail: '../thumbnails/sublime.png'
 ---

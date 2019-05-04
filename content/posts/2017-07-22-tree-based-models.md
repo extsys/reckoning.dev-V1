@@ -6,8 +6,9 @@ tags:
   - Algorithms
   - Python
 categories:
-  - MachineLearning
   - Popular
+  - Data Science
+  - Algorithms
 slug: tree-based-models
 template: post
 thumbnail: '../thumbnails/tree.png'

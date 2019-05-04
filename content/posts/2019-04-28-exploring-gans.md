@@ -6,7 +6,7 @@ tags:
   - GAN
   - Pytorch
 categories:
-  - DeepLearning
+  - Data Science
 slug: exploring-gans
 template: post
 thumbnail: '../thumbnails/celeb.png'

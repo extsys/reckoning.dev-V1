@@ -5,7 +5,7 @@ tags:
   - DeepLearning
   - Pytorch
 categories:
-  - DeepLearning
+  - Data Science
 slug: track-dl-experiments
 template: post
 thumbnail: '../thumbnails/comet.png'

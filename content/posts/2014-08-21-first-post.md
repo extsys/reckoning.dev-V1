@@ -2,9 +2,9 @@
 title: 'Welcome'
 date: 2014-08-21
 categories:
-  - 'News'
+  - 'Info'
 tags:
-  - 'Introduction'
+  - 'Info'
 slug: first-post
 template: post
 thumbnail: '../thumbnails/intro.jpg'

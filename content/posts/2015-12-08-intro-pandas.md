@@ -7,7 +7,7 @@ tags:
   - 'Python'
   - 'DataScience'
 categories:
-  - 'DataScience'
+  - 'Data Science'
 template: post
 thumbnail: '../thumbnails/notebook.png'
 jupyter: true

@@ -5,7 +5,7 @@ tags:
   - 'DataScience'
   - 'Python'
 categories:
-  - 'DataScience'
+  - 'Data Science'
 slug: 'interactive-data-visuals'
 template: post
 thumbnail: '../thumbnails/bokeh.png'
