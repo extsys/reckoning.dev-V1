@@ -24,16 +24,16 @@
 
 // Buttons on hover
 %buttons-hover {
-  border: $button-border-width $button-border-style darken($button-border-color, 10%);
-  color: darken($button-border-color, 30%);
+  border: $button-border-width $button-border-style $button-background-hover;
+  color: white;
   background: $button-background-hover;
   text-decoration: none;
 }
 
 // Buttons on focus
 %buttons-focus {
-  border: $button-border-width $button-border-style darken($button-border-color, 10%);
-  background: darken($button-color, 10%);
+  border: $button-border-width $button-border-style $button-background-hover;
+  background: $button-background-hover;
   color: white;
   text-decoration: none;
 }
@@ -55,19 +55,24 @@
   &:active {
     @extend %buttons-focus;
   }
+
+  &:active {
+    transform: scale(0.95);
+  }
 }
 
 .button.muted-button,
 a.button.muted-bottom {
-  color: darken($border-color, 30%);
-  border: 2px solid $border-color;
+  color: darken($primary-color, 10%);
+  border: 2px solid $primary-color;
+  background: transparent;
 
   &:hover,
   &:focus,
   &:active {
-    border: 2px solid darken($border-color, 10%);
-    background: lighten($border-color, 15%);
-    color: darken($border-color, 40%);
+    border: 2px solid darken($primary-color, 10%);
+    background: $primary-hover;
+    color: darken($primary-color, 30%);
   }
 }
 
@@ -77,19 +82,34 @@ a.donate-button {
   display: inline-flex;
   align-items: center;
   border-radius: $border-radius;
-  border: 2px solid $yellow;
-  background: lighten($yellow, 32%);
+  border: none;
+  background: $primary-color;
   padding: 0.75rem 1rem;
-  color: #333;
+  color: white;
 
   &:hover,
   &:focus,
   &:active {
-    background: lighten($yellow, 26%);
-    border: 2px solid darken($yellow, 10%);
-    color: #111;
+    background: darken($primary-color, 10%);
+    border: none;
+    color: white;
   }
 }
+
+.twitter-button,
+a.twitter-button {
+  background: #00aced;
+  border: 2px solid #00aced;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: darken(#00aced, 5%);
+    border: 2px solid darken(#00aced, 5%);
+    color: white;
+  }
+}
+
 // Secondary button color
 .link-button,
 a.link-button {
@@ -100,6 +120,7 @@ a.link-button {
   background: lighten(rgb(127, 140, 141), 32%);
   padding: 0.75rem 1rem;
   color: #333;
+  margin: 0 0.5rem;
 
   &:hover,
   &:focus,

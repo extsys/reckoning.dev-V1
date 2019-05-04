@@ -11,7 +11,7 @@ $dark-border: darken($background, 3%);
   }
 
   a {
-    color: lighten($primary-color, 2%);
+    color: lighten($primary-color, 10%);
 
     &:hover,
     &:active,
@@ -21,16 +21,35 @@ $dark-border: darken($background, 3%);
     }
   }
 
+  .lead {
+    a {
+      border-bottom: 2px solid $primary-color;
+      &:hover {
+        color: $primary-color;
+        background: transparent;
+        border-bottom: 2px solid lighten($link-hover-color, 20%);
+      }
+      &:active,
+      &:focus {
+        background: transparent;
+        border-bottom: 2px dashed lighten($link-hover-color, 20%);
+      }
+    }
+  }
+
   .post,
   .page {
     a:not(.button):not(.anchor):not(.gatsby-resp-image-link) {
-      color: lighten($primary-color, 2%);
-
-      &:hover,
+      border-bottom: 2px solid transparent;
+      &:hover {
+        color: $primary-color;
+        background: transparent;
+        border-bottom: 2px solid lighten($link-hover-color, 20%);
+      }
       &:active,
       &:focus {
-        color: lighten($primary-color, 12%);
         background: transparent;
+        border-bottom: 2px dashed lighten($link-hover-color, 20%);
       }
     }
 
@@ -65,7 +84,8 @@ $dark-border: darken($background, 3%);
     .links a {
       color: $comment;
 
-      &:hover {
+      &:hover,
+      &.active {
         color: $foreground;
       }
     }
@@ -157,7 +177,8 @@ $dark-border: darken($background, 3%);
   .tag-container {
     span {
       color: $foreground;
-      border: 2px solid $comment;
+      background: #222;
+      border: none;
 
       .count {
         color: $secondary-color;
@@ -166,8 +187,8 @@ $dark-border: darken($background, 3%);
       &:hover,
       &:active,
       &:focus {
-        border: 2px solid $foreground;
-        background: transparent;
+        border: none;
+        background: #111;
         color: white;
       }
     }
@@ -176,6 +197,10 @@ $dark-border: darken($background, 3%);
   .projects {
     h2 {
       color: $foreground;
+
+      a {
+        color: $foreground;
+      }
     }
 
     p {
@@ -222,15 +247,21 @@ $dark-border: darken($background, 3%);
 
   .footer {
     color: $foreground;
+
+    strong {
+      color: $foreground;
+    }
   }
 
   #{$forms} {
     color: $foreground;
     border: 2px solid #666;
     background: transparent !important;
+
     &:hover {
       border: 2px solid #888;
     }
+
     &:active,
     &:focus {
       border: 2px solid $primary-color;
@@ -267,15 +298,13 @@ $dark-border: darken($background, 3%);
 
   a.donate-button {
     background: transparent !important;
-    border: 2px solid $yellow;
-    color: $yellow;
+    border: none;
 
     &:hover,
     &:focus,
     &:active {
-      border: 2px solid lighten($yellow, 15%);
+      border: none;
       background: transparent;
-      color: lighten($yellow, 15%);
     }
   }
 
@@ -306,6 +335,36 @@ $dark-border: darken($background, 3%);
       background: #444;
       color: #333;
     }
+  }
+
+  .category-container {
+    .category-filter {
+      padding: 0.5rem 1rem;
+      background: #222;
+      border-radius: $border-radius;
+      margin-right: 0.5rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+
+      &.active {
+        background: $primary-color !important;
+        color: white !important;
+      }
+
+      &:last-of-type {
+        margin-right: 0;
+      }
+
+      &:hover {
+        background: #111;
+        color: rgba(255, 255, 255, 0.6);
+      }
+    }
+  }
+
+  .filter-count {
+    color: $primary-color;
   }
 
   ::selection {

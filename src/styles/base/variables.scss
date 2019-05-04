@@ -21,8 +21,8 @@ $width: 900px;
 /* Colors */
 
 $background: #f0f0f0;
-$primary-color: #517cfc;
-$secondary-color: #ff4a6e;
+$primary-color: #5183f5;
+$secondary-color: rgb(255, 90, 95);
 $green: #00d287;
 $yellow: #f0d461;
 $accent-color: #cdcdcd;
@@ -30,7 +30,7 @@ $light: #f2f2f2;
 $alternate-background: #f0f0f0;
 $alternate-color: #404040;
 $link-color: $primary-color;
-$link-hover-color: darken($link-color, 22%);
+$link-hover-color: darken($link-color, 10%);
 $highlight: #ffeea8;
 $error: #d33c40;
 $bq-border: 16px solid #f0f0f0;
@@ -89,9 +89,10 @@ $box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.16);
 
 /* Buttons */
 
-$button-background: white;
-$button-background-hover: lighten($primary-color, 32%);
-$button-color: darken($primary-color, 10%);
+$primary-hover: lighten($primary-color, 33%);
+$button-background: $primary-color;
+$button-background-hover: darken($primary-color, 15%);
+$button-color: white;
 $button-font-weight: 600;
 $button-font-family: -apple-system, BlinkMacSystemFont, 'Roboto', Helvetica Neue, Helvetica, Arial,
   sans-serif;
@@ -110,7 +111,7 @@ $accent-button-color-hover: #ffffff;
 /* Forms */
 
 $forms: (
-  '[type=color], [type=date], [type=email], [type=number], [type=search], [type=tel], [type=text], [type=url], select, textarea'
+  '[type=color], [type=date], [type=email], [type=number], [type=search], [type=text], [type=url], select, textarea'
 );
 $buttons: ('.button, a.button, button, [type=submit], [type=button]');
 $input-background: #ffffff;

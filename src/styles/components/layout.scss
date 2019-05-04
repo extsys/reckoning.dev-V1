@@ -8,7 +8,7 @@
   #main-content {
     margin-top: 92px;
     padding: 60px 0 0;
-    min-height: calc(100vh - 222px);
+    min-height: calc(100vh - 219px);
   }
 }
 
@@ -27,6 +27,20 @@
 
 .lead {
   font-size: 1.1rem;
+  a {
+    border-bottom: 2px solid lighten($primary-color, 30%);
+    &:hover {
+      color: $link-hover-color;
+      background: $primary-hover;
+      border-bottom: 2px solid $link-hover-color;
+    }
+    &:active,
+    &:focus {
+      color: $link-hover-color;
+      background: $primary-hover;
+      border-bottom: 2px dashed $link-hover-color;
+    }
+  }
 
   h1 {
     font-weight: 500;
@@ -91,6 +105,10 @@
   display: grid;
   margin-bottom: 30px;
 
+  &.no-thumbnail {
+    display: flex;
+  }
+
   .flex {
     display: flex;
     flex-direction: column;
@@ -128,8 +146,8 @@
     .each {
       display: grid;
       align-items: center;
-      grid-template-columns: 60px 1fr;
-      padding: 0.75rem;
+      grid-template-columns: 60px 1fr 0;
+      padding: 1rem 0;
       margin: 0;
       border-radius: $border-radius;
       border: 2px solid transparent;
@@ -140,24 +158,11 @@
         color: rgba(0, 0, 0, 0.4);
         font-weight: 400;
       }
-
-      &:hover {
-        border: 2px solid $primary-color;
-        background: $button-background-hover;
-
-        h2 {
-          color: #111;
-        }
-      }
     }
 
     &:last-of-type {
       .each {
         border-bottom-color: transparent;
-
-        &:hover {
-          border-bottom-color: $primary-color;
-        }
       }
     }
   }
@@ -183,15 +188,14 @@
   &.simple {
     a {
       .each {
-        grid-template-columns: 50px 2fr;
+        grid-template-columns: 50px 2fr auto;
         align-items: center;
-        padding: 0.75rem;
+        padding: 1rem 0;
         margin: 0;
         border: 2px solid transparent;
 
         &:hover {
-          border: 2px solid $primary-color;
-          background: $button-background-hover;
+          background: white;
         }
       }
     }
@@ -217,12 +221,35 @@
 
 @include small-breakpoint {
   .posts {
+    margin: 3rem 0;
+
     a {
       .each {
-        grid-template-columns: 80px 1fr;
+        grid-template-columns: 80px 1fr 90px;
         align-items: start;
         padding: 1rem 2rem;
         margin: 0 -2rem;
+
+        &:hover {
+          border: 2px solid $primary-color;
+          background: $primary-hover;
+
+          &last-of-type {
+            &:hover {
+              border-bottom-color: $primary-color;
+            }
+          }
+
+          h2 {
+            color: #111;
+          }
+        }
+
+        &:active,
+        &:focus {
+          border: 2px dashed $primary-color;
+          background: $primary-hover;
+        }
 
         h2 {
           font-size: 1.3rem;
@@ -251,6 +278,17 @@
           padding: 0.75rem 1rem;
           margin: 0 -1rem;
 
+          &:hover {
+            border: 2px solid $primary-color;
+            background: $primary-hover;
+          }
+
+          &:active,
+          &:focus {
+            border: 2px dashed $primary-color;
+            background: $primary-hover;
+          }
+
           h2 {
             margin: 0;
           }
@@ -262,6 +300,61 @@
         }
       }
     }
+  }
+}
+
+.popular {
+  display: none;
+  align-self: center;
+  justify-self: flex-end;
+
+  div {
+    display: inline-block;
+    font-size: 0.9rem;
+    background: $green;
+    color: white;
+    border-radius: $border-radius;
+    padding: 0.5rem 1rem;
+    text-align: center;
+  }
+}
+
+@include small-breakpoint {
+  .popular {
+    display: block;
+  }
+}
+
+h2.publication-company {
+  display: flex;
+  align-items: center;
+
+  img {
+    max-height: 50px;
+    margin: 0 1rem 0 0;
+  }
+}
+
+.new {
+  display: none;
+  align-self: center;
+  justify-self: flex-end;
+
+  div {
+    display: inline-block;
+    font-size: 0.9rem;
+    background: $yellow;
+    color: #111;
+    border-radius: $border-radius;
+    padding: 0.5rem 1rem;
+    text-align: center;
+  }
+}
+
+@include small-breakpoint {
+  .new {
+    margin-left: 1rem;
+    display: block;
   }
 }
 
@@ -280,11 +373,20 @@
         margin: 0;
         color: $light-font-color;
         border-bottom: none;
+        display: flex;
+        align-items: center;
+      }
+
+      img {
+        margin-right: 1rem;
+        margin-bottom: 0;
+        max-height: 30px;
+        max-width: 30px;
       }
 
       &:hover {
         border: 2px solid $primary-color;
-        background: $button-background-hover;
+        background: $primary-hover;
 
         h2 {
           color: #111;
@@ -302,7 +404,7 @@
         margin: 0 -1rem;
 
         h2 {
-          font-size: 1.2rem;
+          font-size: 1.3rem;
         }
       }
     }
@@ -318,13 +420,16 @@
   }
 
   h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     border-bottom: none;
-    margin: 0 0 0.75rem 0;
+    margin: 0;
     font-weight: 600;
     color: #111;
     padding: 0;
-    margin: 0 0 0.5rem 0;
+
+    a {
+      color: #111;
+    }
   }
 
   p {
@@ -345,8 +450,12 @@
   .projects {
     .each {
       display: grid;
-      grid-template-columns: 2.2fr 5fr 3fr;
+      grid-template-columns: 2.5fr 5fr 3fr;
       grid-template-rows: none;
+    }
+
+    h2 {
+      font-size: 1.4rem;
     }
 
     p {
@@ -365,9 +474,9 @@
   span {
     display: inline-block;
     padding: 0.3rem 0.5rem;
-    color: darken($border-color, 30%);
-    border: 2px solid $border-color;
+    background: $light;
     border-radius: $border-radius;
+    color: lighten($font-color, 10%);
     font-size: 0.8rem;
     font-weight: 400;
     margin: 0 0.5rem 0.5rem 0;
@@ -381,9 +490,8 @@
     &:hover,
     &:active,
     &:focus {
-      border: 2px solid darken($border-color, 10%);
-      background: lighten($border-color, 15%);
-      color: darken($border-color, 40%);
+      background: darken($light, 5%);
+      color: $font-color;
     }
   }
 
@@ -454,6 +562,43 @@
   }
 }
 
+.quotation-main {
+  font-size: 20px;
+  font-style: oblique;
+  color: rgb(112, 128, 144);
+  //margin: 0 auto;
+  quotes: '\201C''\201D''\2018''\2019';
+  padding: 10px 20px;
+  line-height: 1.4;
+}
+
+.quotation-main:before {
+  content: open-quote;
+  display: inline;
+  line-height: 0;
+  left: -10px;
+  position: relative;
+  top: 30px;
+  color: #ccc;
+  font-size: 3em;
+}
+.quotation-main::after {
+  content: close-quote;
+  display: inline;
+  line-height: 0;
+  left: 10px;
+  position: relative;
+  top: 35px;
+  color: #ccc;
+  font-size: 3em;
+}
+.quotation-footer {
+  margin: 0;
+  text-align: right;
+  font-size: 1em;
+  font-style: italic;
+}
+
 blockquote {
   color: rgba(0, 0, 0, 0.7);
   border: 2px solid $yellow;
@@ -470,6 +615,7 @@ blockquote {
     border: 0;
     background: transparent;
     padding: 0.5rem 0;
+
     p {
       padding: 0;
       font-size: 1.3rem;
@@ -576,12 +722,13 @@ blockquote {
 }
 
 .search {
-  margin-bottom: 2rem;
+  margin-bottom: 0;
 }
 
 .filter-count {
-  padding: 0.5rem 2rem;
-  color: $secondary-color;
+  width: 80px;
+  text-align: center;
+  color: $primary-color;
   font-size: 1.4rem;
   font-weight: 600;
 }
@@ -608,8 +755,85 @@ blockquote {
   margin-left: 0.75rem;
 }
 
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.category-container {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+
+  .category-filter {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    padding: 0.5rem 0.75rem;
+    background: $light;
+    border-radius: $border-radius;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: lighten($font-color, 10%);
+    cursor: pointer;
+
+    .count {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      margin-left: 1rem;
+      color: $primary-color;
+      height: 23px;
+      width: 23px;
+      border-radius: 50%;
+      padding: 5px 5px 5px 5px;
+    }
+
+    &.active {
+      background: $primary-color;
+      color: white;
+
+      .count {
+        background: white;
+      }
+
+      &:hover,
+      &:active,
+      &:focus {
+        color: white;
+        background: darken($primary-color, 10%);
+      }
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+
+    &:hover {
+      background: darken($light, 5%);
+      color: $font-color;
+    }
+  }
+}
+
+@include small-breakpoint {
+  .category-container {
+    margin-bottom: 1.5rem;
+
+    .category-filter {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+    }
+  }
+}
+
 .coffee-icon {
   margin: 0;
+  margin-left: 0.5rem;
   height: 20px;
   width: 20px;
 }
@@ -624,16 +848,20 @@ blockquote {
 }
 
 .footer {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
   height: 55px;
   color: $light-font-color;
 }
 
 @include small-breakpoint {
   .footer {
+    display: flex;
+    align-items: center;
     height: 100px;
+    color: initial;
+
+    strong {
+      color: #111;
+    }
   }
 }
 
