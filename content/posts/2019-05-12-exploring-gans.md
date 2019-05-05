@@ -44,6 +44,11 @@ is a common binary classifier. It categorizes whether its input comes from the t
 ($D_{train}$) or from the Generator distribution.
 
 In this game, $G$ takes random noise as input and generates a sample image $G_{sample}$. This
-sample is designed to maximize the probability of making $D$ mistakes it as coming from real training set Dtrain.
+sample is designed to maximize the probability of making $D$ mistakes it as coming from real
+training set Dtrain.
 
-During training, D receives half of the time images from the training set Dtrain, and the other half, images from the generator network - Gsample. The discriminator is trained to maximize the probability of assigning the correct class label to both: real images (from the training set) and fake samples (from G). In the end, the hope is that the game finds an equilibrium - the Nash equilibrium.
+During training, D receives half of the time images from the training set Dtrain, and the other
+half, images from the generator network - Gsample. The discriminator is trained to maximize the
+probability of assigning the correct class label to both: real images (from the training set) and
+fake samples (from G). In the end, the hope is that the game finds an equilibrium - the Nash
+equilibrium.

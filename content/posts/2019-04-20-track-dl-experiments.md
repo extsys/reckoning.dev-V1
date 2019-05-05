@@ -261,12 +261,23 @@ as both of them on single chart. However, these charts are extremely basic:
 
 The chart here is very crowded and the colors are very unreadable. The worst part is that you have
 no control over the choice of colors. Even for this simple toy example with just a few metrics the
-above plots is pretty crowded. Different metrics can be compared in a table as well. Oddly, you
+above plots is very crowded. Different metrics can be compared in a table as well. Oddly, you
 can control here which ones get plotted in the graph.
 
 ![Metric Comparison](https://res.cloudinary.com/sadanandsingh/image/upload/v1557039275/comet/metrics_compare_akmutf.png)
 
-Overall, I found this to be quite disappointing. On principal, it looks a good handy tool
-that should be useful to all researchers in this field. However, it needs to go another hundreds of
-miles to be anywhere close to being useful. My hunt for such a tool will go on. Please share your
-thoughts and suggestion about this if it interests you on twitter.
+However, even with limiting what graphs we see for the comparison, the graphs are not usable. I was
+hoping to get more control over plotting, may be even on-demand plotting.
+
+![Clean Comparison Graphs](https://res.cloudinary.com/sadanandsingh/image/upload/v1557084082/comet/clean_compare.png)
+
+Considering the most of the real life examples are much more complex than a simple cat vs dog model,
+these comparison graphs and over all process have to be modified and tuned heavily to make it work
+for real life deep learning projects. I also looked briefly at uploading of images and assets,
+however, I found it to be not too friendly to use.
+
+Overall, I think comet is a good step towards democratization of deep learning. It is still in
+early stage to be completely usable in all sorts of projects. One aspect that I personally do not
+like about this is how all your data ends up going to comet servers. Because of this, I have
+started to look into tools that work locally. Please share your thoughts and suggestion about this
+if it interests you on twitter.
