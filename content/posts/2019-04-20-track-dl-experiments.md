@@ -31,7 +31,7 @@ every day for exploring different ideas. Managing this very iterative task is ve
 in obtaining good models. In this article, I will describe my setup for using
 [Pytorch](https://pytorch.org) and evaluate [comet.ml][comet] for the management of experiments.
 
-![cats and dogs data](https://res.cloudinary.com/sadanandsingh/image/upload/v1555791764/cats-dogs_e4eb3v.png)
+![cats and dogs data](https://res.cloudinary.com/sadanandsingh/image/upload/v1555791764/comet/cats-dogs_e4eb3v.png)
 
 I am going to consider the problem of classification of cats and dogs. You can download the data from
 [here](https://www.microsoft.com/en-us/download/details.aspx?id=54765). This has 12500 images each
@@ -219,7 +219,7 @@ normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 
 I first ran all 4 experiments (SGD and Adam optimizers with learning rates of 0.001 and 0.004).
 As you can see in the screen shots below, it is quite handy to view progress of individual experiments:
 
-![experiments list](https://res.cloudinary.com/sadanandsingh/image/upload/v1555803192/exp_list_dhgqxu.png)
+![experiments list](https://res.cloudinary.com/sadanandsingh/image/upload/v1555803192/comet/exp_list_dhgqxu.png)
 
 This list view can be customized to show different parameters and metrics in the table. Here I have
 added few of those to easily distingush different experiments.
@@ -230,7 +230,7 @@ a tabular view with min/max of different metrics, code, parameters etc. By defau
 plots for losses and metric for train and test modes. However, you can create your own set of plots.
 Here, I created plots to compare test/train accuracy and losses.
 
-![exp-charts](https://res.cloudinary.com/sadanandsingh/image/upload/v1555804423/exp_charts_qywcey.png)
+![exp-charts](https://res.cloudinary.com/sadanandsingh/image/upload/v1555804423/comet/exp_charts_qywcey.png)
 
 <string class='pink'>**This is a quite good model. We are getting 99% test accuracy with so
 little training!**</strong>
@@ -238,33 +238,33 @@ little training!**</strong>
 Additionally, we get other handy information like list of hyper parameters, gpu utilization and a
 tabular view of metrics.
 
-![GPU Props](https://res.cloudinary.com/sadanandsingh/image/upload/v1555804851/gpu-props_l0rwsd.png)
+![GPU Props](https://res.cloudinary.com/sadanandsingh/image/upload/v1555804851/comet/gpu-props_l0rwsd.png)
 
 A really cool feature that I really like, is to get steps to reproduce to the results for a given
 experiment.
 
-![Reproduce Experiment](https://res.cloudinary.com/sadanandsingh/image/upload/v1555805270/reproduce_exp_x0zeaf.png)
+![Reproduce Experiment](https://res.cloudinary.com/sadanandsingh/image/upload/v1555805270/comet/reproduce_exp_x0zeaf.png)
 
 So far things were looking good. Now, I wanted to compare these experiments graphically. On the
 page where you get a list view of experiments, there is an option to plot some metrics as a function of
 experiments. It's pretty easy to add a comparison chart for some given metric and compare different
 experiments pretty quickly:
 
-![Exp List Comparison](https://res.cloudinary.com/sadanandsingh/image/upload/v1557038035/Screen_Shot_2019-05-04_at_11.33.09_PM_tpnyyl.png)
+![Exp List Comparison](https://res.cloudinary.com/sadanandsingh/image/upload/v1557038035/comet/Screen_Shot_2019-05-04_at_11.33.09_PM_tpnyyl.png)
 
 Moving on, Any two experiments can be selected to get a diff between them. Selecting any two
 experiments, and pressing the "Diff" button takes you to a comparison view of two experiments. I
 found this to be little bit of a mixed experience. You can see individual experiment charts as well
 as both of them on single chart. However, these charts are extremely basic:
 
-![Comparison Graphs](https://res.cloudinary.com/sadanandsingh/image/upload/v1557038994/dirty_compare_qo6i7x.png)
+![Comparison Graphs](https://res.cloudinary.com/sadanandsingh/image/upload/v1557038994/comet/dirty_compare_qo6i7x.png)
 
 The chart here is very crowded and the colors are very unreadable. The worst part is that you have
 no control over the choice of colors. Even for this simple toy example with just a few metrics the
 above plots is pretty crowded. Different metrics can be compared in a table as well. Oddly, you
 can control here which ones get plotted in the graph.
 
-![Metric Comparison](https://res.cloudinary.com/sadanandsingh/image/upload/v1557039275/metrics_compare_akmutf.png)
+![Metric Comparison](https://res.cloudinary.com/sadanandsingh/image/upload/v1557039275/comet/metrics_compare_akmutf.png)
 
 Overall, I found this to be quite disappointing. On principal, it looks a good handy tool
 that should be useful to all researchers in this field. However, it needs to go another hundreds of
