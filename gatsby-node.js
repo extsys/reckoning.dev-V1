@@ -1,7 +1,5 @@
 const path = require('path');
 const kebabCase = require('lodash.kebabcase');
-const moment = require('moment');
-const siteConfig = require('./data/SiteConfig');
 const _ = require(`lodash`);
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

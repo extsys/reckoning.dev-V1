@@ -11,7 +11,15 @@ template: post
 thumbnail: '../thumbnails/comet.png'
 ---
 
-> **TL;DR**: [Comet.ml][comet] is a good step towards management of deep learning experiments. However, I can NOT recommend it for regular use at the moment. Especially, features regarding comparison of experiments simply suck and are extremely unreliable!
+<div class='tldr'><strong>TL;DR</strong><br/>Comet.ml is a great step towards management of deep
+learning experiments. The look and feel is quite ahead of the competition. I recommend
+it highly for small projects. I would wait for it to be more stable and feature rich to use it on
+larger projects.</div>
+
+<div class='update'><strong>UPDATE</strong><br/>Recently, I was contacted by
+Gideon Mendels, CEO of comet.ml regarding the issues that I reported on this post. He notified
+me that some of the issues that I had faced was due to some temporary issue that they were facing.
+I have verified that and updated my review below.</div>
 
 Managing multiple research experiments at a time can be overwhelming. The same applies to deep
 learning research as well. Beyond the usual challenges in software development, machine learning
@@ -216,7 +224,7 @@ As you can see in the screen shots below, it is quite handy to view progress of 
 This list view can be customized to show different parameters and metrics in the table. Here I have
 added few of those to easily distingush different experiments.
 
-Let us first look in to the best performing model (SGD with a learning rate of 0.004). Clicking this
+Let us first take a look at the best performing model (SGD with a learning rate of 0.004). Clicking this
 particular experiment, takes us into its expanded view, where we can look at different charts,
 a tabular view with min/max of different metrics, code, parameters etc. By default, you get individual
 plots for losses and metric for train and test modes. However, you can create your own set of plots.
@@ -239,22 +247,24 @@ experiment.
 
 So far things were looking good. Now, I wanted to compare these experiments graphically. On the
 page where you get a list view of experiments, there is an option to plot some metrics as a function of
-experiments. My attempt to add one such graph ended in a complete failure. I have seen work in the
-past for MNIST experiments, so this was an issue of reliability.
+experiments. It's pretty easy to add a comparison chart for some given metric and compare different
+experiments pretty quickly:
 
-![Exp List Comparison Failure](https://res.cloudinary.com/sadanandsingh/image/upload/v1555805119/comparison-failure_pm1z7f.png)
+![Exp List Comparison](https://res.cloudinary.com/sadanandsingh/image/upload/v1557038035/Screen_Shot_2019-05-04_at_11.33.09_PM_tpnyyl.png)
 
 Moving on, Any two experiments can be selected to get a diff between them. Selecting any two
 experiments, and pressing the "Diff" button takes you to a comparison view of two experiments. I
-found this to be another ultimate failure. Graphs are simply unusable. There is no way to modify
-them well to one's liking.
+found this to be little bit of a mixed experience. You can see individual experiment charts as well
+as both of them on single chart. However, these charts are extremely basic:
 
-![Comparison Graphs](https://res.cloudinary.com/sadanandsingh/image/upload/v1555805488/graph-comp_erao3l.png)
+![Comparison Graphs](https://res.cloudinary.com/sadanandsingh/image/upload/v1557038994/dirty_compare_qo6i7x.png)
 
-It seems there is a way to control what gets plotted in the metric comparison tab, however, I
-just could not get that to work.
+The chart here is very crowded and the colors are very unreadable. The worst part is that you have
+no control over the choice of colors. Even for this simple toy example with just a few metrics the
+above plots is pretty crowded. Different metrics can be compared in a table as well. Oddly, you
+can control here which ones get plotted in the graph.
 
-![Metric Comparison](https://res.cloudinary.com/sadanandsingh/image/upload/v1555805638/metrics-comp_n8y005.png)
+![Metric Comparison](https://res.cloudinary.com/sadanandsingh/image/upload/v1557039275/metrics_compare_akmutf.png)
 
 Overall, I found this to be quite disappointing. On principal, it looks a good handy tool
 that should be useful to all researchers in this field. However, it needs to go another hundreds of

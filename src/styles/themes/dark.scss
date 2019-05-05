@@ -212,6 +212,20 @@ $dark-border: darken($background, 3%);
     color: $comment;
   }
 
+  .update {
+    background-color: #006622;
+    border-left: 6px solid #4caf50;
+    margin-bottom: 15px;
+    padding: 4px 12px;
+  }
+
+  .tldr {
+    background-color: #006bb3;
+    border-left: 6px solid #99d6ff;
+    margin-bottom: 15px;
+    padding: 4px 12px;
+  }
+
   th {
     border-bottom: 2px solid darken($background, 5%);
   }

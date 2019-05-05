@@ -599,6 +599,20 @@ h2.publication-company {
   font-style: italic;
 }
 
+.update {
+  background-color: #ddffdd;
+  border-left: 6px solid #4caf50;
+  margin-bottom: 15px;
+  padding: 4px 12px;
+}
+
+.tldr {
+  background-color: #e7f3fe;
+  border-left: 6px solid #2196f3;
+  margin-bottom: 15px;
+  padding: 4px 12px;
+}
+
 blockquote {
   color: rgba(0, 0, 0, 0.7);
   border: 2px solid $yellow;
