@@ -1,6 +1,6 @@
 ---
 title: 'Exploring GANs in Pytorch'
-date: 2019-04-28
+date: 2019-05-12
 tags:
   - DeepLearning
   - GAN
@@ -10,6 +10,7 @@ categories:
 slug: exploring-gans
 template: post
 thumbnail: '../thumbnails/celeb.png'
+draft: true
 ---
 
 If you follow deep learning even lightly, likely you would have come across
