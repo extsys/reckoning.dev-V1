@@ -39,17 +39,15 @@ rather than $G$. The training procedure for $G$ is to maximize the probability o
 mistake. In the case where both $G$ and $D$ are defined by neural networks, the entire system can
 be trained end-to-end with backpropagation. This framework corresponds to a minimax two-player game.
 
-Given a training data $D_{train}$, the generator, $G$ creates samples as an attempt to mimic the
+Given a training data , the generator, $G$ creates samples as an attempt to mimic the
 ones from the same probability distribution as $D_{train}$. The discriminator, $D$ on the other hand,
 is a common binary classifier. It categorizes whether its input comes from the true data distribution
-($D_{train}$) or from the Generator distribution.
+($D_{train}$) or from the Generator distribution. In this game, $G$ takes random noise as input and
+generates a sample image $G_{sample}$. This sample is designed to maximize the probability of
+making $D$ mistakes it as coming from real training set $D_{train}$.
 
-In this game, $G$ takes random noise as input and generates a sample image $G_{sample}$. This
-sample is designed to maximize the probability of making $D$ mistakes it as coming from real
-training set Dtrain.
-
-During training, D receives half of the time images from the training set Dtrain, and the other
-half, images from the generator network - Gsample. The discriminator is trained to maximize the
-probability of assigning the correct class label to both: real images (from the training set) and
-fake samples (from G). In the end, the hope is that the game finds an equilibrium - the Nash
-equilibrium.
+During training, $D$ receives half of the time images from the training set $D_{train}$, and the
+other half, images from the generator network - $G_{sample}$. The discriminator is trained to
+maximize the probability of assigning the correct class label to both: real images (from the
+training set) and fake samples (from $G$). In the end, the hope is that the game finds an
+equilibrium - the [Nash equilibrium](https://en.wikipedia.org/wiki/Nash_equilibrium).
