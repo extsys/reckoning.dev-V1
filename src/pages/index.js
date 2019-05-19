@@ -78,29 +78,27 @@ class Index extends Component {
 
           <section className='section'>
             <h2>Other People's Opinions</h2>
-            <blockquote className='quotation'>
-              <p>
-                "Hi Sadanand, Excellent post. Thank you for taking time and explaining in a neat
-                matter. I am bit confused in here. In classification problem we have total 3
-                classes, so by default SVM takes care and divide it into 3 classes ? And also it is
-                mentioned that "SVM by definition is well suited for binary classification. In
-                order to perform multi-class classification, the problem needs to be transformed
-                into a set of binary classification problems."
-              </p>
-              <cite>— KK</cite>
-            </blockquote>
-            <blockquote className='quotation'>
-              <p>
-                "Great write up. I implemented much of this on an Up-Squared
-                (http://www.up-board.org/ups...). It runs great. Not a lot of wasted CPU cycles,
-                other than conky. I am liking Plasma and Arch."
-              </p>
-              <cite>— Vincent Flesouras</cite>
-            </blockquote>
-            <blockquote className='quotation'>
-              <p>"Great article, very useful thank you!"</p>
-              <cite>— Fivos Delemis</cite>
-            </blockquote>
+            <div className='quotations'>
+              <blockquote className='quotation'>
+                <p>
+                  "Hi Sadanand, Excellent post. Thank you for taking time and explaining in a neat
+                  matter. I am bit confused in here. In classification problem we have total 3
+                  classes, so by default SVM takes care and divide it into 3 classes ? And also it
+                  is mentioned that "SVM by definition is well suited for binary classification. In
+                  order to perform multi-class classification, the problem needs to be transformed
+                  into a set of binary classification problems."
+                </p>
+                <cite>— KK</cite>
+              </blockquote>
+              <blockquote className='quotation'>
+                <p>
+                  "Great write up. I implemented much of this on an Up-Squared
+                  (http://www.up-board.org/ups...). It runs great. Not a lot of wasted CPU cycles,
+                  other than conky. I am liking Plasma and Arch."
+                </p>
+                <cite>— Vincent Flesouras</cite>
+              </blockquote>
+            </div>
           </section>
 
           <section className='section'>

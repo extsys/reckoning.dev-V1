@@ -613,6 +613,20 @@ h2.publication-company {
   padding: 4px 12px;
 }
 
+@include small-breakpoint {
+  .quotations {
+    display: flex;
+
+    .quotation {
+      margin: 1rem;
+      padding: 2.5rem;
+      border-radius: $border-radius;
+      flex: 1;
+      box-shadow: $box-shadow;
+    }
+  }
+}
+
 blockquote {
   color: rgba(0, 0, 0, 0.7);
   border: 2px solid $yellow;
