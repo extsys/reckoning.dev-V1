@@ -33,11 +33,11 @@ class Index extends Component {
               the world. My site is <strong>free</strong> and has no ads, affiliate links, or
               sponsored posts.
             </p>
-            <div class='quotation-main'>
+            <div className='quotation-main'>
               Learn from yesterday, live for today, hope for tomorrow. The important thing is not
               to stop questioning.
             </div>
-            <div class='quotation-footer'>— Albert Einstein</div>
+            <div className='quotation-footer'>— Albert Einstein</div>
 
             <a
               className='twitter-follow-button'
