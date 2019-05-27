@@ -474,11 +474,11 @@ Similar to XGBoost, [LightGBM](https://lightgbm.readthedocs.io/en/latest/) is an
 
 **Level-wise Splits:**
 
-![light GBM](https://raw.githubusercontent.com/wiki/Microsoft/LightGBM/image/level_wise.png)
+<zoom-image src='https://raw.githubusercontent.com/wiki/Microsoft/LightGBM/image/level_wise.png'></zoom-image>
 
 **Leaf-wise Splits:**
 
-![Courtsey: LightGBM User Guide](https://raw.githubusercontent.com/wiki/Microsoft/LightGBM/image/leaf_wise.png)
+<zoom-image src='https://raw.githubusercontent.com/wiki/Microsoft/LightGBM/image/leaf_wise.png'></zoom-image>
 
 Leaf-wise splits lead to increase in complexity and may lead to over-fitting, and hence extra caution needs to be taken in tuning. Some of the biggest advantages of LightGBM over XGBoost is in terms of extremely fast training speed, lower memory usage, compatibility with large datasets and highly parallel computational support using threads, MPI and GPUs. LightGBM also has inbuilt support for categorical variables, unlike XGBoost, where one has to pre-process the data to convert all of the categorical features to integer ones using _one-hot encoding_ or _label encoding_.
 

@@ -29,7 +29,7 @@ with a [tensorflow] back-end.
 
 ## Basic Autoencoders
 
-![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx1PGY44IVn6aV-zTjvOD8IK3xNnv6vMDLHpsA2ignlXE6SrfBrg)
+<zoom-image src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx1PGY44IVn6aV-zTjvOD8IK3xNnv6vMDLHpsA2ignlXE6SrfBrg'></zoom-image>
 
 The simplest AutoEncoder (AE) has an MLP-like (Multi Layer Perceptron)
 structure:
@@ -99,7 +99,7 @@ A practical auto-encoder network consists of an encoding function (_encoder_),
 and a decoding function (_decoder_). Following is an example architecture for
 the reconstruction of images.
 
-![](https://cdn-images-1.medium.com/max/1600/1*op0VO_QK4vMtCnXtmigDhA.png)
+<zoom-image src='https://cdn-images-1.medium.com/max/1600/1*op0VO_QK4vMtCnXtmigDhA.png'></zoom-image>
 
 In this article we will build different types of autoencoders for the
 [fashion MNIST][f-mnist] dataset. In stead of using more common [MNIST][mnist] dataset,
@@ -246,7 +246,7 @@ display_reconstructed(x_test, decoded_imgs, 10)
 The top row is the original image, while bottom row is the reconstructed image.
 We can see that we are loosing a lot of fine details.
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1544987534/images/autoencoders/ae_basic_fm.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544987534/images/autoencoders/ae_basic_fm.png'></zoom-image>
 
 ## Sparsity Constraint
 
@@ -311,7 +311,7 @@ decoded_imgs = autoencoder.predict(x_test)
 display_reconstructed(x_test, decoded_imgs, 10)
 ```
 
-![Sample Images](https://res.cloudinary.com/sadanandsingh/image/upload/v1544987534/images/autoencoders/ae_sparsity_fm.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544987534/images/autoencoders/ae_sparsity_fm.png'></zoom-image>
 
 ## Deep Autoencoders
 
@@ -355,7 +355,7 @@ decoded_imgs = autoencoder.predict(x_test)
 display_reconstructed(x_test, decoded_imgs, 10)
 ```
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1544987534/images/autoencoders/ae_deep_fm.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544987534/images/autoencoders/ae_deep_fm.png'></zoom-image>
 
 ## Convolutional Autoencoders
 
@@ -450,7 +450,7 @@ decoded_imgs = autoencoder.predict(x_test)
 display_reconstructed(x_test, decoded_imgs, 10)
 ```
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1544987534/images/autoencoders/ae_conv_fm.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544987534/images/autoencoders/ae_conv_fm.png'></zoom-image>
 
 At first glance, it seems not much of improvement over the deep autoencoders
 result. However, if you notice closely, we start to see small feature
@@ -507,7 +507,7 @@ Here is how the corrupted images look now. They are barely recognizable now!
 display_reconstructed(x_test_noisy, None)
 ```
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1544987534/images/autoencoders/ae_noisy_sample.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544987534/images/autoencoders/ae_noisy_sample.png'></zoom-image>
 
 We will use a slightly modified version of the previous convolution
 autoencoder, the one with larger number of filters in the intermediate
@@ -570,7 +570,7 @@ decoded_imgs = autoencoder.predict(x_test_noisy)
 display_reconstructed(x_test_noisy, decoded_imgs, 10)
 ```
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1544987534/images/autoencoders/dae_conv_fm.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544987534/images/autoencoders/dae_conv_fm.png'></zoom-image>
 
 > **Sequence-to-Sequence Autoencoders** <br/><br/> If your inputs are sequences, rather than 2D images, then you may want to use as encoder and decoder a type of model that can capture temporal structure, such as a [LSTM][lstm]. To build a LSTM-based auto-encoder, first use a [LSTM][lstm] encoder to turn your input sequences into a single vector that contains information about the entire sequence, then repeat this vector $n$ times (where $n$ is the number of time steps in the output sequence), and run a [LSTM][lstm] decoder to turn this constant sequence into the target sequence.
 
@@ -578,7 +578,7 @@ display_reconstructed(x_test_noisy, decoded_imgs, 10)
 
 ## Variational Autoencoders (VAE)
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1544987535/images/autoencoders/vae.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544987535/images/autoencoders/vae.png'></zoom-image>
 
 Variational autoencoders (VAE) are stochastic version of the regular
 autoencoders. It's a type of autoencoder with added constraints on the encoded
@@ -745,7 +745,7 @@ Below is the loss for the training and the validation datasets during training
 epochs. We find that loss has converged in 100 epochs without any sign of over
 fitting.
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1544987535/images/autoencoders/vae_fc_hist.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544987535/images/autoencoders/vae_fc_hist.png'></zoom-image>
 
 Because our latent space is two-dimensional, there are a few cool visualizations that can be done at this point. One is to look at the neighborhoods of different classes on the latent 2D plane:
 
@@ -764,7 +764,7 @@ def plot_latentSpace(encoder, x_test, y_test, batch_size):
 plot_latentSpace(encoder, x_test, y_test, batch_size)
 ```
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1544987535/images/autoencoders/vae_fc_latent.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544987535/images/autoencoders/vae_fc_latent.png'></zoom-image>
 
 Each of these colored clusters is a type of the fashion item. Close clusters
 are items that are structurally similar (i.e. items that share information in
@@ -811,7 +811,7 @@ def plot_generatedImages(generator):
 plot_generatedImages(generator)
 ```
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1544987535/images/autoencoders/vae_fc_gen.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544987535/images/autoencoders/vae_fc_gen.png'></zoom-image>
 
 We find our model has done only a so-so job in generating new images. Still,
 given the simplicity and very small amount of simple code we had to write,
@@ -953,7 +953,7 @@ encoder = Model(x, z_mean)
 plot_latentSpace(encoder, x_test, y_test, batch_size)
 ```
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1544987535/images/autoencoders/vae_conv_latent.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544987535/images/autoencoders/vae_conv_latent.png'></zoom-image>
 
 We can now see that the separation between different class of images are larger than the simple MLP based VAE model.
 
@@ -974,7 +974,7 @@ generator = Model(decoder_input, _x_decoded_mean_squash)
 plot_generatedImages(generator)
 ```
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1544985954/images/autoencoders/vae_conv_gen.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544985954/images/autoencoders/vae_conv_gen.png'></zoom-image>
 
 [kpca]: https://en.wikipedia.org/wiki/Kernel_principal_component_analysis
 

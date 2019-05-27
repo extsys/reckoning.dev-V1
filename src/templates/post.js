@@ -10,6 +10,8 @@ import config from '../../data/SiteConfig';
 import Img from 'gatsby-image';
 import { formatDate, editOnGithub } from '../utils/global';
 import 'katex/dist/katex.min.css';
+import rehypeReact from 'rehype-react';
+import ZoomImage from '../components/ZoomImage';
 
 class PostTemplate extends Component {
   render() {
@@ -18,6 +20,11 @@ class PostTemplate extends Component {
     const post = postNode.frontmatter;
     const prev = this.props.pageContext.prev;
     const next = this.props.pageContext.next;
+
+    const renderAst = new rehypeReact({
+      createElement: React.createElement,
+      components: { 'zoom-image': ZoomImage }
+    }).Compiler;
 
     let thumbnail;
 
@@ -94,7 +101,7 @@ class PostTemplate extends Component {
           {post.toc === true && (
             <div className='post' dangerouslySetInnerHTML={{ __html: postNode.tableOfContents }} />
           )}
-          <div className='post' dangerouslySetInnerHTML={{ __html: postNode.html }} />
+          {renderAst(postNode.htmlAst)}
           <div>
             <div
               style={{
@@ -146,7 +153,7 @@ export default PostTemplate;
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug } }) {
-      html
+      htmlAst
       tableOfContents
       timeToRead
       excerpt

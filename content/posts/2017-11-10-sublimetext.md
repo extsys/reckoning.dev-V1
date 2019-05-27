@@ -28,7 +28,7 @@ pallet. Hit `ctrl + shift + P` and type _Install_, choose _Package
 Control : Install Package_. Now you can search for any package that you
 wish to install, and then press _Enter_ to install it.
 
-![Command Pallette](https://res.cloudinary.com/sadanandsingh/image/upload/v1544988652/images/sublime/Settings.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544988652/images/sublime/Settings.png'></zoom-image>
 
 Here is a list of packages that I currently use:
 
@@ -122,7 +122,7 @@ a while and you can focus on the content instead. I prefer to use a line width o
 black likes to convert all strings to double quotes, while I prefer single quotes. Following
 configuration is needed for these modifications:
 
-![MarkDown](https://res.cloudinary.com/sadanandsingh/image/upload/v1544988652/images/sublime/MarkdownEditing.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544988652/images/sublime/MarkdownEditing.png'></zoom-image>
 
 [black]: https://github.com/ambv/black
 

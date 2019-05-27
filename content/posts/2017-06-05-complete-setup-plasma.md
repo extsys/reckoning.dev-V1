@@ -34,7 +34,7 @@ and a more complete version of my previous posts on
 [plasma5]: https://en.wikipedia.org/wiki/KDE_Plasma_5
 [btrfs]: https://en.wikipedia.org/wiki/Btrfs
 
-![My Current Desktop](https://res.cloudinary.com/sadanandsingh/image/upload/v1545501807/project/plasma_install.jpg)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1545501807/project/plasma_install.jpg'></zoom-image>
 
 ## System Details
 

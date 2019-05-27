@@ -19,7 +19,7 @@ Here is my try in making some edible _parathas_. It might take few
 trials in making a perfectly round-shaped _Paratha_. Please share your
 views and inputs in comments below.
 
-![Aloo Paratha Stuffing](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963330/AlooParathaStuffing_dclifs.jpg)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1496963330/AlooParathaStuffing_dclifs.jpg'></zoom-image>
 
 ## Ingredients
 
@@ -36,7 +36,7 @@ views and inputs in comments below.
 - 1/2 Medium Onion
 - Salt to Taste
 
-![Aloo Paratha Raw](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963330/AlooParathaRaw_rmp8kg.jpg)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1496963330/AlooParathaRaw_rmp8kg.jpg'></zoom-image>
 
 ### For Bread
 
@@ -69,7 +69,7 @@ views and inputs in comments below.
 Let it cool before serving. It can be served with Indian spicy pickle
 and yogurt (_Dahi_).
 
-![Aloo Paratha Yummy](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963330/AlooParatha_rdn84h.jpg)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1496963330/AlooParatha_rdn84h.jpg'></zoom-image>
 
 ## Interesting Facts
 

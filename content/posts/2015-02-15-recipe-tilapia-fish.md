@@ -20,7 +20,7 @@ my _five minute_ Tilapia Fish Recipe.
 Two major ingredients - fish and veggies, of this recipe can be grabbed
 from the frozen section of any supermarket.
 
-![Fried Streamed Veggies](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963331/CookingVeggies_ti4q5u.jpg)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1496963331/CookingVeggies_ti4q5u.jpg'></zoom-image>
 
 ## Ingredients
 
@@ -54,7 +54,7 @@ from the frozen section of any supermarket.
 Serve and garnish it with lime juice and some cilantro for an exotic
 lunch/dinner.
 
-![Tilapia with Veggies](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963334/Tilapia_v0cehs.jpg)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1496963334/Tilapia_v0cehs.jpg'></zoom-image>
 
 ## Interesting Facts
 

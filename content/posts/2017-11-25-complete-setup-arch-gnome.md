@@ -22,7 +22,7 @@ with the latest configuration of my machine. I have also update my
 GPU to 1080 Ti to be able to run some computer vision models at reasonable speeds. I use this desktop
 for some audio processing and some Kaggle-level computer vision/deep learning.
 
-![System Info](https://res.cloudinary.com/sadanandsingh/image/upload/v1544988349/images/gnome3/SystemInfo.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544988349/images/gnome3/SystemInfo.png'></zoom-image>
 
 In this post, we will do a complete installation of Arch Linux with Gnome 3 as the desktop
 environment. Our setup will also involve encryption of the root partition that will be formatted in
@@ -76,7 +76,7 @@ This should print all set UEFI variables. Please look at the
 [Arch Installation Guide](https://wiki.archlinux.org/index.php/installation_guide) in case you do
 not get any list of UEFI variables.
 
-![Applications Menu](https://res.cloudinary.com/sadanandsingh/image/upload/v1544988349/images/gnome3/ApplicationMenu.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544988349/images/gnome3/ApplicationMenu.png'></zoom-image>
 
 If you have high resolution 4K monitor like me, you will need to run following to increase fonts
 to a readable size:
@@ -420,7 +420,7 @@ that we saved from this session. Network configurations are stored as \*.network
 `/etc/systemd/network`. We need to create ours as below. Once the network settings file has been
 created we can enable the `networkd` service.
 
-![Gnome 3 Workspaces](https://res.cloudinary.com/sadanandsingh/image/upload/v1544988350/images/gnome3/workspaces.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544988350/images/gnome3/workspaces.png'></zoom-image>
 
 ```terminal
 vim /etc/systemd/network/50-wired.network
@@ -832,7 +832,7 @@ And we are all setup for using `zsh`!
 We will modify gnome 3 by changing theme, icons and fonts. First install additional themes, fonts,
 icons etc.
 
-![Apps](https://res.cloudinary.com/sadanandsingh/image/upload/v1544988349/images/gnome3/Apps.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544988349/images/gnome3/Apps.png'></zoom-image>
 
 ```terminal
 yay -S ttf-font-awesome adobe-source-code-pro-fonts
@@ -896,7 +896,7 @@ about anything related to Windows!). pcloud has some interesting features:
 - The public folder gets a link, that you can use to host a static website or static contents of
   your webpages.
 
-![pCloud](https://res.cloudinary.com/sadanandsingh/image/upload/v1544988350/images/gnome3/pcloud.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544988350/images/gnome3/pcloud.png'></zoom-image>
 
 Additionally, I found some ultra- great deal over the black Friday weekend! To get support for
 pcloud in Arch, all you need to do is install it!
@@ -913,7 +913,7 @@ yay -S pcloud-drive
 My choice of editor is neovim and sublime text. Please [refer to my previous post](/sublimetext) for
 details on setting up Sublime Text 3. Following is the setup required to install it:
 
-![Editors](https://res.cloudinary.com/sadanandsingh/image/upload/v1544988348/images/gnome3/editors.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544988348/images/gnome3/editors.png'></zoom-image>
 
 ```terminal
 # Install editors

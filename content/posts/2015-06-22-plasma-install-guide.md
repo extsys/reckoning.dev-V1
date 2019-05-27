@@ -20,7 +20,7 @@ root using the password that we set.
 
 > Please see [my latest post](/complete-setup-arch-gnome) on installing Arch linux with Gnome 3 for an upto date version of this guide.
 
-![Plasma 5 Looks](https://res.cloudinary.com/sadanandsingh/image/upload/v1545502051/project/arch-plasma.jpg)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1545502051/project/arch-plasma.jpg'></zoom-image>
 
 <br>
 

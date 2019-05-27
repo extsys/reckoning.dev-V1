@@ -45,7 +45,7 @@ chess naming conventions, from $a1$ to $h8$.
 
 > In the original post this problem was ill defined. <br/><br/> **Please solve this problem with the constraints that only up and right moves are allowed.**
 
-![Chess Board](https://upload.wikimedia.org/wikipedia/commons/4/4b/Ternblad_grid_chess_problem.png)
+<zoom-image src='https://upload.wikimedia.org/wikipedia/commons/4/4b/Ternblad_grid_chess_problem.png'></zoom-image>
 
 **Can you find the generic answer for the case of $N\times M$ grid?**
 

@@ -18,7 +18,7 @@ I am going to describe my hardware, OS, and different packages that I use. In pa
 the question, I found that the most of the interest have been around managing different python
 versions, and modules like pytorch/tensorflow libraries etc.
 
-![Gnome Activities](https://res.cloudinary.com/sadanandsingh/image/upload/v1546230616/gnome/activities_fsd0wm.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1546230616/gnome/activities_fsd0wm.png'></zoom-image>
 
 ## Workstation Hadware
 
@@ -71,7 +71,7 @@ sudo apt install gnome-tweaks
 sudo apt install gnome-shell-extensions gnome-shell-extension-caffeine
 ```
 
-![google chrome](https://res.cloudinary.com/sadanandsingh/image/upload/v1546230615/gnome/chrome_jx6pit.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1546230615/gnome/chrome_jx6pit.png'></zoom-image>
 
 If you look at my screenshots above, I prefer to use a different look for my ubuntu machine.
 Following are the themes, icons and wallpapers that I use. The GTK theme is [canta](https://github.com/vinceliuice/Canta-theme), the Icon pack is [Oranchelo](https://github.com/OrancheloTeam/oranchelo-icon-theme). The wallpaper above is
@@ -118,7 +118,7 @@ sudo apt install hugo
 sudo apt install gcc g++
 ```
 
-![Gnome Search](https://res.cloudinary.com/sadanandsingh/image/upload/v1546230615/gnome/searchApps_y1tgmu.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1546230615/gnome/searchApps_y1tgmu.png'></zoom-image>
 
 ## git setup
 
@@ -161,7 +161,7 @@ the `bobthefish` theme. You can install these by first installing zprezto, then 
 repository as another remote in the `$HOME/.zprezto` git repository. The details can be found in the
 README file of my gihub repo.
 
-![Terminal](https://res.cloudinary.com/sadanandsingh/image/upload/v1546230613/gnome/terminal_g3jr6j.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1546230613/gnome/terminal_g3jr6j.png'></zoom-image>
 
 ```terminal
 sudo apt install zsh
@@ -287,7 +287,7 @@ conda install -c menpo opencv
 Its as simple as this! If you want pytorch with say `cuda 9` support, you can create a new env that
 is cloned from `base` and simply change the version of pytorch there!
 
-![Gnome Tweaks](https://res.cloudinary.com/sadanandsingh/image/upload/v1546230614/gnome/gnomeTweaks_p0fkkv.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1546230614/gnome/gnomeTweaks_p0fkkv.png'></zoom-image>
 
 ## CUDA installation
 
@@ -314,7 +314,7 @@ something more modern and open source. I have found [Visual Studio Code (VS Code
 Microsoft to be an extremely powerful option. It has crazy amount of extensions, themes and much
 more than sublime text!
 
-![Visual Studio Code](https://res.cloudinary.com/sadanandsingh/image/upload/v1546230615/gnome/vscode_fcsbl4.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1546230615/gnome/vscode_fcsbl4.png'></zoom-image>
 
 You will first need to install it using the following ppa:
 

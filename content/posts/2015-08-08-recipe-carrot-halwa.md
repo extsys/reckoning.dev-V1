@@ -21,7 +21,7 @@ exotic food!
 Carrot halwa is a common north Indian dessert, healthy carrots cooked
 in milk and mango puree.
 
-![Fresh Carrots](https://res.cloudinary.com/sadanandsingh/image/upload/v1545501875/project/organic-carrot.jpg)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1545501875/project/organic-carrot.jpg'></zoom-image>
 
 ## Ingredients
 
@@ -48,7 +48,7 @@ in milk and mango puree.
 8. Let the halwa cool down.
 9. Garnish it with nuts and dried milk.
 
-![My Creation Before Entering My Tummy](https://res.cloudinary.com/sadanandsingh/image/upload/v1545501946/project/carrot-halwa.jpg)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1545501946/project/carrot-halwa.jpg'></zoom-image>
 
 ## Interesting Facts
 

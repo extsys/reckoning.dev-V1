@@ -20,7 +20,7 @@ recipe for making _Paneer_ from milk.
 Here is a version of recipe that I use quite often. It involves two
 parts - Baking _Paneer_ and Cooking the veggies.
 
-![Baked Paneer](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963330/bakedPaneer_wxweem.jpg)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1496963330/bakedPaneer_wxweem.jpg'></zoom-image>
 
 ## Ingredients
 
@@ -76,7 +76,7 @@ parts - Baking _Paneer_ and Cooking the veggies.
 Let it cool before serving. It can be served either Indian breads or
 rice.
 
-![My Creation Before Entering My Tummy](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963330/bakedPaneer_final_bh3rss.jpg)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1496963330/bakedPaneer_final_bh3rss.jpg'></zoom-image>
 
 ## Interesting Facts
 

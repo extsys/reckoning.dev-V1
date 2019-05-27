@@ -25,7 +25,7 @@ cooked in spinach puree. Its a bit involved than my last few dishes.
 Nevertheless, I promise you - the "yummy-ness" of this one is worth all
 the trouble!
 
-![Boiling Spinach](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963332/PalakPaneer1_ugytqp.jpg)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1496963332/PalakPaneer1_ugytqp.jpg'></zoom-image>
 
 ## Ingredients
 
@@ -45,7 +45,7 @@ the trouble!
 - Salt to taste
 - 1 cup Milk or Cream
 
-![Paneer](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963332/PalakPaneer2_fdmyku.jpg)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1496963332/PalakPaneer2_fdmyku.jpg'></zoom-image>
 
 ## Preparation
 
@@ -60,7 +60,7 @@ the trouble!
 5. In a blender, make a puree of leaves along with ginger, garlic and
    milk or cream.
 
-![Spinach Puree](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963333/PalakPaneer3_ckjnjp.jpg)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1496963333/PalakPaneer3_ckjnjp.jpg'></zoom-image>
 
 ## Curry for _Paneer_
 
@@ -79,7 +79,7 @@ the trouble!
 
 Let it cool before serving. It can be served with Indian Breads or rice.
 
-![My Creation Before Entering My Tummy](https://res.cloudinary.com/sadanandsingh/image/upload/v1496963332/PalakPaneer_me9asd.jpg)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1496963332/PalakPaneer_me9asd.jpg'></zoom-image>
 
 ## Interesting Facts
 

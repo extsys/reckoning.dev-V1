@@ -18,7 +18,7 @@ referred as a **regression** problem. The simplest model of such a
 relationship can be described by a linear function - referred
 as _linear regression_.
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1545770785/linear_regression_hbby32.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1545770785/linear_regression_hbby32.png'></zoom-image>
 
 ## Mathematical formulations
 
@@ -277,7 +277,7 @@ you the wide application of these methods across different fields.
 
 ### Polynomial Regression
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1545780650/poly_regress_srbjmr.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1545780650/poly_regress_srbjmr.png'></zoom-image>
 
 Polynomial regression is a form of regression analysis in which the relationship between the independent variable $x$ and the dependent variable $y$ is modelled as an n-th degree polynomial in $x$. Polynomial regression fits a nonlinear relationship between the value of $x$ and the corresponding conditional mean of $y$.
 
@@ -296,7 +296,7 @@ In practice, the choice of order of polynomial is just an additional hyper param
 
 ### Signal Smoothing
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1545780346/smooth_rhpllc.png)
+<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1545780346/smooth_rhpllc.png'></zoom-image>
 
 One approach to smooth a noisy signal is based on least squares weighted
 regularization. The idea is to obtain a signal similar to the noisy one, but
