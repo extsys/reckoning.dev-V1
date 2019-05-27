@@ -27,6 +27,16 @@
 
 .lead {
   font-size: 1.1rem;
+
+  .flex-author {
+    order: 2;
+  }
+
+  .avatar {
+    max-width: 150px;
+    border-radius: 50%;
+    float: right;
+  }
   a {
     border-bottom: 2px solid lighten($primary-color, 30%);
     &:hover {
@@ -56,6 +66,14 @@
 @include small-breakpoint {
   .lead {
     font-size: 1.2rem;
+
+    .flex-author {
+      order: initial;
+    }
+
+    .avatar {
+      margin-left: 1.5rem;
+    }
 
     h1 {
       font-size: 2.2rem;

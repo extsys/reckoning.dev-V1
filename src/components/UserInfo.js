@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import coffee from '../images/coffee.svg';
-import sadanand from '../../content/images/sadanand.png';
+import sadanand from '../../content/images/sadanand.jpg';
 
 class UserInfo extends Component {
   render() {

@@ -10,6 +10,7 @@ import SEO from '../components/SEO';
 import config from '../../data/SiteConfig';
 import projects from '../../data/projects';
 import publications from '../../data/publications';
+import sadanand from '../../content/images/sadanand.jpg';
 
 class Index extends Component {
   render() {
@@ -24,6 +25,9 @@ class Index extends Component {
         <div className='container'>
           <div className='lead'>
             <h1>Hi, I'm Sadanand Singh.</h1>
+            <div className='flex-avatar'>
+              <img className='avatar' src={sadanand} />
+            </div>
             <h4>
               I am a <strong className='pink'>Deep Learning Researcher</strong> in medical imaging
               and enjoy playing with <strong className='pink'>Algorithms</strong>!
@@ -38,7 +42,6 @@ class Index extends Component {
               to stop questioning.
             </div>
             <div className='quotation-footer'>— Albert Einstein</div>
-
             <a
               className='twitter-follow-button'
               href='https://twitter.com/sadanandsingh'

@@ -1,8 +1,10 @@
 ---
-title: About me
+title:
 slug: me
 template: page
 ---
+
+![](https://res.cloudinary.com/sadanandsingh/image/upload/v1558992590/DSC_0142_1_ltlimb.jpg)
 
 Hi, I'm Sadanand Singh. I build AI models in medical imaging and enjoy working with Algorithms, Python and C++.
 My background is in computational physics, numerical modeling and chemical engineering. I have a PhD in chemical engineering focusing on computational models of nano-materials and bio-molecules.
@@ -26,7 +28,7 @@ A non-exhaustive list.
 
 ## Currently Using
 
-- **Laptop:** MacBook Pro 15 2018 with Radeon Pro 560X
+- **Laptop:** [MacBook Pro 15 2019](https://www.apple.com/shop/buy-mac/macbook-pro/15-inch-space-gray-2.6ghz-6-core-processor-with-turbo-boost-up-to-4.5ghz-256gb#)
 - **Desktop:** [See my build](/mydlsetup/#workstation-hadware)
 - **Hosting:** [Netlify](https://netlify.com), [AWS](https://aws.amazon.com)
 - **Editor:** [Visual Studio Code](https://code.visualstudio.com/)
