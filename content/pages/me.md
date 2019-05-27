@@ -26,7 +26,7 @@ A non-exhaustive list.
 
 ## Currently Using
 
-- **Laptop:** MacBook Pro 2017
+- **Laptop:** MacBook Pro 15 2018 with Radeon Pro 560X
 - **Desktop:** [See my build](/mydlsetup/#workstation-hadware)
 - **Hosting:** [Netlify](https://netlify.com), [AWS](https://aws.amazon.com)
 - **Editor:** [Visual Studio Code](https://code.visualstudio.com/)
