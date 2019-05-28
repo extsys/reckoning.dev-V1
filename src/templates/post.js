@@ -12,6 +12,8 @@ import { formatDate, editOnGithub } from '../utils/global';
 import 'katex/dist/katex.min.css';
 import rehypeReact from 'rehype-react';
 import ZoomImage from '../components/ZoomImage';
+import GnomeGallery from '../components/GnomeGallery';
+import ArchGnomeGallery from '../components/ArchGnomeGallery';
 
 class PostTemplate extends Component {
   render() {
@@ -23,7 +25,11 @@ class PostTemplate extends Component {
 
     const renderAst = new rehypeReact({
       createElement: React.createElement,
-      components: { 'zoom-image': ZoomImage }
+      components: {
+        'zoom-image': ZoomImage,
+        'gnome-gallery': GnomeGallery,
+        'arch-gnome-gallery': ArchGnomeGallery
+      }
     }).Compiler;
 
     let thumbnail;

@@ -18,7 +18,7 @@ I am going to describe my hardware, OS, and different packages that I use. In pa
 the question, I found that the most of the interest have been around managing different python
 versions, and modules like pytorch/tensorflow libraries etc.
 
-<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1546230616/gnome/activities_fsd0wm.png'></zoom-image>
+<gnome-gallery></gnome-gallery>
 
 ## Workstation Hadware
 
@@ -71,8 +71,6 @@ sudo apt install gnome-tweaks
 sudo apt install gnome-shell-extensions gnome-shell-extension-caffeine
 ```
 
-<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1546230615/gnome/chrome_jx6pit.png'></zoom-image>
-
 If you look at my screenshots above, I prefer to use a different look for my ubuntu machine.
 Following are the themes, icons and wallpapers that I use. The GTK theme is [canta](https://github.com/vinceliuice/Canta-theme), the Icon pack is [Oranchelo](https://github.com/OrancheloTeam/oranchelo-icon-theme). The wallpaper above is
 [Planets on Acid](https://www.deviantart.com/dpcdpc11/art/Planets-on-Acid-ALTURE-Wallpaper-5120X2880px-752965913).
@@ -118,8 +116,6 @@ sudo apt install hugo
 sudo apt install gcc g++
 ```
 
-<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1546230615/gnome/searchApps_y1tgmu.png'></zoom-image>
-
 ## git setup
 
 First install git using `apt install` and then setup the `$HOME/.gitconfig` file. my gitconfig
@@ -160,8 +156,6 @@ theme from fish shell. So this modified paradox theme is a tiny attempt to mimic
 the `bobthefish` theme. You can install these by first installing zprezto, then adding my github
 repository as another remote in the `$HOME/.zprezto` git repository. The details can be found in the
 README file of my gihub repo.
-
-<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1546230613/gnome/terminal_g3jr6j.png'></zoom-image>
 
 ```terminal
 sudo apt install zsh
@@ -287,8 +281,6 @@ conda install -c menpo opencv
 Its as simple as this! If you want pytorch with say `cuda 9` support, you can create a new env that
 is cloned from `base` and simply change the version of pytorch there!
 
-<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1546230614/gnome/gnomeTweaks_p0fkkv.png'></zoom-image>
-
 ## CUDA installation
 
 I also need the cuda libraries for developing my own pytorch modules written in C. These can be
@@ -313,8 +305,6 @@ However, due to its "abandonware" status even after paying a steep price, I had 
 something more modern and open source. I have found [Visual Studio Code (VS Code)][code] from
 Microsoft to be an extremely powerful option. It has crazy amount of extensions, themes and much
 more than sublime text!
-
-<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1546230615/gnome/vscode_fcsbl4.png'></zoom-image>
 
 You will first need to install it using the following ppa:
 
