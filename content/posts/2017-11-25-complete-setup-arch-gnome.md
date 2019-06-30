@@ -22,8 +22,6 @@ with the latest configuration of my machine. I have also update my
 GPU to 1080 Ti to be able to run some computer vision models at reasonable speeds. I use this desktop
 for some audio processing and some Kaggle-level computer vision/deep learning.
 
-<arch-gnome-gallery></arch-gnome-gallery>
-
 In this post, we will do a complete installation of Arch Linux with Gnome 3 as the desktop
 environment. Our setup will also involve encryption of the root partition that will be formatted in
 [btrfs].
