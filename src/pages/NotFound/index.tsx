@@ -11,9 +11,6 @@ const NotFoundWrapper = styled.div`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  h1 {
-    color: #f73b98;
-  }
   @media (min-width: 990px) {
     width: 900px;
   }
@@ -50,6 +47,7 @@ const NotFoundContent = styled.div`
     order: 1;
   }
   h1 {
+    color: #f73b98;
     @media (max-width: 990px) {
       font-size: 24px;
     }
