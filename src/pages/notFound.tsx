@@ -48,6 +48,12 @@ const NotFoundContent = styled.div`
   }
   h1 {
     color: #f73b98;
+    @media (min-width: 1400px) {
+      font-size: 25px;
+    }
+    @media (min-width: 1200px) {
+      font-size: 24px;
+    }
     @media (max-width: 990px) {
       font-size: 24px;
     }
