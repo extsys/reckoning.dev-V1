@@ -19,7 +19,7 @@ import { IoMdArrowRoundBack, IoMdArrowRoundForward } from 'react-icons/io';
 import { PaginationWrapper, PrevPage, NextPage } from '../components/PaginationButtons/buttons';
 import { FacebookShareButton, TwitterShareButton, RedditShareButton } from 'react-share';
 import { IoLogoFacebook, IoLogoTwitter, IoLogoReddit } from 'react-icons/io';
-import { BlogPostFooter, PostShare, BlogPostComment } from './templates.style';
+import { BlogPostFooter, PostShare } from './templates.style';
 
 class PostTemplate extends Component {
   render() {

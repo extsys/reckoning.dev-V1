@@ -112,3 +112,5 @@ export const Goback = styled.div`
     }
   }
 `;
+
+export default Goback;
