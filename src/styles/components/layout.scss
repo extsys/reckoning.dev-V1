@@ -12,6 +12,12 @@
   }
 }
 
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .container {
   max-width: $width;
   padding: 0 1.5rem;
@@ -33,7 +39,7 @@
   }
 
   .avatar {
-    max-width: 120px;
+    max-width: 140px;
     border-radius: 50%;
     float: right;
   }
@@ -644,12 +650,11 @@ h2.publication-company {
     }
   }
 }
-
 blockquote {
   color: rgba(0, 0, 0, 0.7);
-  border: 2px solid $yellow;
-  background: lighten($yellow, 28%);
-  border-radius: $border-radius;
+  border: 2px solid #f73b98;
+  background: lighten(#f73b98, 28%);
+  border-radius: 4px;
   font-weight: 500;
   margin: 1.5rem 0;
   padding: 1rem;
@@ -679,13 +684,13 @@ blockquote {
 
   a {
     color: #111;
-    border-bottom: 2px solid $yellow !important;
+    border-bottom: 2px solid #f73b98 !important;
 
     &:hover,
     &:active,
     &:focus {
       color: #111 !important;
-      background: lighten($yellow, 28%) !important;
+      background: lighten(#f73b98, 28%) !important;
     }
   }
 
@@ -694,7 +699,8 @@ blockquote {
     margin-top: 1rem;
     font-size: 1.1rem;
     text-align: right;
-    font-family: $font-family;
+    font-family: -apple-system, BlinkMacSystemFont, 'Roboto', Helvetica Neue, Helvetica, Arial,
+      sans-serif;
     color: rgba(0, 0, 0, 0.4);
   }
 
@@ -702,6 +708,64 @@ blockquote {
     margin: 1rem 0 0;
   }
 }
+
+// blockquote {
+//   color: rgba(0, 0, 0, 0.7);
+//   border: 2px solid $yellow;
+//   background: lighten($yellow, 28%);
+//   border-radius: $border-radius;
+//   font-weight: 500;
+//   margin: 1.5rem 0;
+//   padding: 1rem;
+//   line-height: 1.6;
+//   font-size: 1rem;
+
+//   &.quotation {
+//     border-radius: 0;
+//     border: 0;
+//     background: transparent;
+//     padding: 0.5rem 0;
+
+//     p {
+//       padding: 0;
+//       font-size: 1.3rem;
+//     }
+//   }
+
+//   p {
+//     padding: 0;
+//     font-size: 1.15rem;
+
+//     &:last-of-type {
+//       margin-bottom: 0;
+//     }
+//   }
+
+//   a {
+//     color: #111;
+//     border-bottom: 2px solid $yellow !important;
+
+//     &:hover,
+//     &:active,
+//     &:focus {
+//       color: #111 !important;
+//       background: lighten($yellow, 28%) !important;
+//     }
+//   }
+
+//   cite {
+//     display: block;
+//     margin-top: 1rem;
+//     font-size: 1.1rem;
+//     text-align: right;
+//     font-family: $font-family;
+//     color: rgba(0, 0, 0, 0.4);
+//   }
+
+//   code {
+//     margin: 1rem 0 0;
+//   }
+// }
 
 @include small-breakpoint {
   blockquote {

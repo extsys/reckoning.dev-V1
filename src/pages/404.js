@@ -1,31 +1,33 @@
 import React, { Component } from 'react';
-import ThemeContext from '../context/ThemeContext';
+// import ThemeContext from '../context/ThemeContext';
 import Helmet from 'react-helmet';
 import Layout from '../layout';
 import SEO from '../components/SEO';
 import config from '../../data/SiteConfig';
+import NotFound from './NotFound';
 
 class NotFoundPage extends Component {
-  static contextType = ThemeContext;
+  // static contextType = ThemeContext;
 
-  componentDidMount() {
-    const { setNotFound } = this.context;
+  // componentDidMount() {
+  //   const { setNotFound } = this.context;
 
-    setNotFound();
-  }
+  //   setNotFound();
+  // }
 
-  componentWillUnmount() {
-    const { setFound } = this.context;
+  // componentWillUnmount() {
+  //   const { setFound } = this.context;
 
-    setFound();
-  }
+  //   setFound();
+  // }
 
   render() {
     return (
       <Layout>
         <Helmet title={`Page not found – ${config.siteTitle}`} />
         <SEO />
-        <div className='container'>
+        <NotFound />
+        {/* <div className='container'>
           <div className='text-center'>
             <h1>404</h1>
           </div>
@@ -46,7 +48,7 @@ class NotFoundPage extends Component {
           <p className='text-right'>
             Click any link to continue<span className='blink'>&#9608;</span>
           </p>
-        </div>
+        </div> */}
       </Layout>
     );
   }

@@ -108,9 +108,9 @@ export default class BlogPage extends Component {
 export const pageQuery = graphql`
   query BlogQuery {
     posts: allMarkdownRemark(
+      filter: { fields: { draft: { eq: false } }, frontmatter: { template: { eq: "post" } } }
       limit: 2000
       sort: { fields: [fields___date], order: DESC }
-      filter: { fields: { draft: { eq: false } } }
     ) {
       edges {
         node {
@@ -122,6 +122,7 @@ export const pageQuery = graphql`
           timeToRead
           frontmatter {
             title
+            template
             tags
             categories
             thumbnail {

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Helmet from 'react-helmet';
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import Layout from '../layout';
 import SEO from '../components/SEO';
 import config from '../../data/SiteConfig';
@@ -10,6 +10,7 @@ class PageTemplate extends Component {
     const { slug } = this.props.pageContext;
     const postNode = this.props.data.markdownRemark;
     const page = postNode.frontmatter;
+    const title = page.title ? page.title : `About Me`;
 
     if (!page.id) {
       page.id = slug;
@@ -18,7 +19,7 @@ class PageTemplate extends Component {
     return (
       <Layout>
         <Helmet>
-          <title>{`${page.title} – ${config.siteTitle}`}</title>
+          <title>{`${title} – ${config.siteTitle}`}</title>
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <div className='container'>

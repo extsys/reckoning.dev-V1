@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import ScrollToTop from 'react-scroll-up';
 import ThemeContext from '../context/ThemeContext';
 import Helmet from 'react-helmet';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import ScrollUpButton from '../components/ScrollUpButton/ScrollUpButton';
 import config from '../../data/SiteConfig';
 import favicon from '../images/favicon.png';
 import '../styles/main.scss';
@@ -27,6 +29,14 @@ class MainLayout extends Component {
         <Navigation menuLinks={config.menuLinks} />
         <main id='main-content'>{children}</main>
         <Footer />
+        <ScrollToTop
+          showUnder={300}
+          duration={700}
+          easing='easeInOutCubic'
+          style={{ bottom: 30, right: 20 }}
+        >
+          <ScrollUpButton />
+        </ScrollToTop>
       </>
     );
   }

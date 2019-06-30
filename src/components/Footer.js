@@ -5,8 +5,8 @@ class Footer extends Component {
     return (
       <footer className='footer container'>
         <small>
-          Made by <strong>Sadanand singh</strong> / Theme by{' '}
-          <a href='https://www.taniarascia.com/'>Tania Rascia</a> /{' '}
+          Copyright &copy; {new Date().getFullYear()} {}
+          Sadanand singh / {}
           <a href='https://github.com/sadanand-singh/datasciencevision.com' target='_blank'>
             View source
           </a>

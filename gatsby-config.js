@@ -49,9 +49,11 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              maxWidth: 850
+              maxWidth: 850,
+              linkImagesToOriginal: false
             }
           },
+          `gatsby-remark-images-medium-zoom`,
           'gatsby-remark-copy-linked-files',
           {
             resolve: `gatsby-remark-autolink-headers`,
@@ -92,6 +94,7 @@ module.exports = {
       }
     },
     'gatsby-plugin-draft',
+    { resolve: `gatsby-plugin-typescript` },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
@@ -128,6 +131,28 @@ module.exports = {
             src: '/logos/logo-512.png',
             sizes: '512x512',
             type: 'image/png'
+          }
+        ]
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint:
+          'https://outlook.us3.list-manage.com/subscribe/post?u=6fe17db82abcd74b9d0793a2a&amp;id=2343b8b2ee'
+      }
+    },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Poppins`,
+            variants: [`300`, `400`, `500`, `600`, `700`]
+          },
+          {
+            family: `Fira Sans`,
+            variants: [`100`, `300`, `400`, `500`, `600`, `700`]
           }
         ]
       }

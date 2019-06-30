@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { DiscussionEmbed, CommentCount } from 'disqus-react';
 import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../layout';
@@ -14,6 +15,11 @@ import rehypeReact from 'rehype-react';
 import ZoomImage from '../components/ZoomImage';
 import GnomeGallery from '../components/GnomeGallery';
 import ArchGnomeGallery from '../components/ArchGnomeGallery';
+import { IoMdArrowRoundBack, IoMdArrowRoundForward } from 'react-icons/io';
+import { PaginationWrapper, PrevPage, NextPage } from '../components/PaginationButtons/buttons';
+import { FacebookShareButton, TwitterShareButton, RedditShareButton } from 'react-share';
+import { IoLogoFacebook, IoLogoTwitter, IoLogoReddit } from 'react-icons/io';
+import { BlogPostFooter, PostShare, BlogPostComment } from './templates.style';
 
 class PostTemplate extends Component {
   render() {
@@ -22,6 +28,11 @@ class PostTemplate extends Component {
     const post = postNode.frontmatter;
     const prev = this.props.pageContext.prev;
     const next = this.props.pageContext.next;
+    const disqusShortname = config.disqusName;
+    const disqusConfig = {
+      identifier: post.slug,
+      title: post.title
+    };
 
     const renderAst = new rehypeReact({
       createElement: React.createElement,
@@ -62,27 +73,6 @@ class PostTemplate extends Component {
       <Layout>
         <Helmet>
           <title>{`${post.title} – ${config.siteTitle}`}</title>
-          {post.bokeh === true && (
-            <link
-              href='//cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.1/bokeh.min.css'
-              rel='stylesheet'
-              type='text/css'
-            />
-          )}
-          {post.bokeh === true && (
-            <link
-              href='//cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.1/bokeh-widgets.min.css'
-              rel='stylesheet'
-              type='text/css'
-            />
-          )}
-          {post.bokeh === true && (
-            <link
-              href='//cdnjs.cloudflare.com/ajax/libs/bokeh/1.0.1/bokeh-tables.min.css'
-              rel='stylesheet'
-              type='text/css'
-            />
-          )}
           {post.jupyter === true && <link href='/jupyter.css' rel='stylesheet' type='text/css' />}
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
@@ -100,6 +90,12 @@ class PostTemplate extends Component {
                 <a className='github-link' href={githubLink} target='_blank'>
                   Edit on Github ✏️
                 </a>
+                /{' '}
+                <a href='#comments'>
+                  <CommentCount shortname={disqusShortname} config={disqusConfig}>
+                    Comments
+                  </CommentCount>
+                </a>
               </div>
               <PostTags tags={post.tags} />
             </div>
@@ -108,41 +104,46 @@ class PostTemplate extends Component {
             <div className='post' dangerouslySetInnerHTML={{ __html: postNode.tableOfContents }} />
           )}
           {renderAst(postNode.htmlAst)}
-          <div>
-            <div
-              style={{
-                display: `flex`,
-                flexWrap: `wrap`,
-                justifyContent: `space-between`,
-                listStyle: `none`,
-                padding: 0
-              }}
-            >
-              <div>
-                {prev && (
-                  <Link to={prev.fields.slug} className='link-button' rel='prev'>
-                    ← Prev
-                  </Link>
-                )}
-              </div>
-              <div>
-                {next && (
-                  <Link to={next.fields.slug} className='link-button' rel='next'>
-                    Next →
-                  </Link>
-                )}
-              </div>
-            </div>
-            <br />
-          </div>
-          <div>
-            {' '}
-            <a href={twitterShare}>Share on Twitter</a> |{' '}
-            <a href={twitterUrl}>Discuss on Twitter</a> |{' '}
-            <a href={githubLink} target='_blank'>
-              Edit on Github ✏️
-            </a>
-          </div>
+
+          <BlogPostFooter>
+            <PostShare>
+              <span>
+                <b>Share This:</b>
+              </span>
+              <FacebookShareButton url={postNode.fields.slug} quote={post.title}>
+                <IoLogoFacebook />
+              </FacebookShareButton>
+              <TwitterShareButton url={postNode.fields.slug} title={post.title}>
+                <IoLogoTwitter />
+              </TwitterShareButton>
+
+              <RedditShareButton url={postNode.fields.slug} title={`${post.title}`}>
+                <IoLogoReddit />
+              </RedditShareButton>
+            </PostShare>
+          </BlogPostFooter>
+
+          <PaginationWrapper>
+            <PrevPage>
+              {prev && (
+                <Link to={`${prev.fields.slug}`} aria-label='Prev'>
+                  <IoMdArrowRoundBack />
+                </Link>
+              )}
+            </PrevPage>
+
+            <NextPage>
+              {next && (
+                <Link to={`${next.fields.slug}`} aria-label='Next'>
+                  <IoMdArrowRoundForward />
+                </Link>
+              )}
+            </NextPage>
+          </PaginationWrapper>
+
+          <h2 id='comments'>Comments</h2>
+          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+
           <h3>Stay in touch</h3>
           <p>Like the posts you see here? Sign up to get notified about new ones.</p>
           <NewsletterForm />

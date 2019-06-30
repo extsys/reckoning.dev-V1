@@ -8,6 +8,7 @@ const config = {
   pathPrefix: '',
   dateFromFormat: 'YYYY-MM-DD',
   dateFormat: 'MMMM Do, YYYY',
+  disqusName: 'sadanandsingh',
   siteDescription:
     'Sadanand is a scientist, programmer, engineer, and writer who loves explaining complex concepts in simple words to people of all skill levels.',
   siteRss: '/rss.xml',

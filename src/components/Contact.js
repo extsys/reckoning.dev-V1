@@ -1,38 +1,36 @@
 import React, { Component } from 'react';
 import NewsletterForm from './NewsletterForm';
+import { IoLogoFacebook, IoLogoTwitter, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io';
 
 class Contact extends Component {
   render() {
     return (
       <>
         <h1>Stay in touch</h1>
+        <div className='contacts'>
+          <p>
+            You can find me around the web:{' '}
+            <a target='_blank' href='https://www.facebook.com/sadanand4singh'>
+              <IoLogoFacebook />
+              {'  '}
+            </a>
+            <a target='_blank' href='https://github.com/sadanand-singh'>
+              <IoLogoGithub />
+              {'  '}
+            </a>
+            <a target='_blank' href='https://twitter.com/sadanandsingh'>
+              <IoLogoTwitter />
+              {'  '}
+            </a>
+            <a target='_blank' href='https://www.linkedin.com/in/sadanandsingh/'>
+              <IoLogoLinkedin />
+              {'  '}
+            </a>
+          </p>
+        </div>
+
         <p>Like the posts you see here? Sign up to get notified about new ones.</p>
         <NewsletterForm />
-        <p>You can find me around the web:</p>
-        <ul>
-          <li>
-            <strong>Email</strong>:{' '}
-            <a href='mailto:me@datasciencevision.com'>me@datasciencevision.com</a>
-          </li>
-          <li>
-            <strong>GitHub</strong>:{' '}
-            <a target='_blank' href='https://github.com/sadanand-singh'>
-              sadanand-singh
-            </a>
-          </li>
-          <li>
-            <strong>Twitter</strong>:{' '}
-            <a target='_blank' href='https://twitter.com/sadanandsingh'>
-              sadanandsingh
-            </a>
-          </li>
-          <li>
-            <strong>LinkedIn</strong>:{' '}
-            <a target='_blank' href='https://www.linkedin.com/in/sadanandsingh/'>
-              sadanandsingh
-            </a>
-          </li>
-        </ul>
       </>
     );
   }

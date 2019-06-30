@@ -8,8 +8,15 @@ const StyledFigcaption = styled.figcaption`
   padding 0.25em 0;
   // text-transform: uppercase;
   color: #999;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 `;
 const Styles = {
+  display: 'block',
+  'margin-left': 'auto',
+  'margin-right': 'auto',
+  width: 50,
   overlay: {
     position: 'absolute',
     top: 0,

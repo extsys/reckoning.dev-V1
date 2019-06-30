@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../layout';
+import UserInfo from '../components/UserInfo';
 import PostListing from '../components/PostListing';
 import ProjectListing from '../components/ProjectListing';
 import SimpleListing from '../components/SimpleListing';
@@ -29,8 +30,8 @@ class Index extends Component {
               <img className='avatar' src={sadanand} />
             </div>
             <h4>
-              I am a <strong className='pink'>Deep Learning Researcher</strong> in medical imaging
-              and enjoy playing with <strong className='pink'>Algorithms</strong>!
+              I am an <strong className='pink'>AI Researcher</strong> in medical imaging and enjoy
+              playing with <strong className='pink'>Algorithms</strong>!
             </h4>
             <p>
               I created this site to document everything I learn, and share a bit of myself with
@@ -80,36 +81,11 @@ class Index extends Component {
           </section>
 
           <section className='section'>
-            <h2>Other People's Opinions</h2>
-            <div className='quotations'>
-              <blockquote className='quotation'>
-                <p>
-                  "Hi Sadanand, Excellent post. Thank you for taking time and explaining in a neat
-                  matter. I am bit confused in here. In classification problem we have total 3
-                  classes, so by default SVM takes care and divide it into 3 classes ? And also it
-                  is mentioned that "SVM by definition is well suited for binary classification. In
-                  order to perform multi-class classification, the problem needs to be transformed
-                  into a set of binary classification problems."
-                </p>
-                <cite>— KK</cite>
-              </blockquote>
-              <blockquote className='quotation'>
-                <p>
-                  "Great write up. I implemented much of this on an Up-Squared
-                  (http://www.up-board.org/ups...). It runs great. Not a lot of wasted CPU cycles,
-                  other than conky. I am liking Plasma and Arch."
-                </p>
-                <cite>— Vincent Flesouras</cite>
-              </blockquote>
-            </div>
-          </section>
-
-          <section className='section'>
             <h2>Newsletter</h2>
-            <p>Sign up to get notified about new content.</p>
             <NewsletterForm />
           </section>
         </div>
+        <UserInfo config={config} />
       </Layout>
     );
   }
