@@ -72,6 +72,7 @@ module.exports = {
           },
           'gatsby-remark-prismjs',
           'gatsby-remark-responsive-iframe',
+          'gatsby-plugin-styled-components',
           {
             resolve: `gatsby-remark-katex`,
             options: {

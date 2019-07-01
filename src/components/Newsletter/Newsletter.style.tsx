@@ -57,7 +57,7 @@ export const NewsletterInnerWrapper = styled.div`
 export const NewsletterTitle = styled.h1`
   font-size: 30px;
   color: '#292929';
-  font-weight: '700';
+  font-weight: 700;
   margin-bottom: 20px;
   font-family: "'Fira Sans',sans-serif";
   @media (max-width: 1200px) {
@@ -73,9 +73,9 @@ export const NewsletterTitle = styled.h1`
 `;
 
 export const NewsletterDescription = styled.p`
-  font-size: '15' px;
-  line-height: '2';
-  font-weight: '400';
+  font-size: 15px;
+  line-height: 2;
+  font-weight: 400;
   color: '#292929';
   margin: 0;
   @media (max-width: 1200px) {

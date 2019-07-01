@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { DiscussionEmbed, CommentCount } from 'disqus-react';
+import urljoin from 'url-join';
 import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../layout';
@@ -26,6 +27,8 @@ class PostTemplate extends Component {
     const post = postNode.frontmatter;
     const prev = this.props.pageContext.prev;
     const next = this.props.pageContext.next;
+    const blogURL = urljoin(config.siteUrl, config.pathPrefix);
+    const pageURL = urljoin(blogURL, post.slug);
     const disqusShortname = config.disqusName;
     const disqusConfig = {
       identifier: post.slug,
@@ -78,19 +81,15 @@ class PostTemplate extends Component {
             <div className='flex'>
               <h1>{post.title}</h1>
               <div className='post-meta'>
-                <time className='date'>{date}</time>/
-                <a className='twitter-link' href={twitterShare}>
-                  Share on Twitter
-                </a>
-                /
-                <a className='github-link' href={githubLink} target='_blank'>
-                  Edit on Github ✏️
-                </a>
-                /{' '}
+                <time className='date'>{date}</time>/{' '}
                 <a href='#comments'>
                   <CommentCount shortname={disqusShortname} config={disqusConfig}>
                     Comments
                   </CommentCount>
+                </a>{' '}
+                /{' '}
+                <a className='github-link' href={githubLink} target='_blank'>
+                  Edit on Github ✏️
                 </a>
               </div>
               <PostTags tags={post.tags} />
@@ -106,14 +105,13 @@ class PostTemplate extends Component {
               <span>
                 <b>Share This:</b>
               </span>
-              <FacebookShareButton url={postNode.fields.slug} quote={post.title}>
+              <FacebookShareButton url={pageURL} quote={`${post.title}`}>
                 <IoLogoFacebook />
               </FacebookShareButton>
-              <TwitterShareButton url={postNode.fields.slug} title={post.title}>
+              <TwitterShareButton url={pageURL} title={`${post.title}`}>
                 <IoLogoTwitter />
               </TwitterShareButton>
-
-              <RedditShareButton url={postNode.fields.slug} title={`${post.title}`}>
+              <RedditShareButton url={pageURL} title={`${post.title}`}>
                 <IoLogoReddit />
               </RedditShareButton>
             </PostShare>
