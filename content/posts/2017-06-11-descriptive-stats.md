@@ -24,8 +24,6 @@ We can think of this task as an exercise in **summarization** of the
 data. To summarize the main characteristics of the data, often two
 methods are used: numerical and graphical.
 
-<!-- more -->
-
 The numerical summary of data is done through [_descriptive
 statistics_](https://en.wikipedia.org/wiki/Descriptive_statistics).
 While the graphical summary of the data is done through
@@ -33,8 +31,6 @@ While the graphical summary of the data is done through
 this post, we will look at both
 of these fundamental data science techniques in more detail using
 some examples.
-
-<!--TOC-->
 
 ## Descriptive Statistics
 
@@ -69,7 +65,9 @@ of central tendency. If we have a data set containing the values
 $a_{1},a_{2},\ldots ,a_{n}$, then the _arithmetic mean_, $A$ is
 defined by the formula:
 
-$$A = \frac{1}{n}\sum_{i=1}^{n} a_i = \frac{a_1 + a_2 + \ldots + a_n}{n}$$
+$$
+A = \frac{1}{n}\sum_{i=1}^{n} a_i = \frac{a_1 + a_2 + \ldots + a_n}{n}
+$$
 
 If the data set is a [statistical population][spp] (i.e., consists of
 every possible observation and not just a subset of them), then the
@@ -180,7 +178,9 @@ If we have a data set containing the values
 $a_{1},a_{2},\ldots ,a_{n}$, then the _standard deviation_, $\sigma$
 is defined by the formula:
 
-$$\sigma = \sqrt{\frac{1}{n}\Big[\big(a_1 - A\big)^2 + \big(a_2 - A\big)^2 + \ldots + \big(a_n - A\big)^2\Big]}, \text{ where } A \text{ is the Mean}$$
+$$
+\sigma = \sqrt{\frac{1}{n}\Big[\big(a_1 - A\big)^2 + \big(a_2 - A\big)^2 + \ldots + \big(a_n - A\big)^2\Big]}, \text{ where } A \text{ is the Mean}
+$$
 
 A higher standard deviation value indicates greater spread in the
 data. A good rule of thumb for a [normal distribution][normal] is
@@ -195,7 +195,9 @@ The _interquartile range_ (IQR) is the distance between the first
 quartile ($Q_1$) and the third quartile ($Q_3$). 50% of the data are
 within this range.
 
-$$IQR = Q_3 - Q_1$$
+$$
+IQR = Q_3 - Q_1
+$$
 
 The interquartile range can be used to describe the spread of the
 data. As the spread of the data increases, the IQR becomes larger.
@@ -256,7 +258,9 @@ A. **Pearson Moment Coefficient of Skewness**:
 Pearson Moment Coefficient of Skewness refers to the third standardized
 moment, defined as:
 
-$$S_{Pearson}=\frac{E\big[X^3\big]-3\mu\sigma^2-\mu^3}{\sigma^3}$$
+$$
+S_{Pearson}=\frac{E\big[X^3\big]-3\mu\sigma^2-\mu^3}{\sigma^3}
+$$
 
 where, $\mu$ is the mean, $\sigma$ is the standard deviation, $E$ is
 the [expectation operator][eop], and $X$ refers to the data points.
@@ -285,7 +289,9 @@ values (outliers) or if you have an
 
 Mathematically, Bowley Skewness is defined as :
 
-$$S_{Bowley} = \frac{Q_3 + Q_1 - 2Q_2}{Q_3 - Q_1}$$
+$$
+S_{Bowley} = \frac{Q_3 + Q_1 - 2Q_2}{Q_3 - Q_1}
+$$
 
 where, $Q_1$, $Q_2$ and $Q_3$, represent, first,
 second and third quartiles, respectively. Bowley Skewness is an
@@ -302,7 +308,9 @@ distributions with different units using Bowley Skewness.
 from the normal distribution. Mathematically, it is the fourth
 standardized moment, defined as,
 
-$$Kurtosis = \frac{E\Big[\big(X-\mu\big)^4\Big]}{\sigma^4} - 3$$
+$$
+Kurtosis = \frac{E\Big[\big(X-\mu\big)^4\Big]}{\sigma^4} - 3
+$$
 
 where, $\mu$ is the mean, $\sigma$ is the standard deviation, $E$ is
 the [expectation operator][eop], and $X$ refers to the data points.
@@ -352,7 +360,9 @@ have negative standard scores.
 
 Mathematically, z-score of a raw score $x$ is given by,
 
-$$z = \frac{x - \mu}{\sigma}$$
+$$
+z = \frac{x - \mu}{\sigma}
+$$
 
 where, $\mu$ is the [mean] and $\sigma$ is the [standard deviation][sd]
 of the population.

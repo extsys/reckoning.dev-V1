@@ -26,7 +26,9 @@ statement.
 $p^2-1 = (p-1)\times (p+1)$ Given, $p$ is a prime number $>3$, $p-1$ and
 $p+1$ are even. We can also write,
 
-$$p-1=2K, \text{and } p+1=2K+2=2(K+1)$$
+$$
+p-1=2K, \text{and } p+1=2K+2=2(K+1)
+$$
 
 Given, $K \in \mathbb{N}$, either $K$ or $K+1$ are also even. Hence,
 $(p-1)\times (p+1)$ is divisible by $2\times 4 = 8$.
@@ -60,12 +62,16 @@ Any $N-1$ of these moves can be of type _right_ and $M-1$ of type _up_.
 In short, this is a combinatorial problem of distributing $N+M-2$
 objects into groups of $N-1$ and $M-1$. This is simply,
 
-$$\dbinom{N+M-2}{N-1} = \frac{(N+M-2)!}{(N-1)! (M-1)!}$$
+$$
+\dbinom{N+M-2}{N-1} = \frac{(N+M-2)!}{(N-1)! (M-1)!}
+$$
 
 In the particular case of the chess board, $N = M = 8$. Hence, total
 number of possible paths are:
 
-$$\text{No. of Paths} = \frac{14!}{7! 7!} =3432$$
+$$
+\text{No. of Paths} = \frac{14!}{7! 7!} = 3432
+$$
 
 Thank you **Rohit** and **Amber** for posting quick solutions!
 

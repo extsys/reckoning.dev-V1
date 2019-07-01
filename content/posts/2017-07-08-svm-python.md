@@ -30,10 +30,10 @@ In general, sklearn models require training data (X) to be [numpy](https://www.n
 
 The [iris dataset](https://archive.ics.uci.edu/ml/datasets/iris) is a simple dataset of contains 3 classes of 50 instances each, where each class refers to a type of iris plant. One class is linearly separable from the other two; the latter are NOT linearly separable from each other. Each instance has 4 features:
 
-1. sepal length
-2. sepal width
-3. petal length
-4. petal width
+- sepal length
+- sepal width
+- petal length
+- petal width
 
 A typical problem to solve is to predict the _class_ of the iris plant based on these 4 features. For brevity and visualization, in this example we will be using only the first two features.
 

@@ -54,19 +54,25 @@ Mathematically, lets define:
 
 The simplest AE can then be summarized as:
 
-$$\begin{aligned} z &=  a(x W_1 + b_1) \\ x' &=  a(z W_2 + b_2) \end{aligned}$$
+$$
+\begin{aligned} z &=  a(x W_1 + b_1) \\ x' &=  a(z W_2 + b_2) \end{aligned}
+$$
 
 The AE model tries to minimize the **reconstruction error** between the input
 value $x$ and the reconstructed value $x'$.
 A typical definition of the reconstruction error is the $L_p$ distance
 (like $L_2$ norm) between the $x$ and $x'$ vectors:
 
-$$\min \mathcal{L} = \min E(x, x') \stackrel{e.g.}{=} \min || x - x' ||_p$$
+$$
+\min \mathcal{L} = \min E(x, x') \stackrel{e.g.}{=} \min || x - x' ||_p
+$$
 
 Another common variant of loss function (especially images) for AE is the
 cross entropy function.
 
-$$\mathcal{L}(x, x') = -\sum_{c=1}^{M} x'_c \log (x_c)$$
+$$
+\mathcal{L}(x, x') = -\sum_{c=1}^{M} x'_c \log (x_c)
+$$
 
 where $M$ is the dimensionality of the input data $x$ (for eg. no. of
 pixels in an image).
@@ -253,7 +259,11 @@ We can see that we are loosing a lot of fine details.
 We can add an additional constraint to the above AE model, a sparsity
 constraints on the latent variables. Mathematically, this is achieved by adding
 a sparsity penalty $\Omega(\mathbf{h})$ on the bottleneck layer $\mathbf{h}$.
-$$\min \mathcal{L} = \min E(x, x') + \Omega(h)$$
+
+$$
+\min \mathcal{L} = \min E(x, x') + \Omega(h)
+$$
+
 where, $\mathbf{h}$ is the encoder output.
 
 Sparsity is a desired characteristic for an auto-encoder, because it allows to
@@ -465,12 +475,18 @@ from the input. Mathematically, this is achieved by modifying the
 reconstruction error of the loss function.
 
 Traditionally, autoencoders minimize some loss function:
-$$L\Big(x, g\big(f(x)\big)\Big)$$
+
+$$
+L\Big(x, g\big(f(x)\big)\Big)
+$$
 
 where, $L$ is a loss function penalizing reconstructed input $g\big(f(x)\big)$
 for being dissimilar to the input $x$. Also, $g(.)$ is the decoder and $f(.)$
 is the encoder. A Denoising autoencoders (DAE) instead minimizes,
-$$L\Big(x, g\big(f(\hat{x})\big)\Big)$$
+
+$$
+L\Big(x, g\big(f(\hat{x})\big)\Big)
+$$
 
 where, $\hat{x}$ is a copy of $x$ that has been corrupted by some form of
 noise. DAEs must therefore undo this corruption rather than simply copying
@@ -612,7 +628,9 @@ distribution for the latent space is assumed to be Guassian. Since our
 posterior is normally distributed, we can approximate it with another normal
 distribution, $\mathcal{N}(0, 1)$.
 
-$$p(z) \sim \mu + L \mathcal{N}(0, 1)$$
+$$
+p(z) \sim \mu + L \mathcal{N}(0, 1)
+$$
 
 Here $\mu$ and $L$ are the output of the encoder. Therefore while backpropogation, all we need is partial derivatives w.r.t. $\mu$, $L$. In
 the cartoon above, $\mu$ represents the mean vector latent variable and $L$ represents the standard deviation latent variable.
@@ -623,7 +641,9 @@ You can read more about VAE models at [_**Reference 1**_][vae1],
 In more practical terms, VAEs represent latent space (bottleneck layer) as a
 Guassian random variable (enabled by a constraint on the loss function). Hence, the loss function for the VAEs consist of two terms: a reconstruction loss forcing the decoded samples to match the initial inputs (just like in our previous autoencoders), and the KL divergence between the learned latent distribution and the prior distribution, acting as a regularization term.
 
-$$\min \mathcal{L}(x, x') = \min E(x, x') + KL\big(q(z\vert x)\vert \vert p(z)\big)$$
+$$
+\min \mathcal{L}(x, x') = \min E(x, x') + KL\big(q(z\vert x)\vert \vert p(z)\big)
+$$
 
 Here, the first term is the reconstruction loss as before (in a typical
 auto-encoder). The second term is the [Kullback-Leibler divergence][kl]
@@ -634,7 +654,9 @@ As typically (especially for images) the binary [cross-entropy][ce] is
 used as the reconstruction loss term, the above loss term for the VAEs can be
 written as,
 
-$$\min{\mathcal{L}(x, x')} = - \min{\mathbf{E}_{z\sim q(z\vert x)}}\big[ \log p(x' \vert z)\big] + KL\big(q(z\vert x) \vert \vert p(z)\big)$$
+$$
+\min{\mathcal{L}(x, x')} = - \min{\mathbf{E}_{z\sim q(z\vert x)}}\big[ \log p(x' \vert z)\big] + KL\big(q(z\vert x) \vert \vert p(z)\big)
+$$
 
 [lvm]: https://en.wikipedia.org/wiki/Latent_variable_model
 [vae]: https://ermongroup.github.io/cs228-notes/extras/vae/

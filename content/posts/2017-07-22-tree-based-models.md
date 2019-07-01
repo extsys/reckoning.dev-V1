@@ -76,7 +76,9 @@ Let us look at the CART algorithm for regression trees in more detail. Briefly, 
 
 In order to construct $J$ regions, $R_1, R_2, \ldots , R_J$, the predictor space is divided into high-dimensional rectangles or _boxes_. The goal is to find boxes $R_1, R_2, \ldots , R_J$ that minimize the RSS, given by
 
-$$\sum_{j=1}^{J} \sum_{i \in R_j} \big(y_i - \hat{y}_{R_j}\big)^2$$
+$$
+\sum_{j=1}^{J} \sum_{i \in R_j} \big(y_i - \hat{y}_{R_j}\big)^2
+$$
 
 where, $\hat{y}_{R_j}$ is the mean response for the training observations within the $j^{th}$ box.
 
@@ -87,7 +89,9 @@ better tree in some future step. Note that all divided regions $R_j \forall j \i
 
 In order to perform recursive binary splitting, first select the predictor $X_j$ and the cut point $s$ such that splitting the predictor space into the regions (half planes) $R_1(j,s)=\big\{ X|X_j < s \big\}$ and $R_2(j,s)=\big\{ X|X_j \ge s \big\}$ leads to the greatest possible reduction in RSS. Mathematically, we seek $j$ and $s$ that minimizes,
 
-$$\sum_{i: x_i \in R_1(j,s)} \big(y_i-\hat{y}_{R_1}\big)^2 + \sum_{i: x_i \in R_2(j,s)} \big(y_i-\hat{y}_{R_2}\big)^2$$
+$$
+\sum_{i: x_i \in R_1(j,s)} \big(y_i-\hat{y}_{R_1}\big)^2 + \sum_{i: x_i \in R_2(j,s)} \big(y_i-\hat{y}_{R_2}\big)^2
+$$
 
 where $\hat{y}_{R_1}$ is the mean response for the training observations in $R_1(j,s)$, and $\hat{y}_{R_2}$ is the mean response for the training observations in $R_2(j,s)$.
 This process is repeated, looking for the best predictor and best
@@ -137,7 +141,10 @@ A small value of $G$ indicates that a node contains predominantly
 observations from a single class.
 
 In information theory, _Cross Entropy_ is a measure of degree of disorganization in a system. For a binary system, it is 0 if system contains all from the same class , and 1 if system contains equal numbers from the two classes. Hence, similar to Gini Index, Cross Entropy too can be used as a measure of node impurity, given by,
-$S = -\sum_{k=1}^{K} \hat{p}_{mk} \log\big(\hat{p}_{mk}\big)$
+
+$$
+S = -\sum_{k=1}^{K} \hat{p}_{mk} \log\big(\hat{p}_{mk}\big)
+$$
 
 Similar to $G$, a small value of $S$ indicates that a node contains predominantly observations from a single class.
 
@@ -625,7 +632,11 @@ and fit a decision tree to both halves, the results that we get could be quite d
 Given a set of $n$ independent observations $Z_1, Z_2, \ldots, Z_n$, each with variance $\sigma^2$, the variance of the mean $\bar{Z}$ of the observations is given by $\sigma^2/n$. In other words, averaging a set of observations reduces variance.
 Hence a natural way to reduce the variance and hence increase the prediction accuracy of a statistical learning method is to take many training sets from the population, build a separate prediction model using each training set, and average the resulting predictions. Of there is only one problem here - **we do not have access to multiple training data sets.** Instead, we can bootstrap, by taking repeated
 samples from the (single) training data set. In this approach we generate $B$ different bootstrapped training data sets. We then train our method on the $b^{th}$ bootstrapped training set to get a prediction $\hat{f}^{*b}(x)$ to obtain one aggregate prediction,
-$\hat{f}_{bag} = \begin{cases}\frac{1}{B}\sum_{b=1}^{B} \hat{f}^{*b}(x) & \text{ for Regression Problems} \\ \\ \mathop{\arg\max}\limits_{b=1 \ldots B} \hat{f}^{*b}(x) & \text{ for Classification Problems} \end{cases}$
+
+$$
+\hat{f}_{bag} = \begin{cases}\frac{1}{B}\sum_{b=1}^{B} \hat{f}^{*b}(x) & \text{ for Regression Problems} \\ \\ \mathop{\arg\max}\limits_{b=1 \ldots B} \hat{f}^{*b}(x) & \text{ for Classification Problems} \end{cases}
+$$
+
 This is called **bagging**. Note that aggregating can have different meaning in regression and classification problems. While mean prediction works well in the case of regression problems, we will need to use _majority vote_: the overall prediction is the most commonly occurring majority class among the B predictions, as aggregation mechanism for classification problems.
 
 ## Out-of-Bag (OOB) Error

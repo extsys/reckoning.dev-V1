@@ -54,7 +54,9 @@ have been used in wide areas ranging from arts to economics to biology
 to computer science to the game of poker! The simple definition of these
 numbers are:
 
-$$F_{n} = \begin{cases} F_{n-2} + F_{n-1} & \text{if } n > 1 \\ 1 & \text{if } n = 1 \\ 0 & \text{if } n = 0 \end{cases}$$
+$$
+F_{n} = \begin{cases} F_{n-2} + F_{n-1} & \text{if } n > 1 \\ 1 & \text{if } n = 1 \\ 0 & \text{if } n = 0 \end{cases}
+$$
 
 So, first few Fibonacci numbers are:
 $0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144 \ldots $ These numbers grow
@@ -124,7 +126,9 @@ algorithm is an $\mathcal{O}(n^2)$ scheme. Can we do better?
 
 You bet, we can! Lets consider the following scheme:
 
-$$\begin{pmatrix} 1&1 \\ 1&0 \end{pmatrix}^n = \begin{pmatrix} F_{n+1}&F_n \\ F_n&F_{n-1} \end{pmatrix}$$
+$$
+\begin{pmatrix} 1&1 \\ 1&0 \end{pmatrix}^n = \begin{pmatrix} F_{n+1}&F_n \\ F_n&F_{n-1} \end{pmatrix}
+$$
 
 We can use a recursive scheme to calculate this matrix power using a
 divide and conquer scheme in $\mathcal{O}(\log{}n)$ time.
@@ -197,9 +201,13 @@ scheme!
 
 If we know $F_K$ and $F_{K+1}$, then we can find,
 
-$$F_{2K} = F_K \left [ 2F_{K+1}-F_K \right ]$$
+$$
+F_{2K} = F_K \left [ 2F_{K+1}-F_K \right ]
+$$
 
-$$F_{2K+1} = {F_{K+1}}^2+{F_K}^2$$
+$$
+F_{2K+1} = {F_{K+1}}^2+{F_K}^2
+$$
 
 We can implement this using the **Karatsuba multiplication** as follows:
 

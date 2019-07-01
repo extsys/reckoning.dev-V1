@@ -48,7 +48,10 @@ $$
 $$
 
 In matrix notation, this can be written as,
-$$y \approx \mathbf{X}w$$
+
+$$
+y \approx \mathbf{X}w
+$$
 
 In terms of a regression problem, given the data $\mathbf{X}$ and the
 true response $y$, we want to estimate the weights vector $w$, such
@@ -59,13 +62,17 @@ The most common way to define and get the closeness of the predicted
 response $\hat{y}$ and the true response $y$ is using the
 **residual sum of squares (RSS)**.
 
-$$RSS = \sum_{i=1}^N \big ( y_i - \hat{y}_i \big)^2 = (y - \mathbf{X}w)^T (y - \mathbf{X}w)$$
+$$
+RSS = \sum_{i=1}^N \big ( y_i - \hat{y}_i \big)^2 = (y - \mathbf{X}w)^T (y - \mathbf{X}w)
+$$
 
 where $N$ is the total number of samples.
 Using some [linear algebra and calculus, it can be shown that](https://s-mat-pcs.oulu.fi/~mpa/matreng/ematr5_5.htm), in the matrix form,
 the solution to the weights vector $w$ can be given by,
 
-$$w = \big(\mathbf{X}^T\mathbf{X}\big)^{-1} \mathbf{X}^T y$$
+$$
+w = \big(\mathbf{X}^T\mathbf{X}\big)^{-1} \mathbf{X}^T y
+$$
 
 This approach of estimating weights for linear regression is called **Ordinary Least Squares** ([OLS][ols]).
 
@@ -171,7 +178,9 @@ As seen above, **residual sum of squares (RSS)** is one summary statistics to me
 
 The mean absolute error (MAE) is the simplest regression error metric to understand. In this metric we will calculate the residual for every data point, taking only the absolute value of each so that negative and positive residuals do not cancel out. We then take the average of all these residuals. Effectively, MAE describes the typical magnitude of the residuals.If you are unfamiliar with `mean`, please have look at my previous post on [descriptive statistics](/descriptive-stats).
 
-$$ MAE = \frac{1}{N} \sum_{i=1}^N \big | y_i - \hat{y}_i \big |$$
+$$
+MAE = \frac{1}{N} \sum_{i=1}^N \big | y_i - \hat{y}_i \big |
+$$
 
 The MAE is also the most intuitive of the metrics since we're just looking at the absolute difference between the data and the model's predictions. Because we use the absolute value of the residual, the MAE does not indicate whether or not the model under or overshoots actual data. Each residual contributes proportionally to the total amount of error, meaning that larger errors will contribute linearly to the overall error. A small MAE suggests the model is great at prediction, while a large MAE suggests that your model may have trouble in certain areas.
 
@@ -179,7 +188,9 @@ The MAE is also the most intuitive of the metrics since we're just looking at th
 
 Mean square error is the average residual sum of squares:
 
-$$ MSE = \frac{1}{N} \sum_{i=1}^N \big ( y_i - \hat{y}_i \big)^2$$
+$$
+MSE = \frac{1}{N} \sum_{i=1}^N \big ( y_i - \hat{y}_i \big)^2
+$$
 
 The effect of the square term in the MSE equation is most apparent with the presence of outliers in our data. While each residual in MAE contributes **proportionally** to the total error, the error grows **quadratically** in MSE. This ultimately means that outliers in our data will contribute to much higher total error in the MSE than they would for the MAE. Similarly, our model will be penalized more for making predictions that differ greatly from the corresponding actual value. This is to say that large differences between actual and predicted are punished more in MSE than in MAE.
 
@@ -196,7 +207,9 @@ Both MAE and MSE can range from 0 to $+ \infty$, so as both of these measures ge
 
 The mean absolute percentage error (MAPE) is the percentage equivalent of MAE. The equation looks just like that of MAE, but with adjustments to convert everything into percentages.
 
-$$MAPE = \frac{100}{N} \sum_{i=1}^N \Big \vert \frac{y_i - \hat{y}_i}{y_i} \Big \vert$$
+$$
+MAPE = \frac{100}{N} \sum_{i=1}^N \Big \vert \frac{y_i - \hat{y}_i}{y_i} \Big \vert
+$$
 
 Just as MAE is the average magnitude of error produced by your model, the MAPE is how far the model's predictions are off from their corresponding outputs on average. Like MAE, MAPE also has a clear interpretation since percentages are easier for people to conceptualize. Both MAPE and MAE are robust to the effects of outliers thanks to the use of absolute value.
 
@@ -206,7 +219,9 @@ However for all of its advantages, we are more limited in using MAPE than we are
 
 The mean percentage error (MPE) equation is exactly like that of MAPE. The only difference is that it lacks the absolute value operation.
 
-$$MPE = \frac{100}{N} \sum_{i=1}^N \frac{y_i - \hat{y}_i}{y_i}$$
+$$
+MPE = \frac{100}{N} \sum_{i=1}^N \frac{y_i - \hat{y}_i}{y_i}
+$$
 
 Since positive and negative errors will cancel out, we cannot make any statements about how well the model predictions perform overall. However, if there are more negative or positive errors, this bias will show up in the MPE. Unlike MAE and MAPE, MPE is useful to us because it allows us to see if our model systematically **underestimates** (more negative error) or
 **overestimates** (positive error).
@@ -219,7 +234,9 @@ We can also evaluate linear regression models by $R^2$ and Adjusted $R^2$.
 
 Also called as coefficient of determination, It determines how much of the total variation in Y (dependent variable) is explained by the variation in X (independent variable). Mathematically, it can be written as:
 
-$$R^2 = \frac{\sum \big ( \hat{y}_i - \bar{y} \big)^2 }{\sum \big ( y_i - \bar{y} \big)^2}$$
+$$
+R^2 = \frac{\sum \big ( \hat{y}_i - \bar{y} \big)^2 }{\sum \big ( y_i - \bar{y} \big)^2}
+$$
 
 where, $\bar{y}$ is the average response. The value of R-square is always between 0 and 1, where 0 means that the model does not model explain any variability in the target variable (Y) and 1 meaning it explains full variability in the target variable.
 
@@ -229,7 +246,9 @@ A major drawback of $R^2$ is that if new predictors ($X$) are added to our model
 
 The Adjusted $R^2$ is the modified form of $R^2$ that has been adjusted for the number of predictors in the model. It incorporates model's degree of freedom. The adjusted $R^2$ only increases if the new term improves the model accuracy.
 
-$$R^2_{adjusted} = 1 - \frac{(1-R^2)(N-1)}{N-p-1}$$
+$$
+R^2_{adjusted} = 1 - \frac{(1-R^2)(N-1)}{N-p-1}
+$$
 
 Here, $N$ is number of samples and $p$ is the number of predictors in the model.
 
@@ -247,7 +266,9 @@ Two common ways to implement this are:
 
 Ridge regression adds the "squared magnitude" of coefficient as penalty term to the loss function.
 
-$$RSS_{ridge} = \sum_{i=1}^N \big ( y_i - w x_i - b \big)^2 + \lambda w^2$$
+$$
+RSS_{ridge} = \sum_{i=1}^N \big ( y_i - w x_i - b \big)^2 + \lambda w^2
+$$
 
 Here $\lambda$ controls the regularization term, a low value takes us closer to regular regression model.
 
@@ -255,7 +276,9 @@ Here $\lambda$ controls the regularization term, a low value takes us closer to 
 
 Lasso regression adds the "absolute magnitude" of coefficients as penalty term to the loss function.
 
-$$RSS_{lasso} = \sum_{i=1}^N \big ( y_i - w x_i - b \big)^2 + \lambda |w|$$
+$$
+RSS_{lasso} = \sum_{i=1}^N \big ( y_i - w x_i - b \big)^2 + \lambda |w|
+$$
 
 The key difference between these techniques is that Lasso shrinks the less important feature's coefficient to 0 thus, removing some feature altogether. So, this works well for feature selection in case we have a huge number of features.
 
@@ -266,7 +289,9 @@ One of the prime differences between Lasso and Ridge regression is that in ridge
 Elastic net regression is a hybrid algorithm of ridge and lasso regressions. In this case we use both $L1$ and $L2$ terms for
 regularizing model coefficients:
 
-$$RSS_{elastic} = \sum_{i=1}^N \big ( y_i - w x_i - b \big)^2 + \lambda_1 w^2 + \lambda_2 |w|$$
+$$
+RSS_{elastic} = \sum_{i=1}^N \big ( y_i - w x_i - b \big)^2 + \lambda_1 w^2 + \lambda_2 |w|
+$$
 
 ### A Bayesian Perspective
 
@@ -290,11 +315,15 @@ Polynomial regression is a form of regression analysis in which the relationship
 Mathematically, suppose the N-point data is of form $(x_i, y_i)$ for $1 \leqslant i \leqslant N$.
 The goal is to find a polynomial approximation of the data by minimizing the residual:
 
-$$RSS = \sum_{i=1}^N \big ( y_i - a_0 - a_1 x_i - a_2 x_i^2 \big)^2$$
+$$
+RSS = \sum_{i=1}^N \big ( y_i - a_0 - a_1 x_i - a_2 x_i^2 \big)^2
+$$
 
 Similar to the OLS problem, this can be viewed as the problem of solving overdetermined system:
 
-$$\begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix} \approx \begin{bmatrix} 1 & x_1 & x_1^2 \\ 1 & x_2 & x_2^2\\ \vdots & \vdots & \vdots \\ 1 & x_n & x_n^2 \end{bmatrix} \begin{bmatrix} a_0 \\ a_1 \\ a_2 \end{bmatrix}$$
+$$
+\begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \end{bmatrix} \approx \begin{bmatrix} 1 & x_1 & x_1^2 \\ 1 & x_2 & x_2^2\\ \vdots & \vdots & \vdots \\ 1 & x_n & x_n^2 \end{bmatrix} \begin{bmatrix} a_0 \\ a_1 \\ a_2 \end{bmatrix}
+$$
 
 This can be solved by the same mathematical tools as the OLS problem. The same set of regression techniques as above can be
 also applied here. The equation have been used for a polynomial of degree 2, but cam be easily expanded to higher orders.
@@ -312,14 +341,18 @@ smaller the energy of its derivative is.
 
 Let us define a matrix D as,
 
-$$D = \begin{bmatrix} 1 & -2 & 1 &  & \\  & 1 & -2 & 1 & \\ \vdots & \vdots & \vdots & \vdots \\  &  & 1 & -2 & 1 \end{bmatrix}$$
+$$
+D = \begin{bmatrix} 1 & -2 & 1 &  & \\  & 1 & -2 & 1 & \\ \vdots & \vdots & \vdots & \vdots \\  &  & 1 & -2 & 1 \end{bmatrix}
+$$
 
 Then $D\mathbf x$ is the second-order difference (a discrete form of the second-order
 derivative) of the signal $\mathbf x$. If $\mathbf x$ is smooth, then $\lVert D \mathbf x \rVert^2$
 is small in value. Hence, we can propose the signal smoothing as a linear regression problem, where $\mathbf y$ is a noisy
 signal, that can be smoothened by $\mathbf x$, if we minimize the following loss function:
 
-$$ \lVert \mathbf y - \mathbf x \rVert^2 + \lambda \lVert D \mathbf x \rVert^2$$
+$$
+\lVert \mathbf y - \mathbf x \rVert^2 + \lambda \lVert D \mathbf x \rVert^2
+$$
 
 This can be solved by the same mathematical tools that we used above to solve for ordinary least squares.
 

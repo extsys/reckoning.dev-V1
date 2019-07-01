@@ -136,7 +136,9 @@ We find that our model has a much better predictive power (94.1%) for the domina
 
 The approach used in the case of AdaBoost can be also viewed as an [exponential loss minimization approach](https://en.wikipedia.org/wiki/AdaBoost#Boosting_as_gradient_descent). Let us look at this mathematically for the case of a generic loss function, $L\big(y,\hat{F}(x)\big)$. The goal of the method is to find an $\hat{F}(x)$ that minimizes the average value of the loss function $L\big(y,\hat{F}(x)\big)$ on the training set. This can be achieved by starting with a constant function $\hat{F_0}(x)$, and incrementally expanding it in a greedy fashion as follows:
 
-$$\begin{aligned} & \hat{F_0}(x) = \mathop{\arg\min}\limits_{\gamma} \sum_{i=1}^{N} L\big(y,\gamma \big) \\ & \hat{F_b}(x) = \hat{F}_{b-1}(x) + \mathop{\arg\min}\limits_{f \in \mathcal{H}} \sum_{i=1}^{N} L\big(y,\hat{F}_{b-1}(x) + f(x) \big) \text{, for } b=1,2,\ldots, B \end{aligned}$$
+$$
+\begin{aligned} & \hat{F_0}(x) = \mathop{\arg\min}\limits_{\gamma} \sum_{i=1}^{N} L\big(y,\gamma \big) \\ & \hat{F_b}(x) = \hat{F}_{b-1}(x) + \mathop{\arg\min}\limits_{f \in \mathcal{H}} \sum_{i=1}^{N} L\big(y,\hat{F}_{b-1}(x) + f(x) \big) \text{, for } b=1,2,\ldots, B \end{aligned}
+$$
 
 where $f(x) \in \mathcal{H}$ refers to base learners, in this case tree models. The problem with this set up is that, it is computationally infeasible to choose optimal $f(x)$ at every step for an arbitrary loss function $L\big(y,\hat{F}(x)\big)$.
 
@@ -155,15 +157,22 @@ However, this can be simplified using a [steepest descent](https://en.wikipedia.
 
 In most real implementations of gradient boosted trees, rather than an individual tree weighing parameter $\gamma_b$, different parameters are used at different splits, $\gamma_{jb}$. If you recall from the [last post](/tree-based-models), a decision tree model corresponds to diving the feature space in multiple rectangular regions and hence it can be represented as,
 
-$$\hat{f^b}(x) = \sum_{j=1}^{J} k_{jb} I\big(x\in R_{jb}\big)$$
+$$
+\hat{f^b}(x) = \sum_{j=1}^{J} k_{jb} I\big(x\in R_{jb}\big)
+$$
 
 where, $J$ is the number of terminal nodes (leaves), $I\big(x\in R_{jb}\big)$ is an indicator function which is 1 if $x\in R_{jb}$ and $k_{jb}$ is the prediction in $j^{th}$ leaf.
 Now, we can replace $\hat{f^b}(x)$ in above algorithm and replace $\gamma_b$ for the whole tree by $\gamma_{jb}$ per terminal node (leaf).
 
-$$\hat{F_b}(x) = \hat{F}_{b-1}(x) + \nu \sum_{j=1}^{J_b} \gamma_{jb} I\big(x\in R_{jb}\big)$$
+$$
+\hat{F_b}(x) = \hat{F}_{b-1}(x) + \nu \sum_{j=1}^{J_b} \gamma_{jb} I\big(x\in R_{jb}\big)
+$$
 
 where $\gamma_{jb}$ is given by the following line search,
-$\gamma_{jb} = \mathop{\arg\min}\limits_{\gamma} \sum_{x_i \in R_{jb}} L\big(y_i, \hat{F}_{b-1}(x) + \gamma \big)$
+
+$$
+\gamma_{jb} = \mathop{\arg\min}\limits_{\gamma} \sum_{x_i \in R_{jb}} L\big(y_i, \hat{F}_{b-1}(x) + \gamma \big)
+$$
 
 Here $J$ refers to the number of terminal nodes (leaves) in any of constituent decision trees. A value of $J_b =2$, i.e. **decision stumps** means no interactions among feature variables are considered. With a value of $J_b=3$ the model may include effects of the interaction between up to two variables, and so on. Typically
 a value of $4 \le J_b \le 8$ [work well for boosting](https://web.stanford.edu/~hastie/Papers/ESLII.pdf).
