@@ -119,14 +119,22 @@ of growing a regression tree. Just as in the regression setting,
 recursive binary splitting is used to grow a classification tree.
 However, in the classification setting, RSS cannot be used as a
 criterion for making the binary splits. We can replace RSS by a generic definition of node impurity measure $Q_m$, a measure of the homogeneity of the target variable within the subset regions $R_1, R_2, \ldots , R_J$. In a node $m$, representing a region $R_m$ with $N_m$ observations, the proportion of training observations in the $m^{th}$ region that are from the $k^{th}$ class can be given by,
-$\hat{p}_{mk} = \frac{1}{N_m}\sum_{x_i \in R_m} I\big(y_i = k\big)$
+
+$$
+\hat{p}_{mk} = \frac{1}{N_m}\sum_{x_i \in R_m} I\big(y_i = k\big)
+$$
+
 where, $I\big(y_i = k\big)$ is the _indicator function_ that is 1 if $y_i = k$, and 0 otherwise.
 
 A natural definition of the impurity measure $Q_m$
 is the _classification error rate_. The classification error rate is
 the fraction of the training observations in that region that do not
 belong to the most common class:
-$E = 1 - \max_{k}\hat{p}_{mk}$
+
+$$
+E = 1 - \max_{k}\hat{p}_{mk}
+$$
+
 Given this is not differentiable, and hence less amenable to
 numerical optimization. Furthermore, this is quite insensitive to
 changes in the node probabilities, making classification error rate
@@ -136,7 +144,11 @@ node impurity measure that are more commonly used are
 and [cross entropy](https://en.wikipedia.org/wiki/Cross_entropy).
 
 Gini index is a measure of total variance across the $K$ classes, defined as,
-$G = \sum_{k=1}^{K} \hat{p}_{mk} \big(1-\hat{p}_{mk}\big)$
+
+$$
+G = \sum_{k=1}^{K} \hat{p}_{mk} \big(1-\hat{p}_{mk}\big)
+$$
+
 A small value of $G$ indicates that a node contains predominantly
 observations from a single class.
 
@@ -621,7 +633,13 @@ These models are NOT common in use directly. Some common drawbacks of decision t
 
 Most of these limitations can be easily overcome by using several improvements over decision trees. In the following sections, we will be looking some of these concepts, mainly bagging, and random forests.
 
-> **Tree Pruning** <br/><br/> Since decision trees have a very high tendency to over-fit the data, a smaller tree with fewer splits (that is, fewer regions $R_1, \ldots, R_J$) might lead to lower variance and better interpretation at the cost of a little bias. One possible alternative to the process described above is to build the tree only so long as the decrease in the node impurity measure, $Q_m$ due to each split exceeds some (high) threshold. However, due to greedy nature of the splitting algorithm, it is too short-sighted since a seemingly worthless split early on in the tree might be followed by a very good split i.e., a split that leads to a large reduction in $Q_m$ later on.<br/><br/> Therefore, a better strategy is to grow a very large tree $T_0$, and then prune it back in order to obtain a subtree. There can be several strategies to pruning, Cost complexity pruning, also known as weakest link pruning in one way to do this effectively. Rather than considering every possible subtree, a sequence of trees indexed by a non-negative tuning parameter $\alpha$ is considered. For each value of $\alpha$ there corresponds a subtree $T \subset T_0$ such that $$\sum_{m=1}^{|T|}\sum_{i:x_i \in R_m}\big(y_i-\hat{y}_{R_m}\big)^2 + \alpha |T|$$ is as small as possible. Here $|T|$ indicates the number of terminal nodes of the tree $T$, $R_m$ is the rectangle (i.e. the subset of predictor space) corresponding to the $m^{th}$ terminal node, and $\hat{y}_{R_m}$ is the predicted response associated with $R_m$, i.e., the mean (or mode in the case of classification trees) of the training observations in $R_m$. <br/><br/>The tuning parameter $\alpha$ controls a trade-off between the subtree’s complexity and its fit to the training data. When $\alpha = 0$, then the subtree $T$ will simply equal $T_0$. As $\alpha$ increases, there is a price to pay for having a tree with many terminal nodes, and so the above equation will tend to be minimized for a smaller subtree. The pruning parameter $\alpha$ can be selected using some kind of cross validation. <br/><br/> Note that [sklearn.tree](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.tree) decision tree classifier (and regressor) does not currently support pruning.
+> **Tree Pruning** <br/><br/> Since decision trees have a very high tendency to over-fit the data, a smaller tree with fewer splits (that is, fewer regions $R_1, \ldots, R_J$) might lead to lower variance and better interpretation at the cost of a little bias. One possible alternative to the process described above is to build the tree only so long as the decrease in the node impurity measure, $Q_m$ due to each split exceeds some (high) threshold. However, due to greedy nature of the splitting algorithm, it is too short-sighted since a seemingly worthless split early on in the tree might be followed by a very good split i.e., a split that leads to a large reduction in $Q_m$ later on.<br/><br/> Therefore, a better strategy is to grow a very large tree $T_0$, and then prune it back in order to obtain a subtree. There can be several strategies to pruning, Cost complexity pruning, also known as weakest link pruning in one way to do this effectively. Rather than considering every possible subtree, a sequence of trees indexed by a non-negative tuning parameter $\alpha$ is considered. For each value of $\alpha$ there corresponds a subtree $T \subset T_0$ such that
+>
+> $$
+> \sum_{m=1}^{|T|}\sum_{i:x_i \in R_m}\big(y_i-\hat{y}_{R_m}\big)^2 + \alpha |T|
+> $$
+>
+> is as small as possible. Here $|T|$ indicates the number of terminal nodes of the tree $T$, $R_m$ is the rectangle (i.e. the subset of predictor space) corresponding to the $m^{th}$ terminal node, and $\hat{y}_{R_m}$ is the predicted response associated with $R_m$, i.e., the mean (or mode in the case of classification trees) of the training observations in $R_m$. <br/><br/>The tuning parameter $\alpha$ controls a trade-off between the subtree’s complexity and its fit to the training data. When $\alpha = 0$, then the subtree $T$ will simply equal $T_0$. As $\alpha$ increases, there is a price to pay for having a tree with many terminal nodes, and so the above equation will tend to be minimized for a smaller subtree. The pruning parameter $\alpha$ can be selected using some kind of cross validation. <br/><br/> Note that [sklearn.tree](https://scikit-learn.org/stable/modules/classes.html#module-sklearn.tree) decision tree classifier (and regressor) does not currently support pruning.
 
 ## Bootstrap Aggregating (Bagging)
 

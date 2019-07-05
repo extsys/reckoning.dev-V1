@@ -212,7 +212,13 @@ The biggest drawback of the gradient boosting trees is that the algorithm is qui
 
 [XGBoost](https://github.com/dmlc/xgboost) is a python (C++ and R as well) library that provides an optimized implementation of gradient boosted trees. It uses various tricks like regularization of number of leaves and leaf weights, sparsity aware split finding, column block for parallel learning and cache-aware access. Using these tricks the implementation provides a parallelized efficient version of the algorithm. The details of these can be found [here](https://arxiv.org/pdf/1603.02754.pdf). XGBoost is one of the most famous machine learning libraries used in on-line machine learning competitions like Kaggle.
 
-> **XGBoost**: Additional Remarks <br/><br/> **Regularization**: Apart from regular gradient boosted trees, XGBoost provides two additional types of regularization, by adding $L_1$ constraints on number of leaves ($J_b$) and $L_2$ constraints on the leaf weights ($\gamma_{jb}$) to the loss function. Mathematically, The loss function is modified as follows: $$\text{Loss Term at step b}= \sum_{i=1}^{N} L\big( y_i, \hat{F_b}(x_i) \big) + \sum_{k=1}^b \Big (\eta J_k + \frac{1}{2} \lambda \left\lVert \gamma_{jk} \right\rVert^2 \Big )$$ Here, the second term in the loss function, penalizes the complexity of the model, i.e. decision tree functions.<br/><br/> **Additional Weak Learners**: Apart from decision trees, XGBoost also supports [linear models](https://en.wikipedia.org/wiki/Linear_model) and [DART (decision trees with dropout)](https://proceedings.mlr.press/v38/korlakaivinayak15.pdf) as weak learners. In the DART algorithm, only a subset of available trees are considered in calculating the pseudo-residuals on which the new trees are fit.
+> **Regularization**: Apart from regular gradient boosted trees, XGBoost provides two additional types of regularization, by adding $L_1$ constraints on number of leaves ($J_b$) and $L_2$ constraints on the leaf weights ($\gamma_{jb}$) to the loss function. Mathematically, The loss function is modified as follows:
+>
+> $$
+> \text{Loss Term at step b}= \sum_{i=1}^{N} L\big( y_i, \hat{F_b}(x_i) \big) + \sum_{k=1}^b \Big (\eta J_k + \frac{1}{2} \lambda \left\lVert \gamma_{jk} \right\rVert^2 \Big )
+> $$
+>
+> Here, the second term in the loss function, penalizes the complexity of the model, i.e. decision tree functions.<br/><br/> **Additional Weak Learners**: Apart from decision trees, XGBoost also supports [linear models](https://en.wikipedia.org/wiki/Linear_model) and [DART (decision trees with dropout)](https://proceedings.mlr.press/v38/korlakaivinayak15.pdf) as weak learners. In the DART algorithm, only a subset of available trees are considered in calculating the pseudo-residuals on which the new trees are fit.
 
 XGBoost has many parameters that control the fitting of the model. Below are some of the relevant parameters and tuning them would be helpful in the most common cases. _Please note that original XGBoost library parameters might have a different name than before, since I am using the scikit-learn API parameter names below._
 
@@ -500,7 +506,7 @@ Given the strategy of growing trees is different in LightGBM, an additional para
 of the **max_depth** parameter and has to be tuned independently. A typical value for starting should be much less than 2<sup>max
 \_depth</sup>.
 
-When using the scikit-learn API of LightGBM, one should keep in mind that some of the parameter names are not standard ones (even though described in the API reference). In particular, I found that _seed_ and _nthreads_ as parameters, instead of _random_state_ and _n_jpbs_, respectively.
+When using the scikit-learn API of LightGBM, one should keep in mind that some of the parameter names are not standard ones (even though described in the API reference). In particular, I found that _seed_ and _nthreads_ as parameters, instead of _random_\__state_ and _n_\__jobs_, respectively.
 
 Let us tune a LightGBM model for the problem of Income prediction.
 

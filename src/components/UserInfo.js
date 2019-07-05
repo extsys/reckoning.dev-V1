@@ -8,18 +8,16 @@ class UserInfo extends Component {
       <aside className='note'>
         <div className='container note-container'>
           <div className='flex-author'>
-            <h2>A note from the author</h2>
+            <h2>A Note From The Author</h2>
             <p>
-              Hi! I'm Sadanand. I write free resources for people learning machine learning, deep
-              learning and programming. I aspire to help hundreds of people daily. I turn down
-              everyone who offers to put ads, affiliate links, and sponsored posts on my website.
+              I write free resources for people learning machine learning, deep learning and
+              programming. I aspire to help hundreds of people. I turn down everyone who offers to
+              put ads, affiliate links, and sponsored posts on my website.
             </p>
-            {/* <p>
-              <strong>If you enjoy my content, please consider supporting what I do!</strong>
+            <p>
+              If you feel my posts are helpful, please let me know via various{' '}
+              <a href='contact'>social links</a> or comments!
             </p>
-            <a href='https://ko-fi.com/sadanandsingh' className='donate-button' target='_blank'>
-              Support me <img src={coffee} className='coffee-icon' />
-            </a> */}
           </div>
           <div className='flex-avatar'>
             <img className='avatar' src={sadanand} />
