@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import NewsletterBG from '../../images/newsletter-bg.webp';
+import NewsletterBG from '../../images/newsletter-bg.jpg';
 
 export const NewsletterWrapper = styled.div`
   margin: 0 auto;
