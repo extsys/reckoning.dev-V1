@@ -62,15 +62,6 @@ class PostTemplate extends Component {
 
     const date = formatDate(post.date);
     const githubLink = editOnGithub(post);
-    const twitterUrl = 'https://twitter.com/search?q=' + config.siteUrl + '/' + post.slug + '/';
-    const twitterShare =
-      'https://twitter.com/intent/tweet/?text=' +
-      encodeURIComponent(post.title) +
-      '&url=' +
-      config.siteUrl +
-      '/' +
-      post.slug +
-      '/&via=sadanandsingh';
 
     return (
       <Layout>
