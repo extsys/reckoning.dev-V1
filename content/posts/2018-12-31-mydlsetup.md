@@ -39,6 +39,8 @@ As you can see, its pretty awesome built. One thing I really love about this con
 stability. Although, I have recently upgraded the GPU to 2080 Ti to test mixed precision training,
 this has been a pretty stable and trustworthy build.
 
+<gnome-gallery></gnome-gallery>
+
 ## OS Setup
 
 I avoid any rolling release linux distribution (read Arch Linux) on my work machines, since,

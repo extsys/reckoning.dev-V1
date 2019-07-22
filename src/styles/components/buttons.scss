@@ -24,16 +24,16 @@
 
 // Buttons on hover
 %buttons-hover {
-  border: $button-border-width $button-border-style $button-background-hover;
+  // border: $button-border-width $button-border-style $button-background-hover;
   color: white;
-  background: $button-background-hover;
+  // background: $button-background-hover;
   text-decoration: none;
 }
 
 // Buttons on focus
 %buttons-focus {
-  border: $button-border-width $button-border-style $button-background-hover;
-  background: $button-background-hover;
+  // border: $button-border-width $button-border-style $button-background-hover;
+  // background: $button-background-hover;
   color: white;
   text-decoration: none;
 }

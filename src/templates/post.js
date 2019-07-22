@@ -19,6 +19,8 @@ import { PaginationWrapper, PrevPage, NextPage } from '../components/PaginationB
 import { FacebookShareButton, TwitterShareButton, RedditShareButton } from 'react-share';
 import { IoLogoFacebook, IoLogoTwitter, IoLogoReddit } from 'react-icons/io';
 import { BlogPostFooter, PostShare } from './templates.style';
+import GnomeGallery from '../components/galleries/gnome-gallery';
+import ArchGnomeGallery from '../components/galleries/arch-gnome-gallery';
 
 class PostTemplate extends Component {
   render() {
@@ -38,7 +40,9 @@ class PostTemplate extends Component {
     const renderAst = new rehypeReact({
       createElement: React.createElement,
       components: {
-        'zoom-image': ZoomImage
+        'zoom-image': ZoomImage,
+        'arch-gnome-gallery': ArchGnomeGallery,
+        'gnome-gallery': GnomeGallery
       }
     }).Compiler;
 

@@ -51,6 +51,8 @@ For reference, my installation system is a slightly upgraded form of
 - Samsung U28E590D 28-Inch UHD LED-Lit 4K Monitor
 - Nvidia GeForce GTX 1080 Ti GPU
 
+<arch-gnome-gallery></arch-gnome-gallery>
+
 ## Base Installation
 
 Before beginning this guide, I would assume that you have a bootable USB of the latest Arch Linux
