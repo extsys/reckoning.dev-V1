@@ -17,7 +17,7 @@ class Contact extends Component {
             <IoLogoGithub />
             {'  '}
           </a>
-          <a target='_blank' href='https://twitter.com/sadanandsingh'>
+          <a target='_blank' href='https://twitter.com/saddy4s'>
             <IoLogoTwitter />
             {'  '}
           </a>

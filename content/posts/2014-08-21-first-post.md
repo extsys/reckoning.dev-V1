@@ -16,7 +16,7 @@ politics, economics, and society.
 
 <zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1496963333/sadanand_navmqu.jpg'></zoom-image>
 
-<div class="float-right col-md-8" style="min-height: 400px;"> <a class="twitter-timeline" data-lang="en" data-height="480" href="https://twitter.com/sadanandsingh">Tweets by sadanandsingh</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> </div>
+<div class="float-right col-md-8" style="min-height: 400px;"> <a class="twitter-timeline" data-lang="en" data-height="480" href="https://twitter.com/saddy4s">Tweets by saddy4s</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script> </div>
 
 <div class="line-block">
 <div class="line"><br></div>

@@ -16,7 +16,7 @@ const config = {
   postDefaultCategoryID: 'Tech',
   userName: 'Tania',
   userEmail: 'me@datasciencevision.com',
-  userTwitter: 'sadanandsingh',
+  userTwitter: 'saddy4s',
   userLocation: 'San Francisco, CA',
   userAvatar: 'https://api.adorable.io/avatars/285/@sadanandsingh.png',
   userDescription:

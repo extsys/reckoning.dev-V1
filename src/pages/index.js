@@ -45,7 +45,7 @@ class Index extends Component {
             <div className='quotation-footer'>— Albert Einstein</div>
             <a
               className='twitter-follow-button'
-              href='https://twitter.com/sadanandsingh'
+              href='https://twitter.com/saddy4s'
               data-size='large'
               data-show-screen-name='false'
             >
