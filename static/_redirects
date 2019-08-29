@@ -5,3 +5,10 @@
 /portfolio/              /blog/
 /thoughts/               /blog/
 /search/                 /
+# These rules will change if you change your site’s custom domains or HTTPS settings
+
+# Redirect domain aliases to primary domain
+https://datasciencevision.com/* https://reckoning.dev/:splat 301!
+
+# Optional: Redirect default Netlify subdomain to primary domain
+https://serene-haibt-80ebc8.netlify.com/* https://reckoning.dev/:splat 301!
