@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import NewsletterForm from './NewsletterForm';
 import { IoLogoFacebook, IoLogoTwitter, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io';
 
 class Contact extends Component {
@@ -26,8 +25,6 @@ class Contact extends Component {
             {'  '}
           </a>
         </p>
-        <p>Like the posts you see here? Sign up to get notified about new ones.</p>
-        <NewsletterForm />
       </>
     );
   }

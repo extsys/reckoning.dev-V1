@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../layout';
-import UserInfo from '../components/UserInfo';
 import PostListing from '../components/PostListing';
 import ProjectListing from '../components/ProjectListing';
 import SimpleListing from '../components/SimpleListing';
-import NewsletterForm from '../components/NewsletterForm';
 import SEO from '../components/SEO';
 import config from '../../data/SiteConfig';
 import projects from '../../data/projects';
@@ -79,13 +77,8 @@ class Index extends Component {
             </h2>
             <SimpleListing simple data={published} />
           </section>
-
-          <section className='section'>
-            <h2>Newsletter</h2>
-            <NewsletterForm />
-          </section>
         </div>
-        <UserInfo config={config} />
+        {/* <UserInfo config={config} /> */}
       </Layout>
     );
   }

@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import { DiscussionEmbed, CommentCount } from 'disqus-react';
 import urljoin from 'url-join';
 import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../layout';
 import UserInfo from '../components/UserInfo';
 import PostTags from '../components/PostTags';
-import NewsletterForm from '../components/NewsletterForm';
 import SEO from '../components/SEO';
 import config from '../../data/SiteConfig';
 import Img from 'gatsby-image';
@@ -77,12 +75,6 @@ class PostTemplate extends Component {
               <h1>{post.title}</h1>
               <div className='post-meta'>
                 <time className='date'>{date}</time>/{' '}
-                <a href='#comments'>
-                  <CommentCount shortname={disqusShortname} config={disqusConfig}>
-                    Comments
-                  </CommentCount>
-                </a>{' '}
-                /{' '}
                 <a className='github-link' href={githubLink} target='_blank'>
                   Edit on Github ✏️
                 </a>
@@ -129,13 +121,6 @@ class PostTemplate extends Component {
               )}
             </NextPage>
           </PaginationWrapper>
-
-          <h2 id='comments'>Comments</h2>
-          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
-
-          <h3>Stay in touch</h3>
-          <p>Like the posts you see here? Sign up to get notified about new ones.</p>
-          <NewsletterForm />
         </article>
         <UserInfo config={config} />
       </Layout>
