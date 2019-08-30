@@ -170,11 +170,12 @@ img {
     .each {
       display: grid;
       align-items: center;
-      grid-template-columns: 60px 1fr 0;
+      grid-template-columns: 50px 1fr 70px;
       padding: 1rem 0;
       margin: 0;
-      border-radius: $border-radius;
+      // border-radius: $border-radius;
       border: 2px solid transparent;
+      border-bottom: 2px solid $light;
 
       .date {
         margin: 0;
@@ -255,8 +256,8 @@ img {
         margin: 0 -2rem;
 
         &:hover {
-          border: 2px solid $primary-color;
-          background: $primary-hover;
+          border-radius: $border-radius;
+          background: $light;
 
           &last-of-type {
             &:hover {
@@ -299,12 +300,12 @@ img {
     &.simple {
       a {
         .each {
-          padding: 0.75rem 1rem;
+          padding: 0.5rem 1rem;
           margin: 0 -1rem;
 
           &:hover {
-            border: 2px solid $primary-color;
-            background: $primary-hover;
+            border: 2px solid $light;
+            background: $light;
           }
 
           &:active,
@@ -385,7 +386,7 @@ h2.publication-company {
 .simple-posts {
   a {
     .each {
-      padding: 0.5rem;
+      padding: 0.5rem 0;
       margin: 0;
       border: 2px solid transparent;
       border-radius: $border-radius;
@@ -409,8 +410,8 @@ h2.publication-company {
       }
 
       &:hover {
-        border: 2px solid $primary-color;
-        background: $primary-hover;
+        border: 2px solid $light;
+        background: $light;
 
         h2 {
           color: #111;
@@ -424,7 +425,7 @@ h2.publication-company {
   .simple-posts {
     a {
       .each {
-        padding: 0.75rem 1rem;
+        padding: 0.85rem 1rem;
         margin: 0 -1rem;
 
         h2 {
@@ -440,19 +441,32 @@ h2.publication-company {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
   }
 
   h2 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     border-bottom: none;
-    margin: 0;
+    margin: 0 1rem 0 0;
     font-weight: 600;
     color: #111;
     padding: 0;
+    min-width: 110px;
 
     a {
+      display: flex;
       color: #111;
+      align-items: center;
+    }
+
+    .project-icon {
+      display: inline-block;
+      font-size: 2rem;
+      margin-right: 1rem;
+    }
+
+    .project-title {
+      display: inline-block;
     }
   }
 
@@ -463,8 +477,13 @@ h2.publication-company {
     margin: 0;
   }
 
+  .buttons {
+    display: flex;
+    align-items: center;
+  }
+
   .button {
-    margin-right: 0.5rem;
+    margin-left: 0.5rem;
     padding: 0.5rem;
     font-size: 1rem;
   }
@@ -488,7 +507,7 @@ h2.publication-company {
     }
 
     .button {
-      padding: 0.75rem 1.25rem;
+      padding: 0.5rem 1.25rem;
       font-size: 1.1rem;
     }
   }
@@ -825,12 +844,12 @@ blockquote {
     align-items: center;
     font-size: 0.85rem;
     padding: 0.5rem 0.75rem;
-    background: $light;
+    background: lighten($primary-color, 32%);
     border-radius: $border-radius;
     margin-right: 0.5rem;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: lighten($font-color, 10%);
+    color: $primary-color;
     cursor: pointer;
 
     .count {
@@ -867,8 +886,8 @@ blockquote {
     }
 
     &:hover {
-      background: darken($light, 5%);
-      color: $font-color;
+      background: lighten($primary-color, 28%);
+      color: darken($primary-color, 5%);
     }
   }
 }
@@ -919,6 +938,6 @@ blockquote {
 }
 
 ::selection {
-  background: rgba(255, 245, 20, 0.8);
+  background: lighten($primary-color, 10%);
   color: #111;
 }

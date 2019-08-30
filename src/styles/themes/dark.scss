@@ -1,5 +1,6 @@
-$background: #0d2438;
-$foreground: #cbd5e0;
+$background: #202020;
+$foreground: #b3b9c5;
+$accent: #303030;
 $dark-border: darken($background, 3%);
 
 .dark {
@@ -16,19 +17,21 @@ $dark-border: darken($background, 3%);
     &:hover,
     &:active,
     &:focus {
-      color: lighten($primary-color, 12%);
+      color: darken($primary-color, 2%);
       background: transparent;
     }
   }
 
   .lead {
     a {
-      border-bottom: 2px solid $primary-color;
+      border-bottom: 2px solid transparent;
+
       &:hover {
         color: $primary-color;
         background: transparent;
         border-bottom: 2px solid lighten($link-hover-color, 20%);
       }
+
       &:active,
       &:focus {
         background: transparent;
@@ -41,11 +44,13 @@ $dark-border: darken($background, 3%);
   .page {
     a:not(.button):not(.anchor):not(.gatsby-resp-image-link) {
       border-bottom: 2px solid transparent;
+
       &:hover {
         color: $primary-color;
         background: transparent;
         border-bottom: 2px solid lighten($link-hover-color, 20%);
       }
+
       &:active,
       &:focus {
         background: transparent;
@@ -82,7 +87,7 @@ $dark-border: darken($background, 3%);
     }
 
     .links a {
-      color: $comment;
+      color: darken($foreground, 20%);
 
       &:hover,
       &.active {
@@ -108,7 +113,7 @@ $dark-border: darken($background, 3%);
   }
 
   h2 {
-    border-color: $dark-border;
+    border-color: #303030;
   }
 
   h1,
@@ -128,7 +133,8 @@ $dark-border: darken($background, 3%);
       }
 
       &:hover {
-        border-color: $primary-color;
+        background: $accent;
+        border-color: $accent;
       }
     }
 
@@ -138,8 +144,12 @@ $dark-border: darken($background, 3%);
           color: #ccc;
         }
 
+        border: 2px solid transparent;
+        border-bottom-color: $accent;
+
         &:hover {
-          border-color: $primary-color;
+          background: $accent !important;
+          border-color: $accent;
 
           h2 {
             color: white;
@@ -163,8 +173,8 @@ $dark-border: darken($background, 3%);
         }
 
         &:hover {
-          border: 2px solid $primary-color;
-          background: transparent;
+          border: 2px solid $accent;
+          background: $accent;
 
           h2 {
             color: white;
@@ -177,7 +187,7 @@ $dark-border: darken($background, 3%);
   .tag-container {
     span {
       color: $foreground;
-      background: #222;
+      background: rgba(0, 0, 0, 0.2);
       border: none;
 
       .count {
@@ -337,7 +347,8 @@ $dark-border: darken($background, 3%);
   }
 
   button.dark-switcher {
-    border: none;
+    border: none !important;
+    background: transparent !important;
   }
 
   pre.language-terminal code.language-terminal {
@@ -346,19 +357,19 @@ $dark-border: darken($background, 3%);
     color: #ccc;
 
     &::before {
-      background: #444;
-      color: #333;
+      background: $accent;
+      color: #888;
     }
   }
 
   .category-container {
     .category-filter {
       padding: 0.5rem 1rem;
-      background: #222;
+      background: rgba(0, 0, 0, 0.2);
       border-radius: $border-radius;
       margin-right: 0.5rem;
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.4);
+      color: $primary-color;
       cursor: pointer;
 
       &.active {
@@ -372,7 +383,7 @@ $dark-border: darken($background, 3%);
 
       &:hover {
         background: #111;
-        color: rgba(255, 255, 255, 0.6);
+        color: darken($primary-color, 10%);
       }
     }
   }
