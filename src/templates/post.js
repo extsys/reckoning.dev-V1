@@ -99,7 +99,7 @@ class PostTemplate extends Component {
           </BlogPostFooter>
 
           <div className='pagination-wrapper'>
-            <div className='prev-page'>
+            <div className='pagination-button'>
               {prev && (
                 <Link to={`${prev.fields.slug}`} aria-label='Prev'>
                   <IoMdArrowRoundBack />
@@ -107,7 +107,7 @@ class PostTemplate extends Component {
               )}
             </div>
 
-            <div className='next-page'>
+            <div className='pagination-button'>
               {next && (
                 <Link to={`${next.fields.slug}`} aria-label='Next'>
                   <IoMdArrowRoundForward />
