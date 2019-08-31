@@ -23,32 +23,24 @@ class Index extends Component {
         <SEO />
 
         <div class='author'>
-          <img
-            alt='Author image'
-            class='author__image'
-            src={sadanand}
-            width='180'
-            height='180'
-            blur='5'
-          />
+          <img alt='Author image' class='author__image' src={sadanand} />
 
-          <h1 class='author__site-title'>Sadanand's Notes</h1>
+          <h1 class='author__site-title'>My Notes on AI, Programming and Food!</h1>
 
           <p class='author__intro'>
-            I am an AI Researcher in medical imaging and enjoy playing with Algorithms! I created
-            this site to document everything I learn, and share a bit of myself with the world.
+            Views and notes of an AI Researcher in medical imaging. Discussions, tutorials, and
+            commentary on machine learning, programming, science and food.
           </p>
 
           <p class='author__links'>
-            <p> &nbsp; &nbsp; &nbsp; &nbsp; </p>
             <GitHubButton
               href='https://github.com/sadanand-singh'
               data-size='large'
               aria-label='Follow @sadanand-singh on GitHub'
             >
-              Follow @sadanand-singh
-            </GitHubButton>{' '}
-            <p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </p>
+              GitHub
+            </GitHubButton>
+            &nbsp;&nbsp;&nbsp;
             <Follow username={`${config.userTwitter}`} options={{ size: 'large' }} />
           </p>
         </div>

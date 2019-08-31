@@ -1041,11 +1041,11 @@ blockquote {
   margin: 0 auto;
   max-width: 500px;
   text-align: center;
-  padding: 1.75rem 0;
+  padding: 0.5rem 0.75rem;
   &__image {
     border-radius: 100%;
-    width: 90px;
-    height: 90px;
+    width: 140px;
+    height: 140px;
     margin-bottom: 1em;
   }
   &__intro {
@@ -1059,8 +1059,6 @@ blockquote {
     flex-direction: row;
     align-items: 'center';
     margin-top: -0.5em;
-    a {
-      margin: 0 0.5em;
-    }
+    margin: 0 2.5em;
   }
 }
