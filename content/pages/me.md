@@ -34,6 +34,6 @@ A non-exhaustive list.
 - **Editor:** [Visual Studio Code](https://code.visualstudio.com/)
 - **Static Site Generator:** [Gatsby](https://gatsbyjs.org)
 - **Syntax highlighting:** [PrismJS](http://prismjs.com/)
-- **Code theme:** [New Moon](https://taniarascia.github.io/new-moon)
+- **Code theme:**
 - **Newsletter:** [Sendy](https://sendy.co)
-- **Gastby Theme:** [Tania Rascia](https://www.taniarascia.com/)
+- **Gastby Theme:**
