@@ -3,13 +3,13 @@ import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../layout';
 import PostListing from '../components/PostListing';
-import ProjectListing from '../components/ProjectListing';
 import SimpleListing from '../components/SimpleListing';
 import SEO from '../components/SEO';
 import config from '../../data/SiteConfig';
-import projects from '../../data/projects';
 import publications from '../../data/publications';
 import sadanand from '../../content/images/sadanand.jpg';
+import GitHubButton from 'react-github-btn';
+import { Follow } from 'react-twitter-widgets';
 
 class Index extends Component {
   render() {
@@ -21,35 +21,36 @@ class Index extends Component {
       <Layout>
         <Helmet title={`${config.siteTitle} – Introduction`} />
         <SEO />
-        <div className='container'>
-          <div className='lead'>
-            <h1>Hi, I'm Sadanand Singh.</h1>
-            <div className='flex-avatar'>
-              <img className='avatar' src={sadanand} />
-            </div>
-            <h4>
-              I am an <strong className='pink'>AI Researcher</strong> in medical imaging and enjoy
-              playing with <strong className='pink'>Algorithms</strong>!
-            </h4>
-            <p>
-              I created this site to document everything I learn, and share a bit of myself with
-              the world. My site is <strong>free</strong> and has no ads, affiliate links, or
-              sponsored posts.
-            </p>
-            <div className='quotation-main'>
-              Learn from yesterday, live for today, hope for tomorrow. The important thing is not
-              to stop questioning.
-            </div>
-            <div className='quotation-footer'>— Albert Einstein</div>
-            <a
-              className='twitter-follow-button'
-              href='https://twitter.com/saddy4s'
+
+        <div class='author'>
+          <img
+            alt='Author image'
+            class='author__image'
+            src={sadanand}
+            width='180'
+            height='180'
+            blur='5'
+          />
+
+          <h1 class='author__site-title'>Sadanand's Notes</h1>
+
+          <p class='author__intro'>
+            I am an AI Researcher in medical imaging and enjoy playing with Algorithms! I created
+            this site to document everything I learn, and share a bit of myself with the world.
+          </p>
+
+          <p class='author__links'>
+            <p> &nbsp; &nbsp; &nbsp; &nbsp; </p>
+            <GitHubButton
+              href='https://github.com/sadanand-singh'
               data-size='large'
-              data-show-screen-name='false'
+              aria-label='Follow @sadanand-singh on GitHub'
             >
-              Follow @sadannadsingh
-            </a>
-          </div>
+              Follow @sadanand-singh
+            </GitHubButton>{' '}
+            <p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </p>
+            <Follow username={`${config.userTwitter}`} options={{ size: 'large' }} />
+          </p>
         </div>
 
         <div className='container'>
@@ -61,11 +62,6 @@ class Index extends Component {
           <section className='section'>
             <h2>Most Popular</h2>
             <PostListing simple postEdges={popularPostEdges} />
-          </section>
-
-          <section className='section'>
-            <h2>Open Source Projects</h2>
-            <ProjectListing projects={projects} />
           </section>
 
           <section className='section'>

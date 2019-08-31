@@ -13,7 +13,6 @@ import 'katex/dist/katex.min.css';
 import rehypeReact from 'rehype-react';
 import ZoomImage from '../components/ZoomImage';
 import { IoMdArrowRoundBack, IoMdArrowRoundForward } from 'react-icons/io';
-import { PaginationWrapper, PrevPage, NextPage } from '../components/PaginationButtons/buttons';
 import { FacebookShareButton, TwitterShareButton, RedditShareButton } from 'react-share';
 import { IoLogoFacebook, IoLogoTwitter, IoLogoReddit } from 'react-icons/io';
 import { BlogPostFooter, PostShare } from './templates.style';
@@ -29,11 +28,6 @@ class PostTemplate extends Component {
     const next = this.props.pageContext.next;
     const blogURL = urljoin(config.siteUrl, config.pathPrefix);
     const pageURL = urljoin(blogURL, post.slug);
-    const disqusShortname = config.disqusName;
-    const disqusConfig = {
-      identifier: post.slug,
-      title: post.title
-    };
 
     const renderAst = new rehypeReact({
       createElement: React.createElement,
@@ -104,23 +98,23 @@ class PostTemplate extends Component {
             </PostShare>
           </BlogPostFooter>
 
-          <PaginationWrapper>
-            <PrevPage>
+          <div className='pagination-wrapper'>
+            <div className='prev-page'>
               {prev && (
                 <Link to={`${prev.fields.slug}`} aria-label='Prev'>
                   <IoMdArrowRoundBack />
                 </Link>
               )}
-            </PrevPage>
+            </div>
 
-            <NextPage>
+            <div className='next-page'>
               {next && (
                 <Link to={`${next.fields.slug}`} aria-label='Next'>
                   <IoMdArrowRoundForward />
                 </Link>
               )}
-            </NextPage>
-          </PaginationWrapper>
+            </div>
+          </div>
         </article>
         <UserInfo config={config} />
       </Layout>
