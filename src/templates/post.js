@@ -58,7 +58,11 @@ class PostTemplate extends Component {
         <SEO postPath={slug} postNode={postNode} postSEO />
         <article className='single container'>
           <header className='single-header'>
-            {thumbnail ? <Img fixed={post.thumbnail.childImageSharp.fixed} /> : <div />}
+            {thumbnail ? (
+              <Img fixed={post.thumbnail.childImageSharp.fixed} style={{ borderRadius: '50%' }} />
+            ) : (
+              <div />
+            )}
             <div className='flex'>
               <h1>{post.title}</h1>
               <div className='post-meta'>
@@ -128,7 +132,7 @@ export const pageQuery = graphql`
         jupyter
         thumbnail {
           childImageSharp {
-            fixed(width: 150, height: 150) {
+            fixed(width: 96, height: 96) {
               ...GatsbyImageSharpFixed
             }
           }

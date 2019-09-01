@@ -43,7 +43,7 @@ export default class PostListing extends Component {
           return (
             <Link to={post.path} key={post.title}>
               <div className='each'>
-                {thumbnail ? <Img fixed={thumbnail} /> : <div />}
+                {thumbnail ? <Img fixed={thumbnail} style={{ borderRadius: '50%' }} /> : <div />}
                 <div>
                   <h2>{post.title}</h2>
                   {!simple ? <div className='excerpt'>{date}</div> : null}
