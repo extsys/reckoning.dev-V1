@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import ZoomImage from '../components/ZoomImage.js';
+import TLDR from '../components/TLDR.js';
+import Update from '../components/Update.js';
 import ImageGallery from 'react-image-gallery';
 import urljoin from 'url-join';
 import Helmet from 'react-helmet';
@@ -19,7 +21,7 @@ import { FacebookShareButton, TwitterShareButton, RedditShareButton } from 'reac
 import { IoLogoFacebook, IoLogoTwitter, IoLogoReddit } from 'react-icons/io';
 import { BlogPostFooter, PostShare } from './templates.style';
 
-const shortcodes = { ZoomImage, ImageGallery };
+const shortcodes = { ZoomImage, ImageGallery, Update, TLDR };
 
 class PostTemplate extends Component {
   render() {
