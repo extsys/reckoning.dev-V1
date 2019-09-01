@@ -5,6 +5,7 @@ const _ = require(`lodash`);
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   let slug;
+  let draft = false;
 
   if (node.internal.type === 'Mdx') {
     const fileNode = getNode(node.parent);
@@ -26,6 +27,13 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     if (Object.prototype.hasOwnProperty.call(node, 'frontmatter')) {
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug'))
         slug = `/${node.frontmatter.slug}/`;
+      if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'draft'))
+        draft = node.frontmatter.draft;
+      createNodeField({
+        node,
+        name: 'draft',
+        value: draft
+      });
       if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')) {
         const date = new Date(node.frontmatter.date);
 
@@ -54,6 +62,7 @@ exports.createPages = ({ graphql, actions }) => {
         `
           {
             allMdx(
+              filter: { fields: { draft: { eq: false } } }
               sort: { order: DESC, fields: [frontmatter___date, fields___slug] }
               limit: 10000
             ) {
@@ -65,7 +74,7 @@ exports.createPages = ({ graphql, actions }) => {
                     categories
                     template
                     toc
-                    bokeh
+                    draft
                     jupyter
                   }
                   fields {

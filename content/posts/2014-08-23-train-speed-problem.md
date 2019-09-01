@@ -22,9 +22,8 @@ hears the train whistle behind him. Assuming the tunnel is not big
 enough for him and the train, he has to get out of the tunnel in order
 to survive. We know that the following conditions are true.
 
-1. If he runs back, he will make it out of the tunnel by a whisker.
-2. If he continues running forward, he will still make it out through
-   the other end by a whisker.
+- If he runs back, he will make it out of the tunnel by a whisker.
+- If he continues running forward, he will still make it out through the other end by a whisker.
 
 What is the speed of the train compared to that of the man?
 

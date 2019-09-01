@@ -108,7 +108,7 @@ export default class BlogPage extends Component {
 export const pageQuery = graphql`
   query BlogQuery {
     posts: allMdx(
-      filter: { frontmatter: { template: { eq: "post" } } }
+      filter: { fields: { draft: { eq: false } }, frontmatter: { template: { eq: "post" } } }
       limit: 2000
       sort: { fields: [fields___date], order: DESC }
     ) {

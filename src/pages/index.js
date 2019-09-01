@@ -79,7 +79,7 @@ export const pageQuery = graphql`
     latest: allMdx(
       limit: 6
       sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { template: { eq: "post" } } }
+      filter: { frontmatter: { template: { eq: "post" } }, fields: { draft: { eq: false } } }
     ) {
       edges {
         node {
@@ -109,7 +109,7 @@ export const pageQuery = graphql`
     popular: allMdx(
       limit: 6
       sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { categories: { eq: "Popular" } } }
+      filter: { frontmatter: { categories: { eq: "Popular" } }, fields: { draft: { eq: false } } }
     ) {
       edges {
         node {

@@ -50,22 +50,6 @@ module.exports = {
             }
           },
           `gatsby-remark-images-medium-zoom`,
-          'gatsby-remark-copy-linked-files',
-          {
-            resolve: `gatsby-remark-autolink-headers`,
-            options: {
-              offsetY: `100`,
-              maintainCase: false,
-              removeAccents: true
-            }
-          },
-          {
-            resolve: 'gatsby-remark-embed-youtube',
-            options: {
-              width: 800,
-              height: 400
-            }
-          },
           'gatsby-remark-prismjs',
           {
             resolve: `gatsby-remark-responsive-iframe`,

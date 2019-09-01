@@ -17,6 +17,8 @@ The data set used here is part of a project from [UD651](https://www.udacity.com
 
 The data from the project corresponds to a survey from [reddit.com](https://reddit.com). You can load the data through the following command. We will first look at the different attributes of this data using the `summary()` and `describe()` [pandas](https://pandas.pydata.org) methods.
 
+<br />
+
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[45]:</div>
@@ -42,120 +44,120 @@ The data from the project corresponds to a survey from [reddit.com](https://redd
 <div class="output_area">
 <div class="prompt output_prompt">Out[45]:</div>
 
-<div class="output_html rendered_html output_subarea output_execute_result">
-<div>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>count</th>
-      <th>unique</th>
-      <th>top</th>
-      <th>freq</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>id</th>
-      <td>32754.0</td>
-      <td>32754.0</td>
-      <td>32756</td>
-      <td>1.0</td>
-    </tr>
-    <tr>
-      <th>gender</th>
-      <td>32553.0</td>
-      <td>2.0</td>
-      <td>0</td>
-      <td>26418.0</td>
-    </tr>
-    <tr>
-      <th>age.range</th>
-      <td>32666.0</td>
-      <td>7.0</td>
-      <td>18-24</td>
-      <td>15802.0</td>
-    </tr>
-    <tr>
-      <th>marital.status</th>
-      <td>32749.0</td>
-      <td>6.0</td>
-      <td>Single</td>
-      <td>10428.0</td>
-    </tr>
-    <tr>
-      <th>employment.status</th>
-      <td>32603.0</td>
-      <td>6.0</td>
-      <td>Employed full time</td>
-      <td>14814.0</td>
-    </tr>
-    <tr>
-      <th>military.service</th>
-      <td>32749.0</td>
-      <td>2.0</td>
-      <td>No</td>
-      <td>30526.0</td>
-    </tr>
-    <tr>
-      <th>children</th>
-      <td>32535.0</td>
-      <td>2.0</td>
-      <td>No</td>
-      <td>27488.0</td>
-    </tr>
-    <tr>
-      <th>education</th>
-      <td>32610.0</td>
-      <td>7.0</td>
-      <td>Bachelor's degree</td>
-      <td>11046.0</td>
-    </tr>
-    <tr>
-      <th>country</th>
-      <td>32577.0</td>
-      <td>439.0</td>
-      <td>United States</td>
-      <td>20967.0</td>
-    </tr>
-    <tr>
-      <th>state</th>
-      <td>20846.0</td>
-      <td>52.0</td>
-      <td>California</td>
-      <td>3401.0</td>
-    </tr>
-    <tr>
-      <th>income.range</th>
-      <td>31139.0</td>
-      <td>8.0</td>
-      <td>Under $20,000</td>
-      <td>7892.0</td>
-    </tr>
-    <tr>
-      <th>fav.reddit</th>
-      <td>28393.0</td>
-      <td>1833.0</td>
-      <td>askreddit</td>
-      <td>2123.0</td>
-    </tr>
-    <tr>
-      <th>dog.cat</th>
-      <td>32749.0</td>
-      <td>3.0</td>
-      <td>I like dogs.</td>
-      <td>17151.0</td>
-    </tr>
-    <tr>
-      <th>cheese</th>
-      <td>32749.0</td>
-      <td>11.0</td>
-      <td>Other</td>
-      <td>6563.0</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<div class='output_html rendered_html output_subarea output_execute_result'>
+  <div>
+    <table border='1' class='dataframe'>
+      <thead>
+        <tr style='text-align: right;'>
+          <th></th>
+          <th>count</th>
+          <th>unique</th>
+          <th>top</th>
+          <th>freq</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>id</th>
+          <td>32754.0</td>
+          <td>32754.0</td>
+          <td>32756</td>
+          <td>1.0</td>
+        </tr>
+        <tr>
+          <th>gender</th>
+          <td>32553.0</td>
+          <td>2.0</td>
+          <td>0</td>
+          <td>26418.0</td>
+        </tr>
+        <tr>
+          <th>age.range</th>
+          <td>32666.0</td>
+          <td>7.0</td>
+          <td>18-24</td>
+          <td>15802.0</td>
+        </tr>
+        <tr>
+          <th>marital.status</th>
+          <td>32749.0</td>
+          <td>6.0</td>
+          <td>Single</td>
+          <td>10428.0</td>
+        </tr>
+        <tr>
+          <th>employment.status</th>
+          <td>32603.0</td>
+          <td>6.0</td>
+          <td>Employed full time</td>
+          <td>14814.0</td>
+        </tr>
+        <tr>
+          <th>military.service</th>
+          <td>32749.0</td>
+          <td>2.0</td>
+          <td>No</td>
+          <td>30526.0</td>
+        </tr>
+        <tr>
+          <th>children</th>
+          <td>32535.0</td>
+          <td>2.0</td>
+          <td>No</td>
+          <td>27488.0</td>
+        </tr>
+        <tr>
+          <th>education</th>
+          <td>32610.0</td>
+          <td>7.0</td>
+          <td>Bachelor's degree</td>
+          <td>11046.0</td>
+        </tr>
+        <tr>
+          <th>country</th>
+          <td>32577.0</td>
+          <td>439.0</td>
+          <td>United States</td>
+          <td>20967.0</td>
+        </tr>
+        <tr>
+          <th>state</th>
+          <td>20846.0</td>
+          <td>52.0</td>
+          <td>California</td>
+          <td>3401.0</td>
+        </tr>
+        <tr>
+          <th>income.range</th>
+          <td>31139.0</td>
+          <td>8.0</td>
+          <td>Under $20,000</td>
+          <td>7892.0</td>
+        </tr>
+        <tr>
+          <th>fav.reddit</th>
+          <td>28393.0</td>
+          <td>1833.0</td>
+          <td>askreddit</td>
+          <td>2123.0</td>
+        </tr>
+        <tr>
+          <th>dog.cat</th>
+          <td>32749.0</td>
+          <td>3.0</td>
+          <td>I like dogs.</td>
+          <td>17151.0</td>
+        </tr>
+        <tr>
+          <th>cheese</th>
+          <td>32749.0</td>
+          <td>11.0</td>
+          <td>Other</td>
+          <td>6563.0</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
 </div>
@@ -193,8 +195,11 @@ The data from the project corresponds to a survey from [reddit.com](https://redd
 <div class="output_area">
 <div class="prompt output_prompt">Out[46]:</div>
 
-<div class="output_text output_subarea output_execute_result">
-<pre>Index([&#39;18-24&#39;, &#39;25-34&#39;, &#39;35-44&#39;, &#39;45-54&#39;, &#39;55-64&#39;, &#39;65 or Above&#39;, &#39;Under 18&#39;], dtype=&#39;object&#39;)</pre>
+<div class='output_text output_subarea output_execute_result'>
+  <pre>
+    Index([&#39;18-24&#39;, &#39;25-34&#39;, &#39;35-44&#39;, &#39;45-54&#39;, &#39;55-64&#39;,
+    &#39;65 or Above&#39;, &#39;Under 18&#39;], dtype=&#39;object&#39;)
+  </pre>
 </div>
 
 </div>
@@ -239,8 +244,9 @@ The data from the project corresponds to a survey from [reddit.com](https://redd
 <div class="output_area">
 <div class="prompt"></div>
 
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZIAAAESCAYAAADXMlMiAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<div class='output_png output_subarea '>
+  <img
+    src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZIAAAESCAYAAADXMlMiAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XucVdV99/HPMBgEByOYATQXCUh/uWCeNonXEIVcvMSo
 wZjGilF7MZdHc7NqbVJtMWmsNdpWKU2CkdTWRlOp0ISKFRNviRVofF41afxWJVANKIMzRkZu48w8
 f6w1cuY4lzOz58yZke/79ZoXZ9ZZ++zfHmbOd6+991m7rrOzEzMzs8EaU+sCzMxsdHOQmJlZIQ4S
@@ -400,8 +406,8 @@ z/+YdKL+jyLdHbG3qbkvBlZGxL8CT5IOuUG6HfT8XOsq9tzJ06yqPI282QBFuuvhecDf55HK9/Pj
 2/tecsjWfyrpzpxPR8TFwHRJPd462Ww4+ByJ2QDlu8i9GVibbxT2GOmmQsNlLPCvEbGNdMXXucO4
 brNX8IjEzMwK8TkSMzMrxEFiZmaFOEjMzKwQB4mZmRXiIDEzs0IcJGZmVsj/B+yZ0OM83N6wAAAA
 AElFTkSuQmCC
-"
-/>
+'
+  />
 </div>
 
 </div>
@@ -440,8 +446,9 @@ AElFTkSuQmCC
 <div class="output_area">
 <div class="prompt"></div>
 
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYkAAAFcCAYAAAA9LkIhAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<div class='output_png output_subarea '>
+  <img
+    src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYkAAAFcCAYAAAA9LkIhAAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAIABJREFUeJzt3XuYHFW97vHvJEEgTIBEJgmgAkb4+Sjo2SLIJUKCCijX
 IIqbKBtxI14QRIGjomjwghwQb4iKQhRFzVGUIEgQEBAUIWzdR/DZvkIw4RJIBmaAhEASJnP+WNWZ
 nmFqZpCurq7J+3mePOlefal3errn16vWqlVtvb29mJmZDWZM2QHMzKx1uUiYmVkuFwkzM8vlImFm
@@ -641,8 +648,8 @@ biINQn9F0kPAmcANEXEzMBGo/aEf+K19MCcBs7LHLgBuBoiIAyLikwMfm/U45gK3kwahvwjMiIhZ
 Q2zjLOCUiPgtaZdST9b+LWBlRPyRVNhWSXp0iJ/fbFCeAmtWYRGxKzBO0u0RsRtpEHvnsnPZ6OEx
 CbNqewq4OCLWARsBHyo5j40y7kmYmVkuj0mYmVkuFwkzM8vlImFmZrlcJMzMLJeLhJmZ5XKRMDOz
 XP8fdQsga2ibF5cAAAAASUVORK5CYII=
-"
-/>
+'
+  />
 </div>
 
 </div>
@@ -695,8 +702,9 @@ XP8fdQsga2ibF5cAAAAASUVORK5CYII=
 <div class="output_area">
 <div class="prompt"></div>
 
-<div class="output_png output_subarea ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYkAAAESCAYAAAAIfCk9AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
+<div class='output_png output_subarea '>
+  <img
+    src='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYkAAAESCAYAAAAIfCk9AAAABHNCSVQICAgIfAhkiAAAAAlwSFlz
 AAALEgAACxIB0t1+/AAAH7ZJREFUeJzt3X2UXFWZ7/FvJ41Jmm5jR/oloPIS8XFp0LkwgGAgCSIJ
 IpEgiosWRBwEBkYGh3DnXgYwUQkM4PWF4Q4ixEFRcp0oQTK0QhRIRiTJUteod/lcCHYwJNAFXUg6
 CUno7vvH3p1Ul7W7O0mfqkr691krK1W7zqnz9MvpX+2zz9mnpq+vDxERkVLGVLoAERGpXgoJERFJ
@@ -841,8 +849,8 @@ MwbjQP+U3B8paF9JuBczZjbGzG7d01lAZXRTSMhoMtipfDcA083sMcIg9G3u/jxh6ujlZvY4YUrp
 mf2CEGxb3P2lQb5+kZJ0CqzIPszMjgFq3f0pC/eYXuTuUytdl+w/NCYhsm/bTLizYi9wAOHuiiIj
 Rj0JERFJ0piEiIgkKSRERCRJISEiIkkKCRERSVJIiIhIkkJCRESS/j8JezT+qioogAAAAABJRU5E
 rkJggg==
-"
-/>
+'
+  />
 </div>
 
 </div>

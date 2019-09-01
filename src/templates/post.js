@@ -117,13 +117,12 @@ export default PostTemplate;
 /* eslint no-undef: "off" */
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
-    mdx(fields: { slug: { eq: $slug } }) {
+    mdx(fields: { slug: { eq: $slug }, draft: { eq: false } }) {
       timeToRead
       excerpt
       frontmatter {
         title
         toc
-        bokeh
         jupyter
         thumbnail {
           childImageSharp {
