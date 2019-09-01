@@ -1,5 +1,6 @@
 import React from 'react';
 import ImageZoom from 'react-medium-image-zoom';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledFigcaption = styled.figcaption`
@@ -28,24 +29,30 @@ const Styles = {
   }
 };
 
-const ZoomImage = ({ src, zoomSrc, alt, caption }) => {
-  return (
-    <figure>
-      <ImageZoom
-        image={{
-          src: src,
-          alt: alt || caption
-        }}
-        zoomImage={{
-          src: zoomSrc || src,
-          alt: alt || caption
-        }}
-        defaultStyles={Styles}
-      />
+export default class ZoomImage extends React.Component {
+  static propTypes = {
+    src: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
+    caption: PropTypes.string
+  };
 
-      {caption && <StyledFigcaption>{caption}</StyledFigcaption>}
-    </figure>
-  );
-};
+  render() {
+    return (
+      <figure>
+        <ImageZoom
+          image={{
+            src: this.props.src,
+            alt: this.props.alt
+          }}
+          zoomImage={{
+            src: this.props.src,
+            alt: this.props.alt
+          }}
+          defaultStyles={Styles}
+        />
 
-export default ZoomImage;
+        {this.props.caption && <StyledFigcaption>{this.props.caption}</StyledFigcaption>}
+      </figure>
+    );
+  }
+}

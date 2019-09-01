@@ -13,6 +13,33 @@ thumbnail: '../thumbnails/gpu.png'
 toc: true
 ---
 
+export const images = [
+  {
+    original:
+      'https://res.cloudinary.com/sadanandsingh/image/upload/v1546230616/gnome/activities_fsd0wm.png'
+  },
+  {
+    original:
+      'https://res.cloudinary.com/sadanandsingh/image/upload/v1546230615/gnome/chrome_jx6pit.png'
+  },
+  {
+    original:
+      'https://res.cloudinary.com/sadanandsingh/image/upload/v1546230615/gnome/searchApps_y1tgmu.png'
+  },
+  {
+    original:
+      'https://res.cloudinary.com/sadanandsingh/image/upload/v1546230613/gnome/terminal_g3jr6j.png'
+  },
+  {
+    original:
+      'https://res.cloudinary.com/sadanandsingh/image/upload/v1546230614/gnome/gnomeTweaks_p0fkkv.png'
+  },
+  {
+    original:
+      'https://res.cloudinary.com/sadanandsingh/image/upload/v1546230615/gnome/vscode_fcsbl4.png'
+  }
+];
+
 Lately, a lot of my friends have been asking about my deep learning workstation setup. In this post
 I am going to describe my hardware, OS, and different packages that I use. In particular, based on
 the question, I found that the most of the interest have been around managing different python
@@ -39,7 +66,15 @@ As you can see, its pretty awesome built. One thing I really love about this con
 stability. Although, I have recently upgraded the GPU to 2080 Ti to test mixed precision training,
 this has been a pretty stable and trustworthy build.
 
-<gnome-gallery></gnome-gallery>
+<ImageGallery
+  items={images}
+  showBullets={true}
+  slideOnThumbnailOver={true}
+  lazyLoad={true}
+  showIndex={true}
+  showThumbnails={false}
+  autoPlay={true}
+/>
 
 ## OS Setup
 

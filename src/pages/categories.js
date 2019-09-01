@@ -8,7 +8,7 @@ import config from '../../data/SiteConfig';
 
 class CategoriesPage extends Component {
   render() {
-    const { group } = this.props.data.allMarkdownRemark;
+    const { group } = this.props.data.allMdx;
 
     return (
       <Layout>
@@ -35,7 +35,7 @@ export default CategoriesPage;
 
 export const pageQuery = graphql`
   query CategoriesQuery {
-    allMarkdownRemark(limit: 2000) {
+    allMdx(limit: 2000) {
       group(field: frontmatter___categories) {
         fieldValue
         totalCount

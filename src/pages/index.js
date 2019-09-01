@@ -76,10 +76,10 @@ export default Index;
 
 export const pageQuery = graphql`
   query IndexQuery {
-    latest: allMarkdownRemark(
+    latest: allMdx(
       limit: 6
       sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { template: { eq: "post" } }, fields: { draft: { eq: false } } }
+      filter: { frontmatter: { template: { eq: "post" } } }
     ) {
       edges {
         node {
@@ -106,10 +106,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    popular: allMarkdownRemark(
+    popular: allMdx(
       limit: 6
       sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { categories: { eq: "Popular" } }, fields: { draft: { eq: false } } }
+      filter: { frontmatter: { categories: { eq: "Popular" } } }
     ) {
       edges {
         node {

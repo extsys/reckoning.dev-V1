@@ -38,14 +38,10 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        excerpt_separator: '<!-- end -->',
-        tableOfContents: {
-          heading: null,
-          maxDepth: 2
-        },
-        plugins: [
+        extensions: ['.mdx', '.md'],
+        gatsbyRemarkPlugins: [
           {
             resolve: 'gatsby-remark-images',
             options: {
@@ -71,8 +67,12 @@ module.exports = {
             }
           },
           'gatsby-remark-prismjs',
-          'gatsby-remark-responsive-iframe',
-          'gatsby-plugin-styled-components',
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`
+            }
+          },
           {
             resolve: `gatsby-remark-katex`,
             options: {
@@ -90,12 +90,22 @@ module.exports = {
                 { left: '\\(', right: '\\)', display: false }
               ]
             }
+          },
+          {
+            resolve: `gatsby-remark-copy-linked-files`
+          },
+
+          {
+            resolve: `gatsby-remark-smartypants`
           }
-        ]
+        ],
+        plugins: [`gatsby-remark-images`, `gatsby-remark-images-medium-zoom`]
       }
     },
-    'gatsby-plugin-draft',
     { resolve: `gatsby-plugin-typescript` },
+    {
+      resolve: `gatsby-plugin-styled-components`
+    },
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {

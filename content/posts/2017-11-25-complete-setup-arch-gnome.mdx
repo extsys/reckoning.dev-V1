@@ -14,6 +14,37 @@ thumbnail: '../thumbnails/gnome.png'
 toc: true
 ---
 
+export const images = [
+  {
+    original:
+      'https://res.cloudinary.com/sadanandsingh/image/upload/v1544988349/images/gnome3/SystemInfo.png'
+  },
+  {
+    original:
+      'https://res.cloudinary.com/sadanandsingh/image/upload/v1544988350/images/gnome3/workspaces.png'
+  },
+  {
+    original:
+      'https://res.cloudinary.com/sadanandsingh/image/upload/v1544988349/images/gnome3/ApplicationMenu.png'
+  },
+  {
+    original:
+      'https://res.cloudinary.com/sadanandsingh/image/upload/v1544988350/images/gnome3/workspaces.png'
+  },
+  {
+    original:
+      'https://res.cloudinary.com/sadanandsingh/image/upload/v1544988349/images/gnome3/Apps.png'
+  },
+  {
+    original:
+      'https://res.cloudinary.com/sadanandsingh/image/upload/v1544988350/images/gnome3/pcloud.png'
+  },
+  {
+    original:
+      'https://res.cloudinary.com/sadanandsingh/image/upload/v1544988348/images/gnome3/editors.png'
+  }
+];
+
 If you have been following me on this space, you would have known by now, I am very particular about
 my computers, its operating systems, looks, softwares etc. Before you start getting any wrong ideas,
 my love for [Arch Linux][arch-linux] is still going strong. However, I have moved on to [Gnome 3][gnome3] as my choice
@@ -51,7 +82,15 @@ For reference, my installation system is a slightly upgraded form of
 - Samsung U28E590D 28-Inch UHD LED-Lit 4K Monitor
 - Nvidia GeForce GTX 1080 Ti GPU
 
-<arch-gnome-gallery></arch-gnome-gallery>
+<ImageGallery
+  items={images}
+  showBullets={true}
+  slideOnThumbnailOver={true}
+  lazyLoad={true}
+  showIndex={true}
+  showThumbnails={false}
+  autoPlay={true}
+/>
 
 ## Base Installation
 

@@ -1164,7 +1164,7 @@ paci digikam imagemagick
 
 I also add the following repository to install the [Sublime
 Text](https://www.sublimetext.com/) editor. Refer to
-my previous post <sublimetext> for details on setting up Sublime
+my previous post on [sublimetext](https://www.sublimetext.com/) for details on setting up Sublime
 Text.
 
 ```terminal

@@ -601,8 +601,8 @@ All other values are considered to be **True**.
 
 <p>Let us try to solve this simple DNA sequence problem:
 **Given the an input DNA sequence, print the sequence if its length is less than equal to 20. Print "Error" if the sequence is empty or its length is larger than 25. If length is between 21 and 25, print the last 5 bases only.**
-
-<br>
+</p>
+<br/>
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -1190,11 +1190,11 @@ Thus `format` method provides us with easy way to mix different types of variabl
 
 Thats it for this week. Next we will look at strings and lists in Python in more detail.
 
-**Exercise**
+### Exercise
 
-Given the following sequence of dna - "ATGGCNCGAATTTAAATCGGGAACCNNN",
+Given the following sequence of dna - "ATGGCNCGAATTTAAATCGGGAACCNNN":
 
-1. Write a program to count number of all triplets in it.
-2. Write a program that prints all non 'T' bases that come after 'T', but stops when two or more continuous 'T' has been found.
-3. Write a program to generate new sequence with every 3rd base from the above sequence.
-4. Write a program to calculate sum of all numbers from 1 to 10. **HINT:** Please take a look at the [range method](https://docs.python.org/3/library/stdtypes.html#range).
+- Write a program to count number of all triplets in it.
+- Write a program that prints all non 'T' bases that come after 'T', but stops when two or more continuous 'T' has been found.
+- Write a program to generate new sequence with every 3rd base from the above sequence.
+- Write a program to calculate sum of all numbers from 1 to 10.

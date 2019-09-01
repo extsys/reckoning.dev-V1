@@ -866,9 +866,9 @@ My Name is  Sadanand Singh and My age is:  29
 
 ## Excercise
 
-We will all things we have learned today using the exercise below.</p>
+We will practice all things we have learned today using the exercise below.
 
-<p>We will follow the tax preparation example:
+We will follow the tax preparation example:
 
 1. Create a variable to store "income"
 2. Create another variable called "taxRate" which is equal to 1/100000th of "income".
@@ -902,4 +902,4 @@ Your output should look like the following in two cases.
 
 Great! [Next week](/python-tutorial-week2) we dive into Python further.
 
-<br>
+<br/>

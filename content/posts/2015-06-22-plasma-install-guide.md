@@ -22,7 +22,7 @@ root using the password that we set.
 
 <zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1545502051/project/arch-plasma.jpg'></zoom-image>
 
-<br>
+<br/>
 
 Now, we will proceed further to install the Plasma 5 desktop.
 
@@ -97,7 +97,7 @@ systemctl enable nvidia-persistenced.service
 systemctl start nvidia-persistenced.service
 ```
 
-<br>
+<br/>
 
 ### KWIN FLICKERING ISSUE
 
