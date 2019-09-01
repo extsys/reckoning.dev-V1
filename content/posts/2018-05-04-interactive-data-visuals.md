@@ -47,8 +47,6 @@ plots by explicitly mapping data to the visual objects that make up the plot.
 In this article, we will focus on EDA using interactive plots. More often than not, exploratory
 visualizations are easier when they are interactive!
 
-<!--TOC-->
-
 ## Python Libraries
 
 Although there are few libraries in python that can help us make interactive

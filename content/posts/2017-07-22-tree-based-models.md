@@ -71,8 +71,8 @@ CART model involves selecting input variables and split points on those variable
 
 Let us look at the CART algorithm for regression trees in more detail. Briefly, building a decision tree involves two steps:
 
-1. Divide the predictor space - that is, the set of possible values for $X_1, X_2, \ldots, X_p$ - into $J$ distinct and non-overlapping regions, $R_1, R_2, \ldots , R_J$ .
-2. For every observation that falls into the region $R_j$, make the same prediction, which is simply the mean of the response values for the training observations in $R_j$
+- Divide the predictor space - that is, the set of possible values for $X_1, X_2, \ldots, X_p$ - into $J$ distinct and non-overlapping regions, $R_1, R_2, \ldots , R_J$ .
+- For every observation that falls into the region $R_j$, make the same prediction, which is simply the mean of the response values for the training observations in $R_j$
 
 In order to construct $J$ regions, $R_1, R_2, \ldots , R_J$, the predictor space is divided into high-dimensional rectangles or _boxes_. The goal is to find boxes $R_1, R_2, \ldots , R_J$ that minimize the RSS, given by
 

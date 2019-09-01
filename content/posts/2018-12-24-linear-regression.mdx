@@ -18,7 +18,7 @@ referred as a **regression** problem. The simplest model of such a
 relationship can be described by a linear function - referred
 as _linear regression_.
 
-<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1545770785/linear_regression_hbby32.png'></zoom-image>
+<ZoomImage src='https://res.cloudinary.com/sadanandsingh/image/upload/v1545770785/linear_regression_hbby32.png'></ZoomImage>
 
 ## Mathematical formulations
 
@@ -94,17 +94,19 @@ The following are the major assumptions made by standard linear regression model
 
 Linear regression needs the relationship between the independent and dependent variables to be linear. It is also important to check for outliers since linear regression is sensitive to outliers effects. The linearity assumption can best be tested with scatter plots, the following two examples depict two cases, where no and little linearity is present.
 
-<div class="row content-justify-between">
-    <div class="col-md-6 col-12">
-        <figure class="figure img-responsive">
-    <img src="https://www.statisticssolutions.com/wp-content/uploads/2010/01/linearregression01.jpg" width="360px"/>
-</figure>
-</div>
-<div class="col-md-6 col-12">
-    <figure class="figure img-responsive">
-    <img src="https://www.statisticssolutions.com/wp-content/uploads/2010/01/linearregression02.jpg" width="360px"/>
-</figure>
-</div>
+<div class='image-container'>
+  <div class='image-container__left'>
+    <img
+      src='https://www.statisticssolutions.com/wp-content/uploads/2010/01/linearregression01.jpg'
+      width='360px'
+    />
+  </div>
+  <div class='image-container__right'>
+    <img
+      src='https://www.statisticssolutions.com/wp-content/uploads/2010/01/linearregression02.jpg'
+      width='360px'
+    />
+  </div>
 </div>
 
 In the cases like these, one should try some non-linear transformations first to make the relationship linear.
@@ -113,17 +115,19 @@ In the cases like these, one should try some non-linear transformations first to
 
 The linear regression analysis requires all variables to be multivariate normal. This assumption can best be checked with a histogram or a [Q-Q Plot][qqplot].
 
-<div class="row content-justify-between">
-    <div class="col-md-6 col-12">
-        <figure class="figure img-responsive">
-    <img src="https://res.cloudinary.com/sadanandsingh/image/upload/v1545762679/Normal_normal_qq.svg_ptetvk.png" width="420px"/>
-</figure>
-</div>
-<div class="col-md-6 col-12">
-    <figure class="figure img-responsive">
-    <img src="https://res.cloudinary.com/sadanandsingh/image/upload/v1545762768/1920px-Normal_exponential_qq.svg_nrgiqh.png" width="420px"/>
-</figure>
-</div>
+<div class='image-container'>
+  <div class='image-container__left'>
+    <img
+      src='https://res.cloudinary.com/sadanandsingh/image/upload/v1545762679/Normal_normal_qq.svg_ptetvk.png'
+      width='360px'
+    />
+  </div>
+  <div class='image-container__right'>
+    <img
+      src='https://res.cloudinary.com/sadanandsingh/image/upload/v1545762768/1920px-Normal_exponential_qq.svg_nrgiqh.png'
+      width='360px'
+    />
+  </div>
 </div>
 
 The linear relationship in the first plot shows the normality, however in the second plot, since the data has been
@@ -139,7 +143,13 @@ Linear regression assumes that there is little or no multicollinearity in the da
 
 - **Correlation matrix** – when computing the matrix of Pearson’s Bivariate Correlation among all independent variables the correlation coefficients need to be smaller than 1.
 
-- **Tolerance** – the tolerance measures the influence of one independent variable on all other independent variables; the tolerance is calculated with an initial linear regression analysis. Tolerance is defined as $T = 1 – R^2$ for these first step regression analysis. With $T < 0.1$ there might be multicollinearity in the data and with $T < 0.01$ there certainly is. Here, $R^2$ is coefficient of determination and is calculated as: $$R^2 = \frac{\sum \big ( \hat{y}_i - \bar{y} \big)^2 }{\sum \big ( y_i - \bar{y} \big)^2}$$ where, $\bar{y}$ is the average response.
+- **Tolerance** – the tolerance measures the influence of one independent variable on all other independent variables; the tolerance is calculated with an initial linear regression analysis. Tolerance is defined as $T = 1 – R^2$ for these first step regression analysis. With $T < 0.1$ there might be multicollinearity in the data and with $T < 0.01$ there certainly is. Here, $R^2$ is coefficient of determination and is calculated as:
+
+$$
+R^2 = \frac{\sum \big ( \hat{y}_i - \bar{y} \big)^2 }{\sum \big ( y_i - \bar{y} \big)^2}
+$$
+
+where, $\bar{y}$ is the average response.
 
 - **Variance Inflation Factor (VIF)** – the [variance inflation factor][vif] of the linear regression is defined as $VIF = 1/T$. $VIF > 10$ is an indication of presence of multicollinearity; while $VIF > 100$ indicates certainty of presence of multicollinearity. If multicollinearity is found in the data, centering the data (that is deducting the mean of the variable from each score) might help to solve the problem. However, the simplest way to address the problem is to remove independent variables with high VIF values.
 
@@ -155,17 +165,19 @@ While a scatter plot allows you to check for autocorrelations, you can test the 
 
 [Homoscedasticity][homoscedasticity] requires that the error term has the same variance $\sigma^2 = \mathbb{E} \big [ \epsilon_i^2 | X]$ in each observation. The scatter plot is good way to check whether the data are homoscedastic (meaning the residuals are equal across the regression line). The following scatter plots show examples of data that are not homoscedastic (i.e., heteroscedastic):
 
-<div class="row content-justify-between">
-    <div class="col-md-6 col-12">
-        <figure class="figure img-responsive">
-    <img src="https://www.statisticssolutions.com/wp-content/uploads/2010/01/linearregression06.jpg" width="360px"/>
-</figure>
-</div>
-<div class="col-md-6 col-12">
-    <figure class="figure img-responsive">
-    <img src="https://www.statisticssolutions.com/wp-content/uploads/2010/01/linearregression07.jpg" width="360px"/>
-</figure>
-</div>
+<div class='image-container'>
+  <div class='image-container__left'>
+    <img
+      src='https://www.statisticssolutions.com/wp-content/uploads/2010/01/linearregression06.jpg'
+      width='360px'
+    />
+  </div>
+  <div class='image-container__right'>
+    <img
+      src='https://www.statisticssolutions.com/wp-content/uploads/2010/01/linearregression07.jpg'
+      width='360px'
+    />
+  </div>
 </div>
 
 The [Goldfeld-Quandt Test][gqtest] can also be used to test for heteroscedasticity. The test splits the data into two groups and tests to see if the variances of the residuals are similar across the groups. If homoscedasticity is present, a non-linear correction might fix the problem.
@@ -226,7 +238,8 @@ $$
 Since positive and negative errors will cancel out, we cannot make any statements about how well the model predictions perform overall. However, if there are more negative or positive errors, this bias will show up in the MPE. Unlike MAE and MAPE, MPE is useful to us because it allows us to see if our model systematically **underestimates** (more negative error) or
 **overestimates** (positive error).
 
-In addition to these metrics, you can also take a look at some [additional metrics in scikit-learn][sklearn-metrics].
+In addition to these metrics, you can also take a look at some
+[additional metrics in scikit-learn][sklearn-metrics].
 
 We can also evaluate linear regression models by $R^2$ and Adjusted $R^2$.
 
@@ -308,7 +321,7 @@ you the wide application of these methods across different fields.
 
 ### Polynomial Regression
 
-<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1545780650/poly_regress_srbjmr.png'></zoom-image>
+<ZoomImage src='https://res.cloudinary.com/sadanandsingh/image/upload/v1545780650/poly_regress_srbjmr.png'></ZoomImage>
 
 Polynomial regression is a form of regression analysis in which the relationship between the independent variable $x$ and the dependent variable $y$ is modelled as an n-th degree polynomial in $x$. Polynomial regression fits a nonlinear relationship between the value of $x$ and the corresponding conditional mean of $y$.
 
@@ -331,7 +344,7 @@ In practice, the choice of order of polynomial is just an additional hyper param
 
 ### Signal Smoothing
 
-<zoom-image src='https://res.cloudinary.com/sadanandsingh/image/upload/v1545780346/smooth_rhpllc.png'></zoom-image>
+<ZoomImage src='https://res.cloudinary.com/sadanandsingh/image/upload/v1545780346/smooth_rhpllc.png'></ZoomImage>
 
 One approach to smooth a noisy signal is based on least squares weighted
 regularization. The idea is to obtain a signal similar to the noisy one, but

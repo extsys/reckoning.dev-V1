@@ -224,14 +224,14 @@ $dark-border: darken($background, 3%);
 
   .update {
     background-color: #006622;
-    border-left: 6px solid #4caf50;
+    border-left: 6px solid $teal;
     margin-bottom: 15px;
     padding: 4px 12px;
   }
 
   .tldr {
     background-color: #006bb3;
-    border-left: 6px solid #99d6ff;
+    border-left: 6px solid $gray-100;
     margin-bottom: 15px;
     padding: 4px 12px;
   }
