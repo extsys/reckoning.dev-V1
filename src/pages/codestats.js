@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import Helmet from 'react-helmet';
-import { graphql, Link } from 'gatsby';
 import Layout from '../layout';
 import SEO from '../components/SEO';
 import config from '../../data/SiteConfig';
@@ -60,7 +59,7 @@ export default class ClientFetchingExample extends Component {
         type: 'pie'
       },
       title: {
-        text: ''
+        text: 'Days of Week'
       },
       tooltip: {
         pointFormat: '{series.name}: <b>{point.y}</b>'
@@ -92,7 +91,7 @@ export default class ClientFetchingExample extends Component {
         type: 'pie'
       },
       title: {
-        text: ''
+        text: 'Programming Languages'
       },
       tooltip: {
         pointFormat: '{series.name}: <b>{point.y}</b>'
@@ -135,14 +134,21 @@ export default class ClientFetchingExample extends Component {
                 <span className='large-font'>{`Level ${curr_level} (${total_xp} XP) (+${new_xp})`}</span>
                 <ProgressBar percentage={perc_level} />
                 <br />
-                <h2>Language Usage</h2>
-                <div id='chart'>
-                  <HighchartsReact highcharts={Highcharts} options={options} />
-                </div>
+                <strong>Additional Stats can be found at </strong>
+                <a href='https://codestats.net/users/sadanand-singh'>Code::Stats</a>
                 <br />
-                <h2>Coding by the Day</h2>
-                <div id='chart'>
-                  <HighchartsReact highcharts={Highcharts} options={chart_options} />
+                <h2>Usage Pattern</h2>
+                <div class='chart-container'>
+                  <div class='chart-container__left'>
+                    <div id='chart'>
+                      <HighchartsReact highcharts={Highcharts} options={options} />
+                    </div>
+                  </div>
+                  <div class='chart-container__right'>
+                    <div id='chart'>
+                      <HighchartsReact highcharts={Highcharts} options={chart_options} />
+                    </div>
+                  </div>
                 </div>
               </>
             ) : (
@@ -156,19 +162,9 @@ export default class ClientFetchingExample extends Component {
 
   summaryDays = data => {
     const dates = Object.keys(data).sort();
-    var day_names = {
-      Sunday: 0,
-      Monday: 0,
-      Tuesday: 0,
-      Wednesday: 0,
-      Thursday: 0,
-      Friday: 0,
-      Saturday: 0
-    };
+    var day_names = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     var day_ids = [];
-    dates.forEach((a, i) =>
-      day_ids.push({ day: Object.keys(day_names)[new Date(a).getDay()], xp: data[a] })
-    );
+    dates.forEach((a, i) => day_ids.push({ day: day_names[new Date(a).getDay()], xp: data[a] }));
 
     var result = day_ids.reduce(function(result, item) {
       result[item.day] = (result[item.day] || []).concat(item.xp);

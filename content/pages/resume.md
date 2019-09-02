@@ -8,8 +8,8 @@ template: page
 
 More than 6 years of experience with deep learning, machine learning, numerical modeling and scientific computing in production environments. Proficient in Python, C++ and Linux.
 
-- [datasciencevision.com](https://datasciencevision.com)
-- [me@datasciencevision.com](mailto:me@datasciencevision.com)
+- [reckoning.dev](https://reckoning.dev)
+- [me@reckoning.dev](mailto:me@reckoning.dev)
 - [LinkedIn Profile](https://www.linkedin.com/in/sadanandsingh/)
 - San Francisco, CA
 

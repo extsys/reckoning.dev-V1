@@ -778,6 +778,24 @@ blockquote {
   }
 }
 
+.chart-container {
+  &__left {
+    display: inline-block;
+    vertical-align: top;
+    width: 49%;
+    @media (max-width: 780px) {
+      width: 100%;
+    }
+  }
+  &__right {
+    display: inline-block;
+    width: 49%;
+    @media (max-width: 780px) {
+      width: 100%;
+    }
+  }
+}
+
 .note {
   background: $light;
   padding: 2rem 0;
