@@ -5,7 +5,8 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../layout';
 import SEO from '../components/SEO';
 import config from '../../data/SiteConfig';
-import Chart from 'react-apexcharts';
+import Highcharts from 'highcharts';
+import HighchartsReact from 'highcharts-react-official';
 
 const Filler = props => {
   return <div className='value' style={{ width: `${props.percentage}%` }} />;
@@ -30,7 +31,8 @@ export default class ClientFetchingExample extends Component {
       curr_level: '',
       perc_level: '',
       start_date: '',
-      last_date: ''
+      last_date: '',
+      days_summary: ''
     }
   };
 
@@ -46,33 +48,70 @@ export default class ClientFetchingExample extends Component {
       curr_level,
       perc_level,
       start_date,
-      last_date
+      last_date,
+      days_summary
     } = this.state.xps;
 
-    const options = {
-      labels: lang_data.names,
-      colors: ['#2E93fA', '#20c997', '#546E7A', '#E91E63', '#FF9800', '#6f42c1'],
-      legend: {
-        position: 'right',
-        fontSize: '16px',
-        horizontalAlign: 'center',
-        offsetY: 60,
-        labels: { useSeriesColors: true }
+    const chart_options = {
+      chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
       },
-      dataLabels: { textAnchor: 'end', style: { fontSize: '16px' } },
-      responsive: [
-        {
-          breakpoint: 680,
-          options: {
-            chart: {
-              width: 360
-            },
-            legend: {
-              position: 'bottom',
-              fontSize: '16px',
-              offsetY: 0
-            }
+      title: {
+        text: ''
+      },
+      tooltip: {
+        pointFormat: '{series.name}: <b>{point.y}</b>'
+      },
+      plotOptions: {
+        pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+            enabled: true,
+            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
           }
+        }
+      },
+      series: [
+        {
+          name: 'XPs',
+          colorByPoint: true,
+          data: days_summary
+        }
+      ]
+    };
+
+    const options = {
+      chart: {
+        plotBackgroundColor: null,
+        plotBorderWidth: null,
+        plotShadow: false,
+        type: 'pie'
+      },
+      title: {
+        text: ''
+      },
+      tooltip: {
+        pointFormat: '{series.name}: <b>{point.y}</b>'
+      },
+      plotOptions: {
+        pie: {
+          allowPointSelect: true,
+          cursor: 'pointer',
+          dataLabels: {
+            enabled: true,
+            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
+          }
+        }
+      },
+      series: [
+        {
+          name: 'XPs',
+          colorByPoint: true,
+          data: lang_data
         }
       ]
     };
@@ -98,7 +137,12 @@ export default class ClientFetchingExample extends Component {
                 <br />
                 <h2>Language Usage</h2>
                 <div id='chart'>
-                  <Chart options={options} series={lang_data.values} type='pie' width='480' />
+                  <HighchartsReact highcharts={Highcharts} options={options} />
+                </div>
+                <br />
+                <h2>Coding by the Day</h2>
+                <div id='chart'>
+                  <HighchartsReact highcharts={Highcharts} options={chart_options} />
                 </div>
               </>
             ) : (
@@ -109,6 +153,39 @@ export default class ClientFetchingExample extends Component {
       </Layout>
     );
   }
+
+  summaryDays = data => {
+    const dates = Object.keys(data).sort();
+    var day_names = {
+      Sunday: 0,
+      Monday: 0,
+      Tuesday: 0,
+      Wednesday: 0,
+      Thursday: 0,
+      Friday: 0,
+      Saturday: 0
+    };
+    var day_ids = [];
+    dates.forEach((a, i) =>
+      day_ids.push({ day: Object.keys(day_names)[new Date(a).getDay()], xp: data[a] })
+    );
+
+    var result = day_ids.reduce(function(result, item) {
+      result[item.day] = (result[item.day] || []).concat(item.xp);
+      return result;
+    }, {});
+
+    var sum_data = function(d) {
+      var vals = [];
+      Object.keys(d).forEach(function(k) {
+        vals.push({ name: k, y: d[k].reduce((a, b) => a + b) });
+      });
+      return vals;
+    };
+
+    result = sum_data(result);
+    return result;
+  };
 
   summaryLanguages = lang_data => {
     const data = Object.keys(lang_data).map(function(key, index) {
@@ -130,7 +207,9 @@ export default class ClientFetchingExample extends Component {
     var xp_values = tops.map(x => x[1]);
     lang_names.push('Others');
     xp_values.push(rest_sum);
-    return { names: lang_names, values: xp_values };
+    var data_new = [];
+    lang_names.forEach((a, i) => data_new.push({ name: a, y: xp_values[i] }));
+    return data_new;
   };
 
   getLevel = xps => {
@@ -160,6 +239,7 @@ export default class ClientFetchingExample extends Component {
         const start_date = dates[0];
         const last_date = dates[dates.length - 1];
         const lang_data = this.summaryLanguages(langs);
+        const days_summary = this.summaryDays(dates_data);
         this.setState({
           loading: false,
           xps: {
@@ -170,7 +250,8 @@ export default class ClientFetchingExample extends Component {
             curr_level,
             perc_level,
             start_date,
-            last_date
+            last_date,
+            days_summary
           }
         });
       })
