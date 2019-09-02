@@ -1032,27 +1032,35 @@ blockquote {
 
 .progress {
   position: relative;
-  height: 30px;
-  width: 350px;
+  height: 28px;
+  width: 550px;
   border: 1px solid #333;
   background-color: $gray-100;
+  @media (max-width: 767px) {
+    width: 350px;
+  }
 }
 
 .progress:before {
   content: attr(data-label);
   font-size: 1em;
   font-weight: bold;
-  color: $primary-color;
+  color: $gray-800;
   position: absolute;
   text-align: center;
-  top: 3px;
+  top: 2px;
   left: 0;
   right: 0;
 }
 .progress .value {
-  background-color: $theme-color;
+  background-color: $teal;
   display: inline-block;
   height: 100%;
+}
+
+.large-font {
+  font-size: large;
+  font-weight: 600;
 }
 
 .author {
