@@ -16,7 +16,7 @@ class UserInfo extends Component {
             </p>
             <p>
               If you feel my posts are helpful, please let me know via various{' '}
-              <a href='contact'>social links</a> or comments!
+              <a href='/me'>social links</a>!
             </p>
           </div>
           <div className='flex-avatar'>

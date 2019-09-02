@@ -2,8 +2,8 @@
   "name": "sadanandsingh",
   "description": "Sadanand Singh's Notes",
   "version": "1.0.0",
-  "author": "Sadanand Singh <me@datasciencevision.com>",
-  "repository": "git@github.com:sadanand-singh/datasciencevision.com",
+  "author": "Sadanand Singh <me@reckoning.dev>",
+  "repository": "git@github.com:sadanand-singh/reckoning.dev",
   "dependencies": {
     "@mdx-js/mdx": "^1.4.0",
     "@mdx-js/react": "^1.4.0",

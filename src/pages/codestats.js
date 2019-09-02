@@ -51,7 +51,7 @@ export default class ClientFetchingExample extends Component {
       days_summary
     } = this.state.xps;
 
-    const chart_options = {
+    const days_options = {
       chart: {
         plotBackgroundColor: null,
         plotBorderWidth: null,
@@ -83,7 +83,7 @@ export default class ClientFetchingExample extends Component {
       ]
     };
 
-    const options = {
+    const lang_options = {
       chart: {
         plotBackgroundColor: null,
         plotBorderWidth: null,
@@ -141,12 +141,12 @@ export default class ClientFetchingExample extends Component {
                 <div class='chart-container'>
                   <div class='chart-container__left'>
                     <div id='chart'>
-                      <HighchartsReact highcharts={Highcharts} options={options} />
+                      <HighchartsReact highcharts={Highcharts} options={lang_options} />
                     </div>
                   </div>
                   <div class='chart-container__right'>
                     <div id='chart'>
-                      <HighchartsReact highcharts={Highcharts} options={chart_options} />
+                      <HighchartsReact highcharts={Highcharts} options={days_options} />
                     </div>
                   </div>
                 </div>
