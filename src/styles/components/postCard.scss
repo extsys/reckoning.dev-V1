@@ -1,0 +1,53 @@
+.post-feed {
+  display: grid;
+  justify-content: space-between;
+  grid-gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+  a {
+    &:hover,
+    &:active,
+    &:focus {
+      color: inherit;
+      background: transparent;
+    }
+  }
+}
+
+@media (max-width: 980px) {
+  .post-feed {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 680px) {
+  .post-feed {
+    grid-template-columns: 1fr;
+  }
+}
+
+.post-card {
+  color: inherit;
+  text-decoration: none;
+  background-color: $gray-200;
+  padding: 20px;
+}
+
+.post-card:hover {
+  text-decoration: none;
+}
+
+.post-card-tags {
+  margin: 0 0 5px 0;
+  font-size: 1.4rem;
+  line-height: 1.15em;
+  color: var(--color-secondary);
+}
+
+.post-card-title {
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+.post-card-excerpt {
+  font-size: 0.9rem;
+  line-height: 1.55em;
+}

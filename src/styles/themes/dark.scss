@@ -6,6 +6,36 @@ $dark-border: darken($background, 3%);
 .dark {
   background: $background;
   color: $foreground;
+  .post-feed {
+    display: grid;
+    justify-content: space-between;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    a {
+      &:hover,
+      &:active,
+      &:focus {
+        color: inherit;
+        background: transparent;
+      }
+    }
+  }
+  @media (max-width: 980px) {
+    .post-feed {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 680px) {
+    .post-feed {
+      grid-template-columns: 1fr;
+    }
+  }
+  .post-card {
+    color: inherit;
+    text-decoration: none;
+    background-color: $gray-800;
+    padding: 30px;
+  }
 
   .lead h1 {
     color: $foreground;

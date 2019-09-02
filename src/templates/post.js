@@ -13,6 +13,7 @@ import UserInfo from '../components/UserInfo';
 import PostTags from '../components/PostTags';
 import SEO from '../components/SEO';
 import config from '../../data/SiteConfig';
+import SimilarPosts from '../components/SimilarPosts';
 import Img from 'gatsby-image';
 import { formatDate, editOnGithub } from '../utils/global';
 import 'katex/dist/katex.min.css';
@@ -112,6 +113,9 @@ class PostTemplate extends Component {
             </div>
           </div>
         </article>
+        <br />
+        <br />
+        <SimilarPosts categories={post.categories} tags={post.tags} currentArticleSlug={slug} />
         <UserInfo config={config} />
       </Layout>
     );
