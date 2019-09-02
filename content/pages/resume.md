@@ -15,20 +15,19 @@ More than 6 years of experience with deep learning, machine learning, numerical 
 
 ## Technical Skills
 
-- **Languages** - Python, C++/C, R, JavaScript, Bash
+- **Languages** - Python, C++/C, R, JavaScript, Bash/zsh
 - **Concepts** - Deep Learning, Machine Learning, Computer Vision, Numerical Optimization
-- **Tools/Environment** - PyTorch, Tensorflow, Keras, Git, Webpack
-- **Frameworks/Libraries** - React, jQuery, Bootstrap, SciKit-Learn, Pandas
+- **Tools/Environment** - PyTorch, Tensorflow, Keras, SciKit-Learn, Pandas, Git
+- **Frameworks/Libraries** - React, Webpack
 - **Data** - PostgreSQL, Mongodb, GraphQL, JSON
 
 ## Experience
 
 ### Research Scientist
 
-**WHITERABBIT.AI** - _2018 - Present | Sunnyvale, CA_
+**WHITERABBIT.AI** - _2018 - Present | Santa Clara, CA_
 
 - AI research scientist in a medical imaging startup
-- Developed [Pytorch](https://pytorch.org/) based high level API for training deep learning models in medical imaging
 
 ### Staff Engineer - Machine Learning
 

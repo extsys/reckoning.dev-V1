@@ -5,26 +5,32 @@ class Contact extends Component {
   render() {
     return (
       <>
-        <h1>Stay in touch</h1>
-        <p>
-          You can find me around the web:{' '}
-          <a target='_blank' href='https://www.facebook.com/sadanand4singh'>
+        <ul>
+          <li>
+            <a target='_blank' href='https://www.facebook.com/sadanand4singh'>
+              Facebook
+            </a>{' '}
             <IoLogoFacebook />
-            {'  '}
-          </a>
-          <a target='_blank' href='https://github.com/sadanand-singh'>
+          </li>
+          <li>
+            <a target='_blank' href='https://github.com/sadanand-singh'>
+              Github
+            </a>{' '}
             <IoLogoGithub />
-            {'  '}
-          </a>
-          <a target='_blank' href='https://twitter.com/saddy4s'>
+          </li>
+          <li>
+            <a target='_blank' href='https://twitter.com/saddy4s'>
+              Twitter
+            </a>{' '}
             <IoLogoTwitter />
-            {'  '}
-          </a>
-          <a target='_blank' href='https://www.linkedin.com/in/sadanandsingh/'>
+          </li>
+          <li>
+            <a target='_blank' href='https://www.linkedin.com/in/sadanandsingh/'>
+              LinkedIn
+            </a>{' '}
             <IoLogoLinkedin />
-            {'  '}
-          </a>
-        </p>
+          </li>
+        </ul>
       </>
     );
   }

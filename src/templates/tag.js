@@ -46,7 +46,7 @@ export const pageQuery = graphql`
             categories
             thumbnail {
               childImageSharp {
-                fixed(width: 150, height: 150) {
+                fixed(width: 96, height: 96) {
                   ...GatsbyImageSharpFixed
                 }
               }

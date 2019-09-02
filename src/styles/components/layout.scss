@@ -119,8 +119,8 @@ img {
 @include small-breakpoint {
   .single {
     .gatsby-image-wrapper {
-      height: 150px !important;
-      width: 150px !important;
+      height: 96px !important;
+      width: 96px !important;
     }
   }
 }
@@ -1028,6 +1028,31 @@ blockquote {
       background-color: darken($primary-color, 10%);
     }
   }
+}
+
+.progress {
+  position: relative;
+  height: 30px;
+  width: 350px;
+  border: 1px solid #333;
+  background-color: $gray-100;
+}
+
+.progress:before {
+  content: attr(data-label);
+  font-size: 1em;
+  font-weight: bold;
+  color: $primary-color;
+  position: absolute;
+  text-align: center;
+  top: 3px;
+  left: 0;
+  right: 0;
+}
+.progress .value {
+  background-color: $theme-color;
+  display: inline-block;
+  height: 100%;
 }
 
 .author {

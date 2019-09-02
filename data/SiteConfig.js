@@ -30,8 +30,8 @@ const config = {
       link: '/blog/'
     },
     {
-      name: 'Contact',
-      link: '/contact/'
+      name: 'Code::Stats',
+      link: '/codestats/'
     }
   ],
   themeColor: '#3F80FF', // Used for setting manifest and progress theme colors.
