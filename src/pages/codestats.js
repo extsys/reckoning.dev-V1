@@ -162,7 +162,7 @@ export default class ClientFetchingExample extends Component {
 
   summaryDays = data => {
     const dates = Object.keys(data).sort();
-    var day_names = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var day_names = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     var day_ids = [];
     dates.forEach((a, i) => day_ids.push({ day: day_names[new Date(a).getDay()], xp: data[a] }));
 
