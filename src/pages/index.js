@@ -25,11 +25,11 @@ class Index extends Component {
         <div class='author'>
           <img alt='Author image' class='author__image' src={sadanand} />
 
-          <h1 class='author__site-title'>My Notes on AI, Programming and Food!</h1>
+          <h1 class='author__site-title'>Notes on AI, Health Care and Computers!</h1>
 
           <p class='author__intro'>
-            Views and notes of an AI Researcher in medical imaging. Discussions, tutorials, and
-            commentary on machine learning, programming, science and food.
+            Views of an AI Researcher in health care. Discussions, tutorials, and commentary on
+            deep learning, machine learning, programming, computers and science.
           </p>
 
           <p class='author__links'>
