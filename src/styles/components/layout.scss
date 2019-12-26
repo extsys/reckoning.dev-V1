@@ -977,13 +977,44 @@ blockquote {
 }
 
 .footer {
-  height: 55px;
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   color: $light-font-color;
+
+  div {
+    display: flex;
+    align-items: center;
+    padding-bottom: 1.5rem;
+  }
+
+  strong {
+    margin-right: 1rem;
+  }
+
+  a {
+    font-weight: 400;
+    color: darken($light, 30%);
+    display: block;
+    margin-right: 1.5rem;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+
+  .footer-img {
+    height: 22px;
+    width: 22px;
+    margin-bottom: 0;
+  }
 }
 
 @include small-breakpoint {
   .footer {
-    display: flex;
+    flex-direction: row;
     align-items: center;
     height: 100px;
     color: initial;
