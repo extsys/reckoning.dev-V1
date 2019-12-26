@@ -1,5 +1,14 @@
 const publications = [
   {
+    title:
+      'Adaptation of a deep learning malignancy model from full-field digital mammography to digital breast tomosynthesis',
+    path: 'https://spie.org/MI/conferencedetails/computer-aided-diagnosis#session-1'
+  },
+  {
+    title: 'A hypersensitive breast cancer detector',
+    path: 'https://spie.org/MI/conferencedetails/computer-aided-diagnosis#session-1'
+  },
+  {
     title: 'Ultrastable glasses from in silico vapour deposition',
     path: 'https://www.nature.com/articles/nmat3521'
   },

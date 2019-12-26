@@ -1,5 +1,5 @@
 const config = {
-  siteTitle: 'Reckoning Notes',
+  siteTitle: 'Notes on AI in Health Care and Programming',
   siteTitleShort: 'notes and views',
   siteTitleAlt: 'Notes',
   siteLogo: '/logos/logo-512.png',
