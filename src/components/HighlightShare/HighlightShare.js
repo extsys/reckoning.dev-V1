@@ -9,7 +9,9 @@ class HighlightShare extends Component {
       showPopover: false,
       x: 0,
       y: 0,
-      selectedText: ''
+      selectedText: '',
+      twitter: '',
+      linkedin: ''
     };
 
     this.highlight = createRef();
@@ -68,8 +70,15 @@ class HighlightShare extends Component {
     this.setState({
       x: x + width / 2,
       y: y + window.scrollY - 10,
-      selectedText,
-      showPopover: true
+      selectedText: selectedText,
+      showPopover: true,
+      twitter:
+        'https://twitter.com/intent/tweet?text=' +
+        selectedText.slice(0, 200) +
+        '&url=' +
+        encodeURI(window.location.href),
+      linkedin:
+        'http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURI(window.location.href)
     });
 
     const { onHighlightShare = () => {} } = this.props;
@@ -77,16 +86,10 @@ class HighlightShare extends Component {
   };
 
   render() {
-    const { showPopover, x, y, selectedText } = this.state;
+    const { showPopover, x, y, selectedText, twitter, linkedin } = this.state;
     const { children, popoverItems } = this.props;
     const itemClass = 'h-popover-item';
-    const url =
-      'https://twitter.com/intent/tweet?text=' +
-      selectedText.slice(0, 200) +
-      '&url=' +
-      encodeURI(window.location.href);
-    const linkedin =
-      'http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURI(window.location.href);
+
     return (
       <div ref={this.highlight}>
         {showPopover && (
@@ -106,7 +109,7 @@ class HighlightShare extends Component {
                 <a
                   target='_blank'
                   className={itemClass}
-                  href={url}
+                  href={twitter}
                   onclick="var width  = 575,
                   height = 280,
                   left   = ($(window).width()  - width)  / 2,
