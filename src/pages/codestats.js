@@ -117,13 +117,13 @@ export default class ClientFetchingExample extends Component {
 
     return (
       <Layout>
-        <Helmet title={`Articles – ${config.siteTitle}`} />
+        <Helmet title={`Code::Stats – ${config.siteTitle}`} />
         <SEO />
         <div className='container'>
           <h2>Summary</h2>
           <div>
             {this.state.loading ? (
-              <p>Please hold, data is loading!</p>
+              <p>Please hold on, data is loading!</p>
             ) : total_xp ? (
               <>
                 <p>
