@@ -15,11 +15,17 @@ import SEO from '../components/SEO';
 import config from '../../data/SiteConfig';
 import SimilarPosts from '../components/SimilarPosts';
 import Img from 'gatsby-image';
+import HighlightShare from '../components/HighlightShare/HighlightShare';
 import { formatDate, editOnGithub } from '../utils/global';
 import 'katex/dist/katex.min.css';
 import { IoMdArrowRoundBack, IoMdArrowRoundForward } from 'react-icons/io';
-import { FacebookShareButton, TwitterShareButton, RedditShareButton } from 'react-share';
-import { IoLogoFacebook, IoLogoTwitter, IoLogoReddit } from 'react-icons/io';
+import {
+  FacebookShareButton,
+  TwitterShareButton,
+  RedditShareButton,
+  LinkedinShareButton
+} from 'react-share';
+import { IoLogoFacebook, IoLogoTwitter, IoLogoReddit, IoLogoLinkedin } from 'react-icons/io';
 import { BlogPostFooter, PostShare } from './templates.style';
 
 const shortcodes = { ZoomImage, ImageGallery, Update, TLDR };
@@ -76,7 +82,9 @@ class PostTemplate extends Component {
             </div>
           </header>
           <MDXProvider components={shortcodes}>
-            <MDXRenderer>{postNode.body}</MDXRenderer>
+            <HighlightShare>
+              <MDXRenderer>{postNode.body}</MDXRenderer>
+            </HighlightShare>
           </MDXProvider>
           <BlogPostFooter>
             <PostShare>
@@ -89,6 +97,9 @@ class PostTemplate extends Component {
               <TwitterShareButton url={pageURL} title={`${post.title}`}>
                 <IoLogoTwitter />
               </TwitterShareButton>
+              <LinkedinShareButton url={pageURL} title={`${post.title}`}>
+                <IoLogoLinkedin />
+              </LinkedinShareButton>
               <RedditShareButton url={pageURL} title={`${post.title}`}>
                 <IoLogoReddit />
               </RedditShareButton>
