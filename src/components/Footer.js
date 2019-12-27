@@ -4,6 +4,7 @@ import python from '../../content/thumbnails/python.png';
 import netlify from '../../content/thumbnails/netlify.png';
 import gatsby from '../../content/thumbnails/gatsby.png';
 import github from '../../content/thumbnails/github.png';
+import vscode from '../../content/thumbnails/vscode.png';
 
 export default class Footer extends Component {
   render() {
@@ -35,6 +36,15 @@ export default class Footer extends Component {
               alt='Python'
             />
           </a>
+          <a href='https://code.visualstudio.com/' title='VSCode Editor'>
+            <img
+              src={vscode}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='footer-img'
+              alt='VSCode'
+            />
+          </a>
           <a href='https://github.com/sadanand-singh' title='Open-source on GitHub'>
             <img
               src={github}
@@ -50,7 +60,7 @@ export default class Footer extends Component {
               target='_blank'
               rel='noopener noreferrer'
               className='footer-img'
-              alt='GitHub'
+              alt='Netlify'
             />
           </a>
           <a href='https://www.gatsbyjs.org/' title='Built with Gatsby'>
@@ -59,7 +69,7 @@ export default class Footer extends Component {
               target='_blank'
               rel='noopener noreferrer'
               className='footer-img'
-              alt='GitHub'
+              alt='Gatsby'
             />
           </a>
         </div>
