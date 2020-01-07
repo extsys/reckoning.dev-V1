@@ -22,7 +22,7 @@ const config = {
     'I build mathematical models of different things: materials, radiology, semiconductor manufacturing...',
   menuLinks: [
     {
-      name: 'About Me',
+      name: 'About',
       link: '/me/'
     },
     {
@@ -30,7 +30,7 @@ const config = {
       link: '/blog/'
     },
     {
-      name: 'Code::Stats',
+      name: 'C::S',
       link: '/codestats/'
     }
   ],
