@@ -18,7 +18,6 @@ import Img from 'gatsby-image';
 import HighlightShare from '../components/HighlightShare/HighlightShare';
 import { formatDate, editOnGithub } from '../utils/global';
 import 'katex/dist/katex.min.css';
-import { IoMdArrowRoundBack, IoMdArrowRoundForward } from 'react-icons/io';
 import {
   FacebookShareButton,
   TwitterShareButton,
@@ -89,7 +88,7 @@ class PostTemplate extends Component {
           <BlogPostFooter>
             <PostShare>
               <span>
-                <b>Share This:</b>
+                <strong>Share This:</strong>
               </span>
               <FacebookShareButton url={pageURL} quote={`${post.title}`}>
                 <IoLogoFacebook />
@@ -109,16 +108,16 @@ class PostTemplate extends Component {
           <div className='pagination-wrapper'>
             <div className='pagination-button'>
               {prev && (
-                <Link to={`${prev.fields.slug}`} aria-label='Prev'>
-                  <IoMdArrowRoundBack />
+                <Link className='previous' to={`${prev.fields.slug}`} aria-label='Prev'>
+                  &laquo; Previous
                 </Link>
               )}
             </div>
 
             <div className='pagination-button'>
               {next && (
-                <Link to={`${next.fields.slug}`} aria-label='Next'>
-                  <IoMdArrowRoundForward />
+                <Link className='next' to={`${next.fields.slug}`} aria-label='Next'>
+                  Next &raquo;
                 </Link>
               )}
             </div>

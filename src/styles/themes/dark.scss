@@ -30,12 +30,6 @@ $dark-border: darken($background, 3%);
       grid-template-columns: 1fr;
     }
   }
-  .post-card {
-    color: inherit;
-    text-decoration: none;
-    background-color: $gray-800;
-    padding: 30px;
-  }
 
   .lead h1 {
     color: $foreground;
@@ -66,6 +60,20 @@ $dark-border: darken($background, 3%);
       &:focus {
         background: transparent;
         border-bottom: 2px dashed lighten($link-hover-color, 20%);
+      }
+    }
+  }
+
+  .front-page {
+    h2 {
+      a.view-all {
+        background: rgba(0, 0, 0, 0.2);
+        color: darken($foreground, 10%);
+        &:hover,
+        &:focus {
+          background: black;
+          color: $foreground;
+        }
       }
     }
   }
@@ -426,33 +434,28 @@ $dark-border: darken($background, 3%);
     background: lighten($primary-color, 10%);
     color: white;
   }
+}
 
-  .pagination-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.pagination-button {
+  min-width: 40px;
+  a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
   }
 
-  .pagination-button {
-    min-width: 40px;
-    a {
-      width: 40px;
-      height: 40px;
-      color: #fff;
-      border-radius: 50%;
-      background-color: $primary-color;
-      font-size: 20px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.15s ease-in-out;
-      svg {
-        display: block;
-      }
-      &:hover {
-        background-color: darken($primary-color, 10%);
-      }
-    }
+  a:hover {
+    background-color: #d10068;
+    color: white;
+  }
+
+  .previous {
+    background-color: #f73b98;
+    color: white;
+  }
+
+  .next {
+    background-color: #f73b98;
+    color: white;
   }
 }

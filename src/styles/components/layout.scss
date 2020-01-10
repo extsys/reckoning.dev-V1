@@ -95,6 +95,33 @@ img {
   }
 }
 
+.front-page {
+  margin-top: 2rem;
+
+  h2 {
+    display: flex;
+    align-items: center;
+    border-bottom: 0;
+    padding-bottom: 0;
+
+    a.view-all {
+      display: inline-block;
+      padding: 0.4rem 0.6rem;
+      background: $light;
+      border-radius: $border-radius;
+      color: lighten($font-color, 10%);
+      font-size: 1rem;
+      font-weight: 500;
+      margin: 0.25rem 1rem 0 2rem;
+
+      &:hover,
+      &:focus {
+        background: darken($light, 5%);
+      }
+    }
+  }
+}
+
 .section {
   margin: 40px 0;
 
@@ -1058,24 +1085,26 @@ blockquote {
 
 .pagination-button {
   min-width: 40px;
+  padding-top: 30px;
   a {
-    width: 40px;
-    height: 40px;
-    color: #fff;
-    border-radius: 50%;
-    background-color: $primary-color;
-    font-size: 20px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.15s ease-in-out;
-    svg {
-      display: block;
-    }
-    &:hover {
-      background-color: darken($primary-color, 10%);
-    }
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+  }
+
+  a:hover {
+    background-color: #d10068;
+    color: white;
+  }
+
+  .previous {
+    background-color: #f73b98;
+    color: white;
+  }
+
+  .next {
+    background-color: #f73b98;
+    color: white;
   }
 }
 
