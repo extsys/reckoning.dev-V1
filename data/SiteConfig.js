@@ -15,7 +15,7 @@ const config = {
   postDefaultCategoryID: 'Tech',
   userName: 'saddy',
   userEmail: 'me@reckoning.dev',
-  userTwitter: 'saddy4s',
+  userTwitter: 'reckoningdev',
   userLocation: 'San Francisco, CA',
   userAvatar: 'https://api.adorable.io/avatars/285/@sadanandsingh.png',
   userDescription:
