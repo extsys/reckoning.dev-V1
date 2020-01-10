@@ -45,14 +45,24 @@ class Index extends Component {
           </p>
         </div>
 
-        <div className='container'>
+        <div className='container front-page'>
           <section className='section'>
-            <h2>Latest Articles</h2>
+            <h2>
+              Latest Articles{' '}
+              <Link to='/blog' className='view-all'>
+                View all
+              </Link>{' '}
+            </h2>
             <PostListing simple postEdges={latestPostEdges} />
           </section>
 
           <section className='section'>
-            <h2>Most Popular</h2>
+            <h2>
+              Most Popular{' '}
+              <Link to='/categories/popular' className='view-all'>
+                View all
+              </Link>
+            </h2>
             <PostListing simple postEdges={popularPostEdges} />
           </section>
 
