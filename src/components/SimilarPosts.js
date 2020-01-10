@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
-import PostCard from '../components/PostCard';
+import PostListing from '../components/PostListing';
 import { includes, orderBy } from 'lodash';
 
 const SimilarPostsComponent = ({ articles }) => (
   <aside className='single container'>
     <h2>Similar Posts</h2>
-    <PostCard postEdges={articles} />
+    <PostListing postEdges={articles} />
   </aside>
 );
 
@@ -139,7 +139,7 @@ export default props => (
 
       const articles = data.posts.edges;
       const similarPosts = new SimilarPostsFactory(articles, currentArticleSlug)
-        .setMaxArticles(6)
+        .setMaxArticles(3)
         .setCategories(categories)
         .setTags(tags)
         .getArticles();
