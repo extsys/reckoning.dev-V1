@@ -46,7 +46,12 @@ export default class PostListing extends Component {
                 {thumbnail ? <Img fixed={thumbnail} style={{ borderRadius: '50%' }} /> : <div />}
                 <div>
                   <h2>{post.title}</h2>
-                  {!simple ? <div className='excerpt'>{date}</div> : null}
+                  {!simple ? (
+                    <div>
+                      <div className='excerpt'>{date}</div>
+                      <div className='excerpt'>{post.excerpt}</div>
+                    </div>
+                  ) : null}
                 </div>
                 {simple && (
                   <div className='post-date'>
