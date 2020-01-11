@@ -16,6 +16,13 @@
     flex-direction: row;
   }
 
+  .error {
+    color: red;
+    a {
+      color: #16c616;
+    }
+  }
+
   input {
     color: #2a2a2a;
     background-color: #ced4da;

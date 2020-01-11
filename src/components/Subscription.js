@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
-import styled from 'styled-components';
 import sadanand from '../../content/images/sadanand.jpg';
 
 export default class Subscription extends React.Component {
@@ -12,41 +11,65 @@ export default class Subscription extends React.Component {
   }
   // Update state each time user edits their email address
   _handleEmailChange = e => {
-    this.setState({ email: e.target.value });
+    this.setState({ email: e.target.value, msg: '' });
   };
+
   // Post to MC server & handle its response
   _postEmailToMailchimp = (email, attributes) => {
     addToMailchimp(email, attributes)
-      .then(result => {
-        // Mailchimp always returns a 200 response
-        // So we check the result for MC errors & failures
-        if (result.result !== `success`) {
-          this.setState({
-            status: `error`,
-            msg: result.msg
-          });
-        } else {
-          // Email address successfully subscribed to Mailchimp
-          this.setState({
-            status: `success`,
-            msg: result.msg
-          });
+      .then(data => {
+        if (data.result === 'error') {
+          throw data;
         }
+
+        this.setState({
+          status: `success`,
+          email: '',
+          subscribed: true
+        });
+
+        document.getElementById('Submit').disabled = true;
+
+        setTimeout(() => {
+          this.setState({
+            subscribed: false,
+            email: 'you@email.com',
+            status: ''
+          });
+          document.getElementsByName('Email')[0].value = '';
+          document.getElementById('Submit').disabled = false;
+        }, 4000);
       })
-      .catch(err => {
-        // Network failures, timeouts, etc
+
+      .catch(error => {
         this.setState({
           status: `error`,
-          msg: err
+          email: '',
+          subscribed: false,
+          msg: error.msg
         });
+
+        document.getElementById('Submit').disabled = true;
+
+        setTimeout(() => {
+          this.setState({
+            subscribed: false,
+            email: 'you@email.com',
+            status: ''
+          });
+          document.getElementsByName('Email')[0].value = '';
+          document.getElementById('Submit').disabled = false;
+        }, 4000);
       });
   };
+
   _handleFormSubmit = e => {
     e.preventDefault();
     e.stopPropagation();
     if (!this.state.email) {
       this.setState({
         status: `error`,
+        email: '',
         msg: 'Please enter valid email!'
       });
     } else {
@@ -75,28 +98,28 @@ export default class Subscription extends React.Component {
               If you feel my posts are helpful, please let me know via various{' '}
               <a href='/me'>social links</a>!
             </p>
-            {this.state.status === `success` ? (
-              <div>Thank you! Youʼll receive your first email shortly.</div>
-            ) : (
-              <div>
-                <form className='SubscriptionForm' id='email-capture' method='post' noValidate>
-                  <h4>Enjoyed this post? Want to Receive the next one in your inbox!</h4>
-                  <div className='Wrapper'>
-                    <input
-                      placeholder='you@email.com'
-                      onChange={this._handleEmailChange}
-                      required
-                    />
-                    <button type='submit' onClick={this._handleFormSubmit}>
-                      Subscribe
-                    </button>
-                    {this.state.status === `error` && (
-                      <div dangerouslySetInnerHTML={{ __html: this.state.msg }} />
-                    )}
+            <div>
+              <form className='SubscriptionForm' id='email-capture' method='post' noValidate>
+                <h4>Enjoyed this post? Want to Receive the next one in your inbox!</h4>
+                <div className='Wrapper'>
+                  <input
+                    name='Email'
+                    placeholder='you@email.com'
+                    onChange={this._handleEmailChange}
+                    required
+                  />
+                  <button id='Submit' type='submit' onClick={this._handleFormSubmit}>
+                    {this.state.subscribed ? <CheckMarkIcon /> : 'Subscribe'}
+                  </button>
+                </div>
+                {this.state.status === `error` && (
+                  <div className='error'>
+                    <br />
+                    <div className='error' dangerouslySetInnerHTML={{ __html: this.state.msg }} />
                   </div>
-                </form>
-              </div>
-            )}
+                )}
+              </form>
+            </div>
           </div>
           <div className='flex-avatar'>
             <img className='avatar' src={sadanand} />
@@ -112,7 +135,7 @@ const CheckMarkIcon = () => (
   <svg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
     <path
       d='M9.00016 16.1698L4.83016 11.9998L3.41016 13.4098L9.00016 18.9998L21.0002 6.99984L19.5902 5.58984L9.00016 16.1698Z'
-      fill='#08080B'
+      fill='#ffffff'
     />
   </svg>
 );
