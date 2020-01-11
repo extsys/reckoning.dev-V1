@@ -125,7 +125,6 @@ export default class Subscription extends React.Component {
             <img className='avatar' src={sadanand} />
           </div>
         </div>
-        <div></div>
       </aside>
     );
   }
