@@ -434,28 +434,68 @@ $dark-border: darken($background, 3%);
     background: lighten($primary-color, 10%);
     color: white;
   }
-}
 
-.pagination-button {
-  min-width: 40px;
-  a {
-    text-decoration: none;
-    display: inline-block;
-    padding: 8px 16px;
+  .pagination-button {
+    min-width: 40px;
+    a {
+      text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+    }
+
+    a:hover {
+      background-color: #d10068;
+      color: white;
+    }
+
+    .previous {
+      background-color: #f73b98;
+      color: white;
+    }
+
+    .next {
+      background-color: #f73b98;
+      color: white;
+    }
   }
 
-  a:hover {
-    background-color: #d10068;
-    color: white;
-  }
+  .highlight-share {
+    .h-popover {
+      padding: 8px 12px;
+      background: #fff;
+      border-radius: 6px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 50;
+      transform: translate(-50%, -100%);
+      transition: 0.2s all;
+      display: flex;
+      align-items: center;
+    }
 
-  .previous {
-    background-color: #f73b98;
-    color: white;
-  }
+    .h-popover:after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: -5px;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid #fff;
+    }
 
-  .next {
-    background-color: #f73b98;
-    color: white;
+    .h-popover-item {
+      color: #333;
+      cursor: pointer;
+      padding: 0;
+      display: flex;
+    }
+
+    .h-popover-item + .h-popover-item {
+      margin-left: 10px;
+    }
   }
 }

@@ -1,5 +1,4 @@
 import React, { Component, createRef } from 'react';
-import './style.css';
 import { IoLogoTwitter, IoLogoLinkedin } from 'react-icons/io';
 
 class HighlightShare extends Component {
@@ -91,7 +90,7 @@ class HighlightShare extends Component {
     const itemClass = 'h-popover-item';
 
     return (
-      <div ref={this.highlight}>
+      <div className='highlight-share' ref={this.highlight}>
         {showPopover && (
           <div
             className='h-popover'
