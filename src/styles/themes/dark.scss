@@ -1,5 +1,6 @@
 $background: #202020;
 $foreground: #b3b9c5;
+$hover-foreground: lighten(#b3b9c5, 25%);
 $accent: #303030;
 $dark-border: darken($background, 3%);
 
@@ -160,6 +161,16 @@ $dark-border: darken($background, 3%);
   h4,
   h5 {
     color: #cecece;
+  }
+
+  .footer-link {
+    a.footer-link {
+      color: $foreground;
+
+      &:hover {
+        color: $hover-foreground;
+      }
+    }
   }
 
   .posts {

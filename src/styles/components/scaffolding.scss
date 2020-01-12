@@ -202,6 +202,16 @@ a {
   }
 }
 
+.footer-link {
+  a.footer-link {
+    color: #6c757d;
+
+    &:hover {
+      color: darken(#6c757d, 25%);
+    }
+  }
+}
+
 .post,
 .page {
   a:not(.button):not(.anchor):not(.gatsby-resp-image-link) {
