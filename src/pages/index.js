@@ -41,7 +41,10 @@ class Index extends Component {
               GitHub
             </GitHubButton>
             &nbsp;&nbsp;&nbsp;
-            <Follow username={`${config.userTwitter}`} options={{ size: 'large' }} />
+            <Follow
+              username={`${config.userTwitter}`}
+              options={{ size: 'large', showCount: false }}
+            />
           </p>
         </div>
 

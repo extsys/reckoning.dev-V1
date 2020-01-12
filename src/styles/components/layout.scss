@@ -1108,6 +1108,25 @@ blockquote {
   }
 }
 
+.subscription-container {
+  a.subscription-button {
+    background-color: #e74c3c;
+    border-radius: 8px;
+    color: white;
+    padding: 12px;
+
+    &:hover {
+      background-color: darken(#e74c3c, 15%);
+      color: white;
+    }
+  }
+
+  &__widgets {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
 .progress {
   position: relative;
   height: 28px;
@@ -1163,6 +1182,6 @@ blockquote {
     flex-direction: row;
     align-items: 'center';
     margin-top: -0.5em;
-    margin: 0 2.5em;
+    margin: 0 6.5em;
   }
 }
