@@ -149,6 +149,10 @@ export default class ClientFetchingExample extends Component {
                       <HighchartsReact highcharts={Highcharts} options={days_options} />
                     </div>
                   </div>
+                  <h2>Weekly Coding Times</h2>
+                  <figure>
+                    <embed src='https://wakatime.com/share/@201e47b8-c651-48cf-bd95-bb9a4d099e50/b530516a-e9c7-48b6-af38-b957ac9eea33.svg'></embed>
+                  </figure>
                 </div>
               </>
             ) : (
