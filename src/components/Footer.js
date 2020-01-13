@@ -11,9 +11,13 @@ export default class Footer extends Component {
   render() {
     return (
       <footer className='footer container'>
-        <div>
-          Copyright &copy; {new Date().getFullYear()} {}{' '}
-          <a href='https://github.com/sadanand-singh/reckoning.dev/' target='_blank'>
+        <div className='footer-link'>
+          Copyright &copy; 2014-{new Date().getFullYear()} {}{' '}
+          <a
+            className='footer-link'
+            href='https://github.com/sadanand-singh/reckoning.dev/'
+            target='_blank'
+          >
             {' '}
             &nbsp;&nbsp; reckoning.dev
           </a>
