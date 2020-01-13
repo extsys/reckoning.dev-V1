@@ -116,14 +116,19 @@ following file with the following:
 
 ```terminal
 sudo gedit /usr/share/gnome-shell/theme/ubuntu.css
+```
+
+<div class='filename'>/usr/share/gnome-shell/theme/ubuntu.css</div>
+
+```bash
 # Now replace the lockDialogGroup section with the following.
 # of course you would need to change the png image to something else!
 ---
 #lockDialogGroup {
-  background: #2c001e url(file:///usr/share/backgrounds/solar_twins_jupiter_5120x2880.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+background: #2c001e url(file:///usr/share/backgrounds/solar_twins_jupiter_5120x2880.png);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
 }
 ---
 ```
@@ -156,7 +161,9 @@ sudo apt install gcc g++
 First install git using `apt install` and then setup the `$HOME/.gitconfig` file. my gitconfig
 looks something like below:
 
-```terminal
+<div class='filename'>$HOME/.gitconfig</div>
+
+```json
 [user]
     name = YOUR_NAME
     email = EMAIL_ADDRESS
@@ -244,7 +251,9 @@ This will add some modification in your bashrc to make `conda` work properly. Ho
 using zsh in this setup, we need to copy those contents to our `$HOME/.zshrc` file. The content will
 look something like this:
 
-```terminal
+<div class='filename'>$HOME/.zshrc</div>
+
+```bash
 # added by Anaconda3 2018.12 installer
 # >>> conda init >>>
 # !! Contents within this block are managed by 'conda init' !!

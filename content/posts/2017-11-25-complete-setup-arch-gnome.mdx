@@ -130,8 +130,9 @@ We are all set to get started with the actual installation process.
 
 First find the hard drive that you will be using as the main/root disk.
 
-```terminal
-cat /proc/partitions
+<div class='filename'>cat /proc/partitions</div>
+
+```bash
 
   OUTPUT eg.
   major minor  #blocks  name
@@ -350,8 +351,9 @@ passwd
 
 We will also add _hostname_ to our `/etc/hosts` file:
 
-```terminal
-vim /etc/hosts
+<div class='filename'>/etc/hosts</div>
+
+```bash
 ...
 127.0.0.1       localhost.localdomain   localhost
 ::1             localhost.localdomain   localhost
@@ -361,8 +363,9 @@ vim /etc/hosts
 
 Now, we need to update the `mkinitcpio.conf` with specific modules needed for encryption and btrfs.
 
-```terminal
-vi /etc/mkinitcpio.conf
+<div class='filename'>vi /etc/mkinitcpio.conf</div>
+
+```bash
 # on the MODULES section, add "vfat aes_x86_64 crc32c-intel"
 # (and whatever else you know your hardware needs.)
 #
@@ -376,6 +379,11 @@ vi /etc/mkinitcpio.conf
 #
 # re-generate your initrd images
 
+```
+
+Finally run:
+
+```terminal
 mkinitcpio -p linux
 ```
 
@@ -416,20 +424,24 @@ blkid /dev/sdd1 >> /boot/loader/entries/arch.conf
 Now, make sure that the following two files look as follows, where UUIDs is the value obtained from
 above commands.
 
-```terminal
-vim /boot/loader/loader.conf
-...
+<div class='filename'>vim /boot/loader/loader.conf</div>
+
+```bash
+
 timeout 3
 default arch
-...
-vim /boot/loader/entries/arch.conf
-...
+
+```
+
+<div class='filename'>vim /boot/loader/entries/arch.conf</div>
+
+```bash
 
 title Arch Linux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
 options ro cryptdevice=UUID=33333333-3333-3333-3333-333333333333:luks-33333333-3333-3333-3333-333333333333 root=UUID=44444444-4444-4444-4444-444444444444 rootfstype=btrfs rootflags=subvol=ROOT cryptkey=UUID=0000-0000:vfat:KEYFILE
-...
+
 ```
 
 ## Network Setup
@@ -457,31 +469,31 @@ that we saved from this session. Network configurations are stored as \*.network
 `/etc/systemd/network`. We need to create ours as below. Once the network settings file has been
 created we can enable the `networkd` service.
 
-```terminal
-vim /etc/systemd/network/50-wired.network
+<div class='filename'>vim /etc/systemd/network/50-wired.network</div>
 
-...
+```bash
 [Match]
 Name=enp0s25
 
 [Network]
 DHCP=ipv4
+```
 
-...
+Now, start the networkd service:
+
+```terminal
 systemctl enable systemd-networkd.service
 ```
 
 Your network should be ready for the first use! We can also sync time automatically using
 the `timesyncd` service:
 
-```terminal
-vim /etc/systemd/timesyncd.conf
+<div class='filename'>vim /etc/systemd/timesyncd.conf</div>
 
-...
+```bash
 [Time]
 NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org
 FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
-...
 ```
 
 [Avahi](https://wiki.archlinux.org/index.php/avahi) is a tool that allows programs to publish and
@@ -510,8 +522,13 @@ an `nvidia` upgrade, you have to use a `pacman hook` like this:
 # if the hooks folder is not present, create one using mkdir
 # mkdir -p /etc/pacman.d/hooks
 vim /etc/pacman.d/hooks/nvidia.hook
+```
 
-...
+With the following content:
+
+<div class='filename'>/etc/pacman.d/hooks/nvidia.hook</div>
+
+```bash
 [Trigger]
 Operation=Install
 Operation=Upgrade
@@ -523,8 +540,6 @@ Target=nvidia
 Depends=mkinitcpio
 When=PostTransaction
 Exec=/usr/bin/mkinitcpio -p linux
-...
-
 ```
 
 Nvidia has a daemon that is to be run at boot. To start the `persistence` daemon at boot, enable
@@ -762,7 +777,9 @@ systemctl --user start psd.service
 Setup git global options as below. You will need to add the following content to `$HOME/.gitconfig`
 file.
 
-```terminal
+<div class='filename'>$HOME/.gitconfig</div>
+
+```json
 [user]
     name = YOUR_NAME
     email = EMAIL_ADDRESS

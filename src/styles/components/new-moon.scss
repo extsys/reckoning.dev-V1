@@ -44,7 +44,7 @@ pre code {
   color: $code-font-color;
   direction: ltr;
   text-align: left;
-  white-space: pre;
+  white-space: pre-wrap;
   word-spacing: normal;
   word-break: normal;
   line-height: 1.7;
@@ -166,12 +166,23 @@ code[class*='language-sass'] {
   color: $property;
 }
 
+.token.builtin {
+  color: #4a7baa;
+}
+
+.token.parameter {
+  color: #848991;
+}
+
+.token.boolean,
+.token.constant {
+  color: #e1a6f2;
+}
+
 .token.entity,
 .token.url,
 .token.symbol,
 .token.number,
-.token.boolean,
-.token.constant,
 .token.regex,
 .token.inserted {
   color: $number;
