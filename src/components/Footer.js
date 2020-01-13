@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import { IoLogoFacebook, IoLogoTwitter, IoLogoGithub, IoLogoLinkedin } from 'react-icons/io';
+import {
+  IoLogoFacebook,
+  IoLogoTwitter,
+  IoLogoGithub,
+  IoLogoLinkedin,
+  IoLogoReddit
+} from 'react-icons/io';
 
 export default class Footer extends Component {
   render() {
@@ -18,20 +24,27 @@ export default class Footer extends Component {
             target='_blank'
             href='https://www.facebook.com/sadanand4singh'
           >
-            <IoLogoFacebook />
+            <IoLogoFacebook size={20} />
           </a>
           <a className='footer-link' target='_blank' href='https://github.com/sadanand-singh'>
-            <IoLogoGithub />
+            <IoLogoGithub size={20} />
           </a>
           <a className='footer-link' target='_blank' href='https://twitter.com/reckoningdev'>
-            <IoLogoTwitter />
+            <IoLogoTwitter size={20} />
           </a>
           <a
             className='footer-link'
             target='_blank'
             href='https://www.linkedin.com/in/sadanandsingh/'
           >
-            <IoLogoLinkedin />
+            <IoLogoLinkedin size={20} />
+          </a>
+          <a
+            className='footer-link'
+            target='_blank'
+            href='https://www.reddit.com/user/sadanandsingh'
+          >
+            <IoLogoReddit size={20} />
           </a>
         </div>
       </footer>

@@ -1115,6 +1115,12 @@ blockquote {
     color: white;
     padding: 12px;
 
+    @media (max-width: 767px) {
+      display: block;
+      align-items: center;
+      width: 47%;
+    }
+
     &:hover {
       background-color: darken(#e74c3c, 15%);
       color: white;
@@ -1124,6 +1130,11 @@ blockquote {
   &__widgets {
     display: flex;
     flex-direction: row;
+    @media (max-width: 767px) {
+      display: block;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 }
 
@@ -1183,5 +1194,8 @@ blockquote {
     align-items: 'center';
     margin-top: -0.5em;
     margin: 0 6.5em;
+    @media (max-width: 767px) {
+      margin: 0 4em;
+    }
   }
 }

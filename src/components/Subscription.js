@@ -25,9 +25,7 @@ export default class Subscription extends React.Component {
 
             <p></p>
             <div className='subscription-container'>
-              <strong>
-                You can also subscribe to my weekly newsletter. No Spams Guranteed!&nbsp;&nbsp;
-              </strong>
+              <strong>You can also subscribe to my weekly newsletter.&nbsp;&nbsp;</strong>
               <a
                 className='subscription-button'
                 href='https://reckoningdev.substack.com/'
