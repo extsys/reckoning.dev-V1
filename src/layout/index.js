@@ -6,6 +6,7 @@ import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import ScrollUpButton from '../components/ScrollUpButton/ScrollUpButton';
 import config from '../../data/SiteConfig';
+import ScriptTag from 'react-script-tag';
 import favicon from '../images/favicon.png';
 import '../styles/main.scss';
 
@@ -28,6 +29,7 @@ class MainLayout extends Component {
         </Helmet>
         <Navigation menuLinks={config.menuLinks} />
         <main id='main-content'>{children}</main>
+        <ScriptTag type='text/javascript' src='/Counter.js' />
         <Footer />
         <ScrollToTop
           showUnder={300}
