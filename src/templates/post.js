@@ -27,7 +27,12 @@ import {
 import { IoLogoFacebook, IoLogoTwitter, IoLogoReddit, IoLogoLinkedin } from 'react-icons/io';
 import { BlogPostFooter, PostShare } from './templates.style';
 
-const shortcodes = { ZoomImage, ImageGallery, Update, TLDR };
+const shortcodes = {
+  ZoomImage,
+  ImageGallery,
+  Update,
+  TLDR
+};
 
 class PostTemplate extends Component {
   render() {
