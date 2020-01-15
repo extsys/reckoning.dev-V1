@@ -1,5 +1,5 @@
 import React, { Component, createRef } from 'react';
-import { IoLogoTwitter, IoLogoLinkedin } from 'react-icons/io';
+import { IoLogoTwitter, IoLogoLinkedin, IoLogoFacebook } from 'react-icons/io';
 
 class HighlightShare extends Component {
   constructor(props) {
@@ -10,7 +10,8 @@ class HighlightShare extends Component {
       y: 0,
       selectedText: '',
       twitter: '',
-      linkedin: ''
+      linkedin: '',
+      facebook: ''
     };
 
     this.highlight = createRef();
@@ -77,7 +78,10 @@ class HighlightShare extends Component {
         '&url=' +
         encodeURI(window.location.href),
       linkedin:
-        'http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURI(window.location.href)
+        'http://www.linkedin.com/shareArticle?mini=true&url=' + encodeURI(window.location.href),
+      facebook:
+        'https://www.facebook.com/dialog/share?app_id=2183700271699337&display=popup&href=' +
+        encodeURI(window.location.href)
     });
 
     const { onHighlightShare = () => {} } = this.props;
@@ -85,7 +89,7 @@ class HighlightShare extends Component {
   };
 
   render() {
-    const { showPopover, x, y, selectedText, twitter, linkedin } = this.state;
+    const { showPopover, x, y, selectedText, twitter, linkedin, facebook } = this.state;
     const { children, popoverItems } = this.props;
     const itemClass = 'h-popover-item';
 
@@ -108,6 +112,25 @@ class HighlightShare extends Component {
                 <a
                   target='_blank'
                   className={itemClass}
+                  href={facebook}
+                  onclick="var width  = 575,
+                  height = 280,
+                  left   = ($(window).width()  - width)  / 2,
+                  top    = ($(window).height() - height) / 2,
+                  url    = this.href,
+                  opts   = 'status=1' +
+                       ',width='  + width  +
+                       ',height=' + height +
+                       ',top='    + top    +
+                       ',left='   + left;
+
+                window.open(url, 'linkedin', opts);"
+                >
+                  <IoLogoFacebook size={20} />
+                </a>
+                <a
+                  target='_blank'
+                  className={itemClass}
                   href={twitter}
                   onclick="var width  = 575,
                   height = 280,
@@ -122,7 +145,7 @@ class HighlightShare extends Component {
 
                 window.open(url, 'twitter', opts);"
                 >
-                  <IoLogoTwitter />
+                  <IoLogoTwitter size={20} />
                 </a>
                 <a
                   target='_blank'
@@ -141,7 +164,7 @@ class HighlightShare extends Component {
 
                 window.open(url, 'linkedin', opts);"
                 >
-                  <IoLogoLinkedin />
+                  <IoLogoLinkedin size={20} />
                 </a>
               </React.Fragment>
             )}

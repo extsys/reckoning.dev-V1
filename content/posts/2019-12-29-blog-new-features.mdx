@@ -1,0 +1,134 @@
+---
+title: 'New Features for this Blog'
+date: 2019-12-29
+tags:
+  - Blog
+  - Javascript
+categories:
+  - Programming
+slug: blog-new-features
+template: post
+thumbnail: '../thumbnails/new_features.jpg'
+---
+
+2019 has been a year of gatsby updates for this site. So, I wanted to end this year with the same
+spirit. And, I am hoping this is going to be the begining of maturity of the looks and features of this
+blog. In the upcoming year, I plan to focus mainly on content, specifically related to medicine, AI
+and proramming.
+
+Here is a list of all the new features that I have lately added to this:
+
+- Update footer to include social links
+- Medium-like highlight to share text feature
+- Simplify navigation bar links
+- Use postlist for similar posts
+- Add substack subscription
+- Add weekly coding times to code stats page via [wakatime.com](https://wakatime.com/)
+- Add [goatcounter](https://www.goatcounter.com/) for analytics
+- Add language indicator in codeblocks
+- CSS updates for blokquote, TLDR, Update components etc.
+- fix edit on github links
+
+In the following, I want to highlight some of these in little more detail:
+
+### Medium-like highlight to share text
+
+A cool feature in [Medium](https://medium.com/) is the highlight menu that pops up when you select some
+text. This menu contains buttons that allow you to perform certain actions on the selected text
+like highlight and share.
+
+<ZoomImage
+  src='https://res.cloudinary.com/sadanandsingh/image/upload/v1579064368/medium-share_ancyk2.gif'
+  alt='cats-dogs'
+></ZoomImage>
+
+You can have a look at my [implementation here](https://github.com/sadanand-singh/reckoning.dev/blob/master/src/components/HighlightShare/HighlightShare.js).
+
+And of course, you can see it in action if you try to select and highlight some text. I only
+provide options for facebook, twitter and LinkedIn sharing though.
+
+### Add goatcounter for analytics
+
+[goatcounter.com](https://www.goatcounter.com/) is an open source, privacy aware, extremely light
+web analytics service that doesn't need a GDPR notice. To me this sounded like a perfect replacement
+for google analytics.
+
+The setup is extremely simple - you sign-up and get a script to include on your pages. The problem
+that I faced was how to include bare bones Javascript code in a react component.
+
+I ended up using `ScriptTag` from the [react-script-tag](https://www.npmjs.com/package/react-script-tag)
+library. This just required me to save the javascript code in a separate file in static folder
+and include that using `ScriptTag` in the layout file. You can have a peek at my implementation in
+more detail [here](https://github.com/sadanand-singh/reckoning.dev/blob/master/src/layout/index.js).
+
+And of course, you can see my [public dashboard right here](https://reckoningdev.goatcounter.com/).
+
+### Add language indicator to codeblocks
+
+Another small feature I have added to the codeblocks is the display of the language. This just
+involved addition of sme css to the new-moon theme scss file.
+
+Here is a working example that shows the css being used to display the language:
+
+```css
+.gatsby-highlight {
+  position: relative;
+  -webkit-overflow-scrolling: touch;
+}
+.gatsby-highlight pre[class*='language-'] {
+  -webkit-overflow-scrolling: touch;
+}
+.gatsby-highlight pre[class*='language-']::before {
+  background: black;
+  border-radius: 0 0 0.25rem 0.25rem;
+  color: white;
+  font-size: 12px;
+  letter-spacing: 0.025rem;
+  padding: 0.1rem 0.5rem;
+  position: absolute;
+  right: 1rem;
+  text-align: right;
+  text-transform: uppercase;
+  top: 0;
+}
+.gatsby-highlight pre[class='language-python']::before {
+  content: 'python';
+  background: #005a9c;
+  color: white;
+}
+.gatsby-highlight pre[class='language-json']::before {
+  content: 'json';
+  background: #f7df1e;
+  color: black;
+}
+.gatsby-highlight pre[class='language-bash']::before {
+  content: 'bash';
+  background: #839192;
+  color: black;
+}
+.gatsby-highlight pre[class='language-js']::before {
+  content: 'js';
+  background: #f7df1e;
+  color: black;
+}
+.gatsby-highlight pre[class='language-javascript']::before {
+  content: 'js';
+  background: #f7df1e;
+  color: black;
+}
+```
+
+### Add substack subscription
+
+I have always wanted to provide a timely update about any new posts and updates to my regular
+followers. I first tried [mailchimp](https://mailchimp.com/), however, never felt satisfied with it.
+Looking for alternatives brought me to [substack](https://substack.com/). I found this to be
+a modern solution that fit my needs. Now, you can see a link to my subscription to all pages,
+including one right below.
+
+This was all the major changes that I made to the codebase. Other than these major changes, there
+are also many small changes to make the code cleaner and more generic.
+
+Here is hoping to bring to an end to any further updates to the looks of this blog. Please look
+forward to content updates on major topics like medicine, deep learning and programming. Do not
+forget to subscribe to my newsletter below!
