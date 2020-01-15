@@ -124,7 +124,7 @@ class HighlightShare extends Component {
                        ',top='    + top    +
                        ',left='   + left;
 
-                window.open(url, 'linkedin', opts);"
+                window.open(url, 'facebook', opts);"
                 >
                   <IoLogoFacebook size={20} />
                 </a>
