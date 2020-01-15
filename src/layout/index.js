@@ -5,6 +5,7 @@ import Helmet from 'react-helmet';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import ScrollUpButton from '../components/ScrollUpButton/ScrollUpButton';
+import Subscription from '../components/Subscription';
 import config from '../../data/SiteConfig';
 import ScriptTag from 'react-script-tag';
 import favicon from '../images/favicon.png';
@@ -30,6 +31,7 @@ class MainLayout extends Component {
         <Navigation menuLinks={config.menuLinks} />
         <main id='main-content'>{children}</main>
         <ScriptTag type='text/javascript' src='/Counter.js' />
+        <Subscription />
         <Footer />
         <ScrollToTop
           showUnder={300}

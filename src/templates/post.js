@@ -9,7 +9,6 @@ import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../layout';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import Subscription from '../components/Subscription';
 import PostTags from '../components/PostTags';
 import SEO from '../components/SEO';
 import config from '../../data/SiteConfig';
@@ -131,7 +130,6 @@ class PostTemplate extends Component {
         <br />
         <br />
         <SimilarPosts categories={post.categories} tags={post.tags} currentArticleSlug={slug} />
-        <Subscription />
       </Layout>
     );
   }
