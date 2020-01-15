@@ -307,7 +307,7 @@ $dark-border: darken($background, 3%);
   }
 
   blockquote {
-    background: transparent;
+    background: lighten($background, 15%);
 
     &.quotation {
       border-color: #3a3a3a;
