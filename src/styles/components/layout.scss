@@ -693,15 +693,15 @@ h2.publication-company {
 }
 
 .update {
-  background-color: #ddffdd;
-  border-left: 6px solid $teal;
+  background-color: darken($background, 2%);
+  border-left: 6px solid #cccc00;
   margin-bottom: 15px;
   padding: 4px 12px;
 }
 
 .tldr {
-  background-color: #e7f3fe;
-  border-left: 6px solid $gray-800;
+  background-color: darken($background, 5%);
+  border-left: 6px solid #cc5200;
   margin-bottom: 15px;
   padding: 4px 12px;
 }
