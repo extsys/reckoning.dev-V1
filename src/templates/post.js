@@ -8,6 +8,7 @@ import urljoin from 'url-join';
 import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../layout';
+import Subscription from '../components/Subscription';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import PostTags from '../components/PostTags';
 import SEO from '../components/SEO';
@@ -130,6 +131,7 @@ class PostTemplate extends Component {
         <br />
         <br />
         <SimilarPosts categories={post.categories} tags={post.tags} currentArticleSlug={slug} />
+        <Subscription />
       </Layout>
     );
   }

@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../layout';
 import PostListing from '../components/PostListing';
+import Subscription from '../components/Subscription';
 import SEO from '../components/SEO';
 import config from '../../data/SiteConfig';
 import _ from 'lodash';
@@ -100,6 +101,7 @@ export default class BlogPage extends Component {
           </div>
           <PostListing postEdges={filteredPosts} />
         </div>
+        <Subscription />
       </Layout>
     );
   }

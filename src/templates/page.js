@@ -3,6 +3,7 @@ import Helmet from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import Layout from '../layout';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import Subscription from '../components/Subscription';
 import SEO from '../components/SEO';
 import config from '../../data/SiteConfig';
 
@@ -33,6 +34,7 @@ class PageTemplate extends Component {
             </div>
           </article>
         </div>
+        <Subscription />
       </Layout>
     );
   }

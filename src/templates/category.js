@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 import Layout from '../layout';
+import Subscription from '../components/Subscription';
 import PostListing from '../components/PostListing';
 import config from '../../data/SiteConfig';
 
@@ -17,6 +18,7 @@ class CategoryTemplate extends Component {
           <h1>{category}</h1>
           <PostListing postEdges={postEdges} />
         </div>
+        <Subscription />
       </Layout>
     );
   }

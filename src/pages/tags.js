@@ -4,6 +4,7 @@ import Layout from '../layout';
 import { Link, graphql } from 'gatsby';
 import kebabCase from 'lodash.kebabcase';
 import SEO from '../components/SEO';
+import Subscription from '../components/Subscription';
 import config from '../../data/SiteConfig';
 
 class TagsPage extends Component {
@@ -26,6 +27,7 @@ class TagsPage extends Component {
             ))}
           </div>
         </div>
+        <Subscription />
       </Layout>
     );
   }

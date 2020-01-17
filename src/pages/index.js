@@ -4,6 +4,7 @@ import { graphql, Link } from 'gatsby';
 import Layout from '../layout';
 import PostListing from '../components/PostListing';
 import SimpleListing from '../components/SimpleListing';
+import Subscription from '../components/Subscription';
 import SEO from '../components/SEO';
 import config from '../../data/SiteConfig';
 import publications from '../../data/publications';
@@ -79,7 +80,7 @@ class Index extends Component {
             <SimpleListing simple data={published} />
           </section>
         </div>
-        {/* <UserInfo config={config} /> */}
+        <Subscription />
       </Layout>
     );
   }
@@ -90,7 +91,7 @@ export default Index;
 export const pageQuery = graphql`
   query IndexQuery {
     latest: allMdx(
-      limit: 6
+      limit: 8
       sort: { fields: [fields___date], order: DESC }
       filter: { frontmatter: { template: { eq: "post" } }, fields: { draft: { eq: false } } }
     ) {
@@ -120,7 +121,7 @@ export const pageQuery = graphql`
       }
     }
     popular: allMdx(
-      limit: 6
+      limit: 8
       sort: { fields: [fields___date], order: DESC }
       filter: { frontmatter: { categories: { eq: "Popular" } }, fields: { draft: { eq: false } } }
     ) {

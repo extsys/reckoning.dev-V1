@@ -3,6 +3,7 @@ import axios from 'axios';
 import Helmet from 'react-helmet';
 import Layout from '../layout';
 import SEO from '../components/SEO';
+import Subscription from '../components/Subscription';
 import config from '../../data/SiteConfig';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
@@ -160,6 +161,7 @@ export default class ClientFetchingExample extends Component {
             )}
           </div>
         </div>
+        <Subscription />
       </Layout>
     );
   }
