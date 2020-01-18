@@ -350,13 +350,10 @@ passwd
 
 We will also add _hostname_ to our `/etc/hosts` file:
 
-```terminal
-$ vim /etc/hosts
-...
+```bash:title=/etc/hosts
 127.0.0.1       localhost.localdomain   localhost
 ::1             localhost.localdomain   localhost
 127.0.0.1       $HOSTNAME.localdomain   $HOSTNAME
-...
 ```
 
 We also need to fix the `mkinitcpio.conf` to contain what we actually
@@ -419,20 +416,16 @@ is the value obtained from above commands.
 
 > Do not forget to modify UUIDs and KEYFIL entries!
 
-```terminal
-$ vim /boot/loader/loader.conf
-...
+```bash:title=/boot/loader/loader.conf
 timeout 3
 default arch
-...
-$ vim /boot/loader/entries/arch.conf
-...
+```
 
+```bash:title=/boot/loader/entries/arch.conf
 title Arch Linux
 linux /vmlinuz-linux
 initrd /initramfs-linux.img
 options ro cryptdevice=UUID=33333333-3333-3333-3333-333333333333:luks-33333333-3333-3333-3333-333333333333 root=UUID=44444444-4444-4444-4444-444444444444 rootfstype=btrfs rootflags=subvol=ROOT cryptkey=UUID=0000-0000:vfat:KEYFILE
-...
 ```
 
 ### Network Setup
@@ -462,18 +455,12 @@ session.
 Network configurations are stored as \*.network in
 `/etc/systemd/network`. We need to create ours as follows.:
 
-```terminal
-$ vim /etc/systemd/network/50-wired.network
-...
+```bash:title=/etc/systemd/network/50-wired.network
 [Match]
 Name=enp0s25
 
 [Network]
 DHCP=ipv4
-
-...
-
-$
 ```
 
 Now enable the `networkd` services:
@@ -486,14 +473,15 @@ Your network should be ready for the first use!
 
 Sync time automatically using the _systemd_ service:
 
-```terminal
-$ vim /etc/systemd/timesyncd.conf
-...
+```bash:title=/etc/systemd/timesyncd.conf
 [Time]
 NTP=0.arch.pool.ntp.org 1.arch.pool.ntp.org 2.arch.pool.ntp.org 3.arch.pool.ntp.org
 FallbackNTP=0.pool.ntp.org 1.pool.ntp.org 0.fr.pool.ntp.org
-...
+```
 
+Now run the following:
+
+```terminal
 $ timedatectl set-ntp true
 
 $ timedatectl status
@@ -589,10 +577,7 @@ pacman -S xorg-server nvidia nvidia-libgl nvidia-settings mesa
 To avoid the possibility of forgetting to update your _initramfs_ after
 an _nvidia_ upgrade, you have to use a _pacman_ hook like this:
 
-```terminal
-$ vim /etc/pacman.d/hooks/nvidia.hook
-
-...
+```bash:title=/etc/pacman.d/hooks/nvidia.hook
 [Trigger]
 Operation=Install
 Operation=Upgrade
@@ -604,8 +589,6 @@ Target=nvidia
 Depends=mkinitcpio
 When=PostTransaction
 Exec=/usr/bin/mkinitcpio -p linux
-...
-
 ```
 
 Nvidia has a daemon that is to be run at boot. To start the _persistence_
@@ -651,8 +634,7 @@ vim /etc/X11/xorg.conf.d/20-nvidia.conf
 Specific for Plasma 5, we will also create the following file to avoid
 any tearing in Plasma.
 
-```terminal
-$ vim /etc/profile.d/kwin.sh
+```bash:title=/etc/profile.d/kwin.sh
 ...
 export KWIN_TRIPLE_BUFFER=1
 ...
@@ -674,19 +656,21 @@ _mkinitcpio.conf_ file:
 
 We will also need to pass the _nvidia-drm.modeset=1_ kernel parameter during the boot.
 
-```terminal
-$ vim /etc/mkinitcpio.conf
-$
+```bash:title=/etc/mkinitcpio.conf
 ...
 MODULES="vfat aes_x86_64 crc32c-intel nvidia nvidia_modeset nvidia_uvm nvidia_drm"
 ...
-$
-$ vim /boot/loader/entries/arch.conf
-$
+```
+
+```bash:title=/boot/loader/entries/arch.conf
 ...
 options ro cryptdevice=UUID=:luks- root=UUID= rootfstype=btrfs rootflags=subvol=ROOT cryptkey=UUID=:vfat:deepmind20170602 nvidia-drm.modeset=1
 ...
-$
+```
+
+Finally run:
+
+```terminal
 $ mkinitcpio -p linux
 ```
 
@@ -707,8 +691,7 @@ pacman -S ark yakuake flite
 We will also need to select proper themes for the Plasma 5 display
 manager _sddm_ and then enable its _systemd_ service.
 
-```terminal
-$ vim /etc/sddm.conf
+```bash:title=/etc/sddm.conf
 
 ....
 [Theme]
@@ -718,7 +701,11 @@ Current=breeze
 # Cursor theme used in the greeter
 CursorTheme=breeze_cursors
 ...
+```
 
+Now run:
+
+```terminal
 $ systemctl enable sddm
 $ reboot
 ```
@@ -869,8 +856,7 @@ _USE_OVERLAYFS="yes"_ variable.
 In order to use the OVERLAYFS feature, you will also need to give _sudo_
 permissions to psd-helper as follows (replace `$USERNAME` accordingly):
 
-```terminal
-$ vim /etc/sudoers
+```bash:title=/etc/sudoers
 ...
 $USERNAME ALL=(ALL) NOPASSWD: /usr/bin/psd-overlay-helper
 ...
@@ -891,9 +877,11 @@ Install git and setup some global options as below:
 
 ```terminal
 $ sudo pacaur -S git
+```
 
-$ vim ~/.gitconfig
-...
+and setup gitconfig as:
+
+```bash:title=$HOME/.gitconfig
 [user]
     name = Sadanand Singh
     email = EMAIL_ADDRESS
@@ -917,7 +905,6 @@ $ vim ~/.gitconfig
 
 [help]
     autocorrect = 1
-...
 ```
 
 ### ssh Setup
@@ -934,13 +921,18 @@ the server for login based only on keys.
 
 ```terminal
 $ ssh-keygen -t ed25519
+```
 
+Now create ssh config as:
+
+```bash:title:$HOME/.ssh/config
 # Create a .ssh/config file for rmate usage in sublime text
-$ vim ~/.ssh/config
 ...
 RemoteForward 52698 localhost:52698
 ...
+```
 
+```terminal
 # Create ~/.ssh/authorized_keys file with list of machines that
 # are allowed to login to this machine.
 $ touch ~/.ssh/authorized_keys
@@ -1009,8 +1001,7 @@ Once We have our keys setup, edit keys to change trust level.
 
 Once all keys are setup, we need to gpg-agent configuration file:
 
-```terminal
-$ vim ~/.gnupg/gpg-agent.conf
+```bash:title=$HOME/.gnupg/gpg-agent.conf
 ..
 enable-ssh-support
 default-cache-ttl-ssh 10800
