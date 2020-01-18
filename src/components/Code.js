@@ -143,7 +143,7 @@ const calculateLinesToHighlight = meta => {
 
 const Code = ({ codeString, className: blockClassName, metastring = ``, ...props }) => {
   if (props['react-live']) {
-    return <LazyLiveProvider code={codeString} noInline={false} theme={theme} />;
+    return <LazyLiveProvider code={codeString} noInline={true} theme={theme} />;
   }
 
   const [language, { title = `` }] = getParams(blockClassName);
