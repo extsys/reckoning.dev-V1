@@ -18,6 +18,13 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-twitter',
     {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        color: `#D10068`,
+        showSpinner: true
+      }
+    },
+    {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'assets',
