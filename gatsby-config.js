@@ -52,7 +52,6 @@ module.exports = {
             }
           },
           `gatsby-remark-images-medium-zoom`,
-          'gatsby-remark-prismjs',
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {

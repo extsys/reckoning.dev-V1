@@ -17,6 +17,8 @@ import SimilarPosts from '../components/SimilarPosts';
 import Img from 'gatsby-image';
 import HighlightShare from '../components/HighlightShare/HighlightShare';
 import { formatDate, editOnGithub } from '../utils/global';
+import { preToCodeBlock } from 'mdx-utils';
+import Code from '../components/Code';
 import 'katex/dist/katex.min.css';
 import {
   FacebookShareButton,
@@ -31,7 +33,17 @@ const shortcodes = {
   ZoomImage,
   ImageGallery,
   Update,
-  TLDR
+  TLDR,
+  pre: preProps => {
+    const props = preToCodeBlock(preProps);
+    // if there's a codeString and some props, we passed the test
+    if (props) {
+      return <Code {...props} />;
+    }
+    // it's possible to have a pre without a code in it
+    return <pre {...preProps} />;
+  },
+  code: Code
 };
 
 class PostTemplate extends Component {

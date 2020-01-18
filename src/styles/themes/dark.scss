@@ -400,13 +400,14 @@ $dark-border: darken($background, 3%);
     background: transparent !important;
   }
 
-  pre.language-terminal code.language-terminal {
+  .gatsby-highlight pre.prism-code.language-terminal {
+    padding-top: 3em;
     border: 1px solid #666;
     background: #111;
     color: #ccc;
 
     &::before {
-      background: $accent;
+      background: #303030;
       color: #888;
     }
   }
