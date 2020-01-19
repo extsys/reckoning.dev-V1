@@ -25,6 +25,20 @@ img {
   margin-right: auto;
 }
 
+.gatsby-resp-image-figcaption {
+  align-items: center;
+  text-align: center;
+  line-height: 1.4;
+  font-weight: 300;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  font-family: medium-content-sans-serif-font, 'Lucida Grande', 'Lucida Sans Unicode',
+    'Lucida Sans', Geneva, Arial, sans-serif;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
 @include small-breakpoint {
   .container {
     padding: 0 2rem;
@@ -698,6 +712,17 @@ h2.publication-company {
   border-left: 6px solid #cccc00;
   margin-bottom: 15px;
   padding: 4px 12px;
+  padding-bottom: -10px;
+
+  .custom-block-heading {
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+
+  .custom-block-body {
+    font-weight: inherit;
+    margin-bottom: -20px;
+  }
 }
 
 .tldr {
@@ -705,6 +730,17 @@ h2.publication-company {
   border-left: 6px solid #cc5200;
   margin-bottom: 15px;
   padding: 4px 12px;
+  padding-bottom: 1px;
+
+  .custom-block-heading {
+    font-weight: bold;
+    padding-bottom: 10px;
+  }
+
+  .custom-block-body {
+    font-weight: inherit;
+    margin-bottom: -20px;
+  }
 }
 
 @include small-breakpoint {

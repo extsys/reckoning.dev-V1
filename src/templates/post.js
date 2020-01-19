@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import ZoomImage from '../components/ZoomImage.js';
-import TLDR from '../components/TLDR.js';
-import Update from '../components/Update.js';
 import ImageGallery from 'react-image-gallery';
 import urljoin from 'url-join';
 import Helmet from 'react-helmet';
@@ -32,8 +30,6 @@ import { BlogPostFooter, PostShare } from './templates.style';
 const shortcodes = {
   ZoomImage,
   ImageGallery,
-  Update,
-  TLDR,
   pre: preProps => {
     const props = preToCodeBlock(preProps);
     // if there's a codeString and some props, we passed the test
@@ -43,7 +39,9 @@ const shortcodes = {
     // it's possible to have a pre without a code in it
     return <pre {...preProps} />;
   },
-  code: Code
+  code: Code,
+  'zoom-image': ZoomImage,
+  zoom: ZoomImage
 };
 
 class PostTemplate extends Component {

@@ -4,14 +4,18 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledFigcaption = styled.figcaption`
-  text-align: right;
-  font-size: 0.8em;
-  padding 0.25em 0;
-  // text-transform: uppercase;
-  color: #999;
-  display: block;
+  align-items: center;
+  text-align: center;
+  line-height: 1.4;
+  font-weight: 500;
   margin-left: auto;
   margin-right: auto;
+  display: block;
+  font-family: medium-content-sans-serif-font, 'Lucida Grande', 'Lucida Sans Unicode',
+    'Lucida Sans', Geneva, Arial, sans-serif;
+  font-size: 14px;
+  margin-top: 1px;
+  margin-bottom: 20px;
 `;
 const Styles = {
   display: 'block',

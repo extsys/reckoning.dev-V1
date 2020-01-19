@@ -17,10 +17,12 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-twitter',
+    'gatsby-plugin-sharp',
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-nprogress`,
       options: {
-        color: `#D10068`,
+        color: `#d10068`,
         showSpinner: true
       }
     },
@@ -52,10 +54,28 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
+              markdownCaptions: true,
               maxWidth: 1250,
               linkImagesToOriginal: false,
               quality: 80,
+              showCaptions: ['title'],
+              backgroundColor: 'transparent',
               withWebp: true
+            }
+          },
+          {
+            resolve: 'gatsby-remark-custom-blocks',
+            options: {
+              blocks: {
+                tldr: {
+                  classes: 'tldr',
+                  title: 'optional'
+                },
+                update: {
+                  classes: 'update',
+                  title: 'optional'
+                }
+              }
             }
           },
           `gatsby-remark-images-medium-zoom`,
@@ -118,8 +138,6 @@ module.exports = {
         color: config.themeColor
       }
     },
-    'gatsby-plugin-sharp',
-    `gatsby-transformer-sharp`,
     'gatsby-plugin-catch-links',
     'gatsby-plugin-sitemap',
     {
