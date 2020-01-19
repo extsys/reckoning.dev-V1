@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import sadanand from '../../content/images/sadanand.jpg';
 import config from '../../data/SiteConfig';
 import { Follow } from 'react-twitter-widgets';
+import { FiPenTool } from 'react-icons/fi';
 
 export default class Subscription extends React.Component {
   render() {
@@ -32,7 +33,7 @@ export default class Subscription extends React.Component {
                 target='_blank'
                 rel='noopener noreferrer'
               >
-                Subscribe to Newsletter
+                <FiPenTool size={12} /> {'  '} Subscribe to Newsletter
               </a>
             </div>
           </div>

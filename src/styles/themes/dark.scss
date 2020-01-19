@@ -235,19 +235,19 @@ $dark-border: darken($background, 3%);
 
   .tag-container {
     span {
-      color: $foreground;
-      background: rgba(0, 0, 0, 0.2);
+      color: #bfc9ca;
+      background: #9c640c;
       border: none;
 
       .count {
-        color: $secondary-color;
+        color: lighten(#bfc9ca, 20%);
       }
 
       &:hover,
       &:active,
       &:focus {
         border: none;
-        background: #111;
+        background: lighten(#9c640c, 10%);
         color: white;
       }
     }
