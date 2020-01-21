@@ -28,10 +28,10 @@ every day for exploring different ideas. Managing this very iterative task is ve
 in obtaining good models. In this article, I will describe my setup for using
 [Pytorch](https://pytorch.org) and evaluate [comet.ml][comet] for the management of experiments.
 
-<ZoomImage
+<zoom
   src='https://res.cloudinary.com/sadanandsingh/image/upload/v1555791764/comet/cats-dogs_e4eb3v.png'
   alt='cats-dogs'
-></ZoomImage>
+></zoom>
 
 I am going to consider the problem of classification of cats and dogs. You can download the data from
 [here](https://www.microsoft.com/en-us/download/details.aspx?id=54765). This has 12500 images each
@@ -219,7 +219,7 @@ normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 
 I first ran all 4 experiments (SGD and Adam optimizers with learning rates of 0.001 and 0.004).
 As you can see in the screen shots below, it is quite handy to view progress of individual experiments:
 
-<ZoomImage src='https://res.cloudinary.com/sadanandsingh/image/upload/v1555803192/comet/exp_list_dhgqxu.png'></ZoomImage>
+<zoom src='https://res.cloudinary.com/sadanandsingh/image/upload/v1555803192/comet/exp_list_dhgqxu.png'></zoom>
 
 This list view can be customized to show different parameters and metrics in the table. Here I have
 added few of those to easily distingush different experiments.
@@ -230,7 +230,7 @@ a tabular view with min/max of different metrics, code, parameters etc. By defau
 plots for losses and metric for train and test modes. However, you can create your own set of plots.
 Here, I created plots to compare test/train accuracy and losses.
 
-<ZoomImage src='https://res.cloudinary.com/sadanandsingh/image/upload/v1555804423/comet/exp_charts_qywcey.png'></ZoomImage>
+<zoom src='https://res.cloudinary.com/sadanandsingh/image/upload/v1555804423/comet/exp_charts_qywcey.png'></zoom>
 
 <p><strong class='pink'>
 This is a quite good model. We are getting 99% test accuracy with so little training!
@@ -241,38 +241,38 @@ This is a quite good model. We are getting 99% test accuracy with so little trai
 Additionally, we get other handy information like list of hyper parameters, gpu utilization and a
 tabular view of metrics.
 
-<ZoomImage src='https://res.cloudinary.com/sadanandsingh/image/upload/v1555804851/comet/gpu-props_l0rwsd.png'></ZoomImage>
+<zoom src='https://res.cloudinary.com/sadanandsingh/image/upload/v1555804851/comet/gpu-props_l0rwsd.png'></zoom>
 
 A really cool feature that I really like, is to get steps to reproduce to the results for a given
 experiment.
 
-<ZoomImage src='https://res.cloudinary.com/sadanandsingh/image/upload/v1555805270/comet/reproduce_exp_x0zeaf.png'></ZoomImage>
+<zoom src='https://res.cloudinary.com/sadanandsingh/image/upload/v1555805270/comet/reproduce_exp_x0zeaf.png'></zoom>
 
 So far things were looking good. Now, I wanted to compare these experiments graphically. On the
 page where you get a list view of experiments, there is an option to plot some metrics as a function of
 experiments. It's pretty easy to add a comparison chart for some given metric and compare different
 experiments pretty quickly:
 
-<ZoomImage src='https://res.cloudinary.com/sadanandsingh/image/upload/v1557038035/comet/Screen_Shot_2019-05-04_at_11.33.09_PM_tpnyyl.png'></ZoomImage>
+<zoom src='https://res.cloudinary.com/sadanandsingh/image/upload/v1557038035/comet/Screen_Shot_2019-05-04_at_11.33.09_PM_tpnyyl.png'></zoom>
 
 Moving on, Any two experiments can be selected to get a diff between them. Selecting any two
 experiments, and pressing the "Diff" button takes you to a comparison view of two experiments. I
 found this to be little bit of a mixed experience. You can see individual experiment charts as well
 as both of them on single chart. However, these charts are extremely basic:
 
-<ZoomImage src='https://res.cloudinary.com/sadanandsingh/image/upload/v1557038994/comet/dirty_compare_qo6i7x.png'></ZoomImage>
+<zoom src='https://res.cloudinary.com/sadanandsingh/image/upload/v1557038994/comet/dirty_compare_qo6i7x.png'></zoom>
 
 The chart here is very crowded and the colors are very unreadable. The worst part is that you have
 no control over the choice of colors. Even for this simple toy example with just a few metrics the
 above plots is very crowded. Different metrics can be compared in a table as well. Oddly, you
 can control here which ones get plotted in the graph.
 
-<ZoomImage src='https://res.cloudinary.com/sadanandsingh/image/upload/v1557039275/comet/metrics_compare_akmutf.png'></ZoomImage>
+<zoom src='https://res.cloudinary.com/sadanandsingh/image/upload/v1557039275/comet/metrics_compare_akmutf.png'></zoom>
 
 However, even with limiting what graphs we see for the comparison, the graphs are not usable. I was
 hoping to get more control over plotting, may be even on-demand plotting.
 
-<ZoomImage src='https://res.cloudinary.com/sadanandsingh/image/upload/v1557084082/comet/clean_compare.png'></ZoomImage>
+<zoom src='https://res.cloudinary.com/sadanandsingh/image/upload/v1557084082/comet/clean_compare.png'></zoom>
 
 Considering the most of the real life examples are much more complex than a simple cat vs dog model,
 these comparison graphs and over all process have to be modified and tuned heavily to make it work

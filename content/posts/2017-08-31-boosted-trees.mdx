@@ -138,7 +138,7 @@ We find that our model has a much better predictive power (94.1%) for the domina
 The approach used in the case of AdaBoost can be also viewed as an [exponential loss minimization approach](https://en.wikipedia.org/wiki/AdaBoost#Boosting_as_gradient_descent). Let us look at this mathematically for the case of a generic loss function, $L\big(y,\hat{F}(x)\big)$. The goal of the method is to find an $\hat{F}(x)$ that minimizes the average value of the loss function $L\big(y,\hat{F}(x)\big)$ on the training set. This can be achieved by starting with a constant function $\hat{F_0}(x)$, and incrementally expanding it in a greedy fashion as follows:
 
 $$
-\begin{aligned} & \hat{F_0}(x) = \mathop{\arg\min}\limits_{\gamma} \sum_{i=1}^{N} L\big(y,\gamma \big) \\ & \hat{F_b}(x) = \hat{F}_{b-1}(x) + \mathop{\arg\min}\limits_{f \in \mathcal{H}} \sum_{i=1}^{N} L\big(y,\hat{F}_{b-1}(x) + f(x) \big) \text{, for } b=1,2,\ldots, B \end{aligned}
+\begin{gathered} \hat{F_0}(x) = \mathop{\arg\min}\limits_{\gamma} \sum_{i=1}^{N} L\big(y,\gamma \big) \\ \hat{F_b}(x) = \hat{F}_{b-1}(x) + \\ \mathop{\arg\min}\limits_{f \in \mathcal{H}} \sum_{i=1}^{N} L\big(y,\hat{F}_{b-1}(x) + f(x) \big) \\ \text{, for } b=1,2,\ldots, B \end{gathered}
 $$
 
 where $f(x) \in \mathcal{H}$ refers to base learners, in this case tree models. The problem with this set up is that, it is computationally infeasible to choose optimal $f(x)$ at every step for an arbitrary loss function $L\big(y,\hat{F}(x)\big)$.
