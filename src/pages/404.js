@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import Layout from '../layout';
 import SEO from '../components/SEO';
 import config from '../../data/SiteConfig';
-import NotFound from './notFound';
+import NotFound from '../utils/notFound';
 
 class NotFoundPage extends Component {
   render() {

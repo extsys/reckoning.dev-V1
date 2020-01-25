@@ -75,7 +75,6 @@ exports.createPages = ({ graphql, actions }) => {
                     template
                     toc
                     draft
-                    jupyter
                   }
                   fields {
                     slug

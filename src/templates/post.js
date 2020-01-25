@@ -72,7 +72,6 @@ class PostTemplate extends Component {
       <Layout>
         <Helmet>
           <title>{`${post.title} – ${config.siteTitle}`}</title>
-          {post.jupyter === true && <link href='/jupyter.css' rel='stylesheet' type='text/css' />}
         </Helmet>
         <SEO postPath={slug} postNode={postNode} postSEO />
         <article className='single container'>
@@ -156,7 +155,6 @@ export const pageQuery = graphql`
       frontmatter {
         title
         toc
-        jupyter
         thumbnail {
           childImageSharp {
             fixed(width: 96, height: 96) {

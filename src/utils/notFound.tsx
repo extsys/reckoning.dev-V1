@@ -62,7 +62,7 @@ const NotFound: React.FunctionComponent<NotFoundProps> = props => {
       order: 1;
     }
     h1 {
-      color: #f73b98;
+      color: #ff6b6b;
       @media (min-width: 1400px) {
         font-size: 25px;
       }
@@ -104,7 +104,7 @@ const NotFound: React.FunctionComponent<NotFoundProps> = props => {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f73b98;
+    background: #ff6b6b;
     color: #fff;
     font-size: 16px;
     margin-right: 15px;
@@ -113,7 +113,7 @@ const NotFound: React.FunctionComponent<NotFoundProps> = props => {
 
   const Goback = styled.div`
     margin-top: 60px;
-    color: '#f73b98';
+    color: '#ff6b6b';
     @media (max-width: 990px) {
       margin-top: 40px;
     }
@@ -125,12 +125,12 @@ const NotFound: React.FunctionComponent<NotFoundProps> = props => {
       align-items: center;
       font-size: 15px;
       font-weight: 500;
-      color: '#f73b98';
+      color: '#ff6b6b';
       transition: 0.15s ease-in-out;
       &:hover {
-        color: '#D10068';
+        color: '#f71616';
         ${Icon} {
-          background-color: '#D10068';
+          background-color: '#f71616';
         }
       }
     }
