@@ -137,7 +137,7 @@ Similar to the case of maximum margin classifier, we can rewrite the
 optimization problem more conveniently as,
 
 $$
-\begin{aligned} & {\text{minimize  }} \frac{1}{2} {\lVert \mathbf{w} \rVert}^2 + C \sum_{i}^{m} \xi_i\\ & \text{subject to  } y_i (\mathbf{x}_i^T\mathbf{w} + b) \ge 1 - \xi_i, \text{  } \text{   and   } \xi_i \ge 0, \text{   } i = 1 \ldots m \end{aligned}
+\begin{aligned} & {\text{minimize  }} \frac{1}{2} {\lVert \mathbf{w} \rVert}^2 + C \sum_{i}^{m} \xi_i\\ & \text{subject to  } y_i (\mathbf{x}_i^T\mathbf{w} + b) \ge 1 - \xi_i, \\ & \text{  } \text{   and   } \xi_i \ge 0, \text{   } i = 1 \ldots m \end{aligned}
 $$
 
 Now, the question before us is to find a way to solve this optimization
@@ -151,7 +151,7 @@ dual problem.
 The Lagrange (primal) function for this problem is:
 
 $$
-L_P = \frac{1}{2} {\lVert \mathbf{w} \rVert}^2 + C \sum_{i}^{m} \xi_i - \sum_{i=1}^{m} \alpha_i[y_i (\mathbf{x}_i^T\mathbf{w} + b) - (1 - \xi_i)] - \sum_{i=1}^{m} \mu_i \xi_i,
+\begin{aligned} L_P & = \frac{1}{2} {\lVert \mathbf{w} \rVert}^2 + C \sum_{i}^{m} \xi_i \\ & - \sum_{i=1}^{m} \alpha_i[y_i (\mathbf{x}_i^T\mathbf{w} + b) - (1 - \xi_i)] - \sum_{i=1}^{m} \mu_i \xi_i, \end{aligned}
 $$
 
 which we can minimize w.r.t. $\mathbf{w}$, b, and $\xi_i$. Setting the
