@@ -73,7 +73,6 @@ exports.createPages = ({ graphql, actions }) => {
                     tags
                     categories
                     template
-                    toc
                     draft
                   }
                   fields {

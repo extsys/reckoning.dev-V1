@@ -154,7 +154,6 @@ export const pageQuery = graphql`
       excerpt
       frontmatter {
         title
-        toc
         thumbnail {
           childImageSharp {
             fixed(width: 96, height: 96) {
