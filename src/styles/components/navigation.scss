@@ -56,7 +56,7 @@
       a {
         display: flex;
         align-items: center;
-        font-size: 1.05rem;
+        font-size: 1.3rem;
         font-weight: 500;
         padding: 1rem 0.75rem;
         margin: 0;
@@ -86,8 +86,8 @@
 }
 
 .favicon {
-  height: 23px;
-  width: 23px;
+  height: 32px;
+  width: 32px;
   margin-bottom: 0;
 }
 
@@ -140,6 +140,7 @@ button.dark-switcher {
 
         .text {
           display: block;
+          font-size: 1.4rem;
         }
       }
 
@@ -151,7 +152,7 @@ button.dark-switcher {
         height: 100%;
 
         a {
-          font-size: 1.2rem;
+          font-size: 1.4rem;
           margin: 0 1rem;
           padding: 1rem 0.5rem;
           border-bottom: 2px solid transparent;

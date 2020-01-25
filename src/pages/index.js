@@ -23,31 +23,33 @@ class Index extends Component {
         <Helmet title={`${config.siteTitle} – Introduction`} />
         <SEO />
 
-        <div class='author'>
-          <img alt='Author image' class='author__image' src={sadanand} />
+        <section class='hero'>
+          <div class='author'>
+            <img alt='Author image' class='author__image' src={sadanand} />
 
-          <h1 class='author__site-title'>Notes on AI, Health Care and Computers!</h1>
+            <h1 class='author__site-title'>Notes on AI, Health Care and Computers!</h1>
 
-          <p class='author__intro'>
-            Views of an AI Researcher in health care. Discussions, tutorials, and commentary on
-            deep learning, machine learning, programming, computers and science.
-          </p>
+            <p class='author__intro'>
+              Views of an AI Researcher in health care. Discussions, tutorials, and commentary on
+              deep learning, machine learning, programming, computers and science.
+            </p>
 
-          <p class='author__links'>
-            <GitHubButton
-              href='https://github.com/sadanand-singh'
-              data-size='large'
-              aria-label='Follow @sadanand-singh on GitHub'
-            >
-              GitHub
-            </GitHubButton>
-            &nbsp;&nbsp;&nbsp;
-            <Follow
-              username={`${config.userTwitter}`}
-              options={{ size: 'large', showCount: false }}
-            />
-          </p>
-        </div>
+            <p class='author__links'>
+              <GitHubButton
+                href='https://github.com/sadanand-singh'
+                data-size='large'
+                aria-label='Follow @sadanand-singh on GitHub'
+              >
+                GitHub
+              </GitHubButton>
+              &nbsp;&nbsp;&nbsp;
+              <Follow
+                username={`${config.userTwitter}`}
+                options={{ size: 'large', showCount: false }}
+              />
+            </p>
+          </div>
+        </section>
 
         <div className='container front-page'>
           <section className='section'>

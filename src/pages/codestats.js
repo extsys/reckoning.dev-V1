@@ -132,11 +132,17 @@ export default class ClientFetchingExample extends Component {
                   <br />
                   <strong>Last coded on:</strong> {last_date}
                 </p>
-                <span className='large-font'>{`Level ${curr_level} (${total_xp} XP) (+${new_xp})`}</span>
+                <span className='large-font'>{`Current Level: ${curr_level} (${total_xp} XP) (+${new_xp})`}</span>
                 <ProgressBar percentage={perc_level} />
                 <br />
                 <strong>Additional Stats can be found at </strong>
-                <a href='https://codestats.net/users/sadanand-singh'>Code::Stats</a>
+                <a
+                  href='https://codestats.net/users/sadanand-singh'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  Code::Stats
+                </a>
                 <br />
                 <h2>Usage Pattern</h2>
                 <div class='chart-container'>

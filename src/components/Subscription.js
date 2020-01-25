@@ -17,24 +17,33 @@ export default class Subscription extends React.Component {
               sponsored posts on my website.
             </p>
             <p class='subscription-container__widgets'>
-              If you feel my posts are helpful &nbsp;
+              Follow me on Twitter &nbsp;
               <Follow
                 username={`${config.userTwitter}`}
                 options={{ size: 'large', showCount: false }}
               />
             </p>
-
-            <p></p>
             <div className='subscription-container'>
-              <strong>You can also subscribe to my weekly newsletter.&nbsp;&nbsp;</strong>
-              <a
-                className='subscription-button'
-                href='https://reckoningdev.substack.com/'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <FiPenTool size={12} /> {'  '} Subscribe to Newsletter
-              </a>
+              <p>
+                Subscribe to my Newsletter.&nbsp;&nbsp;
+                <a
+                  className='subscription-button'
+                  href='https://reckoningdev.substack.com/'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >
+                  <FiPenTool
+                    sx={{
+                      display: `flex`,
+                      flexDirection: `row`,
+                      mt: 1,
+                      mr: 1
+                    }}
+                    size={14}
+                  />{' '}
+                  {'  '} Subscribe
+                </a>
+              </p>
             </div>
           </div>
           <div className='flex-avatar'>

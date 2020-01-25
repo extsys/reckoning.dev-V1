@@ -136,11 +136,12 @@ $dark-border: darken($background, 3%);
   }
 
   .note {
-    background: transparent;
-    border-color: transparent;
+    background: #191919;
+    border-color: #191919;
 
     .note-container {
-      background: darken($background, 5%);
+      background: #191919;
+      box-shadow: 3px 5px 20px #191919;
     }
   }
 
@@ -214,6 +215,10 @@ $dark-border: darken($background, 3%);
     }
   }
 
+  .hero {
+    background-color: #191919;
+  }
+
   .simple-posts {
     a {
       .each {
@@ -236,7 +241,7 @@ $dark-border: darken($background, 3%);
   .tag-container {
     span {
       color: #bfc9ca;
-      background: #9c640c;
+      background: $alternate-color;
       border: none;
 
       .count {
@@ -247,7 +252,7 @@ $dark-border: darken($background, 3%);
       &:active,
       &:focus {
         border: none;
-        background: lighten(#9c640c, 10%);
+        background: darken($alternate-color, 10%);
         color: white;
       }
     }
@@ -272,19 +277,19 @@ $dark-border: darken($background, 3%);
   }
 
   .update {
-    background-color: lighten($background, 2%);
-    border-left: 6px solid #cccc00;
-    margin-bottom: 15px;
-    padding: 4px 12px;
-    padding-bottom: 1px;
+    background-color: lighten($background, 5%);
+    border-left: 8px solid #cccc00;
+    margin-bottom: 50px;
+    padding: 20px 20px;
+    padding-bottom: 10px;
   }
 
   .tldr {
     background-color: lighten($background, 5%);
-    border-left: 6px solid #cc5200;
-    margin-bottom: 15px;
-    padding: 4px 12px;
-    padding-bottom: 1px;
+    border-left: 8px solid #cc5200;
+    margin-bottom: 50px;
+    padding: 20px 20px;
+    padding-bottom: 10px;
   }
 
   th {
@@ -417,16 +422,24 @@ $dark-border: darken($background, 3%);
   .category-container {
     .category-filter {
       padding: 0.5rem 1rem;
-      background: rgba(0, 0, 0, 0.2);
+      background: $alternate-color;
       border-radius: $border-radius;
       margin-right: 0.5rem;
       font-weight: 600;
-      color: $primary-color;
+      color: #bfc9ca;
       cursor: pointer;
+
+      .count {
+        color: #bfc9ca;
+      }
 
       &.active {
         background: $primary-color !important;
         color: white !important;
+        .count {
+          background: white;
+          color: darken(#bfc9ca, 20%);
+        }
       }
 
       &:last-of-type {
@@ -434,8 +447,8 @@ $dark-border: darken($background, 3%);
       }
 
       &:hover {
-        background: #111;
-        color: darken($primary-color, 10%);
+        background: darken($alternate-color, 15%);
+        color: darken(#bfc9ca, 10%);
       }
     }
   }
