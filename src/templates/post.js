@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { MDXProvider } from '@mdx-js/react';
-import ZoomImage from '../components/ZoomImage.js';
 import ImageGallery from 'react-image-gallery';
 import urljoin from 'url-join';
 import Helmet from 'react-helmet';
@@ -17,6 +16,7 @@ import HighlightShare from '../components/HighlightShare/HighlightShare';
 import { formatDate, editOnGithub } from '../utils/global';
 import { preToCodeBlock } from 'mdx-utils';
 import Code from '../components/Code';
+import ImageZoom from '../components/imageZoom';
 import 'katex/dist/katex.min.css';
 import {
   FacebookShareButton,
@@ -28,7 +28,6 @@ import { IoLogoFacebook, IoLogoTwitter, IoLogoReddit, IoLogoLinkedin } from 'rea
 import { BlogPostFooter, PostShare } from './templates.style';
 
 const shortcodes = {
-  ZoomImage,
   ImageGallery,
   pre: preProps => {
     const props = preToCodeBlock(preProps);
@@ -40,8 +39,7 @@ const shortcodes = {
     return <pre {...preProps} />;
   },
   code: Code,
-  'zoom-image': ZoomImage,
-  zoom: ZoomImage
+  img: ImageZoom
 };
 
 class PostTemplate extends Component {

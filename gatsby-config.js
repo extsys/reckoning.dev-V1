@@ -54,11 +54,9 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              markdownCaptions: true,
               maxWidth: 1250,
               linkImagesToOriginal: false,
               quality: 80,
-              showCaptions: ['title'],
               backgroundColor: 'transparent',
               withWebp: true
             }
@@ -78,7 +76,6 @@ module.exports = {
               }
             }
           },
-          `gatsby-remark-images-medium-zoom`,
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
@@ -119,7 +116,7 @@ module.exports = {
             }
           }
         ],
-        plugins: [`gatsby-remark-images`, `gatsby-remark-images-medium-zoom`]
+        plugins: [`gatsby-remark-images`]
       }
     },
     { resolve: `gatsby-plugin-typescript` },
