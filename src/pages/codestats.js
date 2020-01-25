@@ -120,6 +120,15 @@ export default class ClientFetchingExample extends Component {
       <Layout>
         <Helmet title={`Code::Stats – ${config.siteTitle}`} />
         <SEO />
+        <section class='hero'>
+          <div class='author'>
+            <img alt='CodeStats image' class='author__logo' src={'/logos/code_stats.png'} />
+            <h1 class='author__site-title'>Coding Stats via Code::Stats</h1>
+            <p class='author__intro'>The free stats tracking service for programmers.</p>
+          </div>
+        </section>
+        <br />
+        <br />
         <div className='container'>
           <h2>Summary</h2>
           <div>
