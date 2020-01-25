@@ -12,31 +12,11 @@
   }
 }
 
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .container {
   max-width: $width;
   padding: 0 1.5rem;
   margin-left: auto;
   margin-right: auto;
-}
-
-.gatsby-resp-image-figcaption {
-  align-items: center;
-  text-align: center;
-  line-height: 1.4;
-  font-weight: 300;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
-  font-family: medium-content-sans-serif-font, 'Lucida Grande', 'Lucida Sans Unicode',
-    'Lucida Sans', Geneva, Arial, sans-serif;
-  font-size: 12px;
-  margin-top: 10px;
 }
 
 @include small-breakpoint {
@@ -1121,18 +1101,18 @@ blockquote {
   }
 
   a:hover {
-    background-color: #264d00;
+    background-color: darken($primary-color, 10%);
     color: white;
   }
 
   .previous {
-    background-color: #336600;
+    background-color: $primary-color;
     color: white;
     border-radius: 15px;
   }
 
   .next {
-    background-color: #336600;
+    background-color: $primary-color;
     color: white;
     border-radius: 15px;
   }
