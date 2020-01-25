@@ -471,17 +471,17 @@ $dark-border: darken($background, 3%);
     }
 
     a:hover {
-      background-color: #264d00;
+      background-color: darken($primary-color, 10%);
       color: white;
     }
 
     .previous {
-      background-color: #336600;
+      background-color: $primary-color;
       color: white;
     }
 
     .next {
-      background-color: #336600;
+      background-color: $primary-color;
       color: white;
     }
   }

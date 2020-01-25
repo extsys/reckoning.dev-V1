@@ -122,7 +122,7 @@ class PostTemplate extends Component {
             <div className='pagination-button'>
               {prev && (
                 <Link className='previous' to={`${prev.fields.slug}`} aria-label='Prev'>
-                  &laquo; Previous
+                  ❮❮ Previous
                 </Link>
               )}
             </div>
@@ -130,7 +130,7 @@ class PostTemplate extends Component {
             <div className='pagination-button'>
               {next && (
                 <Link className='next' to={`${next.fields.slug}`} aria-label='Next'>
-                  Next &raquo;
+                  Next ❯❯
                 </Link>
               )}
             </div>
