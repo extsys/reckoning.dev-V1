@@ -12,6 +12,7 @@ thumbnail: '../thumbnails/intro.jpg'
 ---
 
 import { Timeline } from 'react-twitter-widgets';
+import ImageZoom from '../../src/components/imageZoom';
 
 This is Sadanand Singh. I am a process engineer, a physicist, a
 programmer, an Indian and a human being; with interests in world
@@ -19,12 +20,12 @@ politics, economics, and society.
 
 <div class='image-container'>
   <div class='image-container__left'>
-    <img src='https://res.cloudinary.com/sadanandsingh/image/upload/v1496963333/sadanand_navmqu.jpg' />
+    <ImageZoom src='https://res.cloudinary.com/sadanandsingh/image/upload/v1496963333/sadanand_navmqu.jpg' />
   </div>
   <div class='image-container__right'>
     <Timeline
       dataSource={{ sourceType: 'profile', screenName: 'reckoningdev' }}
-      options={{ username: 'reckoningdev', height: 640 }}
+      options={{ username: 'reckoningdev', height: 620 }}
     />
   </div>
 </div>
