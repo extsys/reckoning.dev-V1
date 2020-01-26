@@ -106,64 +106,14 @@ class HighlightShare extends Component {
               popoverItems(itemClass)
             ) : (
               <React.Fragment>
-                <span className={itemClass} onClick={() => ''}>
-                  Share {'    '}
-                </span>
-                <a
-                  target='_blank'
-                  className={itemClass}
-                  href={facebook}
-                  onclick="var width  = 575,
-                  height = 280,
-                  left   = ($(window).width()  - width)  / 2,
-                  top    = ($(window).height() - height) / 2,
-                  url    = this.href,
-                  opts   = 'status=1' +
-                       ',width='  + width  +
-                       ',height=' + height +
-                       ',top='    + top    +
-                       ',left='   + left;
-
-                window.open(url, 'facebook', opts);"
-                >
+                <span className={itemClass}>Share {'    '}</span>
+                <a target='_blank' className={itemClass} href={facebook}>
                   <IoLogoFacebook size={20} />
                 </a>
-                <a
-                  target='_blank'
-                  className={itemClass}
-                  href={twitter}
-                  onclick="var width  = 575,
-                  height = 280,
-                  left   = ($(window).width()  - width)  / 2,
-                  top    = ($(window).height() - height) / 2,
-                  url    = this.href,
-                  opts   = 'status=1' +
-                       ',width='  + width  +
-                       ',height=' + height +
-                       ',top='    + top    +
-                       ',left='   + left;
-
-                window.open(url, 'twitter', opts);"
-                >
+                <a target='_blank' className={itemClass} href={twitter}>
                   <IoLogoTwitter size={20} />
                 </a>
-                <a
-                  target='_blank'
-                  className={itemClass}
-                  href={linkedin}
-                  onclick="var width  = 575,
-                  height = 280,
-                  left   = ($(window).width()  - width)  / 2,
-                  top    = ($(window).height() - height) / 2,
-                  url    = this.href,
-                  opts   = 'status=1' +
-                       ',width='  + width  +
-                       ',height=' + height +
-                       ',top='    + top    +
-                       ',left='   + left;
-
-                window.open(url, 'linkedin', opts);"
-                >
+                <a target='_blank' className={itemClass} href={linkedin}>
                   <IoLogoLinkedin size={20} />
                 </a>
               </React.Fragment>

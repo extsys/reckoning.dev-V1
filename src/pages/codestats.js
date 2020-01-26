@@ -120,11 +120,11 @@ export default class ClientFetchingExample extends Component {
       <Layout>
         <Helmet title={`Code::Stats – ${config.siteTitle}`} />
         <SEO />
-        <section class='hero'>
-          <div class='author'>
-            <img alt='CodeStats image' class='author__logo' src={'/logos/code_stats.png'} />
-            <h1 class='author__site-title'>Coding Stats via Code::Stats</h1>
-            <p class='author__intro'>The free stats tracking service for programmers.</p>
+        <section className='hero'>
+          <div className='author'>
+            <img alt='CodeStats image' className='author__logo' src={'/logos/code_stats.png'} />
+            <h1 className='author__site-title'>Coding Stats via Code::Stats</h1>
+            <p className='author__intro'>The free stats tracking service for programmers.</p>
           </div>
         </section>
         <br />
@@ -154,13 +154,13 @@ export default class ClientFetchingExample extends Component {
                 </a>
                 <br />
                 <h2>Usage Pattern</h2>
-                <div class='chart-container'>
-                  <div class='chart-container__left'>
+                <div className='chart-container'>
+                  <div className='chart-container__left'>
                     <div id='chart'>
                       <HighchartsReact highcharts={Highcharts} options={lang_options} />
                     </div>
                   </div>
-                  <div class='chart-container__right'>
+                  <div className='chart-container__right'>
                     <div id='chart'>
                       <HighchartsReact highcharts={Highcharts} options={days_options} />
                     </div>

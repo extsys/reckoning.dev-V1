@@ -17,6 +17,7 @@ import { formatDate, editOnGithub } from '../utils/global';
 import { preToCodeBlock } from 'mdx-utils';
 import Code from '../components/Code';
 import ImageZoom from '../components/imageZoom';
+import TOC from '../components/toc';
 import 'katex/dist/katex.min.css';
 import {
   FacebookShareButton,
@@ -29,6 +30,7 @@ import { BlogPostFooter, PostShare } from './templates.style';
 
 const shortcodes = {
   ImageGallery,
+  TOC,
   pre: preProps => {
     const props = preToCodeBlock(preProps);
     // if there's a codeString and some props, we passed the test
@@ -94,7 +96,7 @@ class PostTemplate extends Component {
           </header>
           <MDXProvider components={shortcodes}>
             <HighlightShare>
-              <MDXRenderer>{postNode.body}</MDXRenderer>
+              <MDXRenderer headings={postNode.headings}>{postNode.body}</MDXRenderer>
             </HighlightShare>
           </MDXProvider>
           <BlogPostFooter>
@@ -172,6 +174,10 @@ export const pageQuery = graphql`
         date
       }
       body
+      headings {
+        depth
+        value
+      }
     }
   }
 `;

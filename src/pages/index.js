@@ -23,18 +23,18 @@ class Index extends Component {
         <Helmet title={`${config.siteTitle} – Introduction`} />
         <SEO />
 
-        <section class='hero'>
-          <div class='author'>
-            <img alt='Author image' class='author__image' src={sadanand} />
+        <section className='hero'>
+          <div className='author'>
+            <img alt='Author image' className='author__image' src={sadanand} />
 
-            <h1 class='author__site-title'>Notes on AI, Health Care and Computers!</h1>
+            <h1 className='author__site-title'>Notes on AI, Health Care and Computers!</h1>
 
-            <p class='author__intro'>
+            <p className='author__intro'>
               Views of an AI Researcher in health care. Discussions, tutorials, and commentary on
               deep learning, machine learning, programming, computers and science.
             </p>
 
-            <p class='author__links'>
+            <div className='author__links'>
               <GitHubButton
                 href='https://github.com/sadanand-singh'
                 data-size='large'
@@ -47,7 +47,7 @@ class Index extends Component {
                 username={`${config.userTwitter}`}
                 options={{ size: 'large', showCount: false }}
               />
-            </p>
+            </div>
           </div>
         </section>
 
