@@ -486,6 +486,26 @@ $dark-border: darken($background, 3%);
     }
   }
 
+  .toc {
+    color: $gray-600;
+    background: #191919;
+    border-radius: 4px;
+    box-shadow: 3px 5px 20px #191919;
+    padding: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    a {
+      color: $gray-600;
+      &:hover,
+      &:active,
+      &:focus {
+        color: lighten($gray-400, 20%);
+        background: transparent;
+      }
+    }
+  }
+
   .highlight-share {
     .h-popover {
       padding: 8px 12px;
