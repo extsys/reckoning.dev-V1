@@ -1,51 +1,80 @@
 const path = require('path');
 const kebabCase = require('lodash.kebabcase');
 const _ = require(`lodash`);
+require('dotenv');
+
+const moment = require('moment-timezone');
+
+const getDraftValue = ({ node, options }) => {
+  const { fieldName, timezone } = options;
+  if (!node.frontmatter) {
+    return false;
+  }
+
+  if (node.frontmatter.hasOwnProperty(fieldName)) {
+    return node.frontmatter[fieldName];
+  }
+
+  if (!node.frontmatter.date) {
+    return false;
+  }
+
+  const dateNode = moment.tz(node.frontmatter.date, timezone);
+  const dateNow = moment().tz(timezone);
+  const value = dateNow.isSameOrBefore(dateNode);
+
+  return value;
+};
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;
   let slug;
-  let draft = false;
 
-  if (node.internal.type === 'Mdx') {
-    const fileNode = getNode(node.parent);
-    const parsedFilePath = path.parse(fileNode.relativePath);
+  const options = {
+    fieldName: 'draft',
+    timezone: 'UTC',
+    force: process.env.NODE_ENV === 'development' // if developmet, force to be NOT draft
+  };
 
-    if (
-      Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
-      Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
-    ) {
-      slug = `/${kebabCase(node.frontmatter.title)}/`;
-    } else if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
-      slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`;
-    } else if (parsedFilePath.dir === '') {
-      slug = `/${parsedFilePath.name}/`;
-    } else {
-      slug = `/${parsedFilePath.dir}/`;
-    }
+  if (node.internal.type !== 'Mdx') {
+    return;
+  }
+  const fileNode = getNode(node.parent);
+  const parsedFilePath = path.parse(fileNode.relativePath);
+  const draft = getDraftValue({ node, options });
 
-    if (Object.prototype.hasOwnProperty.call(node, 'frontmatter')) {
-      if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug'))
-        slug = `/${node.frontmatter.slug}/`;
-      if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'draft'))
-        draft = node.frontmatter.draft;
+  if (
+    Object.prototype.hasOwnProperty.call(node, 'frontmatter') &&
+    Object.prototype.hasOwnProperty.call(node.frontmatter, 'title')
+  ) {
+    slug = `/${kebabCase(node.frontmatter.title)}/`;
+  } else if (parsedFilePath.name !== 'index' && parsedFilePath.dir !== '') {
+    slug = `/${parsedFilePath.dir}/${parsedFilePath.name}/`;
+  } else if (parsedFilePath.dir === '') {
+    slug = `/${parsedFilePath.name}/`;
+  } else {
+    slug = `/${parsedFilePath.dir}/`;
+  }
+
+  if (Object.prototype.hasOwnProperty.call(node, 'frontmatter')) {
+    if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'slug'))
+      slug = `/${node.frontmatter.slug}/`;
+    if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')) {
+      const date = new Date(node.frontmatter.date);
+
       createNodeField({
         node,
-        name: 'draft',
-        value: draft
+        name: 'date',
+        value: date.toISOString()
       });
-      if (Object.prototype.hasOwnProperty.call(node.frontmatter, 'date')) {
-        const date = new Date(node.frontmatter.date);
-
-        createNodeField({
-          node,
-          name: 'date',
-          value: date.toISOString()
-        });
-      }
     }
-    createNodeField({ node, name: 'slug', value: slug });
   }
+  createNodeField({ node, name: 'slug', value: slug });
+  createNodeField({
+    node,
+    name: options.fieldName,
+    value: options.force === true ? false : draft
+  });
 };
 
 exports.createPages = ({ graphql, actions }) => {
