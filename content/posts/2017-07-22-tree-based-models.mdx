@@ -57,7 +57,7 @@ Let us first understand decision trees by an example. We will then analyze the p
 Classification and Regression Trees or [CART](https://en.wikipedia.org/wiki/Predictive_analytics#Classification_and_regression_trees_.28CART.29) for short is a term introduced by [Leo Breiman](https://en.wikipedia.org/wiki/Leo_Breiman) to refer to Decision Tree algorithms that can used for classification or regression predictive modeling problems. CART is one of the most common algorithms used for generating decision trees.
 It is used in the scikit-learn implementation of decision trees - [sklearn.tree.DecisionTreeClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html) and [sklearn.tree.DecisionTreeRegressor](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeRegressor.html) for classification and regression, respectively.
 
-## CART Model
+### CART Model
 
 CART model involves selecting input variables and split points on those variables until a suitable tree is constructed. The selection of which input variable to use and the specific split or cut-point is chosen using a greedy algorithm to minimize a cost function. Tree construction ends using a predefined stopping criterion, such as a minimum number of training instances assigned to each leaf node of the tree.
 
@@ -69,7 +69,7 @@ CART model involves selecting input variables and split points on those variable
 - [MARS](https://en.wikipedia.org/wiki/Multivariate_adaptive_regression_splines): extends decision trees to handle numerical data better.
 - [Conditional Inference Trees](https://en.wikipedia.org/w/index.php?title=Conditional_Inference_Trees&action=edit&redlink=1)
 
-## Regression Trees
+### Regression Trees
 
 Let us look at the CART algorithm for regression trees in more detail. Briefly, building a decision tree involves two steps:
 
@@ -102,7 +102,7 @@ The process continues until a stopping
 criterion is reached; for instance, we may continue until no region contains more than $m$ observations.
 Once the regions $R_1, R_2, \ldots , R_J$ have been created, the response for a given test observation is predicted using the mean of the training observations in the region to which that test observation belongs.
 
-## Classification Trees
+### Classification Trees
 
 A classification tree is very similar to a regression tree, except
 that it is used to predict a qualitative response rather than a
@@ -282,7 +282,7 @@ df_test_set.Income.value_counts()
 
 In both training and the test data sets, we find **<=50K** class to be about 3 times larger than the **>50K** class. This is begging us to treat this problem differently as this is a problem of quite imbalanced data. However, for simplicity we will be treating this exercise as a regular problem.
 
-## EDA
+### EDA
 
 Now, let us look at distribution and inter-dependence of different features in the training data graphically.
 
@@ -349,7 +349,7 @@ Until now, we have only looked at the inter-dependence of non-numeric features. 
 
 ![](https://res.cloudinary.com/sadanandsingh/image/upload/v1567366125/tree/img7.png)
 
-## Tree Classifier
+### Tree Classifier
 
 Now that we understand some relationship in our data, let us build a simple tree classifier model using [sklearn.tree.DecisionTreeClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html).
 However, in order to use this module, we need to convert all of our non-numeric data to numeric ones. This can be quite easily achieved using the [sklearn.preprocessing.LabelEncoder](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.LabelEncoder.html) module along with the [sklearn_pandas](https://github.com/pandas-dev/sklearn-pandas) module to apply this on pandas data-frames directly.
@@ -516,13 +516,13 @@ $$
 
 This is called **bagging**. Note that aggregating can have different meaning in regression and classification problems. While mean prediction works well in the case of regression problems, we will need to use _majority vote_: the overall prediction is the most commonly occurring majority class among the B predictions, as aggregation mechanism for classification problems.
 
-## Out-of-Bag (OOB) Error
+### Out-of-Bag (OOB) Error
 
 One big advantage of bagging is that we can get **testing error without any cross validation!!** Recall that the key to bagging is that trees are repeatedly fit to bootstrapped subsets of the observations. One can show that on average, each bagged tree makes use of around 2/3<sup>rd</sup> of the observations. The remaining 1/3<sup>rd</sup> of the observations not used to fit a given bagged tree are referred to as the _out-of-bag (OOB)_ observations. We can predict the response for the $i^{th}$ observation using each of the trees in
 which that observation was OOB. This will yield around $B/3$ predictions for the $i^{th}$ observation. Now using the same aggregating techniques as bagging (average for regression and majority vote for classification), we can obtain a single prediction for the $i^{th}$ observation. An OOB prediction can be obtained in this way for each of the n observations, from which the overall OOB MSE (for a regression problem) or classification error (for a classification problem) can be computed. The resulting OOB error is a valid
 estimate of the test error for the bagged model, since the response for each observation is predicted using only the trees that were not fit using that observation.
 
-## Feature Importance Measures
+### Feature Importance Measures
 
 Bagging typically results in improved accuracy over
 prediction using a single tree. However, it can be difficult to interpret the resulting model. When we bag a large number of
@@ -550,7 +550,7 @@ There are three main tuning parameters of random forests:
 - **Number of Trees:** In practice, few hundreds trees is often a good choice.
 - **Number of Predictors Sampled:** Typically, if there are a total of $D$ predictors, $D/3$ predictors in the case of regression and $\sqrt{D}$ predictors in the case of classification make a good choice.
 
-## Example of Random Forest Model
+### Example of Random Forest Model
 
 Using the same income data as above, let us make a simple RandomForest classifier model with 500 trees.
 
@@ -638,7 +638,7 @@ plt.xlabel('Relative Importance')
 
 We can see the answer to be significantly different than the previous random forest model. This is a common issue with this class of models! In the next post, I will be talking about boosted tree that provide a significant improvement in terms of model consistency.
 
-## Limitations of Random Forests
+### Limitations of Random Forests
 
 Apart from generic limitations of bagged trees, some of limitations of random forests are:
 
