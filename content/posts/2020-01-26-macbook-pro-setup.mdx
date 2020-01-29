@@ -26,7 +26,7 @@ configuration is as follows:
 - 16 inch MacBook Pro 2019
 - Processor: 2.6 GHz 6-Core Intel Core i7
 - Memory: 16 GB 2667 MHz DDR4
-- Disk: SSD 500 GB
+- Disk: 500 GB SSD
 - Graphics: AMD Radeon Pro 5300M
 
 After getting a new Machine, first thing I do is re-install the OS with case-sensitive APFS disk,
@@ -65,9 +65,82 @@ Here are some of the other Apps that I download directly from their websites:
 - [Google Chrome](https://www.google.com/chrome/)
 - [Image Optim](https://imageoptim.com/mac)
 - [PDF Expert](https://pdfexpert.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
 - [Xee 3](https://theunarchiver.com/xee)
 - [Zotero](https://www.zotero.org/)
 
-### Setting up iTerm
+## Command-Line Setup
 
-I preferably use iTerm as command line tool.
+I preferably use iTerm as command line tool. One thing I like to do is customize the colors and a
+great resource for that is https://iterm2colorschemes.com/. In particular, I like following
+colorschemas:
+
+- ayu
+- Dracula
+- Monokai Vivid
+- Monokai Remastered
+- Oceanic Material
+- [New Moon](https://github.com/taniarascia/new-moon/tree/master/iterm2)
+- SpaceGray Eighties
+- SpaceGray Eighties Dull
+- Tomorrow Night Eighties
+- Tango Adapted
+
+Now, first thing I install is [HomeBrew](https://brew.sh/). Before you install HomeBrew though you
+need to install the `Xcode` command line utilities. Open a terminal in iTerm 2 and type:
+
+```terminal
+xcode-select --install
+```
+
+The Command Line Tools Package is a small self-contained package available for download separately
+from Xcode and that allows you to do command line development in OS X.
+
+Now, install HomeBrew:
+
+```terminal
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+Once the installation finishes, run `brew help` to get all commands, and run `brew update` to update
+to the latest version.
+
+I typically use `BrewFile` from brew bundle to maintain all things installed via HomeBrew on
+different machines. You can look at my
+[BrewFile here](https://github.com/sadanand-singh/yadm-dotfiles/blob/osx/.config/Brewfile).
+
+I just run following command to install all desired things via brew:
+
+```terminal
+brew bundle --file ~/.config/BrewFile
+```
+
+You can save your current BrewFile at current directory using:
+
+```terminal
+brew dump
+```
+
+By the above bundle, I have installed all desired programs, fonts and casks like Microsoft Word,
+Excel and Powerpoint.
+
+Lastly, I make `fish` as my default shell and configure it. Please look at my
+[detailed post on fish shell](/fish-shell) for this.
+
+Few other small configurations for iTerm include:
+
+- set FuraCode Nerd Font in Profile Text settings
+- set desired ColorSchema in Profile Colors settings
+- set Columns to 154 and Rows to 44, under Profile Window settings
+- set Option keys to be used as Meta keys under Profile Keys settings. This is needed for ALT keys
+  to work properly for fish shell.
+
+## git Setup
+
+## ssh Setup
+
+## dotfiles
+
+## Visual Studio Code Setup
+
+## Miscellaneous Setup
