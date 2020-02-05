@@ -15,7 +15,6 @@ import { Follow } from 'react-twitter-widgets';
 class Index extends Component {
   render() {
     const latestPostEdges = this.props.data.latest.edges;
-    const popularPostEdges = this.props.data.popular.edges;
     const published = publications.filter((article, i) => i < 6);
 
     return (
@@ -54,22 +53,12 @@ class Index extends Component {
         <div className='container front-page'>
           <section className='section'>
             <h2>
-              Latest Articles{' '}
+              Recent Articles{' '}
               <Link to='/blog' className='view-all'>
                 View all
               </Link>{' '}
             </h2>
             <PostListing simple postEdges={latestPostEdges} />
-          </section>
-
-          <section className='section'>
-            <h2>
-              Most Popular{' '}
-              <Link to='/categories/popular' className='view-all'>
-                View all
-              </Link>
-            </h2>
-            <PostListing simple postEdges={popularPostEdges} />
           </section>
 
           <section className='section'>
@@ -93,39 +82,9 @@ export default Index;
 export const pageQuery = graphql`
   query IndexQuery {
     latest: allMdx(
-      limit: 8
+      limit: 10
       sort: { fields: [fields___date], order: DESC }
       filter: { frontmatter: { template: { eq: "post" } }, fields: { draft: { eq: false } } }
-    ) {
-      edges {
-        node {
-          fields {
-            slug
-            date
-          }
-          excerpt
-          timeToRead
-          frontmatter {
-            title
-            tags
-            categories
-            thumbnail {
-              childImageSharp {
-                fixed(width: 96, height: 96) {
-                  ...GatsbyImageSharpFixed
-                }
-              }
-            }
-            date
-            template
-          }
-        }
-      }
-    }
-    popular: allMdx(
-      limit: 8
-      sort: { fields: [fields___date], order: DESC }
-      filter: { frontmatter: { categories: { eq: "Popular" } }, fields: { draft: { eq: false } } }
     ) {
       edges {
         node {
