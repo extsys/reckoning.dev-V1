@@ -5,9 +5,9 @@
 %buttons {
   -webkit-appearance: none;
   display: inline-block;
-  border: $button-border-width $button-border-style $button-border-color;
+  border: $button-border-width $button-border-style transparent;
   border-radius: $button-border-radius;
-  background: $button-background;
+  background: transparent;
   color: $button-color;
   font-weight: $button-font-weight;
   font-family: $button-font-family;
@@ -17,7 +17,6 @@
   margin: 0 0 0.5rem 0;
   vertical-align: middle;
   text-align: center;
-  cursor: pointer;
   text-decoration: none;
   line-height: 1;
 }
@@ -63,16 +62,16 @@
 
 .button.muted-button,
 a.button.muted-bottom {
-  color: darken($primary-color, 10%);
-  border: 2px solid $primary-color;
+  color: transparent;
+  border: 2px solid transparent;
   background: transparent;
 
   &:hover,
   &:focus,
   &:active {
-    border: 2px solid darken($primary-color, 10%);
-    background: $primary-hover;
-    color: darken($primary-color, 30%);
+    border: 2px solid transparent;
+    background: transparent;
+    color: transparent;
   }
 }
 
