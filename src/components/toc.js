@@ -1,4 +1,5 @@
 import React from 'react';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 function slugify(string) {
   const slug = string
@@ -11,37 +12,48 @@ function slugify(string) {
   return `${slug}`;
 }
 
-export default ({ headings }) => {
-  var html_string = '<ul>';
-  var prev = 1;
-  {
-    headings
-      .filter(heading => heading.depth !== 1 && heading.depth <= 3)
-      .map(heading => {
-        const close = heading.depth === 2 && prev !== 1 ? '</li>' : '';
-        html_string = html_string + close;
-        const tail =
-          heading.depth === 2
-            ? '<li key="' +
-              heading.value +
-              '"><a href=#' +
-              slugify(heading.value) +
-              '>' +
-              heading.value +
-              '</a>'
-            : '<ul><li key="' +
-              heading.value +
-              '"><a href=#' +
-              slugify(heading.value) +
-              '>' +
-              heading.value +
-              '</a></li></ul>';
+function createDataObject(heading) {
+  return { link: '#' + slugify(heading.value), name: heading.value, values: [] };
+}
 
-        html_string = html_string + tail;
-        prev = heading.depth;
-        return '';
-      });
+function ListItem({ item }) {
+  let children = null;
+  if (item.values && item.values.length) {
+    children = (
+      <ul>
+        {item.values.map(i => (
+          <ListItem item={i} key={i.name} />
+        ))}
+      </ul>
+    );
   }
-  html_string = html_string + '</ul>';
-  return <div className='toc' dangerouslySetInnerHTML={{ __html: html_string }} />;
+
+  return (
+    <li key={item.name}>
+      <AnchorLink offset='100' href={item.link}>
+        {item.name}
+      </AnchorLink>
+      {children}
+    </li>
+  );
+}
+
+export default ({ headings }) => {
+  var data = [];
+  headings
+    .filter(heading => heading.depth !== 1 && heading.depth <= 3)
+    .map(heading => {
+      heading.depth === 2
+        ? data.push(createDataObject(heading))
+        : data[data.length - 1].values.push(createDataObject(heading));
+    });
+  return (
+    <div className='toc'>
+      <ul>
+        {data.map(i => (
+          <ListItem item={i} key={i.name} />
+        ))}
+      </ul>
+    </div>
+  );
 };
