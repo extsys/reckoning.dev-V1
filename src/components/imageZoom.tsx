@@ -1,15 +1,6 @@
 import React from 'react';
-import ImageWithZoom from 'react-medium-image-zoom';
-
-function handleImageZoomBackground(background: string) {
-  const images = Array.from(document.getElementsByClassName('Image__Zoom'));
-
-  images.map(img => {
-    if (img.previousElementSibling && img.previousElementSibling.tagName === 'DIV') {
-      img.previousElementSibling.style.background = background;
-    }
-  });
-}
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 const ImageZoom: React.FC<{}> = props => {
   const image = {
@@ -18,16 +9,9 @@ const ImageZoom: React.FC<{}> = props => {
   };
 
   return (
-    <ImageWithZoom
-      image={image}
-      zoomImage={image}
-      onZoom={() => handleImageZoomBackground('white')}
-      defaultStyles={{
-        zoomImage: {
-          borderRadius: '5px'
-        }
-      }}
-    />
+    <Zoom zoomMargin={40}>
+      <img alt={image.alt} src={image.src} width={image.width} />
+    </Zoom>
   );
 };
 
