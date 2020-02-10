@@ -57,6 +57,9 @@ const CopyButton = styled.div`
   border-radius: 0px;
   color: #7c7d80;
   transition: background 0.3s ease;
+  @media (max-width: 767px) {
+    display: none;
+  }
   &:hover {
     background: rgba(255, 255, 255, 0.07);
   }
