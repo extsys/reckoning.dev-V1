@@ -62,6 +62,7 @@ module.exports = {
               withWebp: true
             }
           },
+          'gatsby-remark-unwrap-images',
           {
             resolve: 'gatsby-remark-custom-blocks',
             options: {
