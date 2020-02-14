@@ -33,14 +33,14 @@ export const PostShare = styled.div`
   > div,
   .SocialMediaShareButton {
     cursor: pointer;
-    margin-left: 25px;
+    margin-left: 15px;
     font-size: 22px;
     outline: 0;
     color: '#292929';
     transition: 0.15s ease-in-out;
     @media (max-width: 767px) {
       font-size: 18px;
-      margin-left: 20px;
+      margin-left: 10px;
     }
     &:hover {
       color: '#D10068';

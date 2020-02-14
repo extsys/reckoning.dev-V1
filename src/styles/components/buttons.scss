@@ -23,18 +23,20 @@
 
 // Buttons on hover
 %buttons-hover {
-  // border: $button-border-width $button-border-style $button-background-hover;
+  border: 0px $button-border-style none;
   color: white;
-  // background: $button-background-hover;
+  background: none;
   text-decoration: none;
+  outline: 0;
 }
 
 // Buttons on focus
 %buttons-focus {
-  // border: $button-border-width $button-border-style $button-background-hover;
-  // background: $button-background-hover;
+  border: 0px $button-border-style none;
+  background: none;
   color: white;
   text-decoration: none;
+  outline: 0;
 }
 
 // Apply styles to .button class, button element, and button-based inputs
@@ -62,16 +64,16 @@
 
 .button.muted-button,
 a.button.muted-bottom {
-  color: transparent;
-  border: 2px solid transparent;
-  background: transparent;
+  color: none;
+  border: 2px solid none;
+  background: none;
 
   &:hover,
   &:focus,
   &:active {
-    border: 2px solid transparent;
-    background: transparent;
-    color: transparent;
+    border: 0px solid none;
+    background: none;
+    color: none;
   }
 }
 

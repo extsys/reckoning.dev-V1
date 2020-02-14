@@ -104,18 +104,36 @@ class PostTemplate extends Component {
               <span>
                 <strong>Share This:</strong>
               </span>
-              <FacebookShareButton url={pageURL} quote={`${post.title}`}>
-                <IoLogoFacebook />
-              </FacebookShareButton>
-              <TwitterShareButton url={pageURL} title={`${post.title}`}>
-                <IoLogoTwitter />
-              </TwitterShareButton>
-              <LinkedinShareButton url={pageURL} title={`${post.title}`}>
-                <IoLogoLinkedin />
-              </LinkedinShareButton>
-              <RedditShareButton url={pageURL} title={`${post.title}`}>
-                <IoLogoReddit />
-              </RedditShareButton>
+              <div>
+                <FacebookShareButton
+                  className='SocialMediaShareButton'
+                  url={pageURL}
+                  quote={`${post.title}`}
+                >
+                  <IoLogoFacebook size={20} />
+                </FacebookShareButton>
+                <TwitterShareButton
+                  className='SocialMediaShareButton'
+                  url={pageURL}
+                  title={`${post.title}`}
+                >
+                  <IoLogoTwitter size={20} />
+                </TwitterShareButton>
+                <LinkedinShareButton
+                  className='SocialMediaShareButton'
+                  url={pageURL}
+                  title={`${post.title}`}
+                >
+                  <IoLogoLinkedin size={20} />
+                </LinkedinShareButton>
+                <RedditShareButton
+                  className='SocialMediaShareButton'
+                  url={pageURL}
+                  title={`${post.title}`}
+                >
+                  <IoLogoReddit size={20} />
+                </RedditShareButton>
+              </div>
             </PostShare>
           </BlogPostFooter>
 
