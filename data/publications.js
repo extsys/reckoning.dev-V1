@@ -5,6 +5,11 @@ const publications = [
     path: 'https://spie.org/MI/conferencedetails/computer-aided-diagnosis#session-1'
   },
   {
+    title:
+      'A multi-site study of a breast density deep learning model for full-field digital mammography and digital breast tomosynthesis exams',
+    path: 'https://arxiv.org/abs/2001.08383'
+  },
+  {
     title: 'A hypersensitive breast cancer detector',
     path: 'https://spie.org/MI/conferencedetails/computer-aided-diagnosis#session-1'
   },
