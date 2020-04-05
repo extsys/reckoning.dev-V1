@@ -82,7 +82,7 @@ export default Index;
 export const pageQuery = graphql`
   query IndexQuery {
     latest: allMdx(
-      limit: 10
+      limit: 6
       sort: { fields: [fields___date], order: DESC }
       filter: { frontmatter: { template: { eq: "post" } }, fields: { draft: { eq: false } } }
     ) {

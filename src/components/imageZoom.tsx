@@ -1,14 +1,14 @@
 import React from 'react';
 import Zoom from 'react-medium-image-zoom';
-import 'react-medium-image-zoom/dist/styles.css';
+import '../styles/components/zoom.css';
 
-const ImageZoom: React.FC<{}> = props => {
+const ImageZoom: React.FC<{}> = (props) => {
   const image = {
     ...props,
     className: 'Image__Zoom',
     display: 'block',
     margin: '0 auto',
-    width: '100%'
+    width: '100%',
   };
 
   return (

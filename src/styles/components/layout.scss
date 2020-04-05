@@ -241,21 +241,21 @@
         border: 2px solid transparent;
 
         &:hover {
-          background: white;
+          background: $gray-300;
         }
       }
     }
 
     .gatsby-image-wrapper {
       margin-top: 0;
-      height: 30px !important;
-      width: 30px !important;
+      height: 50px !important;
+      width: 50px !important;
     }
 
     h2 {
       font-weight: 500;
       padding: 0;
-      margin: 0;
+      margin: 20px;
       color: $light-font-color;
 
       &:hover {
@@ -278,7 +278,7 @@
 
         &:hover {
           border-radius: $border-radius;
-          background: $light;
+          background: $gray-300;
 
           &last-of-type {
             &:hover {
@@ -326,7 +326,7 @@
 
           &:hover {
             border: 2px solid $light;
-            background: $light;
+            background: $gray-300;
           }
 
           &:active,
@@ -336,12 +336,12 @@
           }
 
           h2 {
-            margin: 0;
+            margin: 20px;
           }
 
           .gatsby-image-wrapper {
-            height: 30px !important;
-            width: 30px !important;
+            height: 50px !important;
+            width: 50px !important;
           }
         }
       }
