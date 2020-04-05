@@ -5,16 +5,15 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "build": "yarn workspace www build",
+    "build": "yarn workspace reckoning build",
     "dev": "yarn start",
     "lint": "eslint --ignore-path .gitignore .",
-    "start": "yarn workspace www develop",
-    "bootstrap": "yarn lerna bootstrap",
-    "publish": "yarn lerna version && yarn lerna publish"
+    "start": "yarn workspace reckoning develop",
+    "bootstrap": "yarn lerna bootstrap"
   },
   "workspaces": [
     "@narative/gatsby-theme-novela",
-    "www"
+    "reckoning"
   ],
   "devDependencies": {
     "@commitlint/cli": "^8.1.0",
