@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import mediaqueries from "@styles/media";
+import styled from '@emotion/styled';
+import mediaqueries from '@styles/media';
 
 const Paragraph = styled.p`
   line-height: 1.756;
@@ -9,19 +9,19 @@ const Paragraph = styled.p`
   transition: ${p => p.theme.colorModeTransition};
   margin: 0 auto 35px;
   width: 100%;
-  max-width: 680px;
+  max-width: 980px;
 
   b {
     font-weight: 800;
   }
 
   ${mediaqueries.desktop`
-    max-width: 507px;
+    max-width: 807px;
   `}
 
   ${mediaqueries.tablet`
-    max-width: 486px;
-    margin: 0 auto 25px;
+    max-width: 526px;
+    margin: 0 auto 5px;
   `};
 
   ${mediaqueries.phablet`

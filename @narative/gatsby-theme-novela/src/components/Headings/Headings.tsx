@@ -1,7 +1,7 @@
-import styled from "@emotion/styled";
-import { css } from "@emotion/core";
+import styled from '@emotion/styled';
+import { css } from '@emotion/core';
 
-import mediaqueries from "@styles/media";
+import mediaqueries from '@styles/media';
 
 /**
  * Example:
@@ -16,17 +16,17 @@ const commonStyles = p => css`
 
 const h1 = styled.h1`
   word-break: keep-all;
-  font-size: 52px;
+  font-size: 36px;
   line-height: 1.15;
   ${commonStyles};
 
   ${mediaqueries.desktop`
-    font-size: 38px;
+    font-size: 32px;
     line-height: 1.2;
   `};
 
   ${mediaqueries.phablet`
-    font-size: 32px;
+    font-size: 28px;
     line-height: 1.3;
   `};
 `;
@@ -78,7 +78,7 @@ const h4 = styled.h4`
 `;
 
 const h5 = styled.h5`
-  word-break: keep-all;  
+  word-break: keep-all;
   font-size: 18px;
   line-height: 1.45;
   ${commonStyles};

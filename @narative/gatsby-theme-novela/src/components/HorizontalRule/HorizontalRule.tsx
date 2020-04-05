@@ -1,10 +1,10 @@
-import styled from "@emotion/styled";
-import mediaqueries from "@styles/media";
+import styled from '@emotion/styled';
+import mediaqueries from '@styles/media';
 
 const HorizontalRule = styled.hr`
   position: relative;
   width: 100%;
-  max-width: 680px;
+  max-width: 980px;
   margin: 50px auto;
   border: 0;
   height: 14.36px;
@@ -17,11 +17,11 @@ const HorizontalRule = styled.hr`
   background-position: center;
 
   ${mediaqueries.desktop`
-    max-width: 507px;
+    max-width: 807px;
   `}
 
   ${mediaqueries.tablet`
-    max-width: 486px;
+    max-width: 786px;
   `};
 
   ${mediaqueries.phablet`

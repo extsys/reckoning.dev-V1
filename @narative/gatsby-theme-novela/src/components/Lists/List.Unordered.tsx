@@ -12,14 +12,14 @@ const UnorderedList = styled.ul`
   font-size: 18px;
 
   width: 100%;
-  max-width: 680px;
+  max-width: 980px;
 
   ${mediaqueries.desktop`
-    max-width: 507px;
+    max-width: 807px;
   `}
 
   ${mediaqueries.tablet`
-    max-width: 486px;
+    max-width: 786px;
     padding-left: 0px;
   `};
 
