@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "@emotion/styled";
+import React from 'react';
+import styled from '@emotion/styled';
 
-import Image from "@components/Image";
+import Image from '@components/Image';
 
-import mediaqueries from "@styles/media";
-import { IAuthor } from "@types";
+import mediaqueries from '@styles/media';
+import { IAuthor } from '@types';
 
-import SocialLinks from "@components/SocialLinks";
+import SocialLinks from '@components/SocialLinks';
 
 interface AuthorHeroProps {
   author: IAuthor;
@@ -47,8 +47,8 @@ const HeroImage = styled.div`
   margin-bottom: 35px;
   border-radius: 50%;
   overflow: hidden;
-  border: 2px solid ${p => p.theme.colors.background};
-  box-shadow: 0px 15.619px 31.2381px rgba(0, 0, 0, 0.15);
+  border: 0px solid ${p => p.theme.colors.background};
+  background: ${p => p.theme.colors.background};
 
   ${mediaqueries.tablet`
     width: 146px;

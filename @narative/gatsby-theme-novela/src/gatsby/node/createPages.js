@@ -207,10 +207,25 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     }
 
     /**
-     * We need a way to find the next artiles to suggest at the bottom of the articles page.
+     * We need a way to find the next articles to suggest at the bottom of the articles page.
      * To accomplish this there is some special logic surrounding what to show next.
      */
-    let next = articlesThatArentSecret.slice(index + 1, index + 3);
+    OtherArticlesThatArentSecret = articlesThatArentSecret.filter(art => art !== article)
+    ArticlesWithCurrentTags = OtherArticlesThatArentSecret.filter(atr => {
+      const allTags = article.tags
+        .map(a => a.trim().toLowerCase());
+      const allCurrTags = atr.tags
+      .map(a => a.trim().toLowerCase());
+
+      return allTags.some(a => allCurrTags.includes(a));
+    })
+
+    let next = ArticlesWithCurrentTags.slice(0, 2);
+    if (next.length === 0) next = articlesThatArentSecret.slice(index + 1, index + 3);
+
+    if (next.length === 1 && ArticlesWithCurrentTags.length !== 2)
+    next = [...next, OtherArticlesThatArentSecret.filter(art => art !== next[0])[0]];
+
     // If it's the last item in the list, there will be no articles. So grab the first 2
     if (next.length === 0) next = articlesThatArentSecret.slice(0, 2);
     // If there's 1 item in the list, grab the first article
