@@ -20,7 +20,7 @@ const Layout: React.FC<{}> = ({ children }) => {
 
   //Change all KaTeX colors
   Array.from(document.getElementsByClassName('katex-display')).forEach(
-    element => {
+    (element) => {
       element.style.color = isDark ? 'white' : 'black';
     },
   );
@@ -45,7 +45,7 @@ export default Layout;
 
 const Container = styled.div`
   position: relative;
-  background: ${p => p.theme.colors.background};
-  transition: ${p => p.theme.colorModeTransition};
+  background: ${(p) => p.theme.colors.background};
+  transition: ${(p) => p.theme.colorModeTransition};
   min-height: 100vh;
 `;

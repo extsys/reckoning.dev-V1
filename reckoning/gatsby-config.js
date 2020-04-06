@@ -47,6 +47,13 @@ const plugins = [
     },
   },
   {
+    resolve: 'gatsby-source-filesystem',
+    options: {
+      name: 'assets',
+      path: `${__dirname}/static/`
+    }
+  },
+  {
     resolve: `gatsby-plugin-manifest`,
     options: {
       name: `reckoning.dev`,
