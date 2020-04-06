@@ -128,6 +128,7 @@ const NavigationHeader: React.FC<{}> = () => {
             </BackArrowIconContainer>
           )}
           <Logo fill={fill} />
+          <LogoText>reckoning.dev</LogoText>
           <Hidden>Navigate back to the homepage</Hidden>
         </LogoLink>
         <NavControls>
@@ -168,6 +169,19 @@ const BackArrowIconContainer = styled.div`
   ${mediaqueries.desktop_medium`
     display: none;
   `}
+`;
+
+const LogoText = styled.div`
+  font-size: 32px;
+  color: ${p => p.theme.colors.primary};
+  display: block;
+  margin: 5px 0px 0px 10px;
+  font: normal 2em 'Fira Sans', fantasy;
+  font-weight: 600;
+
+  ${mediaqueries.tablet`
+      display: none;
+    `}
 `;
 
 const NavContainer = styled.div`
