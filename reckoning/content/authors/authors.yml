@@ -1,48 +1,20 @@
-- name: Dennis Brotzky
+- name: Sadanand Singh
   bio: |
-    Written by You. This is where your author bio lives. Share your work, your
-    joys and of course, your Twitter handle.
-  avatar: ./avatars/dennis-brotzky.jpg
+    Views of an AI Researcher in health care. Discussions, tutorials, and commentary on deep learning, machine learning, programming, computers and science.
+  avatar: ./avatars/sadanand.jpeg
   featured: true
   social:
-    - url: https://unsplash.com
+    - url: https://twitter.com
     - url: https://stackoverflow.com
-    - url: https://github.com
-    - url: https://github.com
-    - url: https://github.com
-
-- name: Thiago Costa
-  bio: |
-    Written by You. This is where your author bio lives. Share your work, your
-    joys and of course, your Twitter handle.
-  avatar: ./avatars/thiago-costa.jpg
-  social:
-    - url: https://github.com
-    - url: https://github.com
-    - url: https://github.com
-    - url: https://github.com
+    - url: https://linkedin.com
+    - url: https://facebook.com
     - url: https://github.com
 
-- name: Brad Tiller
+- name: Abha Mundepi
   bio: |
-    Written by You. This is where your author bio lives. Share your work, your
-    joys and of course, your Twitter handle.
-  avatar: ./avatars/brad-tiller.jpg
+    Views of a biologist, agri-tech scientist and a food & cooking passionate. In this space, I mainly plan to put my favorite recipes, and articles.
+  avatar: ./avatars/abha.jpeg
   social:
+    - url: https://linkedin.com
     - url: https://github.com
-    - url: https://github.com
-    - url: https://github.com
-    - url: https://github.com
-    - url: https://github.com
-
-- name: Mack Mansouri
-  bio: |
-    Written by You. This is where your author bio lives. Share your work, your
-    joys and of course, your Twitter handle.
-  avatar: ./avatars/mack-mansouri.jpg
-  social:
-    - url: https://github.com
-    - url: https://github.com
-    - url: https://github.com
-    - url: https://github.com
-    - url: https://github.com
+    - url: https://twitter.com
