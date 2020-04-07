@@ -150,7 +150,7 @@ details of the implementation.
 Finally, this implementation also supports live coding via the `react-live` library. Here is a
 working example:
 
-```js react-live
+```js live
 const Wrapper = ({ children }) => (
   <div
     style={{
@@ -184,8 +184,9 @@ A cool feature in [Medium](https://medium.com/) is the highlight menu that pops 
 text. This menu contains buttons that allow you to perform certain actions on the selected text
 like highlight and share.
 
-<div class='Image__Medium'>
-  <img src='https://res.cloudinary.com/sadanandsingh/image/upload/v1579064368/medium-share_ancyk2.gif' />
+<div className='Image__Container'>
+<div className="Image__Small">
+  <img src="https://res.cloudinary.com/sadanandsingh/image/upload/v1579064368/medium-share_ancyk2.gif" alt="share" />
   <figcaption>
     <strong>
       Picture Courtesy:
@@ -195,6 +196,8 @@ like highlight and share.
     </strong>
   </figcaption>
 </div>
+</div>
+
 
 You can have a look at my [implementation here](https://github.com/sadanand-singh/reckoning.dev/blob/master/src/components/HighlightShare/HighlightShare.js).
 

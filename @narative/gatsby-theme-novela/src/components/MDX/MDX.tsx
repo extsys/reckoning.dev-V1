@@ -349,6 +349,39 @@ const ImageCSS = css`
 
   .Image__Container {
     text-align: center;
+    &__left {
+      display: inline-block;
+      vertical-align: top;
+      width: 30%;
+
+      ${mediaqueries.desktop`
+      width: 45%;
+    `}
+      ${mediaqueries.tablet`
+      width: 60%;
+    `};
+
+      ${mediaqueries.phablet`
+      width: 90%;
+    `};
+    }
+
+    &__right {
+      display: inline-block;
+      width: 30%;
+
+      ${mediaqueries.desktop`
+      width: 45%;
+    `}
+
+      ${mediaqueries.tablet`
+      width: 60%;
+    `};
+
+      ${mediaqueries.phablet`
+      width: 90%;
+    `};
+    }
   }
 
   img.Image__With-Shadow {
