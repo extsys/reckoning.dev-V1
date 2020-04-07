@@ -5,6 +5,7 @@ import { useColorMode } from 'theme-ui';
 
 import Section from '@components/Section';
 import Logo from '@components/Logo';
+import StatsLogo from '@components/StatsLogo';
 
 import Icons from '@icons';
 import mediaqueries from '@styles/media';
@@ -35,7 +36,7 @@ const DarkModeToggle: React.FC<{}> = () => {
 
     //Change all KaTeX colors
     Array.from(document.getElementsByClassName('katex-display')).forEach(
-      element => {
+      (element) => {
         element.style.color = isDark ? 'white' : 'black';
       },
     );
@@ -94,7 +95,9 @@ const NavigationHeader: React.FC<{}> = () => {
   const { sitePlugin } = useStaticQuery(siteQuery);
 
   const [colorMode] = useColorMode();
-  const fill = colorMode === 'dark' ? '#fff' : '#000';
+  const fill = colorMode === 'dark' ? '#fff' : '#495057';
+  const reg_fill = colorMode === 'dark' ? '#fff' : '#000';
+  const stroke = colorMode !== 'dark' ? '#fff' : '#000';
   const { rootPath, basePath } = sitePlugin.pluginOptions;
 
   useEffect(() => {
@@ -127,7 +130,7 @@ const NavigationHeader: React.FC<{}> = () => {
               <Icons.ChevronLeft fill={fill} />
             </BackArrowIconContainer>
           )}
-          <Logo fill={fill} />
+          <Logo fill={fill} stroke={stroke} />
           <LogoText>reckoning.dev</LogoText>
           <Hidden>Navigate back to the homepage</Hidden>
         </LogoLink>
@@ -142,6 +145,16 @@ const NavigationHeader: React.FC<{}> = () => {
             </button>
           ) : (
             <>
+              <LogoLink
+                to="/codestats/"
+                data-a11y="false"
+                title="Code::Stats"
+                aria-label="Code::Stats"
+                back="false"
+              >
+                <StatsLogo fill={reg_fill} />
+                <Hidden>Code::Stats</Hidden>
+              </LogoLink>
               <SharePageButton />
               <DarkModeToggle />
             </>
@@ -172,11 +185,11 @@ const BackArrowIconContainer = styled.div`
 `;
 
 const LogoText = styled.div`
-  font-size: 32px;
-  color: ${p => p.theme.colors.primary};
+  font-size: 18px;
+  color: ${(p) => p.theme.colors.primary};
   display: block;
-  margin: 5px 0px 0px 10px;
-  font: normal 2em 'Fira Sans', fantasy;
+  margin: -5px 0px 0px 10px;
+  font: normal 1.6em 'Fira Sans', serif;
   font-weight: 600;
 
   ${mediaqueries.tablet`
@@ -204,7 +217,7 @@ const LogoLink = styled(Link)<{ back: string }>`
   position: relative;
   display: flex;
   align-items: center;
-  left: ${p => (p.back === 'true' ? '-54px' : 0)};
+  left: ${(p) => (p.back === 'true' ? '-54px' : 0)};
 
   ${mediaqueries.desktop_medium`
     left: 0
@@ -217,7 +230,7 @@ const LogoLink = styled(Link)<{ back: string }>`
     top: -30%;
     width: 120%;
     height: 160%;
-    border: 2px solid ${p => p.theme.colors.accent};
+    border: 2px solid ${(p) => p.theme.colors.accent};
     background: rgba(255, 255, 255, 0.01);
     border-radius: 5px;
   }
@@ -242,13 +255,13 @@ const NavControls = styled.div`
 const ToolTip = styled.div<{ isDark: boolean; hasCopied: boolean }>`
   position: absolute;
   padding: 4px 13px;
-  background: ${p => (p.isDark ? '#000' : 'rgba(0,0,0,0.1)')};
-  color: ${p => (p.isDark ? '#fff' : '#000')};
+  background: ${(p) => (p.isDark ? '#000' : 'rgba(0,0,0,0.1)')};
+  color: ${(p) => (p.isDark ? '#fff' : '#000')};
   border-radius: 5px;
   font-size: 14px;
   top: -35px;
-  opacity: ${p => (p.hasCopied ? 1 : 0)};
-  transform: ${p => (p.hasCopied ? 'translateY(-3px)' : 'none')};
+  opacity: ${(p) => (p.hasCopied ? 1 : 0)};
+  transform: ${(p) => (p.hasCopied ? 'translateY(-3px)' : 'none')};
   transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 
   &::after {
@@ -262,7 +275,7 @@ const ToolTip = styled.div<{ isDark: boolean; hasCopied: boolean }>`
     height: 0;
     border-left: 6px solid transparent;
     border-right: 6px solid transparent;
-    border-top: 6px solid ${p => (p.isDark ? '#000' : 'rgba(0,0,0,0.1)')};
+    border-top: 6px solid ${(p) => (p.isDark ? '#000' : 'rgba(0,0,0,0.1)')};
   }
 `;
 
@@ -289,7 +302,7 @@ const IconWrapper = styled.button<{ isDark: boolean }>`
     top: -30%;
     width: 100%;
     height: 160%;
-    border: 2px solid ${p => p.theme.colors.accent};
+    border: 2px solid ${(p) => p.theme.colors.accent};
     background: rgba(255, 255, 255, 0.01);
     border-radius: 5px;
   }
@@ -312,12 +325,12 @@ const MoonOrSun = styled.div<{ isDark: boolean }>`
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: ${p => (p.isDark ? '4px' : '2px')} solid
-    ${p => p.theme.colors.primary};
-  background: ${p => p.theme.colors.primary};
-  transform: scale(${p => (p.isDark ? 0.55 : 1)});
+  border: ${(p) => (p.isDark ? '4px' : '2px')} solid
+    ${(p) => p.theme.colors.primary};
+  background: ${(p) => p.theme.colors.primary};
+  transform: scale(${(p) => (p.isDark ? 0.55 : 1)});
   transition: all 0.45s ease;
-  overflow: ${p => (p.isDark ? 'visible' : 'hidden')};
+  overflow: ${(p) => (p.isDark ? 'visible' : 'hidden')};
 
   &::before {
     content: '';
@@ -326,10 +339,10 @@ const MoonOrSun = styled.div<{ isDark: boolean }>`
     top: -9px;
     height: 24px;
     width: 24px;
-    border: 2px solid ${p => p.theme.colors.primary};
+    border: 2px solid ${(p) => p.theme.colors.primary};
     border-radius: 50%;
-    transform: translate(${p => (p.isDark ? '14px, -14px' : '0, 0')});
-    opacity: ${p => (p.isDark ? 0 : 1)};
+    transform: translate(${(p) => (p.isDark ? '14px, -14px' : '0, 0')});
+    opacity: ${(p) => (p.isDark ? 0 : 1)};
     transition: transform 0.45s ease;
   }
 
@@ -342,18 +355,18 @@ const MoonOrSun = styled.div<{ isDark: boolean }>`
     position: absolute;
     top: 50%;
     left: 50%;
-    box-shadow: 0 -23px 0 ${p => p.theme.colors.primary},
-      0 23px 0 ${p => p.theme.colors.primary},
-      23px 0 0 ${p => p.theme.colors.primary},
-      -23px 0 0 ${p => p.theme.colors.primary},
-      15px 15px 0 ${p => p.theme.colors.primary},
-      -15px 15px 0 ${p => p.theme.colors.primary},
-      15px -15px 0 ${p => p.theme.colors.primary},
-      -15px -15px 0 ${p => p.theme.colors.primary};
-    transform: scale(${p => (p.isDark ? 1 : 0)});
+    box-shadow: 0 -23px 0 ${(p) => p.theme.colors.primary},
+      0 23px 0 ${(p) => p.theme.colors.primary},
+      23px 0 0 ${(p) => p.theme.colors.primary},
+      -23px 0 0 ${(p) => p.theme.colors.primary},
+      15px 15px 0 ${(p) => p.theme.colors.primary},
+      -15px 15px 0 ${(p) => p.theme.colors.primary},
+      15px -15px 0 ${(p) => p.theme.colors.primary},
+      -15px -15px 0 ${(p) => p.theme.colors.primary};
+    transform: scale(${(p) => (p.isDark ? 1 : 0)});
     transition: all 0.35s ease;
 
-    ${p => mediaqueries.tablet`
+    ${(p) => mediaqueries.tablet`
       transform: scale(${p.isDark ? 0.92 : 0});
     `}
   }
@@ -367,10 +380,10 @@ const MoonMask = styled.div<{ isDark: boolean }>`
   width: 24px;
   border-radius: 50%;
   border: 0;
-  background: ${p => p.theme.colors.background};
-  transform: translate(${p => (p.isDark ? '14px, -14px' : '0, 0')});
-  opacity: ${p => (p.isDark ? 0 : 1)};
-  transition: ${p => p.theme.colorModeTransition}, transform 0.45s ease;
+  background: ${(p) => p.theme.colors.background};
+  transform: translate(${(p) => (p.isDark ? '14px, -14px' : '0, 0')});
+  opacity: ${(p) => (p.isDark ? 0 : 1)};
+  transition: ${(p) => p.theme.colorModeTransition}, transform 0.45s ease;
 `;
 
 const Hidden = styled.span`

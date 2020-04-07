@@ -1,75 +1,38 @@
 import React from 'react';
-import styled from '@emotion/styled';
-
-import mediaqueries from '@styles/media';
 
 import { Icon } from '@types';
 
-const Logo: Icon = ({ fill = 'white' }) => {
+const Logo: Icon = ({ fill = '#495057', stroke = '#FFFFFF' }) => {
   return (
-    <LogoContainer>
-      <svg
-        width="60"
-        height="23"
-        viewBox="0 0 60 23"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="Logo__Desktop"
-      >
-        <g clipPath="url(#clip0)">
-          <path
-            d="M11.5 0L0 11.5L11.5 23.0L18.1 23.0L6.6 11.5L18.1 0Z"
-            fill={fill}
-          />
-          <path d="M22.1 23.0L27.7 23.0L35.6 0.0L 30.0 0.0Z" fill={fill} />
-          <path
-            d="M39.6 0L46.2 0.0L57.7 11.5L46.2 23.0L39.6 23.0L51.1 11.5Z"
-            fill={fill}
-          />
-        </g>
-        <defs>
-          <clipPath id="clip0">
-            <rect width="191.156" height="23" fill="white" />
-          </clipPath>
-        </defs>
-      </svg>
-
-      <svg
-        width="60"
-        height="23"
-        viewBox="0 0 60 23"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className="Logo__Mobile"
-      >
+    <svg
+      width="36"
+      height="36"
+      viewBox="0 0 64 64"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <g>
+        <circle fill={fill} cx="32" cy="32" r="32" />
         <path
-          d="M11.5 0L0 11.5L11.5 23.0L18.1 23.0L6.6 11.5L18.1 0Z"
-          fill={fill}
+          fill={stroke}
+          d="M42.5,42c-0.7,0-1.3-0.3-1.7-1c-0.6-0.9-0.3-2.2,0.7-2.8l10.1-6.2c0,0,0-0.1,0-0.1l-10.1-6.2
+				c-0.9-0.6-1.2-1.8-0.7-2.8c0.6-0.9,1.8-1.2,2.8-0.7l10.6,6.6l0.2,0.2c1.6,1.6,1.6,4.3,0,6l-0.2,0.2l-10.6,6.6
+				C43.2,41.9,42.8,42,42.5,42z"
         />
-        <path d="M22.1 23.0L27.7 23.0L35.6 0.0L 30.0 0.0Z" fill={fill} />
         <path
-          d="M39.6 0L46.2 0.0L57.7 11.5L46.2 23.0L39.6 23.0L51.1 11.5Z"
-          fill={fill}
+          fill={stroke}
+          d="M21.5,42c-0.4,0-0.7-0.1-1-0.3L9.9,35.1L9.7,35c-1.6-1.6-1.6-4.3,0-6l0.2-0.2l10.6-6.6
+				c0.9-0.6,2.2-0.3,2.8,0.7c0.6,0.9,0.3,2.2-0.7,2.8l-10.1,6.2c0,0,0,0.1,0,0.1l10.1,6.2c0.9,0.6,1.2,1.8,0.7,2.8
+				C22.9,41.7,22.2,42,21.5,42z"
         />
-      </svg>
-    </LogoContainer>
+        <path
+          fill={stroke}
+          d="M25.5,51c-0.2,0-0.5,0-0.7-0.1c-1-0.4-1.5-1.6-1.2-2.6l13-34c0.4-1,1.6-1.5,2.6-1.2c1,0.4,1.5,1.6,1.2,2.6
+			l-13,34C27.1,50.5,26.3,51,25.5,51z"
+        />
+      </g>
+    </svg>
   );
 };
 
 export default Logo;
-
-const LogoContainer = styled.div`
-  .Logo__Mobile {
-    display: none;
-  }
-
-  ${mediaqueries.tablet`
-    .Logo__Desktop {
-      display: none;
-    }
-
-    .Logo__Mobile{
-      display: block;
-    }
-  `}
-`;
