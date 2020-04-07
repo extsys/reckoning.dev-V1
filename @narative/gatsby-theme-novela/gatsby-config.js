@@ -57,37 +57,42 @@ module.exports = ({
             serialize: ({ query: { site, allArticle, allContentfulPost } }) => {
               if (local && !contentful) {
                 return allArticle.edges
-                  .filter(edge => !edge.node.secret)
-                  .map(edge => {
+                  .filter((edge) => !edge.node.secret)
+                  .map((edge) => {
                     return {
                       ...edge.node,
                       description: edge.node.excerpt,
                       date: edge.node.date,
                       url: site.siteMetadata.siteUrl + edge.node.slug,
                       guid: site.siteMetadata.siteUrl + edge.node.slug,
-                      custom_elements: [{ "content:encoded": edge.node.body }],
+                      custom_elements: [{ 'content:encoded': edge.node.body }],
                       author: edge.node.author,
                     };
                   });
               } else if (!local && contentful) {
                 return allContentfulPost.edges
-                  .filter(edge => !edge.node.secret)
-                  .map(edge => {
+                  .filter((edge) => !edge.node.secret)
+                  .map((edge) => {
                     return {
                       ...edge.node,
                       description: edge.node.excerpt,
                       date: edge.node.date,
                       url: site.siteMetadata.siteUrl + '/' + edge.node.slug,
                       guid: site.siteMetadata.siteUrl + '/' + edge.node.slug,
-                      custom_elements: [{ "content:encoded": edge.node.body.childMarkdownRemark.html }],
+                      custom_elements: [
+                        {
+                          'content:encoded':
+                            edge.node.body.childMarkdownRemark.html,
+                        },
+                      ],
                       author: edge.node.author ? edge.node.author.name : '',
                     };
                   });
               } else {
                 const allArticlesData = { ...allArticle, ...allContentfulPost };
                 return allArticlesData.edges
-                  .filter(edge => !edge.node.secret)
-                  .map(edge => {
+                  .filter((edge) => !edge.node.secret)
+                  .map((edge) => {
                     return {
                       ...edge.node,
                       description: edge.node.excerpt,
@@ -212,31 +217,23 @@ module.exports = ({
               withWebp: true,
             },
           },
+          // 'gatsby-remark-unwrap-images',
           {
-            resolve: `@raae/gatsby-remark-oembed`,
+            resolve: 'gatsby-remark-custom-blocks',
             options: {
-              providers: {
-                include: ['Instagram'],
+              blocks: {
+                tldr: {
+                  classes: 'tldr',
+                  title: 'optional',
+                },
+                update: {
+                  classes: 'update',
+                  title: 'optional',
+                },
               },
             },
           },
-          {
-            resolve: 'gatsby-remark-embed-video',
-            options: {
-              width: 680,
-              ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
-              height: 400, // Optional: Overrides optional.ratio
-              related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
-              noIframeBorder: true, //Optional: Disable insertion of <style> border: 0
-              urlOverrides: [
-                {
-                  id: 'youtube',
-                  embedURL: videoId =>
-                    `https://www.youtube-nocookie.com/embed/${videoId}`,
-                },
-              ], //Optional: Override URL of a service provider, e.g to enable youtube-nocookie support
-            },
-          },
+          `gatsby-remark-embedder`,
           { resolve: `gatsby-remark-copy-linked-files` },
           { resolve: `gatsby-remark-numbered-footnotes` },
           { resolve: `gatsby-remark-smartypants` },

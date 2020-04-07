@@ -53,17 +53,107 @@ const MDX: React.FC<MDXProps> = ({ content, children, ...props }) => {
 
   return (
     <MDXProvider components={components}>
-      <MDXBody>
-        <MDXRenderer isDark={colorMode === 'dark'} {...props}>
-          {content}
-        </MDXRenderer>
-        {children}
-      </MDXBody>
+      <CustomBlockCSS>
+        <MDXBody>
+          <MDXRenderer isDark={colorMode === 'dark'} {...props}>
+            {content}
+          </MDXRenderer>
+          {children}
+        </MDXBody>
+      </CustomBlockCSS>
     </MDXProvider>
   );
 };
 
 export default MDX;
+
+const CustomBlockCSS = styled.div`
+  div.update {
+    background-color: ${(p) => p.theme.colors.track};
+    border-left: 8px solid #cccc00;
+    padding: 20px 20px;
+    padding-bottom: 10px;
+    line-height: 1.756;
+    font-size: 18px;
+    color: ${(p) => p.theme.colors.articleText};
+    font-family: ${(p) => p.theme.fonts.sansSerif};
+    transition: ${(p) => p.theme.colorModeTransition};
+    margin: 0 auto 35px;
+    width: 100%;
+    max-width: 980px;
+
+    b {
+      font-weight: 800;
+    }
+
+    ${mediaqueries.desktop`
+    max-width: 707px;
+  `}
+
+    ${mediaqueries.tablet`
+    max-width: 526px;
+    margin: 0 auto 25px;
+  `};
+
+    ${mediaqueries.phablet`
+    padding: 10px 20px;
+  `};
+
+    div.custom-block-heading {
+      font-weight: 800;
+      font-size: 18px;
+      padding-bottom: 10px;
+    }
+
+    div.custom-block-body {
+      font-weight: inherit;
+      margin-bottom: -10px;
+    }
+  }
+
+  div.tldr {
+    background-color: ${(p) => p.theme.colors.track};
+    border-left: 8px solid #cc5200;
+    padding: 20px 20px;
+    padding-bottom: 10px;
+    line-height: 1.756;
+    font-size: 18px;
+    color: ${(p) => p.theme.colors.articleText};
+    font-family: ${(p) => p.theme.fonts.sansSerif};
+    transition: ${(p) => p.theme.colorModeTransition};
+    margin: 0 auto 35px;
+    width: 100%;
+    max-width: 980px;
+
+    b {
+      font-weight: 800;
+    }
+
+    ${mediaqueries.desktop`
+    max-width: 707px;
+  `}
+
+    ${mediaqueries.tablet`
+    max-width: 526px;
+    margin: 0 auto 25px;
+  `};
+
+    ${mediaqueries.phablet`
+    padding: 10px 20px;
+  `};
+
+    div.custom-block-heading {
+      font-weight: 800;
+      font-size: 18px;
+      padding-bottom: 10px;
+    }
+
+    div.custom-block-body {
+      font-weight: inherit;
+      margin-bottom: -10px;
+    }
+  }
+`;
 
 const IMAGE_WIDTHS = {
   regular: '980px',
@@ -124,7 +214,7 @@ const HeadingsCSS = css`
   }
 `;
 
-const PrismCSS = p => css`
+const PrismCSS = (p) => css`
   .prism-code {
     overflow: auto;
     width: 100%;
@@ -141,7 +231,7 @@ const PrismCSS = p => css`
       border-left: 3px solid transparent;
 
       ${Object.keys(p.theme.colors.prism)
-        .map(key => {
+        .map((key) => {
           return `.${toKebabCase(key)}{color:${p.theme.colors.prism[key]};}`;
         })
         .reduce((curr, next) => curr + next, ``)};

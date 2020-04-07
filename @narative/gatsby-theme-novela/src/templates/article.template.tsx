@@ -63,7 +63,7 @@ const Article: Template = ({ pageContext, location }) => {
         const debouncedCalculation = debounce(calculateBodySize);
         const $imgs = contentSection.querySelectorAll('img');
 
-        $imgs.forEach($img => {
+        $imgs.forEach(($img) => {
           // If the image hasn't finished loading then add a listener
           if (!$img.complete) $img.onload = debouncedCalculation;
         });
@@ -150,7 +150,7 @@ const FooterNext = styled.h3`
   opacity: 0.25;
   margin-bottom: 100px;
   font-weight: 400;
-  color: ${p => p.theme.colors.primary};
+  color: ${(p) => p.theme.colors.primary};
 
   ${mediaqueries.tablet`
     margin-bottom: 60px;
@@ -159,7 +159,7 @@ const FooterNext = styled.h3`
   &::after {
     content: '';
     position: absolute;
-    background: ${p => p.theme.colors.grey};
+    background: ${(p) => p.theme.colors.grey};
     width: ${(910 / 1140) * 100}%;
     height: 1px;
     right: 0;
