@@ -21,7 +21,7 @@ const siteMetadata = {
     },
     {
       name: 'stackoverflow',
-      url: `https://bit.ly/1x0885j`,
+      url: `https://stackoverflow.com/users/13244305/reckoningdev`,
     },
     {
       url: `https://www.facebook.com/sadanand4singh`,

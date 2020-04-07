@@ -4,17 +4,17 @@
   avatar: ./avatars/sadanand.jpeg
   featured: true
   social:
-    - url: https://twitter.com
-    - url: https://stackoverflow.com
-    - url: https://linkedin.com
-    - url: https://facebook.com
-    - url: https://github.com
+    - url: https://twitter.com/reckoningdev
+    - url: https://stackoverflow.com/users/13244305/reckoningdev
+    - url: https://www.linkedin.com/in/sadanandsingh/
+    - url: https://www.facebook.com/sadanand4singh
+    - url: https://github.com/sadanand-singh
 
 - name: Abha Mundepi
   bio: |
     Views of a biologist, agri-tech scientist and a food & cooking passionate. In this space, I mainly plan to put my favorite recipes, and articles.
   avatar: ./avatars/abha.jpeg
   social:
-    - url: https://linkedin.com
-    - url: https://github.com
-    - url: https://twitter.com
+    - url: https://www.linkedin.com/in/abhamundepi/
+    - url: https://github.com/abhamundepi
+    - url: https://twitter.com/abhamundepi
