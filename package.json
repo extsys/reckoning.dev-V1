@@ -9,7 +9,8 @@
     "dev": "yarn start",
     "lint": "eslint --ignore-path .gitignore .",
     "start": "yarn workspace reckoning develop",
-    "bootstrap": "yarn lerna bootstrap"
+    "bootstrap": "yarn lerna bootstrap",
+    "latest": "yarn upgrade-interactive --latest"
   },
   "workspaces": [
     "@narative/gatsby-theme-novela",
@@ -27,7 +28,7 @@
     "eslint-plugin-unicorn": "^18.0.1",
     "husky": "^4.2.3",
     "lerna": "^3.16.4",
-    "prettier": "^2.0.2"
+    "prettier": "^2.0.4"
   },
   "eslintConfig": {
     "extends": [
