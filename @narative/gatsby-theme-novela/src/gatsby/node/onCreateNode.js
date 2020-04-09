@@ -2,6 +2,8 @@
 
 const crypto = require(`crypto`);
 const slugify = require('slugify');
+const moment = require('moment-timezone');
+require('dotenv');
 
 // Create fields for post slugs and source
 // This will change with schema customization with work
@@ -26,7 +28,7 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
       slug,
     };
 
-    const permalink = articlePermalinkFormat.replace(/(:[a-z_]+)/g, match => {
+    const permalink = articlePermalinkFormat.replace(/(:[a-z_]+)/g, (match) => {
       const key = match.substr(1);
       if (permalinkData.hasOwnProperty(key)) {
         return permalinkData[key];
@@ -79,11 +81,39 @@ module.exports = ({ node, actions, getNode, createNodeId }, themeOptions) => {
   }
 
   if (node.internal.type === `Mdx` && source === contentPath) {
+    const getDraftValue = ({ node, options }) => {
+      const { fieldName, timezone } = options;
+      if (!node.frontmatter) {
+        return false;
+      }
+
+      if (node.frontmatter.hasOwnProperty(fieldName)) {
+        return node.frontmatter[fieldName];
+      }
+
+      if (!node.frontmatter.date) {
+        return false;
+      }
+
+      const dateNode = moment.tz(node.frontmatter.date, timezone);
+      const dateNow = moment().tz(timezone);
+      const value = dateNow.isSameOrBefore(dateNode);
+
+      return value;
+    };
+
+    const options = {
+      fieldName: 'draft',
+      timezone: 'UTC',
+      force: process.env.NODE_ENV === 'development', // if developmet, force to be NOT draft
+    };
+
     const fieldData = {
       author: node.frontmatter.author,
       date: node.frontmatter.date,
       hero: node.frontmatter.hero,
       secret: node.frontmatter.secret || false,
+      draft: options.force === true ? false : getDraftValue({ node, options }),
       slug: generateSlug(
         basePath,
         generateArticlePermalink(

@@ -40,7 +40,7 @@ function slugify(string, base) {
 }
 
 function getUniqueListBy(array, key) {
-  return [...new Map(array.map(item => [item[key], item])).values()];
+  return [...new Map(array.map((item) => [item[key], item])).values()];
 }
 
 const byDate = (a, b) => new Date(b.dateForSEO) - new Date(a.dateForSEO);
@@ -135,7 +135,10 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     ...dataSources.netlify.articles,
   ].sort(byDate);
 
-  const articlesThatArentSecret = articles.filter(article => !article.secret);
+  const articlesThatArentDraft = articles.filter((article) => !article.draft);
+  const articlesThatArentSecret = articlesThatArentDraft.filter(
+    (article) => !article.secret,
+  );
 
   // Combining together all the authors from different sources
   authors = getUniqueListBy(
@@ -185,16 +188,16 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
    * To do this, we need to find the corresponding authors since we allow for co-authors.
    */
   log('Creating', 'article posts');
-  articles.forEach((article, index) => {
+  articlesThatArentDraft.forEach((article, index) => {
     // Match the Author to the one specified in the article
     let authorsThatWroteTheArticle;
     try {
-      authorsThatWroteTheArticle = authors.filter(author => {
+      authorsThatWroteTheArticle = authors.filter((author) => {
         const allAuthors = article.author
           .split(',')
-          .map(a => a.trim().toLowerCase());
+          .map((a) => a.trim().toLowerCase());
 
-        return allAuthors.some(a => a === author.name.toLowerCase());
+        return allAuthors.some((a) => a === author.name.toLowerCase());
       });
     } catch (error) {
       throw new Error(`
@@ -210,21 +213,25 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
      * We need a way to find the next articles to suggest at the bottom of the articles page.
      * To accomplish this there is some special logic surrounding what to show next.
      */
-    OtherArticlesThatArentSecret = articlesThatArentSecret.filter(art => art !== article)
-    ArticlesWithCurrentTags = OtherArticlesThatArentSecret.filter(atr => {
-      const allTags = article.tags
-        .map(a => a.trim().toLowerCase());
-      const allCurrTags = atr.tags
-      .map(a => a.trim().toLowerCase());
+    OtherArticlesThatArentSecret = articlesThatArentSecret.filter(
+      (art) => art !== article,
+    );
+    ArticlesWithCurrentTags = OtherArticlesThatArentSecret.filter((atr) => {
+      const allTags = article.tags.map((a) => a.trim().toLowerCase());
+      const allCurrTags = atr.tags.map((a) => a.trim().toLowerCase());
 
-      return allTags.some(a => allCurrTags.includes(a));
-    })
+      return allTags.some((a) => allCurrTags.includes(a));
+    });
 
     let next = ArticlesWithCurrentTags.slice(0, 2);
-    if (next.length === 0) next = articlesThatArentSecret.slice(index + 1, index + 3);
+    if (next.length === 0)
+      next = articlesThatArentSecret.slice(index + 1, index + 3);
 
     if (next.length === 1 && ArticlesWithCurrentTags.length !== 2)
-    next = [...next, OtherArticlesThatArentSecret.filter(art => art !== next[0])[0]];
+      next = [
+        ...next,
+        OtherArticlesThatArentSecret.filter((art) => art !== next[0])[0],
+      ];
 
     // If it's the last item in the list, there will be no articles. So grab the first 2
     if (next.length === 0) next = articlesThatArentSecret.slice(0, 2);
@@ -259,9 +266,9 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
   if (authorsPage) {
     log('Creating', 'authors page');
 
-    authors.forEach(author => {
+    authors.forEach((author) => {
       const articlesTheAuthorHasWritten = articlesThatArentSecret.filter(
-        article =>
+        (article) =>
           article.author.toLowerCase().includes(author.name.toLowerCase()),
       );
       const path = slugify(author.slug, authorsPath);
@@ -287,7 +294,7 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
   if (tags) {
     const uniqueTags = [
       ...new Set(
-        articles.reduce((accumulator, article) => {
+        articlesThatArentDraft.reduce((accumulator, article) => {
           return [...accumulator, ...article.tags];
         }, []),
       ),
@@ -303,10 +310,10 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
        *  /tag/gatsby/2
        */
       log('Creating', 'tag pages');
-      uniqueTags.forEach(tag => {
+      uniqueTags.forEach((tag) => {
         let allArticlesOfTheTag;
         try {
-          allArticlesOfTheTag = articles.filter(article =>
+          allArticlesOfTheTag = articlesThatArentDraft.filter((article) =>
             article.tags.includes(tag),
           );
         } catch (error) {
