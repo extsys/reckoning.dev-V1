@@ -6,6 +6,7 @@ import { useColorMode } from 'theme-ui';
 import Section from '@components/Section';
 import Logo from '@components/Logo';
 import StatsLogo from '@components/StatsLogo';
+import InfoLogo from '@components/InfoLogo';
 
 import Icons from '@icons';
 import mediaqueries from '@styles/media';
@@ -146,6 +147,16 @@ const NavigationHeader: React.FC<{}> = () => {
           ) : (
             <>
               <LogoLink
+                to="/about/"
+                data-a11y="false"
+                title="About Me"
+                aria-label="About Me"
+                back="false"
+              >
+                <InfoLogo fill={reg_fill} />
+                <Hidden>About Me</Hidden>
+              </LogoLink>
+              <LogoLink
                 to="/codestats/"
                 data-a11y="false"
                 title="Code::Stats"
@@ -216,12 +227,17 @@ const NavContainer = styled.div`
 const LogoLink = styled(Link)<{ back: string }>`
   position: relative;
   display: flex;
+  margin-left: 35px;
   align-items: center;
   left: ${(p) => (p.back === 'true' ? '-54px' : 0)};
 
   ${mediaqueries.desktop_medium`
     left: 0
   `}
+
+  ${mediaqueries.tablet`
+  margin-left: 10px;
+    `}
 
   &[data-a11y="true"]:focus::after {
     content: '';
