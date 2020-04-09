@@ -23,6 +23,7 @@ module.exports.local = {
           id
           slug
           secret
+          draft
           title
           author
           tags
@@ -111,6 +112,7 @@ module.exports.contentful = {
           title
           slug
           secret
+          draft
           date(formatString: "MMMM Do, YYYY")
           dateForSEO: date
           hero {

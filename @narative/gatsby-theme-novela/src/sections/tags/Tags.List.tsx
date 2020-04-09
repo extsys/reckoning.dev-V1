@@ -67,7 +67,7 @@ const TagLink = styled(Link)`
 
   &:hover,
   &:focus {
-    color: ${p => p.theme.colors.accent};
+    color: ${(p) => p.theme.colors.accent};
   }
 
   ${mediaqueries.phablet`
@@ -82,16 +82,16 @@ const TagBox = styled.div`
   height: 24px;
   line-height: 24px;
   position: relative;
-  margin: 0 16px 8px 0;
+  margin: 0 4px 4px 0;
   padding: 0 10px 0 12px;
-  background-color: ${p => p.theme.colors.tagBackground};
+  background-color: ${(p) => p.theme.colors.tagBackground};
   -webkit-border-bottom-right-radius: 3px;
   border-bottom-right-radius: 3px;
   -webkit-border-top-right-radius: 3px;
   border-top-right-radius: 3px;
   -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-  color: ${p => p.theme.colors.tagText};
+  color: ${(p) => p.theme.colors.tagText};
   font-size: 12px;
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
   text-decoration: none;
