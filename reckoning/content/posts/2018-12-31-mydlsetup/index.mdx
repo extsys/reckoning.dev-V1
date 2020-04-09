@@ -10,6 +10,9 @@ slug: 'mydlsetup'
 hero: './images/workstation.jpg'
 ---
 
+import ImageGallery from 'react-image-gallery';
+import "react-image-gallery/styles/css/image-gallery.css";
+
 export const images = [
   {
     original:
@@ -67,15 +70,19 @@ As you can see, its pretty awesome built. One thing I really love about this con
 stability. Although, I have recently upgraded the GPU to 2080 Ti to test mixed precision training,
 this has been a pretty stable and trustworthy build.
 
-<ImageGallery
-  items={images}
-  showBullets={true}
-  slideOnThumbnailOver={true}
-  lazyLoad={true}
-  showIndex={true}
-  showThumbnails={false}
-  autoPlay={true}
-/>
+<div className='Image__Container'>
+  <div className="Image__Medium">
+    <ImageGallery
+      items={images}
+      showBullets={true}
+      slideOnThumbnailOver={true}
+      lazyLoad={true}
+      showIndex={true}
+      showThumbnails={false}
+      autoPlay={true}
+    />
+  </div>
+</div>
 
 ## OS Setup
 

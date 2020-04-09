@@ -10,6 +10,9 @@ tags:
 hero: './images/gnome3.png'
 ---
 
+import ImageGallery from 'react-image-gallery';
+import "react-image-gallery/styles/css/image-gallery.css";
+
 export const images = [
   {
     original:
@@ -82,15 +85,20 @@ For reference, my installation system is a slightly upgraded form of
 - Samsung U28E590D 28-Inch UHD LED-Lit 4K Monitor
 - Nvidia GeForce GTX 1080 Ti GPU
 
-<ImageGallery
-  items={images}
-  showBullets={true}
-  slideOnThumbnailOver={true}
-  lazyLoad={true}
-  showIndex={true}
-  showThumbnails={false}
-  autoPlay={true}
-/>
+
+<div className='Image__Container'>
+  <div className="Image__Medium">
+    <ImageGallery
+      items={images}
+      showBullets={true}
+      slideOnThumbnailOver={true}
+      lazyLoad={true}
+      showIndex={true}
+      showThumbnails={false}
+      autoPlay={true}
+    />
+  </div>
+</div>
 
 ## Base Installation
 
