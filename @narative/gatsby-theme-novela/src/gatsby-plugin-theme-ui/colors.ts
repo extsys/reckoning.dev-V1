@@ -19,6 +19,8 @@ export default {
   card: '#fff',
   error: '#EE565B',
   success: '#46B17B',
+  buttonColor: '#1E88E5',
+  buttonHover: '#08589F',
   errorBackground: 'rgba(238, 86, 91, 0.1)',
   horizontalRule: 'rgba(8, 8, 11, 0.15)',
   inputBackground: 'rgba(0, 0, 0, 0.05)',

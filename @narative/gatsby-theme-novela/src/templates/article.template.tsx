@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import throttle from 'lodash/throttle';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, Link, useStaticQuery } from 'gatsby';
 
 import Layout from '@components/Layout';
 import MDXRenderer from '@components/MDX';
@@ -46,7 +46,15 @@ const Article: Template = ({ pageContext, location }) => {
   const results = useStaticQuery(siteQuery);
   const name = results.allSite.edges[0].node.siteMetadata.name;
 
-  const { article, authors, mailchimp, next, tags } = pageContext;
+  const {
+    article,
+    authors,
+    mailchimp,
+    next,
+    nextPage,
+    prevPage,
+    tags,
+  } = pageContext;
 
   useEffect(() => {
     const calculateBodySize = throttle(() => {
@@ -97,6 +105,29 @@ const Article: Template = ({ pageContext, location }) => {
           <ArticleShare />
         </MDXRenderer>
       </ArticleBody>
+      {!article.secret && (
+        <PaginationWrapper>
+          <PaginationButton>
+            {prevPage && (
+              <Link
+                className="previous"
+                to={`${prevPage.slug}`}
+                aria-label="Prev"
+              >
+                ❮❮ Previous
+              </Link>
+            )}
+          </PaginationButton>
+
+          <PaginationButton>
+            {nextPage && (
+              <Link className="next" to={`${nextPage.slug}`} aria-label="Next">
+                Next ❯❯
+              </Link>
+            )}
+          </PaginationButton>
+        </PaginationWrapper>
+      )}
       {mailchimp && article.subscription && <Subscription />}
       {next.length > 0 && (
         <NextArticle narrow>
@@ -110,6 +141,55 @@ const Article: Template = ({ pageContext, location }) => {
 };
 
 export default Article;
+
+const PaginationWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto 35px;
+  width: 100%;
+  max-width: 980px;
+
+  ${mediaqueries.desktop`
+    max-width: 807px;
+  `}
+
+  ${mediaqueries.tablet`
+    max-width: 526px;
+    margin: 0 auto 45px;
+  `};
+
+  ${mediaqueries.phablet`
+    padding: 0 20px;
+  `};
+`;
+
+const PaginationButton = styled.div`
+  min-width: 40px;
+  padding-top: 0px;
+  a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+  }
+
+  a:hover {
+    background-color: ${(p) => p.theme.colors.buttonHover};
+    color: white;
+  }
+
+  .previous {
+    background-color: ${(p) => p.theme.colors.buttonColor};
+    color: white;
+    border-radius: 15px;
+  }
+
+  .next {
+    background-color: ${(p) => p.theme.colors.buttonColor};
+    color: white;
+    border-radius: 15px;
+  }
+`;
 
 const MobileControls = styled.div`
   position: relative;

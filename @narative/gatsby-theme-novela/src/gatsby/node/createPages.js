@@ -240,6 +240,13 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
       next = [...next, articlesThatArentSecret[0]];
     if (articlesThatArentSecret.length === 1) next = [];
 
+    // next and prev article links
+    let nextPage = index === 0 ? null : articlesThatArentSecret[index - 1];
+    let prevPage =
+      index === articlesThatArentSecret.length - 1
+        ? null
+        : articlesThatArentSecret[index + 1];
+
     createPage({
       path: article.slug,
       component: templates.article,
@@ -254,6 +261,8 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
         canonicalUrl: article.canonical_url,
         mailchimp,
         next,
+        nextPage,
+        prevPage,
         tags,
       },
     });
