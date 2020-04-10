@@ -17,6 +17,7 @@ import Paragraph from '@components/Paragraph';
 import Tables from '@components/Tables';
 import { ImageZoom } from '@components/Image';
 import Figcaption from '@components/Figcaption';
+import TOC from '@components/TOC';
 
 import mediaqueries from '@styles/media';
 import { toKebabCase } from '@utils';
@@ -42,20 +43,26 @@ const components = {
   th: Tables.HeadCell,
   td: Tables.Cell,
   figcaption: Figcaption,
+  TOC: TOC,
 };
 
 interface MDXProps {
   content: React.ReactNode;
+  headings: React.ReactNode;
 }
 
-const MDX: React.FC<MDXProps> = ({ content, children, ...props }) => {
+const MDX: React.FC<MDXProps> = ({ content, headings, children, ...props }) => {
   const [colorMode] = useColorMode();
 
   return (
     <MDXProvider components={components}>
       <CustomBlockCSS>
         <MDXBody>
-          <MDXRenderer isDark={colorMode === 'dark'} {...props}>
+          <MDXRenderer
+            headings={headings}
+            isDark={colorMode === 'dark'}
+            {...props}
+          >
             {content}
           </MDXRenderer>
           {children}

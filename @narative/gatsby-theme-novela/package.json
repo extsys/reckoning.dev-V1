@@ -76,6 +76,7 @@
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.28",
     "prism-react-renderer": "^1.0.2",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-helmet": "^5.2.1",
     "react-live": "^2.2.0",
     "react-medium-image-zoom": "^4.0.2",

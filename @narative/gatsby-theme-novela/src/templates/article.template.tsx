@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import styled from '@emotion/styled';
 import throttle from 'lodash/throttle';
-import { graphql, Link, useStaticQuery } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 
 import Layout from '@components/Layout';
 import MDXRenderer from '@components/MDX';
@@ -23,28 +23,14 @@ import { Template } from '@types';
 
 import 'katex/dist/katex.min.css';
 
-const siteQuery = graphql`
-  {
-    allSite {
-      edges {
-        node {
-          siteMetadata {
-            name
-          }
-        }
-      }
-    }
-  }
-`;
-
-const Article: Template = ({ pageContext, location }) => {
+const Article: Template = ({ data, pageContext, location }) => {
   const contentSectionRef = useRef<HTMLElement>(null);
 
   const [hasCalculated, setHasCalculated] = useState<boolean>(false);
   const [contentHeight, setContentHeight] = useState<number>(0);
 
-  const results = useStaticQuery(siteQuery);
-  const name = results.allSite.edges[0].node.siteMetadata.name;
+  const name = data.site.edges[0].node.siteMetadata.name;
+  const headings = data.posts.headings;
 
   const {
     article,
@@ -101,7 +87,7 @@ const Article: Template = ({ pageContext, location }) => {
         <ArticleControls />
       </MobileControls>
       <ArticleBody ref={contentSectionRef}>
-        <MDXRenderer content={article.body}>
+        <MDXRenderer content={article.body} headings={headings}>
           <ArticleShare />
         </MDXRenderer>
       </ArticleBody>
@@ -141,6 +127,30 @@ const Article: Template = ({ pageContext, location }) => {
 };
 
 export default Article;
+
+/* eslint no-undef: "off" */
+export const pageQuery = graphql`
+  query BlogPostBySlug($title: String!) {
+    posts: mdx(frontmatter: { title: { eq: $title } }) {
+      frontmatter {
+        title
+      }
+      headings {
+        depth
+        value
+      }
+    }
+    site: allSite {
+      edges {
+        node {
+          siteMetadata {
+            name
+          }
+        }
+      }
+    }
+  }
+`;
 
 const PaginationWrapper = styled.div`
   display: flex;
