@@ -43,6 +43,13 @@ function getUniqueListBy(array, key) {
   return [...new Map(array.map((item) => [item[key], item])).values()];
 }
 
+function diff_days(dt2, dt1) {
+  var diff = (dt2.getTime() - dt1.getTime()) / 1000;
+  diff /= 3600;
+  diff /= 24;
+  return Math.abs(Math.round(diff));
+}
+
 const byDate = (a, b) => new Date(b.dateForSEO) - new Date(a.dateForSEO);
 
 // ///////////////////////////////////////////////////////
@@ -216,18 +223,35 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     OtherArticlesThatArentSecret = articlesThatArentSecret.filter(
       (art) => art !== article,
     );
-    ArticlesWithCurrentTags = OtherArticlesThatArentSecret.filter((atr) => {
-      const allTags = article.tags.map((a) => a.trim().toLowerCase());
-      const allCurrTags = atr.tags.map((a) => a.trim().toLowerCase());
 
-      return allTags.some((a) => allCurrTags.includes(a));
-    });
+    ArticlesWithCurrentTagsSorted = OtherArticlesThatArentSecret.sort(
+      (a, b) => {
+        const allTags = article.tags.map((t) => t.trim().toLowerCase());
+        const allATags = a.tags.map((t) => t.trim().toLowerCase());
+        const allBTags = b.tags.map((t) => t.trim().toLowerCase());
+        let intersectionA = allATags.filter((x) => allTags.includes(x));
+        let intersectionB = allBTags.filter((x) => allTags.includes(x));
 
-    let next = ArticlesWithCurrentTags.slice(0, 2);
+        let num_days_A = diff_days(
+          new Date(a.dateForSEO),
+          new Date(article.dateForSEO),
+        );
+        let num_days_B = diff_days(
+          new Date(b.dateForSEO),
+          new Date(article.dateForSEO),
+        );
+
+        return (
+          intersectionB.length - intersectionA.length || num_days_A - num_days_B
+        );
+      },
+    );
+
+    let next = ArticlesWithCurrentTagsSorted.slice(0, 2);
     if (next.length === 0)
       next = articlesThatArentSecret.slice(index + 1, index + 3);
 
-    if (next.length === 1 && ArticlesWithCurrentTags.length !== 2)
+    if (next.length === 1 && ArticlesWithCurrentTagsSorted.length !== 2)
       next = [
         ...next,
         OtherArticlesThatArentSecret.filter((art) => art !== next[0])[0],
