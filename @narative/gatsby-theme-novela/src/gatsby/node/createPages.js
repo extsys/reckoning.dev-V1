@@ -220,12 +220,9 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
      * We need a way to find the next articles to suggest at the bottom of the articles page.
      * To accomplish this there is some special logic surrounding what to show next.
      */
-    OtherArticlesThatArentSecret = articlesThatArentSecret.filter(
-      (art) => art !== article,
-    );
-
-    ArticlesWithCurrentTagsSorted = OtherArticlesThatArentSecret.sort(
-      (a, b) => {
+    let OtherArticlesThatArentSecretSorted = articlesThatArentSecret
+      .filter((art) => art !== article)
+      .sort((a, b) => {
         const allTags = article.tags.map((t) => t.trim().toLowerCase());
         const allATags = a.tags.map((t) => t.trim().toLowerCase());
         const allBTags = b.tags.map((t) => t.trim().toLowerCase());
@@ -244,17 +241,16 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
         return (
           intersectionB.length - intersectionA.length || num_days_A - num_days_B
         );
-      },
-    );
+      });
 
-    let next = ArticlesWithCurrentTagsSorted.slice(0, 2);
+    let next = OtherArticlesThatArentSecretSorted.slice(0, 2);
     if (next.length === 0)
       next = articlesThatArentSecret.slice(index + 1, index + 3);
 
-    if (next.length === 1 && ArticlesWithCurrentTagsSorted.length !== 2)
+    if (next.length === 1 && OtherArticlesThatArentSecretSorted.length !== 2)
       next = [
         ...next,
-        OtherArticlesThatArentSecret.filter((art) => art !== next[0])[0],
+        OtherArticlesThatArentSecretSorted.filter((art) => art !== next[0])[0],
       ];
 
     // If it's the last item in the list, there will be no articles. So grab the first 2
@@ -265,11 +261,11 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     if (articlesThatArentSecret.length === 1) next = [];
 
     // next and prev article links
-    let nextPage = index === 0 ? null : articlesThatArentSecret[index - 1];
+    let nextPage = index === 0 ? null : articlesThatArentDraft[index - 1];
     let prevPage =
-      index === articlesThatArentSecret.length - 1
+      index === articlesThatArentDraft.length - 1
         ? null
-        : articlesThatArentSecret[index + 1];
+        : articlesThatArentDraft[index + 1];
 
     createPage({
       path: article.slug,

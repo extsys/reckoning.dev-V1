@@ -94,7 +94,7 @@ const Article: Template = ({ data, pageContext, location }) => {
       {!article.secret && (
         <PaginationWrapper>
           <PaginationButton>
-            {prevPage && (
+            {prevPage && !prevPage.secret && (
               <Link
                 className="previous"
                 to={`${prevPage.slug}`}
@@ -106,7 +106,7 @@ const Article: Template = ({ data, pageContext, location }) => {
           </PaginationButton>
 
           <PaginationButton>
-            {nextPage && (
+            {nextPage && !nextPage.secret && (
               <Link className="next" to={`${nextPage.slug}`} aria-label="Next">
                 Next ❯❯
               </Link>
