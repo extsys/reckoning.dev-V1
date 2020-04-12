@@ -36,11 +36,13 @@ const DarkModeToggle: React.FC<{}> = () => {
     setColorMode(isDark ? `light` : `dark`);
 
     //Change all KaTeX colors
-    Array.from(document.getElementsByClassName('katex-display')).forEach(
-      (element) => {
-        element.style.color = isDark ? 'white' : 'black';
-      },
-    );
+    if (typeof document !== `undefined`) {
+      Array.from(document.getElementsByClassName('katex-display')).forEach(
+        (element) => {
+          element.style.color = isDark ? 'white' : 'black';
+        },
+      );
+    }
   }
 
   return (

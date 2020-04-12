@@ -19,11 +19,13 @@ const Layout: React.FC<{}> = ({ children }) => {
   const isDark = colorMode === `dark`;
 
   //Change all KaTeX colors
-  Array.from(document.getElementsByClassName('katex-display')).forEach(
-    (element) => {
-      element.style.color = isDark ? 'white' : 'black';
-    },
-  );
+  if (typeof document !== `undefined`) {
+    Array.from(document.getElementsByClassName('katex-display')).forEach(
+      (element) => {
+        element.style.color = isDark ? 'white' : 'black';
+      },
+    );
+  }
 
   useEffect(() => {
     parent.postMessage({ theme: colorMode }, '*');
