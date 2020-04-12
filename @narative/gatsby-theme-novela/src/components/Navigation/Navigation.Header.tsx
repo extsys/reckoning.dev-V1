@@ -126,6 +126,7 @@ const NavigationHeader: React.FC<{}> = () => {
           title="Navigate back to the homepage"
           aria-label="Navigate back to the homepage"
           back={showBackArrow ? 'true' : 'false'}
+          home="true"
         >
           {showBackArrow && (
             <BackArrowIconContainer>
@@ -153,6 +154,7 @@ const NavigationHeader: React.FC<{}> = () => {
                 title="About Me"
                 aria-label="About Me"
                 back="false"
+                home="false"
               >
                 <InfoLogo fill={fill} />
                 <Hidden>About Me</Hidden>
@@ -163,6 +165,7 @@ const NavigationHeader: React.FC<{}> = () => {
                 title="Code::Stats"
                 aria-label="Code::Stats"
                 back="false"
+                home="false"
               >
                 <StatsLogo fill={fill} />
                 <Hidden>Code::Stats</Hidden>
@@ -225,10 +228,10 @@ const NavContainer = styled.div`
   }
 `;
 
-const LogoLink = styled(Link)<{ back: string }>`
+const LogoLink = styled(Link)<{ back: string; home: string }>`
   position: relative;
   display: flex;
-  margin-left: 35px;
+  margin-left: ${(p) => (p.home === 'true' ? '0px' : '35px')};
   align-items: center;
   left: ${(p) => (p.back === 'true' ? '-54px' : 0)};
 
@@ -247,7 +250,7 @@ const LogoLink = styled(Link)<{ back: string }>`
   `}
 
   ${mediaqueries.tablet`
-  margin-left: 10px;
+  margin-left: ${(p) => (p.home === 'true' ? '0px' : '10px')};;
     `}
 
   &[data-a11y="true"]:focus::after {
