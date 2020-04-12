@@ -6,7 +6,7 @@ const siteMetadata = {
   siteUrl: `https://reckoning.dev/`,
   description: `Sadanand is a scientist, programmer, engineer, and writer who loves explaining complex concepts in simple words to people of all skill levels.`,
   hero: {
-    heading: `Welcome to my blog for notes on AI in healthcare, Programming, Linux and Food!`,
+    heading: `Notes on AI in healthcare, Programming, Linux and Food!`,
     maxWidth: 1052,
   },
   social: [

@@ -8,7 +8,7 @@ import mediaqueries from '@styles/media';
  * <Heading.h1>Lorem Ipsum</Heading.h1>
  */
 
-const commonStyles = p => css`
+const commonStyles = (p) => css`
   font-weight: bold;
   color: ${p.theme.colors.primary};
   font-family: ${p.theme.fonts.serif};
@@ -38,7 +38,7 @@ const h2 = styled.h2`
   ${commonStyles};
 
   ${mediaqueries.desktop`
-    font-size: 21px;
+    font-size: 28px;
   `};
 
   ${mediaqueries.tablet`
@@ -53,49 +53,49 @@ const h2 = styled.h2`
 
 const h3 = styled.h3`
   word-break: keep-all;
-  font-size: 24px;
+  font-size: 28px;
   line-height: 1.45;
   ${commonStyles};
 
   ${mediaqueries.tablet`
-    font-size: 22px;
+    font-size: 24px;
   `};
+
+  ${mediaqueries.phablet`
+    font-size: 24px;
+  `};
+`;
+
+const h4 = styled.h4`
+  word-break: keep-all;
+  font-size: 22px;
+  line-height: 1.45;
+  ${commonStyles};
 
   ${mediaqueries.phablet`
     font-size: 20px;
   `};
 `;
 
-const h4 = styled.h4`
-  word-break: keep-all;
-  font-size: 18px;
-  line-height: 1.45;
-  ${commonStyles};
-
-  ${mediaqueries.phablet`
-    font-size: 16px;
-  `};
-`;
-
 const h5 = styled.h5`
   word-break: keep-all;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.45;
   ${commonStyles};
 
   ${mediaqueries.phablet`
-    font-size: 16px;
+    font-size: 18px;
   `};
 `;
 
 const h6 = styled.h6`
   word-break: keep-all;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.45;
   ${commonStyles};
 
   ${mediaqueries.phablet`
-    font-size: 14px;
+    font-size: 16px;
   `};
 `;
 

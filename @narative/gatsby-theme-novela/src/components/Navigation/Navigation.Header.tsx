@@ -98,8 +98,7 @@ const NavigationHeader: React.FC<{}> = () => {
   const { sitePlugin } = useStaticQuery(siteQuery);
 
   const [colorMode] = useColorMode();
-  const fill = colorMode === 'dark' ? '#fff' : '#495057';
-  const reg_fill = colorMode === 'dark' ? '#fff' : '#000';
+  const fill = colorMode === 'dark' ? '#b2b2b2' : '#495057';
   const stroke = colorMode !== 'dark' ? '#fff' : '#000';
   const { rootPath, basePath } = sitePlugin.pluginOptions;
 
@@ -155,7 +154,7 @@ const NavigationHeader: React.FC<{}> = () => {
                 aria-label="About Me"
                 back="false"
               >
-                <InfoLogo fill={reg_fill} />
+                <InfoLogo fill={fill} />
                 <Hidden>About Me</Hidden>
               </LogoLink>
               <LogoLink
@@ -165,7 +164,7 @@ const NavigationHeader: React.FC<{}> = () => {
                 aria-label="Code::Stats"
                 back="false"
               >
-                <StatsLogo fill={reg_fill} />
+                <StatsLogo fill={fill} />
                 <Hidden>Code::Stats</Hidden>
               </LogoLink>
               <SharePageButton />
@@ -232,6 +231,16 @@ const LogoLink = styled(Link)<{ back: string }>`
   margin-left: 35px;
   align-items: center;
   left: ${(p) => (p.back === 'true' ? '-54px' : 0)};
+
+  transition: 0.2s transform var(--ease-out-quad);
+  opacity: 0;
+  animation: fadein 0.3s linear forwards;
+
+  @keyframes fadein {
+    to {
+      opacity: 1;
+    }
+  }
 
   ${mediaqueries.desktop_medium`
     left: 0
