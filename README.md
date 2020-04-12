@@ -5,13 +5,15 @@ Personal website running on Gatsby, React, and Node.js! The theme here is based 
 
 I am using a heavily modified version of the Novela theme. Here are some major changes:
 
-- Updated logic for finding related posts based on tags and similar date
+- Updated logic for finding related posts based on number of matched tags (more number of matches
+  get higher priority) and time difference with the current post (less time difference get higher
+  priority)
 - Custom 404 page
-- Additional pages like code stats etc
+- Additional pages like code stats
 - Table of Contents for larger posts with smooth scrolling
 - Support for Image Gallery in Posts
 - Scroll to Top button
-- Optional Line numbers in Code Blocks
+- Optional Line numbers, and title in Code Blocks
 - Next/Previous article links in all non-secret posts
 - Draft posts based on frontmatter or future date, disabled during development
 - Additional link(s) about 'info' on navigation header
