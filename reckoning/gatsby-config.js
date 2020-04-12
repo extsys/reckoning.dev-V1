@@ -71,7 +71,14 @@ const plugins = [
     options: {
       trackingId: "UA-54080172-1",
     },
-  }
+  },
+  {
+    resolve: "gatsby-plugin-mailchimp",
+    options: {
+      endpoint:
+        "https://dev.us4.list-manage.com/subscribe/post?u=c585d707ffc4886d6e72faa29&amp;id=840a133461",
+    },
+  },
 ];
 
 module.exports = {

@@ -115,7 +115,7 @@ const Article: Template = ({ data, pageContext, location }) => {
         </PaginationWrapper>
       )}
       {mailchimp && article.subscription && <Subscription />}
-      {next.length > 0 && (
+      {!article.secret && next.length > 0 && (
         <NextArticle narrow>
           <FooterNext>More articles from {name}</FooterNext>
           <ArticlesNext articles={next} />
