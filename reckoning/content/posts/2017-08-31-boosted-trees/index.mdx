@@ -129,7 +129,11 @@ plt.figure(figsize=(10,6))
 plot_confusion_matrix(cfm, classes=["<=50K", ">50K"], normalize=True)
 ```
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1567365776/boosting/img1.png)
+<div class='Image__Container'>
+  <div class='Image__Medium'>
+    <img src='https://res.cloudinary.com/sadanandsingh/image/upload/v1567365776/boosting/img1.png' />
+  </div>
+</div>
 
 We find that our model has a much better predictive power (94.1%) for the dominant class (<=50K), while it has prediction rate of only 64.2% for the other class.
 
@@ -472,7 +476,11 @@ plt.figure(figsize=(10,6))
 plot_confusion_matrix(cfm, classes=["<=50K", ">50K"], normalize=True)
 ```
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1567365776/boosting/img2.png)
+<div class='Image__Container'>
+  <div class='Image__Medium'>
+    <img src='https://res.cloudinary.com/sadanandsingh/image/upload/v1567365776/boosting/img2.png' />
+  </div>
+</div>
 
 We see the largest accuracy of the less abundant class with an accuracy of 64.9%, compared to the previous best of 64.2%. We can also look the importance of different features for this XGBoost model.
 
@@ -487,7 +495,11 @@ plt.yticks(range(len(indices)), cols)
 plt.xlabel('Relative Importance')
 ```
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1567365777/boosting/img3.png)
+<div class='Image__Container'>
+  <div class='Image__Medium'>
+    <img src='https://res.cloudinary.com/sadanandsingh/image/upload/v1567365777/boosting/img3.png' />
+  </div>
+</div>
 
 ## LightGBM
 
@@ -495,11 +507,20 @@ Similar to XGBoost, [LightGBM](https://lightgbm.readthedocs.io/en/latest/) is an
 
 **Level-wise Splits:**
 
-![](https://raw.githubusercontent.com/wiki/Microsoft/LightGBM/image/level_wise.png)
+<div class='Image__Container'>
+  <div class='Image__Medium'>
+    <img src='https://raw.githubusercontent.com/wiki/Microsoft/LightGBM/image/level_wise.png' />
+  </div>
+</div>
+
 
 **Leaf-wise Splits:**
 
-![](https://raw.githubusercontent.com/wiki/Microsoft/LightGBM/image/leaf_wise.png)
+<div class='Image__Container'>
+  <div class='Image__Medium'>
+    <img src='https://raw.githubusercontent.com/wiki/Microsoft/LightGBM/image/leaf_wise.png' />
+  </div>
+</div>
 
 Leaf-wise splits lead to increase in complexity and may lead to over-fitting, and hence extra caution needs to be taken in tuning. Some of the biggest advantages of LightGBM over XGBoost is in terms of extremely fast training speed, lower memory usage, compatibility with large datasets and highly parallel computational support using threads, MPI and GPUs. LightGBM also has inbuilt support for categorical variables, unlike XGBoost, where one has to pre-process the data to convert all of the categorical features to integer ones using _one-hot encoding_ or _label encoding_.
 
@@ -729,7 +750,11 @@ plt.figure(figsize=(10,6))
 plot_confusion_matrix(cfm, classes=["<=50K", ">50K"], normalize=True)
 ```
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1567365777/boosting/img4.png)
+<div class='Image__Container'>
+  <div class='Image__Medium'>
+    <img src='https://res.cloudinary.com/sadanandsingh/image/upload/v1567365777/boosting/img4.png' />
+  </div>
+</div>
 
 We find the results to be slightly better than XGBoost with 65% accuracy of the less abundant >50K salary class. We can also look the importance of different features in this model:
 
@@ -744,7 +769,11 @@ plt.yticks(range(len(indices)), cols)
 plt.xlabel('Relative Importance')
 ```
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1567365777/boosting/img5.png)
+<div class='Image__Container'>
+  <div class='Image__Medium'>
+    <img src='https://res.cloudinary.com/sadanandsingh/image/upload/v1567365777/boosting/img5.png' />
+  </div>
+</div>
 
 ## Concluding Remarks
 

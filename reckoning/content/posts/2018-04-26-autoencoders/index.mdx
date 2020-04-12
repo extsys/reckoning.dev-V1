@@ -30,7 +30,14 @@ with a [tensorflow] back-end.
 
 ## Basic Autoencoders
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1567364020/autoencoders/img1.png)
+<div class='Image__Container'>
+  <div class='Image__Medium'>
+    <img src='https://res.cloudinary.com/sadanandsingh/image/upload/v1567364020/autoencoders/img1.png' />
+    <figcaption>
+      <strong>A Simple Autoencoder Design</strong>
+    </figcaption>
+  </div>
+</div>
 
 The simplest AutoEncoder (AE) has an MLP-like (Multi Layer Perceptron)
 structure:
@@ -215,7 +222,11 @@ plot_train_history_loss(history)
 
 **Output:**
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1567364020/autoencoders/img3.png)
+<div class='Image__Container'>
+  <div class='Image__Medium'>
+    <img src='https://res.cloudinary.com/sadanandsingh/image/upload/v1567364020/autoencoders/img3.png' />
+  </div>
+</div>
 
 After 100 epochs, the auto-encoder reaches a stable train/text loss value of
 about 0.282. Let us look visually how good of reconstruction this
@@ -309,7 +320,11 @@ plot_train_history_loss(history)
 We get a very similar loss as the previous example. Here is a plot of
 loss values during training.
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1567364020/autoencoders/img5.png)
+<div class='Image__Container'>
+  <div class='Image__Medium'>
+    <img src='https://res.cloudinary.com/sadanandsingh/image/upload/v1567364020/autoencoders/img5.png' />
+  </div>
+</div>
 
 As expected, the reconstructed images too look quite similar as before.
 
@@ -351,7 +366,11 @@ history = autoencoder.fit(x_train, x_train,
 plot_train_history_loss(history)
 ```
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1567364020/autoencoders/img7.png)
+<div class='Image__Container'>
+  <div class='Image__Medium'>
+    <img src='https://res.cloudinary.com/sadanandsingh/image/upload/v1567364020/autoencoders/img7.png' />
+  </div>
+</div>
 
 The average loss is now 0.277, as compared to ~0.285 before! We can also see that visually all reconstructed images too look slightly better.
 
@@ -441,7 +460,11 @@ history = autoencoder.fit(x_train, x_train,
 plot_train_history_loss(history)
 ```
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1567364020/autoencoders/img9.png)
+<div class='Image__Container'>
+  <div class='Image__Medium'>
+    <img src='https://res.cloudinary.com/sadanandsingh/image/upload/v1567364020/autoencoders/img9.png' />
+  </div>
+</div>
 
 We find the lowest validation loss now is 0.265, significantly lower than the
 previous best value of 0.277. We will first load the saved best model weights,
@@ -569,7 +592,11 @@ The loss has converged to a value of 0.287. Let's take a look at the results,
 top row are noisy images and the bottom row are the reconstructed images from
 the DAE.
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1567364021/autoencoders/img12.png)
+<div class='Image__Container'>
+  <div class='Image__Medium'>
+    <img src='https://res.cloudinary.com/sadanandsingh/image/upload/v1567364021/autoencoders/img12.png' />
+  </div>
+</div>
 
 ```python
 autoencoder.load_weights('weights-dae-146-0.287.hdf5')
@@ -585,7 +612,12 @@ display_reconstructed(x_test_noisy, decoded_imgs, 10)
 
 ## Variational Autoencoders (VAE)
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1544987535/images/autoencoders/vae.png)
+
+<div class='Image__Container'>
+  <div class='Image__Medium'>
+    <img src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544987535/images/autoencoders/vae.png' />
+  </div>
+</div>
 
 Variational autoencoders (VAE) are stochastic version of the regular
 autoencoders. It's a type of autoencoder with added constraints on the encoded
@@ -758,7 +790,11 @@ Below is the loss for the training and the validation datasets during training
 epochs. We find that loss has converged in 100 epochs without any sign of over
 fitting.
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1567364021/autoencoders/img15.png)
+<div class='Image__Container'>
+  <div class='Image__Medium'>
+    <img src='https://res.cloudinary.com/sadanandsingh/image/upload/v1567364021/autoencoders/img15.png' />
+  </div>
+</div>
 
 Because our latent space is two-dimensional, there are a few cool visualizations that can be done at this point. One is to look at the neighborhoods of different classes on the latent 2D plane:
 
@@ -777,7 +813,11 @@ def plot_latentSpace(encoder, x_test, y_test, batch_size):
 plot_latentSpace(encoder, x_test, y_test, batch_size)
 ```
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1544987535/images/autoencoders/vae_fc_latent.png)
+<div class='Image__Container'>
+  <div class='Image__Medium'>
+    <img src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544987535/images/autoencoders/vae_fc_latent.png' />
+  </div>
+</div>
 
 Each of these colored clusters is a type of the fashion item. Close clusters
 are items that are structurally similar (i.e. items that share information in
@@ -824,7 +864,11 @@ def plot_generatedImages(generator):
 plot_generatedImages(generator)
 ```
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1544987535/images/autoencoders/vae_fc_gen.png)
+<div class='Image__Container'>
+  <div class='Image__Medium'>
+    <img src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544987535/images/autoencoders/vae_fc_gen.png' />
+  </div>
+</div>
 
 We find our model has done only a so-so job in generating new images. Still,
 given the simplicity and very small amount of simple code we had to write,
@@ -966,7 +1010,11 @@ encoder = Model(x, z_mean)
 plot_latentSpace(encoder, x_test, y_test, batch_size)
 ```
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1544987535/images/autoencoders/vae_conv_latent.png)
+<div class='Image__Container'>
+  <div class='Image__Medium'>
+    <img src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544987535/images/autoencoders/vae_conv_latent.png' />
+  </div>
+</div>
 
 We can now see that the separation between different class of images are larger than the simple MLP based VAE model.
 
@@ -987,7 +1035,11 @@ generator = Model(decoder_input, _x_decoded_mean_squash)
 plot_generatedImages(generator)
 ```
 
-![](https://res.cloudinary.com/sadanandsingh/image/upload/v1544985954/images/autoencoders/vae_conv_gen.png)
+<div class='Image__Container'>
+  <div class='Image__Medium'>
+    <img src='https://res.cloudinary.com/sadanandsingh/image/upload/v1544985954/images/autoencoders/vae_conv_gen.png' />
+  </div>
+</div>
 
 [kpca]: https://en.wikipedia.org/wiki/Kernel_principal_component_analysis
 
