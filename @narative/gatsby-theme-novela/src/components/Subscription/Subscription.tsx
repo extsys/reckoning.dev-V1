@@ -1,54 +1,55 @@
-import addToMailchimp from "gatsby-plugin-mailchimp";
-import React, { useState } from "react";
+import addToMailchimp from 'gatsby-plugin-mailchimp';
+import React, { useState } from 'react';
 
-import Section from "@components/Section";
-import Headings from "@components/Headings";
+import Section from '@components/Section';
+import Headings from '@components/Headings';
 
-import styled from "@emotion/styled";
-import mediaqueries from "@styles/media";
+import styled from '@emotion/styled';
+import mediaqueries from '@styles/media';
 
 const Subscription: React.FC<{}> = () => {
-  const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
   const [subscribed, setSubscribed] = useState(false);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     addToMailchimp(email)
-      .then(data => {
-        if (data.result === "error") {
+      .then((data) => {
+        if (data.result === 'error') {
           throw data;
         }
 
         setSubscribed(true);
-        setEmail("");
+        setEmail('');
 
         setTimeout(() => {
           setSubscribed(false);
         }, 6000);
       })
-      .catch(error => {
+      .catch((error) => {
         setError(error.msg);
       });
   }
 
   function handleEmailChange(event: React.ChangeEvent<HTMLInputElement>) {
     setEmail(event.currentTarget.value);
-    setError("");
+    setError('');
   }
 
   return (
     <Section narrow>
       <SubscriptionContainer>
         <Content>
-          <Heading>
-            Join our email list and get notified about new content
-          </Heading>
+          <Heading>A Note From The Author</Heading>
           <Text>
-            Be the first to receive our latest content with the ability to
-            opt-out at anytime. We promise to not spam your inbox or share your
-            email with any third parties.
+            I write free resources for people learning machine learning, deep
+            learning and programming. I turn down everyone who offers to put
+            ads, affiliate links, and sponsored posts on my website.
+            <br /> <br />
+            Be the first to receive my latest content with the ability to
+            opt-out at anytime.
           </Text>
           <Form onSubmit={handleSubmit} hasError={error}>
             <Input
@@ -65,7 +66,7 @@ const Subscription: React.FC<{}> = () => {
               subscribed={subscribed}
               disabled={subscribed}
             >
-              {subscribed ? <CheckMarkIcon /> : "Subscribe"}
+              {subscribed ? <CheckMarkIcon /> : 'Subscribe'}
             </Button>
             {error && <Error dangerouslySetInnerHTML={{ __html: error }} />}
           </Form>
@@ -83,7 +84,7 @@ const SubscriptionContainer = styled.div`
   flex-direction: column;
   padding: 64px 0 55px;
   margin: 10px auto 100px;
-  background: ${p => p.theme.colors.card};
+  background: ${(p) => p.theme.colors.card};
   box-shadow: 0px 4px 50px rgba(0, 0, 0, 0.05);
   z-index: 1;
 
@@ -125,7 +126,7 @@ const Heading = styled(Headings.h3)`
 
 const Text = styled.p`
   margin: 0 auto 30px;
-  color: ${p => p.theme.colors.grey};
+  color: ${(p) => p.theme.colors.grey};
   line-height: 1.75;
 
   ${mediaqueries.tablet`
@@ -138,11 +139,12 @@ const Form = styled.form<{ hasError: string }>`
   position: relative;
 
   &::after {
-    content: ">";
+    content: '>';
     position: absolute;
     left: 21px;
     top: 10px;
-    color: ${p => (p.hasError ? p.theme.colors.error : p.theme.colors.accent)};
+    color: ${(p) =>
+      p.hasError ? p.theme.colors.error : p.theme.colors.accent};
 
     ${mediaqueries.tablet`
     left: 34px;
@@ -153,7 +155,7 @@ const Form = styled.form<{ hasError: string }>`
 
 const Input = styled.input<{ hasError: string }>`
   position: relative;
-  background: ${p =>
+  background: ${(p) =>
     p.hasError
       ? p.theme.colors.errorBackground
       : p.theme.colors.inputBackground};
@@ -161,19 +163,19 @@ const Input = styled.input<{ hasError: string }>`
   border: none;
   padding: 13px 21px 13px 35px;
   width: 471px;
-  color: ${p => p.theme.colors.primary};
+  color: ${(p) => p.theme.colors.primary};
 
   ::placeholder {
-    color: ${p => p.theme.colors.track};
+    color: ${(p) => p.theme.colors.track};
     opacity: 1;
   }
 
   :-ms-input-placeholder {
-    color: ${p => p.theme.colors.track};
+    color: ${(p) => p.theme.colors.track};
   }
 
   ::-ms-input-placeholder {
-    color: ${p => p.theme.colors.track};
+    color: ${(p) => p.theme.colors.track};
   }
 
   ${mediaqueries.tablet`
@@ -194,9 +196,9 @@ const Button = styled.button<{ hasError: string; subscribed: boolean }>`
   width: 161px;
   height: 38px;
   border: 1px solid
-    ${p => (p.hasError ? p.theme.colors.error : p.theme.colors.accent)};
-  color: ${p => (p.hasError ? p.theme.colors.error : p.theme.colors.accent)};
-  background: ${p => (p.subscribed ? p.theme.colors.accent : "transparent")};
+    ${(p) => (p.hasError ? p.theme.colors.error : p.theme.colors.accent)};
+  color: ${(p) => (p.hasError ? p.theme.colors.error : p.theme.colors.accent)};
+  background: ${(p) => (p.subscribed ? p.theme.colors.accent : 'transparent')};
   font-weight: 600;
   border-radius: 35px;
   letter-spacing: 0.42px;
@@ -204,9 +206,9 @@ const Button = styled.button<{ hasError: string; subscribed: boolean }>`
     background 0.2s var(--ease-in-out-quad), color 0.2s var(--ease-in-out-quad);
 
   &:hover {
-    background: ${p =>
+    background: ${(p) =>
       p.hasError ? p.theme.colors.error : p.theme.colors.accent};
-    color: ${p => p.theme.colors.background};
+    color: ${(p) => p.theme.colors.background};
   }
 
   &[disabled] {
@@ -214,10 +216,10 @@ const Button = styled.button<{ hasError: string; subscribed: boolean }>`
   }
 
   svg * {
-    fill: ${p => p.theme.colors.background};
+    fill: ${(p) => p.theme.colors.background};
   }
 
-  ${p => mediaqueries.tablet`
+  ${(p) => mediaqueries.tablet`
     position: relative;
     height: 60px;
     width: 100%;
@@ -238,11 +240,11 @@ const Error = styled.div`
   position: absolute;
   left: 35px;
   bottom: -20px;
-  color: ${p => p.theme.colors.error};
+  color: ${(p) => p.theme.colors.error};
   font-size: 12px;
 
   a {
-    color: ${p => p.theme.colors.error};
+    color: ${(p) => p.theme.colors.error};
     text-decoration: underline;
   }
 
