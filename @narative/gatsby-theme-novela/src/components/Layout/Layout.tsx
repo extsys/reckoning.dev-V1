@@ -8,6 +8,7 @@ import NavigationHeader from '@components/Navigation/Navigation.Header';
 import ArticlesContextProvider from '../../sections/articles/Articles.List.Context';
 
 import { globalStyles } from '@styles';
+import ScrollUpButton from 'react-scroll-up-button';
 
 /**
  * <Layout /> needs to wrap every page as it provides styles, navigation,
@@ -39,6 +40,16 @@ const Layout: React.FC<{}> = ({ children }) => {
         {children}
         <NavigationFooter />
       </Container>
+      <div>
+        <ScrollUpButton
+          StopPosition={0}
+          ShowAtPosition={150}
+          EasingType="easeOutCubic"
+          AnimationDuration={500}
+          style={{ width: 32, height: 32, outline: 'none' }}
+          ToggledStyle={{ outline: 'none' }}
+        ></ScrollUpButton>
+      </div>
     </ArticlesContextProvider>
   );
 };
