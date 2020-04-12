@@ -23,7 +23,7 @@ interface MenuFloatState {
  * Values we get to be able to ensure the positionting context are correct!
  * Padding is derviced from the CSS value in Editor
  */
-const MENU_WIDTH: number = 225;
+const MENU_WIDTH: number = 260;
 const MENU_HEIGHT: number = 46;
 
 const ArticleShare: React.FC<{}> = () => {
@@ -61,7 +61,7 @@ const ArticleShare: React.FC<{}> = () => {
         const codeBlocks = Array.from(
           article.getElementsByClassName('prism-code'),
         );
-        const isHighlightedInCodeBlock = codeBlocks.some(block =>
+        const isHighlightedInCodeBlock = codeBlocks.some((block) =>
           window.getSelection().containsNode(block, true),
         );
 
@@ -111,13 +111,13 @@ const ArticleShare: React.FC<{}> = () => {
     }
 
     // attach all events
-    events.forEach(event =>
+    events.forEach((event) =>
       window.addEventListener(event, handleMenuFloatSettings),
     );
 
     return () => {
       // remove all events after mount
-      events.forEach(event =>
+      events.forEach((event) =>
         window.removeEventListener(event, handleMenuFloatSettings),
       );
     };
@@ -175,6 +175,9 @@ const ArticleShare: React.FC<{}> = () => {
       <ReferralLink disabled={false} share={share.linkedin}>
         <Icons.LinkedIn width="16px" height="16px" />
       </ReferralLink>
+      <ReferralLink disabled={false} share={share.facebook}>
+        <Icons.Facebook width="16px" height="16px" />
+      </ReferralLink>
       <MenuDivider />
       <MenuButton onClick={handleCopyClick} aria-label="Copy selected text">
         <Icons.Copy />
@@ -216,6 +219,7 @@ function generateShare(shareText: string) {
   return {
     twitter: `https://twitter.com/intent/tweet?text="${shareText}" — ${url}`,
     linkedin: `http://www.linkedin.com/shareArticle?mini=true&url=${url}&summary=${shareText}&title=${shareText}`,
+    facebook: `https://www.facebook.com/dialog/share?app_id=2183700271699337&display=popup&href=${url}`,
   };
 }
 
@@ -249,8 +253,8 @@ const MenuFloat = styled.div<{ isDark: boolean }>`
   width: ${MENU_WIDTH}px;
   height: ${MENU_HEIGHT}px;
   padding: 7px 11px 7px 19px;
-  color: ${p => p.theme.colors.grey};
-  background: ${p => (p.isDark ? '#fafafa' : '#000')};
+  color: ${(p) => p.theme.colors.grey};
+  background: ${(p) => (p.isDark ? '#fafafa' : '#000')};
   border-radius: 5px;
   font-size: 18px;
   font-weight: 600;
@@ -268,13 +272,13 @@ const MenuFloat = styled.div<{ isDark: boolean }>`
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-top: 8px solid ${p => (p.isDark ? '#fafafa' : '#000')};
+    border-top: 8px solid ${(p) => (p.isDark ? '#fafafa' : '#000')};
     transition: border-color 200ms;
   }
 
   svg {
     path {
-      fill: ${p => (p.isDark ? '#000' : '#fff')};
+      fill: ${(p) => (p.isDark ? '#000' : '#fff')};
     }
   }
 `;
@@ -294,11 +298,11 @@ const MenuShare = styled.a<{ disabled: boolean }>`
   display: flex;
   align-items: center;
   padding: 16px 11px;
-  cursor: ${p => (p.disabled ? 'not-allowed' : 'pointer')};
+  cursor: ${(p) => (p.disabled ? 'not-allowed' : 'pointer')};
 
   svg {
     path {
-      fill: ${p => (p.disabled ? '#F89797' : '')};
+      fill: ${(p) => (p.disabled ? '#F89797' : '')};
     }
   }
 `;
