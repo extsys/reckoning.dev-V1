@@ -99,7 +99,7 @@ const CustomBlockCSS = styled.div`
 
     ${mediaqueries.tablet`
     max-width: 526px;
-    margin: 0 auto 25px;
+    margin: 25px auto 25px;
   `};
 
     ${mediaqueries.phablet`
@@ -142,7 +142,7 @@ const CustomBlockCSS = styled.div`
 
     ${mediaqueries.tablet`
     max-width: 526px;
-    margin: 0 auto 25px;
+    margin: 25px auto 25px;
   `};
 
     ${mediaqueries.phablet`
@@ -227,12 +227,38 @@ const PrismCSS = (p) => css`
     width: 100%;
     max-width: 944px;
     margin: 0 auto;
-    padding: 32px;
+    padding: 38px 32px;
     font-size: 13px;
     margin: 15px auto 50px;
     border-radius: 5px;
     font-family: ${p.theme.fonts.monospace};
     background: ${p.theme.colors.prism.background};
+
+    .code-title {
+      background: #404040;
+      padding: 0.5rem 1rem 0.75rem;
+      position: absolute;
+      left: 0px;
+      color: #f3f7f9;
+      font-weight: bold;
+      width: 100%;
+      margin-top: -38px;
+
+      ${mediaqueries.desktop`
+      left: 20px;
+    `};
+
+      ${mediaqueries.tablet`
+        margin-top: -40px;
+        left: 0;
+    `};
+
+      ${mediaqueries.phablet`
+        margin-top: -44px;
+        margin-bottom: 0px;
+        left: 0;
+      `};
+    }
 
     .token-line {
       border-left: 3px solid transparent;
@@ -286,14 +312,15 @@ const PrismCSS = (p) => css`
 
     ${mediaqueries.tablet`
       max-width: 726px;
-      padding: 20px 20px;
+      padding: 40px 20px;
+      margin: 35px auto 25px;
       left: 0;
     `};
 
     ${mediaqueries.phablet`
       text-size-adjust: none;
       border-radius: 0;
-      margin: 0 auto 25px;
+      margin: 25px auto 25px;
       padding: 25px 20px;
       overflow: initial;
       width: unset;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Highlight, { defaultProps, Language } from 'prism-react-renderer';
+import Highlight, { defaultProps } from 'prism-react-renderer';
 import styled from '@emotion/styled';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import theme from 'prism-react-renderer/themes/oceanicNext';
@@ -47,9 +47,9 @@ function calculateLinesToHighlight(meta) {
   if (RE.test(meta)) {
     const lineNumbers = RE.exec(meta)[1]
       .split(',')
-      .map(v => v.split('-').map(y => parseInt(y, 10)));
+      .map((v) => v.split('-').map((y) => parseInt(y, 10)));
 
-    return index => {
+    return (index) => {
       const lineNumber = index + 1;
       const inRange = lineNumbers.some(([start, end]) =>
         end ? lineNumber >= start && lineNumber <= end : lineNumber === start,
@@ -61,19 +61,37 @@ function calculateLinesToHighlight(meta) {
   }
 }
 
+function getParams(className = ``) {
+  const [lang = ``, params = ``] = className.split(`:`);
+
+  return [
+    // @ts-ignore
+    lang.split(`language-`).pop().split(`{`).shift(),
+  ].concat(
+    // @ts-ignore
+    params.split(`&`).reduce((merged, param) => {
+      const [key, value] = param.split(`=`);
+      // @ts-ignore
+      merged[key] = value;
+      return merged;
+    }, {}),
+  );
+}
+
 interface CodePrismProps {
   codeString: string;
-  language: Language;
+  className: string;
   metastring?: string;
 }
 
 const CodePrism: React.FC<CodePrismProps> = ({
   codeString,
-  language,
+  className: languageSettings,
   metastring,
   ...props
 }) => {
   const shouldHighlightLine = calculateLinesToHighlight(metastring);
+  const [language, { title = `` }] = getParams(languageSettings);
 
   if (props['live']) {
     return (
@@ -90,38 +108,43 @@ const CodePrism: React.FC<CodePrismProps> = ({
       <Highlight {...defaultProps} code={codeString} language={language}>
         {({ className, tokens, getLineProps, getTokenProps }) => {
           return (
-            <div style={{ overflow: 'auto' }}>
-              <pre className={className} style={{ position: 'relative' }}>
-                <Copy toCopy={codeString} />
-                {tokens.map((line, index) => {
-                  const { className } = getLineProps({
-                    line,
-                    key: index,
-                    className: shouldHighlightLine(index)
-                      ? 'highlight-line'
-                      : '',
-                  });
+            <React.Fragment>
+              <div style={{ overflow: 'auto' }}>
+                <pre className={className} style={{ position: 'relative' }}>
+                  {title && <div className="code-title">{title}</div>}
+                  <Copy toCopy={codeString} />
+                  {tokens.map((line, index) => {
+                    const { className } = getLineProps({
+                      line,
+                      key: index,
+                      className: shouldHighlightLine(index)
+                        ? 'highlight-line'
+                        : '',
+                    });
 
-                  return (
-                    <div key={index} className={className}>
-                      <span className="number-line">{index + 1}</span>
-                      {line.map((token, key) => {
-                        const { className, children } = getTokenProps({
-                          token,
-                          key,
-                        });
+                    return (
+                      <div key={index} className={className}>
+                        {!props['nolines'] && (
+                          <span className="number-line">{index + 1}</span>
+                        )}
+                        {line.map((token, key) => {
+                          const { className, children } = getTokenProps({
+                            token,
+                            key,
+                          });
 
-                        return (
-                          <span key={key} className={className}>
-                            {children}
-                          </span>
-                        );
-                      })}
-                    </div>
-                  );
-                })}
-              </pre>
-            </div>
+                          return (
+                            <span key={key} className={className}>
+                              {children}
+                            </span>
+                          );
+                        })}
+                      </div>
+                    );
+                  })}
+                </pre>
+              </div>
+            </React.Fragment>
           );
         }}
       </Highlight>
@@ -151,7 +174,7 @@ const CopyButton = styled.button`
     top: -2%;
     width: 104%;
     height: 104%;
-    border: 2px solid ${p => p.theme.colors.accent};
+    border: 2px solid ${(p) => p.theme.colors.accent};
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.01);
   }
@@ -169,12 +192,12 @@ const Container = styled.div`
   font-size: 13px;
   margin: 15px auto 50px;
   border-radius: 5px;
-  font-family: ${p => p.theme.fonts.monospace} !important;
+  font-family: ${(p) => p.theme.fonts.monospace} !important;
 
   textarea,
   pre {
     padding: 32px !important;
-    font-family: ${p => p.theme.fonts.monospace} !important;
+    font-family: ${(p) => p.theme.fonts.monospace} !important;
   }
 
   ${mediaqueries.desktop`
