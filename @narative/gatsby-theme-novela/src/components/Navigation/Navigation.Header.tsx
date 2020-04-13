@@ -231,9 +231,9 @@ const NavContainer = styled.div`
 const LogoLink = styled(Link)<{ back: string; home: string }>`
   position: relative;
   display: flex;
-  margin-left: ${(p) => (p.home === 'true' ? '0px' : '35px')};
+  margin-left: ${(p) => (p.home === 'true' ? 0 : 35)}px;
   align-items: center;
-  left: ${(p) => (p.back === 'true' ? '-54px' : 0)};
+  left: ${(p) => (p.back === 'true' ? -54 : 0)}px;
 
   transition: 0.2s transform var(--ease-out-quad);
   opacity: 0;
@@ -247,13 +247,13 @@ const LogoLink = styled(Link)<{ back: string; home: string }>`
 
   ${mediaqueries.desktop_medium`
     left: 0
-  `}
+  `};
 
-  ${mediaqueries.tablet`
-  margin-left: ${(p) => (p.home === 'true' ? '0px' : '10px')};;
-    `}
+  @media (max-width: 735px) {
+    margin-left: ${(p) => (p.home === 'true' ? 0 : 10)}px;
+  }
 
-  &[data-a11y="true"]:focus::after {
+  &[data-a11y='true']:focus::after {
     content: '';
     position: absolute;
     left: -10%;
