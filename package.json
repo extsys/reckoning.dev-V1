@@ -9,7 +9,6 @@
     "dev": "yarn start",
     "lint": "eslint --ignore-path .gitignore .",
     "start": "yarn workspace reckoning develop",
-    "bootstrap": "yarn lerna bootstrap",
     "latest": "yarn upgrade-interactive --latest"
   },
   "workspaces": [
@@ -27,7 +26,6 @@
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-unicorn": "^18.0.1",
     "husky": "^4.2.5",
-    "lerna": "^3.16.4",
     "prettier": "^2.0.4"
   },
   "eslintConfig": {

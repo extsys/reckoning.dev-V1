@@ -11,13 +11,13 @@ I am using a heavily modified version of the Novela theme. Here are some major c
 - Custom 404 page
 - Additional pages like code stats
 - Table of Contents for larger posts with smooth scrolling
-- Support for Image Gallery in Posts
+- Image Gallery in Posts
 - Scroll to Top button
 - Optional Line numbers, and title in Code Blocks
 - Next/Previous article links in all non-secret posts
 - Draft posts based on frontmatter or future date, disabled during development
-- Additional link(s) about 'info' on navigation header
-- A ton of additional custom CSS changes as per my liking
+- About 'info' page in the navigation header
+- Additional custom CSS modifications as per my liking
 
 ## Installation
 

@@ -40,16 +40,17 @@ const Layout: React.FC<{}> = ({ children }) => {
         {children}
         <NavigationFooter />
       </Container>
-      <div>
+      <ScrollUpButtonContainer>
         <ScrollUpButton
           StopPosition={0}
           ShowAtPosition={150}
           EasingType="easeOutCubic"
           AnimationDuration={500}
+          ContainerClassName="ScrollUpButton__Container"
           style={{ width: 32, height: 32, outline: 'none' }}
           ToggledStyle={{ outline: 'none' }}
         ></ScrollUpButton>
-      </div>
+      </ScrollUpButtonContainer>
     </ArticlesContextProvider>
   );
 };
@@ -61,4 +62,12 @@ const Container = styled.div`
   background: ${(p) => p.theme.colors.background};
   transition: ${(p) => p.theme.colorModeTransition};
   min-height: 100vh;
+`;
+
+const ScrollUpButtonContainer = styled.div`
+  .ScrollUpButton__Container {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
 `;
