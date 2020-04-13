@@ -199,7 +199,7 @@ difference in post times from the current post get higher weight.
 This involved only a little amount of javascript update in
 `@narative/gatsby-theme-novela/src/gatsby/node/createPages.js`.
 
-```jsx
+```jsx:title=@narative/gatsby-theme-novela/src/gatsby/node/createPages.js
 ...
 let OtherArticlesThatArentSecretSorted = articlesThatArentSecret
     .filter((art) => art !== article)
@@ -244,6 +244,10 @@ if (articlesThatArentSecret.length === 1) next = [];
 ...
 ```
 
+Notice that, at the end, I have kept the old logic of picking last two posts as related posts as
+backup.
+
+
 ### Code Title and Optional Line Numbers
 
 Similar to my last theme, I needed to add title to code block, for example in some of the above
@@ -285,7 +289,7 @@ return (
                         });
 ...
 ```
-See the highlighted lines for exact changes.
+See the highlighted lines for the primary changes.
 
 Additionally, I had to update the Prism CSS in the MDx component definition.
 
@@ -347,14 +351,145 @@ const PrismCSS = (p) => css`
 
 ### Table of Contents
 
+For longer posts, its helps to add a Table of Contents at the top for easy navigation. MDX provides
+automatic list of headings along with its depth to help with creating Table of Contents.
+
+In the novela theme, I have to update the MDX component and the article template to achieve this.
+In the MDX component, I had to pass the headings parameter to the MDXRenderer.
+
+```jsx:title=@narative/gatsby-theme-noeval/src/components/MDX/MDX.tsx
+<MDXProvider components={components}>
+    <CustomBlockCSS>
+    <MDXBody>
+        <MDXRenderer
+        headings={headings}
+        isDark={colorMode === 'dark'}
+        {...props}
+        >
+        {content}
+        </MDXRenderer>
+        {children}
+    </MDXBody>
+    </CustomBlockCSS>
+</MDXProvider>
+```
+
+Then in the article template, add additional graphql query to extract `headings` data from the
+current post. Here, I use 'title' of the post to filter the current post.
+
+```jsx:title=@narative/gatsby-theme-noeval/src/templates/article.template.tsx
+/* eslint no-undef: "off" */
+export const pageQuery = graphql`
+  query BlogPostBySlug($title: String!) {
+    posts: mdx(frontmatter: { title: { eq: $title } }) {
+      frontmatter {
+        title
+      }
+      headings {
+        depth
+        value
+      }
+    }
+    site: allSite {
+      edges {
+        node {
+          siteMetadata {
+            name
+          }
+        }
+      }
+    }
+  }
+`;
+```
+
+Additionally, I also had to develop a TOC component that could be called directly from the mdx files.
+This also required to add this component to the known list of components in MDX.
+
+You can find my [detailed implementation at my repo](https://github.com/sadanand-singh/reckoning.dev/blob/master/%40narative/gatsby-theme-novela/src/components/TOC/index.js).
+
+I also used a package called `react-anchor-link-smooth-scroll` for creating smooth scroll to all
+links with the post.
+
 
 ### Scroll Up Button
 
+For longer posts, it also helps to have scroll to Top button at the bottom right of the page. This
+is pretty starightword by using a package called `react-scroll-up-button`. I just had to add a small
+section in Layout component.
 
-### Next/Prev Posts
+```js:title=@narative/gatsby-theme-noeval/src/components/Layout/Layout.tsx
+<ScrollUpButtonContainer>
+    <ScrollUpButton
+        StopPosition={0}
+        ShowAtPosition={150}
+        EasingType="easeOutCubic"
+        AnimationDuration={500}
+        ContainerClassName="ScrollUpButton__Container"
+        style={{ width: 32, height: 32, outline: 'none' }}
+        ToggledStyle={{ outline: 'none' }}
+    ></ScrollUpButton>
+</ScrollUpButtonContainer>
 
+const ScrollUpButtonContainer = styled.div`
+  .ScrollUpButton__Container {
+    @media (max-width: 767px) {
+      display: none;
+    }
+  }
+`;
+```
+
+Notice, the use of extra CSS to disable scroll up button on small screens.
+
+### Links to Next/Previous Posts
+
+I like to have links to the next and the previous posts on every regular posts. Creating this was
+as simple as adding context for these links in createPages.js gatsby node scripts.
+
+```jsx:title=@narative/gatsby-theme-novela/src/gatsby/node/createPages.js
+// next and prev article links
+let nextPage = index === 0 ? null : articlesThatArentDraft[index - 1];
+let prevPage =
+    index === articlesThatArentDraft.length - 1
+    ? null
+    : articlesThatArentDraft[index + 1];
+```
+
+Notice this acts even on secrent pages, so I had to explicitly disable those in the article template:
+
+```jsx:title=@narative/gatsby-theme-noeval/src/templates/article.template.tsx
+{!article.secret && (
+    <PaginationWrapper>
+        <PaginationButton>
+        {prevPage && !prevPage.secret && (
+            <Link
+            className="previous"
+            to={`${prevPage.slug}`}
+            aria-label="Prev"
+            >
+            ❮❮ Previous
+            </Link>
+        )}
+        </PaginationButton>
+
+        <PaginationButton>
+        {nextPage && !nextPage.secret && (
+            <Link className="next" to={`${nextPage.slug}`} aria-label="Next">
+            Next ❯❯
+            </Link>
+        )}
+        </PaginationButton>
+    </PaginationWrapper>
+)}
+```
+
+Additionally, the CSS for buttons etc. was provided by the definitions of `PaginationWrapper` and
+`PaginationButton` styled components.
 
 ### Custom Components like tldr, update etc.
+
+
 
 
 ### Custom Pages: 404, Code Stats, About Me etc.
