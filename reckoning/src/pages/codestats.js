@@ -303,6 +303,23 @@ export default class ClientFetchingExample extends Component {
     );
     var sortable = [];
     for (var lang in lang_data) {
+      if (lang === 'Markdown'){
+        lang_data['MDX'] = lang_data[lang] + lang_data['MDX'];
+        continue;
+      }
+      if (lang === 'CSS'){
+        lang_data['SCSS'] = lang_data[lang] + lang_data['SCSS'];
+        continue;
+      }
+      if (lang === 'TypeScript (JSX)'){
+        lang_data['JavaScript'] = lang_data[lang] + lang_data['JavaScript'];
+        continue;
+      }
+      if (lang === 'TypeScript'){
+        lang_data['JavaScript'] = lang_data[lang] + lang_data['JavaScript'];
+        continue;
+      }
+
       sortable.push([lang, lang_data[lang]]);
     }
 
