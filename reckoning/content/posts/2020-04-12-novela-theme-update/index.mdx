@@ -77,7 +77,8 @@ After cloning the master branch of the Novela repo, I merged the local branch fr
 I found this PR to be quite complete. Only change I had to make was to the CSS of the `TagBox`.
 I ended up adding some additional colors in theme-ui color definitions to support these.
 
-```jsx
+```jsx:title=@narative/gatsby-theme-novela/src/sections/tags/Tags.List.tsx
+...
 const TagBox = styled.div`
   display: flow-root;
   height: 24px;
@@ -102,6 +103,7 @@ const TagBox = styled.div`
   font-weight: bold;
   white-space: nowrap;
 `;
+...
 ```
 
 ### Rendering Math via katex
@@ -183,7 +185,7 @@ if (node.internal.type === `Mdx` && source === contentPath) {
 Finally, in `@narative/gatsby-theme-novela/src/gatsby/node/createPages.js` file, filter `articles`
 to the ones that are not drafts before creating pages.
 
-```jsx
+```jsx:title=@narative/gatsby-theme-novela/src/gatsby/node/createPages.js
 ...
 const articlesThatArentDraft = articles.filter((article) => !article.draft);
 const articlesThatArentSecret = articlesThatArentDraft.filter((article) => !article.secret);
@@ -491,12 +493,51 @@ Additionally, the CSS for buttons etc. was provided by the definitions of `Pagin
 
 [gatsby-remark-custom-blocks](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-remark-custom-blocks)
 is a plugin that adds custom blocks to markdown contents in gatsby.
-These custom blocks allows one to use markdown within the block, by defining custom classes and
-blocks. I love using these specially for TLDR and Update blocks.
+These custom blocks allow one to use markdown within the block, by defining custom classes and
+blocks. I like using these especially for TLDR and Update blocks. You can an example right at the
+top of this post.
 
+To enable this, at first I had to enable this plugin in gatsby-config.js file.
 
+```js:title=@narative/gatsby-theme-novela/gatsby-config.js
+...
+gatsbyRemarkPlugins: [
+  {
+    resolve: 'gatsby-remark-custom-blocks',
+    options: {
+      blocks: {
+        tldr: {
+          classes: 'tldr',
+          title: 'optional',
+        },
+        update: {
+          classes: 'update',
+          title: 'optional',
+        },
+      },
+    },
+  },
+...
+```
+
+Then, I had to define my CSS for `tldr` and `update` classes in the MDX component.
+
+These components can now be simply used as following in the mdx content:
+
+```markdown
+[[tldr | TL;DR]]
+| + Using [novela](https://github.com/narative/gatsby-theme-novela) as a starting point to start
+|   using gatsby themes, theme-ui and styled components.
+| + **Several modifications:** tags, math rendering via katex, Table of Contents, Image Gallery, Scroll
+|   to top, next/previous posts, title of code blocks etc.
+| + [gatsby cloud](https://www.gatsbyjs.com/cloud/) for fatster build and deployment.
+| + Find all the modifications at [my github repo](https://github.com/sadanand-singh/reckoning.dev)
+
+```
 
 ### Custom Pages: 404, Code Stats, About Me etc.
+
+
 
 
 ### gatsby cloud
