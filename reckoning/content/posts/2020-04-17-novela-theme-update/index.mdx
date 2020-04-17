@@ -1,6 +1,6 @@
 ---
 title: 'Using Novela Theme with Modifications'
-date: 2020-04-12
+date: 2020-04-17
 author: Sadanand Singh
 tags:
   - Blog
@@ -8,7 +8,6 @@ tags:
   - Javascript
 slug: novela-theme-update
 hero: './images/theme.jpg'
-draft: true
 ---
 
 [[tldr | TL;DR]]
@@ -23,12 +22,12 @@ draft: true
 The world of web design, programming, and specially [gatsbyjs] has been moving at an astonishing
 pace. If you have been following me here, you would know, I am all for new, and cleaner looks.
 I firmly believe in keeping myself up to date with latest trends so that I do not start lagging
-behind later. With this philosophy, I have been following [gatsby themes] for some time now.
-Gatsby themes along with mdx, theme-ui and styled components, make up an ultimate JAM stack to build
-websites and blogs.
+behind. With this philosophy, I have been following [gatsby themes] for some time now.
+Gatsby themes along with [mdx], [theme-ui] and [styled components], make up an
+ultimate [JAM stack](https://jamstack.org/) to build websites and blogs.
 
 Till now, I have been using an adhoc design based on one developed by [Tania Rascia][tania]. Making
-any changes to it was pretty cumbersome, including tracking down every css code across many files.
+any changes to it was little cumbersome, including tracking down every css code across many files.
 When searching for right gatsby theme for my blog, I came across a great theme: [Novela][novela]!
 It has a lot of cool features that I just loved it: light/dark theme, awesome prism support,
 a very modern look, Medium features like image zoom, highlight to share etc. And the best part,
@@ -38,6 +37,9 @@ It uses all the tools I have been interested in - mdx, theme-ui, and styled comp
 [gatsby themes]: https://www.gatsbyjs.org/docs/themes/what-are-gatsby-themes/
 [tania]: https://www.taniarascia.com/
 [novela]: https://github.com/narative/gatsby-theme-novela
+[mdx]: https://mdxjs.com/
+[theme-ui]: https://theme-ui.com/
+[styled components]: https://emotion.sh/docs/styled
 
 <div class='Image__Container'>
   <div class='Image__Container__left'>
@@ -114,6 +116,7 @@ and merged its local branch to mine.
 One major update, I had to make was to ensure that the `document` variable is utilized only at run
 time, not at the build time. In all the files where `katex-display` class is modified via the
 global `document` variable, I had to add the conditional check of document not being undefined.
+(See the highlighted line in the codeblock.)
 
 ```jsx {2}
 //Change all KaTeX colors
@@ -129,15 +132,15 @@ global `document` variable, I had to add the conditional check of document not b
 ### Draft Posts
 
 When writing new posts, many a times I like to check-in new posts to git that are still in
-development. However, I like them to be rendered during the development, but not in production build.
-A post can be flagged at draft either explicitly via a frontmatter field called `draft` or by using
+development. However, I like them to be rendered during the development, but not in the production build.
+A post can be flagged as "draft" either explicitly via a frontmatter field called `draft` or by using
 a date of post in the future.
 
 I enabled this by first enabling the `draft` field in the frontmatter by adding it to the
 `@narative/gatsby-theme-novela/src/gatsby/data/data.query.js`
 
 Then, in `@narative/gatsby-theme-novela/src/gatsby/node/onCreateNode.js`, I added code to create
-new field for it.
+new field for it (See the highlighted code below).
 
 ```jsx:title=@narative/gatsby-theme-novela/src/gatsby/node/onCreateNode.js {2-3,6-32,39}
 ...
@@ -194,11 +197,13 @@ const articlesThatArentSecret = articlesThatArentDraft.filter((article) => !arti
 
 ### Related Posts
 
-Novela theme by default has a very simple way to show one or two related posts below a given post.
+Novela theme by default has a very simple way to show one or two (depending on the scr
+related posts below a given post.
 I wanted to update its logic such that posts with most matching tags and the ones with the least
-difference in post times from the current post get higher weight.
+difference in post times from the current post get higher weight. The second rule ensures that
+posts around same dates are found to be more related than only the more recent ones.
 
-This involved only a little amount of javascript update in
+This involved only a little bit of javascript update in
 `@narative/gatsby-theme-novela/src/gatsby/node/createPages.js`.
 
 ```jsx:title=@narative/gatsby-theme-novela/src/gatsby/node/createPages.js
@@ -246,18 +251,18 @@ if (articlesThatArentSecret.length === 1) next = [];
 ...
 ```
 
-Notice that, at the end, I have kept the old logic of picking last two posts as related posts as
-backup.
+Notice that at the end, I have kept the old logic of picking last two posts as related posts as
+a backup.
 
 
 ### Code Title and Optional Line Numbers
 
-Similar to my last theme, I needed to add title to code block, for example in some of the above
+Similar to my last theme, I sometimes need to add a title to a code block, for example in some of the above
 code blocks, I can show the filename at the top. I also wanted to disable line numbers optionally.
 
-Implementing this was pretty simple, update the `Code` component in the
+Implementing this was pretty simple - update the `Code` component in the
 `@narative/gatsby-theme-novela/src/components/Code/Code.Prism.jx` to enable optional line numbers
-and title.
+and title. See the highlighted lines for exact changes.
 
 ```jsx:title=@narative/gatsby-theme-novela/src/components/Code/Code.Prism.jx {9,22-24}
 ...
@@ -291,8 +296,6 @@ return (
                         });
 ...
 ```
-See the highlighted lines for the primary changes.
-
 Additionally, I had to update the Prism CSS in the MDx component definition.
 
 ```jsx:title=@narative/gatsby-theme-novela/src/components/MDX/MDX.tsx {14-51}
@@ -350,16 +353,15 @@ const PrismCSS = (p) => css`
 ...
 ```
 
-
 ### Table of Contents
 
 For longer posts, its helps to add a Table of Contents at the top for easy navigation. MDX provides
-automatic list of headings along with its depth to help with creating Table of Contents.
+automatic list of headings along with its depth to help with creating `Table of Contents`.
 
-In the novela theme, I have to update the MDX component and the article template to achieve this.
+In the novela theme, I had to update the MDX component and the article template to achieve this.
 In the MDX component, I had to pass the headings parameter to the MDXRenderer.
 
-```jsx:title=@narative/gatsby-theme-noeval/src/components/MDX/MDX.tsx
+```jsx:title=@narative/gatsby-theme-noeval/src/components/MDX/MDX.tsx {5}
 <MDXProvider components={components}>
     <CustomBlockCSS>
     <MDXBody>
@@ -442,12 +444,12 @@ const ScrollUpButtonContainer = styled.div`
 `;
 ```
 
-Notice, the use of extra CSS to disable scroll up button on small screens.
+Notice use of some extra CSS to disable scroll up button on small screens.
 
 ### Links to Next/Previous Posts
 
 I like to have links to the next and the previous posts on every regular posts. Creating this was
-as simple as adding context for these links in createPages.js gatsby node scripts.
+as simple as adding context for these links in `createPages.js` gatsby node scripts.
 
 ```jsx:title=@narative/gatsby-theme-novela/src/gatsby/node/createPages.js
 // next and prev article links
@@ -493,7 +495,7 @@ Additionally, the CSS for buttons etc. was provided by the definitions of `Pagin
 
 [gatsby-remark-custom-blocks](https://github.com/gatsbyjs/gatsby/tree/master/packages/gatsby-remark-custom-blocks)
 is a plugin that adds custom blocks to markdown contents in gatsby.
-These custom blocks allow one to use markdown within the block, by defining custom classes and
+These custom blocks allow one to use **markdown within the block**, by defining custom classes and
 blocks. I like using these especially for TLDR and Update blocks. You can an example right at the
 top of this post.
 
@@ -537,8 +539,23 @@ These components can now be simply used as following in the mdx content:
 
 ### Custom Pages: 404, Code Stats, About Me etc.
 
-
+This part ws pretty starightword. For About Me and resume, I have used the concept of secret posts.
+You can mark a post as secret simply by including a frontmatter flag of `secret: True`. For custom
+404 page and codestats, I create two pages files in `reckoning/src/pages/` with corresponding names,
+`404.js` and `codestats.js`.
 
 
 ### gatsby cloud
+
+As my blog has grown, the build time has become larger and larger. At the current stage, If I build
+my site on netlify, it takes more than 10 minutes!
+
+Then I discovered [gatsby cloud](https://www.gatsbyjs.com/cloud)! This sites' build time now is
+between 3-4 minutes! Thats some improvement. And setting up and linking it with github and netlify
+is super simple, just follow the official guide.
+
+So that's it folks! A lot of changes to the codebase, but I learnt/discovered a lot of things. I plan
+to add additional features to this theme, keep following this space if you are interested. And as
+always, feel free to take a look at [my code base](https://github.com/sadanand-singh/reckoning.dev),
+clone it, play with it and even put some pull requests if you find some mistakes or improvements!
 
