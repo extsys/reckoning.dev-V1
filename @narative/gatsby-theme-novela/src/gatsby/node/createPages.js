@@ -293,7 +293,6 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
           temp = null;
           break;
         }
-        ``;
         temp = articlesThatArentDraft[idx];
       }
       prevPage = temp;

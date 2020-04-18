@@ -452,15 +452,45 @@ I like to have links to the next and the previous posts on every regular posts. 
 as simple as adding context for these links in `createPages.js` gatsby node scripts.
 
 ```jsx:title=@narative/gatsby-theme-novela/src/gatsby/node/createPages.js
-// next and prev article links
-let nextPage = index === 0 ? null : articlesThatArentDraft[index - 1];
-let prevPage =
-    index === articlesThatArentDraft.length - 1
-    ? null
-    : articlesThatArentDraft[index + 1];
+    // next article
+    let nextPage;
+    if (index === 0) {
+      nextPage = null;
+    } else {
+      idx = index - 1;
+      temp = articlesThatArentDraft[idx];
+      while (temp.secret) {
+        idx = idx - 1;
+        if (idx === -1) {
+          temp = null;
+          break;
+        }
+        temp = articlesThatArentDraft[idx];
+      }
+      nextPage = temp;
+    }
+
+    //  prev article
+    let prevPage;
+    if (index === articlesThatArentDraft.length - 1) {
+      prevPage = null;
+    } else {
+      idx = index + 1;
+      temp = articlesThatArentDraft[idx];
+      while (temp.secret) {
+        idx = idx + 1;
+        if (idx === articlesThatArentDraft.length) {
+          temp = null;
+          break;
+        }
+        temp = articlesThatArentDraft[idx];
+      }
+      prevPage = temp;
+    }
 ```
 
-Notice this acts even on secrent pages, so I had to explicitly disable those in the article template:
+Notice use of while loops to skip over any secret posts. Also, I had to explicitly disable those
+in the article template:
 
 ```jsx:title=@narative/gatsby-theme-noeval/src/templates/article.template.tsx
 {!article.secret && (
@@ -539,7 +569,7 @@ These components can now be simply used as following in the mdx content:
 
 ### Custom Pages: 404, Code Stats, About Me etc.
 
-This part ws pretty starightword. For About Me and resume, I have used the concept of secret posts.
+This part was pretty starightword. For About Me and resume, I have used the concept of secret posts.
 You can mark a post as secret simply by including a frontmatter flag of `secret: True`. For custom
 404 page and codestats, I create two pages files in `reckoning/src/pages/` with corresponding names,
 `404.js` and `codestats.js`.
