@@ -261,11 +261,43 @@ module.exports = async ({ actions: { createPage }, graphql }, themeOptions) => {
     if (articlesThatArentSecret.length === 1) next = [];
 
     // next and prev article links
-    let nextPage = index === 0 ? null : articlesThatArentDraft[index - 1];
-    let prevPage =
-      index === articlesThatArentDraft.length - 1
-        ? null
-        : articlesThatArentDraft[index + 1];
+
+    // next article
+    let nextPage;
+    if (index === 0) {
+      nextPage = null;
+    } else {
+      idx = index - 1;
+      temp = articlesThatArentDraft[idx];
+      while (temp.secret) {
+        idx = idx - 1;
+        if (idx === -1) {
+          temp = null;
+          break;
+        }
+        temp = articlesThatArentDraft[idx];
+      }
+      nextPage = temp;
+    }
+
+    //  prev article
+    let prevPage;
+    if (index === articlesThatArentDraft.length - 1) {
+      prevPage = null;
+    } else {
+      idx = index + 1;
+      temp = articlesThatArentDraft[idx];
+      while (temp.secret) {
+        idx = idx + 1;
+        if (idx === articlesThatArentDraft.length) {
+          temp = null;
+          break;
+        }
+        ``;
+        temp = articlesThatArentDraft[idx];
+      }
+      prevPage = temp;
+    }
 
     createPage({
       path: article.slug,
