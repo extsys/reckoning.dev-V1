@@ -67,9 +67,13 @@ const plugins = [
     },
   },
   {
-    resolve: `gatsby-plugin-google-analytics`,
+    resolve: `gatsby-plugin-google-tagmanager`,
     options: {
-      trackingId: "UA-54080172-1",
+      id: "GTM-TN5XB2V",
+
+      // Include GTM in development.
+      // Defaults to false meaning GTM will only be loaded in production.
+      includeInDevelopment: true,
     },
   },
   {
