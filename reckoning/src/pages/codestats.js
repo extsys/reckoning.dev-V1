@@ -38,6 +38,7 @@ const Progress = styled.div`
     @media (max-width: 767px) {
       top: 1.5px;
     }
+  }
 `;
 
 const ProgressBar = props => {
@@ -74,6 +75,7 @@ const Hero = styled.div`
       font-size: 1.8em;
       font-weight: 400;
     }
+  }
 `;
 
 const LocalContainer = styled.div`
