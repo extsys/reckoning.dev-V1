@@ -167,7 +167,7 @@ const ChartContainer = styled.div`
 `;
 
 
-export default class ClientDataFetching extends Component {
+export default class CoronaTracker extends Component {
   state = {
     loading: false,
     error: false,
@@ -587,50 +587,49 @@ export default class ClientDataFetching extends Component {
       arr.push(data[data.length-1]);
     }
 
-    var res = new Object();
-    res['confirmed_daily'] = new Object()
-    res['confirmed_daily']['name'] = 'Confirmed'
-    res['confirmed_daily']['data'] = arr.map(function (el) { return parseInt(el.dailyconfirmed, 10); })
-
-    res['confirmed_cum'] = new Object()
-    res['confirmed_cum']['name'] = 'Confirmed'
-    res['confirmed_cum']['data'] = arr.map(function (el) { return parseInt(el.totalconfirmed, 10); })
-
-    res['deaths_daily'] = new Object()
-    res['deaths_daily']['name'] = 'Deaths'
-    res['deaths_daily']['data'] = arr.map(function (el) { return parseInt(el.dailydeceased, 10); })
-
-    res['deaths_cum'] = new Object()
-    res['deaths_cum']['name'] = 'Deaths'
-    res['deaths_cum']['data'] = arr.map(function (el) { return parseInt(el.totaldeceased, 10); })
-
-    res['dates'] = arr.map(function (el) { return el.date; })
-
-    return res;
+    return {
+      'confirmed_daily': {
+        'name': 'Confirmed',
+        'data': arr.map(function (el) { return parseInt(el.dailyconfirmed, 10); })
+      },
+      'confirmed_cum': {
+        'name': 'Confirmed',
+        'data': arr.map(function (el) { return parseInt(el.totalconfirmed, 10); })
+      },
+      'deaths_daily': {
+        'name': 'Confirmed',
+        'data': arr.map(function (el) { return parseInt(el.dailydeceased, 10); })
+      },
+      'deaths_cum': {
+        'name': 'Confirmed',
+        'data': arr.map(function (el) { return parseInt(el.totaldeceased, 10); })
+      },
+      'dates': arr.map(function (el) { return el.date; })
+    };
   };
 
   getIndiaSeriesDataFull = data => {
-    var res = new Object();
-    res['confirmed_daily'] = new Object()
-    res['confirmed_daily']['name'] = 'Confirmed'
-    res['confirmed_daily']['data'] = data.map(function (el) { return parseInt(el.dailyconfirmed, 10); })
-
-    res['confirmed_cum'] = new Object()
-    res['confirmed_cum']['name'] = 'Confirmed'
-    res['confirmed_cum']['data'] = data.map(function (el) { return parseInt(el.totalconfirmed, 10); })
-
-    res['deaths_daily'] = new Object()
-    res['deaths_daily']['name'] = 'Deaths'
-    res['deaths_daily']['data'] = data.map(function (el) { return parseInt(el.dailydeceased, 10); })
-
-    res['deaths_cum'] = new Object()
-    res['deaths_cum']['name'] = 'Deaths'
-    res['deaths_cum']['data'] = data.map(function (el) { return parseInt(el.totaldeceased, 10); })
-
-    res['dates'] = data.map(function (el) { return el.date; })
+    var res = {
+      'confirmed_daily': {
+        'name': 'Confirmed',
+        'data': data.map(function (el) { return parseInt(el.dailyconfirmed, 10); })
+      },
+      'confirmed_cum': {
+        'name': 'Confirmed',
+        'data': data.map(function (el) { return parseInt(el.totalconfirmed, 10); })
+      },
+      'deaths_daily': {
+        'name': 'Confirmed',
+        'data': data.map(function (el) { return parseInt(el.dailydeceased, 10); })
+      },
+      'deaths_cum': {
+        'name': 'Confirmed',
+        'data': data.map(function (el) { return parseInt(el.totaldeceased, 10); })
+      },
+      'dates': data.map(function (el) { return el.date; })
+    }
 
     // calc running averages
-
     var running_confirmed = [];
     var period = 7;
     var sumForAverage = 0;
@@ -719,21 +718,20 @@ export default class ClientDataFetching extends Component {
         };
 
         var india_statewise = statewise_data.slice(1).map(function (el) {
-          var d = new Object();
-          d['active'] = parseInt(el.active, 10);
-          d['confirmed'] = parseInt(el.confirmed, 10);
-          d['confirmed_per_capita'] = (parseInt(el.confirmed, 10) / population[el.state] * 1000000).toFixed(3);
-          d['deaths'] = parseInt(el.deaths, 10);
-          d['deltaconfirmed'] = parseInt(el.deltaconfirmed, 10);
-          d['deltadeaths'] = parseInt(el.deltadeaths, 10);
-          d['deltarecovered'] = parseInt(el.deltarecovered, 10);
-          d['recovered'] = parseInt(el.recovered, 10);
-          d['lastupdatedtime'] = el.lastupdatedtime;
-          d['state'] = el.state;
-          d['statecode'] = el.statecode;
-          d['statenotes'] = el.statenotes;
-
-          return d
+          return {
+            'active': parseInt(el.active, 10),
+            'confirmed': parseInt(el.confirmed, 10),
+            'confirmed_per_capita': (parseInt(el.confirmed, 10) / population[el.state] * 1000000).toFixed(3),
+            'deaths': parseInt(el.deaths, 10),
+            'deltaconfirmed': parseInt(el.deltaconfirmed, 10),
+            'deltadeaths': parseInt(el.deltadeaths, 10),
+            'deltarecovered': parseInt(el.deltarecovered, 10),
+            'recovered': parseInt(el.recovered, 10),
+            'lastupdatedtime': el.lastupdatedtime,
+            'state': el.state,
+            'statecode': el.statecode,
+            'statenotes': el.statenotes,
+          }
         });
 
         india_statewise.sort((a, b)=>{
