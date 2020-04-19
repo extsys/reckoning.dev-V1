@@ -219,7 +219,7 @@ function Table({ columns, data }) {
                       <Tables.Cell {...cell.getCellProps()}>
                         {(cell.column.Header === "State") ? <strong>{cell.render('Cell')}</strong>: <>{cell.render('Cell')}</>}
                         {(cell.column.Header !== "Confirmed") ? <></> : (cell.row.original.deltaconfirmed === 0)? <></> : <span className='delta'>{'   '}(+{cell.row.original.deltaconfirmed})</span>}
-                        {(cell.column.Header !== "Deaths") ? <></> : (cell.row.original.deltadeaths === 0)? <></> : <span className='delta'>{'   '}(+{cell.row.original.deltadeaths})</span>}
+                        {(cell.column.Header !== "Deaths") ? <></> : (cell.row.original.deltadeaths === 0)? <></> : <span className='delta-deaths'>{'   '}(+{cell.row.original.deltadeaths})</span>}
 
                       </Tables.Cell>
                     )
@@ -307,23 +307,23 @@ export default class CoronaTracker extends Component {
     } = this.state.india;
 
     const columns= [
-            {
-              Header: 'State',
-              accessor: 'state',
-            },
-            {
-              Header: 'Confirmed',
-              accessor: 'confirmed',
-            },
-            {
-              Header: 'Deaths',
-              accessor: 'deaths',
-            },
-            {
-              Header: 'Cases per 1M',
-              accessor: 'confirmed_per_capita',
-            },
-          ];
+      {
+        Header: 'State',
+        accessor: 'state',
+      },
+      {
+        Header: 'Confirmed',
+        accessor: 'confirmed',
+      },
+      {
+        Header: 'Deaths',
+        accessor: 'deaths',
+      },
+      {
+        Header: 'Cases per 1M',
+        accessor: 'confirmed_per_capita',
+      },
+    ];
 
     const cum_plot_options = {
       chart: {
