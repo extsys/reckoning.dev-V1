@@ -162,6 +162,8 @@ const ChartContainer = styled.div`
     margin-left: 20px;
     @media (max-width: 780px) {
       width: 100%;
+      margin-left: 0px;
+      margin-top: 20px;
     }
   }
 `;
@@ -504,8 +506,8 @@ export default class CoronaTracker extends Component {
                 <tr>
                   <Tables.HeadCell>State</Tables.HeadCell>
                   <Tables.HeadCell>Confirmed</Tables.HeadCell>
-                  <Tables.HeadCell>Death</Tables.HeadCell>
-                  <Tables.HeadCell>Confirmed per 1M</Tables.HeadCell>
+                  <Tables.HeadCell>Deaths</Tables.HeadCell>
+                  <Tables.HeadCell>Cases per 1M</Tables.HeadCell>
                 </tr>
                 </Tables.Head>
                 <tbody>
