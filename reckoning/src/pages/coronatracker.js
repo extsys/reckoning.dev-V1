@@ -5,6 +5,7 @@ import SEO from "@components/SEO";
 import Layout from  "@components/Layout"
 import styled from '@emotion/styled';
 import Tables from '@components/Tables'
+import { useTable, useSortBy } from 'react-table'
 
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
@@ -168,6 +169,71 @@ const ChartContainer = styled.div`
   }
 `;
 
+function Table({ columns, data }) {
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    rows,
+    prepareRow,
+  } = useTable(
+    {
+      columns,
+      data,
+    },
+    useSortBy
+  )
+
+  return (
+    <>
+      <Tables.Table {...getTableProps()}>
+      <Tables.Head>
+          {headerGroups.map(headerGroup => (
+            <tr {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map(column => (
+                // Add the sorting props to control sorting. For this example
+                // we can add them into the header props
+                <Tables.HeadCell {...column.getHeaderProps(column.getSortByToggleProps())}>
+                  {column.render('Header')}
+                  {/* Add a sort direction indicator */}
+                  <span>
+                    {column.isSorted
+                      ? column.isSortedDesc
+                        ? ' 🔽'
+                        : ' 🔼'
+                      : ''}
+                  </span>
+                </Tables.HeadCell>
+              ))}
+            </tr>
+          ))}
+        </Tables.Head>
+        <tbody {...getTableBodyProps()}>
+          {rows.map(
+            (row, i) => {
+              prepareRow(row);
+              return (
+                <tr {...row.getRowProps()}>
+                  {row.cells.map(cell => {
+                    return (
+                      <Tables.Cell {...cell.getCellProps()}>
+                        {(cell.column.Header === "State") ? <strong>{cell.render('Cell')}</strong>: <>{cell.render('Cell')}</>}
+                        {(cell.column.Header !== "Confirmed") ? <></> : (cell.row.original.deltaconfirmed === 0)? <></> : <span className='delta'>{'   '}(+{cell.row.original.deltaconfirmed})</span>}
+                        {(cell.column.Header !== "Deaths") ? <></> : (cell.row.original.deltadeaths === 0)? <></> : <span className='delta'>{'   '}(+{cell.row.original.deltadeaths})</span>}
+
+                      </Tables.Cell>
+                    )
+                  })}
+                </tr>
+              )}
+          )}
+        </tbody>
+      </Tables.Table>
+      <br />
+    </>
+  )
+}
+
 
 export default class CoronaTracker extends Component {
   state = {
@@ -239,6 +305,25 @@ export default class CoronaTracker extends Component {
       india_time_series,
       india_time_series_full
     } = this.state.india;
+
+    const columns= [
+            {
+              Header: 'State',
+              accessor: 'state',
+            },
+            {
+              Header: 'Confirmed',
+              accessor: 'confirmed',
+            },
+            {
+              Header: 'Deaths',
+              accessor: 'deaths',
+            },
+            {
+              Header: 'Cases per 1M',
+              accessor: 'confirmed_per_capita',
+            },
+          ];
 
     const cum_plot_options = {
       chart: {
@@ -501,30 +586,7 @@ export default class CoronaTracker extends Component {
                 <br/>
                 <br/>
                 <h2>State-wise Cases in India</h2>
-                <Tables.Table>
-                <Tables.Head>
-                <tr>
-                  <Tables.HeadCell>State</Tables.HeadCell>
-                  <Tables.HeadCell>Confirmed</Tables.HeadCell>
-                  <Tables.HeadCell>Deaths</Tables.HeadCell>
-                  <Tables.HeadCell>Cases per 1M</Tables.HeadCell>
-                </tr>
-                </Tables.Head>
-                <tbody>
-                {india_statewise.map( (el) => {
-                  return (<tr>
-                    <Tables.Cell>{el.state}</Tables.Cell>
-                    <Tables.Cell>{el.confirmed}
-                    {(el.deltaconfirmed === 0) ? <></> : <span className='delta'>{'   '}(+{el.deltaconfirmed})</span>}
-                    </Tables.Cell>
-                  <Tables.Cell>{el.deaths}
-                    {(el.deltadeaths === 0) ? <></> : <span className='delta-deaths'>{'   '}(+{el.deltadeaths})</span>}
-                    </Tables.Cell>
-                    <Tables.Cell>{el.confirmed_per_capita}</Tables.Cell>
-                </tr>);
-                })};
-              </tbody>
-              </Tables.Table>
+                <Table columns={columns} data={india_statewise} />
               </>
             ) : (
               <p>Oh noes, error fetching data! <span role="img" aria-label="sheep">🐑😔</span></p>
@@ -735,12 +797,6 @@ export default class CoronaTracker extends Component {
             'statenotes': el.statenotes,
           }
         });
-
-        india_statewise.sort((a, b)=>{
-          return (b.confirmed_per_capita - a.confirmed_per_capita || b.confirmed - a.confirmed)
-        })
-
-        console.log(india_statewise);
 
         this.setState({
           loading: false,
