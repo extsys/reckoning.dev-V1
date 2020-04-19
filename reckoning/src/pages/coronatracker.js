@@ -514,11 +514,11 @@ export default class CoronaTracker extends Component {
                 {india_statewise.map( (el) => {
                   return (<tr>
                     <Tables.Cell>{el.state}</Tables.Cell>
-                    <Tables.Cell>{el.confirmed} {' '}{'   '}
-                      <span className='delta'>(+{el.deltaconfirmed})</span>
+                    <Tables.Cell>{el.confirmed}
+                    {(el.deltaconfirmed === 0) ? <></> : <span className='delta'>{'   '}(+{el.deltaconfirmed})</span>}
                     </Tables.Cell>
-                    <Tables.Cell>{el.deaths} {' '}{'   '}
-                      <span className='delta-deaths'>(+{el.deltadeaths})</span>
+                  <Tables.Cell>{el.deaths}
+                    {(el.deltadeaths === 0) ? <></> : <span className='delta-deaths'>{'   '}(+{el.deltadeaths})</span>}
                     </Tables.Cell>
                     <Tables.Cell>{el.confirmed_per_capita}</Tables.Cell>
                 </tr>);
