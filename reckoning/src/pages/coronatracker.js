@@ -225,7 +225,7 @@ function StateModal({state, data}){
       tickInterval: 4
     },
     legend: {
-      enabled: true
+      enabled: false
     },
     yAxis: {
       title: {
@@ -259,7 +259,7 @@ function StateModal({state, data}){
 
     return (
       <div>
-        <button onClick={openModal}><strong>{state}</strong></button>
+        <a href='#' onClick={openModal}><strong style={{color: '#3498DB'}}><u>{state}</u></strong></a>
         <Modal
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
@@ -268,8 +268,8 @@ function StateModal({state, data}){
           contentLabel="State-wise Data"
         >
 
-          <h2 ref={_subtitle => (subtitle = _subtitle)}></h2>
-          <button onClick={closeModal}>❌</button>
+    <h2 ref={_subtitle => (subtitle = _subtitle)}>{' '}</h2>
+          <button onClick={closeModal}><span role="img" aria-label="close">❌</span></button>
           <ChartContainer>
             <HighchartsReact highcharts={Highcharts} options={daily_plot_options} />
           </ChartContainer>
