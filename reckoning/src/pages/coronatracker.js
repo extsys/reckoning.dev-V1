@@ -6,6 +6,7 @@ import Layout from  "@components/Layout"
 import styled from '@emotion/styled';
 import Tables from '@components/Tables'
 import { useTable, useSortBy } from 'react-table'
+import Modal from 'react-modal';
 
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
@@ -122,6 +123,26 @@ const LocalContainer = styled.div`
     color: #45B39D;
   }
 
+  #state-cases-new {
+    padding-left: 20px;
+  }
+
+  #state-cases-color-legend {
+    height: 25px;
+  }
+
+  .text-left {
+    text-align: left!important;
+
+  }
+
+  .note {
+    font-weight: 300;
+    font-size: 10px;
+    display: inline;
+    color: ${p => p.theme.colors.primary};
+ }
+
   h2 {
     font-size: 3rem;
     line-height: 1.3;
@@ -169,7 +190,96 @@ const ChartContainer = styled.div`
   }
 `;
 
-function Table({ columns, data }) {
+function StateModal({state, data}){
+  var subtitle;
+  const [modalIsOpen,setIsOpen] = React.useState(false);
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = '#f00';
+  }
+
+  function closeModal(){
+    setIsOpen(false);
+  }
+
+  const customStyles = {
+    content : {
+      top                   : '50%',
+      left                  : '50%',
+      marginRight           : '-50%',
+      transform             : 'translate(-50%, -50%)'
+    }
+  };
+
+  const daily_plot_options = {
+    title: {
+      text: `Daily Confirmed Cases in ${state}`
+    },
+    xAxis: {
+      tickPixelInterval: 1400,
+      categories: data.date,
+      tickInterval: 4
+    },
+    legend: {
+      enabled: true
+    },
+    yAxis: {
+      title: {
+          text: 'Number of Cases'
+      }
+  },
+    tooltip: {
+      pointFormat: '{series.name}: <b>{point.y}</b>'
+    },
+
+  plotOptions: {
+      series: {
+          label: {
+              connectorAllowed: false
+          },
+      },
+      spline: {
+        marker: {
+          enabled: false
+        }
+      }
+  },
+    series: [
+      {
+        name: 'Confirmed',
+        type: 'column',
+        data: data[state]
+      },
+    ]
+  };
+
+    return (
+      <div>
+        <button onClick={openModal}><strong>{state}</strong></button>
+        <Modal
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          style={customStyles}
+          contentLabel="State-wise Data"
+        >
+
+          <h2 ref={_subtitle => (subtitle = _subtitle)}></h2>
+          <button onClick={closeModal}>❌</button>
+          <ChartContainer>
+            <HighchartsReact highcharts={Highcharts} options={daily_plot_options} />
+          </ChartContainer>
+        </Modal>
+      </div>
+    );
+}
+
+
+function Table({ columns, data, state_data }) {
   const {
     getTableProps,
     getTableBodyProps,
@@ -217,7 +327,7 @@ function Table({ columns, data }) {
                   {row.cells.map(cell => {
                     return (
                       <Tables.Cell {...cell.getCellProps()}>
-                        {(cell.column.Header === "State") ? <strong>{cell.render('Cell')}</strong>: <>{cell.render('Cell')}</>}
+                        {(cell.column.Header === "State") ? <StateModal state={cell.row.original.state} data={state_data}></StateModal>: <>{cell.render('Cell')}</>}
                         {(cell.column.Header !== "Confirmed") ? <></> : (cell.row.original.deltaconfirmed === 0)? <></> : <span className='delta'>{'   '}(+{cell.row.original.deltaconfirmed})</span>}
                         {(cell.column.Header !== "Deaths") ? <></> : (cell.row.original.deltadeaths === 0)? <></> : <span className='delta-deaths'>{'   '}(+{cell.row.original.deltadeaths})</span>}
 
@@ -278,13 +388,56 @@ export default class CoronaTracker extends Component {
         deaths_cum: {name: '', data: [], },
         deaths_daily: {name: '', data: [], },
         dates: []
+      },
+      india_states_data: {
+        'Andhra Pradesh': [],
+        'Arunachal Pradesh': [],
+        'Assam': [],
+        'Bihar': [],
+        'Chhattisgarh': [],
+        'Goa': [],
+        'Gujarat': [],
+        'Haryana': [],
+        'Himachal Pradesh': [],
+        'Jharkhand': [],
+        'Karnataka': [],
+        'Kerala': [],
+        'Madhya Pradesh': [],
+        'Maharashtra': [],
+        'Manipur': [],
+        'Meghalaya': [],
+        'Mizoram': [],
+        'Nagaland': [],
+        'Odisha': [],
+        'Punjab': [],
+        'Rajasthan': [],
+        'Sikkim': [],
+        'Tamil Nadu': [],
+        'Telangana': [],
+        'Tripura': [],
+        'Uttarakhand': [],
+        'Uttar Pradesh': [],
+        'West Bengal': [],
+        'Andaman and Nicobar Islands': [],
+        'Chandigarh': [],
+        'Dadra and Nagar Haveli': [],
+        'Daman and Diu': [],
+        'Delhi': [],
+        'Jammu and Kashmir': [],
+        'Ladakh': [],
+        'Lakshadweep': [],
+        'Puducherry': [],
+        'status': [],
+        'date': [],
+        'total':[]
       }
-    }
+    },
   };
 
   componentDidMount() {
     this.getGlobalOverview();
     this.getIndiaOverview();
+    this.getIndiaStatesData();
   };
 
   render() {
@@ -303,7 +456,8 @@ export default class CoronaTracker extends Component {
       india_deaths_today,
       india_statewise,
       india_time_series,
-      india_time_series_full
+      india_time_series_full,
+      india_states_data
     } = this.state.india;
 
     const columns= [
@@ -482,7 +636,6 @@ export default class CoronaTracker extends Component {
       ]
     };
 
-
     return (
       <Layout>
         <SEO />
@@ -586,7 +739,7 @@ export default class CoronaTracker extends Component {
                 <br/>
                 <br/>
                 <h2>State-wise Cases in India</h2>
-                <Table columns={columns} data={india_statewise} />
+                <Table columns={columns} data={india_statewise} state_data={india_states_data}/>
               </>
             ) : (
               <p>Oh noes, error fetching data! <span role="img" aria-label="sheep">🐑😔</span></p>
@@ -723,6 +876,87 @@ export default class CoronaTracker extends Component {
     res['deaths_daily']['running'] = running_deaths
 
     return res;
+  };
+
+  getIndiaStatesData = () => {
+    this.setState({ loading: true });
+    axios
+      .get(`https://api.covid19india.org/states_daily.json`)
+      .then(india => {
+        const {
+          data: { states_daily }
+        } = india;
+        var states_data = states_daily.filter( (el) => {return el.status === 'Confirmed'});
+        const stateCodes = {
+          AP: 'Andhra Pradesh',
+          AR: 'Arunachal Pradesh',
+          AS: 'Assam',
+          BR: 'Bihar',
+          CT: 'Chhattisgarh',
+          GA: 'Goa',
+          GJ: 'Gujarat',
+          HR: 'Haryana',
+          HP: 'Himachal Pradesh',
+          JH: 'Jharkhand',
+          KA: 'Karnataka',
+          KL: 'Kerala',
+          MP: 'Madhya Pradesh',
+          MH: 'Maharashtra',
+          MN: 'Manipur',
+          ML: 'Meghalaya',
+          MZ: 'Mizoram',
+          NL: 'Nagaland',
+          OR: 'Odisha',
+          PB: 'Punjab',
+          RJ: 'Rajasthan',
+          SK: 'Sikkim',
+          TN: 'Tamil Nadu',
+          TG: 'Telangana',
+          TR: 'Tripura',
+          UT: 'Uttarakhand',
+          UP: 'Uttar Pradesh',
+          WB: 'West Bengal',
+          AN: 'Andaman and Nicobar Islands',
+          CH: 'Chandigarh',
+          DN: 'Dadra and Nagar Haveli',
+          DD: 'Daman and Diu',
+          DL: 'Delhi',
+          JK: 'Jammu and Kashmir',
+          LA: 'Ladakh',
+          LD: 'Lakshadweep',
+          PY: 'Puducherry',
+          STATUS: 'status',
+          DATE: 'date',
+          TT: 'total'
+        }
+
+        states_data = states_data.map((el) => {
+            var new_obj = {};
+            Object.keys(el).forEach( (s) => {
+              (s === 'date' || s === 'status') ? new_obj[stateCodes[s.toUpperCase()]] = el[s] : new_obj[stateCodes[s.toUpperCase()]] = parseInt(el[s], 10)
+            });
+            return new_obj;
+        });
+
+        let india_states_data = {};
+
+        states_data.forEach(obj => {
+          Object.keys(obj).forEach(key => {
+            india_states_data[key] = (india_states_data[key] || []).concat([obj[key]]);
+          });
+        });
+
+        this.setState({
+          loading: false,
+          india: {
+            ...this.state.india,
+            india_states_data
+          }
+        });
+      })
+      .catch(error => {
+        this.setState({ loading: false, error });
+      });
   };
 
   getIndiaOverview = () => {
