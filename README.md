@@ -1,4 +1,6 @@
-# reckoning.dev [![Netlify Status](https://api.netlify.com/api/v1/badges/410a4404-3fb7-4501-8874-855ae2537cc4/deploy-status)](https://app.netlify.com/sites/serene-haibt-80ebc8/deploys) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+# reckoning.dev-V1 
+
+**Note: This is an old version of my blog.**
 
 Personal website running on Gatsby, React, and Node.js! The theme here is based on the
 [Novela Theme](https://github.com/narative/gatsby-theme-novela).
